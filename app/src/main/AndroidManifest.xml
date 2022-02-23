@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".complaint_Page"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ScannerPage"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

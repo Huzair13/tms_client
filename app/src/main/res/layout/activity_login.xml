@@ -7,41 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".login">
 
-
-
-    <com.airbnb.lottie.LottieAnimationView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/splash1"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true">
+        android:text="LOGIN"
+        android:textSize="50dp"
+        android:layout_gravity="center">
 
-    </com.airbnb.lottie.LottieAnimationView>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginemail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Login">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/filledTextField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+    </TextView>
 
 </LinearLayout>

@@ -16,5 +16,14 @@
       android:textAlignment="center">
 
   </TextView>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+    android:text="Map My Sona"
+      android:textSize="50dp"
+      >
+
+
+  </TextView>
 
 </LinearLayout>

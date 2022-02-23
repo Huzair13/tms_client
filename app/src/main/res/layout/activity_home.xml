@@ -4,14 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:text="home"
-        android:textSize="50dp">
+        android:id="@+id/admin"
+        android:text="Admin"
+        android:textSize="25dp">
 
-    </TextView>
+    </com.google.android.material.button.MaterialButton>
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/user"
+        android:text="User"
+        android:textSize="25dp">
+
+    </com.google.android.material.button.MaterialButton>
 </LinearLayout>

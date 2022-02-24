@@ -8,7 +8,8 @@
     tools:context=".dashboard"
     android:gravity="center">
 
-   <androidx.cardview.widget.CardView
+
+   <com.google.android.material.card.MaterialCardView
        android:id="@+id/card1"
        android:layout_width="100dp"
        android:layout_height="100dp"
@@ -17,11 +18,24 @@
        android:layout_marginEnd="15dp"
        android:layout_marginBottom="15dp"
        android:background="@color/teal_700"
+       android:checkable="true"
+       android:clickable="true"
+       android:focusable="true"
+       app:cardElevation="25dp"
        >
 
-   </androidx.cardview.widget.CardView>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+         android:text="Scan Code"
+         android:textSize="20dp"
+         android:gravity="center"
+          android:textColor="@color/black">
 
-   <androidx.cardview.widget.CardView
+      </TextView>
+   </com.google.android.material.card.MaterialCardView>
+
+   <com.google.android.material.card.MaterialCardView
        android:id="@+id/card2"
        android:layout_width="100dp"
        android:layout_height="100dp"
@@ -30,31 +44,76 @@
        android:layout_marginEnd="15dp"
        android:layout_marginBottom="15dp"
        android:layout_toEndOf="@+id/card1"
-       android:background="@color/teal_700">
+       android:background="@color/teal_700"
+       android:checkable="true"
+       android:clickable="true"
+       android:focusable="true"
+       app:cardElevation="25dp">
 
-   </androidx.cardview.widget.CardView>
 
-   <androidx.cardview.widget.CardView
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Registerd Details"
+          android:textSize="20dp"
+          android:gravity="center"
+          android:textColor="@color/black">
+
+      </TextView>
+   </com.google.android.material.card.MaterialCardView>
+
+   <com.google.android.material.card.MaterialCardView
        android:id="@+id/card3"
        android:layout_width="100dp"
        android:layout_height="100dp"
        android:layout_below="@+id/card1"
 
-       android:layout_margin="15dp"
+       android:layout_marginStart="15dp"
+       android:layout_marginTop="15dp"
+       android:layout_marginEnd="15dp"
+       android:layout_marginBottom="15dp"
+       android:background="@color/teal_700"
+       android:checkable="true"
+       android:clickable="true"
+       android:focusable="true"
+       app:cardElevation="25dp">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Solved Details"
+          android:textSize="20dp"
+          android:gravity="center"
+          android:textColor="@color/black">
 
-       android:background="@color/teal_700">
+      </TextView>
 
-   </androidx.cardview.widget.CardView>
+   </com.google.android.material.card.MaterialCardView>
 
-   <androidx.cardview.widget.CardView
+   <com.google.android.material.card.MaterialCardView
        android:id="@+id/card4"
        android:layout_width="100dp"
        android:layout_height="100dp"
        android:layout_below="@+id/card2"
+       android:layout_marginStart="15dp"
+       android:layout_marginTop="15dp"
+       android:layout_marginEnd="15dp"
+       android:layout_marginBottom="15dp"
        android:layout_toRightOf="@id/card3"
        android:background="@color/teal_700"
-       android:layout_margin="15dp">
+       android:checkable="true"
+       android:clickable="true"
+       android:focusable="true"
+       app:cardElevation="25dp">
 
-   </androidx.cardview.widget.CardView>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Manual Entry"
+          android:textSize="20dp"
+          android:gravity="center"
+          android:textColor="@color/black">
+
+      </TextView>
+   </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

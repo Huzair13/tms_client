@@ -6,16 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScannerPage"
-    android:gravity="center"
-    android:layout_centerHorizontal="true"
-    >
+    android:gravity="center">
+  <ImageView
+    android:id="@+id/qrcode"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="30dp"
+    android:layout_above="@+id/scanbutton"
+      android:src="@drawable/qrcode"
+      >
+
+  </ImageView>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/scanbutton"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:text="Scan">
+        android:text="Scan"
+        app:cornerRadius="50dp"
+        app:icon="@drawable/qrcode"
+        >
 
     </com.google.android.material.button.MaterialButton>
 

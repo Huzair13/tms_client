@@ -14,7 +14,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/admin"
         android:text="Admin"
-        android:textSize="25dp">
+        android:textSize="25dp"
+        app:icon="@drawable/login"
+        app:iconSize="40dp"
+        app:cornerRadius="50dp">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -23,7 +26,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/user"
         android:text="User"
-        android:textSize="25dp">
+        android:textSize="25dp"
+        app:cornerRadius="50dp"
+        android:layout_marginTop="25dp">
 
     </com.google.android.material.button.MaterialButton>
 </LinearLayout>

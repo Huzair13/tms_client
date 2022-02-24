@@ -25,15 +25,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="310dp"
-        android:padding="5dp"
+        android:padding="15dp"
         android:hint="Email"
+        app:startIconDrawable="@drawable/email"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            />
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,9 +42,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:padding="5dp"
+        android:padding="15dp"
         android:layout_below="@+id/loginemail"
-
+        app:startIconDrawable="@drawable/password"
 
         >
 
@@ -61,11 +61,13 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbutton"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/loginpassword"
-        android:layout_marginLeft="150dp"
-        android:text="Log in">
+        android:layout_centerHorizontal="true"
+        android:text="Log in"
+        app:cornerRadius="50dp"
+        app:icon="@drawable/login">
 
     </com.google.android.material.button.MaterialButton>
 

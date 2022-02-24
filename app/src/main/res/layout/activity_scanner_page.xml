@@ -6,17 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScannerPage"
-    android:gravity="center">
-  <ImageView
-    android:id="@+id/qrcode"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    android:layout_marginTop="30dp"
-    android:layout_above="@+id/scanbutton"
-      android:src="@drawable/qrcode"
-      >
+    >
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_centerHorizontal="true"
+      android:layout_centerInParent="true">
 
-  </ImageView>
+
+    <ImageView
+        android:id="@+id/qrcode"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/scanbutton"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/qrcode"
+        >
+    </ImageView>
 
 
     <com.google.android.material.button.MaterialButton
@@ -26,23 +33,24 @@
         android:layout_gravity="center"
         android:text="Scan"
         app:cornerRadius="50dp"
-        app:icon="@drawable/qrcode"
-        >
+        app:icon="@drawable/qrcode">
 
     </com.google.android.material.button.MaterialButton>
 
     <TextView
-        android:layout_width="120dp"
+        android:id="@+id/entermanually"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scanbutton"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="15dp"
         android:text="Enter Manually"
         android:textColor="#FF006F"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold">
 
 
     </TextView>
+  </LinearLayout>
 
 </RelativeLayout>

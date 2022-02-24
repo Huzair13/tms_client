@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".changepassword"
+            android:exported="false" />
+        <activity
             android:name=".forgetpassword"
             android:exported="false" />
         <activity

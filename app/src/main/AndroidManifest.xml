@@ -22,7 +22,7 @@
             android:name=".ScannerPage"
             android:exported="false" />
         <activity
-            android:name=".Dashboard"
+            android:name=".dashboard"
             android:exported="false" />
         <activity
             android:name=".login"

@@ -5,17 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".loginpage"
+    android:background="@color/teal_700">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="166dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/splash1">
+        app:lottie_rawRes="@raw/login">
 
     </com.airbnb.lottie.LottieAnimationView>
 
@@ -70,15 +71,17 @@
 
 
     <TextView
+        android:id="@+id/forgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginbutton"
-        android:layout_margin="15dp"
 
+        android:layout_below="@+id/loginbutton"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:text="Forget Password ?"
-        android:id="@+id/forgetpassword"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp">
 
     </TextView>

@@ -8,14 +8,14 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/beige">
 
 
 
  <com.airbnb.lottie.LottieAnimationView
      android:layout_width="200dp"
      android:layout_height="200dp"
-  app:lottie_rawRes="@raw/splash2"
+  app:lottie_rawRes="@raw/spilt"
   app:lottie_autoPlay="true"
   app:lottie_loop="true"
      android:layout_marginTop="100dp"
@@ -26,9 +26,10 @@
  <TextView
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-  android:text="MAP MY SONA💕💕💕"
+  android:text="MAP MY SONA"
      android:textSize="30dp"
-     android:textColor="@color/black"
+     android:layout_gravity="center"
+     android:textColor="@color/cobaltblue"
      android:layout_marginLeft="15dp"
      android:layout_marginTop="25dp">
 

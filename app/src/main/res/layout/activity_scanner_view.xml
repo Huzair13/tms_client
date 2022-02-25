@@ -398,6 +398,7 @@
         android:layout_height="175dp"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/mulish"
         android:hint="Submit your Report..."
         android:textColorHint="@color/white">
 

@@ -29,8 +29,8 @@ public class dashboard extends AppCompatActivity {
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        scanner=findViewById(R.id.scancode);
-        manualentry = findViewById(R.id.manualentry);
+        scanner=findViewById(R.id.card1);
+        manualentry = findViewById(R.id.card4);
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override

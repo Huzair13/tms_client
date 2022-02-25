@@ -1,5 +1,6 @@
 package com.example.map_my_sona;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
@@ -26,6 +27,15 @@ public class ScannerView extends AppCompatActivity implements ZXingScannerView.R
         super.onCreate(savedInstanceState);
         scannerView=new ZXingScannerView(this);
         setContentView(scannerView);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        //customize backbutton
+//        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)

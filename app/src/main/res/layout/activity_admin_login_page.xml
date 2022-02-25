@@ -83,23 +83,22 @@
         android:layout_below="@+id/loginbuttonAdmin">
 
 
-    <TextView
-        android:id="@+id/changepassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/changepassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_below="@+id/loginbuttonAdmin"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="Change Password ?"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:fontFamily="@font/mulish">
+            android:layout_below="@+id/loginbuttonAdmin"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Change Password ?"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="@font/mulish">
 
-    </TextView>
-
+        </TextView>
         <TextView
             android:id="@+id/forgetpassword"
             android:layout_width="wrap_content"

@@ -13,9 +13,8 @@
 
 
 
-
    <com.google.android.material.card.MaterialCardView
-       android:id="@+id/card1"
+       android:id="@+id/scancode"
        android:layout_width="150dp"
        android:layout_height="150dp"
        android:layout_marginStart="15dp"
@@ -41,39 +40,13 @@
       </TextView>
    </com.google.android.material.card.MaterialCardView>
 
-   <com.google.android.material.card.MaterialCardView
-       android:id="@+id/card2"
-       android:layout_width="150dp"
-       android:layout_height="150dp"
-       android:layout_marginStart="15dp"
-       android:layout_marginTop="15dp"
-       android:layout_marginEnd="15dp"
-       android:layout_marginBottom="15dp"
-       android:layout_toEndOf="@+id/card1"
-       android:background="@color/teal_700"
-       android:checkable="true"
-       android:clickable="true"
-       android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardCornerRadius="20dp">
 
-
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:text="Registerd Details"
-          android:textSize="20dp"
-          android:gravity="center"
-          android:textColor="@color/black">
-
-      </TextView>
-   </com.google.android.material.card.MaterialCardView>
 
    <com.google.android.material.card.MaterialCardView
-       android:id="@+id/card3"
+       android:id="@+id/histotydetails"
        android:layout_width="150dp"
        android:layout_height="150dp"
-       android:layout_below="@+id/card1"
+       android:layout_below="@+id/scancode"
 
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
@@ -98,15 +71,15 @@
    </com.google.android.material.card.MaterialCardView>
 
    <com.google.android.material.card.MaterialCardView
-       android:id="@+id/card4"
+       android:id="@+id/manualentry"
        android:layout_width="150dp"
        android:layout_height="150dp"
-       android:layout_below="@+id/card2"
+       android:layout_below="@+id/histotydetails"
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginEnd="15dp"
        android:layout_marginBottom="15dp"
-       android:layout_toRightOf="@id/card3"
+
        android:background="@color/teal_700"
        android:checkable="true"
        android:clickable="true"
@@ -124,5 +97,20 @@
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
+
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentEnd="true"
+       android:layout_marginStart="0dp"
+       android:layout_marginTop="0dp"
+       android:layout_marginEnd="0dp"
+       android:clickable="true"
+       android:src="@drawable/logout">
+
+   </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
 </RelativeLayout>
 

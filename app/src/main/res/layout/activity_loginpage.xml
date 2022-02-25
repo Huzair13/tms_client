@@ -90,7 +90,7 @@
         android:layout_marginBottom="15dp"
         android:text="Forget Password ?"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:fontFamily="@font/mulish">
 
     </TextView>
@@ -106,7 +106,7 @@
         android:layout_marginBottom="15dp"
         android:text="Change Password ?"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:fontFamily="@font/mulish">
 
     </TextView>

@@ -12,6 +12,7 @@ import com.google.android.material.card.MaterialCardView;
 public class dashboard extends AppCompatActivity {
 
     private MaterialCardView scanner;
+    private  MaterialCardView manualentry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,17 +21,27 @@ public class dashboard extends AppCompatActivity {
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
+//        getSupportActionBar().setLogo(R.drawable.logout);
 
         // Customize the back button
-//        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
+//        actionBar.setHomeAsUpIndicator(R.drawable.logout);
 
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        scanner=findViewById(R.id.card1);
+        scanner=findViewById(R.id.scancode);
+        manualentry = findViewById(R.id.manualentry);
+
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(dashboard.this,ScannerPage.class));
+            }
+        });
+
+        manualentry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(dashboard.this,ScannerPage.class));
             }
         });

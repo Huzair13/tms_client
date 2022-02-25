@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -14,6 +15,9 @@ import com.google.android.material.textfield.TextInputEditText;
 public class AdminLoginPage extends AppCompatActivity {
     private TextInputEditText loginEmailAdmin, LoginPasswordAdmin ;
     Button LoginBtnAdmin;
+    private TextView Changepassword;
+    private TextView Forgetpassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,22 @@ public class AdminLoginPage extends AppCompatActivity {
         loginEmailAdmin=findViewById(R.id.loginemailInputAdmin);
         LoginPasswordAdmin=findViewById(R.id.loginpasswordInputAdmin);
         LoginBtnAdmin=findViewById(R.id.loginbuttonAdmin);
+         Changepassword = findViewById(R.id.changepassword);
+         Forgetpassword =findViewById(R.id.forgetpassword);
+        //
+        Changepassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminLoginPage.this,changepassword.class));
+            }
+        });
+
+        Forgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminLoginPage.this,forgetpassword.class));
+            }
+        });
 
         LoginBtnAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,4 +77,5 @@ public class AdminLoginPage extends AppCompatActivity {
         Intent intent=new Intent(AdminLoginPage.this, dashboard.class);
         startActivity(intent);
     }
+
 }

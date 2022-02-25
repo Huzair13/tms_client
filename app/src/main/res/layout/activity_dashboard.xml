@@ -6,12 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard"
-    android:gravity="center"
-    android:background="@color/beige">
+    android:gravity="center">
 
-   <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card1"
@@ -26,7 +22,6 @@
        android:clickable="true"
        android:focusable="true"
        app:cardElevation="25dp"
-       app:cardBackgroundColor="@color/deminblue"
        >
 
       <TextView
@@ -35,8 +30,7 @@
          android:text="Scan Code"
          android:textSize="20dp"
          android:gravity="center"
-          android:padding="3dp"
-          android:textColor="@color/white">
+          android:textColor="@color/black">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
@@ -54,8 +48,7 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardBackgroundColor="@color/deminblue">
+       app:cardElevation="25dp">
 
 
       <TextView
@@ -64,7 +57,7 @@
           android:text="Registerd Details"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/white">
+          android:textColor="@color/black">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
@@ -83,15 +76,14 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardBackgroundColor="@color/deminblue">
+       app:cardElevation="25dp">
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:text="Solved Details"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/white">
+          android:textColor="@color/black">
 
       </TextView>
 
@@ -111,8 +103,7 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardBackgroundColor="@color/deminblue">
+       app:cardElevation="25dp">
 
       <TextView
           android:layout_width="match_parent"
@@ -120,9 +111,9 @@
           android:text="Manual Entry"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/white">
+          android:textColor="@color/black">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+
 </RelativeLayout>

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background1">
 
 
     <com.google.android.material.button.MaterialButton

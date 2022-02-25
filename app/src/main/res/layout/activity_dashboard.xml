@@ -35,7 +35,8 @@
          android:text="Scan Code"
          android:textSize="20dp"
          android:gravity="center"
-          android:textColor="@color/black">
+          android:textColor="@color/black"
+          android:fontFamily="@font/mulish">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
@@ -58,13 +59,15 @@
        android:focusable="true"
        app:cardElevation="25dp"
        app:cardCornerRadius="20dp">
+
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="History Details"
-          android:textSize="20dp"
+          android:fontFamily="@font/mulish"
           android:gravity="center"
-          android:textColor="@color/black">
+          android:text="History Details"
+          android:textColor="@color/black"
+          android:textSize="20dp">
 
       </TextView>
 
@@ -93,7 +96,9 @@
           android:text="Manual Entry"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/black">
+          android:textColor="@color/black"
+
+          android:fontFamily="@font/mulish">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
@@ -104,8 +109,8 @@
        android:layout_alignParentTop="true"
        android:layout_alignParentEnd="true"
        android:layout_marginStart="0dp"
-       android:layout_marginTop="0dp"
-       android:layout_marginEnd="0dp"
+       android:layout_marginTop="86dp"
+       android:layout_marginEnd="51dp"
        android:clickable="true"
        android:src="@drawable/logout">
 

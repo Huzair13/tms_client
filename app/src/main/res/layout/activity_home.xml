@@ -18,7 +18,8 @@
         android:textSize="25dp"
         app:icon="@drawable/login"
         app:iconSize="40dp"
-        app:cornerRadius="50dp">
+        app:cornerRadius="50dp"
+        android:fontFamily="@font/mulish">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -31,7 +32,8 @@
         app:cornerRadius="50dp"
         app:icon="@drawable/usergoogle"
         app:iconSize="40dp"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/mulish">
 
     </com.google.android.material.button.MaterialButton>
 </LinearLayout>

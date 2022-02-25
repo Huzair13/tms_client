@@ -71,7 +71,8 @@
         android:layout_centerHorizontal="true"
         android:text="Log in"
         app:cornerRadius="50dp"
-        app:icon="@drawable/login">
+        app:icon="@drawable/login"
+        android:fontFamily="@font/mulish">
 
     </com.google.android.material.button.MaterialButton>
 

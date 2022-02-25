@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -13,6 +14,8 @@ public class dashboard extends AppCompatActivity {
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
+//    private TextView manual;
+//    private TextView history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class dashboard extends AppCompatActivity {
 
         scanner=findViewById(R.id.scancode);
         manualentry = findViewById(R.id.manualentry);
+//        manual =findViewById(R.id.ManualEntry);
+//        history =findViewById(R.id.history);
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +47,22 @@ public class dashboard extends AppCompatActivity {
         manualentry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this,ScannerView.class));
+                startActivity(new Intent(dashboard.this,ScannerPage.class));
             }
         });
+
+//        manual.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(dashboard.this,manualentry.class));
+//            }
+//        });
+
+//        history.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(dashboard.this,HistoryDetails.class));
+//            }
+//        });
     }
 }

@@ -42,7 +42,7 @@ public class dashboard extends AppCompatActivity {
         manualentry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this,ScannerPage.class));
+                startActivity(new Intent(dashboard.this,ScannerView.class));
             }
         });
     }

@@ -83,11 +83,10 @@
         android:layout_below="@+id/loginbuttonAdmin">
 
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/changepassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/loginbuttonAdmin"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
@@ -98,8 +97,9 @@
             android:textSize="20dp"
             android:fontFamily="@font/mulish">
 
-        </TextView>
-        <TextView
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/forgetpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
             android:textSize="20dp"
             android:fontFamily="@font/mulish">
 
-    </TextView>
+    </androidx.appcompat.widget.AppCompatTextView>
 </LinearLayout>
 
 </RelativeLayout>

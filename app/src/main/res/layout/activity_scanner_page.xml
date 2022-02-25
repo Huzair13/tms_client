@@ -22,7 +22,9 @@
         android:layout_height="250dp"
         android:layout_above="@+id/scanbutton"
         android:layout_marginTop="30dp"
-        android:src="@drawable/qrcode"></ImageView>
+        android:src="@drawable/qrcode">
+
+    </ImageView>
 
 
     <com.google.android.material.button.MaterialButton

@@ -28,6 +28,9 @@ public class loginpage extends AppCompatActivity {
     private TextView TvRegHere;
     private Button btnLogin;
 
+    private TextView Changepassword;
+    private TextView Forgetpassword;
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -39,11 +42,28 @@ public class loginpage extends AppCompatActivity {
         LogEmail=findViewById(R.id.loginemailInput);
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
+            //
+        Changepassword = findViewById(R.id.changepassword);
+        Forgetpassword =findViewById(R.id.forgetpassword);
 
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
             LoginUser();
+        });
+
+        Changepassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(loginpage.this,changepassword.class));
+            }
+        });
+
+        Forgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(loginpage.this,forgetpassword.class));
+            }
         });
 
     }

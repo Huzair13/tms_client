@@ -25,15 +25,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="310dp"
-        android:padding="15dp"
         android:hint="Email"
-        app:startIconDrawable="@drawable/email"
-        >
+        android:padding="15dp"
+        app:startIconDrawable="@drawable/email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/curve_bg"
+            android:id="@+id/loginemailInput"
             android:layout_width="match_parent"
             android:layout_height="53dp"
+            android:background="@drawable/curve_bg"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,20 +42,20 @@
         android:id="@+id/loginpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_below="@+id/loginemail"
         android:hint="Password"
         android:padding="15dp"
-        android:layout_below="@+id/loginemail"
         app:startIconDrawable="@drawable/password"
 
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/curve_bg"
+            android:id="@+id/loginpasswordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/curve_bg"
             android:inputType="textPassword"
-
-
             />
 
     </com.google.android.material.textfield.TextInputLayout>

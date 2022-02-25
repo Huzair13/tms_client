@@ -31,8 +31,9 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/curve_bg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -49,6 +50,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/curve_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"

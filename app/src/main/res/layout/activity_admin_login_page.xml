@@ -33,7 +33,8 @@
             android:id="@+id/loginemailInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:background="@drawable/curve_bg"
+            android:fontFamily="@font/mulish"
+
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -54,8 +55,9 @@
             android:id="@+id/loginpasswordInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/curve_bg"
             android:inputType="textPassword"
+            android:fontFamily="@font/mulish"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -74,8 +76,15 @@
     </com.google.android.material.button.MaterialButton>
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/loginbuttonAdmin">
+
+
     <TextView
-        android:id="@+id/forgetpasswordAdmin"
+        android:id="@+id/changepassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -84,10 +93,29 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Forget Password ?"
+        android:text="Change Password ?"
         android:textColor="@color/white"
-        android:textSize="20dp">
+        android:textSize="20dp"
+        android:fontFamily="@font/mulish">
 
     </TextView>
+
+        <TextView
+            android:id="@+id/forgetpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/loginbuttonAdmin"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Forget Password "
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="@font/mulish">
+
+    </TextView>
+</LinearLayout>
 
 </RelativeLayout>

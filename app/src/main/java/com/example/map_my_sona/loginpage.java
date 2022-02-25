@@ -53,7 +53,7 @@ public class loginpage extends AppCompatActivity {
         String password =LogPassword.getText().toString();
 
         if(TextUtils.isEmpty(email)){
-            LogEmail.setError("Email Cannot be empty");
+            LogEmail.setError("Email or username Cannot be empty");
             LogEmail.requestFocus();
         }else if(TextUtils.isEmpty(password)){
             LogPassword.setError("Password Cannot be empty");

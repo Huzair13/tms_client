@@ -33,6 +33,8 @@
             android:id="@+id/loginemailInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="53dp"
+            android:fontFamily="@font/mulish"
+
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -54,6 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:fontFamily="@font/mulish"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -91,7 +95,8 @@
         android:layout_marginBottom="15dp"
         android:text="Change Password ?"
         android:textColor="@color/white"
-        android:textSize="20dp">
+        android:textSize="20dp"
+        android:fontFamily="@font/mulish">
 
     </TextView>
 
@@ -107,7 +112,8 @@
             android:layout_marginBottom="15dp"
             android:text="Forget Password ?"
             android:textColor="@color/white"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:fontFamily="@font/mulish">
 
     </TextView>
 </LinearLayout>

@@ -27,10 +27,10 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-         android:text="Scan Code"
-         android:textSize="20dp"
-         android:gravity="center"
-          android:textColor="@color/black">
+          android:gravity="center"
+          android:text="Scan Code"
+          android:textColor="@color/black"
+          android:textSize="20dp">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>

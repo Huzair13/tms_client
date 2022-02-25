@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/background1">
 
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card1"
-       android:layout_width="100dp"
-       android:layout_height="100dp"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginEnd="15dp"
@@ -22,6 +23,7 @@
        android:clickable="true"
        android:focusable="true"
        app:cardElevation="25dp"
+       app:cardCornerRadius="20dp"
        >
 
       <TextView
@@ -37,8 +39,8 @@
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card2"
-       android:layout_width="100dp"
-       android:layout_height="100dp"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginEnd="15dp"
@@ -48,7 +50,8 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp">
+       app:cardElevation="25dp"
+       app:cardCornerRadius="20dp">
 
 
       <TextView
@@ -64,10 +67,9 @@
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card3"
-       android:layout_width="100dp"
-       android:layout_height="100dp"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
        android:layout_below="@+id/card1"
-
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginEnd="15dp"
@@ -76,7 +78,8 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp">
+       app:cardElevation="25dp"
+       app:cardCornerRadius="20dp">
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
@@ -91,8 +94,8 @@
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card4"
-       android:layout_width="100dp"
-       android:layout_height="100dp"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
        android:layout_below="@+id/card2"
        android:layout_marginStart="15dp"
        android:layout_marginTop="15dp"
@@ -103,7 +106,8 @@
        android:checkable="true"
        android:clickable="true"
        android:focusable="true"
-       app:cardElevation="25dp">
+       app:cardElevation="25dp"
+       app:cardCornerRadius="20dp">
 
       <TextView
           android:layout_width="match_parent"

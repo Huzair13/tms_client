@@ -10,10 +10,6 @@
     android:background="@drawable/background1">
 
 
-
-
-
-
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/card1"
        android:layout_width="150dp"
@@ -88,7 +84,7 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="History Details"
+          android:text="Solved Details"
           android:textSize="20dp"
           android:gravity="center"
           android:textColor="@color/black">
@@ -117,12 +113,12 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="Manual Entry"
+          android:text="Manual Entr"
           android:textSize="20dp"
           android:gravity="center"
           android:textColor="@color/black">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
 
+</RelativeLayout>

@@ -33,7 +33,6 @@
             android:id="@+id/loginemailInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:background="@drawable/curve_bg"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -54,7 +53,6 @@
             android:id="@+id/loginpasswordInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/curve_bg"
             android:inputType="textPassword"
             />
 

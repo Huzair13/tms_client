@@ -3,6 +3,7 @@ package com.example.map_my_sona;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.zxing.Result;
@@ -49,7 +50,10 @@ public class ScannerView extends AppCompatActivity implements ZXingScannerView.R
 
     @Override
     public void handleResult(Result rawResult) {
-        ScannerPage.scantxt.setText(rawResult.getText());
+        final String scanResult = rawResult.getText();
+        Intent intent = new Intent(getBaseContext(), complaint_Page.class);
+        intent.putExtra("SCAN_RESULT", scanResult);
+        startActivity(intent);
         onBackPressed();
     }
 

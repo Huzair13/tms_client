@@ -14,5 +14,8 @@ public class complaint_Page extends AppCompatActivity {
         setContentView(R.layout.activity_complaint_page);
 
         scanText=(TextView) findViewById(R.id.textView);
+        String s = getIntent().getStringExtra("SCAN_RESULT");
+
+        scanText.setText(s);
     }
 }

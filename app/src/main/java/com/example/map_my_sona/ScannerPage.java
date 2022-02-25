@@ -14,6 +14,8 @@ public class ScannerPage extends AppCompatActivity {
     LinearLayout scanBtn;
     public static TextView scantxt;
 
+//    private TextView manual;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class ScannerPage extends AppCompatActivity {
 
         scanBtn=findViewById(R.id.Scanner);
         scantxt=(TextView) findViewById(R.id.scantxt);
+//        manual =(TextView) findViewById(R.id.ManualEntry);
 
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +33,12 @@ public class ScannerPage extends AppCompatActivity {
 
             }
         });
+
+//        manual.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(ScannerPage.this,manualentry.class));
+//            }
+//        });
     }
 }

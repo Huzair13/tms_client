@@ -25,7 +25,7 @@ public class loginpage extends AppCompatActivity {
 
     private TextInputEditText LogEmail;
     private TextInputEditText LogPassword;
-    private TextView ForgetPass;
+    private TextView TvRegHere;
     private Button btnLogin;
 
     private FirebaseAuth mAuth;
@@ -39,19 +39,11 @@ public class loginpage extends AppCompatActivity {
         LogEmail=findViewById(R.id.loginemailInput);
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
-        ForgetPass=findViewById(R.id.forgetpassword);
 
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
             LoginUser();
-        });
-
-        ForgetPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginpage.this,forgetpassword.class));
-            }
         });
 
     }
@@ -81,6 +73,4 @@ public class loginpage extends AppCompatActivity {
         }
 
     }
-
-
 }

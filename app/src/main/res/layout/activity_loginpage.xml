@@ -33,8 +33,8 @@
             android:id="@+id/loginemailInput"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:background="@drawable/curve_bg"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/mulish"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,8 +54,8 @@
             android:id="@+id/loginpasswordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/curve_bg"
             android:inputType="textPassword"
+            android:fontFamily="@font/mulish"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +69,8 @@
         android:layout_centerHorizontal="true"
         android:text="Log in"
         app:cornerRadius="50dp"
-        app:icon="@drawable/login">
+        app:icon="@drawable/login"
+        android:fontFamily="@font/mulish">
 
     </com.google.android.material.button.MaterialButton>
 

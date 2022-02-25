@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -25,7 +26,7 @@ public class Home extends AppCompatActivity {
                 Intent a=new Intent(Home.this, AdminLoginPage.class);
                 startActivity(a);
 
-//                Toast.makeText(Home.this,"Successfully logged in",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this,"This is admin login page", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -37,7 +38,7 @@ public class Home extends AppCompatActivity {
                 Intent b=new Intent(Home.this, loginpage.class);
                 startActivity(b);
 
-//                Toast.makeText(Home.this,"Successfully logged in",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this,"This is user login page",Toast.LENGTH_SHORT).show();
             }
         });
 

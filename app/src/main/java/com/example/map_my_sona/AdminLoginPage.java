@@ -30,6 +30,19 @@ public class AdminLoginPage extends AppCompatActivity {
          Changepassword = findViewById(R.id.changepassword);
          Forgetpassword =findViewById(R.id.forgetpassword);
         //
+
+
+        LoginBtnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String AdminEmail=loginEmailAdmin.getText().toString();
+                String AdminPassword=LoginPasswordAdmin.getText().toString();
+                
+                checkAdmin(AdminEmail,AdminPassword);
+            }
+        });
+
+        //
         Changepassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,15 +57,7 @@ public class AdminLoginPage extends AppCompatActivity {
             }
         });
 
-        LoginBtnAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String AdminEmail=loginEmailAdmin.getText().toString();
-                String AdminPassword=LoginPasswordAdmin.getText().toString();
-                
-                checkAdmin(AdminEmail,AdminPassword);
-            }
-        });
+
 
     }
 
@@ -73,9 +78,12 @@ public class AdminLoginPage extends AppCompatActivity {
         }
     }
 
+
+
     private void openAdminPanel() {
         Intent intent=new Intent(AdminLoginPage.this, dashboard.class);
         startActivity(intent);
     }
+
 
 }

@@ -15,9 +15,9 @@
  <com.airbnb.lottie.LottieAnimationView
      android:layout_width="200dp"
      android:layout_height="200dp"
-  app:lottie_rawRes="@raw/spilt"
-  app:lottie_autoPlay="true"
-  app:lottie_loop="true"
+     app:lottie_rawRes="@raw/spilt"
+     app:lottie_autoPlay="true"
+     app:lottie_loop="true"
      android:layout_marginTop="100dp"
      android:layout_gravity="center">
 
@@ -26,7 +26,7 @@
  <TextView
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-  android:text="MAP MY SONA"
+     android:text="MAP MY SONA"
      android:textSize="30dp"
      android:layout_gravity="center"
      android:textColor="@color/cobaltblue"

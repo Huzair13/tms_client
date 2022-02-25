@@ -19,16 +19,17 @@ public class Home extends AppCompatActivity {
         MaterialButton a=findViewById(R.id.admin);
         MaterialButton b=findViewById(R.id.user);
 
-
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a=new Intent(Home.this, loginpage.class);
+                Intent a=new Intent(Home.this, AdminLoginPage.class);
                 startActivity(a);
 
 //                Toast.makeText(Home.this,"Successfully logged in",Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

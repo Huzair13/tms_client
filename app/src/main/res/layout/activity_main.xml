@@ -5,34 +5,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/beige">
+    tools:context=".MainActivity">
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello"
+      android:textSize="25dp"
+      android:textAlignment="center">
+
+  </TextView>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+    android:text="Map My Sona"
+      android:textSize="50dp"
+      >
 
 
+  </TextView>
 
- <com.airbnb.lottie.LottieAnimationView
-     android:layout_width="200dp"
-     android:layout_height="200dp"
-  app:lottie_rawRes="@raw/spilt"
-  app:lottie_autoPlay="true"
-  app:lottie_loop="true"
-     android:layout_marginTop="100dp"
-     android:layout_gravity="center">
-
- </com.airbnb.lottie.LottieAnimationView>
-
- <TextView
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-  android:text="MAP MY SONA"
-     android:textSize="30dp"
-     android:layout_gravity="center"
-     android:textColor="@color/cobaltblue"
-     android:layout_marginLeft="15dp"
-     android:layout_marginTop="25dp">
-
- </TextView>
+  <Button
+      android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Button" />
 
 </LinearLayout>

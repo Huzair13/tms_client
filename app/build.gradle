@@ -43,4 +43,6 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.4.0"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'com.tomer:fadingtextview:2.5'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.karumi:dexter:6.2.2'
 }

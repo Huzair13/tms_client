@@ -8,4 +8,25 @@
     android:background="@drawable/background1"
     tools:context=".ScannerView">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="141dp"
+            android:layout_height="118dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/sona_logo" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="123dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="150dp"
+            app:srcCompat="@drawable/mapmysona_logo" />
+    </LinearLayout>
+
 </LinearLayout>

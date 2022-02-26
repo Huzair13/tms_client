@@ -11,8 +11,6 @@
 
 
 
-
-
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/scancode"
        android:layout_width="150dp"

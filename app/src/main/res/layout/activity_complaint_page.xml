@@ -18,7 +18,7 @@
             android:layout_width="141dp"
             android:layout_height="118dp"
             android:layout_gravity="top"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/sona_logo" />
 
         <ImageView
@@ -109,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="295dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white">
 
         <TableRow>
@@ -490,9 +490,9 @@
 
     <EditText
         android:layout_width="350dp"
-        android:layout_height="175dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:fontFamily="@font/mulish"

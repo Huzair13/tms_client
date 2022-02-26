@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static int sleeptimer=4000;
+    private static int sleeptimer=3000;
     TextView studio_text;
 
     @Override

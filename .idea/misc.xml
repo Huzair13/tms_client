@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_dashboard.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_history_details.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_main.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_scanner_view.xml" value="0.1" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/historylayout.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Shreesaraan D/AndroidStudioProjects/Map_My_Sona_new/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/background1.xml" value="0.2484375" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/curve_bg.xml" value="0.2484375" />
-        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_login_page.xml" value="0.2375" />
-        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.2282051282051282" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_forgetpassword.xml" value="0.23229166666666667" />
@@ -16,7 +20,6 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_home.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_loginpage.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
-        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manualentry.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_scanner_page.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_scanner_view.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/curve_bg.xml" value="0.2703125" />

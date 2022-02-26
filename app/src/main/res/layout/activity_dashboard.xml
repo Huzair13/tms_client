@@ -35,10 +35,18 @@
          android:text="Scan Code"
          android:textSize="20dp"
          android:gravity="center"
-          android:textColor="@color/white"
+          android:textColor="@color/charcoal"
           android:fontFamily="@font/mulish" >
 
       </TextView>
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+         android:src="@drawable/scanicon"
+          android:scaleType="fitCenter"
+         android:layout_marginRight="290dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="45dp"/>
    </com.google.android.material.card.MaterialCardView>
 
 
@@ -65,10 +73,20 @@
           android:text="History Details"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/white"
+          android:textColor="@color/charcoal"
           android:fontFamily="@font/mulish">
 
       </TextView>
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          android:src="@drawable/historyicon"
+          android:scaleType="fitCenter"
+          android:layout_marginRight="290dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="45dp"/>
+
+
 
    </com.google.android.material.card.MaterialCardView>
 
@@ -99,6 +117,15 @@
           android:fontFamily="@font/mulish">
 
       </TextView>
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          android:src="@drawable/manualicon"
+          android:scaleType="fitCenter"
+          android:layout_marginRight="290dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="45dp"/>
+
    </com.google.android.material.card.MaterialCardView>
 
 <!--   <com.google.android.material.floatingactionbutton.FloatingActionButton-->

@@ -23,15 +23,13 @@
  </com.airbnb.lottie.LottieAnimationView>
 
  <TextView
-     android:layout_width="wrap_content"
-     android:layout_height="62dp"
-     android:layout_gravity="center"
-     android:layout_marginLeft="15dp"
-     android:layout_marginTop="25dp"
-     android:text="MAP MY SONA"
-     android:textColor="@color/white"
-     android:textSize="30dp">
-
- </TextView>
-
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/studio_text"
+     android:text="Map My Sona"
+     android:gravity="center"
+     android:padding="15dp"
+     android:textSize="30dp"
+     android:fontFamily="cursive"
+     android:textColor="@color/white"/>
 </LinearLayout>

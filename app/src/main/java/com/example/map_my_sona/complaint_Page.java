@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class complaint_Page<FirebaseDatabase, Databa, FirebaseStorage> extends AppCompatActivity{
+import com.google.firebase.database.FirebaseDatabase;
+
+public class complaint_Page<Databa, FirebaseStorage> extends AppCompatActivity {
+    public static TextView scanText;
+
     Databa databaseReference;
     FirebaseStorage storage;
     FirebaseDatabase database;
@@ -15,7 +19,7 @@ public class complaint_Page<FirebaseDatabase, Databa, FirebaseStorage> extends A
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
 
-        TextView scanText = (TextView) findViewById(R.id.textView);
+        scanText=(TextView) findViewById(R.id.textView);
         String s = getIntent().getStringExtra("SCAN_RESULT");
 
 

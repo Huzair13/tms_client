@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".admin_dashboard"
+            android:exported="false" />
+        <activity
             android:name=".manualentry"
             android:exported="false" />
         <activity

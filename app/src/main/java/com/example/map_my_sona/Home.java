@@ -11,6 +11,9 @@ import com.google.android.material.button.MaterialButton;
 
 public class Home extends AppCompatActivity {
 
+    private long backPressedTime;
+    private Toast backToast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +22,8 @@ public class Home extends AppCompatActivity {
 
         MaterialButton a=findViewById(R.id.admin);
         MaterialButton b=findViewById(R.id.user);
+
+
 
         a.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +47,20 @@ public class Home extends AppCompatActivity {
             }
         });
 
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

@@ -56,9 +56,6 @@ public class AdminLoginPage extends AppCompatActivity {
                 startActivity(new Intent(AdminLoginPage.this,forgetpassword.class));
             }
         });
-
-
-
     }
 
     private void checkAdmin(String adminEmail, String adminPassword) {
@@ -77,9 +74,6 @@ public class AdminLoginPage extends AppCompatActivity {
             Toast.makeText(AdminLoginPage.this, "Sorry !!! Your details are not Correct !!!", Toast.LENGTH_LONG).show();
         }
     }
-
-
-
     private void openAdminPanel() {
         Intent intent=new Intent(AdminLoginPage.this, dashboard.class);
         startActivity(intent);

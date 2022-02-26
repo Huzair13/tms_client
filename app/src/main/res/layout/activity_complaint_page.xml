@@ -115,6 +115,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/sn_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -149,6 +150,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/make_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -183,6 +185,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/model_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -217,6 +220,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/procurement_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -251,6 +255,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/powerRating_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -285,6 +290,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/warranty_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -319,6 +325,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/warranty_exp_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -353,6 +360,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/ins_date_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -387,6 +395,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/ins_by_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

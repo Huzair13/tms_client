@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryDetails">
+    tools:context=".HistoryDetails"
+    android:background="@drawable/background1">
 
-    <TextView
-        android:id="@+id/history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Historydetails"
-        android:textSize="50dp"
-        android:layout_gravity="center">
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
 
-    </TextView>
+   </androidx.recyclerview.widget.RecyclerView>
+
+
+
 </LinearLayout>

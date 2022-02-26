@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:gravity="center"
+
+    tools:context=".admin_dashboard">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/registerdetail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/teal_700"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/sliver"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Registered Complaints"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mulish">
+
+        </TextView>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pending"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/registerdetail"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/teal_700"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/sliver">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Pending Complaint"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mulish">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/admincomplaint"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/pending"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:background="@color/teal_700"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/sliver">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Admin Complaint "
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mulish">
+
+
+        </TextView>
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="0dp"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/logout">-->
+
+<!--    </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
+
+</RelativeLayout>

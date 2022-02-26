@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class complaint_Page extends AppCompatActivity {
-    public static TextView scanText;
-
+public class complaint_Page<FirebaseDatabase, Databa, FirebaseStorage> extends AppCompatActivity{
     Databa databaseReference;
     FirebaseStorage storage;
     FirebaseDatabase database;
@@ -17,7 +15,7 @@ public class complaint_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
 
-        scanText=(TextView) findViewById(R.id.textView);
+        TextView scanText = (TextView) findViewById(R.id.textView);
         String s = getIntent().getStringExtra("SCAN_RESULT");
 
 

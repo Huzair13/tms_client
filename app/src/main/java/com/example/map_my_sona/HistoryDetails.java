@@ -19,5 +19,8 @@ public class HistoryDetails extends AppCompatActivity {
 
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        getActionBar().setTitle("HISTORY DETAILS");
+        getSupportActionBar().setTitle("HISTORY DETAILS");  // provide compatibility to all the versions
     }
 }

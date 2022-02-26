@@ -12,15 +12,15 @@ public class HistoryDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_details);
         // calling the action bar
-        ActionBar actionBar = getSupportActionBar();
+   //     ActionBar actionBar = getSupportActionBar();
 
         // Customize the back button
 //        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
 
         // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+  //      getActionBar().setHomeButtonEnabled(true);
 
-        getSupportActionBar().setTitle("HISTORY DETAILS");  // provide compatibility to all the versions
+    //    getSupportActionBar().setTitle("HISTORY DETAILS");  // provide compatibility to all the versions
     }
 }

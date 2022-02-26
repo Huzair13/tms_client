@@ -483,6 +483,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/mob_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

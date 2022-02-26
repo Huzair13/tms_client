@@ -30,7 +30,7 @@ public class dashboard extends AppCompatActivity {
 //        actionBar.setHomeAsUpIndicator(R.drawable.logout);
 
         // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         scanner=findViewById(R.id.scancode);
         manualentry = findViewById(R.id.manualentry);

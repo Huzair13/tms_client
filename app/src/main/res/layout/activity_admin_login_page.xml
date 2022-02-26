@@ -80,7 +80,6 @@
             android:fontFamily="@font/mulish"
 
             />
-
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -135,8 +134,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:fontFamily="@font/mulish">
-
-    </androidx.appcompat.widget.AppCompatTextView>
+        </androidx.appcompat.widget.AppCompatTextView>
 </LinearLayout>
 
 </RelativeLayout>

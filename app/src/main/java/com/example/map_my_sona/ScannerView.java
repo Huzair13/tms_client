@@ -29,13 +29,13 @@ public class ScannerView extends AppCompatActivity implements ZXingScannerView.R
         setContentView(scannerView);
 
         // calling the action bar
-        ActionBar actionBar = getSupportActionBar();
+       // ActionBar actionBar = getSupportActionBar();
 
         //customize backbutton
 //        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
 
         // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)

@@ -499,6 +499,7 @@
     </TableLayout>
 
     <EditText
+        android:id="@+id/complaint_Qrcode"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_marginLeft="45dp"
@@ -513,7 +514,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_complaint_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

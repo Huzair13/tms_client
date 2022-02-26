@@ -3,9 +3,16 @@ package com.example.map_my_sona;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -13,13 +20,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class complaint_Page extends AppCompatActivity{
 
-    TextView sn,make,model,procurement,powerRating,wexpiry,wperiod,ins_by,ins_date,mob;
+    private TextView sn,make,model,procurement,powerRating,wexpiry,wperiod,ins_by,ins_date,mob;
+    private EditText complaint_qrcode;
+    private Button complaint_subBtn;
 
-    String sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
-
+    private String sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
+    private String complaint_txt;
     DatabaseReference databaseReference;
+    String s;
+    DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +50,13 @@ public class complaint_Page extends AppCompatActivity{
         ins_by=(TextView)findViewById(R.id.ins_by_unit);
         ins_date=(TextView)findViewById(R.id.ins_date_unit);
         mob=(TextView)findViewById(R.id.mob_unit);
+        complaint_subBtn=(Button)findViewById(R.id.button_complaint_submit);
+
+        complaint_qrcode=(EditText)findViewById(R.id.complaint_Qrcode);
 
 
         TextView scanText = (TextView) findViewById(R.id.textView);
-        String s = getIntent().getStringExtra("SCAN_RESULT");
+        s = getIntent().getStringExtra("SCAN_RESULT");
 
         databaseReference=FirebaseDatabase.getInstance().getReference("Datas").child(s);
 
@@ -78,7 +95,54 @@ public class complaint_Page extends AppCompatActivity{
             }
         });
 
+        complaint_subBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(complaint_qrcode.getText().toString().isEmpty()){
+                    complaint_qrcode.setError("Empty");
+                    complaint_qrcode.requestFocus();
+                }else{
+                    submitComplaint();
+                }
+            }
+        });
 
         //scanText.setText(s);
+    }
+
+    private void submitComplaint() {
+
+        dbRef=FirebaseDatabase.getInstance().getReference().child("complaints");
+        final String uniqueKey=dbRef.push().getKey();
+
+        complaint_txt=complaint_qrcode.getText().toString();
+
+        Calendar calForDate=Calendar.getInstance();
+        SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yy");
+        String date=currentDate.format(calForDate.getTime());
+
+        Calendar calForTime = Calendar.getInstance();
+        SimpleDateFormat currentTime=new SimpleDateFormat("hh:mm a");
+        String time=currentTime.format(calForTime.getTime());
+
+
+        Complaint_details complaint_details =new Complaint_details(complaint_txt,sn_str,make_str,model_str,procurement_str,powerRating_str,wperiod_str,wexpiry_str,ins_by_str,ins_date_str,mob_str,date,time,uniqueKey,s);
+
+        dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(complaint_Page.this, dashboard.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(complaint_Page.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 }

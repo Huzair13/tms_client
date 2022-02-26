@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:inputType="textEmailAddress"
-            android:fontFamily="@font/mulish"/>
+            android:fontFamily="@font/alfa_slab_one"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:fontFamily="@font/mulish"
+            android:fontFamily="@font/alfa_slab_one"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -88,10 +88,10 @@
         android:layout_height="50dp"
         android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/worksans"
         android:text="Log in"
         app:cornerRadius="50dp"
-        app:icon="@drawable/login"
-        android:fontFamily="@font/mulish">
+        app:icon="@drawable/login">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -101,7 +101,7 @@
     android:orientation="horizontal"
     android:layout_below="@+id/loginbutton">
     <TextView
-        android:id="@+id/forgetpassword"
+        android:id="@+id/changepassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -110,14 +110,17 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Forget Password ?"
+        android:text="Change Password ?"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:fontFamily="@font/mulish">
+        android:fontFamily="@font/quattrocentro_sans">
 
     </TextView>
+
+
+
     <TextView
-        android:id="@+id/changepassword"
+        android:id="@+id/forgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -126,10 +129,10 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Change Password ?"
+        android:text="Forget Password ?"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:fontFamily="@font/mulish">
+        android:fontFamily="@font/quattrocentro_sans">
 
     </TextView>
 

@@ -44,7 +44,7 @@
         app:icon="@drawable/login"
         app:iconSize="40dp"
         app:cornerRadius="50dp"
-        android:fontFamily="@font/mulish">
+        android:fontFamily="@font/elmessiri">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -59,7 +59,7 @@
         app:icon="@drawable/usergoogle"
         app:iconSize="40dp"
         android:layout_marginTop="25dp"
-        android:fontFamily="@font/mulish">
+        android:fontFamily="@font/elmessiri">
 
     </com.google.android.material.button.MaterialButton>
 </LinearLayout>

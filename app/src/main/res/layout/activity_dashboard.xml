@@ -44,17 +44,27 @@
        app:cardCornerRadius="20dp"
        app:cardBackgroundColor="@color/sliver"
        >
+      <ImageView
+          android:layout_width="75dp"
+          android:layout_height="50dp"
+         android:layout_marginTop="25dp"
+         android:layout_marginLeft="34dp"
+         android:src="@drawable/scanicon"
+         android:scaleType="fitCenter"/>
 
       <TextView
+          android:id="@+id/scantext"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
+          android:textStyle="bold"
          android:text="Scan Code"
          android:textSize="20dp"
          android:gravity="center"
-          android:textColor="@color/white"
-          android:fontFamily="@font/mulish" >
+          android:textColor="@color/charcoal"
+          android:fontFamily="@font/quattrocentro_sans" >
 
       </TextView>
+
    </com.google.android.material.card.MaterialCardView>
 
 
@@ -75,14 +85,25 @@
        app:cardElevation="25dp"
        app:cardCornerRadius="20dp"
        app:cardBackgroundColor="@color/sliver">
+      <ImageView
+          android:layout_width="75dp"
+          android:layout_height="50dp"
+          android:layout_marginTop="25dp"
+          android:layout_marginLeft="34dp"
+          android:src="@drawable/historyicon"
+          android:scaleType="fitCenter"/>
+
+
       <TextView
+          android:id="@+id/historydetail"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
+          android:textStyle="bold"
           android:text="History Details"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/white"
-          android:fontFamily="@font/mulish">
+          android:textColor="@color/charcoal"
+          android:fontFamily="@font/quattrocentro_sans">
 
       </TextView>
 
@@ -104,15 +125,26 @@
        app:cardElevation="25dp"
        app:cardCornerRadius="20dp"
        app:cardBackgroundColor="@color/sliver">
+      <ImageView
+          android:layout_width="75dp"
+          android:layout_height="50dp"
+          android:layout_marginTop="25dp"
+          android:layout_marginLeft="34dp"
+          android:src="@drawable/manualicon"
+          android:scaleType="fitCenter"/>
+
+
 
       <TextView
+          android:id="@+id/manualentrys"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="Manual Entr"
+          android:textStyle="bold"
+          android:text="Manual Entry"
           android:textSize="20dp"
           android:gravity="center"
-          android:textColor="@color/black"
-          android:fontFamily="@font/mulish">
+          android:textColor="@color/charcoal"
+          android:fontFamily="@font/quattrocentro_sans">
 
       </TextView>
    </com.google.android.material.card.MaterialCardView>

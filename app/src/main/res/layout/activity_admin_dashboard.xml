@@ -47,14 +47,25 @@
         app:cardBackgroundColor="@color/sliver"
         >
 
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/registrationicon"
+            android:scaleType="fitCenter"/>
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Registered Complaints"
             android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="40dp"
             android:gravity="center"
-            android:textColor="@color/white"
-            android:fontFamily="@font/mulish">
+            android:textColor="@color/charcoal"
+            android:fontFamily="@font/quattrocentro_sans">
 
         </TextView>
     </com.google.android.material.card.MaterialCardView>
@@ -78,14 +89,24 @@
         app:cardElevation="25dp"
         app:cardCornerRadius="40dp"
         app:cardBackgroundColor="@color/sliver">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="34dp"
+            android:src="@drawable/pendingicon"
+            android:scaleType="fitCenter"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Pending Complaint"
+            android:textStyle="bold"
             android:textSize="20dp"
             android:gravity="center"
-            android:textColor="@color/white"
-            android:fontFamily="@font/mulish">
+            android:textColor="@color/charcoal"
+            android:fontFamily="@font/quattrocentro_sans">
 
         </TextView>
 
@@ -109,14 +130,24 @@
         app:cardCornerRadius="40dp"
         app:cardBackgroundColor="@color/sliver">
 
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="34dp"
+            android:src="@drawable/adminicon"
+            android:scaleType="fitCenter"/>
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Admin Complaint "
+            android:textStyle="bold"
             android:textSize="20dp"
             android:gravity="center"
-            android:textColor="@color/white"
-            android:fontFamily="@font/mulish">
+            android:textColor="@color/charcoal"
+            android:fontFamily="@font/quattrocentro_sans">
 
 
         </TextView>

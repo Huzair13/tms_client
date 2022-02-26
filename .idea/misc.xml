@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_login_page.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminpendingcomplaint.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminregistercomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.175" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_dashboard.xml" value="0.175" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_forgetpassword.xml" value="0.23229166666666667" />

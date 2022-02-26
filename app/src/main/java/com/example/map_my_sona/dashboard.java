@@ -14,7 +14,7 @@ public class dashboard extends AppCompatActivity {
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
-//    private TextView history;
+    private MaterialCardView history;
 
 
     @Override
@@ -34,7 +34,7 @@ public class dashboard extends AppCompatActivity {
 
         scanner=findViewById(R.id.scancode);
         manualentry = findViewById(R.id.manualentry);
-//        history = findViewById(R.id.histotydetails);
+        history = findViewById(R.id.histotydetails);
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +50,11 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-//        history.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(dashboard.this,HistoryDetails.class));
-//            }
-//        });
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashboard.this,HistoryDetails.class));
+            }
+        });
     }
 }

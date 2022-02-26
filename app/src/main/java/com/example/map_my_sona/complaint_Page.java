@@ -8,6 +8,10 @@ import android.widget.TextView;
 public class complaint_Page extends AppCompatActivity {
     public static TextView scanText;
 
+    Databa databaseReference;
+    FirebaseStorage storage;
+    FirebaseDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +20,7 @@ public class complaint_Page extends AppCompatActivity {
         scanText=(TextView) findViewById(R.id.textView);
         String s = getIntent().getStringExtra("SCAN_RESULT");
 
-        scanText.setText(s);
+
+        //scanText.setText(s);
     }
 }

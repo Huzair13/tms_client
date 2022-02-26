@@ -42,8 +42,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/pending"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/registerdetail"
 
         android:layout_marginStart="15dp"
@@ -55,14 +55,16 @@
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="25dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/sliver">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Pending "
+            android:text="Pending Complaint"
             android:textSize="20dp"
             android:gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/white"
+            android:fontFamily="@font/mulish">
 
         </TextView>
 
@@ -70,8 +72,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/admincomplaint"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/pending"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
@@ -83,7 +85,8 @@
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="25dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/sliver">
 
         <TextView
             android:layout_width="match_parent"
@@ -91,7 +94,9 @@
             android:text="Admin Complaint "
             android:textSize="20dp"
             android:gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/white"
+            android:fontFamily="@font/mulish">
+
 
         </TextView>
     </com.google.android.material.card.MaterialCardView>

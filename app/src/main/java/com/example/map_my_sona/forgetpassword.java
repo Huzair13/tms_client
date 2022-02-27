@@ -38,7 +38,7 @@ public class forgetpassword extends AppCompatActivity {
 //        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
 
         // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         emailAddressForgePass=(TextInputEditText) findViewById(R.id.ForgetPassEmail);
         resetPassBtn=(Button) findViewById(R.id.forgetpassbtn);

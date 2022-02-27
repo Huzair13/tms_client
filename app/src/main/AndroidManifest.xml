@@ -40,10 +40,10 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".complaint_Page"
+            android:name=".complaints.complaint_Page"
             android:exported="false" />
         <activity
-            android:name=".HistoryDetails"
+            android:name=".complaints.Complaints_HistoryDetails"
             android:exported="false" />
         <activity
             android:name=".ScannerPage"

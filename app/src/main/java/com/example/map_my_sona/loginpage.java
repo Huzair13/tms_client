@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ public class loginpage extends AppCompatActivity {
 
     private TextInputEditText LogEmail;
     private TextInputEditText LogPassword;
-    private TextView TvRegHere;
+    private TextView ForgetPass;
     private Button btnLogin;
 
     private FirebaseAuth mAuth;
@@ -39,11 +40,19 @@ public class loginpage extends AppCompatActivity {
         LogEmail=findViewById(R.id.loginemailInput);
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
+        ForgetPass=findViewById(R.id.forgetpassword);
 
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
             LoginUser();
+        });
+
+        ForgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginpage.this,forgetpassword.class));
+            }
         });
 
     }

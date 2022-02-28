@@ -10,8 +10,8 @@
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:layout_marginLeft="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
         android:textColor="@color/white">
 
@@ -281,7 +281,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/warranty_exp_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
@@ -316,7 +316,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/ins_date_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
@@ -351,7 +351,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/ins_by_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
@@ -385,7 +385,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/mob_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
@@ -398,7 +398,15 @@
 
         </TableRow>
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newqrupdate"
+            android:text="Update">
 
+        </com.google.android.material.button.MaterialButton>
     </TableLayout>
+
+
 
 </LinearLayout>

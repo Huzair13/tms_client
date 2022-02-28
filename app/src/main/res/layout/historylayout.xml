@@ -1,110 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    app:layout_constraintStart_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     tools:context=".complaints.Complaints_HistoryDetails"
     android:background="@drawable/background1">
 
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="S . No"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:layout_marginVertical="70dp"
+        android:layout_marginHorizontal="60dp"
+        android:background="@color/beige"
+        android:layout_margin="15px"
+        android:gravity="center">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SNo"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date and Time"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-        app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="58dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="complaint ID"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-    </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complaint Name"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Complaint Id"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="58dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/sn_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/deminblue"/>
+            <TextView
+                android:id="@+id/dateandtime_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/com_id_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:background="@color/deminblue"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/com_name_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Complaint Name"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="58dp" />
+            <TextView
+                android:id="@+id/status_history"
+                android:layout_width="95dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@color/deminblue"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:text="Status"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="58dp" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="TextView"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:layout_editor_absoluteX="24dp"
-        tools:ignore="MissingConstraints" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="TextView"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        tools:layout_editor_absoluteX="93dp"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:text="TextView"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        tools:layout_editor_absoluteX="199dp"
-        tools:ignore="MissingConstraints" />
+    </TableLayout>
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="TextView"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        tools:layout_editor_absoluteX="299dp"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

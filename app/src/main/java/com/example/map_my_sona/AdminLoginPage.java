@@ -75,7 +75,7 @@ public class AdminLoginPage extends AppCompatActivity {
         }
     }
     private void openAdminPanel() {
-        Intent intent=new Intent(AdminLoginPage.this, dashboard.class);
+        Intent intent=new Intent(AdminLoginPage.this, admin_dashboard.class);
         startActivity(intent);
     }
 

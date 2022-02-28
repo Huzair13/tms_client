@@ -8,6 +8,26 @@
     tools:context=".ScannerPage"
     android:background="@drawable/background1">
 
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="scannerpage"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        />
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
   <LinearLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -18,7 +38,7 @@
         android:layout_width="141dp"
         android:layout_height="118dp"
         android:layout_gravity="top"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         app:srcCompat="@drawable/sona_logo" />
 
     <ImageView
@@ -26,6 +46,7 @@
         android:layout_width="123dp"
         android:layout_height="102dp"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
         app:srcCompat="@drawable/mapmysona_logo" />
   </LinearLayout>
 

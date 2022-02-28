@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".historyviewdetails"
+            android:exported="false" />
+        <activity
             android:name=".adminregistercomplaint"
             android:exported="false" />
         <activity

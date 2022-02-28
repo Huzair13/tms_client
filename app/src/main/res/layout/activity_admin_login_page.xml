@@ -115,7 +115,7 @@
             android:layout_marginBottom="15dp"
             android:text="Change Password ?"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:fontFamily="@font/mulish">
 
         </androidx.appcompat.widget.AppCompatTextView>
@@ -130,9 +130,9 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:text="Forget Password "
+            android:text="Forget Password ?"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:fontFamily="@font/mulish">
         </androidx.appcompat.widget.AppCompatTextView>
 </LinearLayout>

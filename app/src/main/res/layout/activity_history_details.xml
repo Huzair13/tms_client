@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryDetails"
+    tools:context=".complaints.Complaints_HistoryDetails"
     android:orientation="vertical"
     android:background="@drawable/background1">
 
@@ -31,6 +31,7 @@
    </LinearLayout>
 
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerview_complaints_history"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 

@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.complaints;
 
 public class Complaint_details {
     private String com_txt;
@@ -32,7 +32,7 @@ public class Complaint_details {
         this.date = date;
         this.time = time;
         this.key = key;
-        UniqueId = uniqueId;
+        this.UniqueId = uniqueId;
     }
 
     public Complaint_details() {

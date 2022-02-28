@@ -87,6 +87,7 @@
       android:hint="Dept.Responsible"
       android:layout_marginLeft="25dp"
       android:background="@drawable/background1"
+
       >
 
     <AutoCompleteTextView

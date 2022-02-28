@@ -9,6 +9,36 @@
     android:orientation="vertical"
     tools:context=".admin_dashboard">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Dashboard"
+                app:menu="@menu/toolappbar"
+                app:navigationIcon="@drawable/menuicon"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:fitsSystemWindows="true"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="200dp"-->
+<!--        app:menu="@menu/navigationdrawer">-->
+
+<!--    </com.google.android.material.navigation.NavigationView>-->
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +49,7 @@
             android:layout_width="141dp"
             android:layout_height="118dp"
             android:layout_gravity="top"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="65dp"
             app:srcCompat="@drawable/sona_logo" />
 
         <ImageView
@@ -27,6 +57,7 @@
             android:layout_width="123dp"
             android:layout_height="102dp"
             android:layout_marginStart="150dp"
+            android:layout_marginTop="60dp"
             app:srcCompat="@drawable/mapmysona_logo" />
     </LinearLayout>
 

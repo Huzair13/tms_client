@@ -56,7 +56,7 @@ public class complaint_Page extends AppCompatActivity{
         complaint_qrcode=(EditText)findViewById(R.id.complaint_Qrcode);
 
 
-        TextView scanText = (TextView) findViewById(R.id.textView);
+//        TextView scanText = (TextView) findViewById(R.id.textView);
         s = getIntent().getStringExtra("SCAN_RESULT");
 
         databaseReference=FirebaseDatabase.getInstance().getReference("Datas").child(s);

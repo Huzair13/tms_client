@@ -13,6 +13,7 @@ public class ScannerPage extends AppCompatActivity {
 
     LinearLayout scanBtn;
     public static TextView scantxt;
+    TextView manualltext;
 
 //    private TextView manual;
 
@@ -23,7 +24,9 @@ public class ScannerPage extends AppCompatActivity {
         setContentView(R.layout.activity_scanner_page);
 
         scanBtn=findViewById(R.id.Scanner);
-        scantxt=(TextView) findViewById(R.id.scantxt);
+//        scantxt=(TextView) findViewById(R.id.scantxt);
+        manualltext=findViewById(R.id.entermanuallytext);
+
 //        manual =(TextView) findViewById(R.id.ManualEntry);
 
         scanBtn.setOnClickListener(new View.OnClickListener() {
@@ -34,11 +37,11 @@ public class ScannerPage extends AppCompatActivity {
             }
         });
 
-//        manual.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(ScannerPage.this,manualentry.class));
-//            }
-//        });
+        manualltext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScannerPage.this,manualentry.class));
+            }
+        });
     }
 }

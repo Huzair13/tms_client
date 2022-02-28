@@ -47,7 +47,7 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Staff Code:"
+      android:text="Staff Code :"
       android:textColor="@color/white"
       android:textSize="20dp"
       android:textStyle="bold"
@@ -55,11 +55,29 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Staff Name:"
+    android:text=""
+      android:textSize="15dp"
+      android:textStyle="bold"
+    android:textColor="@color/white">
+
+  </TextView>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Staff Name :"
       android:textColor="@color/white"
       android:textSize="20dp"
       android:textStyle="bold"
       android:layout_marginLeft="105dp"/>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text=""
+      android:textSize="15dp"
+      android:textStyle="bold"
+      android:textColor="@color/white">
+
+  </TextView>
 
 
 </LinearLayout>
@@ -83,11 +101,9 @@
       android:id="@+id/deptresponsible"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:hint="Dept.Responsible"
       android:layout_marginLeft="25dp"
-      android:background="@drawable/background1"
-
       >
 
     <AutoCompleteTextView
@@ -105,10 +121,10 @@
       android:id="@+id/branch"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:layout_marginLeft="25dp"
       android:hint="Branch"
-      android:background="@drawable/background1">
+      >
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
@@ -124,10 +140,10 @@
       android:id="@+id/location"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:hint="Location"
       android:layout_marginLeft="25dp"
-      android:background="@drawable/background1">
+      >
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
@@ -142,10 +158,10 @@
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/textField"
       android:layout_width="375dp"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:layout_marginLeft="25dp"
       android:hint="Complaint details"
-      android:background="@drawable/background1">
+      >
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
@@ -163,10 +179,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="375dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="25dp"
         android:hint="Complaint details"
-        android:background="@drawable/background1">
+        >
 
       <com.google.android.material.textfield.TextInputEditText
           android:layout_width="match_parent"
@@ -180,10 +196,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="375dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="25dp"
         android:hint="Intercom Number"
-        android:background="@drawable/background1">
+        >
 
       <com.google.android.material.textfield.TextInputEditText
           android:layout_width="match_parent"
@@ -199,10 +215,10 @@
 
   <com.google.android.material.textfield.TextInputLayout
       android:layout_width="375dp"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:layout_marginLeft="25dp"
       android:hint="Phone Number"
-     android:background="@drawable/background1" >
+      >
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
@@ -214,4 +230,13 @@
 
   </com.google.android.material.textfield.TextInputLayout>
 
+
+  <com.google.android.material.button.MaterialButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+    android:text="Submit"
+      android:textSize="25dp"
+      android:layout_gravity="center">
+
+  </com.google.android.material.button.MaterialButton>
 </LinearLayout>

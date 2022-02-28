@@ -64,11 +64,11 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         public Viewholder_complaints_history(@NonNull View itemView) {
             super(itemView);
 
-            sn_h=itemView.findViewById(R.id.sn_history);
-            dandt_h=itemView.findViewById(R.id.dateandtime_history);
-            comId_h=itemView.findViewById(R.id.com_id_history);
-            comName_h=itemView.findViewById(R.id.com_name_history);
-            status_h=itemView.findViewById(R.id.status_history);
+//            sn_h=itemView.findViewById(R.id.sn_history);
+//            dandt_h=itemView.findViewById(R.id.dateandtime_history);
+//            comId_h=itemView.findViewById(R.id.com_id_history);
+//            comName_h=itemView.findViewById(R.id.com_name_history);
+//            status_h=itemView.findViewById(R.id.status_history);
 
         }
     }

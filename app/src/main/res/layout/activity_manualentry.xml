@@ -107,6 +107,7 @@
       >
 
     <AutoCompleteTextView
+        android:id="@+id/deptresponsibletext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="none"
@@ -127,6 +128,7 @@
       >
 
     <AutoCompleteTextView
+        android:id="@+id/branchtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="none"
@@ -146,6 +148,7 @@
       >
 
     <AutoCompleteTextView
+        android:id="@+id/locationtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="none"

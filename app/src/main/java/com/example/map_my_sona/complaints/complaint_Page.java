@@ -32,6 +32,7 @@ public class complaint_Page extends AppCompatActivity{
 
     private String complainted_by_dep_str,complainted_by_name_str,complainted_by_mob_str,sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
     private String complaint_txt;
+    String status="Pending";
     DatabaseReference databaseReference;
     String s;
     DatabaseReference dbRef;
@@ -133,7 +134,7 @@ public class complaint_Page extends AppCompatActivity{
         String time=currentTime.format(calForTime.getTime());
 
 
-        Complaint_details complaint_details =new Complaint_details(complainted_by_name_str,complainted_by_mob_str,complainted_by_dep_str,complaint_txt,sn_str,make_str,model_str,procurement_str,powerRating_str,wperiod_str,wexpiry_str,ins_by_str,ins_date_str,mob_str,date,time,uniqueKey,s);
+        Complaint_details complaint_details =new Complaint_details(complainted_by_name_str,complainted_by_mob_str,complainted_by_dep_str,complaint_txt,sn_str,make_str,model_str,procurement_str,powerRating_str,wperiod_str,wexpiry_str,ins_by_str,ins_date_str,mob_str,date,time,uniqueKey,s,status);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

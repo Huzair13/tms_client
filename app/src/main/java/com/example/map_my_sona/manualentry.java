@@ -38,11 +38,11 @@ public class manualentry extends AppCompatActivity {
         locationtext=findViewById(R.id.locationtext);
 
 
-        String[] dept={"electricity","watersupply","network","wiring","painting"};
+        String[] dept={"ItBlock","UniversityBlock","CivilBlock","MechBlock","Auditorium","PgAuditorium","ValliapaAuditorium"};
         ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowndept,dept);
         deptrestext.setAdapter(itemAdapter);
 
-        String[] branch={"001","002","003","004","005"};
+        String[] branch={"","","","",""};
         ArrayAdapter<String> branchAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownbranch,branch);
         branchtext.setAdapter(branchAdapter);
 

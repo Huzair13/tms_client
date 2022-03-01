@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 
 public class admin_dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +24,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
     NavigationView navigationView;
     MaterialToolbar toolbar;
     AlertDialog.Builder builder;
+    MaterialCardView admincom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         drawerLayout=findViewById(R.id.admin_Drawer_Layout);
         navigationView=findViewById(R.id.nav_view_admin);
         toolbar=findViewById(R.id.topAppBar_admin);
+        admincom = findViewById(R.id.admincomplaint_admin);
 
         builder=new AlertDialog.Builder(this);
 
@@ -46,6 +49,13 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         navigationView.setCheckedItem(R.id.nav_home_admin);
 
         View headerview=navigationView.getHeaderView(0);
+
+        admincom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(admin_dashboard.this,ScannerPage.class));
+            }
+        });
 
     }
 

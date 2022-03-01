@@ -51,7 +51,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         holder.comId_h.setText(complaint_details.getKey());
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
-        holder.status_h.setText("Pending");
+        holder.status_h.setText(complaint_details.getStatus());
 
     }
 

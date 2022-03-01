@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,6 +52,7 @@ public class historyviewdetails extends AppCompatActivity {
         Intent intent=getIntent();
         String com_id_new=intent.getStringExtra("com_ID");
 
+
         staff_name=(TextView)findViewById(R.id.staff_name_unit_his);
         staff_dep=(TextView)findViewById(R.id.dep_unit_his);
         com_id=(TextView)findViewById(R.id.Comid_unit_his);
@@ -66,6 +68,7 @@ public class historyviewdetails extends AppCompatActivity {
 
         pro_id=(TextView) findViewById(R.id.Product_ID_history);
         com_status_his=(TextView)findViewById(R.id.complaint_status_his);
+
 
         comp_close=(Button)findViewById(R.id.close_the_com_his);
 
@@ -108,6 +111,14 @@ public class historyviewdetails extends AppCompatActivity {
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
 
+                if (status.equals("Pending")){
+                    com_status_his.setBackgroundResource(R.color.Red);
+
+                }else{
+                    com_status_his.setBackgroundResource(R.color.green);
+                }
+                com_status_his.setTextColor(getResources().getColor(R.color.white));
+
 
             }
 
@@ -117,6 +128,7 @@ public class historyviewdetails extends AppCompatActivity {
 
             }
         });
+
 
          comp_close.setOnClickListener(new View.OnClickListener() {
             @Override

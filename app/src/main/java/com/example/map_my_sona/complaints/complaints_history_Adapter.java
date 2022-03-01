@@ -48,6 +48,8 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
         String postkey= complaint_details.getKey();
 
+        String status_com=complaint_details.getStatus();
+
         holder.comId_h.setText(complaint_details.getKey());
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());

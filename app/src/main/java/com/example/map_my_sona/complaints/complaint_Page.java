@@ -27,10 +27,10 @@ import java.util.Calendar;
 public class complaint_Page extends AppCompatActivity{
 
     private TextView sn,make,model,procurement,powerRating,wexpiry,wperiod,ins_by,ins_date,mob;
-    private EditText complaint_qrcode;
+    private EditText complaint_qrcode,complainted_by_name,complainted_by_mob,complainted_by_dep;
     private Button complaint_subBtn;
 
-    private String sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
+    private String complainted_by_dep_str,complainted_by_name_str,complainted_by_mob_str,sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
     private String complaint_txt;
     DatabaseReference databaseReference;
     String s;
@@ -54,6 +54,9 @@ public class complaint_Page extends AppCompatActivity{
         complaint_subBtn=(Button)findViewById(R.id.button_complaint_submit);
 
         complaint_qrcode=(EditText)findViewById(R.id.complaint_Qrcode);
+        complainted_by_name=(EditText)findViewById(R.id.scan_qr_com_name);
+        complainted_by_mob=(EditText)findViewById(R.id.scan_qr_com_mob);
+        complainted_by_dep=(EditText)findViewById(R.id.scan_qr_com_dep);
 
 
 //        TextView scanText = (TextView) findViewById(R.id.textView);
@@ -117,6 +120,9 @@ public class complaint_Page extends AppCompatActivity{
         final String uniqueKey=dbRef.push().getKey();
 
         complaint_txt=complaint_qrcode.getText().toString();
+        complainted_by_name_str=complainted_by_name.getText().toString();
+        complainted_by_mob_str=complainted_by_mob.getText().toString();
+        complainted_by_dep_str=complainted_by_dep.getText().toString();
 
         Calendar calForDate=Calendar.getInstance();
         SimpleDateFormat currentDate=new SimpleDateFormat("dd-MM-yy");
@@ -127,7 +133,7 @@ public class complaint_Page extends AppCompatActivity{
         String time=currentTime.format(calForTime.getTime());
 
 
-        Complaint_details complaint_details =new Complaint_details(complaint_txt,sn_str,make_str,model_str,procurement_str,powerRating_str,wperiod_str,wexpiry_str,ins_by_str,ins_date_str,mob_str,date,time,uniqueKey,s);
+        Complaint_details complaint_details =new Complaint_details(complainted_by_name_str,complainted_by_mob_str,complainted_by_dep_str,complaint_txt,sn_str,make_str,model_str,procurement_str,powerRating_str,wperiod_str,wexpiry_str,ins_by_str,ins_date_str,mob_str,date,time,uniqueKey,s);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

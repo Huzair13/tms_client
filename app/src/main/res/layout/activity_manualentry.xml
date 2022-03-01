@@ -101,7 +101,7 @@
       android:id="@+id/deptresponsible"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="50dp"
+      android:layout_height="60dp"
       android:hint="Dept.Responsible"
       android:layout_marginLeft="25dp"
       >
@@ -122,7 +122,7 @@
       android:id="@+id/branch"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="50dp"
+      android:layout_height="60dp"
       android:layout_marginLeft="25dp"
       android:hint="Branch"
       >
@@ -142,7 +142,7 @@
       android:id="@+id/location"
       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
       android:layout_width="375dp"
-      android:layout_height="50dp"
+      android:layout_height="60dp"
       android:hint="Location"
       android:layout_marginLeft="25dp"
       >
@@ -161,7 +161,7 @@
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/textField"
       android:layout_width="375dp"
-      android:layout_height="50dp"
+      android:layout_height="60dp"
       android:layout_marginLeft="25dp"
       android:hint="Complaint details"
       >
@@ -182,7 +182,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="375dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="25dp"
         android:hint="Complaint details"
         >
@@ -199,7 +199,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="375dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="25dp"
         android:hint="Intercom Number"
         >
@@ -218,7 +218,7 @@
 
   <com.google.android.material.textfield.TextInputLayout
       android:layout_width="375dp"
-      android:layout_height="50dp"
+      android:layout_height="60dp"
       android:layout_marginLeft="25dp"
       android:hint="Phone Number"
       >

@@ -8,6 +8,8 @@
     tools:context=".Newqrcode"
     android:background="@drawable/background1">
 
+
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -157,14 +159,15 @@
         <TableRow>
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="4"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+
 
             <TextView
                 android:layout_width="202dp"
@@ -220,7 +223,8 @@
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
         </TableRow>
 
@@ -290,7 +294,8 @@
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="date"/>
 
         </TableRow>
 
@@ -325,7 +330,8 @@
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="date"/>
 
         </TableRow>
 
@@ -394,7 +400,8 @@
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="number"/>
 
         </TableRow>
 
@@ -402,11 +409,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/newqrupdate"
-            android:text="Update">
+            android:text="Update"
+            app:cornerRadius="25dp"
+            android:fontFamily="@font/elmessiri">
 
         </com.google.android.material.button.MaterialButton>
     </TableLayout>
-
 
 
 </LinearLayout>

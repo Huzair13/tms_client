@@ -100,6 +100,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_below="@+id/loginbutton">
+
     <TextView
         android:id="@+id/changepassword"
         android:layout_width="wrap_content"
@@ -112,7 +113,7 @@
         android:text="Change Password ?"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:fontFamily="@font/quattrocentro_sans">
+        android:fontFamily="@font/elmessiri">
 
     </TextView>
 
@@ -131,7 +132,7 @@
         android:text="Forget Password ?"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:fontFamily="@font/quattrocentro_sans">
+        android:fontFamily="@font/elmessiri">
 
     </TextView>
 

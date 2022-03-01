@@ -27,6 +27,7 @@ public class loginpage extends AppCompatActivity {
     private TextInputEditText LogEmail;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
+    private  TextView Changepass;
     private Button btnLogin;
 
     private FirebaseAuth mAuth;
@@ -41,6 +42,7 @@ public class loginpage extends AppCompatActivity {
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
+        Changepass=findViewById(R.id.changepassword);
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -52,6 +54,13 @@ public class loginpage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(loginpage.this,forgetpassword.class));
+            }
+        });
+
+        Changepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(loginpage.this,changepassword.class));
             }
         });
 

@@ -452,7 +452,8 @@
             android:textStyle="bold"
             android:fontFamily="@font/mulish"
             android:hint="Your Mobile Number"
-            android:textColorHint="@color/white">
+            android:textColorHint="@color/white"
+            android:inputType="number">
 
         </EditText>
 
@@ -465,7 +466,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:fontFamily="@font/mulish"
-            android:hint="Your DepartMent"
+            android:hint="Your Department"
             android:textColorHint="@color/white">
 
         </EditText>

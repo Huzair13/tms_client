@@ -13,8 +13,7 @@
     <color name="grey">#808080</color>
     <color name="sliver">#C0C0C0</color>
     <color name="Red">#D22B2B</color>
-    <color name="green">
-        #32CD30</color>
+    <color name="green">#32CD30</color>
     <color name="charcoal">#36454F</color>
 
 </resources>

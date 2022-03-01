@@ -27,8 +27,8 @@ public class AdminLoginPage extends AppCompatActivity {
         loginEmailAdmin=findViewById(R.id.loginemailInputAdmin);
         LoginPasswordAdmin=findViewById(R.id.loginpasswordInputAdmin);
         LoginBtnAdmin=findViewById(R.id.loginbuttonAdmin);
-         Changepassword = findViewById(R.id.changepassword);
-         Forgetpassword =findViewById(R.id.forgetpassword);
+         Changepassword = findViewById(R.id.achangepassword);
+         Forgetpassword =findViewById(R.id.aforgetpassword);
         //
 
 
@@ -59,7 +59,7 @@ public class AdminLoginPage extends AppCompatActivity {
     }
 
     private void checkAdmin(String adminEmail, String adminPassword) {
-        if(adminEmail.equals("MapMySona") & adminPassword.equals("MapMySona")){
+        if(adminEmail.equals("admin") & adminPassword.equals("admin")){
             openAdminPanel();
         }
         else if(TextUtils.isEmpty(adminEmail)){

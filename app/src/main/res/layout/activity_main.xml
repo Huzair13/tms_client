@@ -11,6 +11,7 @@
     android:background="@drawable/background1">
 
 
+
  <com.airbnb.lottie.LottieAnimationView
      android:layout_width="279dp"
      android:layout_height="266dp"
@@ -26,7 +27,7 @@
      android:id="@+id/studio_text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:fontFamily="cursive"
+     android:fontFamily="@font/elmessiri"
      android:gravity="center"
      android:padding="15dp"
      android:text="Map My Sona"

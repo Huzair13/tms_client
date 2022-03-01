@@ -88,7 +88,8 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:layout_below="@+id/qrcode">
+        android:layout_below="@+id/qrcode"
+        android:fontFamily="@font/elmessiri">
 
     </TextView>
   </LinearLayout>
@@ -104,6 +105,7 @@
       android:text="Enter Manually"
       android:textColor="#FF006F"
       android:textSize="25dp"
-      android:textStyle="bold" />
+      android:textStyle="bold"
+      android:fontFamily="@font/elmessiri"/>
 
 </RelativeLayout>

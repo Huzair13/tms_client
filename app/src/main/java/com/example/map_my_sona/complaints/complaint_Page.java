@@ -106,11 +106,29 @@ public class complaint_Page extends AppCompatActivity{
                 if(complaint_qrcode.getText().toString().isEmpty()){
                     complaint_qrcode.setError("Empty");
                     complaint_qrcode.requestFocus();
-                }else{
+                }
+               else if(complainted_by_name.getText().toString().isEmpty()){
+                    complainted_by_name.setError("Empty");
+                    complainted_by_name.requestFocus();
+                }
+
+                else if(complainted_by_mob.getText().toString().isEmpty()){
+                    complainted_by_mob.setError("Empty");
+                    complainted_by_mob.requestFocus();
+                }
+
+                else if(complainted_by_dep.getText().toString().isEmpty()){
+                    complainted_by_dep.setError("Empty");
+                    complainted_by_dep.requestFocus();
+                }
+                else{
                     submitComplaint();
                 }
             }
         });
+
+
+
 
         //scanText.setText(s);
     }

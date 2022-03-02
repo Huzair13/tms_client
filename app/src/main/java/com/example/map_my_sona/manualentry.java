@@ -42,7 +42,7 @@ public class manualentry extends AppCompatActivity {
         ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowndept,dept);
         deptrestext.setAdapter(itemAdapter);
 
-        String[] branch={"","","","",""};
+        String[] branch={"Network","Electician","XXX","YYY","ZZZ"};
         ArrayAdapter<String> branchAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownbranch,branch);
         branchtext.setAdapter(branchAdapter);
 

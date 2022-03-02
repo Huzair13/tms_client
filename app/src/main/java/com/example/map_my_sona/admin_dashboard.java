@@ -36,6 +36,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         toolbar=findViewById(R.id.topAppBar_admin);
         admincom = findViewById(R.id.admincomplaint_admin);
 
+
         builder=new AlertDialog.Builder(this);
 
         setSupportActionBar(toolbar);
@@ -47,6 +48,8 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(admin_dashboard.this);
 
         navigationView.setCheckedItem(R.id.nav_home_admin);
+        navigationView.setCheckedItem(R.id.new_id);
+        navigationView.setCheckedItem(R.id.nav_newQR);
 
         View headerview=navigationView.getHeaderView(0);
 
@@ -77,6 +80,14 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
 
             case R.id.nav_home_admin:
                 startActivity(new Intent(admin_dashboard.this, admin_dashboard.class));
+                break;
+
+            case R.id.new_id:
+                startActivity(new Intent(admin_dashboard.this, Qr_id_generator.class));
+                break;
+
+            case R.id.nav_newQR:
+                startActivity(new Intent(admin_dashboard.this, Newqrcode.class));
                 break;
 
             case R.id.nav_logOut:

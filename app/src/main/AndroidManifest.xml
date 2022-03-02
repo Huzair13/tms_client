@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".Qr_id_generator"
+            android:exported="false" />
+        <activity
             android:name=".Newqrcode"
             android:exported="false" />
         <activity

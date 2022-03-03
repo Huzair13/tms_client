@@ -23,8 +23,12 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
@@ -38,9 +42,7 @@ public class Qr_id_generator extends AppCompatActivity {
     MaterialButton qrsave;
 
     //
-    String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
-    QRGEncoder qrgEncoder;
-    Bitmap bitmap;
+    OutputStream outputStream;
 
 
     @Override
@@ -53,22 +55,43 @@ public class Qr_id_generator extends AppCompatActivity {
         ivoutput=findViewById(R.id.iv_output);
         qrsave=findViewById(R.id.qrsave);
 
-        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+//        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+//        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
         qrsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean save;
-                String result;
-                try {
-                    save = QRGSaver.save(savePath, etinput.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
-                    result = save ? "Image Saved" : "Image Not Saved";
-                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+//
+
+//                BitmapDrawable drawable =(BitmapDrawable) ivoutput.getDrawable();
+//                Bitmap bitmap = drawable.getBitmap();
+//
+//                File filepath=Environment.getExternalStorageDirectory();
+//                File dir=new File(filepath.getAbsolutePath()+"/demo");
+//                dir.mkdir();
+//                File file =new File(dir,System.currentTimeMillis()+".jpg");
+//                try{
+//                    outputStream = new FileOutputStream(file);
+//                }catch(FileNotFoundException e){
+//                    e.printStackTrace();
+//                }
+//                MemoryStream stream = new MemoryStream();
+//                bitmap.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
+//                byte[] reducedImage = stream.ToArray();
+//
+//                Toast.makeText(getApplicationContext(),"Image Save To Internal !!!", Toast.LENGTH_SHORT).show();
+//                try {
+//                    outputStream.flush();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    outputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+          }
         });
 
 

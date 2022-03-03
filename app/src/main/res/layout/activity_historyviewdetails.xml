@@ -39,6 +39,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/Product_ID_history"
                 android:layout_width="150dp"
@@ -71,7 +79,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="S.No:"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/cellshape"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -81,7 +90,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Details"
-                    android:textColor="@color/white"
+                    android:background="@drawable/cellshape"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -91,7 +101,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Unit"
-                    android:textColor="@color/white"
+                    android:background="@drawable/cellshape"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -105,7 +116,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="1"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/cellshape"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -115,7 +127,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Complaint Id"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -126,7 +139,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="10dp"
                     android:textStyle="bold" />
 
@@ -140,8 +154,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -150,7 +165,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Staff Name"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -161,7 +177,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -175,8 +192,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -185,7 +203,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Department"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -196,7 +215,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -210,8 +230,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="4"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -220,7 +241,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Staff Mobile Number"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -231,7 +253,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -245,8 +268,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="5"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -255,7 +279,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Power Rating"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -266,7 +291,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -280,8 +306,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="6"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -290,7 +317,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Warranty Period"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -301,7 +329,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -315,8 +344,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="7"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -325,7 +355,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Warranty Expiry Date"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -336,7 +367,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -350,8 +382,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="8"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -360,7 +393,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Installed Date"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -371,7 +405,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -385,8 +420,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="9"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -395,7 +431,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Installation By"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -406,7 +443,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -419,8 +457,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="10"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -429,7 +468,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Mobile No."
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -440,7 +480,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -467,22 +508,22 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/mulish"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:fontFamily="@font/mulish">
+            android:textStyle="bold">
 
         </TextView>
 
         <Button
             android:id="@+id/close_the_com_his"
-            android:layout_marginTop="25dp"
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:text="Close the Complaint"
+            android:layout_marginTop="10dp"
             android:background="#32CD30"
+            android:text="Close the Complaint"
             android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

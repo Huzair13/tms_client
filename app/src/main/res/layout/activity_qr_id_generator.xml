@@ -53,4 +53,16 @@
         android:background="@drawable/background1">
     </ImageView>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/qrsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        app:icon="@drawable/save">
+
+    </com.google.android.material.button.MaterialButton>
 </LinearLayout>

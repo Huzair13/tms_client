@@ -68,52 +68,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Unique ID "
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/uniqueid_update_admin"
-                android:layout_width="113dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="2"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:text="Serial No."
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/sn_update_admin"
+                android:id="@+id/sn_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -127,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="3"
+                android:text="2"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -143,11 +109,12 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/make_update_admin"
+                android:id="@+id/make_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -161,7 +128,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="4"
+                android:text="3"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -177,11 +144,48 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/model_update_admin"
+                android:id="@+id/model_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="202dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Procurement Date"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/procurement_unit"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -200,41 +204,6 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-
-            <TextView
-                android:layout_width="202dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Procurement Date"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/procurement_update_admin"
-                android:layout_width="113dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="77dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="6"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
             <TextView
                 android:layout_width="140dp"
                 android:layout_height="match_parent"
@@ -246,11 +215,12 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/powerRating_update_admin"
+                android:id="@+id/powerRating_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -265,7 +235,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="7"
+                android:text="6"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -281,14 +251,51 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/warranty_update_admin"
+                android:id="@+id/warranty_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Warranty Expiry Date"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/warranty_exp_unit"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:inputType="date"/>
 
         </TableRow>
 
@@ -309,52 +316,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Warranty Expiry Date"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/warranty_exp_update_admin"
-                android:layout_width="113dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:inputType="date"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="9"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:text="Installed Date"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/ins_date_update_admin"
+                android:id="@+id/ins_date_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -369,7 +342,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="10"
+                android:text="9"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -385,11 +358,12 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/ins_by_update_admin"
+                android:id="@+id/ins_by_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -402,7 +376,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="11"
+                android:text="10"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -418,11 +392,12 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/mob_update_admin"
+                android:id="@+id/mob_unit"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -433,8 +408,8 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/newqrupdate_btn"
-            android:text="Add New"
+            android:id="@+id/newqrupdate"
+            android:text="Update"
             app:cornerRadius="25dp"
             android:fontFamily="@font/elmessiri">
 

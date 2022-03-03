@@ -72,9 +72,6 @@ public class Qr_id_generator extends AppCompatActivity {
         });
 
 
-
-
-
         btgenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

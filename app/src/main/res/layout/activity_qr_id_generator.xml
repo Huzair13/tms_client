@@ -61,7 +61,8 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        app:icon="@drawable/save">
 
     </com.google.android.material.button.MaterialButton>
 </LinearLayout>

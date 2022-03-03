@@ -103,7 +103,7 @@ public class Qr_id_generator extends AppCompatActivity {
                 MultiFormatWriter writer =new MultiFormatWriter();
 
                 try {
-                    BitMatrix matrix =writer.encode(sText, BarcodeFormat.QR_CODE,350,350);
+                    BitMatrix matrix =writer.encode(sText, BarcodeFormat.QR_CODE,340,350);
 
                     BarcodeEncoder encoder =new BarcodeEncoder();
 

@@ -55,45 +55,15 @@ public class Qr_id_generator extends AppCompatActivity {
         ivoutput=findViewById(R.id.iv_output);
         qrsave=findViewById(R.id.qrsave);
 
-//        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-//        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        ActivityCompat.requestPermissions(Qr_id_generator.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
         qrsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//
-
-//                BitmapDrawable drawable =(BitmapDrawable) ivoutput.getDrawable();
-//                Bitmap bitmap = drawable.getBitmap();
-//
-//                File filepath=Environment.getExternalStorageDirectory();
-//                File dir=new File(filepath.getAbsolutePath()+"/demo");
-//                dir.mkdir();
-//                File file =new File(dir,System.currentTimeMillis()+".jpg");
-//                try{
-//                    outputStream = new FileOutputStream(file);
-//                }catch(FileNotFoundException e){
-//                    e.printStackTrace();
-//                }
-//                MemoryStream stream = new MemoryStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
-//                byte[] reducedImage = stream.ToArray();
-//
-//                Toast.makeText(getApplicationContext(),"Image Save To Internal !!!", Toast.LENGTH_SHORT).show();
-//                try {
-//                    outputStream.flush();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                try {
-//                    outputStream.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
+                saveToGallery();
           }
         });
-
 
         btgenerate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,61 +74,51 @@ public class Qr_id_generator extends AppCompatActivity {
 
                 try {
                     BitMatrix matrix =writer.encode(sText, BarcodeFormat.QR_CODE,340,350);
-
                     BarcodeEncoder encoder =new BarcodeEncoder();
-
                     Bitmap bitmap =encoder.createBitmap(matrix);
-
                     ivoutput.setImageBitmap(bitmap);
-
                     InputMethodManager manager =(InputMethodManager)  getSystemService(
                             Context.INPUT_METHOD_SERVICE
                     );
-
                     manager.hideSoftInputFromWindow(etinput.getApplicationWindowToken(),0);
-
                 } catch (WriterException e) {
                     e.printStackTrace();
                 }
-
-
             }
         });
-
-
-
     }
 
-    //
+    private void saveToGallery(){
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) ivoutput.getDrawable();
+        Bitmap bitmap = bitmapDrawable.getBitmap();
 
-//    private void saveToGallery(){
-//        BitmapDrawable bitmapDrawable = (BitmapDrawable) ivoutput.getDrawable();
-//        Bitmap bitmap = bitmapDrawable.getBitmap();
-//
-//        FileOutputStream outputStream = null;
-//        File file = Environment.getExternalStorageDirectory();
-//        File dir = new File(file.getAbsolutePath() + "/MyPics");
-//        dir.mkdirs();
-//
-//        String filename = String.format("%d.png",System.currentTimeMillis());
-//        File outFile = new File(dir,filename);
-//        try{
-//            outputStream = new FileOutputStream(outFile);
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
-//        try{
-//            outputStream.flush();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        try{
-//            outputStream.close();
-//        }
-//        catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
+        FileOutputStream outputStream = null;
+        File file = Environment.getExternalStorageDirectory();
+        File dir = new File(file.getAbsolutePath() + "/MyPics");
+        dir.mkdirs();
+
+        String filename = String.format("%d.png",System.currentTimeMillis());
+        File outFile = new File(dir,filename);
+        try{
+            outputStream = new FileOutputStream(outFile);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+        try{
+            outputStream.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
+            outputStream.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
+
+
 

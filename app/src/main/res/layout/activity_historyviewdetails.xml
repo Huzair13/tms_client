@@ -72,6 +72,7 @@
                     android:gravity="center"
                     android:text="S.No:"
                     android:textColor="@color/white"
+                    android:background="@drawable/cellshape"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -106,6 +107,7 @@
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@color/white"
+                    android:background="@drawable/cellshape"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 

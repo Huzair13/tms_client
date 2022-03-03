@@ -24,11 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 public class Newqrcode extends AppCompatActivity {
 
     private EditText unique_id_ad,sn_ad,make_ad,model_ad,procurement_ad,powerRating_ad,wperiod_ad,wexpiryDate_ad,insDate_ad,insBy_ad,mob_ad;
-    //String unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad;
     private Button AddNew;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
-    DatabaseReference rootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

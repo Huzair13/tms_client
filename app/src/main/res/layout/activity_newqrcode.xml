@@ -6,10 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Newqrcode"
+    android:orientation="vertical"
     android:background="@drawable/background1">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="-10dp"
+            app:srcCompat="@drawable/sona_logo" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="123dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="150dp"
+            app:srcCompat="@drawable/mapmysona_logo" />
+    </LinearLayout>
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +45,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="S.No:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -35,7 +56,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Details"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -45,7 +67,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Unit"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -59,7 +82,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="1"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -69,7 +93,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Serial No."
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -80,7 +105,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -94,7 +120,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="2"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -104,7 +131,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Make"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -115,7 +143,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -129,7 +158,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="3"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -139,7 +169,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Model No."
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -150,7 +181,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -164,7 +196,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="4"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -175,7 +208,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Procurement Date"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -186,7 +220,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -200,7 +235,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="5"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -210,7 +246,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Power Rating"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -221,7 +258,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -236,7 +274,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="6"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -246,7 +285,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Warranty Period"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -257,7 +297,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -271,7 +312,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="7"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -281,7 +323,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Warranty Expiry Date"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -292,7 +335,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:inputType="date"/>
@@ -307,7 +351,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="8"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -317,7 +362,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Installed Date"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -328,7 +374,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:inputType="date"/>
@@ -343,7 +390,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="9"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -353,7 +401,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Installation By"
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -364,7 +413,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -377,7 +427,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -387,7 +438,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Mobile No."
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -398,7 +450,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/white"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:inputType="number"/>
@@ -410,6 +463,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/newqrupdate"
             android:text="Update"
+            android:layout_marginTop="40dp"
             app:cornerRadius="25dp"
             android:fontFamily="@font/elmessiri">
 

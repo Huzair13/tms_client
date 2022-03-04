@@ -10,6 +10,10 @@
             android:icon="@drawable/ic_baseline_qr_code_24"
             android:title="Generate New QR Code" />
         <item
+            android:id="@+id/update_data"
+            android:icon="@drawable/ic_baseline_update_24"
+            android:title="Update Data"/>
+        <item
             android:id="@+id/new_id"
             android:icon="@drawable/qrid"
             android:title="New Qr ID Generate " />

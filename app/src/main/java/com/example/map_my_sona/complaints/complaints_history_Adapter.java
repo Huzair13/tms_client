@@ -50,10 +50,16 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
         String status_com=complaint_details.getStatus();
 
+        if(status_com.equals("Pending")){
+            holder.status_h.setBackgroundResource(R.color.Red);
+        }else{
+            holder.status_h.setBackgroundResource(R.color.green);
+        }
+        holder.status_h.setText(complaint_details.getStatus());
+
         holder.comId_h.setText(complaint_details.getKey());
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
-        holder.status_h.setText(complaint_details.getStatus());
 
     }
 

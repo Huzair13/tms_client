@@ -55,7 +55,6 @@ dependencies {
     implementation 'org.webjars.bower:readmore:2.0.5'
     implementation 'com.google.firebase:firebase-firestore:23.0.4'
     implementation platform('com.google.firebase:firebase-bom:28.1.0')
-
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
 

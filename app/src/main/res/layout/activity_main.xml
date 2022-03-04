@@ -12,32 +12,19 @@
 
 
 
-
-<!-- <TextView-->
-<!--     android:id="@+id/text2"-->
-<!--     android:layout_width="match_parent"-->
-<!--     android:layout_height="wrap_content"-->
-<!--     android:fontFamily="@font/elmessiri"-->
-<!--     android:gravity="center"-->
-<!--     android:padding="15dp"-->
-<!--     android:text="Map My Sona"-->
-<!--     android:textColor="@color/white"-->
-<!--     android:textSize="30dp" />-->
-
  <com.airbnb.lottie.LottieAnimationView
-     android:id="@+id/lottie"
      android:layout_width="279dp"
-     android:layout_height="266dp"
+     android:layout_height="267dp"
      android:layout_gravity="center"
      android:layout_marginTop="100dp"
      app:lottie_autoPlay="true"
      app:lottie_loop="true"
-     app:lottie_rawRes="@raw/splash3">
+     app:lottie_rawRes="@raw/bschool">
 
  </com.airbnb.lottie.LottieAnimationView>
 
  <TextView
-     android:id="@+id/text1"
+     android:id="@+id/studio_text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:fontFamily="@font/elmessiri"

@@ -14,9 +14,15 @@
             android:icon="@drawable/qrid"
             android:title="New Qr ID Generate " />
         <item
-            android:id="@+id/nav_complaints"
+            android:id="@+id/nav_pending"
+            android:icon="@drawable/ic_baseline_collections_24"
+            android:title="Pending Complaints" />
+        <item
+            android:id="@+id/nav_solved"
             android:icon="@drawable/ic_baseline_complaints_nav"
-            android:title=" Complaints" />
+            android:title="Solved Complaints" />
+
+
         <item
             android:id="@+id/nav_details"
             android:icon="@drawable/ic_baseline_collections_24"

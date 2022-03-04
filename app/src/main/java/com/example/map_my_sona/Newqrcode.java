@@ -37,19 +37,19 @@ public class Newqrcode extends AppCompatActivity {
 
         builder=new AlertDialog.Builder(this);
 
-        unique_id_ad=(EditText) findViewById(R.id.uniqueid_update_admin);
-        sn_ad=(EditText) findViewById(R.id.sn_update_admin);
-        make_ad=(EditText) findViewById(R.id.make_update_admin);
-        model_ad=(EditText) findViewById(R.id.model_update_admin);
-        procurement_ad=(EditText) findViewById(R.id.procurement_update_admin);
-        powerRating_ad=(EditText) findViewById(R.id.powerRating_update_admin);
-        wperiod_ad=(EditText) findViewById(R.id.warranty_update_admin);
-        wexpiryDate_ad=(EditText) findViewById(R.id.warranty_exp_update_admin);
-        insBy_ad=(EditText) findViewById(R.id.ins_by_update_admin);
-        insDate_ad=(EditText) findViewById(R.id.ins_date_update_admin);
-        mob_ad=(EditText) findViewById(R.id.mob_update_admin);
-
-        AddNew=(Button) findViewById(R.id.newqrupdate_btn);
+//        unique_id_ad=(EditText) findViewById(R.id.uniqueid_update_admin);
+//        sn_ad=(EditText) findViewById(R.id.sn_update_admin);
+//        make_ad=(EditText) findViewById(R.id.make_update_admin);
+//        model_ad=(EditText) findViewById(R.id.model_update_admin);
+//        procurement_ad=(EditText) findViewById(R.id.procurement_update_admin);
+//        powerRating_ad=(EditText) findViewById(R.id.powerRating_update_admin);
+//        wperiod_ad=(EditText) findViewById(R.id.warranty_update_admin);
+//        wexpiryDate_ad=(EditText) findViewById(R.id.warranty_exp_update_admin);
+//        insBy_ad=(EditText) findViewById(R.id.ins_by_update_admin);
+//        insDate_ad=(EditText) findViewById(R.id.ins_date_update_admin);
+//        mob_ad=(EditText) findViewById(R.id.mob_update_admin);
+//
+//        AddNew=(Button) findViewById(R.id.newqrupdate_btn);
 
         AddNew.setOnClickListener(new View.OnClickListener() {
             @Override

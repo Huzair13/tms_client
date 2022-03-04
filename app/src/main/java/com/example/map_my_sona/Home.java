@@ -31,6 +31,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent a=new Intent(Home.this, AdminLoginPage.class);
                 startActivity(a);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left);
 
                 Toast.makeText(Home.this,"This is admin login page", Toast.LENGTH_SHORT).show();
             }

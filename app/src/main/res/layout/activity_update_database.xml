@@ -31,7 +31,34 @@
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
+        <EditText
+            android:id="@+id/uniqueid_update_ad"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/cellshape"
+            android:layout_gravity="center"
+            android:hint="Unique ID"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/get_details_up_ad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Get Details"
+            android:textStyle="bold"/>
+
+
+
         <TableLayout
+            android:id="@+id/table_layout_update_ad"
             android:layout_width="wrap_content"
             android:layout_height="295dp"
             android:layout_marginLeft="10dp"

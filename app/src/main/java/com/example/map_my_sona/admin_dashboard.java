@@ -101,6 +101,9 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
             case R.id.nav_solved:
                 startActivity(new Intent(admin_dashboard.this, adminregistercomplaint.class));
                 break;
+            case R.id.update_data:
+                startActivity(new Intent(admin_dashboard.this,update_database.class));
+                break;
 
             case R.id.nav_logOut:
                 builder.setTitle("Alert")

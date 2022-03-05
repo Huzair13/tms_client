@@ -59,6 +59,7 @@ public class dashboard extends AppCompatActivity {
         history = findViewById(R.id.histotydetails);
 
         history.setVisibility(View.GONE);
+        manualentry.setVisibility(View.GONE);
 
         refDash.addValueEventListener(new ValueEventListener() {
             @Override
@@ -68,6 +69,7 @@ public class dashboard extends AppCompatActivity {
                if(snapshot.exists()){
                     if(pos.equals("admin")){
                         history.setVisibility(View.VISIBLE);
+                        manualentry.setVisibility(View.VISIBLE);
                     }
                 }
             }

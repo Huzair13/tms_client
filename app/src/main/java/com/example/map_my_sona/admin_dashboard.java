@@ -11,8 +11,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
@@ -22,6 +24,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    LinearLayout Linear;
     MaterialToolbar toolbar;
     AlertDialog.Builder builder;
     MaterialCardView admincom;
@@ -34,13 +37,18 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         setContentView(R.layout.activity_admin_dashboard);
 
         drawerLayout=findViewById(R.id.admin_Drawer_Layout);
+
         navigationView=findViewById(R.id.nav_view_admin);
+        Menu menu=navigationView.getMenu();
+        MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
+        nav_QR.setVisible(false);
+
         toolbar=findViewById(R.id.topAppBar_admin);
         admincom = findViewById(R.id.admincomplaint_admin);
         registerdetail=findViewById(R.id.registerdetail_admin);
         pendingcomplaint=findViewById(R.id.pending_admin);
 
-
+        Linear=(LinearLayout)findViewById(R.id.linear_layout_admin);
 
         builder=new AlertDialog.Builder(this);
 

@@ -1,177 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/user_drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     android:background="@drawable/background1">
 
+   <com.google.android.material.navigation.NavigationView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:id="@+id/nav_view_admin_new"
+       app:headerLayout="@layout/drawer_header"
+       app:menu="@menu/drawer_menu"
+       android:layout_gravity="start"
+       />
    <androidx.coordinatorlayout.widget.CoordinatorLayout
-   android:layout_width="match_parent"
-   android:layout_height="wrap_content">
-
-   <com.google.android.material.appbar.AppBarLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
-
-      <com.google.android.material.appbar.MaterialToolbar
-          android:id="@+id/topAppBar"
+      <com.google.android.material.appbar.AppBarLayout
           android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          app:title="Dashboard"
-          app:menu="@menu/toolappbar"
-          app:navigationIcon="@drawable/backicon"
-          style="@style/Widget.MaterialComponents.Toolbar.Primary"
-          />
+          android:layout_height="wrap_content">
+         <com.google.android.material.appbar.MaterialToolbar
+             android:id="@+id/topAppBar_user"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             app:title="Dashboard"
+             app:menu="@menu/toolappbar"
+             app:navigationIcon="@drawable/backicon"
+             style="@style/Widget.MaterialComponents.Toolbar.Primary"
+             />
+      </com.google.android.material.appbar.AppBarLayout>
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-   </com.google.android.material.appbar.AppBarLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+   <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
 
+         <ImageView
+             android:id="@+id/imageView34"
+             android:layout_width="141dp"
+             android:layout_height="118dp"
+             android:layout_gravity="top"
+             android:layout_marginTop="30dp"
+             app:srcCompat="@drawable/sonacollegeoftechnology" />
+
+         <ImageView
+             android:id="@+id/imageViw35"
+             android:layout_width="123dp"
+             android:layout_height="102dp"
+             android:layout_marginStart="150dp"
+             android:layout_marginTop="55dp"
+             app:srcCompat="@drawable/mapmysona_logo" />
+   </LinearLayout>
 
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:orientation="horizontal">
+       android:orientation="vertical">
+      <com.google.android.material.card.MaterialCardView
+          android:id="@+id/scancode"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="250dp"
+          android:layout_marginEnd="15dp"
+          android:layout_marginBottom="15dp"
+          android:checkable="true"
+          android:clickable="true"
+          android:focusable="true"
+          app:cardElevation="25dp"
+          app:cardCornerRadius="20dp"
+          app:cardBackgroundColor="@color/sliver"
+          >
+         <ImageView
+             android:layout_width="75dp"
+             android:layout_height="50dp"
+             android:layout_marginTop="25dp"
+             android:layout_marginLeft="34dp"
+             android:src="@drawable/scanicon"
+             android:scaleType="fitCenter"/>
 
-      <ImageView
-          android:id="@+id/imageView"
-          android:layout_width="141dp"
-          android:layout_height="118dp"
-          android:layout_gravity="top"
-          android:layout_marginTop="30dp"
-          app:srcCompat="@drawable/sonacollegeoftechnology" />
+         <TextView
+             android:id="@+id/scantext"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:textStyle="bold"
+             android:text="Scan Code"
+             android:textSize="20dp"
+             android:gravity="center"
+             android:textColor="@color/charcoal"
+             android:fontFamily="@font/quattrocentro_sans" >
 
-      <ImageView
-          android:id="@+id/imageView2"
-          android:layout_width="123dp"
-          android:layout_height="102dp"
-          android:layout_marginStart="150dp"
-          android:layout_marginTop="55dp"
-          app:srcCompat="@drawable/mapmysona_logo" />
+         </TextView>
+
+      </com.google.android.material.card.MaterialCardView>
+
+
+      <com.google.android.material.card.MaterialCardView
+          android:id="@+id/histotydetails"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_below="@+id/scancode"
+
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="15dp"
+          android:layout_marginEnd="15dp"
+          android:layout_marginBottom="15dp"
+          android:checkable="true"
+          android:clickable="true"
+          android:focusable="true"
+          app:cardElevation="25dp"
+          app:cardCornerRadius="20dp"
+          app:cardBackgroundColor="@color/sliver">
+         <ImageView
+             android:layout_width="75dp"
+             android:layout_height="50dp"
+             android:layout_marginTop="25dp"
+             android:layout_marginLeft="34dp"
+             android:src="@drawable/historyicon"
+             android:scaleType="fitCenter"/>
+
+
+         <TextView
+             android:id="@+id/historydetail"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:textStyle="bold"
+             android:text="History Details"
+             android:textSize="20dp"
+             android:gravity="center"
+             android:textColor="@color/charcoal"
+             android:fontFamily="@font/quattrocentro_sans">
+
+         </TextView>
+
+      </com.google.android.material.card.MaterialCardView>
+
+      <com.google.android.material.card.MaterialCardView
+          android:id="@+id/manualentry"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_below="@+id/histotydetails"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="15dp"
+          android:layout_marginEnd="15dp"
+          android:layout_marginBottom="15dp"
+
+          android:checkable="true"
+          android:clickable="true"
+          android:focusable="true"
+          app:cardElevation="25dp"
+          app:cardCornerRadius="20dp"
+          app:cardBackgroundColor="@color/sliver">
+         <ImageView
+             android:layout_width="75dp"
+             android:layout_height="50dp"
+             android:layout_marginTop="25dp"
+             android:layout_marginLeft="34dp"
+             android:src="@drawable/manualicon"
+             android:scaleType="fitCenter"/>
+
+
+
+         <TextView
+             android:id="@+id/manualentrys"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:textStyle="bold"
+             android:text="Manual Entry"
+             android:textSize="20dp"
+             android:gravity="center"
+             android:textColor="@color/charcoal"
+             android:fontFamily="@font/quattrocentro_sans">
+
+         </TextView>
+      </com.google.android.material.card.MaterialCardView>
+
    </LinearLayout>
 
-   <com.google.android.material.card.MaterialCardView
-       android:id="@+id/scancode"
-       android:layout_width="match_parent"
-       android:layout_height="100dp"
-       android:layout_marginStart="15dp"
-       android:layout_marginTop="250dp"
-       android:layout_marginEnd="15dp"
-       android:layout_marginBottom="15dp"
-       android:checkable="true"
-       android:clickable="true"
-       android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardCornerRadius="20dp"
-       app:cardBackgroundColor="@color/sliver"
-       >
-      <ImageView
-          android:layout_width="75dp"
-          android:layout_height="50dp"
-         android:layout_marginTop="25dp"
-         android:layout_marginLeft="34dp"
-         android:src="@drawable/scanicon"
-         android:scaleType="fitCenter"/>
-
-      <TextView
-          android:id="@+id/scantext"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:textStyle="bold"
-         android:text="Scan Code"
-         android:textSize="20dp"
-         android:gravity="center"
-          android:textColor="@color/charcoal"
-          android:fontFamily="@font/quattrocentro_sans" >
-
-      </TextView>
-
-   </com.google.android.material.card.MaterialCardView>
 
 
-   <com.google.android.material.card.MaterialCardView
-       android:id="@+id/histotydetails"
-       android:layout_width="match_parent"
-       android:layout_height="100dp"
-       android:layout_below="@+id/scancode"
-
-       android:layout_marginStart="15dp"
-       android:layout_marginTop="15dp"
-       android:layout_marginEnd="15dp"
-       android:layout_marginBottom="15dp"
-       android:checkable="true"
-       android:clickable="true"
-       android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardCornerRadius="20dp"
-       app:cardBackgroundColor="@color/sliver">
-      <ImageView
-          android:layout_width="75dp"
-          android:layout_height="50dp"
-          android:layout_marginTop="25dp"
-          android:layout_marginLeft="34dp"
-          android:src="@drawable/historyicon"
-          android:scaleType="fitCenter"/>
-
-
-      <TextView
-          android:id="@+id/historydetail"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:textStyle="bold"
-          android:text="History Details"
-          android:textSize="20dp"
-          android:gravity="center"
-          android:textColor="@color/charcoal"
-          android:fontFamily="@font/quattrocentro_sans">
-
-      </TextView>
-
-   </com.google.android.material.card.MaterialCardView>
-
-   <com.google.android.material.card.MaterialCardView
-       android:id="@+id/manualentry"
-       android:layout_width="match_parent"
-       android:layout_height="100dp"
-       android:layout_below="@+id/histotydetails"
-       android:layout_marginStart="15dp"
-       android:layout_marginTop="15dp"
-       android:layout_marginEnd="15dp"
-       android:layout_marginBottom="15dp"
-
-       android:checkable="true"
-       android:clickable="true"
-       android:focusable="true"
-       app:cardElevation="25dp"
-       app:cardCornerRadius="20dp"
-       app:cardBackgroundColor="@color/sliver">
-      <ImageView
-          android:layout_width="75dp"
-          android:layout_height="50dp"
-          android:layout_marginTop="25dp"
-          android:layout_marginLeft="34dp"
-          android:src="@drawable/manualicon"
-          android:scaleType="fitCenter"/>
-
-
-
-      <TextView
-          android:id="@+id/manualentrys"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:textStyle="bold"
-          android:text="Manual Entry"
-          android:textSize="20dp"
-          android:gravity="center"
-          android:textColor="@color/charcoal"
-          android:fontFamily="@font/quattrocentro_sans">
-
-      </TextView>
-   </com.google.android.material.card.MaterialCardView>
-
-
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 

@@ -16,7 +16,13 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class dashboard extends AppCompatActivity {
 
@@ -25,14 +31,17 @@ public class dashboard extends AppCompatActivity {
     private MaterialCardView history;
 
     FirebaseAuth mAuth;
-
     AlertDialog.Builder builder;
+    private DatabaseReference refDash;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+
+        refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         mAuth=FirebaseAuth.getInstance();
         // calling the action bar
@@ -48,6 +57,26 @@ public class dashboard extends AppCompatActivity {
         scanner=findViewById(R.id.scancode);
         manualentry = findViewById(R.id.manualentry);
         history = findViewById(R.id.histotydetails);
+
+        history.setVisibility(View.GONE);
+
+        refDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pos=snapshot.child("position").getValue(String.class);
+
+               if(snapshot.exists()){
+                    if(pos.equals("admin")){
+                        history.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override

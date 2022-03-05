@@ -3,6 +3,7 @@ package com.example.map_my_sona;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -34,7 +35,7 @@ public class loginpage extends AppCompatActivity {
     private TextView ForgetPass;
     private  TextView Changepass;
     private Button btnLogin;
-
+    private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
 
     @Override
@@ -42,6 +43,8 @@ public class loginpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginpage);
 
+        //progressDialouge
+        progressDialog=new ProgressDialog(this);
 
         //LogEmail=findViewById(R.id.loginemailInput);
         username=findViewById(R.id.loginemailInput);
@@ -82,6 +85,16 @@ public class loginpage extends AppCompatActivity {
         }else if(TextUtils.isEmpty(password)){
             LogPassword.setError("Password Cannot be empty");
             LogPassword.requestFocus();
+        }else if(uname.endsWith("@gmail.com") || uname.endsWith("@GMAIL.COM") ||
+                uname.endsWith("@yahoo.com") || uname.endsWith("@YAHOO.COM")){
+            String email=uname;
+
+            progressDialog.setMessage("Logging in please wait.....");
+            progressDialog.setTitle("Login");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            logInwithUserName(email,password);
         }else{
             DatabaseReference reference=FirebaseDatabase.getInstance().getReference("usersLogin");
             reference.addValueEventListener(new ValueEventListener() {
@@ -89,6 +102,12 @@ public class loginpage extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.hasChild(uname)){
                         String email=snapshot.child(uname).child("email").getValue(String.class);
+
+                        progressDialog.setMessage("Logging in please wait.....");
+                        progressDialog.setTitle("Login");
+                        progressDialog.setCanceledOnTouchOutside(false);
+                        progressDialog.show();
+
                         logInwithUserName(email,password);
                     }else{
                         Toast.makeText(loginpage.this, "Username is not correct", Toast.LENGTH_SHORT).show();
@@ -109,9 +128,11 @@ public class loginpage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(loginpage.this, dashboard.class));
                 }else{
+                    progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "Login Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }

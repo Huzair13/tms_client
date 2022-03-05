@@ -46,19 +46,19 @@ public class manualentry extends AppCompatActivity {
         objecttext=findViewById(R.id.objecttext);
 
 
-        String[] dept={"ItBlock","UniversityBlock","CivilBlock","MechBlock","Auditorium","PgAuditorium","ValliapaAuditorium"};
+        String[] dept={"electronics","watersupply","Network","wiring","painting","computer","carpenting"};
         ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowndept,dept);
         deptrestext.setAdapter(itemAdapter);
 
-        String[] branch={"001","002","003","004","005"};
+        String[] branch={"UniversityBlock","ItBlock","MechanicalBlock","MBA","Office"};
         ArrayAdapter<String> branchAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownbranch,branch);
         branchtext.setAdapter(branchAdapter);
 
-        String[] location={"electricity","watersupply","network","wiring","painting"};
+        String[] location={"Floor1, room200","Floor2, room201","Floor3, room202","Floor4, room203","Floor5, room204"};
         ArrayAdapter<String> locationAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownlocation,location);
         locationtext.setAdapter(locationAdapter);
 
-        String[] object={"electricity","watersupply","network","wiring","painting"};
+        String[] object={"Light","Fan","Computer","Bench","Painting"};
         ArrayAdapter<String> objectAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownobject,object);
         objecttext.setAdapter(objectAdapter);
 

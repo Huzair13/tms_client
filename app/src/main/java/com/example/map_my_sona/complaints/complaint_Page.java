@@ -70,15 +70,15 @@ public class complaint_Page extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 mob_str=snapshot.child("mob").getValue(String.class);
-                sn_str=snapshot.child("sn").getValue(String.class);
+                sn_str=snapshot.child("sn_no").getValue(String.class);
                 make_str=snapshot.child("make").getValue(String.class);
                 model_str=snapshot.child("model").getValue(String.class);
                 procurement_str=snapshot.child("procurement").getValue(String.class);
                 powerRating_str=snapshot.child("power_rating").getValue(String.class);
                 wexpiry_str=snapshot.child("wexpiry").getValue(String.class);
                 wperiod_str=snapshot.child("wperiod").getValue(String.class);
-                ins_by_str=snapshot.child("insBy").getValue(String.class);
-                ins_date_str=snapshot.child("insDate").getValue(String.class);
+                ins_by_str=snapshot.child("ins_by").getValue(String.class);
+                ins_date_str=snapshot.child("ins_date").getValue(String.class);
 
 
                 sn.setText(sn_str);

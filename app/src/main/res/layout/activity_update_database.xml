@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".historyviewdetails"
-    android:orientation="vertical"
-    android:background="@drawable/background1">
+    android:background="@drawable/background1"
+    tools:context=".update_database">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,55 +18,51 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="141dp"
                 android:layout_height="118dp"
                 android:layout_gravity="top"
-                app:srcCompat="@drawable/sonacollegeoftechnology" />
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/sona_logo" />
 
             <ImageView
-                android:id="@+id/imageView2"
                 android:layout_width="123dp"
                 android:layout_height="134dp"
                 android:layout_marginStart="150dp"
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/uniqueid_update_ad"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/cellshape"
+            android:layout_gravity="center"
+            android:hint="Unique ID"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/get_details_up_ad"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Get Details"
+            android:textStyle="bold"/>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/Product_ID_history"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"/>
-
-            <TextView
-                android:textAlignment="center"
-                android:id="@+id/complaint_status_his"
-                android:layout_width="150dp"
-                android:textSize="25dp"
-                android:fontFamily="@font/elmessiri"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"/>
-
-        </LinearLayout>
 
         <TableLayout
+            android:id="@+id/table_layout_update_ad"
             android:layout_width="wrap_content"
             android:layout_height="295dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/white">
 
             <TableRow>
@@ -78,8 +73,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="S.No:"
-                    android:textColor="@color/black"
                     android:background="@drawable/cellshape"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -116,8 +111,8 @@
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@color/black"
-                    android:background="@drawable/cellshape"
                     android:textSize="20dp"
+                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -125,22 +120,21 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Complaint Id"
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:text="Serial No."
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/Comid_unit_his"
+                <EditText
+                    android:id="@+id/sn_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
-                    android:textSize="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </TableRow>
@@ -153,9 +147,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="2"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -163,21 +157,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Staff Name"
-                    android:textColor="@color/black"
+                    android:text="Make"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/staff_name_unit_his"
+                <EditText
+                    android:id="@+id/make_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -191,9 +184,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="3"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -201,21 +194,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Department"
-                    android:textColor="@color/black"
+                    android:text="Model No."
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/dep_unit_his"
+                <EditText
+                    android:id="@+id/model_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -229,9 +221,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="4"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -239,21 +231,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Staff Mobile Number"
-                    android:textColor="@color/black"
+                    android:text="Procurement Date"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/staff_mob_history_com"
+                <EditText
+                    android:id="@+id/procurement_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -267,9 +258,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="5"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -283,15 +274,14 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/powerRating_unit_his"
+                <EditText
+                    android:id="@+id/powerRating_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -305,9 +295,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="6"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -317,19 +307,18 @@
                     android:gravity="center"
                     android:text="Warranty Period"
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="18dp"
+                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/warranty_unit_his"
+                <EditText
+                    android:id="@+id/warranty_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -343,9 +332,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="7"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -355,19 +344,18 @@
                     android:gravity="center"
                     android:text="Warranty Expiry Date"
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="18dp"
+                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/warranty_exp_unit_his"
+                <EditText
+                    android:id="@+id/warranty_exp_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:gravity="center"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -381,9 +369,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="8"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -392,20 +380,19 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Installed Date"
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/ins_date_unit_his"
+                <EditText
+                    android:id="@+id/ins_date_unit_update_ad"
                     android:layout_width="113dp"
+                    android:background="@drawable/table"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -419,9 +406,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="9"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -429,21 +416,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:background="@drawable/table"
                     android:text="Installation By"
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/ins_by_unit_his"
+                <EditText
+                    android:id="@+id/ins_by_unit_update_ad"
                     android:layout_width="113dp"
+                    android:background="@drawable/table"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -456,9 +442,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="10"
+                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
@@ -468,17 +454,16 @@
                     android:gravity="center"
                     android:text="Mobile No."
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="18dp"
+                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/mob_unit_his"
+                <EditText
+                    android:id="@+id/mob_unit_update_ad"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text=""
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="20dp"
@@ -486,45 +471,16 @@
 
             </TableRow>
 
-
         </TableLayout>
 
-        <TextView
-            android:background="@drawable/cellshape_roundcorners"
-            android:layout_width="150dp"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/elmessiri"
-            android:text="Complaint is ...."
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-
-            android:id="@+id/com_txt_history"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/mulish"
-            android:textColor="@color/white"
-            android:textStyle="bold">
-
-        </TextView>
-
         <Button
-            android:id="@+id/close_the_com_his"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
+            android:id="@+id/update_database_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:textStyle="bold"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#32CD30"
-            android:text="Close the Complaint"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:layout_marginTop="25dp"/>
 
     </LinearLayout>
 

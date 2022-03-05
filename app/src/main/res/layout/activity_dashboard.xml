@@ -38,6 +38,7 @@
    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
    <LinearLayout
+       android:id="@+id/topImageLinear_layout"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:orientation="horizontal">
@@ -107,7 +108,6 @@
           android:layout_width="match_parent"
           android:layout_height="100dp"
           android:layout_below="@+id/scancode"
-
           android:layout_marginStart="15dp"
           android:layout_marginTop="15dp"
           android:layout_marginEnd="15dp"
@@ -183,7 +183,6 @@
       </com.google.android.material.card.MaterialCardView>
 
    </LinearLayout>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

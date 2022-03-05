@@ -169,7 +169,7 @@ public class update_database extends AppCompatActivity {
                             @Override
                             public void onSuccess(Object o) {
                                 Toast.makeText(update_database.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(update_database.this, admin_dashboard.class);
+                                Intent intent=new Intent(update_database.this, dashboard.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }

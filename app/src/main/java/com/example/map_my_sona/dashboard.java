@@ -51,30 +51,33 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+
         drawerLayout1=findViewById(R.id.user_drawer_layout);
-
         builder1=new AlertDialog.Builder(this);
-
         navigationView1=findViewById(R.id.nav_view_admin_new);
-
         toolbar1=findViewById(R.id.topAppBar_user);
+
+        //reference for visibilty restriction
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
+        //mAuth for logout activity
         mAuth=FirebaseAuth.getInstance();
-        // calling the action bar
+
         ActionBar actionBar = getSupportActionBar();
-//        getSupportActionBar().setLogo(R.drawable.logout);
 
-        // Customize the back button
-//        actionBar.setHomeAsUpIndicator(R.drawable.logout);
+        /*calling the action bar
+        getSupportActionBar().setLogo(R.drawable.logout);
+        Customize the back button
+        actionBar.setHomeAsUpIndicator(R.drawable.logout);
+        showing the back button in action bar;
+        actionBar.setDisplayHomeAsUpEnabled(true);*/
 
-        // showing the back button in action bar
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-
+        //dashboard details findviewbyid
         scanner=findViewById(R.id.scancode);
         manualentry = findViewById(R.id.manualentry);
         history = findViewById(R.id.histotydetails);
 
+        //drawer_layout navigation
         navigationView1.bringToFront();
         ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawerLayout1,toolbar1,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         toggle.syncState();
@@ -87,12 +90,16 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         navigationView1.setCheckedItem(R.id.nav_pending);
         navigationView1.setCheckedItem(R.id.nav_solved);
 
-
         View headerview=navigationView1.getHeaderView(0);
 
+
+        //dashboard details visibility
         history.setVisibility(View.GONE);
         manualentry.setVisibility(View.GONE);
+        scanner.setVisibility(View.GONE);
 
+
+        //visibility Restrictions
         refDash.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -102,6 +109,57 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                     if(pos.equals("admin")){
                         history.setVisibility(View.VISIBLE);
                         manualentry.setVisibility(View.VISIBLE);
+                        scanner.setVisibility(View.VISIBLE);
+                        Menu menu=navigationView1.getMenu();
+                        MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
+                        nav_QR.setVisible(true);
+
+                        MenuItem upData=menu.findItem(R.id.update_data);
+                        upData.setVisible(true);
+
+                        MenuItem new_id=menu.findItem(R.id.new_id);
+                        new_id.setVisible(true);
+
+                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+                        nav_pend.setVisible(true);
+
+                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+                        nav_sol.setVisible(true);
+
+                        MenuItem nav_det=menu.findItem(R.id.nav_details);
+                        nav_det.setVisible(true);
+
+
+                    }else if(pos.equals("user")){
+
+                        scanner.setVisibility(View.VISIBLE);
+                        history.setVisibility(View.VISIBLE);
+
+                        Menu menu=navigationView1.getMenu();
+                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+                        nav_pend.setVisible(true);
+
+                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+                        nav_sol.setVisible(true);
+
+                        MenuItem nav_det=menu.findItem(R.id.nav_details);
+                        nav_det.setVisible(true);
+                    }else if(pos.equals("technician")){
+
+                        scanner.setVisibility(View.VISIBLE);
+                        history.setVisibility(View.VISIBLE);
+
+
+                        Menu menu=navigationView1.getMenu();
+                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+                        nav_pend.setVisible(true);
+
+                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+                        nav_sol.setVisible(true);
+
+                        MenuItem nav_det=menu.findItem(R.id.nav_details);
+                        nav_det.setVisible(true);
+
                     }
                 }
             }
@@ -112,6 +170,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             }
         });
 
+
+        //On click listeners
         scanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,15 +207,15 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     }
 
 
+    //Drawe layout Navigation setting
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
 
         switch (item.getItemId()){
 
 
             case R.id.nav_home_admin:
-                startActivity(new Intent(dashboard.this, admin_dashboard.class));
+                startActivity(new Intent(dashboard.this, dashboard.class));
                 break;
 
             case R.id.new_id:

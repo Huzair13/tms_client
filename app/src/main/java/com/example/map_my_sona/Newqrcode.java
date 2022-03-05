@@ -159,7 +159,7 @@ public class Newqrcode extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(Newqrcode.this, "Data Added", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Newqrcode.this, admin_dashboard.class);
+                            Intent intent = new Intent(Newqrcode.this, dashboard.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }

@@ -38,11 +38,6 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
 
         drawerLayout=findViewById(R.id.admin_Drawer_Layout);
 
-        navigationView=findViewById(R.id.nav_view_admin);
-        Menu menu=navigationView.getMenu();
-        MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
-        nav_QR.setVisible(false);
-
         toolbar=findViewById(R.id.topAppBar_admin);
         admincom = findViewById(R.id.admincomplaint_admin);
         registerdetail=findViewById(R.id.registerdetail_admin);

@@ -78,6 +78,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(admin_dashboard.this,ScannerPage.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left);
 
             }
         });

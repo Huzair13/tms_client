@@ -137,7 +137,7 @@ public class Newqrcode extends AppCompatActivity {
        }
 
 
-    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String mob_str_ad) {
+    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String mob_str_ad) {
 
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Datas").child(unique_id_str_ad);

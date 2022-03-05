@@ -30,6 +30,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class loginpage extends AppCompatActivity {
 
+    private long backPressedTime;
+    private Toast backToast;
+
     private TextInputEditText LogEmail,username;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
@@ -138,5 +141,19 @@ public class loginpage extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

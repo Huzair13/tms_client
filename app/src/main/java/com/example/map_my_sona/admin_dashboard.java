@@ -25,6 +25,8 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
     MaterialToolbar toolbar;
     AlertDialog.Builder builder;
     MaterialCardView admincom;
+    MaterialCardView registerdetail;
+    MaterialCardView pendingcomplaint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,9 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         navigationView=findViewById(R.id.nav_view_admin);
         toolbar=findViewById(R.id.topAppBar_admin);
         admincom = findViewById(R.id.admincomplaint_admin);
+        registerdetail=findViewById(R.id.registerdetail_admin);
+        pendingcomplaint=findViewById(R.id.pending_admin);
+
 
 
         builder=new AlertDialog.Builder(this);
@@ -56,10 +61,16 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
 
         View headerview=navigationView.getHeaderView(0);
 
+        //
+//        admincom.animate().translation(2200).setDuration(1000).setStartDelay(000);
+//        registerdetail.animate().translation(2200).setDuration(1000).setStartDelay(000);
+//        pendingcomplaint.animate().translation(2200).setDuration(1000).setStartDelay(000);
+
         admincom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(admin_dashboard.this,ScannerPage.class));
+
             }
         });
 

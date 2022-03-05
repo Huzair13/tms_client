@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.animation.AnimatorInflater;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,6 +57,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
+
+        // Animation
+//        scanner.animate().translationY(-2200).setDuration(2000).setStartDelay(1000);
 
         //reference for visibilty restriction
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
@@ -176,6 +180,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(dashboard.this,ScannerPage.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -183,6 +188,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(dashboard.this,manualentry.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -190,6 +196,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(dashboard.this, Complaints_HistoryDetails.class));
+                overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right);
             }
         });
     }

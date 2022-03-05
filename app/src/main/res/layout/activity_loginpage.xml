@@ -24,7 +24,8 @@
             android:id="@+id/imageView2"
             android:layout_width="123dp"
             android:layout_height="102dp"
-            android:layout_marginStart="150dp"
+            android:layout_gravity="top"
+            android:layout_marginStart="120dp"
             app:srcCompat="@drawable/mapmysona_logo" />
     </LinearLayout>
 
@@ -47,14 +48,18 @@
         android:layout_marginTop="310dp"
         android:hint="UserName or Email"
         android:padding="15dp"
-        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
+        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
+        app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+        app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginemailInput"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="wrap_content"
             android:inputType="text"
-            android:fontFamily="@font/elmessiri"/>
+            android:fontFamily="@font/elmessiri"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,6 +72,8 @@
         android:hint="Password"
         android:padding="15dp"
         app:startIconDrawable="@drawable/password"
+        app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+        app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
 
         >
 
@@ -95,6 +102,7 @@
     </com.google.android.material.button.MaterialButton>
 
 <LinearLayout
+    android:id="@+id/linearlogin"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -136,4 +144,23 @@
     </TextView>
 
 </LinearLayout>
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="New Password"-->
+<!--        android:padding="5dp"-->
+<!--        android:layout_below="@+id/linearlogin"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        >-->
+<!--        <com.google.android.material.textview.MaterialTextView-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:text="dfdsdsfdgsgfsfs"-->
+<!--            android:textColor="@color/teal_200"-->
+<!--            android:layout_below="@+id/linearlogin"-->
+<!--            >-->
+
+<!--        </com.google.android.material.textview.MaterialTextView>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
 </RelativeLayout>

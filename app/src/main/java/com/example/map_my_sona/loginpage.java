@@ -68,7 +68,7 @@ public class loginpage extends AppCompatActivity {
 
         Changepass.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(loginpage.this,changepassword.class));
             }
         });
@@ -80,7 +80,7 @@ public class loginpage extends AppCompatActivity {
         String uname=username.getText().toString();
         String password =LogPassword.getText().toString();
         if(TextUtils.isEmpty(uname)){
-            username.setText("UserName can't be empty");
+            username.setError("UserName can't be empty");
             username.requestFocus();
         }else if(TextUtils.isEmpty(password)){
             LogPassword.setError("Password Cannot be empty");
@@ -103,7 +103,7 @@ public class loginpage extends AppCompatActivity {
                     if(snapshot.hasChild(uname)){
                         String email=snapshot.child(uname).child("email").getValue(String.class);
 
-                        progressDialog.setMessage("Logging in please wait.....");
+                        progressDialog.setMessage("Logging in please wait....");
                         progressDialog.setTitle("Login");
                         progressDialog.setCanceledOnTouchOutside(false);
                         progressDialog.show();
@@ -131,6 +131,7 @@ public class loginpage extends AppCompatActivity {
                     progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(loginpage.this, dashboard.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right);
                 }else{
                     progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "Login Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

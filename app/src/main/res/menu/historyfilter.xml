@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/all"
+        android:title="All" />
+    <item android:id="@+id/past10days"
+        android:title="Past 10 days" />
+    <item android:id="@+id/month"
+        android:title="1 Month" />
+</menu>

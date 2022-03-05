@@ -98,7 +98,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String pos=snapshot.child("position").getValue(String.class);
 
-               if(snapshot.exists()){
+                if(snapshot.exists()){
                     if(pos.equals("admin")){
                         history.setVisibility(View.VISIBLE);
                         manualentry.setVisibility(View.VISIBLE);
@@ -149,7 +149,35 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
         switch (item.getItemId()){
+
+
+            case R.id.nav_home_admin:
+                startActivity(new Intent(dashboard.this, admin_dashboard.class));
+                break;
+
+            case R.id.new_id:
+                startActivity(new Intent(dashboard.this, Qr_id_generator.class));
+                break;
+
+            case R.id.nav_newQR:
+                startActivity(new Intent(dashboard.this, Newqrcode.class));
+                break;
+
+
+            case R.id.nav_pending:
+                startActivity(new Intent(dashboard.this, adminpendingcomplaint.class));
+                break;
+
+            case R.id.nav_solved:
+                startActivity(new Intent(dashboard.this, adminregistercomplaint.class));
+                break;
+            case R.id.update_data:
+                startActivity(new Intent(dashboard.this,update_database.class));
+                break;
+
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")
                         .setMessage("Are you sure to Log out")

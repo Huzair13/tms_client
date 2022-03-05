@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginpage"
-    android:background="@drawable/background1">
+    android:background="@drawable/sonabg">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,8 +18,7 @@
             android:layout_width="141dp"
             android:layout_height="118dp"
             android:layout_gravity="top"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/sona_logo" />
+            app:srcCompat="@drawable/sonacollegeoftechnology" />
 
         <ImageView
             android:id="@+id/imageView2"

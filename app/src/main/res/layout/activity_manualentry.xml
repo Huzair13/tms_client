@@ -29,8 +29,7 @@
           android:layout_width="140dp"
           android:layout_height="70dp"
           android:layout_gravity="top"
-          android:layout_marginTop="20dp"
-          app:srcCompat="@drawable/sona_logo" />
+          app:srcCompat="@drawable/sonacollegeoftechnology" />
 
       <ImageView
           android:id="@+id/imageView2"

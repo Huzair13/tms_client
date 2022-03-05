@@ -34,7 +34,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:title="Dashboard"
                 app:menu="@menu/toolappbar"
-                app:navigationIcon="@drawable/menuicon"
+                app:navigationIcon="@drawable/notification"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:fitsSystemWindows="true"
                 />

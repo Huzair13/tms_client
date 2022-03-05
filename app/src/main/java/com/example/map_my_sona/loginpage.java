@@ -21,10 +21,15 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class loginpage extends AppCompatActivity {
 
-    private TextInputEditText LogEmail;
+    private TextInputEditText LogEmail,username;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
     private  TextView Changepass;
@@ -38,7 +43,8 @@ public class loginpage extends AppCompatActivity {
         setContentView(R.layout.activity_loginpage);
 
 
-        LogEmail=findViewById(R.id.loginemailInput);
+        //LogEmail=findViewById(R.id.loginemailInput);
+        username=findViewById(R.id.loginemailInput);
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
@@ -47,7 +53,7 @@ public class loginpage extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
-            LoginUser();
+            LoginUserCheck();
         });
 
         ForgetPass.setOnClickListener(new View.OnClickListener() {
@@ -66,29 +72,49 @@ public class loginpage extends AppCompatActivity {
 
     }
 
-    private void LoginUser() {
-        String email = LogEmail.getText().toString();
-        String password =LogPassword.getText().toString();
+    private void LoginUserCheck() {
 
-        if(TextUtils.isEmpty(email)){
-            LogEmail.setError("Email or username Cannot be empty");
-            LogEmail.requestFocus();
+        String uname=username.getText().toString();
+        String password =LogPassword.getText().toString();
+        if(TextUtils.isEmpty(uname)){
+            username.setText("UserName can't be empty");
+            username.requestFocus();
         }else if(TextUtils.isEmpty(password)){
             LogPassword.setError("Password Cannot be empty");
             LogPassword.requestFocus();
         }else{
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            DatabaseReference reference=FirebaseDatabase.getInstance().getReference("usersLogin");
+            reference.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(loginpage.this, dashboard.class));
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.hasChild(uname)){
+                        String email=snapshot.child(uname).child("email").getValue(String.class);
+                        logInwithUserName(email,password);
                     }else{
-                        Toast.makeText(loginpage.this, "Login Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(loginpage.this, "Username is not correct", Toast.LENGTH_SHORT).show();
                     }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
             });
         }
 
+    }
+
+    private void logInwithUserName(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(loginpage.this, dashboard.class));
+                }else{
+                    Toast.makeText(loginpage.this, "Login Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

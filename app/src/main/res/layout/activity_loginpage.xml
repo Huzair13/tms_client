@@ -45,15 +45,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="310dp"
-        android:hint="Email"
+        android:hint="UserName"
         android:padding="15dp"
-        app:startIconDrawable="@drawable/email">
+        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginemailInput"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:fontFamily="@font/elmessiri"/>
 
     </com.google.android.material.textfield.TextInputLayout>

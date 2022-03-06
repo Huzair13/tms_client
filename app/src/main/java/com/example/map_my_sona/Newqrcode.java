@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,10 +56,11 @@ public class Newqrcode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                builder.setTitle("Alert")
-                        .setMessage("Are you sure to Add Product ??")
-                        .setCancelable(true)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(Newqrcode.this);
+                builder.setTitle("Alert");
+                builder.setMessage("Are you sure to Add Product ??");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 getdata();
@@ -71,7 +73,6 @@ public class Newqrcode extends AppCompatActivity {
                             }
                         })
                         .show();
-
             }
         });
 

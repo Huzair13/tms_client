@@ -53,7 +53,12 @@
                 android:id="@+id/Product_ID_history"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="25dp"
+                android:textSize="25dp"
+                android:fontFamily="@font/elmessiri"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                />
 
             <TextView
                 android:textAlignment="center"
@@ -63,6 +68,19 @@
                 android:fontFamily="@font/elmessiri"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"/>
+
+<!--            <com.google.android.material.chip.ChipGroup-->
+<!--                android:textAlignment="center"-->
+<!--                android:id="@+id/complaint_status_his"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:textSize="25dp"-->
+<!--                android:fontFamily="@font/elmessiri"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="25dp">-->
+
+
+<!--            </com.google.android.material.chip.ChipGroup>-->
+
 
         </LinearLayout>
 

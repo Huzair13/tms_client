@@ -128,8 +128,6 @@ public class complaint_Page extends AppCompatActivity{
         });
 
 
-
-
         //scanText.setText(s);
     }
 

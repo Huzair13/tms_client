@@ -17,12 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="141dp"
-                android:layout_height="118dp"
-                android:layout_gravity="top"
-                android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/sonacollegeoftechnology" />
+<!--            <ImageView-->
+<!--                android:layout_width="141dp"-->
+<!--                android:layout_height="118dp"-->
+<!--                android:layout_gravity="top"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:srcCompat="@drawable/sonacollegeoftechnology" />-->
 
             <ImageView
                 android:layout_width="123dp"

@@ -23,7 +23,11 @@
 
  </com.airbnb.lottie.LottieAnimationView>
 
-
+<!--<VideoView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content">-->
+<!-- -->
+<!--</VideoView>-->
 
 
  <TextView

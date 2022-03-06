@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScannerPage"
-    android:background="@drawable/background1">
+    android:background="@drawable/background_new"
+    >
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 
@@ -102,10 +103,10 @@
       android:layout_below="@+id/Scanner"
       android:layout_marginLeft="120dp"
       android:layout_marginTop="30dp"
+      android:fontFamily="@font/elmessiri"
       android:text="Enter Manually"
-      android:textColor="#FF006F"
+      android:textColor="@color/black"
       android:textSize="25dp"
-      android:textStyle="bold"
-      android:fontFamily="@font/elmessiri"/>
+      android:textStyle="bold" />
 
 </RelativeLayout>

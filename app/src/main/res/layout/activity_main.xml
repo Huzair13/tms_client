@@ -8,9 +8,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background1">
-
-
+    android:background="@drawable/background01"
+    >
 
  <com.airbnb.lottie.LottieAnimationView
      android:id="@+id/lottie"
@@ -20,9 +19,12 @@
      android:layout_marginTop="100dp"
      app:lottie_autoPlay="true"
      app:lottie_loop="true"
-     app:lottie_rawRes="@raw/splash3">
+     app:lottie_rawRes="@raw/point1">
 
  </com.airbnb.lottie.LottieAnimationView>
+
+
+
 
  <TextView
      android:id="@+id/text1"
@@ -32,6 +34,8 @@
      android:gravity="center"
      android:padding="15dp"
      android:text="Map My Sona"
-     android:textColor="@color/white"
+     android:textColor="@color/black"
      android:textSize="30dp" />
+
+
 </LinearLayout>

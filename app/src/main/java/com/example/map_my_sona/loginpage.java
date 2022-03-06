@@ -68,11 +68,10 @@ public class loginpage extends AppCompatActivity {
 
         Changepass.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(loginpage.this,changepassword.class));
             }
         });
-
     }
 
     private void LoginUserCheck() {
@@ -80,7 +79,7 @@ public class loginpage extends AppCompatActivity {
         String uname=username.getText().toString();
         String password =LogPassword.getText().toString();
         if(TextUtils.isEmpty(uname)){
-            username.setText("UserName can't be empty");
+            username.setError("UserName can't be empty");
             username.requestFocus();
         }else if(TextUtils.isEmpty(password)){
             LogPassword.setError("Password Cannot be empty");

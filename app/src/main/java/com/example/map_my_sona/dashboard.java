@@ -35,6 +35,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    //
+    private long backPressedTime;
+    private Toast backToast;
+
     LinearLayout loading;
 
     DrawerLayout drawerLayout1;
@@ -71,12 +75,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
         ActionBar actionBar = getSupportActionBar();
 
-        /*calling the action bar
-        getSupportActionBar().setLogo(R.drawable.logout);
-        Customize the back button
-        actionBar.setHomeAsUpIndicator(R.drawable.logout);
-        showing the back button in action bar;
-        actionBar.setDisplayHomeAsUpEnabled(true);*/
+
 
         //dashboard details findviewbyid
         scanner=findViewById(R.id.scancode);
@@ -215,6 +214,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(new Intent(dashboard.this, Complaints_HistoryDetails.class));
             }
         });
+
+
     }
 
 
@@ -227,8 +228,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             super.onBackPressed();
         }
         super.onBackPressed();
-    }
 
+    }
 
     //Drawe layout Navigation setting
     @Override
@@ -285,4 +286,6 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         }
         return true;
     }
+
+
 }

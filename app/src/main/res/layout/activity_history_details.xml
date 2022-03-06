@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".complaints.Complaints_HistoryDetails"
     android:orientation="vertical"
-    android:background="@drawable/background1">
+    android:background="@drawable/background_new"
+    >
 
    <androidx.coordinatorlayout.widget.CoordinatorLayout
        android:layout_width="match_parent"

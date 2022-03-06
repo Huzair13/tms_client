@@ -51,7 +51,7 @@
 <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
 
       <ImageView
-          android:id="@+id/imageViw35"
+          android:id="@+id/logo"
           android:layout_width="123dp"
           android:layout_height="102dp"
           android:layout_marginStart="150dp"

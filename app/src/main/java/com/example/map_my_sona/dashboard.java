@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView1;
     LinearLayout Linear1;
     MaterialToolbar toolbar1;
+   ImageView logo;
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
@@ -64,6 +66,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
+//        logo=findViewById(R.id.logo);
 
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
 
@@ -122,6 +125,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
+//                        YoYo.with(Techniques.Shake).duration(1000).playOn(logo);
 
                         Menu menu=navigationView1.getMenu();
                         MenuItem nav_QR=menu.findItem(R.id.nav_newQR);

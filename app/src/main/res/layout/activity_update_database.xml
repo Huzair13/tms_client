@@ -31,29 +31,55 @@
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/uniqueid_update_ad"
-            android:layout_width="140dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="25dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="@drawable/cellshape"
-            android:layout_gravity="center"
-            android:hint="Unique ID"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+<!--        <EditText-->
+<!--            android:id="@+id/uniqueid_update_ad"-->
+<!--            android:layout_width="140dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/cellshape"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:hint="Unique ID"-->
+<!--            android:textColorHint="@color/black"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="18dp"-->
+<!--            android:textStyle="bold" />-->
 
-        <Button
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unique Id"
+            android:padding="15dp"
+            android:gravity="center"
+            app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
+            app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+            app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/uniqueid_update_ad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:fontFamily="@font/elmessiri"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/get_details_up_ad"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:text="Get Details"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:cornerRadius="25dp">
+
+        </com.google.android.material.button.MaterialButton>
 
 
 
@@ -473,15 +499,19 @@
 
         </TableLayout>
 
-        <Button
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/update_database_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Update"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="25dp"
+            app:cornerRadius="25dp">
 
+        </com.google.android.material.button.MaterialButton>
     </LinearLayout>
 
 </ScrollView>

@@ -14,7 +14,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
 public class MainActivity extends AppCompatActivity {
-    private static int sleeptimer=4000;
+    private static int sleeptimer=5000;
     TextView text1;
 //    TextView text2;
     LottieAnimationView lottieAnimationView;

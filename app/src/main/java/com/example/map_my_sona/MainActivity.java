@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 
 public class MainActivity extends AppCompatActivity {
     private static int sleeptimer=5000;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 //        text2 = findViewById(R.id.text2);
         lottieAnimationView= findViewById(R.id.lottie);
 
-
+        YoYo.with(Techniques.BounceIn).duration(2000).playOn(text1);
         text1.animate().translationY(2200).setDuration(1000).setStartDelay(4000);
 //        text2.animate().translationY(1400).setDuration(1000).setStartDelay(4000);
         lottieAnimationView.animate().translationY(2200).setDuration(1000).setStartDelay(4000);
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
            public void run() {
               Intent i=new Intent(MainActivity.this,loginpage.class);
               startActivity(i);
+
+              finish();
               }
              },sleeptimer
         );

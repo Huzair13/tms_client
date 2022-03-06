@@ -9,7 +9,7 @@
     tools:context=".dashboard"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    android:background="@drawable/background1">
+    android:background="@drawable/background_new">
 
    <com.google.android.material.navigation.NavigationView
        android:layout_width="wrap_content"
@@ -18,7 +18,8 @@
        app:headerLayout="@layout/drawer_header"
        app:menu="@menu/drawer_menu"
        android:layout_gravity="start"
-       />
+       >
+   </com.google.android.material.navigation.NavigationView>
    <androidx.coordinatorlayout.widget.CoordinatorLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
@@ -59,6 +60,25 @@
           android:layout_marginTop="55dp"
           app:srcCompat="@drawable/mapmysona_logo" />
    </LinearLayout>
+
+   <LinearLayout
+       android:id="@+id/lin_load_ani"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/lottie_ani_load"
+          android:layout_width="279dp"
+          android:layout_height="267dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="300dp"
+          app:lottie_autoPlay="true"
+          app:lottie_loop="true"
+          app:lottie_rawRes="@raw/loading"/>
+
+   </LinearLayout>
+
 
    <LinearLayout
        android:layout_width="wrap_content"

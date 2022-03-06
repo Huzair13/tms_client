@@ -16,8 +16,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
@@ -31,6 +34,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    LinearLayout loading;
 
     DrawerLayout drawerLayout1;
     NavigationView navigationView1;
@@ -51,11 +56,12 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-
         drawerLayout1=findViewById(R.id.user_drawer_layout);
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
+
+        loading=(LinearLayout)findViewById(R.id.lin_load_ani);
 
         //reference for visibilty restriction
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
@@ -107,9 +113,17 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                 if(snapshot.exists()){
                     if(pos.equals("admin")){
+
+                        loading.setVisibility(View.GONE);
+
                         history.setVisibility(View.VISIBLE);
                         manualentry.setVisibility(View.VISIBLE);
                         scanner.setVisibility(View.VISIBLE);
+
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
+                        YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
+
                         Menu menu=navigationView1.getMenu();
                         MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
                         nav_QR.setVisible(true);
@@ -132,8 +146,13 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                     }else if(pos.equals("user")){
 
+                        loading.setVisibility(View.GONE);
+
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
+
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
+                        YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
 
                         Menu menu=navigationView1.getMenu();
                         MenuItem nav_pend=menu.findItem(R.id.nav_pending);
@@ -146,9 +165,13 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         nav_det.setVisible(true);
                     }else if(pos.equals("technician")){
 
+                        loading.setVisibility(View.GONE);
+
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
 
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
+                        YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
 
                         Menu menu=navigationView1.getMenu();
                         MenuItem nav_pend=menu.findItem(R.id.nav_pending);

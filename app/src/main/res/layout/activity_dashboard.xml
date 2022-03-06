@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".dashboard"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
     android:background="@drawable/background_new">
 
    <com.google.android.material.navigation.NavigationView
@@ -29,10 +28,12 @@
          <com.google.android.material.appbar.MaterialToolbar
              android:id="@+id/topAppBar_user"
              android:layout_width="match_parent"
+             android:background="@drawable/yellow_gradient"
              android:layout_height="?attr/actionBarSize"
              app:title="Dashboard"
+             app:titleTextColor="@color/white"
              app:menu="@menu/toolappbar"
-             app:navigationIcon="@drawable/notification"
+             app:navigationIcon="@drawable/ic_baseline_menu_24"
              style="@style/Widget.MaterialComponents.Toolbar.Primary"
              />
       </com.google.android.material.appbar.AppBarLayout>

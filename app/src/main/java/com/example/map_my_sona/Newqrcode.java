@@ -56,7 +56,7 @@ public class Newqrcode extends AppCompatActivity {
             public void onClick(View view) {
 
                 builder.setTitle("Alert")
-                        .setMessage("Are you sure to close the complaint ??")
+                        .setMessage("Are you sure to Add Product ??")
                         .setCancelable(true)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override

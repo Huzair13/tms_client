@@ -5,10 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.manualentry;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,30 +25,64 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Complaints_HistoryDetails extends AppCompatActivity {
+public class Complaints_HistoryDetails extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+
 
     RecyclerView recyclerView_complaints_history;
     DatabaseReference reference_complaints_history;
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
 
-    @Override
+    //fliter
+    TextInputLayout hisfliter;
+    AutoCompleteTextView hisflitertext;
+    Spinner spin;
+//    TextView  TextView;
+
+
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_details);
 
-        // calling the action bar
-   //     ActionBar actionBar = getSupportActionBar();
 
-        // Customize the back button
-//        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
 
-        // showing the back button in action bar
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-  //      getActionBar().setHomeButtonEnabled(true);
+        //filter
+//        hisfliter=findViewById(R.id.historyfliter);
+//        hisflitertext=findViewById(R.id.historyflitertext);
 
-    //    getSupportActionBar().setTitle("HISTORY DETAILS");  // provide compatibility to all the versions
+
+//        String[] fliter={"All","Past 10 days","Last Month"};
+//        ArrayAdapter<String> fliterAdapter=new ArrayAdapter<>(Complaints_HistoryDetails.this,R.layout.dropdownfliter,fliter);
+//        hisflitertext.setAdapter(fliterAdapter);
+
+
+
+
+            // Spinner element
+            Spinner spinner = (Spinner) findViewById(R.id.historyfliter);
+
+            // Spinner click listener
+            spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+            // Spinner Drop down elements
+            List<String> categories = new ArrayList<String>();
+            categories.add("All");
+            categories.add("Past 10 Days ");
+            categories.add("Last Month");
+
+            // Creating adapter for spinner
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+            // Drop down layout style - list view with radio button
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            // attaching data adapter to spinner
+            spinner.setAdapter(dataAdapter);
 
         recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
         reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints");
@@ -67,5 +110,24 @@ public class Complaints_HistoryDetails extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        // Showing selected spinner item
+//        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
+        ((TextView) parent.getChildAt(0)).setTextSize(20);
+
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 }

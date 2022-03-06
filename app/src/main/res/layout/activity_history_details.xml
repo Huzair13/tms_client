@@ -9,6 +9,25 @@
     android:orientation="vertical"
     android:background="@drawable/background1">
 
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <com.google.android.material.appbar.AppBarLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+         <com.google.android.material.appbar.MaterialToolbar
+             android:id="@+id/topAppBar_user"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             app:title="History"
+             app:menu="@menu/historyfilter"
+             style="@style/Widget.MaterialComponents.Toolbar.Primary"
+             />
+      </com.google.android.material.appbar.AppBarLayout>
+
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -29,13 +48,63 @@
           app:srcCompat="@drawable/mapmysona_logo" />
    </LinearLayout>
 
+<!--   <com.google.android.material.textfield.TextInputLayout-->
+<!--       android:id="@+id/historyfliter"-->
+<!--       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--       android:layout_width="195dp"-->
+<!--       android:layout_height="wrap_content"-->
+<!--       android:hint="Fliter"-->
+<!--       android:layout_gravity="end">-->
+
+<!--      <AutoCompleteTextView-->
+<!--          android:id="@+id/historyflitertext"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:textSize="18dp"-->
+<!--          android:textStyle="bold"-->
+<!--          android:fontFamily="@font/elmessiri"/>-->
+
+<!--      <TextView-->
+<!--          android:id="@+id/historyflitertext"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:textSize="18dp"-->
+<!--          android:textStyle="bold"-->
+<!--          android:fontFamily="@font/elmessiri">-->
+
+<!--      </TextView>-->
+
+<!--   </com.google.android.material.textfield.TextInputLayout>-->
+
+
+  <Spinner
+      android:id="@+id/historyfliter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/white"
+      android:layout_gravity="end"
+      android:padding="4dp"
+      android:layout_margin="10dp"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+  </Spinner>
+
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/recyclerview_complaints_history"
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="wrap_content">
 
    </androidx.recyclerview.widget.RecyclerView>
 
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/download"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Download"-->
+<!--        android:layout_gravity="center"-->
+<!--        >-->
+<!--    </com.google.android.material.button.MaterialButton>-->
 
 
 </LinearLayout>

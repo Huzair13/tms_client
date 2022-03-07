@@ -49,7 +49,7 @@ public class Complaints_HistoryDetails extends AppCompatActivity implements Adap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_details);
 
-
+        String message =getIntent().getStringExtra("message");
 
         //filter
 //        hisfliter=findViewById(R.id.historyfliter);
@@ -59,9 +59,6 @@ public class Complaints_HistoryDetails extends AppCompatActivity implements Adap
 //        String[] fliter={"All","Past 10 days","Last Month"};
 //        ArrayAdapter<String> fliterAdapter=new ArrayAdapter<>(Complaints_HistoryDetails.this,R.layout.dropdownfliter,fliter);
 //        hisflitertext.setAdapter(fliterAdapter);
-
-
-
 
             // Spinner element
             Spinner spinner = (Spinner) findViewById(R.id.historyfliter);

@@ -243,7 +243,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
 
             case R.id.nav_home_admin:
-                startActivity(new Intent(dashboard.this, dashboard.class));
+                Intent intent=new Intent(dashboard.this, dashboard.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 break;
 
             case R.id.new_id:

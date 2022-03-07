@@ -1,6 +1,11 @@
 package com.example.map_my_sona.complaints;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,8 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import com.airbnb.lottie.animation.content.Content;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -101,8 +109,32 @@ public class complaint_Page extends AppCompatActivity{
         });
 
         complaint_subBtn.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
+
+                notification();
+
+//                String message ="This is sample notifications";
+//                NotificationCompat.Builder builder = new NotificationCompat.Builder(
+//                        complaint_Page.this)
+//                        .setSmallIcon(R.drawable.adminicon)
+//                        .setContentTitle("New Message.....")
+//                        .setContentText(message)
+//                        .setAutoCancel(true);
+//
+//                Intent intent =new Intent(complaint_Page.this,Complaints_HistoryDetails.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.putExtra("message",message);
+//
+//                PendingIntent pendingIntent =PendingIntent.getActivity(complaint_Page.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+//                builder.setContentIntent(pendingIntent);
+//
+//                NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+//                notificationManager.notify(0,builder.build());
+
+
+
                 if(complaint_qrcode.getText().toString().isEmpty()){
                     complaint_qrcode.setError("Empty");
                     complaint_qrcode.requestFocus();
@@ -124,12 +156,27 @@ public class complaint_Page extends AppCompatActivity{
                 else{
                     submitComplaint();
                 }
+
+
             }
+
         });
 
 
         //scanText.setText(s);
     }
+
+    private void notification(){
+
+        NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification notify=new Notification.Builder
+                (getApplicationContext()).setContentTitle("tittle").setContentText("body").
+                setContentTitle("subject").setSmallIcon(R.drawable.adminicon).build();
+
+        notify.flags |= Notification.FLAG_AUTO_CANCEL;
+        notif.notify(0, notify);
+    }
+
 
     private void submitComplaint() {
 

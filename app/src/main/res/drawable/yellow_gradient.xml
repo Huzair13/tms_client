@@ -4,8 +4,9 @@
         android:type="linear"
         android:centerX="50%"
         android:centerY="50%"
-        android:startColor="#36096d"
-        android:endColor="#37d5d6"
+        android:startColor="#804FB3"
+        android:centerColor="#9969C7"
+        android:endColor="#B589D6"
         android:gradientRadius="110%"
         />
 </shape>

@@ -145,14 +145,20 @@ public class complaint_Page extends AppCompatActivity{
 //                notificationManager.notify(0,builder.build());
 
 
-                NotificationCompat.Builder builder =new NotificationCompat.Builder(complaint_Page.this,"My notifications");
-                builder.setContentTitle("hello");
-                builder.setContentText("hello hi");
-                builder.setSmallIcon(R.drawable.backicon);
-                builder.setAutoCancel(true);
+//                NotificationCompat.Builder builder =new NotificationCompat.Builder(complaint_Page.this,"My notifications");
+//                builder.setContentTitle("hello");
+//                builder.setContentText("hello hi");
+//                builder.setSmallIcon(R.drawable.backicon);
+//                builder.setAutoCancel(true);
+//
+//                NotificationManagerCompat managerCompat =NotificationManagerCompat.from(complaint_Page.this);
+//                managerCompat.notify(1,builder.build());
 
-                NotificationManagerCompat managerCompat =NotificationManagerCompat.from(complaint_Page.this);
-                managerCompat.notify(1,builder.build());
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(complaint_Page.this, "afafawewe")
+                        .setSmallIcon(R.drawable.adminicon)
+                        .setContentTitle("textTitle")
+                        .setContentText("textContent")
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
                 if(complaint_qrcode.getText().toString().isEmpty()){
                     complaint_qrcode.setError("Empty");

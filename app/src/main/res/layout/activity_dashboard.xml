@@ -9,7 +9,6 @@
     tools:context=".dashboard"
     tools:openDrawer="start"
     android:fitsSystemWindows="true"
-
     android:background="@drawable/background_new">
 
    <com.google.android.material.navigation.NavigationView

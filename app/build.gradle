@@ -62,5 +62,7 @@ dependencies {
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
+    implementation "io.karn:notify: 1.0.0-alpha"
+
 
 }

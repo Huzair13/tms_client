@@ -48,12 +48,6 @@ Clone the project
   git clone https://github.com/vigneshwaran-tech/Map_My_Sona.git
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
 Install dependencies
 
 ```bash

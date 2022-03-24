@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.INotificationSideChannel;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,8 +26,10 @@ import androidx.core.app.NotificationManagerCompat;
 import com.airbnb.lottie.animation.content.Content;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.manualentry;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,10 +52,17 @@ public class complaint_Page extends AppCompatActivity{
     String s;
     DatabaseReference dbRef;
 
+    TextInputLayout complaint_content;
+    AutoCompleteTextView complaint_content_text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
+
+        //
+        complaint_content=findViewById(R.id.deptresponsible);
+        complaint_content_text=findViewById(R.id.deptresponsibletext);
 
         sn=(TextView)findViewById(R.id.sn_unit);
         make=(TextView)findViewById(R.id.make_unit);
@@ -65,7 +76,7 @@ public class complaint_Page extends AppCompatActivity{
         mob=(TextView)findViewById(R.id.mob_unit);
         complaint_subBtn=(Button)findViewById(R.id.button_complaint_submit);
 
-        complaint_qrcode=(EditText)findViewById(R.id.complaint_Qrcode);
+//        complaint_qrcode=(EditText)findViewById(R.id.complaint_Qrcode);
         complainted_by_name=(EditText)findViewById(R.id.scan_qr_com_name);
         complainted_by_mob=(EditText)findViewById(R.id.scan_qr_com_mob);
         complainted_by_dep=(EditText)findViewById(R.id.scan_qr_com_dep);
@@ -117,6 +128,10 @@ public class complaint_Page extends AppCompatActivity{
             NotificationManager manager=getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
+
+        String[] dept={"electronics","watersupply","Network","wiring","painting","computer","carpenting"};
+        ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(complaint_Page.this,R.layout.dropdowncomplaintcontent,dept);
+        complaint_content_text.setAdapter(itemAdapter);
 
 
         complaint_subBtn.setOnClickListener(new View.OnClickListener() {

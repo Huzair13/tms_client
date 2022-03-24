@@ -24,6 +24,9 @@ public class manualentry extends AppCompatActivity {
     //
     TextInputLayout object;
     AutoCompleteTextView objecttext;
+    ///
+    TextInputLayout complaintmanualcontent;
+    AutoCompleteTextView complaintmanualcontenttext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,9 @@ public class manualentry extends AppCompatActivity {
         object=findViewById(R.id.object);
         objecttext=findViewById(R.id.objecttext);
 
+        complaintmanualcontent=findViewById(R.id.complaintmanualcontent);
+        complaintmanualcontenttext =findViewById(R.id.complaintmanualcontenttext);
+
 
         String[] dept={"electronics 💡","watersupply 🚿","Network 📶","wiring 🪢","painting 🎨","computer 🖥️","carpenting 🪚"};
         ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowndept,dept);
@@ -61,6 +67,11 @@ public class manualentry extends AppCompatActivity {
         String[] object={"Light 💡","Fan 🍃","Computer 🖥️","Bench 🪑","Painting 🎨"};
         ArrayAdapter<String> objectAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownobject,object);
         objecttext.setAdapter(objectAdapter);
+
+
+        String[] complaint={"Light Not working","Network issue","Fan not working" ,"Bathroom Problem" ,"Furniture defects"};
+        ArrayAdapter<String> complaintAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowncomplaintcontent,complaint);
+        complaintmanualcontenttext.setAdapter(complaintAdapter);
 
 
     }

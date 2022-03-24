@@ -38,6 +38,12 @@
             android:visible="false"
             android:icon="@drawable/ic_baseline_collections_24"
             android:title="Details" />
+
+        <item
+            android:id="@+id/emergency_contact"
+            android:visible="false"
+            android:icon="@drawable/ephone"
+            android:title="Emergency Contact" />
         <item
             android:id="@+id/nav_logOut"
             android:icon="@drawable/logout"

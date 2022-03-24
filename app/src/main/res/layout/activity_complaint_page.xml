@@ -523,10 +523,11 @@
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:hint="Dept.Responsible">
+            android:hint="Select the  complaint  ">
 
         <AutoCompleteTextView
-            android:id="@+id/complaint_content_text"
+            android:id="@+id/complaint_Qrcode"
+
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"

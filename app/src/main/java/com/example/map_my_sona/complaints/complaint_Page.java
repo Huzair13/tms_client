@@ -61,8 +61,8 @@ public class complaint_Page extends AppCompatActivity{
         setContentView(R.layout.activity_complaint_page);
 
         //
-        complaint_content=findViewById(R.id.deptresponsible);
-        complaint_content_text=findViewById(R.id.deptresponsibletext);
+        complaint_content=findViewById(R.id.complaint_content);
+        complaint_content_text=findViewById(R.id.complaint_Qrcode);
 
         sn=(TextView)findViewById(R.id.sn_unit);
         make=(TextView)findViewById(R.id.make_unit);
@@ -129,9 +129,10 @@ public class complaint_Page extends AppCompatActivity{
             manager.createNotificationChannel(channel);
         }
 
-        String[] dept={"electronics","watersupply","Network","wiring","painting","computer","carpenting"};
-        ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(complaint_Page.this,R.layout.dropdowncomplaintcontent,dept);
-        complaint_content_text.setAdapter(itemAdapter);
+
+        String[] complaint={"Light Not working","Network issue","Fan not working" ,"Bathroom Problem" ,"Furniture defects"};
+        ArrayAdapter<String> complaintAdapter=new ArrayAdapter<>(complaint_Page.this,R.layout.dropdowncomplaintcontent,complaint);
+        complaint_content_text.setAdapter(complaintAdapter);
 
 
         complaint_subBtn.setOnClickListener(new View.OnClickListener() {

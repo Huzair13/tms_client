@@ -46,7 +46,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView1;
     LinearLayout Linear1;
     MaterialToolbar toolbar1;
-   ImageView logo;
+    ImageView logo;
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
@@ -97,6 +97,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         navigationView1.setCheckedItem(R.id.nav_newQR);
         navigationView1.setCheckedItem(R.id.nav_pending);
         navigationView1.setCheckedItem(R.id.nav_solved);
+        navigationView1.setCheckedItem(R.id.emergency_contact);
 
         View headerview=navigationView1.getHeaderView(0);
 
@@ -145,6 +146,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
+
+                        MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
+                        nav_emergencyContect.setVisible(true);
 
 
                     }else if(pos.equals("user")){
@@ -266,6 +270,10 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 break;
             case R.id.update_data:
                 startActivity(new Intent(dashboard.this,update_database.class));
+                break;
+
+            case R.id.emergency_contact:
+                startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
 
             case R.id.nav_logOut:

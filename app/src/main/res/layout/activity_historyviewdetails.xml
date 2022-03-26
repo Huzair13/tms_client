@@ -15,24 +15,23 @@
         android:orientation="vertical"
         android:background="@drawable/background_new"
         >
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="141dp"-->
-<!--                android:layout_height="118dp"-->
-<!--                android:layout_gravity="top"-->
-<!--                app:srcCompat="@drawable/sonacollegeoftechnology" />-->
+            <!--      <ImageView-->
+            <!--          android:id="@+id/imageView"-->
+            <!--          android:layout_width="140dp"-->
+            <!--          android:layout_height="70dp"-->
+            <!--          android:layout_gravity="top"-->
+            <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="123dp"
-                android:layout_height="134dp"
-                android:layout_marginStart="150dp"
+                android:layout_height="102dp"
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
@@ -510,17 +509,17 @@
 
         </TableLayout>
 
-        <TextView
-            android:background="@drawable/cellshape_roundcorners"
-            android:layout_width="150dp"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/elmessiri"
-            android:text="Complaint is ...."
-            android:textColor="@color/black"
-            android:textSize="20dp"
+<!--        <TextView-->
+<!--            android:background="@drawable/cellshape_roundcorners"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:textAlignment="center"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:fontFamily="@font/elmessiri"-->
+<!--            android:text="Complaint is ...."-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="20dp"-->
             android:textStyle="bold"/>
 
         <TextView

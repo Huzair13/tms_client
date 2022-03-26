@@ -16,7 +16,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
 <!--            <ImageView-->
 <!--                android:id="@+id/imageView"-->
@@ -29,16 +30,15 @@
                 android:id="@+id/imageView2"
                 android:layout_width="123dp"
                 android:layout_height="134dp"
-                android:layout_marginStart="150dp"
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
 
         <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="295dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white">
 
             <TableRow>
@@ -47,9 +47,9 @@
                     android:layout_width="18dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="S.No"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -58,9 +58,9 @@
                     android:layout_width="131dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="Details"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -69,9 +69,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="Unit"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -84,19 +84,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:background="@drawable/cellshape"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:background="@drawable/table"
+                    android:gravity="center"
                     android:text="Serial No."
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -107,9 +107,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -122,9 +122,9 @@
                     android:layout_width="71dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="2"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -133,9 +133,9 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Make"
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -145,9 +145,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -160,9 +160,9 @@
                     android:layout_width="76dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="3"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -171,9 +171,9 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Model No."
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -183,9 +183,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -198,9 +198,9 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="4"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -209,9 +209,9 @@
                     android:layout_width="202dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Procurement Date"
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -221,8 +221,8 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:background="@drawable/table"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -236,9 +236,9 @@
                     android:layout_width="77dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="5"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -247,10 +247,10 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Power Rating"
                     android:textColor="@color/black"
-                    android:background="@drawable/table"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -259,9 +259,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -274,9 +274,9 @@
                     android:layout_width="73dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="6"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -285,11 +285,11 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Warranty Period"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
                 <TextView
@@ -297,9 +297,9 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -312,9 +312,9 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="7"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -323,11 +323,11 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Warranty Expiry Date"
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
                 <TextView
@@ -350,9 +350,9 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="8"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -361,9 +361,9 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Installed Date"
-                    android:background="@drawable/table"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -371,9 +371,9 @@
                 <TextView
                     android:id="@+id/ins_date_unit"
                     android:layout_width="113dp"
-                    android:background="@drawable/table"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
@@ -388,9 +388,9 @@
                     android:layout_width="79dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="9"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -399,8 +399,8 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:background="@drawable/table"
+                    android:gravity="center"
                     android:text="Installation By"
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -409,9 +409,9 @@
                 <TextView
                     android:id="@+id/ins_by_unit"
                     android:layout_width="113dp"
-                    android:background="@drawable/table"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
@@ -419,15 +419,16 @@
                     android:textStyle="bold" />
 
             </TableRow>
+
             <TableRow>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/cellshape"
                     android:gravity="center"
                     android:text="10"
-                    android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -436,11 +437,11 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text="Mobile No."
                     android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:background="@drawable/table"
                     android:textStyle="bold" />
 
                 <TextView
@@ -448,29 +449,73 @@
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/table"
                     android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cellshape"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Priority Level"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/priority_unit"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
             </TableRow>
 
 
+
         </TableLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
         <EditText
             android:id="@+id/scan_qr_com_name"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:fontFamily="@font/mulish"
             android:hint="Your Name"
-            android:textColorHint="@color/white">
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
         </EditText>
 
@@ -594,5 +639,5 @@
             tools:ignore="OnClick" />
 
     </LinearLayout>
-
+    </LinearLayout>
 </ScrollView>

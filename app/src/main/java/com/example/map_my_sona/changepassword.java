@@ -14,10 +14,6 @@ public class changepassword extends AppCompatActivity {
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
 
-        // Customize the back button
-//        actionBar.setHomeAsUpIndicator(R.drawable.mybutton);
 
-        // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

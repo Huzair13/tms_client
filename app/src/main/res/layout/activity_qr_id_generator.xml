@@ -33,7 +33,9 @@
         android:layout_height="wrap_content"
         android:hint="Qr ID number"
         android:padding="15dp"
-        app:startIconDrawable="@drawable/qrid">
+        app:startIconDrawable="@drawable/qrid"
+        app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+        app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_input"
@@ -43,8 +45,6 @@
              />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"

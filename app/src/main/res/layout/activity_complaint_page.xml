@@ -48,7 +48,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="S.No:"
+                    android:text="S.No"
                     android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -517,7 +517,48 @@
 
         </EditText>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Level of Complaint :"
+            android:textColor="@color/white"
+            android:layout_marginLeft="45dp">
+
+        </TextView>
+
+
+        <LinearLayout
+            android:id="@+id/prioritylayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+        <CheckBox
+            android:id="@+id/veryhighpriority"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Very High"
+            android:textColor="@color/white"
+            />
+            <CheckBox
+                android:id="@+id/highpriority"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="High"
+                android:textColor="@color/white"
+                />
+            <CheckBox
+                android:id="@+id/lowpriority"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Low"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
 <!--            android:id="@+id/complaint_content"-->
 <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
 <!--            android:layout_width="275dp"-->

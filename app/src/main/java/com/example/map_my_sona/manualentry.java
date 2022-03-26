@@ -28,6 +28,10 @@ public class manualentry extends AppCompatActivity {
     TextInputLayout complaintmanualcontent;
     AutoCompleteTextView complaintmanualcontenttext;
 
+    //
+    TextInputLayout compriority;
+    AutoCompleteTextView comprioritytext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +55,8 @@ public class manualentry extends AppCompatActivity {
         complaintmanualcontent=findViewById(R.id.complaintmanualcontent);
         complaintmanualcontenttext =findViewById(R.id.complaintmanualcontenttext);
 
+        compriority=findViewById(R.id.compriority);
+        comprioritytext =findViewById(R.id.comprioritytext);
 
         String[] dept={"electronics 💡","watersupply 🚿","Network 📶","wiring 🪢","painting 🎨","computer 🖥️","carpenting 🪚"};
         ArrayAdapter<String> itemAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowndept,dept);
@@ -69,10 +75,14 @@ public class manualentry extends AppCompatActivity {
         objecttext.setAdapter(objectAdapter);
 
 
-        String[] complaint={"Light Not working","Network issue","Fan not working" ,"Bathroom Problem" ,"Furniture defects"};
+        String[] complaint={"Light Not working 💡","Network issue 💻","Fan not working 💸" ,"Bathroom Problem 🛁" ,"Furniture defects 🪑"};
         ArrayAdapter<String> complaintAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdowncomplaintcontent,complaint);
         complaintmanualcontenttext.setAdapter(complaintAdapter);
 
+
+        String[] priority={"Very High ⚠️","High 😥 ","Low 🙂"};
+        ArrayAdapter<String> priorityAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownpriority,priority);
+        comprioritytext.setAdapter(priorityAdapter);
 
     }
 }

@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +48,9 @@ public class complaint_Page extends AppCompatActivity {
     private TextView sn, make, model, procurement, powerRating, wexpiry, wperiod, ins_by, ins_date, mob;
     private EditText complaint_qrcode, complainted_by_name, complainted_by_mob, complainted_by_dep;
     private Button complaint_subBtn;
+    CheckBox vhigh ,high ,low;
+
+
 
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str, procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str;
     private String complaint_txt;
@@ -82,6 +87,12 @@ public class complaint_Page extends AppCompatActivity {
         complainted_by_name = (EditText) findViewById(R.id.scan_qr_com_name);
         complainted_by_mob = (EditText) findViewById(R.id.scan_qr_com_mob);
         complainted_by_dep = (EditText) findViewById(R.id.scan_qr_com_dep);
+
+        vhigh =(CheckBox)findViewById(R.id.veryhighpriority);
+        high=(CheckBox)findViewById(R.id.highpriority);
+        low =(CheckBox)findViewById(R.id.lowpriority);
+
+        LinearLayout priority = (LinearLayout) findViewById(R.id.prioritylayout);
 
 
 //        TextView scanText = (TextView) findViewById(R.id.textView);
@@ -146,7 +157,12 @@ public class complaint_Page extends AppCompatActivity {
                 } else if (complainted_by_dep.getText().toString().isEmpty()) {
                     complainted_by_dep.setError("Empty");
                     complainted_by_dep.requestFocus();
-                } else {
+                }
+//                else if (vhigh.getText().toString().isEmpty()) {
+//                    vhigh.setError("Empty");
+//                    vhigh.requestFocus();
+//                }
+                else {
                     submitComplaint();
                 }
 
@@ -157,7 +173,6 @@ public class complaint_Page extends AppCompatActivity {
         String input = complaint_qrcode.getText().toString();
         Intent serviceIntent = new Intent(this, ExampleService.class);
         serviceIntent.putExtra("inputExtra", input);
-
         ContextCompat.startForegroundService(this, serviceIntent);
     }
 

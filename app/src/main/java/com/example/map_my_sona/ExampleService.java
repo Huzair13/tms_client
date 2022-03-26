@@ -29,7 +29,7 @@ public class ExampleService extends Service {
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(" 🗺️ Map My Sona 🗺️")
-                .setContentText(R.drawable.notification+input)
+                .setContentText(input)
                 .setSmallIcon(R.drawable.notification)
                 .setContentIntent(pendingIntent)
                 .build();

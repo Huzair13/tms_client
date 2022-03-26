@@ -11,7 +11,8 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+      >
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
@@ -94,54 +95,54 @@
 
       </LinearLayout>
 
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:layout_marginTop="10dp">
+<!--      <LinearLayout-->
+<!--          android:layout_width="wrap_content"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:orientation="horizontal"-->
+<!--          android:layout_marginTop="10dp">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Date:"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/elmessiri"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:text="Date:"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/elmessiri"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold">
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold">-->
 
-        </TextView>
+<!--        </TextView>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:text="Time:"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/elmessiri"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="105dp"-->
+<!--            android:text="Time:"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/elmessiri"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold">
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold">-->
 
-        </TextView>
+<!--        </TextView>-->
 
 
-      </LinearLayout>
+<!--      </LinearLayout>-->
 
 
       <com.google.android.material.textfield.TextInputLayout
@@ -150,6 +151,7 @@
           android:layout_width="275dp"
           android:layout_height="wrap_content"
           android:layout_marginLeft="25dp"
+          android:layout_marginTop="10dp"
           android:hint="Dept.Responsible">
 
         <AutoCompleteTextView
@@ -262,6 +264,27 @@
             android:fontFamily="@font/elmessiri"/>
 
       </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/compriority"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+          android:layout_width="275dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="25dp"
+          android:hint="Level of Complaint">
+
+        <AutoCompleteTextView
+            android:id="@+id/comprioritytext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:inputType="none"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/elmessiri"/>
+
+      </com.google.android.material.textfield.TextInputLayout>
+
 
 
 

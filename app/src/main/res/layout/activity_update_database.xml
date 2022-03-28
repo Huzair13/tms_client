@@ -475,6 +475,43 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:text="Department of Product"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:background="@drawable/table"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/dep_of_pro_unit_update_ad"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="11"
+                    android:background="@drawable/cellshape"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="Mobile No."
                     android:textColor="@color/black"
                     android:textSize="18dp"

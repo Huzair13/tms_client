@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;

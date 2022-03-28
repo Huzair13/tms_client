@@ -1,4 +1,4 @@
-package com.example.map_my_sona.complaints;
+package com.example.map_my_sona.complaints.Electricity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.historyviewdetails;
 import com.google.firebase.database.DatabaseReference;
 

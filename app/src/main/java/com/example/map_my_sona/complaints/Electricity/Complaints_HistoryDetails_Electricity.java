@@ -1,4 +1,4 @@
-package com.example.map_my_sona.complaints;
+package com.example.map_my_sona.complaints.Electricity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.complaints.Complaint_details;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

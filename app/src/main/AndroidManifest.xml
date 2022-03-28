@@ -70,7 +70,7 @@
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity
-            android:name=".complaints.Complaints_HistoryDetails_Electricity"
+            android:name=".complaints.Electricity.Complaints_HistoryDetails_Electricity"
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity

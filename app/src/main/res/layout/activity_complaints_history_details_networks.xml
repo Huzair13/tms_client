@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Complaints_HistoryDetails_Networks"
+    android:orientation="vertical"
+    android:background="@drawable/background_new"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_user"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="History"
+                app:menu="@menu/historyfilter"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--      <ImageView-->
+        <!--          android:id="@+id/imageView"-->
+        <!--          android:layout_width="141dp"-->
+        <!--          android:layout_height="118dp"-->
+        <!--          android:layout_gravity="top"-->
+        <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="123dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="150dp"
+            app:srcCompat="@drawable/mapmysona_logo" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/historyfliterNetwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="end"
+        android:padding="4dp"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    </Spinner>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_complaints_history_networks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

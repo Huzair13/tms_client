@@ -272,6 +272,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             case R.id.emergency_contact:
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
+            case R.id.nav_details:
+                startActivity(new Intent(dashboard.this,Dep_wise_history.class));
+                break;
 
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")

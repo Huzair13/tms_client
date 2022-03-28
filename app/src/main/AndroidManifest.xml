@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -20,6 +21,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
+        <activity
+            android:name=".Dep_wise_history"
+            android:exported="false" />
+        <activity
+            android:name=".Complaints_HistoryDetails_Networks"
+            android:exported="false" />
         <activity
             android:name=".emergencyContact"
             android:exported="false" />
@@ -96,7 +103,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <service android:name=".ExampleService"/>
+
+        <service android:name=".ExampleService" />
     </application>
 
 </manifest>

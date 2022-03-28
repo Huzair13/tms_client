@@ -29,8 +29,6 @@ import java.util.List;
 
 public class Complaints_HistoryDetails_Electricity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-
-
     RecyclerView recyclerView_complaints_history;
     DatabaseReference reference_complaints_history;
     complaints_history_Adapter_Electricity adapter_complaint_history;

@@ -42,13 +42,13 @@ See also the list of [contributors](https://github.com/vigneshwaran-tech/Map_My_
 
 ## Run Locally
 
-Clone the project
+Clone the project :
 
 ```bash
   git clone https://github.com/vigneshwaran-tech/Map_My_Sona.git
 ```
 
-Install dependencies
+Install dependencies :
 
 ```bash
    implementation "com.airbnb.android:lottie:3.7.0"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.map_my_sona.complaints.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
 
 public class Dep_wise_history extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class Dep_wise_history extends AppCompatActivity {
         networks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this,Complaints_HistoryDetails_Networks.class));
+                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Networks.class));
 
             }
         });

@@ -25,7 +25,7 @@
             android:name=".Dep_wise_history"
             android:exported="false" />
         <activity
-            android:name=".Complaints_HistoryDetails_Networks"
+            android:name=".complaints.Complaints_HistoryDetails_Networks"
             android:exported="false" />
         <activity
             android:name=".emergencyContact"

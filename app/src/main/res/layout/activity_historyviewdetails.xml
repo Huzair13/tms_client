@@ -543,7 +543,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="#32CD30"
             android:text="Close the Complaint"
             android:textColor="@color/white"
             android:textStyle="bold"

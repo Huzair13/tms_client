@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -24,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Newqrcode extends AppCompatActivity {
 
-    private EditText unique_id_ad,sn_ad,make_ad,model_ad,procurement_ad,powerRating_ad,wperiod_ad,wexpiryDate_ad,insDate_ad,insBy_ad,mob_ad;
+    private EditText unique_id_ad,sn_ad,make_ad,model_ad,procurement_ad,powerRating_ad,wperiod_ad,wexpiryDate_ad,insDate_ad,insBy_ad,mob_ad,dep_of_pro;
     private Button AddNew;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
@@ -49,6 +48,7 @@ public class Newqrcode extends AppCompatActivity {
         insBy_ad=(EditText) findViewById(R.id.ins_by_update_admin);
         insDate_ad=(EditText) findViewById(R.id.ins_date_update_admin);
         mob_ad=(EditText) findViewById(R.id.mob_update_admin);
+        dep_of_pro=(EditText)findViewById(R.id.depOfProduct_newQR_admin);
 
         AddNew=(Button) findViewById(R.id.newqrupdate_btn);
 
@@ -91,14 +91,15 @@ public class Newqrcode extends AppCompatActivity {
         String insDate_str_ad=insDate_ad.getText().toString();
         String powerRating_str_ad=powerRating_ad.getText().toString();
         String mob_str_ad=mob_ad.getText().toString();
+        String Dep_of_pro_str=dep_of_pro.getText().toString();
 
-        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad);
+        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad,Dep_of_pro_str);
 
 
     }
 
 
-    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String mob_str_ad) {
+    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String mob_str_ad,String Dep_of_pro_str) {
         if(unique_id_str_ad.isEmpty()){
             unique_id_ad.setError("It can't be empty");
             unique_id_ad.requestFocus();
@@ -132,13 +133,16 @@ public class Newqrcode extends AppCompatActivity {
         }else if(mob_str_ad.isEmpty()){
             mob_ad.setError("It can't be empty");
             mob_ad.requestFocus();
+        }else if(Dep_of_pro_str.isEmpty()) {
+            mob_ad.setError("It can't be empty");
+            mob_ad.requestFocus();
         }else{
-            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad);
+            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad,Dep_of_pro_str);
         }
        }
 
 
-    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String mob_str_ad) {
+    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String mob_str_ad,String Dep_of_pro_str) {
 
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Datas").child(unique_id_str_ad);
@@ -154,7 +158,7 @@ public class Newqrcode extends AppCompatActivity {
                 } else {
 
                     dbRef = reference.child("Datas");
-                    AddNewData addNewData = new AddNewData(sn_str_ad, make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, mob_str_ad);
+                    AddNewData addNewData = new AddNewData(sn_str_ad, make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, mob_str_ad,Dep_of_pro_str);
 
                     dbRef.child(unique_id_str_ad).setValue(addNewData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

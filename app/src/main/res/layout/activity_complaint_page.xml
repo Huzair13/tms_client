@@ -477,6 +477,44 @@
                     android:layout_weight="1"
                     android:background="@drawable/table"
                     android:gravity="center"
+                    android:text="Department of product"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dep_of_pro_unit"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cellshape"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
                     android:text="Priority Level"
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -534,33 +572,32 @@
 
         </EditText>
 
-        <EditText
+        <Spinner
             android:id="@+id/scan_qr_com_dep"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
+            android:inputType="none"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:fontFamily="@font/mulish"
-            android:hint="Your Department"
-            android:textColorHint="@color/white">
+            android:textSize="18dp"
+            android:spinnerMode="dropdown"
+            android:textStyle="bold" />
 
-        </EditText>
-
-        <EditText
+        <Spinner
             android:id="@+id/complaint_Qrcode"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
+            android:inputType="none"
+            android:spinnerMode="dropdown"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:fontFamily="@font/mulish"
-            android:hint="What is your Complaint ??"
-            android:textColorHint="@color/white">
+            android:textSize="18dp" />
 
-        </EditText>
 
         <TextView
             android:layout_width="wrap_content"
@@ -584,21 +621,21 @@
             android:id="@+id/veryhighpriority"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Very High"
+            android:text="Very Urgent"
             android:textColor="@color/white"
             />
             <CheckBox
                 android:id="@+id/highpriority"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="High"
+                android:text="Urgent"
                 android:textColor="@color/white"
                 />
             <CheckBox
                 android:id="@+id/lowpriority"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Low"
+                android:text="Not Urgent"
                 android:textColor="@color/white"
                 />
 

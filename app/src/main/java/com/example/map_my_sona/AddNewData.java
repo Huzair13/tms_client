@@ -12,8 +12,9 @@ public class AddNewData {
     private String ins_by;
     private String ins_date;
     private String mob;
+    private String dep_of_pro;
 
-    public AddNewData(String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date,String mob) {
+    public AddNewData(String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String dep_of_pro) {
         this.sn_no = sn_no;
         this.make = make;
         this.model = model;
@@ -23,18 +24,11 @@ public class AddNewData {
         this.wexpiry = wexpiry;
         this.ins_by = ins_by;
         this.ins_date = ins_date;
-        this.mob=mob;
-    }
-
-    public AddNewData() {
-    }
-
-    public String getMob() {
-        return mob;
-    }
-
-    public void setMob(String mob) {
         this.mob = mob;
+        this.dep_of_pro = dep_of_pro;
+    }
+    public AddNewData() {
+
     }
 
     public String getSn_no() {
@@ -107,5 +101,21 @@ public class AddNewData {
 
     public void setIns_date(String ins_date) {
         this.ins_date = ins_date;
+    }
+
+    public String getMob() {
+        return mob;
+    }
+
+    public void setMob(String mob) {
+        this.mob = mob;
+    }
+
+    public String getDep_of_pro() {
+        return dep_of_pro;
+    }
+
+    public void setDep_of_pro(String dep_of_pro) {
+        this.dep_of_pro = dep_of_pro;
     }
 }

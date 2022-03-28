@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,23 +16,23 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_history_Adapter.Viewholder_complaints_history> {
+public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter<complaints_history_Adapter_Electricity.Viewholder_complaints_history> {
 
-    private ArrayList<Complaint_details> arrayList;
+    private ArrayList<Complaint_details> arrayList1;
     private Context context;
-    complaints_history_Adapter.OnItemClickListerner onItemClickListerner;
+    complaints_history_Adapter_Electricity.OnItemClickListerner onItemClickListerner;
     DatabaseReference reference;
     boolean testclick=false;
 
-    public complaints_history_Adapter(ArrayList<Complaint_details> arrayList, Context context){
-        this.arrayList =arrayList;
+    public complaints_history_Adapter_Electricity(ArrayList<Complaint_details> arrayList, Context context){
+        this.arrayList1 =arrayList;
         this.context=context;
     }
 
 
     @NonNull
     @Override
-    public complaints_history_Adapter.Viewholder_complaints_history onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public complaints_history_Adapter_Electricity.Viewholder_complaints_history onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.historylayout,parent,false);
@@ -42,12 +41,11 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
     }
 
     @Override
-    public void onBindViewHolder(@NonNull complaints_history_Adapter.Viewholder_complaints_history holder, int position) {
+    public void onBindViewHolder(@NonNull complaints_history_Adapter_Electricity.Viewholder_complaints_history holder, int position) {
 
-        Complaint_details complaint_details=arrayList.get(position);
+        Complaint_details complaint_details=arrayList1.get(position);
 
         String postkey= complaint_details.getKey();
-
         String status_com=complaint_details.getStatus();
 
         if(status_com.equals("Pending")){
@@ -65,7 +63,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return arrayList1.size();
     }
 
     public class Viewholder_complaints_history extends RecyclerView.ViewHolder implements  View.OnClickListener {
@@ -89,7 +87,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         public void onClick(View view) {
             int positon=getAdapterPosition();
             Intent intent=new Intent(context, historyviewdetails.class);
-            intent.putExtra("com_ID",arrayList.get(positon).getKey());
+            intent.putExtra("com_ID",arrayList1.get(positon).getKey());
             context.startActivity(intent);
         }
     }
@@ -97,7 +95,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
     public interface OnItemClickListerner{
         void onClick(int position);
     }
-    public void setOnItemClickListerner(complaints_history_Adapter.OnItemClickListerner onItemClickListerner){
+    public void setOnItemClickListerner(complaints_history_Adapter_Electricity.OnItemClickListerner onItemClickListerner){
         this.onItemClickListerner=onItemClickListerner;
     }
 

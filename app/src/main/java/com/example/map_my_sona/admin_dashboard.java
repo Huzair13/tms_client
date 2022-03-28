@@ -122,7 +122,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
 
             case R.id.nav_logOut:
                 builder.setTitle("Alert")
-                        .setMessage("Are you sure to Log out")
+                        .setMessage("Are you sure to Log out ")
                         .setCancelable(true)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override

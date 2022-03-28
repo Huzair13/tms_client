@@ -12,21 +12,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
+import com.example.map_my_sona.complaints.Complaints_HistoryDetails_Electricity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -219,7 +216,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this, Complaints_HistoryDetails.class));
+                startActivity(new Intent(dashboard.this, Complaints_HistoryDetails_Electricity.class));
             }
         });
 

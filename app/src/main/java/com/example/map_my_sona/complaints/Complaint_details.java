@@ -20,8 +20,13 @@ public class Complaint_details {
     private String key;
     private String UniqueId;
     private String status;
+    private String dep_of_pro;
 
-    public Complaint_details(String com_by_name, String com_by_mob, String com_by_dep, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String date, String time, String key, String uniqueId, String status) {
+    public Complaint_details() {
+
+    }
+
+    public Complaint_details(String com_by_name, String com_by_mob, String com_by_dep, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String date, String time, String key, String uniqueId, String status, String dep_of_pro) {
         this.com_by_name = com_by_name;
         this.com_by_mob = com_by_mob;
         this.com_by_dep = com_by_dep;
@@ -41,10 +46,10 @@ public class Complaint_details {
         this.key = key;
         UniqueId = uniqueId;
         this.status = status;
+        this.dep_of_pro = dep_of_pro;
     }
 
-    public Complaint_details() {
-    }
+
 
     public String getCom_by_name() {
         return com_by_name;
@@ -196,5 +201,13 @@ public class Complaint_details {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getDep_of_pro() {
+        return dep_of_pro;
+    }
+
+    public void setDep_of_pro(String dep_of_pro) {
+        this.dep_of_pro = dep_of_pro;
     }
 }

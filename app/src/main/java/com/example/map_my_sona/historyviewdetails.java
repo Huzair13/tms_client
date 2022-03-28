@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,19 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.Complaints_HistoryDetails;
+import com.example.map_my_sona.complaints.Complaints_HistoryDetails_Electricity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.zip.Inflater;
 
 public class historyviewdetails extends AppCompatActivity {
 
@@ -74,7 +70,7 @@ public class historyviewdetails extends AppCompatActivity {
         comp_close=(Button)findViewById(R.id.close_the_com_his);
 
 
-        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child(com_id_new);
+        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -149,7 +145,7 @@ public class historyviewdetails extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Object o) {
                                             Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                            Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails.class);
+                                            Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             startActivity(intent);
 

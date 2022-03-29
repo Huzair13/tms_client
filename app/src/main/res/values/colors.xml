@@ -15,6 +15,15 @@
     <color name="Red">#D22B2B</color>
     <color name="green">#32CD30</color>
     <color name="charcoal">#36454F</color>
+    <color name="demin">#6F8FAF</color>
+    <color name="skyblue">#87CEEB</color>
+    <color name="steelblue">#4682B4</color>
+    <color name="electricblue">#7DF9FF</color>
+    <color name="islandgreen"> #2CAE66</color>
+    <color name="violet">#B569B1</color>
+    <color name="cblue">#80B2EF</color>
+    <color name="cyellow">#F560A5</color>
+    <color name="cpink">#8AD6F0</color>
 
 
 </resources>

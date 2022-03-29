@@ -7,9 +7,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard"
-    tools:openDrawer="start"
+
     android:fitsSystemWindows="true"
-    android:background="@drawable/bgkalan">
+    android:background="@drawable/background_new">
 
    <com.google.android.material.navigation.NavigationView
        android:layout_width="wrap_content"
@@ -98,14 +98,14 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/sliver"
+          app:cardBackgroundColor="@color/islandgreen"
           >
          <ImageView
              android:layout_width="75dp"
              android:layout_height="50dp"
              android:layout_marginTop="25dp"
              android:layout_marginLeft="34dp"
-             android:src="@drawable/scanicon"
+             android:src="@drawable/qrcode_white"
              android:scaleType="fitCenter"/>
 
          <TextView
@@ -116,7 +116,7 @@
              android:text="Scan Code"
              android:textSize="20dp"
              android:gravity="center"
-             android:textColor="@color/charcoal"
+             android:textColor="@color/white"
              android:fontFamily="@font/quattrocentro_sans" >
 
          </TextView>
@@ -138,28 +138,36 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/sliver">
-         <ImageView
-             android:layout_width="75dp"
-             android:layout_height="50dp"
-             android:layout_marginTop="25dp"
-             android:layout_marginLeft="34dp"
-             android:src="@drawable/historyicon"
-             android:scaleType="fitCenter"/>
+          app:cardBackgroundColor="@color/cyellow"
+          >
 
 
          <TextView
              android:id="@+id/historydetail"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
              android:textStyle="bold"
              android:text="History Details"
              android:textSize="20dp"
-             android:gravity="center"
-             android:textColor="@color/charcoal"
+             android:textColor="@color/white"
+             android:padding="40dp"
+             android:layout_marginLeft="20dp"
              android:fontFamily="@font/quattrocentro_sans">
 
          </TextView>
+
+         <ImageView
+             android:layout_width="75dp"
+             android:layout_height="50dp"
+             android:layout_marginTop="25dp"
+             android:layout_marginRight="45dp"
+             android:src="@drawable/history_white"
+             android:layout_gravity="end"
+             />
+
+
+
+
 
       </com.google.android.material.card.MaterialCardView>
 
@@ -178,7 +186,7 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/sliver">
+          app:cardBackgroundColor="@color/skyblue">
          <ImageView
              android:layout_width="75dp"
              android:layout_height="50dp"
@@ -197,7 +205,7 @@
              android:text="Manual Entry"
              android:textSize="20dp"
              android:gravity="center"
-             android:textColor="@color/charcoal"
+             android:textColor="@color/white"
              android:fontFamily="@font/quattrocentro_sans">
 
          </TextView>

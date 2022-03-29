@@ -209,10 +209,10 @@ public class complaint_Page extends AppCompatActivity {
         });
         //scanText.setText(s);
 
-        /*String input = complaint_txt;
+        String input = complaint_txt;
         Intent serviceIntent = new Intent(this, ExampleService.class);
         serviceIntent.putExtra("inputExtra", input);
-        ContextCompat.startForegroundService(this, serviceIntent);*/
+        ContextCompat.startForegroundService(this, serviceIntent);
     }
 
 

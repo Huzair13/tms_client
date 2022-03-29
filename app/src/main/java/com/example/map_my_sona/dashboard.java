@@ -167,6 +167,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
+
+                        MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
+                        nav_emergencyContect.setVisible(true);
                     }else if(pos.equals("technician")){
 
                         loading.setVisibility(View.GONE);
@@ -278,7 +281,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")
-                        .setMessage("Are you sure to Log out")
+                        .setMessage("Are you sure to Log out ?")
                         .setCancelable(true)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override

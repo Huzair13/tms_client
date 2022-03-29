@@ -1,4 +1,4 @@
-package com.example.map_my_sona.complaints.Electricity;
+package com.example.map_my_sona.complaints;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,22 +11,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.historyviewdetails_networks;
-import com.example.map_my_sona.historyviewdetails;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_networks;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter<complaints_history_Adapter_Electricity.Viewholder_complaints_history> {
+public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_history_Adapter.Viewholder_complaints_history> {
 
     private ArrayList<Complaint_details> arrayList1;
     private Context context;
-    complaints_history_Adapter_Electricity.OnItemClickListerner onItemClickListerner;
+    complaints_history_Adapter.OnItemClickListerner onItemClickListerner;
     DatabaseReference reference;
     boolean testclick=false;
 
-    public complaints_history_Adapter_Electricity(ArrayList<Complaint_details> arrayList, Context context){
+    public complaints_history_Adapter(ArrayList<Complaint_details> arrayList, Context context){
         this.arrayList1 =arrayList;
         this.context=context;
     }
@@ -34,7 +33,7 @@ public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter
 
     @NonNull
     @Override
-    public complaints_history_Adapter_Electricity.Viewholder_complaints_history onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public complaints_history_Adapter.Viewholder_complaints_history onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.historylayout,parent,false);
@@ -43,7 +42,7 @@ public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter
     }
 
     @Override
-    public void onBindViewHolder(@NonNull complaints_history_Adapter_Electricity.Viewholder_complaints_history holder, int position) {
+    public void onBindViewHolder(@NonNull complaints_history_Adapter.Viewholder_complaints_history holder, int position) {
 
         Complaint_details complaint_details=arrayList1.get(position);
 
@@ -106,7 +105,7 @@ public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter
     public interface OnItemClickListerner{
         void onClick(int position);
     }
-    public void setOnItemClickListerner(complaints_history_Adapter_Electricity.OnItemClickListerner onItemClickListerner){
+    public void setOnItemClickListerner(complaints_history_Adapter.OnItemClickListerner onItemClickListerner){
         this.onItemClickListerner=onItemClickListerner;
     }
 

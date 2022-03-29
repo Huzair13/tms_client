@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;

@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.complaints.HistoryDetails;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +10,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
-import com.example.map_my_sona.complaints.Electricity.complaints_history_Adapter_Electricity;
+import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +26,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity {
 
     RecyclerView recyclerView_complaints_history_networks;
     DatabaseReference reference_complaints_history_networks;
-    complaints_history_Adapter_Electricity adapter_complaint_history_networks;
+    complaints_history_Adapter adapter_complaint_history_networks;
     ArrayList<Complaint_details> arrayList_complaints_history_networks;
 
     //fliter
@@ -46,7 +46,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity {
         recyclerView_complaints_history_networks.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList_complaints_history_networks=new ArrayList<>();
-        adapter_complaint_history_networks = new complaints_history_Adapter_Electricity(arrayList_complaints_history_networks,this);
+        adapter_complaint_history_networks = new complaints_history_Adapter(arrayList_complaints_history_networks,this);
         recyclerView_complaints_history_networks.setAdapter(adapter_complaint_history_networks);
 
         reference_complaints_history_networks.addValueEventListener(new ValueEventListener() {

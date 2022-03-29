@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context=".complaints.Electricity.Complaints_HistoryDetails_Electricity">
+    tools:context=".complaints.HistoryDetails.Complaints_HistoryDetails_Electricity">
 
     <TableLayout
         android:layout_width="match_parent"

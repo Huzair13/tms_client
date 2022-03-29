@@ -22,10 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".complaints.historyviewdetails_networks"
+            android:name=".complaints.viewDetails.historyviewdetails_networks"
             android:exported="false" />
         <activity
-            android:name=".Complaints_HistoryDetails_Networks"
+            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Networks"
             android:exported="false" />
         <activity
             android:name=".Dep_wise_history"
@@ -46,7 +46,7 @@
             android:name=".Newqrcode"
             android:exported="false" />
         <activity
-            android:name=".historyviewdetails"
+            android:name=".complaints.viewDetails.historyviewdetails"
             android:exported="false" />
         <activity
             android:name=".adminregistercomplaint"
@@ -80,7 +80,7 @@
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity
-            android:name=".complaints.Electricity.Complaints_HistoryDetails_Electricity"
+            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Electricity"
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity

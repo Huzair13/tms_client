@@ -1,4 +1,4 @@
-package com.example.map_my_sona.complaints;
+package com.example.map_my_sona.complaints.viewDetails;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -12,10 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.map_my_sona.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
-import com.example.map_my_sona.historyviewdetails;
+import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;

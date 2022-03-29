@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.map_my_sona.complaints.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.complaints.Electricity.Complaints_HistoryDetails_Electricity;
 
 public class Dep_wise_history extends AppCompatActivity {

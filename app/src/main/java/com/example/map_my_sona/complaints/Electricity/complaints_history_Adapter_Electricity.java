@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.historyviewdetails_networks;
 import com.example.map_my_sona.historyviewdetails;
 import com.google.firebase.database.DatabaseReference;
 
@@ -87,9 +88,18 @@ public class complaints_history_Adapter_Electricity extends RecyclerView.Adapter
         @Override
         public void onClick(View view) {
             int positon=getAdapterPosition();
-            Intent intent=new Intent(context, historyviewdetails.class);
-            intent.putExtra("com_ID",arrayList1.get(positon).getKey());
-            context.startActivity(intent);
+            Complaint_details complaint_details=arrayList1.get(positon);
+            String pro_dep=complaint_details.getDep_of_pro();
+            if(pro_dep.equals("Electricity")){
+                Intent intent=new Intent(context, historyviewdetails.class);
+                intent.putExtra("com_ID",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
+            else if(pro_dep.equals("Networks")){
+                Intent intent=new Intent(context, historyviewdetails_networks.class);
+                intent.putExtra("com_ID",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
         }
     }
 

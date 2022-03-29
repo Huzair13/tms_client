@@ -22,10 +22,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".Dep_wise_history"
+            android:name=".complaints.historyviewdetails_networks"
             android:exported="false" />
         <activity
-            android:name=".complaints.Complaints_HistoryDetails_Networks"
+            android:name=".Complaints_HistoryDetails_Networks"
+            android:exported="false" />
+        <activity
+            android:name=".Dep_wise_history"
             android:exported="false" />
         <activity
             android:name=".emergencyContact"

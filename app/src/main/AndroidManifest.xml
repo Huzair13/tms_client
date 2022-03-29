@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".complaints.viewDetails.historyviewdetails_carpenter"
+            android:exported="false" />
+        <activity
+            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter"
+            android:exported="false" />
+        <activity
             android:name=".complaints.viewDetails.historyviewdetails_networks"
             android:exported="false" />
         <activity

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class historyviewdetails extends AppCompatActivity {
+public class historyviewdetails_carpenter extends AppCompatActivity {
 
     private DatabaseReference reference_complaints_history_fullView;
 
@@ -34,43 +34,43 @@ public class historyviewdetails extends AppCompatActivity {
     private Button comp_close;
     private String status;
 
-    AlertDialog.Builder builder;
+    AlertDialog.Builder builder_carpenter;
 
     private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
     private String staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historyviewdetails);
+        setContentView(R.layout.activity_historyviewdetails_carpenter);
 
-        builder=new AlertDialog.Builder(this);
+        builder_carpenter=new AlertDialog.Builder(this);
 
         Intent intent=getIntent();
         String com_id_new=intent.getStringExtra("com_ID");
 
 
-        staff_name=(TextView)findViewById(R.id.staff_name_unit_his);
-        staff_dep=(TextView)findViewById(R.id.dep_unit_his);
-        com_id=(TextView)findViewById(R.id.Comid_unit_his);
-        staff_mob=(TextView)findViewById(R.id.staff_mob_history_com);
-        powerRating=(TextView)findViewById(R.id.powerRating_unit_his);
-        wexpiry=(TextView)findViewById(R.id.warranty_exp_unit_his);
-        wperiod=(TextView)findViewById(R.id.warranty_unit_his);
-        ins_by=(TextView)findViewById(R.id.ins_by_unit_his);
-        ins_date=(TextView)findViewById(R.id.ins_date_unit_his);
-        mob=(TextView)findViewById(R.id.mob_unit_his);
-        com_txt=(TextView)findViewById(R.id.com_txt_history);
+        staff_name=(TextView)findViewById(R.id.staff_name_unit_his_carpenter);
+        staff_dep=(TextView)findViewById(R.id.dep_unit_his_carpenter);
+        com_id=(TextView)findViewById(R.id.Comid_unit_his_carpenter);
+        staff_mob=(TextView)findViewById(R.id.staff_mob_history_com_carpenter);
+        powerRating=(TextView)findViewById(R.id.powerRating_unit_his_carpenter);
+        wexpiry=(TextView)findViewById(R.id.warranty_exp_unit_his_carpenter);
+        wperiod=(TextView)findViewById(R.id.warranty_unit_his_carpenter);
+        ins_by=(TextView)findViewById(R.id.ins_by_unit_his_carpenter);
+        ins_date=(TextView)findViewById(R.id.ins_date_unit_his_carpenter);
+        mob=(TextView)findViewById(R.id.mob_unit_his_carpenter);
+        com_txt=(TextView)findViewById(R.id.com_txt_history_carpenter);
 
 
-        pro_id=(TextView) findViewById(R.id.Product_ID_history);
-        com_status_his=(TextView)findViewById(R.id.complaint_status_his);
+        pro_id=(TextView) findViewById(R.id.Product_ID_history_carpenter);
+        com_status_his=(TextView)findViewById(R.id.complaint_status_his_carpenter);
 
-        comp_close=(Button)findViewById(R.id.close_the_com_his);
+        comp_close=(Button)findViewById(R.id.close_the_com_his_carpenter);
 
-
-        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity").child(com_id_new);
+        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Carpenter").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -121,20 +121,19 @@ public class historyviewdetails extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(historyviewdetails.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(historyviewdetails_carpenter.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
 
             }
         });
 
-
-         comp_close.setOnClickListener(new View.OnClickListener() {
+        comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (status.equals("Pending")){
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
 
-                    builder.setTitle("Alert")
+                    builder_carpenter.setTitle("Alert")
                             .setMessage("Are you sure to close the complaint ??")
                             .setCancelable(true)
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -144,8 +143,8 @@ public class historyviewdetails extends AppCompatActivity {
                                     reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                         @Override
                                         public void onSuccess(Object o) {
-                                            Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                            Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
+                                            Toast.makeText(historyviewdetails_carpenter.this, "Complaint closed", Toast.LENGTH_SHORT).show();
+                                            Intent intent=new Intent(historyviewdetails_carpenter.this, Complaints_HistoryDetails_Carpenter.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             startActivity(intent);
 
@@ -154,7 +153,7 @@ public class historyviewdetails extends AppCompatActivity {
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(historyviewdetails.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(historyviewdetails_carpenter.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
@@ -169,12 +168,9 @@ public class historyviewdetails extends AppCompatActivity {
                             .show();
 
                 }else{
-                    Toast.makeText(historyviewdetails.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(historyviewdetails_carpenter.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
-
-
 }

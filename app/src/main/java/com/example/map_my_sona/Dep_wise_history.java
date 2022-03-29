@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 
 public class Dep_wise_history extends AppCompatActivity {
 
-    private Button networks,electricity;
+    private Button networks,electricity,carpenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class Dep_wise_history extends AppCompatActivity {
 
         networks=(Button) findViewById(R.id.button_111);
         electricity=(Button) findViewById(R.id.button2_112);
+        carpenter=(Button)findViewById(R.id.button_131);
 
         networks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,13 @@ public class Dep_wise_history extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Electricity.class));
 
+            }
+        });
+
+        carpenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Carpenter.class));
             }
         });
     }

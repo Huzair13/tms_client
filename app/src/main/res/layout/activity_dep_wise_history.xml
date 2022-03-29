@@ -1,66 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dep_wise_history">
+    tools:context=".Dep_wise_history"
+    android:orientation="vertical"
+    android:background="@drawable/background01">
 
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar_user_networks"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="?attr/actionBarSize"
+            app:title="Department Wise History"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar_admin"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="Department Wise History"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                android:fitsSystemWindows="true"
-                />
 
-        </com.google.android.material.appbar.AppBarLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        >
 
-    <Button
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+    >
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_111"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="169dp"
-        android:text="Button Networks"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Networks"
+        android:textSize="14dp"
+        android:layout_marginRight="5dp"
+        >
 
-    <Button
+    </com.google.android.material.button.MaterialButton>
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button2_112"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="169dp"
-        android:text="Button Electricity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_111" />
+        android:text="Electricity"
+        android:textSize="14dp"
+        android:layout_marginRight="5dp">
 
-    <Button
+    </com.google.android.material.button.MaterialButton>
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_131"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="173dp"
-        android:text="Button Carpenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2_112" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Carpenter"
+        android:textSize="14dp"
+        android:layout_marginRight="5dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/plumber_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plumber"
+            android:textSize="14dp"
+            android:layout_marginRight="5dp">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/painting_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Painting"
+            android:textSize="14dp"
+            android:layout_marginRight="5dp">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/computer_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer"
+            android:textSize="14dp"
+            android:layout_marginRight="5dp"
+            >
+
+        </com.google.android.material.button.MaterialButton>
+
+    </LinearLayout>
+</HorizontalScrollView>
+</LinearLayout>

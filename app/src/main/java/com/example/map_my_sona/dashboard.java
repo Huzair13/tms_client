@@ -216,7 +216,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this, Complaints_HistoryDetails_Electricity.class));
+                startActivity(new Intent(dashboard.this, Dep_wise_history.class));
             }
         });
 

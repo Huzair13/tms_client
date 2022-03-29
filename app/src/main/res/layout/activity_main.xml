@@ -20,7 +20,7 @@
      android:layout_marginTop="100dp"
      app:lottie_autoPlay="true"
      app:lottie_loop="true"
-     app:lottie_rawRes="@raw/splash3">
+     app:lottie_rawRes="@raw/worlds">
 
  </com.airbnb.lottie.LottieAnimationView>
 

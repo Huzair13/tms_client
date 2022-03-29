@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".complaints.viewDetails.historyviewdetails"
     android:orientation="vertical"
-    >
+    android:background="@drawable/background_new"
+    tools:context=".complaints.viewDetails.historyviewdetails_painting">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +28,7 @@
             <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageView2_painting_view"
                 android:layout_width="123dp"
                 android:layout_height="102dp"
                 app:srcCompat="@drawable/mapmysona_logo" />
@@ -47,7 +48,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/Product_ID_history"
+                android:id="@+id/Product_ID_history_painting"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
@@ -59,24 +60,24 @@
 
             <TextView
                 android:textAlignment="center"
-                android:id="@+id/complaint_status_his"
+                android:id="@+id/complaint_status_his_painting"
                 android:layout_width="150dp"
                 android:textSize="25dp"
                 android:fontFamily="@font/elmessiri"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"/>
 
-<!--            <com.google.android.material.chip.ChipGroup-->
-<!--                android:textAlignment="center"-->
-<!--                android:id="@+id/complaint_status_his"-->
-<!--                android:layout_width="150dp"-->
-<!--                android:textSize="25dp"-->
-<!--                android:fontFamily="@font/elmessiri"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginTop="25dp">-->
+            <!--            <com.google.android.material.chip.ChipGroup-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:id="@+id/complaint_status_his"-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:textSize="25dp"-->
+            <!--                android:fontFamily="@font/elmessiri"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="25dp">-->
 
 
-<!--            </com.google.android.material.chip.ChipGroup>-->
+            <!--            </com.google.android.material.chip.ChipGroup>-->
 
 
         </LinearLayout>
@@ -150,7 +151,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Comid_unit_his"
+                    android:id="@+id/Comid_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -188,7 +189,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/staff_name_unit_his"
+                    android:id="@+id/staff_name_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -226,7 +227,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/dep_unit_his"
+                    android:id="@+id/dep_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -264,7 +265,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/staff_mob_history_com"
+                    android:id="@+id/staff_mob_history_com_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -302,7 +303,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/powerRating_unit_his"
+                    android:id="@+id/powerRating_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -340,7 +341,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/warranty_unit_his"
+                    android:id="@+id/warranty_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -378,7 +379,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/warranty_exp_unit_his"
+                    android:id="@+id/warranty_exp_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -416,7 +417,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/ins_date_unit_his"
+                    android:id="@+id/ins_date_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -454,7 +455,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/ins_by_unit_his"
+                    android:id="@+id/ins_by_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -491,7 +492,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/mob_unit_his"
+                    android:id="@+id/mob_unit_his_painting"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -507,21 +508,21 @@
 
         </TableLayout>
 
-<!--        <TextView-->
-<!--            android:background="@drawable/cellshape_roundcorners"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:textAlignment="center"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="30dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/elmessiri"-->
-<!--            android:text="Complaint is ...."-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"/>-->
+        <!--        <TextView-->
+        <!--            android:background="@drawable/cellshape_roundcorners"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="30dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:fontFamily="@font/elmessiri"-->
+        <!--            android:text="Complaint is ...."-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="20dp"-->
+        <!--            android:textStyle="bold"/>-->
 
         <TextView
-            android:id="@+id/com_txt_history"
+            android:id="@+id/com_txt_history_painting"
             android:layout_width="350dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
@@ -536,7 +537,7 @@
         </TextView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/close_the_com_his"
+            android:id="@+id/close_the_com_his_painting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -547,6 +548,6 @@
             app:cornerRadius="25dp" />
 
 
-            </LinearLayout>
+    </LinearLayout>
 
-        </ScrollView>
+</ScrollView>

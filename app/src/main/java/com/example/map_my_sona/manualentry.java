@@ -80,7 +80,7 @@ public class manualentry extends AppCompatActivity {
         complaintmanualcontenttext.setAdapter(complaintAdapter);
 
 
-        String[] priority={"Very High ⚠️","High 😥 ","Low 🙂"};
+        String[] priority={"Very High ⚠","High 😥 ","Low 🙂"};
         ArrayAdapter<String> priorityAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownpriority,priority);
         comprioritytext.setAdapter(priorityAdapter);
 

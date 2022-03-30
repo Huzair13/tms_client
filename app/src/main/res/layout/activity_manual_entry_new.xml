@@ -59,7 +59,7 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
 
             <Spinner
@@ -73,7 +73,7 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                                      />
 
             <Spinner
                 android:id="@+id/manual_location"
@@ -86,7 +86,7 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <Spinner
                 android:id="@+id/manual_object"
@@ -99,7 +99,7 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <Spinner
                 android:id="@+id/manual_com_details"
@@ -112,7 +112,7 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <Spinner
                 android:id="@+id/manual_com_priority"
@@ -125,27 +125,28 @@
                 android:spinnerMode="dropdown"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/manual_intercom_number"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/islandgreen"
+                android:background="@drawable/greenshade"
                 android:textColor="@color/black"
                 android:hint="Intercom Number"
                 android:textSize="18dp"
                 android:gravity="left|center"
                 android:padding="10dp"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                />
 
             <EditText
                 android:id="@+id/manual_phn_number"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/islandgreen"
+                android:background="@drawable/greenshade"
                 android:textColor="@color/black"
                 android:hint="Phone Number"
                 android:textSize="18dp"
@@ -160,7 +161,7 @@
                 android:layout_gravity="center"
                 android:text="Submit"
                 android:textSize="24dp"
-                app:cornerRadius="25dp"
+                app:cornerRadius="18dp"
                 >
 
             </com.google.android.material.button.MaterialButton>

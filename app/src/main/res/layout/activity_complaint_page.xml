@@ -547,13 +547,13 @@
             android:id="@+id/scan_qr_com_name"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="45dp"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/mulish"
-            android:hint="Your Name"
+            android:paddingLeft="15dp"
+            android:hint=" Name"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textStyle="bold">
+            android:background="@drawable/manualbordershape">
 
         </EditText>
 
@@ -561,14 +561,14 @@
             android:id="@+id/scan_qr_com_mob"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="45dp"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:fontFamily="@font/mulish"
-            android:hint="Your Mobile Number"
+            android:hint=" Mobile Number"
             android:textColorHint="@color/white"
-            android:inputType="number">
+            android:inputType="number"
+            android:background="@drawable/manualbordershape">
 
         </EditText>
 
@@ -576,27 +576,31 @@
             android:id="@+id/scan_qr_com_dep"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:layout_gravity="center"
             android:inputType="none"
             android:textColor="@color/white"
             android:fontFamily="@font/mulish"
-            android:textSize="18dp"
+            android:textSize="10dp"
             android:spinnerMode="dropdown"
-            android:textStyle="bold" />
+            android:background="@drawable/manualbordershapedropdown"
+            />
 
         <Spinner
             android:id="@+id/complaint_Qrcode"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center"
             android:inputType="none"
             android:spinnerMode="dropdown"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:fontFamily="@font/mulish"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:background="@drawable/manualbordershapedropdown"/>
 
 
         <TextView
@@ -604,7 +608,9 @@
             android:layout_height="match_parent"
             android:text="Level of Complaint :"
             android:textColor="@color/white"
-            android:layout_marginLeft="45dp">
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="18dp"
+            >
 
         </TextView>
 
@@ -666,7 +672,7 @@
 
         <Button
             android:id="@+id/button_complaint_submit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="150dp"

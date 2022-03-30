@@ -8,7 +8,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
 
 
@@ -17,7 +18,7 @@
      android:layout_width="279dp"
      android:layout_height="267dp"
      android:layout_gravity="center"
-     android:layout_marginTop="100dp"
+     android:layout_marginTop="120dp"
      app:lottie_autoPlay="true"
      app:lottie_loop="true"
      app:lottie_rawRes="@raw/redmaplocationpointer">
@@ -33,5 +34,5 @@
      android:padding="15dp"
      android:text="Map My Sona"
      android:textColor="@color/black"
-     android:textSize="30dp" />
+     android:textSize="33dp" />
 </LinearLayout>

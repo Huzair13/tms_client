@@ -109,7 +109,7 @@ public class complaint_Page extends AppCompatActivity {
         s = getIntent().getStringExtra("SCAN_RESULT");
 
 
-        String[] dept_com_scan={"Dept","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
+        String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
         complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dept_com_scan));
 
         String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};

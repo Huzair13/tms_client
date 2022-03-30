@@ -1,5 +1,7 @@
 package com.example.map_my_sona.complaints;
 
+import static android.R.layout.simple_spinner_dropdown_item;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -108,10 +110,10 @@ public class complaint_Page extends AppCompatActivity {
 
 
         String[] dept_com_scan={"Dept","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
-        complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,dept_com_scan));
+        complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dept_com_scan));
 
         String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};
-        complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,com_scan));
+        complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan));
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Datas").child(s);
 

@@ -212,7 +212,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         manualentry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this,manualentry.class));
+                startActivity(new Intent(dashboard.this,ManualEntry_new.class));
             }
         });
 

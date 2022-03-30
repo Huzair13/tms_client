@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class emergencyContact extends AppCompatActivity {
 
-    TextView hodcall;
-    TextView hod1call;
-    TextView hod2call;
-    TextView hod3call;
-    TextView hod4call;
+    ImageButton hodcall;
+    ImageButton hod1call;
+    ImageButton hod2call;
+    ImageButton hod3call;
+    ImageButton hod4call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

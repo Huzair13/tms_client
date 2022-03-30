@@ -40,7 +40,7 @@ public class ScannerPage extends AppCompatActivity {
         manualltext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ScannerPage.this,manualentry.class));
+                startActivity(new Intent(ScannerPage.this,ManualEntry_new.class));
             }
         });
     }

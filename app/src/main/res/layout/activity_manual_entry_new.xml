@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManualEntry_new"
+    android:background="@drawable/bg1"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Manual Entry" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <!--      <ImageView-->
+            <!--          android:id="@+id/imageView"-->
+            <!--          android:layout_width="140dp"-->
+            <!--          android:layout_height="70dp"-->
+            <!--          android:layout_gravity="top"-->
+            <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="123dp"
+                android:layout_height="102dp"
+                app:srcCompat="@drawable/mapmysona_logo" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/manualdept_responsible"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <Spinner
+                android:id="@+id/manual_branch"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/manual_location"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/manual_object"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/manual_com_details"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/manual_com_priority"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/mulish"
+                android:inputType="none"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/manual_intercom_number"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/islandgreen"
+                android:textColor="@color/black"
+                android:hint="Intercom Number"
+                android:textSize="18dp"
+                android:gravity="left|center"
+                android:padding="10dp"
+                android:inputType="phone"/>
+
+            <EditText
+                android:id="@+id/manual_phn_number"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/islandgreen"
+                android:textColor="@color/black"
+                android:hint="Phone Number"
+                android:textSize="18dp"
+                android:gravity="left|center"
+                android:padding="10dp"
+                android:inputType="phone"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/manualentrysubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit"
+                android:textSize="24dp"
+                app:cornerRadius="25dp"
+                >
+
+            </com.google.android.material.button.MaterialButton>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

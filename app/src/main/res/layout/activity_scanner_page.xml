@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScannerPage"
-    android:background="@drawable/bg5"
-    >
+    tools:context=".ScannerPage">
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 

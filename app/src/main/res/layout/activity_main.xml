@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/ssbg3"
+    android:background="@drawable/ssbg1"
     >
 
 

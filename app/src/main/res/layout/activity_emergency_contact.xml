@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".emergencyContact"
-    android:background="@drawable/background_new">
+    android:background="@drawable/ssbg1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,23 +33,32 @@
                 app:srcCompat="@drawable/mapmysona_logo" />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            >
             <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electrical Incharge"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_margin="15dp"
+                android:gravity="center">
+            </TextView>
+
+            <ImageButton
                 android:id="@+id/hodcall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vigneshwaran"
-                android:textSize="24dp"
-                android:textColor="@color/white"
-                android:layout_margin="15dp"
-                android:gravity="center">
-            </TextView>
-
-            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_call_24"
@@ -63,19 +72,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            >
             <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carpenter Incharge"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_margin="15dp"
+                android:gravity="center">
+            </TextView>
+
+            <ImageButton
                 android:id="@+id/hod1call"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Srisanjana"
-                android:textSize="24dp"
-                android:textColor="@color/white"
-                android:layout_margin="15dp"
-                android:gravity="center">
-            </TextView>
-
-            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_call_24"
@@ -90,20 +100,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            >
             <TextView
-                android:id="@+id/hod2call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Huzair"
+                android:text="Network Incharge"
                 android:textSize="24dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_margin="15dp"
                 android:gravity="center"
                 >
             </TextView>
 
             <ImageButton
+                android:id="@+id/hod2call"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_call_24"
@@ -129,20 +139,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            >
             <TextView
-                android:id="@+id/hod3call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Shreesareen"
+                android:text="Plumbing Incharge"
                 android:textSize="24dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_margin="15dp"
                 android:gravity="center"
                 >
             </TextView>
 
             <ImageButton
+                android:id="@+id/hod3call"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_call_24"
@@ -166,20 +176,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            >
             <TextView
-                android:id="@+id/hod4call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pavithra"
+                android:text="Painting Incharge"
                 android:textSize="24dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_margin="15dp"
                 android:gravity="center"
                 >
             </TextView>
 
             <ImageButton
+                android:id="@+id/hod4call"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_call_24"
@@ -188,72 +198,9 @@
             </ImageButton>
         </LinearLayout>
 
-
-        <!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_gravity="center">-->
-<!--            <TextView-->
-<!--                android:id="@+id/hod04call"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Pavithra"-->
-<!--                android:textSize="24dp"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:gravity="center">-->
-<!--            </TextView>-->
-<!--            -->
-<!--            <ImageButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_baseline_call_24"-->
-<!--                android:layout_gravity="center">-->
-
-<!--            </ImageButton>-->
-<!--        </LinearLayout>-->
-
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:id="@+id/admincomplaint_admin"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:layout_below="@+id/pending"-->
-<!--            android:layout_marginStart="15dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_marginEnd="15dp"-->
-<!--            android:layout_marginBottom="15dp"-->
-
-<!--            android:background="@color/teal_700"-->
-<!--            android:checkable="true"-->
-<!--            android:clickable="true"-->
-<!--            android:focusable="true"-->
-<!--            app:cardElevation="25dp"-->
-<!--            app:cardCornerRadius="40dp"-->
-<!--            app:cardBackgroundColor="@color/sliver">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="75dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginTop="25dp"-->
-<!--                android:layout_marginLeft="34dp"-->
-<!--                android:src="@drawable/adminicon"-->
-<!--                android:scaleType="fitCenter"/>-->
+        </LinearLayout>
 
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:text="Admin Complaint "-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:gravity="center"-->
-<!--                android:textColor="@color/charcoal"-->
-<!--                android:fontFamily="@font/quattrocentro_sans">-->
-
-
-<!--            </TextView>-->
-<!--        </com.google.android.material.card.MaterialCardView>-->
     </LinearLayout>
 
 </LinearLayout>

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScannerPage">
+    tools:context=".ScannerPage"
+    android:background="@drawable/ssbg1">
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 
@@ -86,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="OR"
         android:textSize="25dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:layout_below="@+id/qrcode"

@@ -117,7 +117,7 @@
              android:textSize="20dp"
              android:gravity="center"
              android:textColor="@color/white"
-             android:fontFamily="@font/quattrocentro_sans" >
+             android:fontFamily="@font/roboto_regular" >
 
          </TextView>
 
@@ -152,7 +152,7 @@
              android:textColor="@color/white"
              android:padding="40dp"
              android:layout_marginLeft="20dp"
-             android:fontFamily="@font/quattrocentro_sans">
+             android:fontFamily="@font/roboto_regular">
 
          </TextView>
 
@@ -206,7 +206,7 @@
              android:textSize="20dp"
              android:gravity="center"
              android:textColor="@color/white"
-             android:fontFamily="@font/quattrocentro_sans">
+             android:fontFamily="@font/roboto_regular">
 
          </TextView>
       </com.google.android.material.card.MaterialCardView>

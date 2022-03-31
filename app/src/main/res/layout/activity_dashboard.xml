@@ -145,13 +145,12 @@
              android:id="@+id/historydetail"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="History Details"
-             android:textSize="20dp"
-             android:textColor="@color/white"
-             android:padding="30dp"
-             android:layout_gravity="start"
              android:layout_marginLeft="20dp"
-             android:fontFamily="@font/roboto_regular">
+             android:fontFamily="@font/roboto_regular"
+             android:padding="30dp"
+             android:text="History Details"
+             android:textColor="@color/white"
+             android:textSize="20dp">
 
          </TextView>
 

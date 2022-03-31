@@ -41,7 +41,7 @@
           android:layout_width="wrap_content"
           android:layout_height="150dp"
           android:layout_marginStart="15dp"
-          android:layout_marginTop="55dp"
+          android:layout_marginTop="75dp"
           android:layout_marginEnd="10dp"
           app:srcCompat="@drawable/srilogo" />
    </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -112,7 +112,6 @@
              android:id="@+id/scantext"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:textStyle="bold"
              android:text="Scan Code"
              android:textSize="20dp"
              android:gravity="center"
@@ -146,11 +145,11 @@
              android:id="@+id/historydetail"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:textStyle="bold"
              android:text="History Details"
              android:textSize="20dp"
              android:textColor="@color/white"
              android:padding="30dp"
+             android:layout_gravity="start"
              android:layout_marginLeft="20dp"
              android:fontFamily="@font/roboto_regular">
 
@@ -201,7 +200,6 @@
              android:id="@+id/manualentrys"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:textStyle="bold"
              android:text="Manual Entry"
              android:textSize="20dp"
              android:gravity="center"

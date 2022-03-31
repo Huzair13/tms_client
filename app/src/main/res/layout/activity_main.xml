@@ -8,7 +8,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@drawable/ssbg2"
+    >
 
 
 
@@ -28,7 +29,7 @@
      android:id="@+id/text1"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:fontFamily="@font/elmessiri"
+     android:fontFamily="@font/roboto_regular"
      android:gravity="center"
      android:padding="15dp"
      android:text="Map My Sona"

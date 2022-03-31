@@ -147,7 +147,8 @@
              android:layout_height="wrap_content"
              android:layout_marginLeft="20dp"
              android:fontFamily="@font/roboto_regular"
-             android:padding="30dp"
+             android:layout_gravity="center_vertical"
+             android:paddingLeft="45dp"
              android:text="History Details"
              android:textColor="@color/white"
              android:textSize="20dp">

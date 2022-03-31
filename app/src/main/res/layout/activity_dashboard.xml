@@ -90,7 +90,7 @@
           android:layout_width="match_parent"
           android:layout_height="101dp"
           android:layout_marginStart="15dp"
-          android:layout_marginTop="300dp"
+          android:layout_marginTop="250dp"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="30dp"
           android:checkable="true"
@@ -150,7 +150,7 @@
              android:text="History Details"
              android:textSize="20dp"
              android:textColor="@color/white"
-             android:padding="40dp"
+             android:padding="30dp"
              android:layout_marginLeft="20dp"
              android:fontFamily="@font/roboto_regular">
 

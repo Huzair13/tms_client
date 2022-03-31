@@ -160,8 +160,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Submit"
-                android:textSize="24dp"
-                app:cornerRadius="18dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18dp"
+                app:cornerRadius="12dp"
                 >
 
             </com.google.android.material.button.MaterialButton>

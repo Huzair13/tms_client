@@ -56,8 +56,6 @@ public class complaint_Page extends AppCompatActivity {
     private Button complaint_subBtn;
     CheckBox vhigh ,high ,low;
 
-
-
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str, procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
     private String complaint_txt;
     String status = "Pending";

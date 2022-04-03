@@ -19,6 +19,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/cornflowerblue"
             app:title="Manual Entry" />
 
         <LinearLayout

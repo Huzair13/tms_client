@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Unique ID"
+            android:textColorHint="@color/white"
             android:padding="15dp"
             android:gravity="center"
             app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
@@ -59,7 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:fontFamily="@font/elmessiri"
+                android:textColor="@color/white"
+                android:background="@drawable/greenshade"
+                android:fontFamily="@font/roboto_regular"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

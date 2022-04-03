@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Emergency Contact"
+        android:background="@color/cornflowerblue"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         />
 

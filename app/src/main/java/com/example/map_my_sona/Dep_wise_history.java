@@ -12,21 +12,28 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
+import com.google.android.material.card.MaterialCardView;
 
 public class Dep_wise_history extends AppCompatActivity {
 
-    private Button networks,electricity,carpenter,plumber,painting;
+//    private Button networks,electricity,carpenter,plumber,painting;
+
+    private MaterialCardView networks;
+    private  MaterialCardView electricity;
+    private MaterialCardView carpenter;
+    private  MaterialCardView plumber;
+    private MaterialCardView painting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dep_wise_history);
 
-        networks=(Button) findViewById(R.id.button_111);
-        electricity=(Button) findViewById(R.id.button2_112);
-        carpenter=(Button)findViewById(R.id.button_131);
-        plumber=(Button)findViewById(R.id.plumber_history);
-        painting=(Button)findViewById(R.id.painting_history);
+        networks= findViewById(R.id.button_111);
+        electricity= findViewById(R.id.button2_112);
+        carpenter=findViewById(R.id.button_131);
+        plumber=findViewById(R.id.plumber_history);
+        painting=findViewById(R.id.painting_history);
 
         networks.setOnClickListener(new View.OnClickListener() {
             @Override

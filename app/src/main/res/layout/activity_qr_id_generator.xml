@@ -34,13 +34,15 @@
         android:padding="15dp"
         app:startIconDrawable="@drawable/qrid"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
-        app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding">
+        app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/elmessiri"
+
              />
 
     </com.google.android.material.textfield.TextInputLayout>

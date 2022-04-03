@@ -22,6 +22,7 @@ import com.example.map_my_sona.complaints.complaint_Page;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,6 +35,7 @@ public class ManualEntry_new extends AppCompatActivity {
 
     DatabaseReference dbRef2;
     AlertDialog.Builder builder_mc;
+  public   MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -53,7 +55,7 @@ public class ManualEntry_new extends AppCompatActivity {
 
         manualEntrySubmit=(MaterialButton) findViewById(R.id.manualentrysubmit);
 
-        builder_mc=new AlertDialog.Builder(this);
+        materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this);
 
         String[] manual_dept_resposible={"Dept Responsible","electronics","watersupply","Network","wiring","painting","computer","carpenting"};
         manualdeptresposible.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,manual_dept_resposible));
@@ -177,7 +179,8 @@ public class ManualEntry_new extends AppCompatActivity {
                     manualPhNumber.requestFocus();
                 }
                 else{
-                    builder_mc.setTitle("Alert")
+                    materialAlertDialogBuilder
+                            .setTitle("Alert")
                             .setMessage("Are you sure to submit the complaint?")
                             .setCancelable(true)
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -194,6 +197,7 @@ public class ManualEntry_new extends AppCompatActivity {
                             })
                             .show();
                 }
+
             }
         });
 

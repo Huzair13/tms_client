@@ -27,6 +27,7 @@ public class Newqrcode extends AppCompatActivity {
     private Button AddNew;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
+//    public MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class Newqrcode extends AppCompatActivity {
 
         reference= FirebaseDatabase.getInstance().getReference();
 
-        builder=new AlertDialog.Builder(this);
+//        materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this);
 
         unique_id_ad=(EditText) findViewById(R.id.uniqueid_update_admin);
         sn_ad=(EditText) findViewById(R.id.sn_update_admin);
@@ -57,6 +58,7 @@ public class Newqrcode extends AppCompatActivity {
             public void onClick(View view) {
 
                 MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(Newqrcode.this);
+
                 builder.setTitle("Alert");
                 builder.setMessage("Are you sure to Add Product ??");
                 builder.setCancelable(true);

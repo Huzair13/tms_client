@@ -116,10 +116,9 @@
         android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
-        android:backgroundTint="@color/brightblue"
+        android:backgroundTint="@color/cyellow"
         android:text="Log In"
-
-        android:textColor="@color/electricblue"
+        android:textColor="@color/white"
         app:icon="@drawable/login" />
 
     <LinearLayout

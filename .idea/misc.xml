@@ -58,6 +58,9 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminregistercomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.25" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_carpenter.xml" value="0.19067977768277042" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_networks.xml" value="0.19067977768277042" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_painting.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_dep_wise_history.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_emergency_contact.xml" value="0.264" />
@@ -69,6 +72,7 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_loginpage.xml" value="0.25" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manual_entry_new.xml" value="0.1835032437442076" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manual_entry_view.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manualentry.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_newqrcode.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_qr_id_generator.xml" value="0.23229166666666667" />

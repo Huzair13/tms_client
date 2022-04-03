@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".complaints.viewDetails.historyviewdetails"
+    tools:context=".Manual_entry_view"
     android:orientation="vertical"
-    android:background="@drawable/ssbg1"
-    >
+    android:background="@drawable/ssbg1">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,6 +55,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"
+
                 />
 
             <TextView
@@ -64,19 +65,20 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/roboto_regular"
                 android:layout_height="50dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="20dp"
+                />
 
-<!--            <com.google.android.material.chip.ChipGroup-->
-<!--                android:textAlignment="center"-->
-<!--                android:id="@+id/complaint_status_his"-->
-<!--                android:layout_width="150dp"-->
-<!--                android:textSize="25dp"-->
-<!--                android:fontFamily="@font/elmessiri"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginTop="25dp">-->
+            <!--            <com.google.android.material.chip.ChipGroup-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:id="@+id/complaint_status_his"-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:textSize="25dp"-->
+            <!--                android:fontFamily="@font/elmessiri"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="25dp">-->
 
 
-<!--            </com.google.android.material.chip.ChipGroup>-->
+            <!--            </com.google.android.material.chip.ChipGroup>-->
 
 
         </LinearLayout>
@@ -219,7 +221,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Department"
+                    android:text="Dept Responsible"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -256,10 +258,10 @@
                     android:layout_width="202dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Staff Mobile Number"
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Branch"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     />
 
@@ -295,7 +297,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Power Rating"
+                    android:text="Location"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -333,7 +335,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Warranty Period"
+                    android:text="Object"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -370,10 +372,10 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Warranty Expiry Date"
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Complaint Details"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     />
 
@@ -409,7 +411,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Installed Date"
+                    android:text="Level of Complaint"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -446,10 +448,10 @@
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Installation By"
-                    android:textColor="@color/black"
                     android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Intercom Number"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     />
 
@@ -484,7 +486,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Mobile No."
+                    android:text="Phone Number"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -507,18 +509,18 @@
 
         </TableLayout>
 
-<!--        <TextView-->
-<!--            android:background="@drawable/cellshape_roundcorners"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:textAlignment="center"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="30dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/elmessiri"-->
-<!--            android:text="Complaint is ...."-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="20dp"-->
-
+        <!--        <TextView-->
+        <!--            android:background="@drawable/cellshape_roundcorners"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="30dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:fontFamily="@font/elmessiri"-->
+        <!--            android:text="Complaint is ...."-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="20dp"-->
+        />-->
 
         <TextView
             android:id="@+id/com_txt_history"
@@ -546,6 +548,6 @@
             app:cornerRadius="25dp" />
 
 
-            </LinearLayout>
+    </LinearLayout>
 
-        </ScrollView>
+</ScrollView>

@@ -84,6 +84,7 @@
         android:layout_gravity="end"
         android:padding="4dp"
         android:layout_margin="10dp"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
     </Spinner>

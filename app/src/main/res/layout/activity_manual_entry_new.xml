@@ -58,7 +58,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 />
 
@@ -72,7 +72,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                                       />
 
@@ -85,7 +85,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 />
 
@@ -98,7 +98,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 />
 
@@ -111,7 +111,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 />
 
@@ -124,7 +124,7 @@
                 android:fontFamily="@font/mulish"
                 android:inputType="none"
                 android:spinnerMode="dropdown"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 />
 

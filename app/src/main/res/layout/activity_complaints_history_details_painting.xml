@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_new"
+
     tools:context=".complaints.HistoryDetails.Complaints_HistoryDetails_Painting">
+<!--    android:background="@drawable/background_new">-->
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

@@ -68,18 +68,14 @@
         android:layout_below="@+id/loginemailAdmin"
         android:hint="Password"
         android:padding="15dp"
-        app:startIconDrawable="@drawable/password"
-
-        >
+        app:startIconDrawable="@drawable/password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginpasswordInputAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:fontFamily="@font/mulish"
-
-            />
+            android:fontFamily="@font/mulish" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

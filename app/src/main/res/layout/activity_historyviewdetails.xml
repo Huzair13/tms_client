@@ -26,11 +26,11 @@
             <!--          android:layout_gravity="top"-->
             <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="123dp"
-                android:layout_height="102dp"
-                app:srcCompat="@drawable/mapmysona_logo" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView2"-->
+<!--                android:layout_width="123dp"-->
+<!--                android:layout_height="102dp"-->
+<!--                app:srcCompat="@drawable/mapmysona_logo" />-->
         </LinearLayout>
 
         <LinearLayout

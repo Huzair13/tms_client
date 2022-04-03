@@ -26,6 +26,13 @@
     <color name="cpink">#8AD6F0</color>
     <color name="appblue">#5532DE</color>
     <color name="cornflowerblue">#6495ED</color>
-
-
+    <color name="turquiose">#40E0D0</color>
+    <color name="cadetblue">#5F9EA0</color>
+    <color name="robineggblue">#96DED1</color>
+    <color name="darkgreen">#023020</color>
+    <color name="wisterla">#BDB5D5</color>
+    <color name="lightpurple">#CBC3E3</color>
+    <color name="babyblue">#89CFF0</color>
+    <color name="royalblue">#4169E1</color>
+    <color name="brightblue">#0096FF</color>
 </resources>

@@ -43,8 +43,22 @@
 
     </LinearLayout>
 
+<!--    <Spinner-->
+<!--        android:id="@+id/historyfliter_carpenter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:padding="4dp"-->
+<!--        android:layout_margin="10dp"-->
+
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+
+<!--    </Spinner>-->
+
+
     <Spinner
-        android:id="@+id/historyfliter_carpenter"
+        android:id="@+id/historyfliter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -54,7 +68,6 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
     </Spinner>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_complaints_history_carpenter"
         android:layout_width="match_parent"

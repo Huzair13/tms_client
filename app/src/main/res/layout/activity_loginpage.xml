@@ -23,21 +23,23 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="130dp"
-            android:layout_gravity="top"
+            android:layout_marginTop="60dp"
             app:srcCompat="@drawable/srilogo" />
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anilogin"
         android:layout_width="200dp"
         android:layout_height="130dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="166dp"
+        android:layout_marginTop="200dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/login">
+        app:lottie_rawRes="@raw/login"
+        >
 
     </com.airbnb.lottie.LottieAnimationView>
 
@@ -45,12 +47,13 @@
         android:id="@+id/loginemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
         android:hint="Username "
         android:padding="15dp"
         app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
+       android:layout_below="@id/anilogin"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -63,6 +66,9 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginpassword"
         android:layout_width="match_parent"
@@ -74,6 +80,7 @@
         app:startIconDrawable="@drawable/password"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
 
         >
 
@@ -88,22 +95,36 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.button.MaterialButton
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/loginbutton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/loginpassword"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:fontFamily="@font/roboto_regular"-->
+<!--        android:text="Log in"-->
+<!--        app:cornerRadius="50dp"-->
+<!--        app:icon="@drawable/login">-->
+
+<!--    </com.google.android.material.button.MaterialButton>-->
+
+    <Button
         android:id="@+id/loginbutton"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/roboto_regular"
-        android:text="Log in"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/login">
+        android:layout_marginTop="1dp"
+        android:backgroundTint="@color/brightblue"
+        android:text="Log In"
 
-    </com.google.android.material.button.MaterialButton>
+        android:textColor="@color/electricblue"
+        app:icon="@drawable/login" />
 
     <LinearLayout
         android:id="@+id/linearlogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginbutton"
         android:orientation="horizontal">
@@ -127,10 +148,10 @@
 
         <TextView
             android:id="@+id/forgetpassword"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loginbutton"
-            android:layout_marginStart="90dp"
+            android:gravity="end"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"

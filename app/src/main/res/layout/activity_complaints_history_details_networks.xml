@@ -33,13 +33,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView_com_networks"
-            android:layout_width="123dp"
-            android:layout_height="102dp"
-            app:srcCompat="@drawable/mapmysona_logo"
-            tools:layout_editor_absoluteX="150dp"
-            tools:layout_editor_absoluteY="61dp" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView_com_networks"-->
+<!--            android:layout_width="123dp"-->
+<!--            android:layout_height="102dp"-->
+<!--            app:srcCompat="@drawable/mapmysona_logo"-->
+<!--            tools:layout_editor_absoluteX="150dp"-->
+<!--            tools:layout_editor_absoluteY="61dp" />-->
 
     </LinearLayout>
 

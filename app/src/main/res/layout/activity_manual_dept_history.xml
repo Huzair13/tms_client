@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dep_wise_history"
+    tools:context=".manual_dept_history"
     android:orientation="vertical"
     android:background="@drawable/ssbg3">
+
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -19,99 +20,99 @@
             android:id="@+id/topAppBar_user_networks"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Scanned History"
+            app:title="Manual History"
             android:background="@color/cornflowerblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             />
     </com.google.android.material.appbar.AppBarLayout>
 
 
-<!--    <HorizontalScrollView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        >-->
+    <!--    <HorizontalScrollView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        >-->
 
-<!--    <LinearLayout-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content"-->
-<!--        android:layout_margin="15dp"-->
-<!--    >-->
+    <!--    <LinearLayout-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--    >-->
 
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button_111"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Networks"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp"-->
-<!--        >-->
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/button_111"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Networks"-->
+    <!--        android:textSize="14dp"-->
+    <!--        android:layout_marginRight="5dp"-->
+    <!--        >-->
 
-<!--    </com.google.android.material.button.MaterialButton>-->
-
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button2_112"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Electricity"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp">-->
-
-<!--    </com.google.android.material.button.MaterialButton>-->
+    <!--    </com.google.android.material.button.MaterialButton>-->
 
 
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button_131"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Carpenter"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp">-->
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/button2_112"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Electricity"-->
+    <!--        android:textSize="14dp"-->
+    <!--        android:layout_marginRight="5dp">-->
 
-<!--    </com.google.android.material.button.MaterialButton>-->
+    <!--    </com.google.android.material.button.MaterialButton>-->
 
 
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/button_131"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Carpenter"-->
+    <!--        android:textSize="14dp"-->
+    <!--        android:layout_marginRight="5dp">-->
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/plumber_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Plumber"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp">-->
-
-<!--        </com.google.android.material.button.MaterialButton>-->
+    <!--    </com.google.android.material.button.MaterialButton>-->
 
 
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/painting_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Painting"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp">-->
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/plumber_history"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Plumber"-->
+    <!--            android:textSize="14dp"-->
+    <!--            android:layout_marginRight="5dp">-->
 
-<!--        </com.google.android.material.button.MaterialButton>-->
+    <!--        </com.google.android.material.button.MaterialButton>-->
 
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/computer_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Computer"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp"-->
-<!--            >-->
 
-<!--        </com.google.android.material.button.MaterialButton>-->
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/painting_history"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Painting"-->
+    <!--            android:textSize="14dp"-->
+    <!--            android:layout_marginRight="5dp">-->
 
-<!--    </LinearLayout>-->
-<!--</HorizontalScrollView>-->
+    <!--        </com.google.android.material.button.MaterialButton>-->
+
+
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/computer_history"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Computer"-->
+    <!--            android:textSize="14dp"-->
+    <!--            android:layout_marginRight="5dp"-->
+    <!--            >-->
+
+    <!--        </com.google.android.material.button.MaterialButton>-->
+
+    <!--    </LinearLayout>-->
+    <!--</HorizontalScrollView>-->
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button_111"
+        android:id="@+id/manual_his_network"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -124,13 +125,13 @@
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/skyblue"
         >
-<!--        <ImageView-->
-<!--            android:layout_width="75dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:layout_marginLeft="34dp"-->
-<!--            android:src="@drawable/qrcode_white"-->
-<!--            android:scaleType="fitCenter"/>-->
+        <!--        <ImageView-->
+        <!--            android:layout_width="75dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="25dp"-->
+        <!--            android:layout_marginLeft="34dp"-->
+        <!--            android:src="@drawable/qrcode_white"-->
+        <!--            android:scaleType="fitCenter"/>-->
 
         <TextView
             android:layout_width="match_parent"
@@ -146,7 +147,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button2_112"
+        android:id="@+id/manual_his_electricity"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -181,7 +182,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button_131"
+        android:id="@+id/manual_his_carpenter"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -216,7 +217,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/plumber_history"
+        android:id="@+id/manual_his_plumbing"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -251,7 +252,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/painting_history"
+        android:id="@+id/manual_his_painting"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -286,7 +287,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/computer_history"
+        android:id="@+id/manual_his_computer"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="25dp"
@@ -319,8 +320,6 @@
         </TextView>
 
     </com.google.android.material.card.MaterialCardView>
-
-
 
 
 </LinearLayout>

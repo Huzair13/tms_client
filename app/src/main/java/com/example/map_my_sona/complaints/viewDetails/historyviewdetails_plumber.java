@@ -1,5 +1,7 @@
 package com.example.map_my_sona.complaints.viewDetails;
 
+import static android.R.layout.simple_spinner_dropdown_item;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +38,8 @@ public class historyviewdetails_plumber extends AppCompatActivity {
     private String pro_id_str;
     private Button comp_close;
     private String status;
+    private Spinner feedback;
+    private RatingBar ratingBar;
 
     AlertDialog.Builder builder_plumber;
 
@@ -69,6 +76,10 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         com_status_his=(TextView)findViewById(R.id.complaint_status_his_plumber);
 
         comp_close=(Button)findViewById(R.id.close_the_com_his_plumber);
+        feedback=(Spinner)findViewById(R.id.feedback);
+
+        String[] feebac={"Feedback ","Excellent","Good","Not bad" ,"Bad"};
+        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
 
         reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Plumber").child(com_id_new);
 

@@ -35,6 +35,8 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
 
+
+
     //fliter
     TextInputLayout hisfliter;
     AutoCompleteTextView hisflitertext;

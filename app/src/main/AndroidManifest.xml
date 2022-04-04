@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".manual_dept_history"
+            android:exported="false" />
+        <activity
             android:name=".Manual_entry_view"
             android:exported="false" />
         <activity

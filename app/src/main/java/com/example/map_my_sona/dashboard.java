@@ -93,6 +93,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         navigationView1.setCheckedItem(R.id.new_id);
         navigationView1.setCheckedItem(R.id.nav_newQR);
         navigationView1.setCheckedItem(R.id.nav_pending);
+        navigationView1.setCheckedItem(R.id.manual_history);
         navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
 
@@ -143,6 +144,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
+
+                        MenuItem manual_det=menu.findItem(R.id.manual_history);
+                        manual_det.setVisible(true);
 
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
@@ -275,6 +279,11 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             case R.id.emergency_contact:
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
+
+            case R.id.manual_history:
+                startActivity(new Intent(dashboard.this,manual_dept_history.class));
+                break;
+
             case R.id.nav_details:
                 startActivity(new Intent(dashboard.this,Dep_wise_history.class));
                 break;

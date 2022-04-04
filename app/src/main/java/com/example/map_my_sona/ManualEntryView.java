@@ -61,7 +61,7 @@ public class ManualEntryView extends AppCompatActivity {
 
                 ManualComplaint_details manualComplaint_details=snapshot.getValue(ManualComplaint_details.class);
 
-                com_id_manual=manualComplaint_details.get
+//                com_id_manual=manualComplaint_details.get
             }
 
             @Override

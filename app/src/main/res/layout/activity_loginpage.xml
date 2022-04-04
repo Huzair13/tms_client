@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="130dp"
             android:layout_marginTop="60dp"
-            app:srcCompat="@drawable/srilogo" />
+            app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
@@ -39,9 +39,9 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/login"
-        >
+        />
 
-    </com.airbnb.lottie.LottieAnimationView>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginemail"

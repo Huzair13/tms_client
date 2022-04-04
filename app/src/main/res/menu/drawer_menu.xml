@@ -21,16 +21,16 @@
             android:icon="@drawable/ic_baseline_update_24"
             android:title="Update Data"/>
 
-        <item
-            android:id="@+id/nav_pending"
-            android:visible="false"
-            android:icon="@drawable/ic_baseline_collections_24"
-            android:title="Pending Complaints" />
-        <item
-            android:id="@+id/nav_solved"
-            android:visible="false"
-            android:icon="@drawable/ic_baseline_complaints_nav"
-            android:title="Solved Complaints" />
+<!--        <item-->
+<!--            android:id="@+id/nav_pending"-->
+<!--            android:visible="false"-->
+<!--            android:icon="@drawable/ic_baseline_collections_24"-->
+<!--            android:title="Pending Complaints" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_solved"-->
+<!--            android:visible="false"-->
+<!--            android:icon="@drawable/ic_baseline_complaints_nav"-->
+<!--            android:title="Solved Complaints" />-->
 
         <item
             android:id="@+id/manual_history"

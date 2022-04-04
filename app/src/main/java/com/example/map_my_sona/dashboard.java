@@ -92,9 +92,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         navigationView1.setCheckedItem(R.id.nav_home_admin);
         navigationView1.setCheckedItem(R.id.new_id);
         navigationView1.setCheckedItem(R.id.nav_newQR);
-        navigationView1.setCheckedItem(R.id.nav_pending);
+//        navigationView1.setCheckedItem(R.id.nav_pending);
         navigationView1.setCheckedItem(R.id.manual_history);
-        navigationView1.setCheckedItem(R.id.nav_solved);
+//        navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
 
         View headerview=navigationView1.getHeaderView(0);
@@ -136,11 +136,11 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem new_id=menu.findItem(R.id.new_id);
                         new_id.setVisible(true);
 
-                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
-                        nav_pend.setVisible(true);
-
-                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
-                        nav_sol.setVisible(true);
+//                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+//                        nav_pend.setVisible(true);
+//
+//                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+//                        nav_sol.setVisible(true);
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
@@ -163,11 +163,11 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
 
                         Menu menu=navigationView1.getMenu();
-                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
-                        nav_pend.setVisible(true);
-
-                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
-                        nav_sol.setVisible(true);
+//                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+//                        nav_pend.setVisible(true);
+//
+//                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+//                        nav_sol.setVisible(true);
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
@@ -185,14 +185,17 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
 
                         Menu menu=navigationView1.getMenu();
-                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
-                        nav_pend.setVisible(true);
-
-                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
-                        nav_sol.setVisible(true);
+//                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
+//                        nav_pend.setVisible(true);
+//
+//                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
+//                        nav_sol.setVisible(true);
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
+
+                        MenuItem manual_history=menu.findItem(R.id.manual_history);
+                        manual_history.setVisible(true);
 
                     }
                 }
@@ -265,13 +268,13 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
 
-            case R.id.nav_pending:
-                startActivity(new Intent(dashboard.this, adminpendingcomplaint.class));
-                break;
-
-            case R.id.nav_solved:
-                startActivity(new Intent(dashboard.this, adminregistercomplaint.class));
-                break;
+//            case R.id.nav_pending:
+//                startActivity(new Intent(dashboard.this, adminpendingcomplaint.class));
+//                break;
+//
+//            case R.id.nav_solved:
+//                startActivity(new Intent(dashboard.this, adminregistercomplaint.class));
+//                break;
             case R.id.update_data:
                 startActivity(new Intent(dashboard.this,update_database.class));
                 break;

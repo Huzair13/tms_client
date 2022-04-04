@@ -25,6 +25,9 @@
             android:name=".Manual_entry_view"
             android:exported="false" />
         <activity
+            android:name=".ManualEntryView"
+            android:exported="false" />
+        <activity
             android:name=".ManualEntry_new"
             android:exported="false" />
         <activity

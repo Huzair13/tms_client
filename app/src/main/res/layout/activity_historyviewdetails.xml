@@ -520,11 +520,20 @@
 <!--            android:textSize="20dp"-->
 
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+
+            >
+
+
+
         <TextView
             android:id="@+id/com_txt_history"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/black"
@@ -534,6 +543,27 @@
 
         </TextView>
 
+        <RatingBar
+            android:id="@+id/simpleRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="2.5"
+            />
+
+        <Spinner
+            android:id="@+id/feedback"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/style_spinner_1"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="none"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            />
+
+        </LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/close_the_com_his"
             android:layout_width="wrap_content"

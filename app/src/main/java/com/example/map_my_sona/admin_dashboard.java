@@ -58,8 +58,8 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         navigationView.setCheckedItem(R.id.nav_home_admin);
         navigationView.setCheckedItem(R.id.new_id);
         navigationView.setCheckedItem(R.id.nav_newQR);
-        navigationView.setCheckedItem(R.id.nav_pending);
-        navigationView.setCheckedItem(R.id.nav_solved);
+//        navigationView.setCheckedItem(R.id.nav_pending);
+//        navigationView.setCheckedItem(R.id.nav_solved);
 
 
         View headerview=navigationView.getHeaderView(0);
@@ -108,14 +108,14 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(admin_dashboard.this, Newqrcode.class));
                 break;
 
-
-            case R.id.nav_pending:
-                startActivity(new Intent(admin_dashboard.this, adminpendingcomplaint.class));
-                break;
-
-            case R.id.nav_solved:
-                startActivity(new Intent(admin_dashboard.this, adminregistercomplaint.class));
-                break;
+//
+//            case R.id.nav_pending:
+//                startActivity(new Intent(admin_dashboard.this, adminpendingcomplaint.class));
+//                break;
+//
+//            case R.id.nav_solved:
+//                startActivity(new Intent(admin_dashboard.this, adminregistercomplaint.class));
+//                break;
             case R.id.update_data:
                 startActivity(new Intent(admin_dashboard.this,update_database.class));
                 break;

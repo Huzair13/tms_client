@@ -75,7 +75,6 @@ public class complaint_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
 
-
         //
 //        complaint_content=findViewById(R.id.complaint_content);
 //        complaint_content_text=findViewById(R.id.complaint_Qrcode);
@@ -205,17 +204,44 @@ public class complaint_Page extends AppCompatActivity {
 //                    vhigh.setError("Empty");
 //                    vhigh.requestFocus();
 //                }
-                else {
+                else if(dep_of_pro_str.equals("Electricity")){
 
-                    SendMail mail=new SendMail("ahamedhuzair13@gmail.com",
-                            "farvinriyas",
-                            "bs.vignesharan@gmail.com",
-                            "Testing",
-                            "Its working good");
+                    SendMail mail=new SendMail("mapmysona@gmail.com",
+                            "mms@2022",
+                            "farvinriyas28@gmail.com",
+                            "Complaint in "+dep_of_pro_str+" Department",
+                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                                    "COMPLAINT: "+ complaint_txt
+                    );
                     mail.execute();
                     submitComplaint();
                 }
+                else if(dep_of_pro_str.equals("Plumber")){
 
+                    SendMail mail=new SendMail("mapmysona@gmail.com",
+                            "mms@2022",
+                            "bsvigneshwaran@gmail.com",
+                            "Complaint in "+dep_of_pro_str+" Department",
+                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                                    "COMPLAINT: "+ complaint_txt
+                    );
+                    mail.execute();
+                    submitComplaint();
+
+                }
+                else{
+
+                    SendMail mail=new SendMail("mapmysona@gmail.com",
+                            "mms@2022",
+                            "srisanjanaarunkumar@gmail.com",
+                            "Complaint in "+dep_of_pro_str+" Department",
+                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                                    "COMPLAINT: "+ complaint_txt
+                    );
+                    mail.execute();
+                    submitComplaint();
+
+                }
             }
 
         });
@@ -229,7 +255,6 @@ public class complaint_Page extends AppCompatActivity {
 
 
     private void submitComplaint() {
-
 
         dbRef = FirebaseDatabase.getInstance().getReference().child("complaints").child(dep_of_pro_str);
         final String uniqueKey = dbRef.push().getKey();
@@ -267,7 +292,7 @@ public class complaint_Page extends AppCompatActivity {
 //
 //    public void startService(View v) {
 //        String input = complaint_qrcode.getText().toString();
-////        String input = "Hello Vicky";
+//        String input = "Hello Vicky";
 //        Intent serviceIntent = new Intent(this, ExampleService.class);
 //         serviceIntent.putExtra("inputExtra", input);
 //

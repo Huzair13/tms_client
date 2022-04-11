@@ -64,6 +64,8 @@ dependencies {
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
+    implementation 'com.github.1902shubh:SendMail:1.0.0'
+
     //
     implementation 'com.google.android.material:material:1.6.0-beta01'
 

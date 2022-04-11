@@ -52,7 +52,7 @@ public class loginpage extends AppCompatActivity {
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
-        Changepass=findViewById(R.id.changepassword);
+//        Changepass=findViewById(R.id.changepassword);
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -67,12 +67,12 @@ public class loginpage extends AppCompatActivity {
             }
         });
 
-        Changepass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginpage.this,changepassword.class));
-            }
-        });
+//        Changepass.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(loginpage.this,changepassword.class));
+//            }
+//        });
     }
 
     private void LoginUserCheck() {

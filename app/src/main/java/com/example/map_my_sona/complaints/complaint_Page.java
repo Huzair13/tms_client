@@ -206,12 +206,13 @@ public class complaint_Page extends AppCompatActivity {
 //                    vhigh.requestFocus();
 //                }
                 else {
-//                    SendMail mail=new SendMail(Config,
-//                            "BlacK@19",
-//                            "ahamedhuzair13@gmail.com",
-//                            "Testing",
-//                            "Its working good");
-//                    mail.execute();
+
+                    SendMail mail=new SendMail("ahamedhuzair13@gmail.com",
+                            "farvinriyas",
+                            "bs.vignesharan@gmail.com",
+                            "Testing",
+                            "Its working good");
+                    mail.execute();
                     submitComplaint();
                 }
 
@@ -220,10 +221,10 @@ public class complaint_Page extends AppCompatActivity {
         });
         //scanText.setText(s);
 
-        String input = complaint_txt;
-        Intent serviceIntent = new Intent(this, ExampleService.class);
-        serviceIntent.putExtra("inputExtra", input);
-        ContextCompat.startForegroundService(this, serviceIntent);
+//        String input = complaint_txt;
+//        Intent serviceIntent = new Intent(this, ExampleService.class);
+//        serviceIntent.putExtra("inputExtra", input);
+//        ContextCompat.startForegroundService(this, serviceIntent);
     }
 
 

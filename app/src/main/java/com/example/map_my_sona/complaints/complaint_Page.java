@@ -206,12 +206,12 @@ public class complaint_Page extends AppCompatActivity {
 //                    vhigh.requestFocus();
 //                }
                 else {
-                    SendMail mail=new SendMail(Config,
-                            "BlacK@19",
-                            "ahamedhuzair13@gmail.com",
-                            "Testing",
-                            "Its working good");
-                    mail.execute();
+//                    SendMail mail=new SendMail(Config,
+//                            "BlacK@19",
+//                            "ahamedhuzair13@gmail.com",
+//                            "Testing",
+//                            "Its working good");
+//                    mail.execute();
                     submitComplaint();
                 }
 

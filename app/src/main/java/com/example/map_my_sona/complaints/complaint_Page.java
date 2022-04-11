@@ -8,9 +8,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.audiofx.DynamicsProcessing;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.INotificationSideChannel;
+import android.util.Config;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -47,6 +49,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import papaya.in.sendmail.SendMail;
+
 public class complaint_Page extends AppCompatActivity {
 
     private TextView sn, make, model, procurement, powerRating, wexpiry, wperiod, ins_by, ins_date, mob,dep_of_pro;
@@ -70,6 +74,7 @@ public class complaint_Page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
+
 
         //
 //        complaint_content=findViewById(R.id.complaint_content);
@@ -201,6 +206,12 @@ public class complaint_Page extends AppCompatActivity {
 //                    vhigh.requestFocus();
 //                }
                 else {
+                    SendMail mail=new SendMail(Config,
+                            "BlacK@19",
+                            "ahamedhuzair13@gmail.com",
+                            "Testing",
+                            "Its working good");
+                    mail.execute();
                     submitComplaint();
                 }
 
@@ -217,6 +228,7 @@ public class complaint_Page extends AppCompatActivity {
 
 
     private void submitComplaint() {
+
 
         dbRef = FirebaseDatabase.getInstance().getReference().child("complaints").child(dep_of_pro_str);
         final String uniqueKey = dbRef.push().getKey();
@@ -239,6 +251,7 @@ public class complaint_Page extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(complaint_Page.this, dashboard.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

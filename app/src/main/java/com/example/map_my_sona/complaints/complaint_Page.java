@@ -212,7 +212,6 @@ public class complaint_Page extends AppCompatActivity {
 //                            "Testing",
 //                            "Its working good");
 //                    mail.execute();
-
                     submitComplaint();
                 }
 

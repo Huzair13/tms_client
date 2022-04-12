@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
@@ -38,6 +39,7 @@ public class loginpage extends AppCompatActivity {
     private Button btnLogin;
     private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
+    public static String us_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class loginpage extends AppCompatActivity {
 
         //LogEmail=findViewById(R.id.loginemailInput);
         username=findViewById(R.id.loginemailInput);
+        us_name=username.getText().toString();
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
@@ -124,6 +127,7 @@ public class loginpage extends AppCompatActivity {
     }
 
     private void logInwithUserName(String email, String password) {
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

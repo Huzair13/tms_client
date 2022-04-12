@@ -254,9 +254,10 @@ public class historyviewdetails_painting extends AppCompatActivity {
         String sMessage="Complaint Registered by has been solved Please check \n If not solved you can make the complaint again pending";
 
         if(!sphone.equals("") && !sMessage.equals("")){
-            SmsManager smsManager=SmsManager.getDefault();
 
+            SmsManager smsManager=SmsManager.getDefault();
             smsManager.sendTextMessage(sphone,null,sMessage,null,null);
+
         }
     }
 

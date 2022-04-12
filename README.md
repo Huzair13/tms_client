@@ -34,7 +34,7 @@ Make sure to on the developer mode on your phone🤳.
 * **Srisanjana A** - [SrisanjanaA.com](https://github.com/sriee19)
 * **Huzair Ahmed** - [Huzair](https://github.com/Huzair13)
 * **Shree Saren** - [ShreeSaren](https://github.com/Shreesaraan)
-* **Pavithra** - [Pavithra]()
+* **Pavithra** - [Pavithra](https://github.com/PAVITHRA472)
 
 
 See also the list of [contributors](https://github.com/vigneshwaran-tech/Map_My_Sona) who participated in this project.

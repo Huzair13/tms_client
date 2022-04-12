@@ -35,6 +35,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import papaya.in.sendmail.SendMail;
+
 public class historyviewdetails extends AppCompatActivity {
 
     private DatabaseReference reference_complaints_history_fullView;
@@ -222,7 +224,6 @@ public class historyviewdetails extends AppCompatActivity {
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
 
-
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
                                                         @Override
@@ -265,11 +266,20 @@ public class historyviewdetails extends AppCompatActivity {
                                             reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                 @Override
                                                 public void onSuccess(Object o) {
+
+                                                    SendMail mail=new SendMail("mapmysona@gmail.com",
+                                                            "mms@2022",
+                                                            "ahamedhuzair13@gmail.com",
+                                                            "Complaint Reopened",
+                                                            "Complaint which is closed by you has been reopened by the person " +
+                                                                    "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
+                                                    );
+                                                    mail.execute();
+
                                                     Toast.makeText(historyviewdetails.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
                                                     Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                     startActivity(intent);
-
 
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {

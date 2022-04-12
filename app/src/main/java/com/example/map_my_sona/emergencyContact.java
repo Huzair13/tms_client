@@ -32,7 +32,7 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:1234567890"));
+                intent.setData(Uri.parse("tel:9600510207"));
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:1234567890"));
+                intent1.setData(Uri.parse("tel:6382219828"));
                 startActivity(intent1);
             }
         });
@@ -49,7 +49,7 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:1234567890"));
+                intent1.setData(Uri.parse("tel:9677381857"));
                 startActivity(intent1);
             }
         });
@@ -57,7 +57,7 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:1234567890"));
+                intent1.setData(Uri.parse("tel:9092050502"));
                 startActivity(intent1);
             }
         });
@@ -65,7 +65,7 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:1234567890"));
+                intent1.setData(Uri.parse("tel:9600510207"));
                 startActivity(intent1);
             }
         });

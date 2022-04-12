@@ -50,7 +50,7 @@ public class update_database extends AppCompatActivity {
         wperiod=(EditText) findViewById(R.id.warranty_unit_update_ad);
         ins_by=(EditText) findViewById(R.id.ins_by_unit_update_ad);
         ins_date=(EditText) findViewById(R.id.ins_date_unit_update_ad);
-        mob=(EditText) findViewById(R.id.mob_unit_update_ad);
+//        mob=(EditText) findViewById(R.id.mob_unit_update_ad);
         dep_of_pro=(EditText)findViewById(R.id.dep_of_pro_unit_update_ad);
 
         get_details=(Button)findViewById(R.id.get_details_up_ad);
@@ -93,7 +93,7 @@ public class update_database extends AppCompatActivity {
                     updateDatabase.setVisibility(View.VISIBLE);
                     update.setVisibility(View.VISIBLE);
 
-                    String mob_str1 = snapshot.child("mob").getValue(String.class);
+//                    String mob_str1 = snapshot.child("mob").getValue(String.class);
                     String sn_str1 = snapshot.child("sn_no").getValue(String.class);
                     String make_str1= snapshot.child("make").getValue(String.class);
                     String model_str1 = snapshot.child("model").getValue(String.class);
@@ -114,7 +114,7 @@ public class update_database extends AppCompatActivity {
                     wperiod.setText(wperiod_str1);
                     ins_by.setText(ins_by_str1);
                     ins_date.setText(ins_date_str1);
-                    mob.setText(mob_str1);
+//                    mob.setText(mob_str1);
                     dep_of_pro.setText(dep_of_pro_str1);
 
                     update.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +147,7 @@ public class update_database extends AppCompatActivity {
         String wperiod_str2=wperiod.getText().toString();
         String ins_by_str2=ins_by.getText().toString();
         String ins_date_str2=ins_date.getText().toString();
-        String mob_str2=mob.getText().toString();
+//        String mob_str2=mob.getText().toString();
         String dep_of_pro_str2=dep_of_pro.getText().toString();
 
         HashMap hp=new HashMap();
@@ -160,7 +160,7 @@ public class update_database extends AppCompatActivity {
         hp.put("wperiod",wperiod_str2);
         hp.put("ins_by",ins_by_str2);
         hp.put("ins_date",ins_date_str2);
-        hp.put("mob",mob_str2);
+//        hp.put("mob",mob_str2);
         hp.put("dep_of_pro",dep_of_pro_str2);
 
         builder.setTitle("Alert")

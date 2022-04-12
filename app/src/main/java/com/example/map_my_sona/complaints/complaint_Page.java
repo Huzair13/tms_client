@@ -208,7 +208,7 @@ public class complaint_Page extends AppCompatActivity {
 
                     SendMail mail=new SendMail("mapmysona@gmail.com",
                             "mms@2022",
-                            "farvinriyas28@gmail.com",
+                            "ahamedhuzair13@gmail.com",
                             "Complaint in "+dep_of_pro_str+" Department",
                             "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
                                     "COMPLAINT: "+ complaint_txt

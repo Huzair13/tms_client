@@ -21,9 +21,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -91,7 +91,8 @@ public class historyviewdetails extends AppCompatActivity {
         String[] feebac={"Feedback ","Excellent","Good","Not bad" ,"Bad"};
         feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
         
-        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity").child(com_id_new);
+        reference_complaints_history_fullView= FirebaseDatabase.getInstance()
+                .getReference("complaints").child("Electricity").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -113,7 +114,6 @@ public class historyviewdetails extends AppCompatActivity {
                 uid_str=complaint_details.getUID();
 
                 status=complaint_details.getStatus();
-
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
@@ -183,7 +183,7 @@ public class historyviewdetails extends AppCompatActivity {
                                                                         new String[]{Manifest.permission.SEND_SMS},
                                                                         100);
                                                             }
-                                                            Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
+                                                            Intent intent=new Intent(historyviewdetails.this, Dep_wise_history.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
 
@@ -207,8 +207,7 @@ public class historyviewdetails extends AppCompatActivity {
 
                                 }
 
-                                else{
-
+                                else if(uid_str.equals(uref_h)){
                                     builder.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
@@ -220,7 +219,7 @@ public class historyviewdetails extends AppCompatActivity {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                            Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
+                                                            Intent intent=new Intent(historyviewdetails.this, Dep_wise_history.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
 
@@ -241,6 +240,8 @@ public class historyviewdetails extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
+                                }else{
+                                    Toast.makeText(historyviewdetails.this, "Complaint is not made by you so cant close it", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -277,7 +278,7 @@ public class historyviewdetails extends AppCompatActivity {
                                                     mail.execute();
 
                                                     Toast.makeText(historyviewdetails.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
-                                                    Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
+                                                    Intent intent=new Intent(historyviewdetails.this, Dep_wise_history.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                     startActivity(intent);
 
@@ -311,11 +312,10 @@ public class historyviewdetails extends AppCompatActivity {
 
     private void sendMessage() {
         String sphone=staff_mob.getText().toString().trim();
-        String sMessage="Complaint Registered by has been solved Please check \n If not solved you can make the complaint again pending";
+        String sMessage="Complaint Registered by you MAP MY SONA has been solved Please check \n If not solved you can make the complaint again pending";
 
         if(!sphone.equals("") && !sMessage.equals("")){
             SmsManager smsManager=SmsManager.getDefault();
-
             smsManager.sendTextMessage(sphone,null,sMessage,null,null);
         }
     }

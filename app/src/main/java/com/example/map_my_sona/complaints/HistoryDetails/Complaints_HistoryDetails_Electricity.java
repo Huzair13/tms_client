@@ -35,8 +35,6 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
 
-
-
     //fliter
     TextInputLayout hisfliter;
     AutoCompleteTextView hisflitertext;
@@ -48,7 +46,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history_details);
+        setContentView(R.layout.activity_complaints_history_details_electricity);
 
         String message =getIntent().getStringExtra("message");
 

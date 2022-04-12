@@ -1,6 +1,4 @@
-package com.example.map_my_sona.complaints.viewDetails;
-
-import static android.R.layout.simple_spinner_dropdown_item;
+package com.example.map_my_sona.manualComplaints.ManualViewDetails;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -15,16 +13,14 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
+import com.example.map_my_sona.manualComplaints.ManualComplaint_details;
+import com.example.map_my_sona.manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,120 +34,113 @@ import java.util.HashMap;
 
 import papaya.in.sendmail.SendMail;
 
-public class historyviewdetails_networks extends AppCompatActivity {
+public class historyviewdetails_manual extends AppCompatActivity {
 
-    private DatabaseReference reference_complaints_history_fullView;
+    private DatabaseReference reference_complaints_history_fullView_manual;
 
-    private TextView pro_id,com_status_his;
-    private String pro_id_str;
-    private Button comp_close;
-    private String status;
-    private Spinner feedback;
-    String uref_h;
+    private TextView pro_id_manual,com_status_his_manual;
+    private String pro_id_str_manual;
+    private Button comp_close_manual;
+    private TextView com_txt_manual;
+    private String com_txt_manual_str;
+    private String status_manual;
+    private Spinner feedback_manual;
+    String uref_m;
 
+    AlertDialog.Builder builder_manual;
     private DatabaseReference refDash;
 
-    AlertDialog.Builder builder_networks;
+    private TextView com_id_manual,staffName_manual,Dep_Res_manual,Branch_manual,loc_manual,object_manual,
+            com_det_manual,level_of_com_manual,intercomNum_manual,phone_num_manual;
 
-    private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
-
-    private String uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String  uid_manual_str,com_id_manual_str,staffName_manual_str,Dep_Res_manual_str,Branch_manual_str,loc_manual_str,object_manual_str,
+            com_det_manual_str,level_of_com_manual_str,intercomNum_manual_str,phone_num_manual_str;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historyviewdetails_networks);
+        setContentView(R.layout.activity_historyviewdetails_manual);
 
-        builder_networks=new AlertDialog.Builder(this);
+        builder_manual=new AlertDialog.Builder(this);
 
         Intent intent=getIntent();
-        String com_id_new=intent.getStringExtra("com_ID");
-
-
-        staff_name=(TextView)findViewById(R.id.staff_name_unit_his_networks);
-        staff_dep=(TextView)findViewById(R.id.dep_unit_his_networks);
-        com_id=(TextView)findViewById(R.id.Comid_unit_his_networks);
-        staff_mob=(TextView)findViewById(R.id.staff_mob_history_com_networks);
-        powerRating=(TextView)findViewById(R.id.powerRating_unit_his_networks);
-        wexpiry=(TextView)findViewById(R.id.warranty_exp_unit_his_networks);
-        wperiod=(TextView)findViewById(R.id.warranty_unit_his_networks);
-        ins_by=(TextView)findViewById(R.id.ins_by_unit_his_networks);
-        ins_date=(TextView)findViewById(R.id.ins_date_unit_his_networks);
-        mob=(TextView)findViewById(R.id.mob_unit_his_networks);
-        com_txt=(TextView)findViewById(R.id.com_txt_history_networks);
+        String com_id_new=intent.getStringExtra("com_IDM");
 
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
-        pro_id=(TextView) findViewById(R.id.Product_ID_history_networks);
-        com_status_his=(TextView)findViewById(R.id.complaint_status_his_networks);
-        comp_close=(Button)findViewById(R.id.close_the_com_his_networks);
-        feedback=(Spinner) findViewById(R.id.feedback);
+        com_id_manual=(TextView) findViewById(R.id.Comid_unit_his_manual);
+        staffName_manual=(TextView) findViewById(R.id.staff_name_unit_his_manual);
+        Dep_Res_manual=(TextView) findViewById(R.id.dep_unit_his_manual);
+        Branch_manual=(TextView) findViewById(R.id.branch_history_com_manual);
+        loc_manual=(TextView) findViewById(R.id.loc_unit_his_manual);
+        object_manual=(TextView) findViewById(R.id.object_unit_his_manual);
+        com_det_manual=(TextView) findViewById(R.id.com_det_unit_his_manual);
+        level_of_com_manual=(TextView) findViewById(R.id.level_of_com_unit_his_manual);
+        intercomNum_manual=(TextView) findViewById(R.id.intercom_num_unit_his_manual);
+        phone_num_manual=(TextView) findViewById(R.id.phone_unit_his_manual);
 
-        uref_h= FirebaseAuth.getInstance().getUid();
+        uref_m= FirebaseAuth.getInstance().getUid();
 
+        pro_id_manual=(TextView) findViewById(R.id.Product_ID_history_manual);
+        com_status_his_manual=(TextView) findViewById(R.id.complaint_status_his_manual);
 
-        String[] feebac={"Feedback","Excellent","Good","Not bad" ,"Bad"};
-        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
-        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Networks").child(com_id_new);
+        comp_close_manual=(Button)findViewById(R.id.close_the_com_his_manual);
 
-        reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
+        com_txt_manual=(TextView) findViewById(R.id.com_txt_history_manual);
+
+        reference_complaints_history_fullView_manual= FirebaseDatabase.getInstance()
+                .getReference("Manual complaints").child("electronics").child(com_id_new);
+        reference_complaints_history_fullView_manual.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Complaint_details complaint_details=snapshot.getValue(Complaint_details.class);
+                ManualComplaint_details manualComplaint_details=snapshot.getValue(ManualComplaint_details.class);
 
-                staff_name_str=complaint_details.getCom_by_name();
-                staff_mob_str=complaint_details.getCom_by_mob();
-                staff_dep_str=complaint_details.getCom_by_dep();
-                com_id_str=complaint_details.getKey();
-                powerRating_str=complaint_details.getPower_rating();
-                wexpiry_str=complaint_details.getWexpiry();
-                wperiod_str=complaint_details.getWperiod();
-                ins_by_str=complaint_details.getIns_by();
-                ins_date_str=complaint_details.getIns_date();
-                mob_str=complaint_details.getMob();
-                com_txt_str=complaint_details.getCom_txt();
-                pro_id_str=complaint_details.getUniqueId();
+                com_id_manual_str=manualComplaint_details.getKey();
+                staffName_manual_str=manualComplaint_details.getCom_by_Name();
+                Dep_Res_manual_str=manualComplaint_details.getDep_res();
+                Branch_manual_str=manualComplaint_details.getBranch();
+                loc_manual_str=manualComplaint_details.getLocation();
+                object_manual_str=manualComplaint_details.getObject();
+                level_of_com_manual_str=manualComplaint_details.getPriority();
+                intercomNum_manual_str=manualComplaint_details.getIntercomNum();
+                phone_num_manual_str=manualComplaint_details.getPhoneNum();
+                uid_manual_str=manualComplaint_details.getUID();
+                com_txt_manual_str=manualComplaint_details.getCom_details();
 
-                status=complaint_details.getStatus();
+                status_manual=manualComplaint_details.getStatus();
 
+                com_id_manual.setText(com_id_manual_str);
+                staffName_manual.setText(staffName_manual_str);
+                Dep_Res_manual.setText(Dep_Res_manual_str);
+                Branch_manual.setText(Branch_manual_str);
+                loc_manual.setText(loc_manual_str);
+                object_manual.setText(object_manual_str);
+                level_of_com_manual.setText(level_of_com_manual_str);
+                intercomNum_manual.setText(intercomNum_manual_str);
+                phone_num_manual.setText(phone_num_manual_str);
+                com_txt_manual.setText(com_txt_manual_str);
 
-                staff_name.setText(staff_name_str);
-                staff_mob.setText(staff_mob_str);
-                staff_dep.setText(staff_dep_str);
-                com_id.setText(com_id_str);
-                powerRating.setText(powerRating_str);
-                wexpiry.setText(wexpiry_str);
-                wperiod.setText(wperiod_str);
-                ins_by.setText(ins_by_str);
-                ins_date.setText(ins_date_str);
-                mob.setText(mob_str);
-                com_txt.setText(com_txt_str);
-
-                pro_id.setText(pro_id_str);
-                com_status_his.setText(status);
-
-                if (status.equals("Pending")){
-                    com_status_his.setBackgroundResource(R.color.Red);
+                if (status_manual.equals("Pending")){
+                    com_status_his_manual.setBackgroundResource(R.color.Red);
 
                 }else{
-                    com_status_his.setBackgroundResource(R.color.green);
+                    com_status_his_manual.setBackgroundResource(R.color.green);
                 }
-                com_status_his.setTextColor(getResources().getColor(R.color.white));
-
+                com_status_his_manual.setTextColor(getResources().getColor(R.color.white));
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(historyviewdetails_networks.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(historyviewdetails_manual.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
             }
         });
 
-        comp_close.setOnClickListener(new View.OnClickListener() {
+        comp_close_manual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (status.equals("Pending")){
+                if (status_manual.equals("Pending")){
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
 
@@ -161,37 +150,36 @@ public class historyviewdetails_networks extends AppCompatActivity {
                             String pos=snapshot.child("position").getValue(String.class);
                             if(snapshot.exists()){
                                 if(pos.equals("admin")){
-                                    builder_networks.setTitle("Alert")
+
+                                    builder_manual.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
                                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+
+                                                    reference_complaints_history_fullView_manual.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-
-                                                            if(ContextCompat.checkSelfPermission(historyviewdetails_networks.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
+                                                            Toast.makeText(historyviewdetails_manual.this, "Complaint closed", Toast.LENGTH_SHORT).show();
+                                                            if(ContextCompat.checkSelfPermission(historyviewdetails_manual.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
                                                                 sendMessage();
                                                             }
                                                             else{
-                                                                ActivityCompat.requestPermissions(historyviewdetails_networks.this,
+                                                                ActivityCompat.requestPermissions(historyviewdetails_manual.this,
                                                                         new String[]{Manifest.permission.SEND_SMS},
                                                                         100);
                                                             }
-
-                                                            Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
+                                                            Intent intent=new Intent(historyviewdetails_manual.this, Complaints_HistoryDetails_Electricity_manual.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
-
 
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
                                                         @Override
                                                         public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(historyviewdetails_manual.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                                                         }
                                                     });
 
@@ -204,29 +192,30 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
+
                                 }
-                                else if(uid_str.equals(uref_h)){
-                                    builder_networks.setTitle("Alert")
+
+                                else if(uid_manual_str.equals(uref_m)){
+                                    builder_manual.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
                                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView_manual.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                            Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
+                                                            Toast.makeText(historyviewdetails_manual.this, "Complaint closed", Toast.LENGTH_SHORT).show();
+                                                            Intent intent=new Intent(historyviewdetails_manual.this, Complaints_HistoryDetails_Electricity_manual.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
-
 
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
                                                         @Override
                                                         public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(historyviewdetails_manual.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                                                         }
                                                     });
 
@@ -239,9 +228,8 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
-                                }
-                                else{
-                                    Toast.makeText(historyviewdetails_networks.this, "Complaint is not made by you so cant close it", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(historyviewdetails_manual.this, "Complaint is not made by you so cant close it", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -252,33 +240,34 @@ public class historyviewdetails_networks extends AppCompatActivity {
                         }
                     });
 
-                }else{
-                    if(uid_str.equals(uref_h)){
+                }
+                else{
+                    if(uid_manual_str.equals(uref_m)){
                         HashMap hp=new HashMap();
                         hp.put("status","Pending");
 
-                        builder_networks.setTitle("Alert")
+                        builder_manual.setTitle("Alert")
                                 .setMessage("Are you sure to open the complaint again ??")
                                 .setCancelable(true)
                                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                                        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                        reference_complaints_history_fullView_manual.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
 
                                                 SendMail mail=new SendMail("mapmysona@gmail.com",
                                                         "mms@2022",
-                                                        "srisanjanaarunkumar@gmail.com",
+                                                        "ahamedhuzair13@gmail.com",
                                                         "Complaint Reopened",
                                                         "Complaint which is closed by you has been reopened by the person " +
                                                                 "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
                                                 );
                                                 mail.execute();
 
-                                                Toast.makeText(historyviewdetails_networks.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
-                                                Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Electricity.class);
+                                                Toast.makeText(historyviewdetails_manual.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
+                                                Intent intent=new Intent(historyviewdetails_manual.this, Complaints_HistoryDetails_Electricity_manual.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                 startActivity(intent);
 
@@ -286,7 +275,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(historyviewdetails_manual.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                                             }
                                         });
 
@@ -301,22 +290,20 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                 .show();
 
                     }else{
-                        Toast.makeText(historyviewdetails_networks.this, "This complaint is not made by you so you cant close it", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(historyviewdetails_manual.this, "This complaint is not made by you so you cant close it", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(historyviewdetails_networks.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(historyviewdetails_manual.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
     }
-
     private void sendMessage() {
-        String sphone=staff_mob.getText().toString().trim();
-        String sMessage="Complaint Registered by has been solved Please check \n If not solved you can make the complaint again pending";
+        String sphone=phone_num_manual.getText().toString().trim();
+        String sMessage="Complaint Registered by you in MAP MY SONA has been solved Please check \n If not solved you can make the complaint again pending";
 
         if(!sphone.equals("") && !sMessage.equals("")){
             SmsManager smsManager=SmsManager.getDefault();
-
             smsManager.sendTextMessage(sphone,null,sMessage,null,null);
         }
     }
@@ -329,5 +316,4 @@ public class historyviewdetails_networks extends AppCompatActivity {
             sendMessage();
         }
     }
-
 }

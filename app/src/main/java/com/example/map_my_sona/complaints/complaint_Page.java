@@ -84,8 +84,6 @@ public class complaint_Page extends AppCompatActivity {
 //        complaint_content=findViewById(R.id.complaint_content);
 //        complaint_content_text=findViewById(R.id.complaint_Qrcode);
 
-
-
         sn = (TextView) findViewById(R.id.sn_unit);
         make = (TextView) findViewById(R.id.make_unit);
         model = (TextView) findViewById(R.id.model_unit);

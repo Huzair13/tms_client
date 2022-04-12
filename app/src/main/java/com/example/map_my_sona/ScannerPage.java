@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 
 public class ScannerPage extends AppCompatActivity {
 
@@ -40,7 +41,7 @@ public class ScannerPage extends AppCompatActivity {
         manualltext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ScannerPage.this,ManualEntry_new.class));
+                startActivity(new Intent(ScannerPage.this, ManualComplaint_page.class));
             }
         });
     }

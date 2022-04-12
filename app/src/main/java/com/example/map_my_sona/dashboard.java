@@ -20,7 +20,9 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.manualComplaints.manual_dept_history;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
@@ -162,9 +164,11 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
+                        manualentry.setVisibility(View.VISIBLE);
 
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
 
                         Menu menu=navigationView1.getMenu();
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
@@ -228,7 +232,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         manualentry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard.this,ManualEntry_new.class));
+                startActivity(new Intent(dashboard.this, ManualComplaint_page.class));
             }
         });
 
@@ -293,7 +297,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.manual_history:
-                startActivity(new Intent(dashboard.this,manual_dept_history.class));
+                startActivity(new Intent(dashboard.this, manual_dept_history.class));
                 break;
 
             case R.id.nav_details:

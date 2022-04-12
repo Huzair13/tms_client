@@ -205,7 +205,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
-                                } else {
+                                } else if(uid_str.equals(uref_h)){
                                     builder_painter.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
@@ -239,6 +239,9 @@ public class historyviewdetails_painting extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
+                                }
+                                else{
+                                    Toast.makeText(historyviewdetails_painting.this, "Complaint is not made by you so cant close it", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }

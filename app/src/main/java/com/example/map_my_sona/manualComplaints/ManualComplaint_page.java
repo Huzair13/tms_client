@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.manualComplaints;
 
 import static android.R.layout.simple_spinner_dropdown_item;
 
@@ -6,41 +6,46 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.map_my_sona.complaints.complaint_Page;
+import com.example.map_my_sona.R;
+import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ManualEntry_new extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class ManualComplaint_page extends AppCompatActivity {
 
     private Spinner manualdeptresposible ,manualbranch ,manuallocation,manualobject,manualcomdetails,manualcompriority;
-    private EditText manualIntercomNumber,manualPhNumber;
+    private EditText manualIntercomNumber,manualPhNumber,manualName;
     private MaterialButton manualEntrySubmit;
-    private String manualdeptresposible_str ,manualbranch_str ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,manualIntercomNumber_str,manualPhNumber_str;
+    private String manualName_str,manualdeptresposible_str ,manualbranch_str ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,manualIntercomNumber_str,manualPhNumber_str;
 
     DatabaseReference dbRef2;
+    String status = "Pending";
     AlertDialog.Builder builder_mc;
-  public   MaterialAlertDialogBuilder materialAlertDialogBuilder;
+    String uref;
+    public  MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manual_entry_new);
+        setContentView(R.layout.activity_manual_complaint_page);
 
         manualdeptresposible = (Spinner) findViewById(R.id.manualdept_responsible);
         manualbranch = (Spinner) findViewById(R.id.manual_branch);
@@ -49,6 +54,9 @@ public class ManualEntry_new extends AppCompatActivity {
         manualcomdetails = (Spinner) findViewById(R.id.manual_com_details);
         manualcompriority = (Spinner) findViewById(R.id.manual_com_priority);
 
+        uref= FirebaseAuth.getInstance().getUid();
+
+        manualName=(EditText)findViewById(R.id.manual_staff_name);
         manualIntercomNumber=(EditText)findViewById(R.id.manual_intercom_number);
         manualPhNumber=(EditText)findViewById(R.id.manual_phn_number);
 
@@ -150,22 +158,22 @@ public class ManualEntry_new extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (manualdeptresposible_str.equals("Dept Responsible")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Department", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Department", Toast.LENGTH_SHORT).show();
                     manualdeptresposible.requestFocus();
                 }else if(manualbranch_str.equals("Branch")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Branch", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Branch", Toast.LENGTH_SHORT).show();
                     manualbranch.requestFocus();
                 }else if(manuallocation_str.equals("Location")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Location", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Location", Toast.LENGTH_SHORT).show();
                     manuallocation.requestFocus();
                 }else if(manualobject_str.equals("Object")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Object", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Object", Toast.LENGTH_SHORT).show();
                     manualobject.requestFocus();
                 }else if(manualcomdetails_str.equals("Complaint Details")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Complaint", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Complaint", Toast.LENGTH_SHORT).show();
                     manualcomdetails.requestFocus();
                 }else if(manualcompriority_str.equals("Level of Complaint")){
-                    Toast.makeText(ManualEntry_new.this, "Please select the Priority", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualComplaint_page.this, "Please select the Priority", Toast.LENGTH_SHORT).show();
                     manualcompriority.requestFocus();
                 }else if(manualIntercomNumber.getText().toString().isEmpty()){
                     manualIntercomNumber.setError("Enter the Intercom Number");
@@ -173,6 +181,9 @@ public class ManualEntry_new extends AppCompatActivity {
                 }else if(manualPhNumber.getText().toString().isEmpty()){
                     manualPhNumber.setError("Enter the Phone Number");
                     manualPhNumber.requestFocus();
+                }else if(manualName.getText().toString().isEmpty()){
+                    manualName.setError("Enter your name");
+                    manualName.requestFocus();
                 }
                 else{
                     materialAlertDialogBuilder
@@ -205,21 +216,31 @@ public class ManualEntry_new extends AppCompatActivity {
 
         manualIntercomNumber_str=manualIntercomNumber.getText().toString();
         manualPhNumber_str=manualPhNumber.getText().toString();
+        manualName_str=manualName.getText().toString();
 
-        ManualComplaint_details manualComplaint_details=new ManualComplaint_details(manualdeptresposible_str ,manualbranch_str ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,manualIntercomNumber_str,manualPhNumber_str);
+        Calendar calForDate = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
+        String date = currentDate.format(calForDate.getTime());
+
+        Calendar calForTime = Calendar.getInstance();
+        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
+        String time = currentTime.format(calForTime.getTime());
+
+        ManualComplaint_details manualComplaint_details=new ManualComplaint_details(manualName_str,manualdeptresposible_str ,manualbranch_str
+                ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,status,manualIntercomNumber_str,manualPhNumber_str,uniqueKey,date,time,uref);
 
         dbRef2.child(uniqueKey).setValue(manualComplaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(ManualEntry_new.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ManualEntry_new.this, dashboard.class);
+                Toast.makeText(ManualComplaint_page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ManualComplaint_page.this, dashboard.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ManualEntry_new.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ManualComplaint_page.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -67,7 +67,7 @@
         </TableRow>
         <TableRow>
             <TextView
-                android:id="@+id/sn_history"
+                android:id="@+id/sn_history_manual"
                 android:layout_width="10dp"
                 android:layout_height="50dp"
                 android:text=""
@@ -77,7 +77,7 @@
                 android:background="@drawable/cellshape"
                 android:textColor="@color/black"/>
             <TextView
-                android:id="@+id/dateandtime_history"
+                android:id="@+id/dateandtime_history_manual"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
@@ -87,7 +87,7 @@
                 android:layout_weight="1"
                 android:gravity="center" />
             <TextView
-                android:id="@+id/com_id_history"
+                android:id="@+id/com_id_history_manual"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:text=""
@@ -97,7 +97,7 @@
                 android:textColor="@color/black"
                 android:gravity="center"/>
             <TextView
-                android:id="@+id/com_name_history"
+                android:id="@+id/com_name_history_manual"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:text=""
@@ -108,7 +108,7 @@
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/status_history"
+                android:id="@+id/status_history_manual"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"

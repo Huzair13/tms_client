@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,6 +36,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import papaya.in.sendmail.SendMail;
+
 public class historyviewdetails_painting extends AppCompatActivity {
 
     private DatabaseReference reference_complaints_history_fullView;
@@ -45,12 +48,13 @@ public class historyviewdetails_painting extends AppCompatActivity {
     private String status;
     private Spinner feedback;
     AlertDialog.Builder builder_painter;
+    String uref_h;
 
     private DatabaseReference refDash;
 
     private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
-    private String staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
 
     @Override
@@ -110,6 +114,8 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 pro_id_str = complaint_details.getUniqueId();
 
                 status = complaint_details.getStatus();
+
+                uref_h= FirebaseAuth.getInstance().getUid();
 
 
                 staff_name.setText(staff_name_str);
@@ -244,6 +250,56 @@ public class historyviewdetails_painting extends AppCompatActivity {
                     });
 
                 } else {
+                    if(uid_str.equals(uref_h)){
+                        HashMap hp=new HashMap();
+                        hp.put("status","Pending");
+
+                        builder_painter.setTitle("Alert")
+                                .setMessage("Are you sure to open the complaint again ??")
+                                .setCancelable(true)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                            @Override
+                                            public void onSuccess(Object o) {
+
+                                                SendMail mail=new SendMail("mapmysona@gmail.com",
+                                                        "mms@2022",
+                                                        "shreedev2k3@gmail.com",
+                                                        "Complaint Reopened",
+                                                        "Complaint which is closed by you has been reopened by the person " +
+                                                                "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
+                                                );
+                                                mail.execute();
+
+                                                Toast.makeText(historyviewdetails_painting.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
+                                                Intent intent=new Intent(historyviewdetails_painting.this, Complaints_HistoryDetails_Electricity.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                startActivity(intent);
+
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(historyviewdetails_painting.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.cancel();
+                                    }
+                                })
+                                .show();
+
+                    }else{
+                        Toast.makeText(historyviewdetails_painting.this, "This complaint is not made by you so you cant close it", Toast.LENGTH_SHORT).show();
+                    }
                     Toast.makeText(historyviewdetails_painting.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }

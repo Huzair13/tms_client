@@ -40,6 +40,7 @@ import com.example.map_my_sona.manualentry;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -60,6 +61,8 @@ public class complaint_Page extends AppCompatActivity {
     private Button complaint_subBtn;
     CheckBox vhigh ,high ,low;
 
+    String uref;
+
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str, procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
     private String complaint_txt;
     String status = "Pending";
@@ -74,6 +77,8 @@ public class complaint_Page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_page);
+
+        uref= FirebaseAuth.getInstance().getUid();
 
         //
 //        complaint_content=findViewById(R.id.complaint_content);
@@ -271,7 +276,7 @@ public class complaint_Page extends AppCompatActivity {
         String time = currentTime.format(calForTime.getTime());
 
 
-        Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str, complainted_by_dep_str, complaint_txt, sn_str, make_str, model_str, procurement_str, powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s, status,dep_of_pro_str);
+        Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str, complainted_by_dep_str, complaint_txt, sn_str, make_str, model_str, procurement_str, powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s, status,dep_of_pro_str,uref);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

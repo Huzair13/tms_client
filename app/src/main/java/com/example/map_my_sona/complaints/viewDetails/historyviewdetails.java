@@ -44,13 +44,14 @@ public class historyviewdetails extends AppCompatActivity {
     private Button comp_close;
     private String status;
     private Spinner feedback;
+    String uref_h;
 
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
     private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
-    private String staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,7 @@ public class historyviewdetails extends AppCompatActivity {
         mob=(TextView)findViewById(R.id.mob_unit_his);
         com_txt=(TextView)findViewById(R.id.com_txt_history);
 
+        uref_h= FirebaseAuth.getInstance().getUid();
 
         pro_id=(TextView) findViewById(R.id.Product_ID_history);
         com_status_his=(TextView)findViewById(R.id.complaint_status_his);
@@ -106,6 +108,7 @@ public class historyviewdetails extends AppCompatActivity {
                 mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
+                uid_str=complaint_details.getUID();
 
                 status=complaint_details.getStatus();
 
@@ -248,6 +251,47 @@ public class historyviewdetails extends AppCompatActivity {
                     });
 
                 }else{
+                    if(uid_str.equals(uref_h)){
+                            HashMap hp=new HashMap();
+                            hp.put("status","Pending");
+
+                            builder.setTitle("Alert")
+                                    .setMessage("Are you sure to open the complaint again ??")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                                            reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                @Override
+                                                public void onSuccess(Object o) {
+                                                    Toast.makeText(historyviewdetails.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
+                                                    Intent intent=new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
+                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                    startActivity(intent);
+
+
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(historyviewdetails.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
+
+                        }else{
+                        Toast.makeText(historyviewdetails.this, "This complaint is not made by you so you cant close it", Toast.LENGTH_SHORT).show();
+                    }
                     Toast.makeText(historyviewdetails.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }

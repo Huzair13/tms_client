@@ -172,6 +172,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
 
+                        MenuItem manual_history=menu.findItem(R.id.manual_history);
+                        manual_history.setVisible(true);
+
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
                     }else if(pos.equals("technician")){
@@ -197,6 +200,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem manual_history=menu.findItem(R.id.manual_history);
                         manual_history.setVisible(true);
 
+                        MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
+                        nav_emergencyContect.setVisible(true);
                     }
                 }
             }

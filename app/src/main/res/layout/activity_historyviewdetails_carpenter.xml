@@ -551,6 +551,7 @@
                 android:textColor="@color/black"
                 android:hint="Registered Complaint status ...."
                 android:textColorHint="@color/black"
+                android:padding="15dp"
                 android:textSize="18dp"
                 android:background="@drawable/borderbox">
 
@@ -569,18 +570,18 @@
 <!--                android:rating="2.6"-->
 <!--                />-->
 
-            <Spinner
-                android:id="@+id/feedback"
-                android:layout_width="250dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/style_spinner_1"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="none"
-                android:spinnerMode="dropdown"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                />
+<!--            <Spinner-->
+<!--                android:id="@+id/feedback"-->
+<!--                android:layout_width="250dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:background="@drawable/style_spinner_1"-->
+<!--                android:fontFamily="@font/roboto_regular"-->
+<!--                android:inputType="none"-->
+<!--                android:spinnerMode="dropdown"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18dp"-->
+<!--                />-->
 
         </LinearLayout>
 

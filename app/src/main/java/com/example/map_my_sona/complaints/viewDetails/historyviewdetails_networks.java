@@ -86,13 +86,14 @@ public class historyviewdetails_networks extends AppCompatActivity {
         pro_id=(TextView) findViewById(R.id.Product_ID_history_networks);
         com_status_his=(TextView)findViewById(R.id.complaint_status_his_networks);
         comp_close=(Button)findViewById(R.id.close_the_com_his_networks);
-        feedback=(Spinner) findViewById(R.id.feedback);
+//        feedback=(Spinner) findViewById(R.id.feedback);
 
         uref_h= FirebaseAuth.getInstance().getUid();
 
 
-        String[] feebac={"Feedback","Excellent","Good","Not bad" ,"Bad"};
-        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
+//        String[] feebac={"Feedback","Excellent","Good","Not bad" ,"Bad"};
+//        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
+
         reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Networks").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -90,10 +90,10 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         com_status_his = (TextView) findViewById(R.id.complaint_status_his_plumber);
 
         comp_close = (Button) findViewById(R.id.close_the_com_his_plumber);
-        feedback = (Spinner) findViewById(R.id.feedback);
-
-        String[] feebac = {"Feedback ", "Excellent", "Good", "Not bad", "Bad"};
-        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item, feebac));
+//        feedback = (Spinner) findViewById(R.id.feedback);
+//
+//        String[] feebac = {"Feedback ", "Excellent", "Good", "Not bad", "Bad"};
+//        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item, feebac));
 
         reference_complaints_history_fullView = FirebaseDatabase.getInstance().getReference("complaints").child("Plumber").child(com_id_new);
 

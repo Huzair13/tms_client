@@ -64,10 +64,10 @@ public class ManualComplaint_page extends AppCompatActivity {
 
         materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this);
 
-        String[] manual_dept_resposible={"Dept Responsible","electronics","watersupply","Network","wiring","painting","computer","carpenting"};
+        String[] manual_dept_resposible={"Dept Responsible","Electronics","Watersupply","Network","Wiring","Painting","Computer","Carpenting"};
         manualdeptresposible.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,manual_dept_resposible));
 
-        String[] manual_branch={"Branch","UniversityBlock","ItBlock","MechanicalBlock","MBA","Office"};
+        String[] manual_branch={"Branch","UniversityBlock","IT-Block","MechanicalBlock","MBA","Office"};
         manualbranch.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,manual_branch));
 
         String[] manual_location={"Location","Floor1, room200","Floor2, room201","Floor3, room202","Floor4, room203","Floor5, room204"};

@@ -21,13 +21,13 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.manualComplaints.manual_dept_history;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -53,9 +53,6 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     private MaterialCardView history;
 
     FirebaseAuth mAuth;
-
-
-    FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
     AlertDialog.Builder builder1;
     private DatabaseReference refDash;
 
@@ -102,6 +99,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         navigationView1.setCheckedItem(R.id.manual_history);
 //        navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
+        navigationView1.setCheckedItem(R.id.nav_report);
 
         View headerview=navigationView1.getHeaderView(0);
 
@@ -157,6 +155,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
 
+                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        navi_report.setVisible(true);
 
                     }else if(pos.equals("user")){
 
@@ -164,11 +164,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
-                        manualentry.setVisibility(View.VISIBLE);
 
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
-                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
 
                         Menu menu=navigationView1.getMenu();
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
@@ -180,11 +178,12 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
 
-                        MenuItem manual_history=menu.findItem(R.id.manual_history);
-                        manual_history.setVisible(true);
-
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
+
+                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        navi_report.setVisible(true);
+
                     }else if(pos.equals("technician")){
 
                         loading.setVisibility(View.GONE);
@@ -208,8 +207,9 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem manual_history=menu.findItem(R.id.manual_history);
                         manual_history.setVisible(true);
 
-                        MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
-                        nav_emergencyContect.setVisible(true);
+                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        navi_report.setVisible(true);
+
                     }
                 }
             }
@@ -301,7 +301,11 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.nav_details:
-                startActivity(new Intent(dashboard.this,Dep_wise_history.class));
+                startActivity(new Intent(dashboard.this, Dep_wise_history.class));
+                break;
+
+            case R.id.nav_report:
+                startActivity(new Intent(dashboard.this, report_page.class));
                 break;
 
             case R.id.nav_logOut:

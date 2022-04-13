@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.map_my_sona" >
+    package="com.example.map_my_sona">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,10 +11,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
 
     <application
         android:name=".App"
@@ -24,18 +24,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Map_My_Sona" >
+        android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual"
+            android:name=".manual_dept_history"
             android:exported="false" />
         <activity
-            android:name=".manualComplaints.manual_dept_history"
+            android:name=".Manual_entry_view"
             android:exported="false" />
         <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual"
+            android:name=".ManualEntryView"
             android:exported="false" />
         <activity
-            android:name=".manualComplaints.ManualComplaint_page"
+            android:name=".ManualEntry_new"
             android:exported="false" />
         <activity
             android:name=".complaints.viewDetails.historyviewdetails_painting"
@@ -62,7 +62,7 @@
             android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Networks"
             android:exported="false" />
         <activity
-            android:name=".complaints.Dep_wise_history"
+            android:name=".Dep_wise_history"
             android:exported="false" />
         <activity
             android:name=".emergencyContact"
@@ -70,6 +70,9 @@
         <activity
             android:name=".update_database"
             android:exported="false" />
+        <activity android:name=".report_page"
+            android:exported="false"/>
+
         <activity
             android:name=".Update_data_admin"
             android:exported="true" />
@@ -129,7 +132,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

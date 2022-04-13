@@ -28,7 +28,7 @@
             android:layout_width="123dp"
             android:layout_height="134dp"
             android:layout_marginStart="150dp"
-            app:srcCompat="@drawable/ssbg8" />
+            app:srcCompat="@drawable/ssbg10" />
     </LinearLayout>
 
 

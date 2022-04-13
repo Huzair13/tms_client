@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".manualComplaints.ManualComplaint_page"
-    android:background="@drawable/ssbg1"
+    android:background="@drawable/ssbg11"
     android:orientation="horizontal">
 
 
@@ -53,7 +53,7 @@
                 android:id="@+id/manualdept_responsible"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/style_spinner_1"
                 android:fontFamily="@font/mulish"
                 android:inputType="none"

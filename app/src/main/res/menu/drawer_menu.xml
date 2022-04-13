@@ -50,6 +50,11 @@
             android:icon="@drawable/ephone"
             android:title="Emergency Contact" />
         <item
+            android:id="@+id/nav_report"
+            android:visible="false"
+            android:icon="@drawable/report"
+            android:title="Report" />
+        <item
             android:id="@+id/nav_logOut"
             android:icon="@drawable/logout"
             android:title="LogOut"/>

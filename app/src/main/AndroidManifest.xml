@@ -26,21 +26,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona" >
         <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails__manual_Painting"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_plumber"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_networks"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Networks_manual"
-            android:exported="false" />
-        <activity
             android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual"
             android:exported="false" />
         <activity

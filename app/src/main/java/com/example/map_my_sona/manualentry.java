@@ -66,7 +66,7 @@ public class manualentry extends AppCompatActivity {
         ArrayAdapter<String> branchAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownbranch,branch);
         branchtext.setAdapter(branchAdapter);
 
-        String[] location={"Floor1, room200","Floor2, room201","Floor3, room202","Floor4, room203","Floor5, room204"};
+        String[] location={"PrincipalRoom","Principal PA Room","Principal Conference Hall","Principal Rest Room","Director Room","Waiting Room" , "Inspection Room", "Finance Manager"};
         ArrayAdapter<String> locationAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownlocation,location);
         locationtext.setAdapter(locationAdapter);
 

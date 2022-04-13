@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/ssbg1"
+    android:background="@drawable/ssbg12"
     tools:context=".complaints.complaint_Page">
 
     <LinearLayout
@@ -28,8 +28,9 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="123dp"
-                android:layout_height="134dp"
+                android:layout_marginTop="-25dp"
+                android:layout_width="130dp"
+                android:layout_height="140dp"
                 app:srcCompat="@drawable/ssbg8" />
         </LinearLayout>
 

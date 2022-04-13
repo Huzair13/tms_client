@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScannerPage"
-    android:background="@drawable/ssbg1">
+    android:background="@drawable/ssbg11">
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 

@@ -551,7 +551,8 @@
                 android:textColor="@color/black"
                 android:hint="Registered Complaint status ...."
                 android:textColorHint="@color/black"
-                android:textSize="18dp">
+                android:textSize="18dp"
+                android:background="@drawable/borderbox">
 
             </TextView>
 

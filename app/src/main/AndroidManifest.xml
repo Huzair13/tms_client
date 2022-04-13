@@ -124,6 +124,9 @@
             android:name=".dashboard"
             android:exported="false" />
         <activity
+            android:name=".report_page"
+            android:exported="false" />
+        <activity
             android:name=".loginpage"
             android:exported="false" />
         <activity

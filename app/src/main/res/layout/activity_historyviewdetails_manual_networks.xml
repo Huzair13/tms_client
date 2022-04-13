@@ -493,15 +493,16 @@
 
         <TextView
             android:id="@+id/com_txt_history_manual_networks"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/black"
             android:hint="Registered Complaint status ...."
             android:textColorHint="@color/black"
-            android:textSize="18dp">
+            android:textSize="18dp"
+            android:background="@drawable/borderbox">
 
         </TextView>
 

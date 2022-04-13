@@ -26,7 +26,9 @@
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:hint="Enter your Report here"
+        android:padding="15px"
         android:textColorHint="@color/black"
+        android:background="@drawable/borderbox"
         />
 
 

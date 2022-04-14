@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.manualComplaints.ManualViewDetails.historyviewdetails_manual;
+import com.example.map_my_sona.manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter;
+import com.example.map_my_sona.manualComplaints.ManualViewDetails.historyviewdetails_manual_networks;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
@@ -90,16 +92,16 @@ public class manual_complaints_history_adapter extends RecyclerView.Adapter<manu
                 intent.putExtra("com_IDM",arrayList1.get(positon).getKey());
                 context.startActivity(intent);
             }
-//            else if(pro_dep.equals("Networks")){
-//                Intent intent=new Intent(context, historyviewdetails_networks.class);//
-//                intent.putExtra("com_IDM",arrayList1.get(positon).getKey());
-//                context.startActivity(intent);
-//            }
-//            else if(pro_dep.equals("Carpenter")){
-//                Intent intent=new Intent(context, historyviewdetails_carpenter.class);//
-//                intent.putExtra("com_IDM",arrayList1.get(positon).getKey());
-//                context.startActivity(intent);
-//            }
+            else if(pro_dep.equals("Network")){
+                Intent intent=new Intent(context, historyviewdetails_manual_networks.class);
+                intent.putExtra("com_IDM",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
+            else if(pro_dep.equals("Carpenting")){
+                Intent intent=new Intent(context, historyviewdetails_manual_carpenter.class);//
+                intent.putExtra("com_IDM",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
 //            else if(pro_dep.equals("Plumber")){
 //                Intent intent=new Intent(context, historyviewdetails_plumber.class);//
 //                intent.putExtra("com_IDM",arrayList1.get(positon).getKey());

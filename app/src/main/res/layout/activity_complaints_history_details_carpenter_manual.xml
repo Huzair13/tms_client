@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Networks_manual"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -17,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar_user_electricity_manual_network"
+                android:id="@+id/topAppBar_user_carpenter_manual"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="History"
@@ -29,12 +28,10 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_complaints_history_manual_network"
+        android:id="@+id/recyclerview_complaints_history_manual_carpenter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
-
-
 </LinearLayout>

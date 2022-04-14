@@ -41,27 +41,24 @@
         app:lottie_rawRes="@raw/login" />
 
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginemail"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/anilogin"
         android:hint="Username "
         android:padding="15dp"
-        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
-       android:layout_below="@id/anilogin"
-        >
+        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginemailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:fontFamily="@font/roboto_regular"
-            />
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +112,7 @@
         android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
-        android:backgroundTint="@color/cblue"
+        android:backgroundTint="@color/cyellow"
         android:text="Log In"
         android:textColor="@color/white"
         app:icon="@drawable/login" />

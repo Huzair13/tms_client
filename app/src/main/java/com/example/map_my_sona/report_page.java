@@ -76,7 +76,7 @@ public class report_page extends AppCompatActivity {
                         "mms@2022",
                         "ahamedhuzair13@gmail.com",
                         "A Report has been submitted",
-                        "A Report has been submitted by the user "+userEmail+" Please check it\n\n"+report_str
+                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
                 );
                 mail1.execute();
 
@@ -84,7 +84,7 @@ public class report_page extends AppCompatActivity {
                         "mms@2022",
                         "srisanjanaarunkumar@gmail.com",
                         "A Report has been submitted",
-                        "A Report has been submitted by the user "+userEmail+" Please check it\n\n"+report_str
+                        "A Report has been submitted by the user "+userEmail+". Please check report : "+report_str
                 );
                 mail2.execute();
 
@@ -92,7 +92,7 @@ public class report_page extends AppCompatActivity {
                         "mms@2022",
                         "bs.vigneshwaran@gmail.com",
                         "A Report has been submitted",
-                        "A Report has been submitted by the user "+userEmail+" Please check it\n\n"+report_str
+                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
                 );
                 mail3.execute();
 
@@ -100,7 +100,7 @@ public class report_page extends AppCompatActivity {
                         "mms@2022",
                         "shreedev2k3@gmail.com",
                         "A Report has been submitted",
-                        "A Report has been submitted by the user "+userEmail+" Please check it\n\n"+report_str
+                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
                 );
                 mail4.execute();
 

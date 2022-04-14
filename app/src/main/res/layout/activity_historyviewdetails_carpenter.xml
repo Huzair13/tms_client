@@ -489,7 +489,7 @@
                     android:text="Mobile No."
                     android:textColor="@color/black"
                     android:background="@drawable/table"
-                    android:textSize="18dp"/>
+                    android:textSize="19dp"/>
 <!--                    android:textStyle="bold"-->
 
 

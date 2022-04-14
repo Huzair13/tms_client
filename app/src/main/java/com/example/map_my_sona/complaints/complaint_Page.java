@@ -103,9 +103,9 @@ public class complaint_Page extends AppCompatActivity {
         complainted_by_mob = (EditText) findViewById(R.id.scan_qr_com_mob);
         complainted_by_dep = (Spinner) findViewById(R.id.scan_qr_com_dep);
 
-        vhigh =(CheckBox)findViewById(R.id.veryhighpriority);
-        high=(CheckBox)findViewById(R.id.highpriority);
-        low =(CheckBox)findViewById(R.id.lowpriority);
+//        vhigh =(CheckBox)findViewById(R.id.veryhighpriority);
+//        high=(CheckBox)findViewById(R.id.highpriority);
+//        low =(CheckBox)findViewById(R.id.lowpriority);
 
         LinearLayout priority = (LinearLayout) findViewById(R.id.prioritylayout);
 

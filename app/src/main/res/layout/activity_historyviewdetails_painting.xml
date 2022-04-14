@@ -504,7 +504,43 @@
 
             </TableRow>
 
+            <TableRow>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:background="@drawable/cellshape"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Location "
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/location_unit_his_painting"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:background="@drawable/table"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
         </TableLayout>
 
         <!--        <TextView-->

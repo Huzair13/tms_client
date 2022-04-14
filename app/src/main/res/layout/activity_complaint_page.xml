@@ -516,13 +516,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/table"
                     android:gravity="center"
-                    android:text="Priority Level"
+                    android:text="Location"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/priority_unit"
+                    android:id="@+id/scanned_location"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

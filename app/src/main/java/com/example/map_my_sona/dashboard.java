@@ -164,9 +164,12 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
+                        manualentry.setVisibility(View.VISIBLE);
 
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
+
 
                         Menu menu=navigationView1.getMenu();
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
@@ -184,15 +187,20 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                         MenuItem navi_report=menu.findItem(R.id.nav_report);
                         navi_report.setVisible(true);
 
+                        MenuItem manual_det=menu.findItem(R.id.manual_history);
+                        manual_det.setVisible(true);
+
                     }else if(pos.equals("technician")){
 
                         loading.setVisibility(View.GONE);
 
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
+                        manualentry.setVisibility(View.VISIBLE);
 
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(manualentry);
 
                         Menu menu=navigationView1.getMenu();
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);

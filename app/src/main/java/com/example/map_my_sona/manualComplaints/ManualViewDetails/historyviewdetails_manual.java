@@ -82,7 +82,6 @@ public class historyviewdetails_manual extends AppCompatActivity {
 
         uref_m= FirebaseAuth.getInstance().getUid();
 
-        pro_id_manual=(TextView) findViewById(R.id.Product_ID_history_manual);
         com_status_his_manual=(TextView) findViewById(R.id.complaint_status_his_manual);
 
         comp_close_manual=(Button)findViewById(R.id.close_the_com_his_manual);
@@ -120,6 +119,8 @@ public class historyviewdetails_manual extends AppCompatActivity {
                 intercomNum_manual.setText(intercomNum_manual_str);
                 phone_num_manual.setText(phone_num_manual_str);
                 com_txt_manual.setText(com_txt_manual_str);
+                com_status_his_manual.setText(status_manual);
+
 
                 if (status_manual.equals("Pending")){
                     com_status_his_manual.setBackgroundResource(R.color.Red);

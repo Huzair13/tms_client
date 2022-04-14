@@ -69,6 +69,18 @@
        android:layout_height="match_parent"
        android:orientation="vertical">
 
+      <TextView
+          android:id="@+id/scantext"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:fontFamily="@font/roboto_regular"
+          android:gravity="center"
+          android:text="Scan Code"
+          android:textColor="@color/white"
+          android:textSize="20dp">
+
+      </TextView>
+
       <com.airbnb.lottie.LottieAnimationView
           android:id="@+id/lottie_ani_load"
           android:layout_width="279dp"
@@ -89,7 +101,7 @@
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/scancode"
           android:layout_width="match_parent"
-          android:layout_height="101dp"
+          android:layout_height="100dp"
           android:layout_marginStart="15dp"
           android:layout_marginTop="250dp"
           android:layout_marginEnd="15dp"
@@ -108,18 +120,6 @@
              android:layout_marginLeft="34dp"
              android:src="@drawable/qrcode_white"
              android:scaleType="fitCenter"/>
-
-         <TextView
-             android:id="@+id/scantext"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="Scan Code"
-             android:textSize="20dp"
-             android:gravity="center"
-             android:textColor="@color/white"
-             android:fontFamily="@font/roboto_regular" >
-
-         </TextView>
 
       </com.google.android.material.card.MaterialCardView>
 

@@ -118,6 +118,7 @@ public class historyviewdetails_manual_carpenter extends AppCompatActivity {
                 intercomNum_manual.setText(intercomNum_manual_str);
                 phone_num_manual.setText(phone_num_manual_str);
                 com_det_manual.setText(com_txt_manual_str);
+                com_txt_manual.setText(com_txt_manual_str);
                 com_status_his_manual.setText(status_manual);
 
 

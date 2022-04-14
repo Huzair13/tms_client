@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual"
     android:orientation="vertical"
+    android:background="@drawable/ssbg3"
     >
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -21,7 +22,7 @@
                 android:id="@+id/topAppBar_user_electricity_manual"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="History"
+                app:title="Manual History"
                 app:menu="@menu/historyfilter"
                 android:background="@color/cornflowerblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -36,23 +37,29 @@
         android:orientation="horizontal">
 
     </LinearLayout>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ssbg8"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
+<!--    <Spinner-->
+<!--        android:id="@+id/historyfliter_manual"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:padding="4dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 
-    <Spinner
-        android:id="@+id/historyfliter_manual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_gravity="end"
-        android:padding="4dp"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-    </Spinner>
+<!--    </Spinner>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_complaints_history_manual"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

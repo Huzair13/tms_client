@@ -90,7 +90,7 @@ public class report_page extends AppCompatActivity {
 
                 SendMail mail3=new SendMail("mapmysona@gmail.com",
                         "mms@2022",
-                        "bs.vighneshwaran@gmail.com",
+                        "bs.vigneshwaran@gmail.com",
                         "A Report has been submitted",
                         "A Report has been submitted by the user "+userEmail+" Please check it\n\n"+report_str
                 );

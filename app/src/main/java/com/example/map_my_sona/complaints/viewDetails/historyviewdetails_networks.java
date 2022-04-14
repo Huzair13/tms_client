@@ -242,7 +242,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                             .show();
                                 }
                                 else{
-                                    Toast.makeText(historyviewdetails_networks.this, "Complaint is not made by you so cant close it", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(historyviewdetails_networks.this, "You are unable to close this complaint , as it is not filled by you.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -302,9 +302,9 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                 .show();
 
                     }else{
-                        Toast.makeText(historyviewdetails_networks.this, "This complaint is not made by you so you cant close it", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(historyviewdetails_networks.this, "You are unable to close this complaint , as it is not filled by you.", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(historyviewdetails_networks.this, "This complaint is already solved and closed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(historyviewdetails_networks.this, "It has already been solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -313,7 +313,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
 
     private void sendMessage() {
         String sphone=staff_mob.getText().toString().trim();
-        String sMessage="Complaint Registered by has been solved Please check \n If not solved you can make the complaint again pending";
+        String sMessage="The complaint filled has been solved. \n check before closing the complaint \n If not, place it as pending";
 
         if(!sphone.equals("") && !sMessage.equals("")){
             SmsManager smsManager=SmsManager.getDefault();

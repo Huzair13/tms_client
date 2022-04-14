@@ -505,6 +505,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Close the Complaint"
             android:textColor="@color/white"
+            android:backgroundTint="@color/cyellow"
             app:cornerRadius="25dp" />
     </LinearLayout>
 </ScrollView>

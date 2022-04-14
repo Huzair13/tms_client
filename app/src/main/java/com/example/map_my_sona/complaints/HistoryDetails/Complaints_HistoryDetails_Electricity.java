@@ -38,7 +38,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     //fliter
     TextInputLayout hisfliter;
     AutoCompleteTextView hisflitertext;
-    Spinner spin;
+//    Spinner spin;
 //    TextView  TextView;
 
 
@@ -60,25 +60,25 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
 //        hisflitertext.setAdapter(fliterAdapter);
 
             // Spinner element
-            Spinner spinner = (Spinner) findViewById(R.id.historyfliter);
+          //  Spinner spinner = (Spinner) findViewById(R.id.historyfliter);
 
             // Spinner click listener
-            spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+//           spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
             // Spinner Drop down elements
-            List<String> categories = new ArrayList<String>();
-            categories.add("All");
-            categories.add("Past 10 Days ");
-            categories.add("Last Month");
+//            List<String> categories = new ArrayList<String>();
+//            categories.add("All");
+//            categories.add("Past 10 Days ");
+//            categories.add("Last Month");
 
             // Creating adapter for spinner
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+           // ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
             // Drop down layout style - list view with radio button
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            //dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
             // attaching data adapter to spinner
-            spinner.setAdapter(dataAdapter);
+           // spinner.setAdapter(dataAdapter);
 
         recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
         reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");

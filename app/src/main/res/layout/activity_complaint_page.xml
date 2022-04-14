@@ -516,13 +516,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/table"
                     android:gravity="center"
-                    android:text="Priority Level"
+                    android:text="Location"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/priority_unit"
+                    android:id="@+id/scanned_location"
                     android:layout_width="113dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -600,16 +600,16 @@
             android:background="@drawable/style_spinner_1"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Level of Complaint :"
-            android:textColor="@color/black"
-            android:layout_marginTop="15dp"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Level of Complaint :"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="15dp"-->
 
-            >
+<!--            >-->
 
-        </TextView>
+<!--        </TextView>-->
 
 
         <LinearLayout
@@ -620,27 +620,27 @@
             android:gravity="center">
 
 
-        <CheckBox
-            android:id="@+id/veryhighpriority"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Very Urgent"
-            android:textColor="@color/black"
-            />
-            <CheckBox
-                android:id="@+id/highpriority"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Urgent"
-                android:textColor="@color/black"
-                />
-            <CheckBox
-                android:id="@+id/lowpriority"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Not Urgent"
-                android:textColor="@color/black"
-                />
+<!--        <CheckBox-->
+<!--            android:id="@+id/veryhighpriority"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Very Urgent"-->
+<!--            android:textColor="@color/black"-->
+<!--            />-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/highpriority"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="Urgent"-->
+<!--                android:textColor="@color/black"-->
+<!--                />-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/lowpriority"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="Not Urgent"-->
+<!--                android:textColor="@color/black"-->
+<!--                />-->
 
         </LinearLayout>
         <!--        <com.google.android.material.textfield.TextInputLayout-->
@@ -675,6 +675,7 @@
             android:text="SUBMIT"
             android:layout_gravity="center"
             android:onClick="startService"
+            android:backgroundTint="@color/cyellow"
             tools:ignore="OnClick" />
 
     </LinearLayout>

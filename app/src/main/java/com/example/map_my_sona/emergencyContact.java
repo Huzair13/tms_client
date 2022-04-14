@@ -32,7 +32,8 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:9600510207"));
+                //pannerselvam sir
+                intent.setData(Uri.parse("tel:7418009997"));
                 startActivity(intent);
             }
         });
@@ -41,7 +42,8 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:6382219828"));
+                //adiyaman sir
+                intent1.setData(Uri.parse("tel:9894341589"));
                 startActivity(intent1);
             }
         });
@@ -49,7 +51,8 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:9677381857"));
+                //sakthivel sir
+                intent1.setData(Uri.parse("tel:9442531522"));
                 startActivity(intent1);
             }
         });
@@ -57,7 +60,8 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:9092050502"));
+                //adiyaman sir
+                intent1.setData(Uri.parse("tel:9894341589"));
                 startActivity(intent1);
             }
         });
@@ -65,7 +69,8 @@ public class emergencyContact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:9600510207"));
+                //adiyaman sir
+                intent1.setData(Uri.parse("tel:9894341589"));
                 startActivity(intent1);
             }
         });

@@ -178,6 +178,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:textSize="18dp"
                 app:cornerRadius="12dp"
+                android:backgroundTint="@color/cyellow"
                 >
 
             </com.google.android.material.button.MaterialButton>

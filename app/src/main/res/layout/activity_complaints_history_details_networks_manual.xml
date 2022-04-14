@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Networks_manual"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/ssbg11">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:id="@+id/topAppBar_user_electricity_manual_network"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="History"
+                app:title="Manual History"
                 app:menu="@menu/historyfilter"
                 android:background="@color/cornflowerblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -28,11 +29,18 @@
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ssbg8"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_complaints_history_manual_network"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

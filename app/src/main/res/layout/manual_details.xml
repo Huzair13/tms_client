@@ -75,24 +75,30 @@
     <!--      </TextView>-->
 
     <!--   </com.google.android.material.textfield.TextInputLayout>-->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ssbg8"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
 
+<!--    <Spinner-->
+<!--        android:id="@+id/historyfliter"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:padding="4dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 
-    <Spinner
-        android:id="@+id/historyfliter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_gravity="end"
-        android:padding="4dp"
-        android:layout_margin="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-    </Spinner>
+<!--    </Spinner>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_complaints_history"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

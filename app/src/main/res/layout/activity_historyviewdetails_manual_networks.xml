@@ -73,6 +73,7 @@
                     android:textColor="@color/black"
                     android:background="@drawable/cellshape"
                     android:textSize="18dp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -84,6 +85,7 @@
                     android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -95,6 +97,7 @@
                     android:background="@drawable/cellshape"
                     android:textColor="@color/black"
                     android:textSize="18dp"
+                    android:textStyle="bold"
                     />
 
             </TableRow>

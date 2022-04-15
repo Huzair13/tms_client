@@ -89,7 +89,8 @@ public class loginpage extends AppCompatActivity {
             LogPassword.setError("Password Cannot be empty");
             LogPassword.requestFocus();
         }else if(uname.endsWith("@gmail.com") || uname.endsWith("@GMAIL.COM") ||
-                uname.endsWith("@yahoo.com") || uname.endsWith("@YAHOO.COM")){
+                uname.endsWith("@yahoo.com") || uname.endsWith("@YAHOO.COM") ||
+                uname.endsWith("@sonatech.ac.in") || uname.endsWith("@SONATECH.AC.IN")){
             String email=uname;
 
             progressDialog.setMessage("Logging in please wait.....");

@@ -216,9 +216,9 @@ public class complaint_Page extends AppCompatActivity {
 
                     SendMail mail=new SendMail("mapmysona@gmail.com",
                             "mms@2022",
-                            "ahamedhuzair13@gmail.com",
+                            "panneerselvamm@sonatech.ac.in",
                             "Complaint in "+dep_of_pro_str+" Department",
-                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
                                     "COMPLAINT: "+ complaint_txt
                     );
                     mail.execute();
@@ -228,9 +228,22 @@ public class complaint_Page extends AppCompatActivity {
 
                     SendMail mail=new SendMail("mapmysona@gmail.com",
                             "mms@2022",
-                            "bsvigneshwaran@gmail.com",
+                            "adhiyaman@sonatech.ac.in",
                             "Complaint in "+dep_of_pro_str+" Department",
-                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
+                                    "COMPLAINT: "+ complaint_txt
+                    );
+                    mail.execute();
+                    submitComplaint();
+
+                }
+                else if(dep_of_pro_str.equals("Network")){
+
+                    SendMail mail=new SendMail("mapmysona@gmail.com",
+                            "mms@2022",
+                            "sakthivel@sonatech.ac.in",
+                            "Complaint in "+dep_of_pro_str+" Department",
+                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
                                     "COMPLAINT: "+ complaint_txt
                     );
                     mail.execute();
@@ -238,17 +251,15 @@ public class complaint_Page extends AppCompatActivity {
 
                 }
                 else{
-
                     SendMail mail=new SendMail("mapmysona@gmail.com",
                             "mms@2022",
-                            "srisanjanaarunkumar@gmail.com",
+                            "adhiyaman@sonatech.ac.in",
                             "Complaint in "+dep_of_pro_str+" Department",
-                            "Complainted by "+ complainted_by_name.getText().toString() +"\n" +
+                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
                                     "COMPLAINT: "+ complaint_txt
                     );
                     mail.execute();
                     submitComplaint();
-
                 }
             }
 

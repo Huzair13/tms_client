@@ -121,6 +121,18 @@
              android:src="@drawable/qrcode_white"
              android:scaleType="fitCenter"/>
 
+         <TextView
+             android:id="@+id/scanQR_dashboard"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Scan QR"
+             android:textSize="20dp"
+             android:gravity="center"
+             android:textColor="@color/white"
+             android:fontFamily="@font/roboto_regular">
+
+         </TextView>
+
       </com.google.android.material.card.MaterialCardView>
 
 

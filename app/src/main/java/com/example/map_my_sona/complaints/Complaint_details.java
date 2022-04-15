@@ -22,12 +22,12 @@ public class Complaint_details {
     private String status;
     private String dep_of_pro;
     private String UID;
+    private String location;
 
     public Complaint_details() {
-
     }
 
-    public Complaint_details(String com_by_name, String com_by_mob, String com_by_dep, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String UID) {
+    public Complaint_details(String com_by_name, String com_by_mob, String com_by_dep, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String UID, String location) {
         this.com_by_name = com_by_name;
         this.com_by_mob = com_by_mob;
         this.com_by_dep = com_by_dep;
@@ -49,6 +49,7 @@ public class Complaint_details {
         this.status = status;
         this.dep_of_pro = dep_of_pro;
         this.UID = UID;
+        this.location = location;
     }
 
     public String getCom_by_name() {
@@ -217,5 +218,13 @@ public class Complaint_details {
 
     public void setUID(String UID) {
         this.UID = UID;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

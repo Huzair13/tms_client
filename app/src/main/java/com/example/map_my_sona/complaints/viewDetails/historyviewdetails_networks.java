@@ -53,9 +53,9 @@ public class historyviewdetails_networks extends AppCompatActivity {
 
     AlertDialog.Builder builder_networks;
 
-    private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
+    private TextView location,staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
-    private String uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_Str,uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
 
     @Override
@@ -94,7 +94,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //        String[] feebac={"Feedback","Excellent","Good","Not bad" ,"Bad"};
 //        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,feebac));
 
-        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Networks").child(com_id_new);
+        reference_complaints_history_fullView= FirebaseDatabase.getInstance().getReference("complaints").child("Network").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -115,7 +115,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 pro_id_str=complaint_details.getUniqueId();
 
                 status=complaint_details.getStatus();
-
+                uid_str=complaint_details.getUID();
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);

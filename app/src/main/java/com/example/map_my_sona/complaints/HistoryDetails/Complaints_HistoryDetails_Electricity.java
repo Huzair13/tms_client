@@ -48,7 +48,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints_history_details_electricity);
 
-        String message =getIntent().getStringExtra("message");
+        //String message =getIntent().getStringExtra("message");
 
         //filter
 //        hisfliter=findViewById(R.id.historyfliter);
@@ -80,33 +80,31 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
             // attaching data adapter to spinner
            // spinner.setAdapter(dataAdapter);
 
-        recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
-        reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
+            recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
+            reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
 
-        recyclerView_complaints_history.setHasFixedSize(true);
-        recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView_complaints_history.setHasFixedSize(true);
+            recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
 
-        arrayList_complaints_history=new ArrayList<>();
-        adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);
-        recyclerView_complaints_history.setAdapter(adapter_complaint_history);
+            arrayList_complaints_history=new ArrayList<>();
+            adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);
+            recyclerView_complaints_history.setAdapter(adapter_complaint_history);
 
-        reference_complaints_history.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Complaint_details user =dataSnapshot.getValue(Complaint_details.class);
-                    arrayList_complaints_history.add(user);
+            reference_complaints_history.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                        Complaint_details user =dataSnapshot.getValue(Complaint_details.class);
+                        arrayList_complaints_history.add(user);
+                    }
+                    adapter_complaint_history.notifyDataSetChanged();
                 }
-                adapter_complaint_history.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Complaints_HistoryDetails_Electricity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(Complaints_HistoryDetails_Electricity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
 
     }
 
@@ -114,10 +112,8 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
-
         // Showing selected spinner item
 //        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
 
         ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
         ((TextView) parent.getChildAt(0)).setTextSize(20);

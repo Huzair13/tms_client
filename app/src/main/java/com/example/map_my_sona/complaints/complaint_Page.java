@@ -55,6 +55,8 @@ import papaya.in.sendmail.SendMail;
 public class complaint_Page extends AppCompatActivity {
 
     private TextView sn, make, model, procurement, powerRating, wexpiry, wperiod, ins_by, ins_date, mob,dep_of_pro;
+    private TextView location;
+    private String location_str;
     private EditText  complainted_by_name, complainted_by_mob ;
     private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
@@ -95,6 +97,7 @@ public class complaint_Page extends AppCompatActivity {
         ins_date = (TextView) findViewById(R.id.ins_date_unit);
         mob = (TextView) findViewById(R.id.mob_unit);
         dep_of_pro=(TextView)findViewById(R.id.dep_of_pro_unit);
+        location=(TextView)findViewById(R.id.scanned_location);
 
         complaint_subBtn = (Button) findViewById(R.id.button_complaint_submit);
 
@@ -137,6 +140,7 @@ public class complaint_Page extends AppCompatActivity {
                 ins_by_str = snapshot.child("ins_by").getValue(String.class);
                 ins_date_str = snapshot.child("ins_date").getValue(String.class);
                 dep_of_pro_str=snapshot.child("dep_of_pro").getValue(String.class);
+                location_str=snapshot.child("location").getValue(String.class);
 
                 sn.setText(sn_str);
                 make.setText(make_str);
@@ -149,6 +153,7 @@ public class complaint_Page extends AppCompatActivity {
                 ins_date.setText(ins_date_str);
                 mob.setText(mob_str);
                 dep_of_pro.setText(dep_of_pro_str);
+                location.setText(location_str);
 
             }
 
@@ -274,7 +279,11 @@ public class complaint_Page extends AppCompatActivity {
         String time = currentTime.format(calForTime.getTime());
 
 
-        Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str, complainted_by_dep_str, complaint_txt, sn_str, make_str, model_str, procurement_str, powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s, status,dep_of_pro_str,uref);
+        Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str,
+                complainted_by_dep_str, complaint_txt, sn_str,
+                make_str, model_str, procurement_str,
+                powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
+                status,dep_of_pro_str,uref,location_str);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

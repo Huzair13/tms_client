@@ -55,9 +55,9 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
     AlertDialog.Builder builder_plumber;
 
-    private TextView staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
+    private TextView location,staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
-    private String uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_Str,uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
 
     @Override
@@ -83,6 +83,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         ins_date = (TextView) findViewById(R.id.ins_date_unit_his_plumber);
         mob = (TextView) findViewById(R.id.mob_unit_his_plumber);
         com_txt = (TextView) findViewById(R.id.com_txt_history_plumber);
+        location=(TextView)findViewById(R.id.location_unit_his_plumber);
 
         uref_h= FirebaseAuth.getInstance().getUid();
 
@@ -114,6 +115,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 mob_str = complaint_details.getMob();
                 com_txt_str = complaint_details.getCom_txt();
                 pro_id_str = complaint_details.getUniqueId();
+                location_Str=complaint_details.getLocation();
 
                 status = complaint_details.getStatus();
 
@@ -129,6 +131,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 ins_date.setText(ins_date_str);
                 mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
+                location.setText(location_Str);
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);

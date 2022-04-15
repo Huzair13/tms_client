@@ -13,8 +13,12 @@ public class AddNewData {
     private String ins_date;
     private String mob;
     private String dep_of_pro;
+    private String location;
 
-    public AddNewData(String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String dep_of_pro) {
+    public AddNewData() {
+    }
+
+    public AddNewData(String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String dep_of_pro, String location) {
         this.sn_no = sn_no;
         this.make = make;
         this.model = model;
@@ -26,9 +30,7 @@ public class AddNewData {
         this.ins_date = ins_date;
         this.mob = mob;
         this.dep_of_pro = dep_of_pro;
-    }
-    public AddNewData() {
-
+        this.location = location;
     }
 
     public String getSn_no() {
@@ -117,5 +119,13 @@ public class AddNewData {
 
     public void setDep_of_pro(String dep_of_pro) {
         this.dep_of_pro = dep_of_pro;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

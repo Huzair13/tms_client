@@ -97,7 +97,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);
             }
-            else if(pro_dep.equals("Networks")){
+            else if(pro_dep.equals("Network")){
                 Intent intent=new Intent(context, historyviewdetails_networks.class);
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);

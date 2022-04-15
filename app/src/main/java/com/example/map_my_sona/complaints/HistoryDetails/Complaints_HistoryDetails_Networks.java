@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
@@ -22,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Complaints_HistoryDetails_Networks extends AppCompatActivity {
+public class Complaints_HistoryDetails_Networks extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     RecyclerView recyclerView_complaints_history_networks;
     DatabaseReference reference_complaints_history_networks;
@@ -40,7 +44,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity {
         setContentView(R.layout.activity_complaints_history_details_networks);
 
         recyclerView_complaints_history_networks=findViewById(R.id.recyclerview_complaints_history_networks);
-        reference_complaints_history_networks= FirebaseDatabase.getInstance().getReference("complaints").child("Networks");
+        reference_complaints_history_networks= FirebaseDatabase.getInstance().getReference("complaints").child("Network");
 
         recyclerView_complaints_history_networks.setHasFixedSize(true);
         recyclerView_complaints_history_networks.setLayoutManager(new LinearLayoutManager(this));
@@ -64,5 +68,17 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity {
                 Toast.makeText(Complaints_HistoryDetails_Networks.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String item = adapterView.getItemAtPosition(i).toString();
+        ((TextView) adapterView.getChildAt(0)).setTextColor(Color.WHITE);
+        ((TextView) adapterView.getChildAt(0)).setTextSize(20);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

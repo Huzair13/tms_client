@@ -45,9 +45,10 @@
         android:id="@+id/report_text"
         android:layout_width="350dp"
         android:layout_height="200dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/borderbox"
         android:hint="Enter your Report here"
-        android:padding="15px"
+        android:padding="15dp"
         android:textColorHint="@color/black" />
 
     <com.google.android.material.button.MaterialButton
@@ -58,6 +59,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/cyellow"
+        app:cornerRadius="15dp"
+        android:fontFamily="@font/roboto_regular"
         />
 </LinearLayout>
     </LinearLayout>

@@ -43,7 +43,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginemail"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/anilogin"
@@ -76,7 +75,6 @@
         app:startIconDrawable="@drawable/password"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
 
         >
 
@@ -104,9 +102,8 @@
 
 <!--    </com.google.android.material.button.MaterialButton>-->
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbutton"
-        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginpassword"
@@ -115,7 +112,8 @@
         android:backgroundTint="@color/cyellow"
         android:text="Log In"
         android:textColor="@color/white"
-        app:icon="@drawable/login" />
+        app:icon="@drawable/login"
+        app:cornerRadius="15dp"/>
 
     <LinearLayout
         android:id="@+id/linearlogin"

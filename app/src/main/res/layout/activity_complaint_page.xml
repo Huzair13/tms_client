@@ -667,7 +667,7 @@
 
 <!--        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_complaint_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -676,7 +676,8 @@
             android:layout_gravity="center"
             android:onClick="startService"
             android:backgroundTint="@color/cyellow"
-            tools:ignore="OnClick" />
+            tools:ignore="OnClick"
+            app:cornerRadius="15dp"/>
 
     </LinearLayout>
     </LinearLayout>

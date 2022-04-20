@@ -509,6 +509,6 @@
             android:text="Close the Complaint"
             android:textColor="@color/white"
             android:backgroundTint="@color/cyellow"
-            app:cornerRadius="25dp" />
+            app:cornerRadius="15dp" />
     </LinearLayout>
 </ScrollView>

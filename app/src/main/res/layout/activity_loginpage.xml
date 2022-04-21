@@ -90,6 +90,14 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+    <CheckBox
+        android:id="@+id/rememberme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:layout_marginLeft="18dp"
+        android:layout_below="@id/loginpassword"
+        />
 
 
 <!--    <com.google.android.material.button.MaterialButton-->
@@ -109,7 +117,7 @@
         android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginpassword"
+        android:layout_below="@+id/rememberme"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/cyellow"

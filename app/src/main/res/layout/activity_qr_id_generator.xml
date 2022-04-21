@@ -8,7 +8,7 @@
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/ssbg12">
+    android:background="@drawable/ssbg3">
 
 
 
@@ -63,6 +63,7 @@
         app:icon="@drawable/qrid"
         app:cornerRadius="16dp"
         android:backgroundTint="@color/cyellow"
+
        >
 
     </com.google.android.material.button.MaterialButton>

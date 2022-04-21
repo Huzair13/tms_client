@@ -24,7 +24,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:title="Manual History"
                 app:menu="@menu/historyfilter"
-                android:background="@color/cornflowerblue"
+                android:background="@color/greyblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"
                 />

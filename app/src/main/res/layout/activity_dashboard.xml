@@ -114,7 +114,7 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          android:backgroundTint="@color/white"
+          android:backgroundTint="@color/lightpistagreen"
 
           >
          <LinearLayout
@@ -162,6 +162,7 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
+          android:background="@color/lightpistagreen"
           >
           <LinearLayout
               android:layout_width="wrap_content"
@@ -203,7 +204,7 @@
           android:layout_marginTop="15dp"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="15dp"
-
+        android:background="@color/lightpistagreen"
           android:checkable="true"
           android:clickable="true"
           android:focusable="true"

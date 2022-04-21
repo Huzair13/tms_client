@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".manualComplaints.ManualComplaint_page"
-    android:background="@drawable/ssbg11"
-    android:orientation="horizontal">
 
+    android:orientation="horizontal">
+<!--    android:background="@drawable/ssbg11"-->
 
     <LinearLayout
         android:layout_width="match_parent"

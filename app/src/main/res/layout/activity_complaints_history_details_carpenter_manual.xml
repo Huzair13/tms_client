@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual"
-    android:background="@drawable/ssbg1"
-    >
+    tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual">
+<!--    android:background="@drawable/ssbg1"-->
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_details;
 import com.example.map_my_sona.manualComplaints.manual_complaints_history_adapter;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +39,7 @@ public class Complaints_HistoryDetails_Electricity_manual extends AppCompatActiv
     TextInputLayout hisfliter_manual;
     AutoCompleteTextView hisflitertext_manual;
     Spinner spin_manual;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,14 @@ public class Complaints_HistoryDetails_Electricity_manual extends AppCompatActiv
             }
         });
 
-
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Complaints_HistoryDetails_Electricity_manual.this, dashboard.class));
+            }
+        });
     }
 
     @Override

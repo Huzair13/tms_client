@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/elmessiri"
-            android:backgroundTint="@color/magentablue"
+            android:backgroundTint="@color/lightpistagreen"
 
              />
 
@@ -62,7 +62,7 @@
         android:layout_marginTop="16dp"
         app:icon="@drawable/qrid"
         app:cornerRadius="16dp"
-        android:backgroundTint="@color/cyellow"
+        android:backgroundTint="@color/greyblue"
 
        >
 
@@ -89,7 +89,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         app:cornerRadius="20dp"
-        android:backgroundTint="@color/cyellow"
+        android:backgroundTint="@color/greyblue"
         app:icon="@drawable/save"
         >
 

@@ -567,7 +567,7 @@
             android:text="Add Product"
             android:layout_marginTop="40dp"
             app:cornerRadius="15dp"
-            android:backgroundTint="@color/cyellow"
+            android:backgroundTint="@color/greyblue"
             android:fontFamily="@font/roboto_regular">
 
         </com.google.android.material.button.MaterialButton>

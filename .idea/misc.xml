@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/pistagreen.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/pistagreenspinner.xml" value="0.175" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/style_spinner_1.xml" value="0.175" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_login_page.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminpendingcomplaint.xml" value="0.23229166666666667" />
@@ -51,6 +54,9 @@
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdowncomplaintcontent.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdowndept.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownfliter.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownlocation.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownobject.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownpriority.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/history_table.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/historylayout.xml" value="0.13768115942028986" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/manual_details.xml" value="0.23229166666666667" />

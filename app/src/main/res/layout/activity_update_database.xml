@@ -62,7 +62,7 @@
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_regular"
-                android:backgroundTint="@color/lavenderblush"
+                android:backgroundTint="@color/bluemagenta"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

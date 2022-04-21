@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:inputType="text"
-            android:backgroundTint="@color/lavenderblush"
+            android:backgroundTint="@color/bluemagenta"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:fontFamily="@font/roboto_regular"
-            android:backgroundTint="@color/lavenderblush"
+            android:backgroundTint="@color/bluemagenta"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -13,6 +15,9 @@ import android.widget.Toast;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
+import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.report_page;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +38,7 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
     TextInputLayout hisfliter_carpenter;
     AutoCompleteTextView hisflitertext_carpenter;
     Spinner spin_carpenter;
+    MaterialToolbar toolbar;
 //    TextView  TextView;
 
     @Override
@@ -66,5 +72,15 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
             }
         });
 
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, dashboard.class));
+            }
+        });
     }
+
+
 }

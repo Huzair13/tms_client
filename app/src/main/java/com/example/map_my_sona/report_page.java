@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaint_Page;
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,7 @@ public class report_page extends AppCompatActivity {
     DatabaseReference dbRef;
     String report_str;
     String userEmail;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,20 @@ public class report_page extends AppCompatActivity {
 
         report_btn=(Button) findViewById(R.id.report_submit_btn);
 
+        toolbar= findViewById(R.id.reporttopAppBar);
+
         report_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkValidation();
+            }
+        });
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(report_page.this, dashboard.class));
             }
         });
     }
@@ -115,4 +128,5 @@ public class report_page extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -24,10 +24,13 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
+import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,6 +53,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
     private Spinner feedback;
     private RatingBar ratingBar;
     String uref_h;
+    MaterialToolbar toolbar;
 
     private DatabaseReference refDash;
 
@@ -308,6 +312,14 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                     }
                     Toast.makeText(historyviewdetails_plumber.this, "It has already been solved and closed", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails_plumber.this, dashboard.class));
             }
         });
     }

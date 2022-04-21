@@ -35,7 +35,7 @@
              android:layout_height="?attr/actionBarSize"
              app:title="Dashboard"
              app:titleTextColor="@color/white"
-             android:background="@color/babyblue"
+             android:background="@color/greyblue"
              style="@style/Widget.MaterialComponents.Toolbar.Primary"
              />
       </com.google.android.material.appbar.AppBarLayout>

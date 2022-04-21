@@ -19,7 +19,7 @@
        app:headerLayout="@layout/drawer_header"
        app:menu="@menu/drawer_menu"
        android:layout_gravity="start"
-       android:backgroundTint="@color/lavenderblush"
+       android:backgroundTint="@color/lightpistagreen"
        >
    </com.google.android.material.navigation.NavigationView>
    <androidx.coordinatorlayout.widget.CoordinatorLayout

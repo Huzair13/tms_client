@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".report_page">
-<!--    android:background="@drawable/ssbg1"-->
+    tools:context=".report_page"
+    android:background="@drawable/greenbg01">
 
 
     <LinearLayout

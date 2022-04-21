@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Networks_manual"
-    android:orientation="vertical">
-<!--    android:background="@drawable/ssbg11">-->
+    android:orientation="vertical"
+    android:background="@drawable/greenbg01">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

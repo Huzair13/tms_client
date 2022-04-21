@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Manual History"
-            android:background="@color/cornflowerblue"
+            android:background="@color/greyblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
            app:navigationIcon="@drawable/back_ic"
             />
@@ -171,18 +171,22 @@
         <!--            android:layout_marginLeft="34dp"-->
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/elebg01">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Electricity Complaints"
-            android:textSize="20dp"
+            android:textSize="22dp"
+            android:layout_marginLeft="100dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
         </TextView>
-
+</LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -206,18 +210,22 @@
         <!--            android:layout_marginLeft="34dp"-->
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/carbg1">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Carpenter Complaints"
-            android:textSize="20dp"
+            android:textSize="22dp"
+            android:layout_marginLeft="70dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
         </TextView>
-
+</LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -241,18 +249,22 @@
         <!--            android:layout_marginLeft="34dp"-->
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/plumbg1">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Plumber Complaints"
-            android:textSize="20dp"
+            android:textSize="22dp"
+            android:layout_marginLeft="100dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
         </TextView>
-
+</LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -276,18 +288,22 @@
         <!--            android:layout_marginLeft="34dp"-->
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:background="@drawable/painimg1">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Painting Complaints"
-            android:textSize="20dp"
+            android:textSize="22dp"
+            android:layout_marginLeft="75dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
         </TextView>
-
+</LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
 <!--    <com.google.android.material.card.MaterialCardView-->

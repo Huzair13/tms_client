@@ -61,6 +61,8 @@ public class complaint_Page extends AppCompatActivity {
     private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
+    Float rating;
+    String rating_str;
     CheckBox vhigh ,high ,low;
 
     String uref;
@@ -141,6 +143,9 @@ public class complaint_Page extends AppCompatActivity {
                 ins_date_str = snapshot.child("ins_date").getValue(String.class);
                 dep_of_pro_str=snapshot.child("dep_of_pro").getValue(String.class);
                 location_str=snapshot.child("location").getValue(String.class);
+                rating=0.0f;
+                rating_str=rating.toString();
+
 
                 sn.setText(sn_str);
                 make.setText(make_str);
@@ -216,7 +221,7 @@ public class complaint_Page extends AppCompatActivity {
 
                     SendMail mail=new SendMail("mapmysona@gmail.com",
                             "mms@2022",
-                            "panneerselvamm@sonatech.ac.in",
+                            "ahamedhuzair13@gmail.com",//panneerselvamm@sonatech.ac.in
                             "Complaint in "+dep_of_pro_str+" Department",
                             "Complained by "+ complainted_by_name.getText().toString() +"\n" +
                                     "COMPLAINT: "+ complaint_txt
@@ -294,7 +299,7 @@ public class complaint_Page extends AppCompatActivity {
                 complainted_by_dep_str, complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
-                status,dep_of_pro_str,uref,location_str);
+                status,dep_of_pro_str,uref,location_str,rating_str);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

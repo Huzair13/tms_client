@@ -35,7 +35,7 @@
              android:layout_height="?attr/actionBarSize"
              app:title="Dashboard"
              app:titleTextColor="@color/white"
-             android:background="@color/cornflowerblue"
+             android:background="@color/greyblue"
              style="@style/Widget.MaterialComponents.Toolbar.Primary"
              />
       </com.google.android.material.appbar.AppBarLayout>
@@ -48,6 +48,18 @@
           android:layout_marginTop="75dp"
           android:layout_marginEnd="8dp"
           app:srcCompat="@drawable/ssbg8" />
+
+       <TextView
+           android:id="@+id/scantext"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:fontFamily="@font/roboto_regular"
+           android:gravity="center"
+           android:text="Scan Code"
+           android:textColor="@color/white"
+           android:textSize="20dp">
+
+       </TextView>
    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
    <LinearLayout
@@ -72,19 +84,7 @@
        android:layout_height="match_parent"
        android:orientation="vertical">
 
-      <TextView
-          android:id="@+id/scantext"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:fontFamily="@font/roboto_regular"
-          android:gravity="center"
-          android:text="Scan Code"
-          android:textColor="@color/white"
-          android:textSize="20dp">
-
-      </TextView>
-
-      <com.airbnb.lottie.LottieAnimationView
+       <com.airbnb.lottie.LottieAnimationView
           android:id="@+id/lottie_ani_load"
           android:layout_width="279dp"
           android:layout_height="267dp"
@@ -114,27 +114,36 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/skyblue"
+          android:backgroundTint="@color/white"
+
           >
-         <ImageView
-             android:layout_width="75dp"
-             android:layout_height="50dp"
-             android:layout_marginTop="25dp"
-             android:layout_marginLeft="34dp"
-             android:src="@drawable/qrcode_white"
-             android:scaleType="fitCenter"/>
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/cardbg01">
 
-         <TextView
-             android:id="@+id/scanQR_dashboard"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="Scan QR"
-             android:textSize="20dp"
-             android:gravity="center"
-             android:textColor="@color/white"
-             android:fontFamily="@font/roboto_regular">
+<!--            <ImageView-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginTop="35dp"-->
+<!--                android:layout_marginLeft="34dp"-->
+<!--                android:src="@drawable/qrcode_white"-->
+<!--                android:scaleType="fitCenter"/>-->
+            <TextView
+                android:id="@+id/scanQR_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Scan QR Code"
+                android:textSize="22dp"
+                android:gravity="center"
+                android:layout_marginLeft="80dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular">
 
-         </TextView>
+            </TextView>
+         </LinearLayout>
+
+
 
       </com.google.android.material.card.MaterialCardView>
 
@@ -153,35 +162,34 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/skyblue"
           >
-
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/cardbg2">
 
          <TextView
              android:id="@+id/historydetail"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_marginLeft="20dp"
              android:fontFamily="@font/roboto_regular"
-             android:layout_gravity="center_vertical"
-             android:paddingLeft="45dp"
+             android:layout_gravity="center|end"
              android:text="History Details"
-             android:textColor="@color/white"
-             android:textSize="20dp">
+             android:layout_marginLeft="155dp"
+             android:textColor="@color/black"
+             android:textSize="23dp">
 
          </TextView>
 
-         <ImageView
-             android:layout_width="75dp"
-             android:layout_height="50dp"
-             android:layout_marginTop="25dp"
-             android:layout_marginRight="45dp"
-             android:src="@drawable/history_white"
-             android:layout_gravity="end"
-             />
+<!--              <ImageView-->
+<!--                  android:layout_width="70dp"-->
+<!--                  android:layout_height="40dp"-->
+<!--                  android:layout_gravity="center"-->
+<!--                  android:layout_marginRight="45dp"-->
+<!--                  android:src="@drawable/history_white" />-->
 
 
-
+          </LinearLayout>
 
 
       </com.google.android.material.card.MaterialCardView>
@@ -201,28 +209,33 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          app:cardBackgroundColor="@color/skyblue">
-         <ImageView
-             android:layout_width="75dp"
-             android:layout_height="50dp"
-             android:layout_marginTop="25dp"
-             android:layout_marginLeft="34dp"
-             android:src="@drawable/manualicon"
-             android:scaleType="fitCenter"/>
+         >
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/cardbg03">>
+              <TextView
+                  android:id="@+id/manualentrys"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:fontFamily="@font/roboto_regular"
+                  android:gravity="center"
+                  android:layout_marginLeft="85dp"
+                  android:text="Manual Entry"
+                  android:textColor="@color/black"
+                  android:textSize="23dp">
+
+              </TextView>
+          </LinearLayout>
+<!--         <ImageView-->
+<!--             android:layout_width="75dp"-->
+<!--             android:layout_height="40dp"-->
+<!--             android:layout_marginTop="25dp"-->
+<!--             android:layout_marginLeft="34dp"-->
+<!--             android:src="@drawable/manualicon"-->
+<!--             android:scaleType="fitCenter"/>-->
 
 
-
-         <TextView
-             android:id="@+id/manualentrys"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="Manual Entry"
-             android:textSize="20dp"
-             android:gravity="center"
-             android:textColor="@color/white"
-             android:fontFamily="@font/roboto_regular">
-
-         </TextView>
       </com.google.android.material.card.MaterialCardView>
 
    </LinearLayout>

@@ -8,8 +8,8 @@
     android:layout_height="match_parent"
 
     tools:context=".dashboard"
-    android:fitsSystemWindows="true">
-<!--    android:background="@drawable/ssbg13"-->
+    android:fitsSystemWindows="true"
+    android:background="@drawable/greenbg01">
 
 
    <com.google.android.material.navigation.NavigationView

@@ -101,14 +101,14 @@ public class loginpage extends AppCompatActivity {
                     SharedPreferences.Editor editor =preferences.edit();
                     editor.putString("remember","true");
                     editor.apply();
-                    Toast.makeText(loginpage.this,"checked",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginpage.this,"Saved",Toast.LENGTH_SHORT).show();
                 }
                 else if(!compoundButton.isChecked()){
                     SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
                     SharedPreferences.Editor editor =preferences.edit();
                     editor.putString("remember","false");
                     editor.apply();
-                    Toast.makeText(loginpage.this,"unchecked",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginpage.this,"Not Saved",Toast.LENGTH_SHORT).show();
                 }
             }
         });

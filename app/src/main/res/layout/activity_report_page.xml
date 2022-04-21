@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Report"
-            android:background="@color/cornflowerblue"
+            android:background="@color/greyblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             app:navigationIcon="@drawable/back_ic"
             />
@@ -59,7 +59,7 @@
         android:text="Submit Report"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:backgroundTint="@color/cyellow"
+        android:backgroundTint="@color/greyblue"
         app:cornerRadius="15dp"
         android:fontFamily="@font/roboto_regular"
         />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/background1"
+    android:background="@drawable/bg01"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_height="200dp">
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="www.sonatech.ac.in"
-        android:textColor="@color/white"
+        android:textColor="@color/grey"
         android:padding="10dp"
         android:textSize="18dp"
         android:layout_gravity="center"/>

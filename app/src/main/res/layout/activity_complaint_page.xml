@@ -553,7 +553,7 @@
             android:hint="Your Name"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:background="@drawable/greenshade"
+            android:background="@drawable/bg01"
             >
 
         </EditText>
@@ -569,7 +569,7 @@
             android:hint="Your Mobile Number"
             android:textColorHint="@color/black"
             android:inputType="number"
-            android:background="@drawable/greenshade">
+            android:background="@drawable/bg01">
 
         </EditText>
 
@@ -584,7 +584,7 @@
             android:textSize="18dp"
             android:spinnerMode="dropdown"
             android:textStyle="bold"
-            android:background="@drawable/style_spinner_1"/>
+            android:background="@drawable/pistagreenspinner"/>
 
         <Spinner
             android:id="@+id/complaint_Qrcode"
@@ -597,7 +597,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/mulish"
             android:textSize="18dp"
-            android:background="@drawable/style_spinner_1"/>
+            android:background="@drawable/pistagreenspinner"/>
 
 
 <!--        <TextView-->

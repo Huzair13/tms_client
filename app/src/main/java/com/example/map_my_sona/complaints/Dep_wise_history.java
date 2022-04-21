@@ -12,6 +12,9 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
+import com.example.map_my_sona.dashboard;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 
 public class Dep_wise_history extends AppCompatActivity {
@@ -23,6 +26,7 @@ public class Dep_wise_history extends AppCompatActivity {
     private MaterialCardView carpenter;
     private  MaterialCardView plumber;
     private MaterialCardView painting;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,14 @@ public class Dep_wise_history extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Painting.class));
+            }
+        });
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Dep_wise_history.this, dashboard.class));
             }
         });
     }

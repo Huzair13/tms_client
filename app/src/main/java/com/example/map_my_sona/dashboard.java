@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -336,6 +337,12 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                             }
                         })
                         .show();
+
+//                SharedPreferences preferences = getSharedPreferences("checked",MODE_PRIVATE);
+//                SharedPreferences.Editor editor =preferences.edit();
+//                editor.putString("remember","false");
+//                editor.apply();
+//                finish();
                 break;
         }
         return true;

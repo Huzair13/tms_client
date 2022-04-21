@@ -7,8 +7,8 @@
     tools:context=".Qr_id_generator"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp">
-<!--    android:background="@drawable/ssbg12">-->
+    android:padding="16dp"
+    android:background="@drawable/ssbg3">
 
 
 
@@ -26,7 +26,7 @@
             android:id="@+id/imageView2"
             android:layout_width="123dp"
             android:layout_height="102dp"
-            android:layout_marginTop="-25dp"
+            android:layout_marginTop="25dp"
             app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
 
@@ -63,6 +63,7 @@
         app:icon="@drawable/qrid"
         app:cornerRadius="16dp"
         android:backgroundTint="@color/cyellow"
+
        >
 
     </com.google.android.material.button.MaterialButton>

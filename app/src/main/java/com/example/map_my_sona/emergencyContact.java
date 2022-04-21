@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
+import com.google.android.material.appbar.MaterialToolbar;
+
 public class emergencyContact extends AppCompatActivity {
 
     ImageButton hodcall;
@@ -16,6 +19,7 @@ public class emergencyContact extends AppCompatActivity {
     ImageButton hod2call;
     ImageButton hod3call;
     ImageButton hod4call;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,14 @@ public class emergencyContact extends AppCompatActivity {
                 //adiyaman sir
                 intent1.setData(Uri.parse("tel:9894341589"));
                 startActivity(intent1);
+            }
+        });
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(emergencyContact.this, dashboard.class));
             }
         });
     }

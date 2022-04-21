@@ -17,9 +17,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,6 +43,7 @@ public class ManualComplaint_page extends AppCompatActivity {
     AlertDialog.Builder builder_mc;
     String uref;
     public  MaterialAlertDialogBuilder materialAlertDialogBuilder;
+   MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,6 +208,14 @@ public class ManualComplaint_page extends AppCompatActivity {
                             .show();
                 }
 
+            }
+        });
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ManualComplaint_page.this, dashboard.class));
             }
         });
 

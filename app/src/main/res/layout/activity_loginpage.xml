@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginpage">
-<!--    android:background="@drawable/ssbg1">-->
+    tools:context=".loginpage"
+    android:background="@drawable/newbg">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,9 +23,9 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="130dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="35dp"
             app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
 
@@ -90,14 +90,6 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-    <CheckBox
-        android:id="@+id/rememberme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remember Me"
-        android:layout_marginLeft="18dp"
-        android:layout_below="@id/loginpassword"
-        />
 
 
 <!--    <com.google.android.material.button.MaterialButton-->
@@ -117,7 +109,7 @@
         android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rememberme"
+        android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/greyblue"

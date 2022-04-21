@@ -7,8 +7,8 @@
     tools:context=".Qr_id_generator"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/ssbg12">
+    android:padding="16dp">
+<!--    android:background="@drawable/ssbg12">-->
 
 
 

@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScannerPage"
-    android:background="@drawable/ssbg11">
+    tools:context=".ScannerPage">
+<!--    android:background="@drawable/ssbg11">-->
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 
@@ -22,9 +22,9 @@
           style="@style/Widget.MaterialComponents.Toolbar.Primary"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/cornflowerblue"
-          app:title="Scanner Page"
-          app:navigationIcon="@drawable/back_ic"/>
+          android:background="@color/greyblue"
+          app:navigationIcon="@drawable/back_ic"
+          app:title="Scanner Page" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -135,6 +135,7 @@ public class loginpage extends AppCompatActivity {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
+
                     startActivity(new Intent(loginpage.this, dashboard.class));
                 }else{
                     progressDialog.dismiss();

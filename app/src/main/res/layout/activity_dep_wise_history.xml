@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".complaints.Dep_wise_history"
-    android:orientation="vertical">
-<!--    android:background="@drawable/ssbg10"-->
+    android:orientation="vertical"
 
+>
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Scanned History"
-            android:background="@color/cblue"
+            android:background="@color/greyblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
            app:navigationIcon="@drawable/back_ic"
             />
@@ -123,7 +123,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/zxing_transparent"
         >
 <!--        <ImageView-->
 <!--            android:layout_width="75dp"-->
@@ -163,7 +163,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/zxing_transparent"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -203,7 +203,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/zxing_transparent"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -222,7 +222,7 @@
             android:text="Carpenter Complaints"
             android:textSize="22dp"
             android:gravity="center"
-            android:layout_marginLeft="57dp"
+            android:layout_marginLeft="60dp"
             android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
@@ -243,7 +243,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/zxing_transparent"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -282,7 +282,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/skyblue"
+        app:cardBackgroundColor="@color/zxing_transparent"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -291,18 +291,22 @@
         <!--            android:layout_marginLeft="34dp"-->
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/painimg1">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Painting Complaints"
-            android:textSize="20dp"
+            android:textSize="22dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:layout_marginLeft="70dp"
+            android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular" >
 
         </TextView>
-
+</LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
 <!--    <com.google.android.material.card.MaterialCardView-->

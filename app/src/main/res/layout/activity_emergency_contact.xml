@@ -19,6 +19,7 @@
         app:title="Emergency Contact"
         android:background="@color/cornflowerblue"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        app:navigationIcon="@drawable/back_ic"
         />
 
         <LinearLayout

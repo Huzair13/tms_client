@@ -25,8 +25,10 @@ import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,6 +51,7 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
     private Spinner feedback;
     private DatabaseReference refDash;
     String uref_h;
+    MaterialToolbar toolbar;
 
     AlertDialog.Builder builder_carpenter;
 
@@ -311,6 +314,14 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
                     }
                     Toast.makeText(historyviewdetails_carpenter.this, "It has already been solved and closed", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails_carpenter.this, dashboard.class));
             }
         });
     }

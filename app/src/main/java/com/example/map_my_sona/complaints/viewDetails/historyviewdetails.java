@@ -25,8 +25,11 @@ import android.widget.Toast;
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
+import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -55,6 +58,7 @@ public class historyviewdetails extends AppCompatActivity {
     TextView rating_dep;
     RatingBar ratingBar;
     String uref_h;
+    MaterialToolbar toolbar;
 
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
@@ -173,6 +177,14 @@ public class historyviewdetails extends AppCompatActivity {
                 }
                 com_status_his.setTextColor(getResources().getColor(R.color.white));
 
+                toolbar= findViewById(R.id.topAppBar);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(historyviewdetails.this, dashboard.class));
+                    }
+                });
 
             }
 

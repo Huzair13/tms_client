@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/cornflowerblue"
-            app:title="Manual Entry" />
+            app:title="Manual Entry"
+            app:navigationIcon="@drawable/back_ic"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"

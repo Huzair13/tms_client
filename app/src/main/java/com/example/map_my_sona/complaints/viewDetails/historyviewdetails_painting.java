@@ -314,14 +314,14 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 }
             }
         });
-        toolbar= findViewById(R.id.topAppBar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(historyviewdetails_painting.this, dashboard.class));
-            }
-        });
+//        toolbar= findViewById(R.id.topAppBar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(historyviewdetails_painting.this, dashboard.class));
+//            }
+//        });
     }
     private void sendMessage() {
         String sphone=staff_mob.getText().toString().trim();

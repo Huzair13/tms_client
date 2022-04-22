@@ -36,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class loginpage extends AppCompatActivity {
 
+    public static final String PREFS_NAME = "MyPrefsFile";
     private TextInputEditText LogEmail,username;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
@@ -62,13 +63,23 @@ public class loginpage extends AppCompatActivity {
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
 
-        rememberme=findViewById(R.id.rememberme);
+//        rememberme=findViewById(R.id.rememberme);
 //        Changepass=findViewById(R.id.changepassword);
 
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
             LoginUserCheck();
+
+//            SharedPreferences sharedPreferences =getSharedPreferences(loginpage.PREFS_NAME,0);
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//
+//            editor.putBoolean("hasLoggedIn",true);
+//            editor.commit();
+//
+//            startActivity(new Intent(loginpage.this,dashboard.class));
+//            finish();
+
         });
 
         ForgetPass.setOnClickListener(new View.OnClickListener() {
@@ -84,34 +95,34 @@ public class loginpage extends AppCompatActivity {
 //                startActivity(new Intent(loginpage.this,changepassword.class));
 //            }
 //        });
-        SharedPreferences preferences = getSharedPreferences("checked", MODE_PRIVATE);
-        String checkbox =preferences.getString("remember","");
-        if(checkbox.equals("true")){
-            Intent intent = new Intent(loginpage.this,dashboard.class);
-            startActivity(intent);
-        }else if(checkbox.equals("false")){
-            Toast.makeText(this,"Please Sign In",Toast.LENGTH_SHORT).show();
-        }
+//        SharedPreferences preferences = getSharedPreferences("checked", MODE_PRIVATE);
+//        String checkbox =preferences.getString("remember","");
+//        if(checkbox.equals("true")){
+//            Intent intent = new Intent(loginpage.this,dashboard.class);
+//            startActivity(intent);
+//        }else if(checkbox.equals("false")){
+//            Toast.makeText(this,"Please Sign In",Toast.LENGTH_SHORT).show();
+//        }
 
-        rememberme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(compoundButton.isChecked()){
-                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
-                    SharedPreferences.Editor editor =preferences.edit();
-                    editor.putString("remember","true");
-                    editor.apply();
-                    Toast.makeText(loginpage.this,"Saved",Toast.LENGTH_SHORT).show();
-                }
-                else if(!compoundButton.isChecked()){
-                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
-                    SharedPreferences.Editor editor =preferences.edit();
-                    editor.putString("remember","false");
-                    editor.apply();
-                    Toast.makeText(loginpage.this,"Not Saved",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        rememberme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+//                if(compoundButton.isChecked()){
+//                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
+//                    SharedPreferences.Editor editor =preferences.edit();
+//                    editor.putString("remember","true");
+//                    editor.apply();
+//                    Toast.makeText(loginpage.this,"Saved",Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!compoundButton.isChecked()){
+//                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
+//                    SharedPreferences.Editor editor =preferences.edit();
+//                    editor.putString("remember","false");
+//                    editor.apply();
+//                    Toast.makeText(loginpage.this,"Not Saved",Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     private void LoginUserCheck() {

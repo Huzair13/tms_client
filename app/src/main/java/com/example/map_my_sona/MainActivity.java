@@ -3,6 +3,7 @@ package com.example.map_my_sona;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -44,6 +45,21 @@ public class MainActivity extends AppCompatActivity {
            public void run() {
               Intent i=new Intent(MainActivity.this,loginpage.class);
               startActivity(i);
+
+//             SharedPreferences sharedPreferences = getSharedPreferences(loginpage.PREFS_NAME,0);
+//             boolean hasLoggedIn = sharedPreferences.getBoolean("hasLoggedIn",false);
+//
+//             if(hasLoggedIn){
+//                 Intent i=new Intent(MainActivity.this,dashboard.class);
+//                 startActivity(i);
+//                 finish();
+//             } else  {
+//                 Intent a=new Intent(MainActivity.this,loginpage.class);
+//                 startActivity(a);
+//             }
+
+
+
 
               finish();
               }

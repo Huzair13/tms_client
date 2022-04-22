@@ -25,8 +25,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
-        <activity android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter"
-            android:exported="false"/>
+        <activity
+            android:name=".Enter_num_manual"
+            android:exported="false" />
+        <activity
+            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter"
+            android:exported="false" />
         <activity
             android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual"
             android:exported="false" />

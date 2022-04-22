@@ -39,7 +39,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
     public complaints_history_Adapter.Viewholder_complaints_history onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.historylayout,parent,false);
+        View view=inflater.inflate(R.layout.history_table,parent,false);
         return new Viewholder_complaints_history(view);
 
     }
@@ -58,8 +58,6 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
             holder.status_h.setBackgroundResource(R.color.green);
         }
         holder.status_h.setText(complaint_details.getStatus());
-
-        holder.comId_h.setText(complaint_details.getKey());
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
 
@@ -79,7 +77,6 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
             sn_h=itemView.findViewById(R.id.sn_history);
             dandt_h=itemView.findViewById(R.id.dateandtime_history);
-            comId_h=itemView.findViewById(R.id.com_id_history);
             comName_h=itemView.findViewById(R.id.com_name_history);
             status_h=itemView.findViewById(R.id.status_history);
 

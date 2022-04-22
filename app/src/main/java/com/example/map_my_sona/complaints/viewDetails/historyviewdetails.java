@@ -177,14 +177,14 @@ public class historyviewdetails extends AppCompatActivity {
                 }
                 com_status_his.setTextColor(getResources().getColor(R.color.white));
 
-                toolbar= findViewById(R.id.topAppBar);
-                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(historyviewdetails.this, dashboard.class));
-                    }
-                });
+//                toolbar= findViewById(R.id.topAppBar);
+//                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+////                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(historyviewdetails.this, dashboard.class));
+//                    }
+//                });
 
             }
 

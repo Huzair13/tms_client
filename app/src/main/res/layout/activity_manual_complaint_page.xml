@@ -140,7 +140,6 @@
                 android:textSize="18dp"
                 android:gravity="left|center"
                 android:padding="10dp"
-                android:inputType="number"
                 />
             <EditText
                 android:id="@+id/manual_intercom_number"

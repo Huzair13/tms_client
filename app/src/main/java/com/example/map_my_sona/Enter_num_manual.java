@@ -33,7 +33,7 @@ public class Enter_num_manual extends AppCompatActivity {
         tv=findViewById(R.id.editTextTextPersonName);
         bt=findViewById(R.id.button);
         databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
-        toolbar.findViewById(R.id.topAppBar);
+        toolbar=findViewById(R.id.topAppBar);
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +52,7 @@ public class Enter_num_manual extends AppCompatActivity {
                                 startActivity(intent);
                             }
                             else{
-                                Toast.makeText(Enter_num_manual.this, "There is no product details available for the ID given", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Enter_num_manual.this, "Invaild Details", Toast.LENGTH_SHORT).show();
                             }
                         }
 

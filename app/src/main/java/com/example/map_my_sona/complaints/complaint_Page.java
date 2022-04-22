@@ -125,26 +125,26 @@ public class complaint_Page extends AppCompatActivity {
         String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};
         complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan));
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Datas").child(s);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                mob_str = snapshot.child("mob").getValue(String.class);
-                sn_str = snapshot.child("sn_no").getValue(String.class);
-                make_str = snapshot.child("make").getValue(String.class);
-                model_str = snapshot.child("model").getValue(String.class);
-                procurement_str = snapshot.child("procurement").getValue(String.class);
-                powerRating_str = snapshot.child("power_rating").getValue(String.class);
-                wexpiry_str = snapshot.child("wexpiry").getValue(String.class);
-                wperiod_str = snapshot.child("wperiod").getValue(String.class);
-                ins_by_str = snapshot.child("ins_by").getValue(String.class);
-                ins_date_str = snapshot.child("ins_date").getValue(String.class);
-                dep_of_pro_str=snapshot.child("dep_of_pro").getValue(String.class);
-                location_str=snapshot.child("location").getValue(String.class);
-                rating=0.0f;
-                rating_str=rating.toString();
+                mob_str = snapshot.child(s).child("mob").getValue(String.class);
+                sn_str = snapshot.child(s).child("sn_no").getValue(String.class);
+                make_str = snapshot.child(s).child("make").getValue(String.class);
+                model_str = snapshot.child(s).child("model").getValue(String.class);
+                procurement_str = snapshot.child(s).child("procurement").getValue(String.class);
+                powerRating_str = snapshot.child(s).child("power_rating").getValue(String.class);
+                wexpiry_str = snapshot.child(s).child("wexpiry").getValue(String.class);
+                wperiod_str = snapshot.child(s).child("wperiod").getValue(String.class);
+                ins_by_str = snapshot.child(s).child("ins_by").getValue(String.class);
+                ins_date_str = snapshot.child(s).child("ins_date").getValue(String.class);
+                dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
+                location_str = snapshot.child(s).child("location").getValue(String.class);
+                rating = 0.0f;
+                rating_str = rating.toString();
 
 
                 sn.setText(sn_str);

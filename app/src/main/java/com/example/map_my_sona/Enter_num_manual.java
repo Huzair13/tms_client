@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.complaints.complaint_Page;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +23,7 @@ public class Enter_num_manual extends AppCompatActivity {
     TextView tv;
     Button bt;
     DatabaseReference databaseReference;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class Enter_num_manual extends AppCompatActivity {
         tv=findViewById(R.id.editTextTextPersonName);
         bt=findViewById(R.id.button);
         databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
+        toolbar.findViewById(R.id.topAppBar);
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,13 @@ public class Enter_num_manual extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Enter_num_manual.this, dashboard.class));
             }
         });
 

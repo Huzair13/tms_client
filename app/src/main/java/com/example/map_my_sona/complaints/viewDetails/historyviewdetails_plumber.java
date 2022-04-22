@@ -314,14 +314,14 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 }
             }
         });
-        toolbar= findViewById(R.id.topAppBar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(historyviewdetails_plumber.this, dashboard.class));
-            }
-        });
+//        toolbar= findViewById(R.id.topAppBar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(historyviewdetails_plumber.this, dashboard.class));
+//            }
+//        });
     }
 
     private void sendMessage() {

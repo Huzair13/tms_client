@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
@@ -14,11 +15,11 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 public class emergencyContact extends AppCompatActivity {
 
-    ImageButton hodcall;
-    ImageButton hod1call;
-    ImageButton hod2call;
-    ImageButton hod3call;
-    ImageButton hod4call;
+    ImageView hodcall;
+    ImageView hod1call;
+    ImageView hod2call;
+    ImageView hod3call;
+    ImageView hod4call;
     MaterialToolbar toolbar;
 
     @Override

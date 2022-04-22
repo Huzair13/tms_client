@@ -123,7 +123,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -162,7 +162,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -201,7 +201,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -240,7 +240,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/skyblue"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -279,7 +279,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/skyblue"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->

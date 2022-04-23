@@ -26,6 +26,7 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.manualComplaints.manual_dept_history;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +36,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //
     private long backPressedTime;
@@ -48,6 +49,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     LinearLayout Linear1;
     MaterialToolbar toolbar1;
     ImageView logo;
+    BottomNavigationView bottomNavigationView;
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
@@ -67,6 +69,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
+        bottomNavigationView=findViewById(R.id.bottom_navigation);
 //        logo=findViewById(R.id.logo);
 
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
@@ -267,6 +270,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         super.onBackPressed();
 
     }
+
+    //bottom navigation
 
     //Drawe layout Navigation setting
     @Override

@@ -55,12 +55,13 @@
             android:icon="@drawable/report"
             android:title="Report" />
         <item
-            android:id="@+id/nav_logOut"
-            android:icon="@drawable/logout"
-            android:title="Logout"/>
-        <item
             android:id="@+id/nav_ratings"
             android:icon="@drawable/ic_baseline_star_rate_24"
             android:title="Ratings"/>
+        <item
+            android:id="@+id/nav_logOut"
+            android:icon="@drawable/logout"
+            android:title="Logout"/>
+
     </group>
 </menu>

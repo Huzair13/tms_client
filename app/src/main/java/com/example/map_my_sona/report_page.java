@@ -62,7 +62,7 @@ public class report_page extends AppCompatActivity {
     private void checkValidation() {
         report_str=report.getText().toString();
         if(report_str.isEmpty()){
-            report.setError("Please fill something in the report column to submit");
+            report.setError("Required");
             report.requestFocus();
         }
         else{
@@ -83,7 +83,7 @@ public class report_page extends AppCompatActivity {
         dbRef.child(uniqueKey).setValue(report_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(report_page.this, "Report Submited Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(report_page.this, "Report Submitted Successfully", Toast.LENGTH_SHORT).show();
 
                 SendMail mail1=new SendMail("mapmysona@gmail.com",
                         "mms@2022",

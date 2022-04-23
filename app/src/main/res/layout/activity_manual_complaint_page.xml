@@ -129,7 +129,18 @@
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 />
-
+            <EditText
+                android:id="@+id/manual_complaint_by_id"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/greyblue"
+                android:textColor="@color/white"
+                android:hint="Unique ID"
+                android:textSize="18dp"
+                android:gravity="left|center"
+                android:padding="10dp"
+                />
             <EditText
                 android:id="@+id/manual_intercom_number"
                 android:layout_width="350dp"

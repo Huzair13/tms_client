@@ -120,12 +120,16 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold" />
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="num_enter_manual"
+        android:hint="Complaint By Unique ID"
         android:textColorHint="@color/white"
-        android:id="@+id/num_enter_man"/>
+        android:backgroundTint="@color/greyblue"
+        android:id="@+id/num_enter_man"
+        app:cornerRadius="15dp"
+        android:layout_marginTop="15dp"/>
   </LinearLayout>
 
 

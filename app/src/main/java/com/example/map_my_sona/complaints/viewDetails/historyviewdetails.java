@@ -169,6 +169,13 @@ public class historyviewdetails extends AppCompatActivity {
 
                 //rating_set
                 rating_dep.setText(rating_str);
+                ratingBar.setRating(Float.parseFloat(rating_str));
+
+                if(status.equals("Completed")){
+//                    ratingBar.setClickable(false);
+//                    ratingBar.setFocusable(false);
+                    ratingBar.setIsIndicator(true);
+                }
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);

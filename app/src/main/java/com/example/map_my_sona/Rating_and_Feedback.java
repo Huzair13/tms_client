@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.Map;
 
 public class Rating_and_Feedback extends AppCompatActivity {
@@ -21,8 +22,11 @@ public class Rating_and_Feedback extends AppCompatActivity {
     private DatabaseReference mDatabase_e;
     String status;
 
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_and_feedback);
 
@@ -49,7 +53,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
                         }
                     }
                     average=sum/count;
-                    ra_avg.setText(String.valueOf(average));
+                    ra_avg.setText(String.valueOf(df.format(average)));
                 }
 
             }

@@ -148,6 +148,8 @@ public class historyviewdetails extends AppCompatActivity {
                 pro_id_str=complaint_details.getUniqueId();
                 uid_str=complaint_details.getUID();
                 location_str=complaint_details.getLocation();
+
+                //get_rating
                 rating_str=complaint_details.getRating();
 
                 status=complaint_details.getStatus();
@@ -164,6 +166,8 @@ public class historyviewdetails extends AppCompatActivity {
                 mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
                 location.setText(location_str);
+
+                //rating_set
                 rating_dep.setText(rating_str);
 
                 pro_id.setText(pro_id_str);

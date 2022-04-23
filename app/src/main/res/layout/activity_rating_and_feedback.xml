@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Rating_and_Feedback">
+
+    <TextView
+        android:id="@+id/ra_title"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:text="AVERAGE RATING"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ra_avg"
+        android:layout_width="181dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ra_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

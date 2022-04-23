@@ -309,6 +309,10 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(new Intent(dashboard.this, manual_dept_history.class));
                 break;
 
+            case R.id.nav_ratings:
+                startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
+                break;
+
             case R.id.nav_details:
                 startActivity(new Intent(dashboard.this, Dep_wise_history.class));
                 break;

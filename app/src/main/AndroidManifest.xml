@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".Rating_and_Feedback"
+            android:exported="false" />
+        <activity
             android:name=".Enter_num_manual"
             android:exported="false" />
         <activity

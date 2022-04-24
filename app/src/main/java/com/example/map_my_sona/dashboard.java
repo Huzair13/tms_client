@@ -310,6 +310,10 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
 
+            case R.id.bottom_emer:
+                startActivity(new Intent(dashboard.this,emergencyContact.class));
+                break;
+
             case R.id.manual_history:
                 startActivity(new Intent(dashboard.this, manual_dept_history.class));
                 break;

@@ -255,8 +255,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/bottomnavi"
-            android:background="@color/greyblue"
-            app:itemTextColor="@color/black"
+            android:background="@drawable/bottom_navi_corner"
+            app:itemTextColor="@color/white"
+            app:itemRippleColor="@color/white"
             style="@style/Widget.Design.BottomNavigationView"/>
 
     </LinearLayout>

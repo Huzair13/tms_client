@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dashboard"
-    android:fitsSystemWindows="true"
+
     android:background="@drawable/greenbg01">
 
 

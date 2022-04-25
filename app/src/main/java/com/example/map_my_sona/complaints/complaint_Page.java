@@ -67,11 +67,12 @@ public class complaint_Page extends AppCompatActivity {
 
     String uref;
 
-    private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str, procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
+    private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
+            procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
     private String complaint_txt;
     String status = "Pending";
     DatabaseReference databaseReference;
-    String s;
+    String s,manual_name,manual_mob;
     DatabaseReference dbRef;
 
     TextInputLayout complaint_content;
@@ -117,6 +118,8 @@ public class complaint_Page extends AppCompatActivity {
 
 //        TextView scanText = (TextView) findViewById(R.id.textView);
         s = getIntent().getStringExtra("SCAN_RESULT");
+        manual_name=getIntent().getStringExtra("MANUAL_NAME");
+        manual_mob=getIntent().getStringExtra("MANUAL_MOB");
 
 
         String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
@@ -159,6 +162,13 @@ public class complaint_Page extends AppCompatActivity {
                 mob.setText(mob_str);
                 dep_of_pro.setText(dep_of_pro_str);
                 location.setText(location_str);
+
+//                if(!manual_name.equals("null")){
+//                    complainted_by_name.setText(manual_name);
+//                }
+//                if(!manual_mob.equals("null")){
+//                    complainted_by_mob.setText(manual_mob);
+//                }
 
             }
 

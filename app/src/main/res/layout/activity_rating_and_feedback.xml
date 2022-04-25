@@ -58,7 +58,7 @@
 <ImageView
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:src="@drawable/report"
+    android:src="@drawable/eleimg01"
     android:layout_gravity="center_vertical">
 
 </ImageView>
@@ -96,7 +96,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/report"
+            android:src="@drawable/netimg01"
             android:layout_gravity="center_vertical">
 
         </ImageView>
@@ -136,7 +136,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/report"
+            android:src="@drawable/carpimg01"
             android:layout_gravity="center_vertical">
 
         </ImageView>
@@ -173,12 +173,12 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/report"
+            android:src="@drawable/painimg01"
             android:layout_gravity="center_vertical">
 
         </ImageView>
         <TextView
-            android:text="PAINTING"
+            android:text="Painting"
             android:id="@+id/ra_title_paint"
             android:layout_width="0dp"
             android:layout_weight="0.5"
@@ -209,7 +209,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/report"
+            android:src="@drawable/plumimg01"
             android:layout_gravity="center_vertical">
 
         </ImageView>

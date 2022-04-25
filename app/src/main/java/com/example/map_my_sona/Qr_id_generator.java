@@ -1,7 +1,9 @@
 package com.example.map_my_sona;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.app.WallpaperManager;
@@ -15,6 +17,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -23,6 +26,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -47,6 +52,7 @@ public class Qr_id_generator extends AppCompatActivity {
     MaterialButton btgenerate;
     ImageView ivoutput;
     MaterialButton qrsave;
+
 
     //
     OutputStream outputStream;
@@ -143,7 +149,45 @@ public class Qr_id_generator extends AppCompatActivity {
             }
 //        }
         });
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
+
+
+    //bottom navi
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.bottom_history:
+                    startActivity(new Intent(Qr_id_generator.this, ManualComplaint_page.class));
+                    break;
+                case R.id.bottom_feedback:
+
+                    startActivity(new Intent(Qr_id_generator.this,Rating_and_Feedback.class));
+                    break;
+                case R.id.bottom_home:
+                    startActivity(new Intent(Qr_id_generator.this,dashboard.class));
+                    break;
+                case R.id.bottom_report:
+                    startActivity(new Intent(Qr_id_generator.this,Rating_and_Feedback.class));
+                    break;
+
+                case R.id.bottom_emer:
+                    startActivity(new Intent(Qr_id_generator.this,emergencyContact.class));
+                    break;
+
+            }
+            return false;
+        }
+    };
+
+
 
 //    private void saveToGallery(){
 //        BitmapDrawable bitmapDrawable = (BitmapDrawable) ivoutput.getDrawable();

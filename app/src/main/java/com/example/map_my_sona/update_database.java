@@ -3,18 +3,22 @@ package com.example.map_my_sona;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -71,7 +75,43 @@ public class update_database extends AppCompatActivity {
         });
 
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
+    //bottom navi
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.bottom_history:
+                    startActivity(new Intent(update_database.this, ManualComplaint_page.class));
+                    break;
+                case R.id.bottom_feedback:
+
+                    startActivity(new Intent(update_database.this,Rating_and_Feedback.class));
+                    break;
+                case R.id.bottom_home:
+                    startActivity(new Intent(update_database.this,dashboard.class));
+                    break;
+                case R.id.bottom_report:
+                    startActivity(new Intent(update_database.this,Rating_and_Feedback.class));
+                    break;
+
+                case R.id.bottom_emer:
+                    startActivity(new Intent(update_database.this,emergencyContact.class));
+                    break;
+
+            }
+            return false;
+        }
+    };
+
+
+
 
     private void uniqueIDadmin() {
         String unique_id_str=uniqueID.getText().toString();

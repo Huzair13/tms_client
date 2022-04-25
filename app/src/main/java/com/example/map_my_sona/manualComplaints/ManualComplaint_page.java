@@ -16,7 +16,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.map_my_sona.Enter_num_manual;
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.complaints.complaint_Page;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,8 +27,11 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,11 +39,13 @@ import java.util.Calendar;
 public class ManualComplaint_page extends AppCompatActivity {
 
     private Spinner manualdeptresposible ,manualbranch ,manuallocation,manualobject,manualcomdetails,manualcompriority;
-    private EditText manualIntercomNumber,manualPhNumber,manualName;
+    private EditText manualIntercomNumber,manualPhNumber,manualName,manual_unique_id;
     private MaterialButton manualEntrySubmit;
-    private String manualName_str,manualdeptresposible_str ,manualbranch_str ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,manualIntercomNumber_str,manualPhNumber_str;
+    private String manualName_str,manualdeptresposible_str ,manualbranch_str ,manuallocation_str,manualobject_str,
+            manualcomdetails_str,manualcompriority_str,manualIntercomNumber_str,manualPhNumber_str
+            ,manual_unique_id_str;
 
-    DatabaseReference dbRef2;
+    DatabaseReference dbRef2,databaseReference;
     String status = "Pending";
     AlertDialog.Builder builder_mc;
     String uref;
@@ -48,8 +55,11 @@ public class ManualComplaint_page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //manauL_by_unique_id
         setContentView(R.layout.activity_manual_complaint_page);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
 
+        manual_unique_id=(EditText)findViewById(R.id.manual_complaint_by_id);
         manualdeptresposible = (Spinner) findViewById(R.id.manualdept_responsible);
         manualbranch = (Spinner) findViewById(R.id.manual_branch);
         manuallocation = (Spinner) findViewById(R.id.manual_location);
@@ -228,32 +238,59 @@ public class ManualComplaint_page extends AppCompatActivity {
         manualIntercomNumber_str=manualIntercomNumber.getText().toString();
         manualPhNumber_str=manualPhNumber.getText().toString();
         manualName_str=manualName.getText().toString();
+        manual_unique_id_str=manual_unique_id.getText().toString();
 
-        Calendar calForDate = Calendar.getInstance();
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
-        String date = currentDate.format(calForDate.getTime());
+        if(manual_unique_id_str.isEmpty()){
+            Toast.makeText(ManualComplaint_page.this, "Can't be empty", Toast.LENGTH_SHORT).show();
+        }
+        else if(!manual_unique_id_str.isEmpty()){
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.hasChild(manual_unique_id_str)){
+                        Intent intent = new Intent(getBaseContext(), complaint_Page.class);
+                        intent.putExtra("SCAN_RESULT", manual_unique_id_str);
+                        intent.putExtra("MANUAL_NAME",manualName_str);
+                        intent.putExtra("MANUAL_MOB",manualPhNumber_str);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(ManualComplaint_page.this, "Invaild Details", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
-        Calendar calForTime = Calendar.getInstance();
-        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
-        String time = currentTime.format(calForTime.getTime());
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-        ManualComplaint_details manualComplaint_details=new ManualComplaint_details(manualName_str,manualdeptresposible_str ,manualbranch_str
-                ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,status,manualIntercomNumber_str,manualPhNumber_str,uniqueKey,date,time,uref);
+                }
+            });
+        }
 
-        dbRef2.child(uniqueKey).setValue(manualComplaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(ManualComplaint_page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ManualComplaint_page.this, dashboard.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ManualComplaint_page.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Calendar calForDate = Calendar.getInstance();
+//        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
+//        String date = currentDate.format(calForDate.getTime());
+//
+//        Calendar calForTime = Calendar.getInstance();
+//        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
+//        String time = currentTime.format(calForTime.getTime());
+//
+//        ManualComplaint_details manualComplaint_details=new ManualComplaint_details(manualName_str,manualdeptresposible_str ,manualbranch_str
+//                ,manuallocation_str,manualobject_str,manualcomdetails_str,manualcompriority_str,status,manualIntercomNumber_str,manualPhNumber_str,uniqueKey,date,time,uref);
+//
+//        dbRef2.child(uniqueKey).setValue(manualComplaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Toast.makeText(ManualComplaint_page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(ManualComplaint_page.this, dashboard.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(ManualComplaint_page.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
 }

@@ -3,10 +3,13 @@ package com.example.map_my_sona;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +24,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
     private TextView ra_avg_elec,ra_avg_paint,ra_avg_plumber,ra_avg_car,ra_avg_net;
     private DatabaseReference mDatabase;
     String status;
+    MaterialToolbar toolbar;
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -35,6 +39,9 @@ public class Rating_and_Feedback extends AppCompatActivity {
         ra_avg_net=(TextView)findViewById(R.id.ra_avg_net);
         ra_avg_plumber=(TextView)findViewById(R.id.ra_avg_plumber);
         ra_avg_paint=(TextView)findViewById(R.id.ra_avg_paint);
+
+        toolbar= findViewById(R.id.topAppBar);
+
 
 
         mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
@@ -190,6 +197,13 @@ public class Rating_and_Feedback extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Rating_and_Feedback.this, dashboard.class));
             }
         });
 

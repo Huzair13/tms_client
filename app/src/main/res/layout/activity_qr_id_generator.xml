@@ -115,6 +115,7 @@
             app:itemTextColor="@color/white"
             app:itemRippleColor="@color/white"
             android:layout_gravity="bottom"
+            app:itemIconTint="@drawable/item_selector"
             style="@style/Widget.Design.BottomNavigationView"/>
     </LinearLayout>
 </LinearLayout>

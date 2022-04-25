@@ -215,7 +215,7 @@
         </ImageView>
 
         <TextView
-            android:text="PLUMBERING"
+            android:text="Plumbering"
             android:id="@+id/ra_title_plumber"
             android:layout_width="0dp"
             android:layout_weight="0.5"

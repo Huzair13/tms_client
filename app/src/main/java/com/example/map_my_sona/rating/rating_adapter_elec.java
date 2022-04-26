@@ -52,7 +52,7 @@ public class rating_adapter_elec extends RecyclerView.Adapter<rating_adapter_ele
             holder.rating.setBackgroundResource(R.color.Red);
         }
         else if(rat_val_int >2 && rat_val_int <=4){
-            holder.rating.setBackgroundResource(R.color.babyblue);
+            holder.rating.setBackgroundResource(R.color.orange);
         }
         else if(rat_val_int >4 && rat_val_int<=5){
             holder.rating.setBackgroundResource(R.color.green);

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.map_my_sona.complaints.Complaint_details;
@@ -25,6 +26,8 @@ import java.util.Map;
 
 public class Rating_and_Feedback extends AppCompatActivity {
 
+    private LinearLayout ll_rating_elec;
+
     private TextView ra_avg_elec,ra_avg_paint,ra_avg_plumber,ra_avg_car,ra_avg_net;
     private DatabaseReference mDatabase;
     String status;
@@ -38,6 +41,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_and_feedback);
 
+        ll_rating_elec=(LinearLayout)findViewById(R.id.LL_rating_elec);
         ra_avg_elec=(TextView) findViewById(R.id.ra_avg_elec);
         ra_avg_car=(TextView)findViewById(R.id.ra_avg_car);
         ra_avg_net=(TextView)findViewById(R.id.ra_avg_net);
@@ -46,7 +50,12 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
         toolbar= findViewById(R.id.topAppBar);
 
-
+        ll_rating_elec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Rating_and_Feedback.this,rating_electricity.class));
+            }
+        });
 
         mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
 

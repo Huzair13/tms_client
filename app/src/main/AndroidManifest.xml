@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".rating_electricity"
+            android:exported="false" />
+        <activity
             android:name=".rating_details"
             android:exported="false" />
         <activity

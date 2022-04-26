@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
         </TableRow>
         <TableRow>
             <TextView
-                android:id="@+id/sn_history_manual"
+                android:id="@+id/sn_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text=""
@@ -75,7 +75,7 @@
                 android:background="@drawable/cellshape"
                 android:textColor="@color/black"/>
             <TextView
-                android:id="@+id/dateandtime_history_manual"
+                android:id="@+id/com_name_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text=""
@@ -86,7 +86,7 @@
                 android:gravity="center" />
 
             <TextView
-                android:id="@+id/com_name_history_manual"
+                android:id="@+id/rating_box"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text=""
@@ -96,7 +96,7 @@
                 android:textColor="@color/black"
                 android:gravity="center"/>
             <TextView
-                android:id="@+id/com_name_history_manul"
+                android:id="@+id/feedback_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text=""

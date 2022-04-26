@@ -52,6 +52,9 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         String postkey= complaint_details.getKey();
         String status_com=complaint_details.getStatus();
 
+        int pos_sn=position+1;
+        String pos_sn_Str=String.valueOf(pos_sn);
+
         if(status_com.equals("Pending")){
             holder.status_h.setBackgroundResource(R.color.Red);
         }else{
@@ -60,6 +63,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         holder.status_h.setText(complaint_details.getStatus());
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
+        holder.sn_h.setText(pos_sn_Str);
 
     }
 
@@ -87,6 +91,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         @Override
         public void onClick(View view) {
             int positon=getAdapterPosition();
+            System.out.println(positon);
             Complaint_details complaint_details=arrayList1.get(positon);
             String pro_dep=complaint_details.getDep_of_pro();
             if(pro_dep.equals("Electricity")){

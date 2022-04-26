@@ -46,6 +46,18 @@ public class rating_adapter_elec extends RecyclerView.Adapter<rating_adapter_ele
         int rat_pos_sn=position+1;
         String rat_pos_sn_str=String.valueOf(rat_pos_sn);
 
+        String rating_val=complaint_details.getRating();
+        Float rat_val_int=Float.valueOf(rating_val);
+        if(rat_val_int <=2){
+            holder.rating.setBackgroundResource(R.color.Red);
+        }
+        else if(rat_val_int >2 && rat_val_int <=4){
+            holder.rating.setBackgroundResource(R.color.babyblue);
+        }
+        else if(rat_val_int >4 && rat_val_int<=5){
+            holder.rating.setBackgroundResource(R.color.green);
+        }
+
         holder.sno.setText(rat_pos_sn_str);
         holder.comName_h.setText(complaint_details.getCom_txt());
         holder.rating.setText(complaint_details.getRating());

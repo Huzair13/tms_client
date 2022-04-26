@@ -6,12 +6,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
-import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -20,31 +17,20 @@ import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
-import androidmads.library.qrgenearator.QRGSaver;
 
 public class Qr_id_generator extends AppCompatActivity {
 
@@ -169,7 +155,7 @@ public class Qr_id_generator extends AppCompatActivity {
                     break;
                 case R.id.bottom_feedback:
 
-                    startActivity(new Intent(Qr_id_generator.this,Rating_and_Feedback.class));
+                    startActivity(new Intent(Qr_id_generator.this, Rating_and_Feedback.class));
                     break;
                 case R.id.bottom_home:
                     startActivity(new Intent(Qr_id_generator.this,dashboard.class));

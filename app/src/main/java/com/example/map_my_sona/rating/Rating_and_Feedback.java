@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.rating;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +11,15 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.R;
+import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.emergencyContact;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.rating.rating_view.rating_electricity;
+import com.example.map_my_sona.rating.rating_view.rating_network;
+import com.example.map_my_sona.rating.rating_view.rating_carpenter;
+import com.example.map_my_sona.rating.rating_view.rating_painting;
+import com.example.map_my_sona.rating_plumbering;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +33,7 @@ import java.util.Map;
 
 public class Rating_and_Feedback extends AppCompatActivity {
 
-    private LinearLayout ll_rating_elec;
+    private LinearLayout ll_rating_elec,ll_rating_net,ll_rating_car,ll_rating_paint,ll_rating_plumber;
 
     private TextView ra_avg_elec,ra_avg_paint,ra_avg_plumber,ra_avg_car,ra_avg_net;
     private DatabaseReference mDatabase;
@@ -42,6 +49,12 @@ public class Rating_and_Feedback extends AppCompatActivity {
         setContentView(R.layout.activity_rating_and_feedback);
 
         ll_rating_elec=(LinearLayout)findViewById(R.id.LL_rating_elec);
+        ll_rating_net=(LinearLayout)findViewById(R.id.LL_rating_net);
+        ll_rating_car=(LinearLayout)findViewById(R.id.LL_rating_car);
+        ll_rating_paint=(LinearLayout)findViewById(R.id.LL_rating_paint);
+        ll_rating_plumber=(LinearLayout)findViewById(R.id.LL_rating_plumber);
+
+
         ra_avg_elec=(TextView) findViewById(R.id.ra_avg_elec);
         ra_avg_car=(TextView)findViewById(R.id.ra_avg_car);
         ra_avg_net=(TextView)findViewById(R.id.ra_avg_net);
@@ -53,7 +66,35 @@ public class Rating_and_Feedback extends AppCompatActivity {
         ll_rating_elec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Rating_and_Feedback.this,rating_electricity.class));
+                startActivity(new Intent(Rating_and_Feedback.this, rating_electricity.class));
+            }
+        });
+
+        ll_rating_net.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_network.class));
+            }
+        });
+
+        ll_rating_car.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_carpenter.class));
+            }
+        });
+
+        ll_rating_paint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_painting.class));
+            }
+        });
+
+        ll_rating_plumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_plumbering.class));
             }
         });
 
@@ -248,7 +289,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     break;
 
                 case R.id.bottom_emer:
-                    startActivity(new Intent(Rating_and_Feedback.this,emergencyContact.class));
+                    startActivity(new Intent(Rating_and_Feedback.this, emergencyContact.class));
                     break;
 
             }

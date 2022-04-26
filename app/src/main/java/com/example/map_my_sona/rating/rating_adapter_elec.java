@@ -1,7 +1,6 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.rating;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.complaints_history_Adapter;
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;

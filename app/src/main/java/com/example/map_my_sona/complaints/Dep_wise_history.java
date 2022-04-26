@@ -10,13 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.Rating_and_Feedback;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.emergencyContact;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;

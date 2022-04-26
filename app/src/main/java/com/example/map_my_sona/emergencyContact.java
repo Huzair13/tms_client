@@ -9,12 +9,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -111,7 +109,7 @@ public class emergencyContact extends AppCompatActivity {
                     break;
                 case R.id.bottom_feedback:
 
-                    startActivity(new Intent(emergencyContact.this,Rating_and_Feedback.class));
+                    startActivity(new Intent(emergencyContact.this, Rating_and_Feedback.class));
                     break;
                 case R.id.bottom_home:
                     startActivity(new Intent(emergencyContact.this,dashboard.class));

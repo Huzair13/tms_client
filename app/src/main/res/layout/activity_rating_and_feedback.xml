@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Rating_and_Feedback"
+    tools:context=".rating.Rating_and_Feedback"
     >
 
 
@@ -88,6 +88,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LL_rating_net"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,6 +129,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LL_rating_car"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -165,6 +167,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LL_rating_paint"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -201,6 +204,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LL_rating_plumber"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

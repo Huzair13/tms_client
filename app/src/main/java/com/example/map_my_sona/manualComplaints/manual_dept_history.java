@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.Rating_and_Feedback;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.emergencyContact;
 import com.example.map_my_sona.manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual;

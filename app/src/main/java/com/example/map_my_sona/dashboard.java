@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,9 +22,9 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.manualComplaints.manual_dept_history;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
@@ -275,7 +274,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                     break;
                 case R.id.bottom_feedback:
 
-                    startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
+                    startActivity(new Intent(dashboard.this, Rating_and_Feedback.class));
                     break;
                 case R.id.bottom_home:
                     startActivity(new Intent(dashboard.this,dashboard.class));

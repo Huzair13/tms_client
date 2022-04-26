@@ -14,8 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -103,7 +103,7 @@ public class Newqrcode extends AppCompatActivity {
                     break;
                 case R.id.bottom_feedback:
 
-                    startActivity(new Intent(Newqrcode.this,Rating_and_Feedback.class));
+                    startActivity(new Intent(Newqrcode.this, Rating_and_Feedback.class));
                     break;
                 case R.id.bottom_home:
                     startActivity(new Intent(Newqrcode.this,dashboard.class));

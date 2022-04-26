@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".rating.rating_view.rating_electricity"
+    tools:context=".rating.rating_view.rating_carpenter"
     android:orientation="vertical"
     android:background="@drawable/greenbg01">
 
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar_elec_rating"
+                android:id="@+id/topAppBar_car_rating"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="History"
@@ -30,7 +30,6 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
     <ImageView
         android:layout_width="150dp"
         android:layout_height="100dp"
@@ -39,10 +38,11 @@
         android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_rating_elec"
+        android:id="@+id/recyclerview_rating_car"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>

@@ -19,7 +19,7 @@ import com.example.map_my_sona.rating.rating_view.rating_electricity;
 import com.example.map_my_sona.rating.rating_view.rating_network;
 import com.example.map_my_sona.rating.rating_view.rating_carpenter;
 import com.example.map_my_sona.rating.rating_view.rating_painting;
-import com.example.map_my_sona.rating_plumbering;
+import com.example.map_my_sona.rating.rating_view.rating_plumbering;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;

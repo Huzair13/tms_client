@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona" >
         <activity
-            android:name=".rating_plumbering"
+            android:name=".rating.rating_view.rating_plumbering"
             android:exported="false" />
         <activity
             android:name=".rating.rating_view.rating_painting"

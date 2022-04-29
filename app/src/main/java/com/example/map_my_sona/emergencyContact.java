@@ -1,24 +1,28 @@
 package com.example.map_my_sona;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class emergencyContact extends AppCompatActivity {
 
-    ImageButton hodcall;
-    ImageButton hod1call;
-    ImageButton hod2call;
-    ImageButton hod3call;
-    ImageButton hod4call;
+    ImageView hodcall;
+    ImageView hod1call;
+    ImageView hod2call;
+    ImageView hod3call;
+    ImageView hod4call;
     MaterialToolbar toolbar;
 
     @Override
@@ -86,5 +90,41 @@ public class emergencyContact extends AppCompatActivity {
                 startActivity(new Intent(emergencyContact.this, dashboard.class));
             }
         });
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
+
+    //bottom navi
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.bottom_history:
+                    startActivity(new Intent(emergencyContact.this, ManualComplaint_page.class));
+                    break;
+                case R.id.bottom_feedback:
+
+                    startActivity(new Intent(emergencyContact.this, Rating_and_Feedback.class));
+                    break;
+                case R.id.bottom_home:
+                    startActivity(new Intent(emergencyContact.this,dashboard.class));
+                    break;
+                case R.id.bottom_report:
+                    startActivity(new Intent(emergencyContact.this,Rating_and_Feedback.class));
+                    break;
+
+                case R.id.bottom_emer:
+                    startActivity(new Intent(emergencyContact.this,emergencyContact.class));
+                    break;
+
+            }
+            return false;
+        }
+    };
+
 }

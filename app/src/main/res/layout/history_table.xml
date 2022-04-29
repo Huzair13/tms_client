@@ -82,7 +82,7 @@
                 android:layout_weight="1"
                 android:gravity="center" />
             <TextView
-                android:id="@+id/com_id_history"
+                android:id="@+id/com_name_history"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text=""

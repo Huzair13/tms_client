@@ -53,8 +53,6 @@ public class manual_complaints_history_adapter extends RecyclerView.Adapter<manu
             holder.status_h.setBackgroundResource(R.color.green);
         }
         holder.status_h.setText(manualComplaint_details.getStatus());
-
-        holder.comId_h.setText(manualComplaint_details.getKey());
         holder.dandt_h.setText(manualComplaint_details.getDate());
         holder.comName_h.setText(manualComplaint_details.getCom_details());
     }
@@ -73,7 +71,6 @@ public class manual_complaints_history_adapter extends RecyclerView.Adapter<manu
 
             sn_h = itemView.findViewById(R.id.sn_history_manual);
             dandt_h = itemView.findViewById(R.id.dateandtime_history_manual);
-            comId_h = itemView.findViewById(R.id.com_id_history_manual);
             comName_h = itemView.findViewById(R.id.com_name_history_manual);
             status_h = itemView.findViewById(R.id.status_history_manual);
 

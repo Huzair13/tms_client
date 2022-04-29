@@ -67,11 +67,12 @@ public class complaint_Page extends AppCompatActivity {
 
     String uref;
 
-    private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str, procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
+    private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
+            procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
     private String complaint_txt;
     String status = "Pending";
     DatabaseReference databaseReference;
-    String s;
+    String s,manual_name,manual_mob;
     DatabaseReference dbRef;
 
     TextInputLayout complaint_content;
@@ -117,6 +118,8 @@ public class complaint_Page extends AppCompatActivity {
 
 //        TextView scanText = (TextView) findViewById(R.id.textView);
         s = getIntent().getStringExtra("SCAN_RESULT");
+        manual_name=getIntent().getStringExtra("MANUAL_NAME");
+        manual_mob=getIntent().getStringExtra("MANUAL_MOB");
 
 
         String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
@@ -125,26 +128,26 @@ public class complaint_Page extends AppCompatActivity {
         String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};
         complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan));
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Datas").child(s);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                mob_str = snapshot.child("mob").getValue(String.class);
-                sn_str = snapshot.child("sn_no").getValue(String.class);
-                make_str = snapshot.child("make").getValue(String.class);
-                model_str = snapshot.child("model").getValue(String.class);
-                procurement_str = snapshot.child("procurement").getValue(String.class);
-                powerRating_str = snapshot.child("power_rating").getValue(String.class);
-                wexpiry_str = snapshot.child("wexpiry").getValue(String.class);
-                wperiod_str = snapshot.child("wperiod").getValue(String.class);
-                ins_by_str = snapshot.child("ins_by").getValue(String.class);
-                ins_date_str = snapshot.child("ins_date").getValue(String.class);
-                dep_of_pro_str=snapshot.child("dep_of_pro").getValue(String.class);
-                location_str=snapshot.child("location").getValue(String.class);
-                rating=0.0f;
-                rating_str=rating.toString();
+                mob_str = snapshot.child(s).child("mob").getValue(String.class);
+                sn_str = snapshot.child(s).child("sn_no").getValue(String.class);
+                make_str = snapshot.child(s).child("make").getValue(String.class);
+                model_str = snapshot.child(s).child("model").getValue(String.class);
+                procurement_str = snapshot.child(s).child("procurement").getValue(String.class);
+                powerRating_str = snapshot.child(s).child("power_rating").getValue(String.class);
+                wexpiry_str = snapshot.child(s).child("wexpiry").getValue(String.class);
+                wperiod_str = snapshot.child(s).child("wperiod").getValue(String.class);
+                ins_by_str = snapshot.child(s).child("ins_by").getValue(String.class);
+                ins_date_str = snapshot.child(s).child("ins_date").getValue(String.class);
+                dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
+                location_str = snapshot.child(s).child("location").getValue(String.class);
+                rating = 0.0f;
+                rating_str = rating.toString();
 
 
                 sn.setText(sn_str);
@@ -159,6 +162,13 @@ public class complaint_Page extends AppCompatActivity {
                 mob.setText(mob_str);
                 dep_of_pro.setText(dep_of_pro_str);
                 location.setText(location_str);
+
+//                if(!manual_name.equals("null")){
+//                    complainted_by_name.setText(manual_name);
+//                }
+//                if(!manual_mob.equals("null")){
+//                    complainted_by_mob.setText(manual_mob);
+//                }
 
             }
 

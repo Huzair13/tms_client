@@ -124,7 +124,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
 <!--        <ImageView-->
 <!--            android:layout_width="75dp"-->
@@ -164,7 +164,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -204,7 +204,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -244,7 +244,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -283,7 +283,7 @@
         android:focusable="true"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/zxing_transparent"
+        app:cardBackgroundColor="@color/white"
         >
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
@@ -344,6 +344,22 @@
 <!--        </TextView>-->
 
 <!--    </com.google.android.material.card.MaterialCardView>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottomnavi"
+            android:background="@drawable/bottom_navi_corner"
+            app:itemTextColor="@color/white"
+            app:itemRippleColor="@color/white"
+            style="@style/Widget.Design.BottomNavigationView"/>
+    </LinearLayout>
 
 
 

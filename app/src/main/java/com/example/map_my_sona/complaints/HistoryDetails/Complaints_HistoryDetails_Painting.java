@@ -69,14 +69,14 @@ public class Complaints_HistoryDetails_Painting extends AppCompatActivity {
                 Toast.makeText(Complaints_HistoryDetails_Painting.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        toolbar= findViewById(R.id.topAppBar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Complaints_HistoryDetails_Painting.this, dashboard.class));
-            }
-        });
+//        toolbar= findViewById(R.id.topAppBar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(Complaints_HistoryDetails_Painting.this, dashboard.class));
+//            }
+//        });
 
     }
 }

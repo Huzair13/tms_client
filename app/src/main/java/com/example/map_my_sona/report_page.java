@@ -2,9 +2,11 @@ package com.example.map_my_sona;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -57,12 +60,47 @@ public class report_page extends AppCompatActivity {
                 startActivity(new Intent(report_page.this, dashboard.class));
             }
         });
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
+
+    //bottom navi
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.bottom_history:
+                    startActivity(new Intent(report_page.this, ManualComplaint_page.class));
+                    break;
+                case R.id.bottom_feedback:
+
+                    startActivity(new Intent(report_page.this,report_page.class));
+                    break;
+                case R.id.bottom_home:
+                    startActivity(new Intent(report_page.this,dashboard.class));
+                    break;
+                case R.id.bottom_report:
+                    startActivity(new Intent(report_page.this,report_page.class));
+                    break;
+
+                case R.id.bottom_emer:
+                    startActivity(new Intent(report_page.this,emergencyContact.class));
+                    break;
+
+            }
+            return false;
+        }
+    };
 
     private void checkValidation() {
         report_str=report.getText().toString();
         if(report_str.isEmpty()){
-            report.setError("Please fill something in the report column to submit");
+            report.setError("Required");
             report.requestFocus();
         }
         else{
@@ -83,7 +121,7 @@ public class report_page extends AppCompatActivity {
         dbRef.child(uniqueKey).setValue(report_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(report_page.this, "Report Submited Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(report_page.this, "Report Submitted Successfully", Toast.LENGTH_SHORT).show();
 
                 SendMail mail1=new SendMail("mapmysona@gmail.com",
                         "mms@2022",

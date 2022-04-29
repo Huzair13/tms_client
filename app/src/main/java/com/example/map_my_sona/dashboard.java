@@ -7,10 +7,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,10 +22,11 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.manualComplaints.manual_dept_history;
+import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +36,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //
     private long backPressedTime;
@@ -48,6 +49,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
     LinearLayout Linear1;
     MaterialToolbar toolbar1;
     ImageView logo;
+    BottomNavigationView bottomNavigationView;
 
     private MaterialCardView scanner;
     private  MaterialCardView manualentry;
@@ -67,6 +69,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
+        bottomNavigationView=findViewById(R.id.bottom_navigation);
 //        logo=findViewById(R.id.logo);
 
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
@@ -252,8 +255,44 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             }
         });
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
+
+
+    //bottom navi
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.bottom_history:
+                    startActivity(new Intent(dashboard.this, ManualComplaint_page.class));
+                    break;
+                case R.id.bottom_feedback:
+
+                    startActivity(new Intent(dashboard.this, Rating_and_Feedback.class));
+                    break;
+                case R.id.bottom_home:
+                    startActivity(new Intent(dashboard.this,dashboard.class));
+                    break;
+                case R.id.bottom_report:
+                    startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
+                    break;
+
+                case R.id.bottom_emer:
+                    startActivity(new Intent(dashboard.this,emergencyContact.class));
+                    break;
+
+            }
+            return false;
+        }
+    };
+
+
 
 
     @Override
@@ -267,6 +306,8 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         super.onBackPressed();
 
     }
+
+    //bottom navigation
 
     //Drawe layout Navigation setting
     @Override
@@ -305,8 +346,16 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
 
+            case R.id.bottom_emer:
+                startActivity(new Intent(dashboard.this,emergencyContact.class));
+                break;
+
             case R.id.manual_history:
                 startActivity(new Intent(dashboard.this, manual_dept_history.class));
+                break;
+
+            case R.id.nav_ratings:
+                startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
                 break;
 
             case R.id.nav_details:

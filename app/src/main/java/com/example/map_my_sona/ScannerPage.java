@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class ScannerPage extends AppCompatActivity {
 
     LinearLayout scanBtn;
     public static TextView scantxt;
+    Button num_enter_man;
     TextView manualltext;
     MaterialToolbar toolbar;
 
@@ -30,6 +32,15 @@ public class ScannerPage extends AppCompatActivity {
         scanBtn=findViewById(R.id.Scanner);
 //        scantxt=(TextView) findViewById(R.id.scantxt);
         manualltext=findViewById(R.id.entermanuallytext);
+
+        num_enter_man=findViewById(R.id.num_enter_man);
+
+        num_enter_man.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScannerPage.this,Enter_num_manual.class));
+            }
+        });
 
 //        manual =(TextView) findViewById(R.id.ManualEntry);
 

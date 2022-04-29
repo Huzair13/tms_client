@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginpage">
-<!--    android:background="@drawable/ssbg1">-->
+    tools:context=".loginpage"
+    android:background="@drawable/greenbg03">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="130dp"
             android:layout_marginTop="60dp"
+            android:layout_marginRight="137"
             app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
 

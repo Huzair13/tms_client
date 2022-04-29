@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".manualentry">
-<!--    android:background="@drawable/ssbg10"-->
+    tools:context=".manualentry"
+    android:background="@drawable/newbgpage">
 
 
   <LinearLayout
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Manual Entry"
-        android:background="@color/cornflowerblue"
+        android:background="@color/greyblue"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         />
     <LinearLayout
@@ -354,6 +354,7 @@
           android:layout_gravity="center"
           android:text="Submit"
           android:textSize="25dp"
+          android:background="@color/greyblue"
           app:cornerRadius="25dp"
           android:fontFamily="@font/roboto_regular">
 

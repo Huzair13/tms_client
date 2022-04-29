@@ -49,13 +49,12 @@
             <TextView
                 android:id="@+id/Product_ID_history_carpenter"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_marginTop="25dp"
-                android:textSize="25dp"
                 android:fontFamily="@font/elmessiri"
                 android:textColor="@color/black"
-                android:layout_margin="10dp"
-                />
+                android:textSize="25dp" />
 
             <TextView
                 android:textAlignment="center"
@@ -85,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:textColor="@color/white">
 
             <TableRow>

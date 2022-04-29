@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".complaints.Dep_wise_history"
-    android:orientation="vertical">
-<!--    android:background="@drawable/greenbg01"-->
+    android:orientation="vertical"
+    android:background="@drawable/greenbg04">
 
 
     <com.google.android.material.appbar.AppBarLayout

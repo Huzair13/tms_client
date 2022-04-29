@@ -25,8 +25,8 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="130dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginRight="137"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="145dp"
             app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
 

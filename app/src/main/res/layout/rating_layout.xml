@@ -12,56 +12,149 @@
         android:background="@color/pistagreen"
         android:layout_margin="15px"
         android:gravity="center">
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="S No"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:background="@drawable/cellshape"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Complaint Name"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:background="@drawable/cellshape"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="Rating"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:background="@drawable/cellshape"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="Feedback"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:background="@drawable/cellshape"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"/>-->
+
+
+
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text="Status"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="@drawable/cellshape"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:gravity="center"/>&ndash;&gt;-->
+<!--        </TableRow>-->
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:id="@+id/sn_rating"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text=""-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="2"-->
+<!--                android:gravity="center"-->
+<!--                android:background="@drawable/cellshape"-->
+<!--                android:textColor="@color/black"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/com_name_rating"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text=""-->
+<!--                android:background="@drawable/table"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/rating_box"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text=""-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="2"-->
+<!--                android:background="@drawable/table"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:gravity="center"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/feedback_rating"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text=""-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_weight="2"-->
+<!--                android:background="@drawable/table"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:gravity="center"/>-->
+
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/status_history_manual"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_weight="2"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="@drawable/table"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text=""&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textStyle="bold" />&ndash;&gt;-->
+<!--        </TableRow>-->
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="S No"
-                android:textColor="@color/black"
-                android:background="@drawable/cellshape"
+                android:layout_height="30dp"
+                android:text="SNo"
                 android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"/>
+                android:layout_weight="2"
+                android:gravity="center"
+                android:background="@drawable/cellshape"
+                android:textColor="@color/black"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="Complaint Name"
+                android:background="@drawable/table"
                 android:textColor="@color/black"
-                android:background="@drawable/cellshape"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Rating"
-                android:textColor="@color/black"
-                android:background="@drawable/cellshape"
                 android:textStyle="bold"
-                android:layout_weight="1"
+                android:layout_weight="2"
+                android:background="@drawable/table"
+                android:textColor="@color/black"
                 android:gravity="center"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:text="Feedback"
+                android:layout_weight="2"
+                android:background="@drawable/table"
                 android:textColor="@color/black"
-                android:background="@drawable/cellshape"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"/>
-
-
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Status"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/cellshape"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"/>-->
+                android:gravity="center"
+                android:text="Feedback"
+                android:textStyle="bold" />
         </TableRow>
         <TableRow>
             <TextView
@@ -84,7 +177,6 @@
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center" />
-
             <TextView
                 android:id="@+id/rating_box"
                 android:layout_width="wrap_content"
@@ -95,27 +187,17 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:gravity="center"/>
+
             <TextView
                 android:id="@+id/feedback_rating"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:text=""
-                android:textStyle="bold"
                 android:layout_weight="2"
                 android:background="@drawable/table"
                 android:textColor="@color/black"
-                android:gravity="center"/>
-
-<!--            <TextView-->
-<!--                android:id="@+id/status_history_manual"-->
-<!--                android:layout_width="10dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="2"-->
-<!--                android:background="@drawable/table"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:gravity="center"-->
-<!--                android:text=""-->
-<!--                android:textStyle="bold" />-->
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 

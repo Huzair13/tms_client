@@ -6,8 +6,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
 
-    tools:context=".complaints.complaint_Page">
-<!--    android:background="@drawable/greenbg01">-->
+    tools:context=".complaints.complaint_Page"
+    android:background="@drawable/greenbg04">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -666,7 +666,28 @@
 <!--            android:fontFamily="@font/elmessiri"/>-->
 
 <!--        </com.google.android.material.textfield.TextInputLayout>-->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/completelydamaged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completely Damaged">
 
+    </CheckBox>
+    <CheckBox
+        android:id="@+id/partiallydamaged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:text="Partially Damaged">
+
+    </CheckBox>
+
+
+</LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_complaint_submit"
             android:layout_width="wrap_content"

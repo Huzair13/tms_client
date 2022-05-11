@@ -33,6 +33,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:src="@drawable/ssbg8"
+        android:layout_marginRight="120dp"
         android:layout_marginTop="15dp"
         android:layout_gravity="center"/>
 

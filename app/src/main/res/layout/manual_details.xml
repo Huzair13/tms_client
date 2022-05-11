@@ -80,6 +80,7 @@
         android:layout_height="100dp"
         android:src="@drawable/ssbg8"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="118dp"
         android:layout_gravity="center"/>
 
 <!--    <Spinner-->

@@ -17,6 +17,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,9 +50,14 @@ public class historyviewdetails_painting extends AppCompatActivity {
     private String pro_id_str;
     private Button comp_close;
     private String status;
+    Float rating_p;
+    String rat;
+    private String rating_str;
     private Spinner feedback;
     AlertDialog.Builder builder_painter;
     String uref_h;
+    TextView rating_dep;
+    RatingBar ratingBar;
     MaterialToolbar toolbar;
 
     private DatabaseReference refDash;
@@ -86,6 +92,25 @@ public class historyviewdetails_painting extends AppCompatActivity {
         com_txt = (TextView) findViewById(R.id.com_txt_history_painting);
         location=(TextView)findViewById(R.id.location_unit_his_painting);
 
+        ratingBar=(RatingBar) findViewById(R.id.rating_pnt);
+        rating_dep=(TextView)findViewById(R.id.rating_dep_pnt);
+
+        refDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String posm=snapshot.child("position").getValue(String.class);
+                if(snapshot.exists()){
+                    if(posm.equals("admin")) {
+                        rating_dep.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         pro_id = (TextView) findViewById(R.id.Product_ID_history_painting);
         com_status_his = (TextView) findViewById(R.id.complaint_status_his_painting);
@@ -120,7 +145,8 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 location_Str=complaint_details.getLocation();
 
                 status = complaint_details.getStatus();
-
+                //get_rating
+                rating_str=complaint_details.getRating();
                 uref_h= FirebaseAuth.getInstance().getUid();
 
 
@@ -139,6 +165,16 @@ public class historyviewdetails_painting extends AppCompatActivity {
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
+
+                //set_rating
+                rating_dep.setText(rating_str);
+                ratingBar.setRating(Float.parseFloat(rating_str));
+
+                if(status.equals("Completed")){
+//                    ratingBar.setClickable(false);
+//                    ratingBar.setFocusable(false);
+                    ratingBar.setIsIndicator(true);
+                }
 
                 if (status.equals("Pending")) {
                     com_status_his.setBackgroundResource(R.color.Red);
@@ -161,9 +197,16 @@ public class historyviewdetails_painting extends AppCompatActivity {
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                rating_p=Float.valueOf(ratingBar.getRating());
+                rat=rating_p.toString();
+                ratingBar.setRating(rating_p);
                 if (status.equals("Pending")) {
-                    HashMap hp = new HashMap();
-                    hp.put("status", "Completed");
+                    HashMap hp1 = new HashMap();
+                    hp1.put("status", "Completed");
+
+                    HashMap hp=new HashMap();
+                    hp.put("status","Completed");
+                    hp.put("rating",rat);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -178,7 +221,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails_painting.this, "Complaint closed", Toast.LENGTH_SHORT).show();

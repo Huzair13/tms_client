@@ -51,7 +51,11 @@ public class historyviewdetails_plumber extends AppCompatActivity {
     private Button comp_close;
     private String status;
     private Spinner feedback;
-    private RatingBar ratingBar;
+    Float rating_p;
+    String rat;
+    TextView rating_dep;
+    private String rating_str;
+    RatingBar ratingBar;
     String uref_h;
     MaterialToolbar toolbar;
 
@@ -89,6 +93,27 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         com_txt = (TextView) findViewById(R.id.com_txt_history_plumber);
         location=(TextView)findViewById(R.id.location_unit_his_plumber);
 
+        rating_dep=(TextView)findViewById(R.id.rating_dep_plum);
+
+        ratingBar=(RatingBar) findViewById(R.id.rating_plum);
+
+        refDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String posm=snapshot.child("position").getValue(String.class);
+                if(snapshot.exists()){
+                    if(posm.equals("admin")) {
+                        rating_dep.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         uref_h= FirebaseAuth.getInstance().getUid();
 
         pro_id = (TextView) findViewById(R.id.Product_ID_history_plumber);
@@ -123,6 +148,8 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
                 status = complaint_details.getStatus();
 
+                //get_rating
+                rating_str=complaint_details.getRating();
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
@@ -139,6 +166,16 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
+
+                //rating_set
+                rating_dep.setText(rating_str);
+                ratingBar.setRating(Float.parseFloat(rating_str));
+
+                if(status.equals("Completed")){
+//                    ratingBar.setClickable(false);
+//                    ratingBar.setFocusable(false);
+                    ratingBar.setIsIndicator(true);
+                }
 
                 if (status.equals("Pending")) {
                     com_status_his.setBackgroundResource(R.color.Red);
@@ -161,9 +198,16 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                rating_p=Float.valueOf(ratingBar.getRating());
+                rat=rating_p.toString();
+                ratingBar.setRating(rating_p);
                 if (status.equals("Pending")) {
-                    HashMap hp = new HashMap();
-                    hp.put("status", "Completed");
+                    HashMap hp1 = new HashMap();
+                    hp1.put("status", "Completed");
+
+                    HashMap hp=new HashMap();
+                    hp.put("status","Completed");
+                    hp.put("rating",rat);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -178,7 +222,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails_plumber.this, "Complaint closed", Toast.LENGTH_SHORT).show();

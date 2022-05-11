@@ -17,6 +17,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,11 @@ public class historyviewdetails_networks extends AppCompatActivity {
     private Button comp_close;
     private String status;
     private Spinner feedback;
+    private String rating_str;
+    Float rating_p;
+    String rat;
+    TextView rating_dep;
+    RatingBar ratingBar;
     String uref_h;
     MaterialToolbar toolbar;
 
@@ -90,6 +96,27 @@ public class historyviewdetails_networks extends AppCompatActivity {
         pro_id=(TextView) findViewById(R.id.Product_ID_history_networks);
         com_status_his=(TextView)findViewById(R.id.complaint_status_his_networks);
         comp_close=(Button)findViewById(R.id.close_the_com_his_networks);
+
+        rating_dep=(TextView)findViewById(R.id.rating_dep_net);
+
+        ratingBar=(RatingBar) findViewById(R.id.rating_net);
+
+        refDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String posm=snapshot.child("position").getValue(String.class);
+                if(snapshot.exists()){
+                    if(posm.equals("admin")) {
+                        rating_dep.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 //        feedback=(Spinner) findViewById(R.id.feedback);
 
         uref_h= FirebaseAuth.getInstance().getUid();
@@ -117,6 +144,8 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
+                //get_rating
+                rating_str=complaint_details.getRating();
 
                 status=complaint_details.getStatus();
                 uid_str=complaint_details.getUID();
@@ -135,6 +164,16 @@ public class historyviewdetails_networks extends AppCompatActivity {
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
+
+                //rating_set
+                rating_dep.setText(rating_str);
+                ratingBar.setRating(Float.parseFloat(rating_str));
+
+                if(status.equals("Completed")){
+//                    ratingBar.setClickable(false);
+//                    ratingBar.setFocusable(false);
+                    ratingBar.setIsIndicator(true);
+                }
 
                 if (status.equals("Pending")){
                     com_status_his.setBackgroundResource(R.color.Red);
@@ -156,9 +195,16 @@ public class historyviewdetails_networks extends AppCompatActivity {
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                rating_p=Float.valueOf(ratingBar.getRating());
+                rat=rating_p.toString();
+                ratingBar.setRating(rating_p);
                 if (status.equals("Pending")){
+                    HashMap hp1=new HashMap();
+                    hp1.put("status","Completed");
+
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
+                    hp.put("rating",rat);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -173,7 +219,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();

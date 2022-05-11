@@ -595,6 +595,20 @@
                 android:background="@drawable/borderbox">
 
             </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rating_dep_plum"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+
+            <RatingBar
+                android:id="@+id/rating_plum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:rating="0"
+                />
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->

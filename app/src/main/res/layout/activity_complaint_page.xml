@@ -549,7 +549,8 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/mulish"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/roboto_regular"
             android:hint="Your Name"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
@@ -563,9 +564,9 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:fontFamily="@font/mulish"
+            android:fontFamily="@font/roboto_regular"
             android:hint="Your Mobile Number"
             android:textColorHint="@color/black"
             android:inputType="number"
@@ -670,6 +671,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
+
+
     <CheckBox
         android:id="@+id/completelydamaged"
         android:layout_width="wrap_content"

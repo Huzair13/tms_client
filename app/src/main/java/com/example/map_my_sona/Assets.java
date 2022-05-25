@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
@@ -14,6 +15,7 @@ import com.google.android.material.card.MaterialCardView;
 public class Assets extends AppCompatActivity {
 MaterialToolbar toolbar;
 MaterialCardView ass_lap , ass_tab ,ass_phn;
+LinearLayout ass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ MaterialCardView ass_lap , ass_tab ,ass_phn;
         ass_lap = findViewById(R.id.asset_lap);
         ass_phn=findViewById(R.id.asset_phone);
         ass_tab=findViewById(R.id.asset_tab);
+        ass=findViewById(R.id.asset);
 
 
         ass_lap.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +46,13 @@ MaterialCardView ass_lap , ass_tab ,ass_phn;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Assets.this, asset_tablet_recycle.class));
+            }
+        });
+
+        ass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Assets.this,asset_history.class));
             }
         });
 

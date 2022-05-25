@@ -25,6 +25,22 @@
             android:layout_marginRight="150dp"
             app:srcCompat="@drawable/ssbg8" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginRight="15dp"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addasset"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/greyblue"
+            android:text="Add assets">
+
+        </com.google.android.material.button.MaterialButton>
+    </LinearLayout>
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

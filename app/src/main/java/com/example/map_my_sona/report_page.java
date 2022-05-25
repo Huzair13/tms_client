@@ -61,40 +61,6 @@ public class report_page extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-    }
-
-    //bottom navi
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.bottom_history:
-                    startActivity(new Intent(report_page.this, ManualComplaint_page.class));
-                    break;
-                case R.id.bottom_feedback:
-
-                    startActivity(new Intent(report_page.this,report_page.class));
-                    break;
-                case R.id.bottom_home:
-                    startActivity(new Intent(report_page.this,dashboard.class));
-                    break;
-                case R.id.bottom_report:
-                    startActivity(new Intent(report_page.this,report_page.class));
-                    break;
-
-                case R.id.bottom_emer:
-                    startActivity(new Intent(report_page.this,emergencyContact.class));
-                    break;
-
-            }
-            return false;
-        }
     };
 
     private void checkValidation() {

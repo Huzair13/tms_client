@@ -148,6 +148,24 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/asset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="sfvzsv"
+                android:textSize="25dp"
+                android:gravity="center">
+
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

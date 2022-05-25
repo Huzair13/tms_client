@@ -26,6 +26,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".add_assets"
+            android:exported="false" />
+        <activity
+            android:name=".asset_history"
+            android:exported="false" />
+        <activity
             android:name=".asset_tablet_recycle"
             android:exported="false" />
         <activity

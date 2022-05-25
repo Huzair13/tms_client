@@ -594,6 +594,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
+                android:layout_gravity="center"
                 android:hint="Registered Complaint status ...."
                 android:textColorHint="@color/black"
                 android:textSize="18dp"
@@ -601,6 +602,50 @@
                 android:background="@drawable/borderbox">
 
             </TextView>
+
+            <TextView
+                android:id="@+id/his_elec_feedBack_head_txt_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="FEEDBACK"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:visibility="gone"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/com_txt_feedback_elec_txtView_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:hint="FeedBack"
+                android:textColorHint="@color/black"
+                android:textSize="18dp"
+                android:padding="15dp"
+                android:visibility="gone"
+                android:background="@drawable/borderbox">
+
+            </TextView>
+
+
+            <Spinner
+                android:id="@+id/com_his_feedBack_spinner_net"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:inputType="none"
+                android:textColor="@color/black"
+                android:fontFamily="@font/mulish"
+                android:textSize="18dp"
+                android:spinnerMode="dropdown"
+                android:textStyle="bold"
+                android:background="@color/cardview_light_background"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -611,12 +656,12 @@
 
             <RatingBar
                 android:id="@+id/rating_net"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:rating="0"
-                />
+                android:rating="0" />
 
-<!--            <TextView-->
+            <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="Rating for complaint : "-->

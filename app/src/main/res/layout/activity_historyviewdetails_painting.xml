@@ -582,8 +582,8 @@
 
             <TextView
                 android:id="@+id/com_txt_history_painting"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
@@ -596,6 +596,49 @@
             </TextView>
 
             <TextView
+                android:id="@+id/his_elec_feedBack_head_txt_pnt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="FEEDBACK"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:visibility="gone"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/com_txt_feedback_elec_txtView_pnt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:hint="FeedBack"
+                android:textColorHint="@color/black"
+                android:textSize="18dp"
+                android:padding="15dp"
+                android:visibility="gone"
+                android:background="@drawable/borderbox">
+
+            </TextView>
+
+            <Spinner
+                android:id="@+id/com_his_feedBack_spinner_pnt"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:inputType="none"
+                android:textColor="@color/black"
+                android:fontFamily="@font/mulish"
+                android:textSize="18dp"
+                android:spinnerMode="dropdown"
+                android:textStyle="bold"
+                android:background="@color/cardview_light_background"/>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/rating_dep_pnt"
@@ -604,6 +647,7 @@
 
             <RatingBar
                 android:id="@+id/rating_pnt"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:rating="0"

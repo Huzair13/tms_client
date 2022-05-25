@@ -15,8 +15,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -60,6 +62,11 @@ public class historyviewdetails extends AppCompatActivity {
     String uref_h;
     MaterialToolbar toolbar;
 
+    Spinner feedBack_box;
+    TextView feedBack_txtView;
+    String FeedBack_str;
+    TextView feedBack_txtView_head;
+
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
@@ -93,6 +100,7 @@ public class historyviewdetails extends AppCompatActivity {
         location=(TextView)findViewById(R.id.location_unit_his);
         rating_dep=(TextView)findViewById(R.id.rating_dep);
 
+
         ratingBar=(RatingBar) findViewById(R.id.rating);
 
         refDash.addValueEventListener(new ValueEventListener() {
@@ -120,6 +128,14 @@ public class historyviewdetails extends AppCompatActivity {
         com_status_his=(TextView)findViewById(R.id.complaint_status_his);
 
         comp_close=(Button)findViewById(R.id.close_the_com_his);
+
+        feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner);
+        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst"};
+        feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
+
+        feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView);
+        feedBack_txtView_head=(TextView)findViewById(R.id.his_elec_feedBack_head_txt);
+
 
 //        feedback = (Spinner) findViewById(R.id.feedback);
 //
@@ -152,6 +168,8 @@ public class historyviewdetails extends AppCompatActivity {
                 //get_rating
                 rating_str=complaint_details.getRating();
 
+                FeedBack_str=complaint_details.getFeedBack();
+
                 status=complaint_details.getStatus();
 
                 staff_name.setText(staff_name_str);
@@ -171,14 +189,32 @@ public class historyviewdetails extends AppCompatActivity {
                 rating_dep.setText(rating_str);
                 ratingBar.setRating(Float.parseFloat(rating_str));
 
+                feedBack_txtView.setText(FeedBack_str);
+
                 if(status.equals("Completed")){
 //                    ratingBar.setClickable(false);
 //                    ratingBar.setFocusable(false);
                     ratingBar.setIsIndicator(true);
+                    feedBack_box.setVisibility(View.GONE);
+                    feedBack_txtView_head.setVisibility(View.VISIBLE);
+                    feedBack_txtView.setVisibility(View.VISIBLE);
+
                 }
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
+
+                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        FeedBack_str=feedBack_box.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
 
                 if (status.equals("Pending")){
                     com_status_his.setBackgroundResource(R.color.Red);
@@ -213,6 +249,7 @@ public class historyviewdetails extends AppCompatActivity {
                 rating_p=Float.valueOf(ratingBar.getRating());
                 rat=rating_p.toString();
                 ratingBar.setRating(rating_p);
+
                 if (status.equals("Pending")){
                     HashMap hp1=new HashMap();
                     hp1.put("status","Completed");
@@ -220,6 +257,7 @@ public class historyviewdetails extends AppCompatActivity {
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
                     hp.put("rating",rat);
+                    hp.put("FeedBack",FeedBack_str);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override

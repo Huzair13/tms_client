@@ -73,6 +73,7 @@ public class complaint_Page extends AppCompatActivity {
     String status = "Pending";
     DatabaseReference databaseReference;
     String s,manual_name,manual_mob;
+    String FeedBack_str;
     DatabaseReference dbRef;
 
     TextInputLayout complaint_content;
@@ -148,6 +149,7 @@ public class complaint_Page extends AppCompatActivity {
                 location_str = snapshot.child(s).child("location").getValue(String.class);
                 rating = 0.0f;
                 rating_str = rating.toString();
+                FeedBack_str="None";
 
 
                 sn.setText(sn_str);
@@ -309,7 +311,7 @@ public class complaint_Page extends AppCompatActivity {
                 complainted_by_dep_str, complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
-                status,dep_of_pro_str,uref,location_str,rating_str);
+                status,dep_of_pro_str,uref,location_str,rating_str,FeedBack_str);
 
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

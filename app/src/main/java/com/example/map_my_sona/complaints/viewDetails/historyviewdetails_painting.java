@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -60,6 +61,11 @@ public class historyviewdetails_painting extends AppCompatActivity {
     RatingBar ratingBar;
     MaterialToolbar toolbar;
 
+    Spinner feedBack_box;
+    TextView feedBack_txtView;
+    String FeedBack_str;
+    TextView feedBack_txtView_head;
+
     private DatabaseReference refDash;
 
     private TextView location,staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
@@ -95,6 +101,13 @@ public class historyviewdetails_painting extends AppCompatActivity {
         ratingBar=(RatingBar) findViewById(R.id.rating_pnt);
         rating_dep=(TextView)findViewById(R.id.rating_dep_pnt);
 
+        feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner_pnt);
+        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst"};
+        feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
+
+        feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView_pnt);
+        feedBack_txtView_head=(TextView)findViewById(R.id.his_elec_feedBack_head_txt_pnt);
+
         refDash.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,6 +124,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
 
             }
         });
+
 
         pro_id = (TextView) findViewById(R.id.Product_ID_history_painting);
         com_status_his = (TextView) findViewById(R.id.complaint_status_his_painting);
@@ -140,6 +154,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 ins_by_str = complaint_details.getIns_by();
                 ins_date_str = complaint_details.getIns_date();
                 mob_str = complaint_details.getMob();
+                uid_str=complaint_details.getUID();
                 com_txt_str = complaint_details.getCom_txt();
                 pro_id_str = complaint_details.getUniqueId();
                 location_Str=complaint_details.getLocation();
@@ -148,6 +163,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 //get_rating
                 rating_str=complaint_details.getRating();
                 uref_h= FirebaseAuth.getInstance().getUid();
+                FeedBack_str=complaint_details.getFeedBack();
 
 
                 staff_name.setText(staff_name_str);
@@ -163,6 +179,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 com_txt.setText(com_txt_str);
                 location.setText(location_Str);
 
+
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
 
@@ -170,10 +187,18 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 rating_dep.setText(rating_str);
                 ratingBar.setRating(Float.parseFloat(rating_str));
 
+                feedBack_txtView.setText(FeedBack_str);
+
+
                 if(status.equals("Completed")){
 //                    ratingBar.setClickable(false);
 //                    ratingBar.setFocusable(false);
                     ratingBar.setIsIndicator(true);
+
+                    feedBack_box.setVisibility(View.GONE);
+                    feedBack_txtView_head.setVisibility(View.VISIBLE);
+                    feedBack_txtView.setVisibility(View.VISIBLE);
+
                 }
 
                 if (status.equals("Pending")) {
@@ -184,6 +209,17 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 }
                 com_status_his.setTextColor(getResources().getColor(R.color.white));
 
+                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        FeedBack_str=feedBack_box.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
 
             }
 
@@ -201,12 +237,14 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 rat=rating_p.toString();
                 ratingBar.setRating(rating_p);
                 if (status.equals("Pending")) {
+
                     HashMap hp1 = new HashMap();
                     hp1.put("status", "Completed");
 
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
                     hp.put("rating",rat);
+                    hp.put("FeedBack",FeedBack_str);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -306,6 +344,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                     if(uid_str.equals(uref_h)){
                         HashMap hp=new HashMap();
                         hp.put("status","Pending");
+                        hp.put("rating","0.0");
 
                         builder_painter.setTitle("Alert")
                                 .setMessage("Are you sure to open the complaint again ??")

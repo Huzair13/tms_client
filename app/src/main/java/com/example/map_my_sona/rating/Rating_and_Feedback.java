@@ -106,7 +106,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
                 Float sum=0.0f;
                 int count=0;
-                Float average;
+                Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     if(map.get("status").equals("Completed")){
@@ -120,7 +120,15 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     average=sum/count;
                     ra_avg_elec.setText(String.valueOf(df.format(average)));
                 }
-
+                if(average>=4.0 && average<=5.0){
+                    ra_avg_elec.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_avg_elec.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_avg_elec.setBackgroundResource(R.color.Red);
+                }
             }
 
             @Override
@@ -138,7 +146,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
                 Float sum=0.0f;
                 int count=0;
-                Float average;
+                Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     if(map.get("status").equals("Completed")){
@@ -151,6 +159,15 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     }
                     average=sum/count;
                     ra_avg_net.setText(String.valueOf(df.format(average)));
+                }
+                if(average>=4.0 && average<=5.0){
+                    ra_avg_net.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_avg_net.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_avg_net.setBackgroundResource(R.color.Red);
                 }
 
             }
@@ -169,7 +186,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
                 Float sum=0.0f;
                 int count=0;
-                Float average;
+                Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     if(map.get("status").equals("Completed")){
@@ -182,6 +199,16 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     }
                     average=sum/count;
                     ra_avg_plumber.setText(String.valueOf(df.format(average)));
+                }
+
+                if(average>=4.0 && average<=5.0){
+                    ra_avg_plumber.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_avg_plumber.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_avg_plumber.setBackgroundResource(R.color.Red);
                 }
 
             }
@@ -200,7 +227,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
                 Float sum=0.0f;
                 int count=0;
-                Float average;
+                Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     if(map.get("status").equals("Completed")){
@@ -214,6 +241,17 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     average=sum/count;
                     ra_avg_paint.setText(String.valueOf(df.format(average)));
                 }
+
+                if(average>=4.0 && average<=5.0){
+                    ra_avg_paint.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_avg_paint.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_avg_paint.setBackgroundResource(R.color.Red);
+                }
+
 
             }
 
@@ -231,7 +269,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
                 Float sum=0.0f;
                 int count=0;
-                Float average;
+                Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     if(map.get("status").equals("Completed")){
@@ -245,6 +283,17 @@ public class Rating_and_Feedback extends AppCompatActivity {
                     average=sum/count;
                     ra_avg_car.setText(String.valueOf(df.format(average)));
                 }
+
+                if(average>=4.0 && average<=5.0){
+                    ra_avg_car.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_avg_car.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_avg_car.setBackgroundResource(R.color.Red);
+                }
+
 
             }
 

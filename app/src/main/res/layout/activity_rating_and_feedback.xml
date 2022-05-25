@@ -34,7 +34,7 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                app:lottie_rawRes="@raw/rating_anim"
+                app:lottie_rawRes="@raw/rat"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 android:layout_marginTop="15dp"
@@ -81,6 +81,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="0.5"
+            android:text="NULL"
+            android:textAlignment="center"
+            android:gravity="center"
             android:background="@color/greyblue"
             android:textColor="@color/black"
             android:textSize="24dp" />
@@ -120,8 +123,11 @@
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="50dp"
+            android:text="NULL"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
+            android:textAlignment="center"
+            android:gravity="center"
             android:background="@color/greyblue"
             android:textSize="24dp"
             android:textColor="@color/black" />
@@ -160,6 +166,9 @@
             android:layout_weight="0.5"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="NULL"
+            android:gravity="center"
             android:background="@color/greyblue"
             android:textSize="24dp"
             android:textColor="@color/black" />
@@ -195,8 +204,11 @@
             android:id="@+id/ra_avg_paint"
             android:layout_width="0dp"
             android:layout_weight="0.5"
+            android:text="NULL"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:textAlignment="center"
+            android:gravity="center"
             android:background="@color/greyblue"
             android:textSize="24dp"
             android:textColor="@color/black" />
@@ -235,6 +247,9 @@
             android:layout_weight="0.5"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="NULL"
+            android:gravity="center"
             android:background="@color/greyblue"
             android:textSize="24dp"
             android:textColor="@color/black" />

@@ -45,6 +45,12 @@
             android:title="Scanned History" />
 
         <item
+            android:id="@+id/nav_assets"
+            android:visible="false"
+            android:icon="@drawable/ic_baseline_collections_24"
+            android:title="Assets" />
+
+        <item
             android:id="@+id/emergency_contact"
             android:visible="false"
             android:icon="@drawable/ephone"

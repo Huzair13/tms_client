@@ -104,6 +104,8 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //        navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
         navigationView1.setCheckedItem(R.id.nav_report);
+        navigationView1.setCheckedItem(R.id.nav_assets);
+
 
         View headerview=navigationView1.getHeaderView(0);
 
@@ -155,6 +157,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
                         MenuItem manual_det=menu.findItem(R.id.manual_history);
                         manual_det.setVisible(true);
+
+                        MenuItem nav_asset=menu.findItem(R.id.nav_assets);
+                        nav_asset.setVisible(true);
 
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
@@ -352,6 +357,10 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
             case R.id.manual_history:
                 startActivity(new Intent(dashboard.this, manual_dept_history.class));
+                break;
+
+            case R.id.nav_assets:
+                startActivity(new Intent(dashboard.this, Assets.class));
                 break;
 
             case R.id.nav_ratings:

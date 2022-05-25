@@ -272,7 +272,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.bottom_history:
                     startActivity(new Intent(dashboard.this, ManualComplaint_page.class));

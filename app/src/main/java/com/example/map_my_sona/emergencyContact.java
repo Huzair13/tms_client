@@ -91,40 +91,40 @@ public class emergencyContact extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//    }
 
 
     //bottom navi
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.bottom_history:
-                    startActivity(new Intent(emergencyContact.this, ManualComplaint_page.class));
-                    break;
-                case R.id.bottom_feedback:
-
-                    startActivity(new Intent(emergencyContact.this, Rating_and_Feedback.class));
-                    break;
-                case R.id.bottom_home:
-                    startActivity(new Intent(emergencyContact.this,dashboard.class));
-                    break;
-                case R.id.bottom_report:
-                    startActivity(new Intent(emergencyContact.this,Rating_and_Feedback.class));
-                    break;
-
-                case R.id.bottom_emer:
-                    startActivity(new Intent(emergencyContact.this,emergencyContact.class));
-                    break;
-
-            }
-            return false;
-        }
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            Fragment fragment;
+//            switch (item.getItemId()) {
+//                case R.id.bottom_history:
+//                    startActivity(new Intent(emergencyContact.this, ManualComplaint_page.class));
+//                    break;
+//                case R.id.bottom_feedback:
+//
+//                    startActivity(new Intent(emergencyContact.this, Rating_and_Feedback.class));
+//                    break;
+//                case R.id.bottom_home:
+//                    startActivity(new Intent(emergencyContact.this,dashboard.class));
+//                    break;
+//                case R.id.bottom_report:
+//                    startActivity(new Intent(emergencyContact.this,Rating_and_Feedback.class));
+//                    break;
+//
+//                case R.id.bottom_emer:
+//                    startActivity(new Intent(emergencyContact.this,emergencyContact.class));
+//                    break;
+//
+//            }
+//            return false;
+//        }
     };
 
 }

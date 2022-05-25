@@ -8,10 +8,6 @@
 
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/asset_layout"
@@ -30,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:paddingStart="20dp"
                 android:paddingTop="5dp"
                 android:text="Laptop"
@@ -83,6 +79,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+
 
 </LinearLayout>

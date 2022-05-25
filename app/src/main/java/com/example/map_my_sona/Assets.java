@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
@@ -51,8 +52,8 @@ LinearLayout ass;
 
         ass.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Assets.this,asset_history.class));
+            public void onClick(View v) {
+                startActivity(new Intent(Assets.this, asset_history.class));
             }
         });
 

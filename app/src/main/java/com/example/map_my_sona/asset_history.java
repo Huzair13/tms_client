@@ -30,11 +30,11 @@ public class asset_history extends AppCompatActivity {
 // To set the row Date (optional)
         myRow.setDate(new Date());
 // To set the row Title (optional)
-        myRow.setTitle("Title");
+        myRow.setTitle("Laptop");
 // To set the row Description (optional)
-        myRow.setDescription("Description");
+        myRow.setDescription("Dell inspiron 15");
 // To set the row bitmap image (optional)
-        myRow.setImage(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        myRow.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.addp));
 // To set row Below Line Color (optional)
         myRow.setBellowLineColor(Color.argb(255, 0, 0, 0));
 // To set row Below Line Size in dp (optional)

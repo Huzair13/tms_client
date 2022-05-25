@@ -5,6 +5,149 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Assets"
+    android:orientation="vertical"
+
     android:background="@drawable/greenbg01">
+
+
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Assets"
+        android:background="@color/greyblue"
+        app:navigationIcon="@drawable/back_ic"
+
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        >
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/asset_lap"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        >
+        <!--        <ImageView-->
+        <!--            android:layout_width="75dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="25dp"-->
+        <!--            android:layout_marginLeft="34dp"-->
+        <!--            android:src="@drawable/qrcode_white"-->
+        <!--            android:scaleType="fitCenter"/>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/netbg2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Laptop"
+                android:textSize="30dp"
+                android:layout_marginLeft="125dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular" >
+
+            </TextView>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/asset_phone"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        >
+        <!--        <ImageView-->
+        <!--            android:layout_width="75dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="25dp"-->
+        <!--            android:layout_marginLeft="34dp"-->
+        <!--            android:src="@drawable/qrcode_white"-->
+        <!--            android:scaleType="fitCenter"/>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/netbg2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mobile Phones"
+                android:textSize="30dp"
+                android:layout_marginLeft="75dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular" >
+
+            </TextView>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/asset_tab"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        >
+        <!--        <ImageView-->
+        <!--            android:layout_width="75dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginTop="25dp"-->
+        <!--            android:layout_marginLeft="34dp"-->
+        <!--            android:src="@drawable/qrcode_white"-->
+        <!--            android:scaleType="fitCenter"/>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/netbg2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tablets"
+                android:textSize="30dp"
+                android:layout_marginLeft="125dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular" >
+
+            </TextView>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
 </LinearLayout>

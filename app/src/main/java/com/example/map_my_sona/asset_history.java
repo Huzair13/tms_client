@@ -46,7 +46,7 @@ public class asset_history extends AppCompatActivity {
 // To set the Background Size of the row image in dp (optional)
         myRow.setBackgroundSize(60);
 // To set row Date text color (optional)
-        myRow.setDateColor(Color.argb(255, 0, 0, 0));
+        myRow.setDateColor(Color.argb(254, 0, 0, 0));
 // To set row Title text color (optional)
         myRow.setTitleColor(Color.argb(255, 0, 0, 0));
 // To set row Description text color (optional)

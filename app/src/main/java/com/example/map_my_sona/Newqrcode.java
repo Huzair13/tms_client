@@ -30,7 +30,7 @@ public class Newqrcode extends AppCompatActivity {
 
     private EditText unique_id_ad,sn_ad,make_ad,model_ad,procurement_ad,powerRating_ad,wperiod_ad,wexpiryDate_ad,insDate_ad,
             insBy_ad,mob_ad,dep_of_pro,location;
-    private Button AddNew;
+    private Button AddNew ,addasset;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
 //    public MaterialAlertDialogBuilder materialAlertDialogBuilder;
@@ -59,6 +59,15 @@ public class Newqrcode extends AppCompatActivity {
         location=(EditText)findViewById(R.id.loc_add_admin);
 
         AddNew=(Button) findViewById(R.id.newqrupdate_btn);
+        addasset=(Button) findViewById(R.id.addasset);
+
+
+        addasset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Newqrcode.this,add_assets.class));
+            }
+        });
 
         AddNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,40 +94,6 @@ public class Newqrcode extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-    }
-
-    //bottom navi
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.bottom_history:
-                    startActivity(new Intent(Newqrcode.this, ManualComplaint_page.class));
-                    break;
-                case R.id.bottom_feedback:
-
-                    startActivity(new Intent(Newqrcode.this, Rating_and_Feedback.class));
-                    break;
-                case R.id.bottom_home:
-                    startActivity(new Intent(Newqrcode.this,dashboard.class));
-                    break;
-                case R.id.bottom_report:
-                    startActivity(new Intent(Newqrcode.this,Rating_and_Feedback.class));
-                    break;
-
-                case R.id.bottom_emer:
-                    startActivity(new Intent(Newqrcode.this,emergencyContact.class));
-                    break;
-
-            }
-            return false;
-        }
     };
 
 

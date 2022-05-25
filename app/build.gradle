@@ -58,6 +58,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.1.0')
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
+    implementation 'com.github.qapqap:TimelineView:v1.6'
 
     implementation 'com.github.1902shubh:SendMail:1.0.0'
 

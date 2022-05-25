@@ -69,7 +69,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
         toolbar1=findViewById(R.id.topAppBar_user);
-        bottomNavigationView=findViewById(R.id.bottom_navigation);
 //        logo=findViewById(R.id.logo);
 
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
@@ -260,41 +259,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
             }
         });
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-    }
-
-
-    //bottom navi
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.bottom_history:
-                    startActivity(new Intent(dashboard.this, ManualComplaint_page.class));
-                    break;
-                case R.id.bottom_feedback:
-
-                    startActivity(new Intent(dashboard.this, Rating_and_Feedback.class));
-                    break;
-                case R.id.bottom_home:
-                    startActivity(new Intent(dashboard.this,dashboard.class));
-                    break;
-                case R.id.bottom_report:
-                    startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
-                    break;
-
-                case R.id.bottom_emer:
-                    startActivity(new Intent(dashboard.this,emergencyContact.class));
-                    break;
-
-            }
-            return false;
-        }
     };
 
 

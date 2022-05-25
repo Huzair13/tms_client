@@ -3,9 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/greenbg04">
+    android:layout_height="match_parent">
+<!--    android:background="@drawable/greenbg04">-->
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/scancode"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/lightpistagreen"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:text="complaint name:"
+            android:textSize="10dp"
+            android:layout_gravity="left">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:paddingStart="20dp"
+            android:paddingBottom="30dp"
+            android:text="date and time:"
+            android:textSize="10dp"
+            android:layout_gravity="bottom">
+        </TextView>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:text="details:"
+            android:paddingEnd="20dp"
+            android:paddingTop="5dp"
+            android:textSize="10dp"
+            android:layout_gravity="end">
+        </TextView>
+        <TextView
+            android:id="@+id/asset_owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:paddingEnd="20dp"
+            android:paddingBottom="30dp"
+            android:text="status:"
+            android:textSize="10dp"
+            android:layout_gravity="bottom|end">
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 

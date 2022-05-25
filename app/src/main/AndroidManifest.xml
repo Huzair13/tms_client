@@ -172,6 +172,12 @@
             android:name=".ScannerPage"
             android:exported="false" />
         <activity
+            android:name=".asset_layout"
+            android:exported="false" />
+        <activity
+            android:name=".asset_history"
+            android:exported="false" />
+        <activity
             android:name=".dashboard"
             android:exported="false" />
         <activity

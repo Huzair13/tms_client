@@ -187,6 +187,9 @@
             android:name=".loginpage"
             android:exported="false" />
         <activity
+            android:name=".add_assets"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">

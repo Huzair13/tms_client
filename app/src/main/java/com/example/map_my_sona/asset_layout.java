@@ -19,6 +19,6 @@ public class asset_layout extends AppCompatActivity {
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
         TextView textViewDate = findViewById(R.id.date);
-        textViewDate.setText(currentDate);
+//        textViewDate.setText(currentDate);
     }
 }

@@ -178,6 +178,12 @@
             android:name=".ScannerPage"
             android:exported="false" />
         <activity
+            android:name=".asset_layout"
+            android:exported="false" />
+        <activity
+            android:name=".asset_history"
+            android:exported="false" />
+        <activity
             android:name=".dashboard"
             android:exported="false" />
         <activity
@@ -185,6 +191,9 @@
             android:exported="false" />
         <activity
             android:name=".loginpage"
+            android:exported="false" />
+        <activity
+            android:name=".add_assets"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

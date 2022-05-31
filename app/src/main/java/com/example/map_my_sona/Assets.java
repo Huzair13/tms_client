@@ -15,8 +15,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class Assets extends AppCompatActivity {
 MaterialToolbar toolbar;
-MaterialCardView ass_lap , ass_tab ,ass_phn;
-LinearLayout ass;
+MaterialCardView ass_lap , ass_tab ,ass_phn ,ass_tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,7 @@ LinearLayout ass;
         ass_lap = findViewById(R.id.asset_lap);
         ass_phn=findViewById(R.id.asset_phone);
         ass_tab=findViewById(R.id.asset_tab);
-        ass=findViewById(R.id.asset);
+        ass_tv = findViewById(R.id.asset_tv);
 
 
         ass_lap.setOnClickListener(new View.OnClickListener() {
@@ -50,12 +49,14 @@ LinearLayout ass;
             }
         });
 
-        ass.setOnClickListener(new View.OnClickListener() {
+        ass_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Assets.this, asset_history.class));
+                startActivity(new Intent(Assets.this, asset_tv_recycle.class));
             }
         });
+
+
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

@@ -11,6 +11,11 @@
             android:visible="false"
             android:title="Add New Product" />
         <item
+            android:id="@+id/nav_NewAssets"
+            android:icon="@drawable/addp"
+            android:visible="false"
+            android:title="Add New Asset" />
+        <item
             android:id="@+id/new_id"
             android:icon="@drawable/qrid"
             android:visible="false"

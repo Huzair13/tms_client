@@ -2,12 +2,14 @@ package com.example.map_my_sona.complaints;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
@@ -16,7 +18,12 @@ import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_network
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_painting;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_plumber;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -64,8 +71,29 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
         holder.sn_h.setText(pos_sn_Str);
+//start
+        final ArrayList<String> locationNames = new ArrayList<>();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference locationRef = rootRef.child("complaints");
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String key = ds.getKey();
+                    Log.d("TAG", key);
+                    System.out.println(key);
+                    locationNames.add(key);
+                    System.out.println(locationNames);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
+        locationRef.addListenerForSingleValueEvent(eventListener);
 
     }
+    //end
 
     @Override
     public int getItemCount() {
@@ -78,6 +106,8 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
         public Viewholder_complaints_history(@NonNull View itemView) {
             super(itemView);
+
+            reference= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
 
             sn_h=itemView.findViewById(R.id.sn_history);
             dandt_h=itemView.findViewById(R.id.dateandtime_history);

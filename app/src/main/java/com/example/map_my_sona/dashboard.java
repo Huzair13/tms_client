@@ -104,6 +104,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         navigationView1.setCheckedItem(R.id.emergency_contact);
         navigationView1.setCheckedItem(R.id.nav_report);
         navigationView1.setCheckedItem(R.id.nav_assets);
+        navigationView1.setCheckedItem(R.id.nav_NewAssets);
 
 
         View headerview=navigationView1.getHeaderView(0);
@@ -165,6 +166,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
                         MenuItem navi_report=menu.findItem(R.id.nav_report);
                         navi_report.setVisible(true);
+
+                        MenuItem nav_NewAss=menu.findItem(R.id.nav_NewAssets);
+                        nav_NewAss.setVisible(true);
 
                     }else if(pos.equals("user")){
 
@@ -298,6 +302,10 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
             case R.id.nav_newQR:
                 startActivity(new Intent(dashboard.this, Newqrcode.class));
+                break;
+
+            case R.id.nav_NewAssets:
+                startActivity(new Intent(dashboard.this,add_assets.class));
                 break;
 
 

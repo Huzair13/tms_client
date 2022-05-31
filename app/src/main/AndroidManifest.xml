@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".Asset_Laptop_detail_view"
+            android:exported="false" />
+        <activity
             android:name=".complaints_history_details_assets"
             android:exported="false" />
         <activity
@@ -45,6 +48,9 @@
             android:exported="false" />
         <activity
             android:name=".rating.rating_view.rating_painting"
+            android:exported="false" />
+        <activity
+            android:name=".add_assets"
             android:exported="false" />
         <activity
             android:name=".rating.rating_view.rating_carpenter"

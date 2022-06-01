@@ -61,7 +61,7 @@ public class AssetLaptopAdapter extends RecyclerView.Adapter<AssetLaptopAdapter.
                     String key = ds.getKey();
                     locationNames.add(key);
                 }
-//                holder.lapassetID.setText(locationNames.get(position));
+                holder.lapassetID.setText(locationNames.get(position));
             }
 
             @Override
@@ -83,8 +83,8 @@ public class AssetLaptopAdapter extends RecyclerView.Adapter<AssetLaptopAdapter.
         public Viewholder_AssetLaptop(@NonNull View itemView) {
             super(itemView);
 
-//            lapassetID=itemView.findViewById(R.id.laptop_asset_id);
-//            itemView.setOnClickListener(this);
+            lapassetID=itemView.findViewById(R.id.laptop_asset_id);
+            itemView.setOnClickListener(this);
         }
 
         @Override

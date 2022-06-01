@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 <!--    android:background="@drawable/greenbg01">-->
 
 
@@ -23,7 +23,8 @@
             app:cardElevation="25dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/laptop_asset_id"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
                 android:paddingStart="20dp"
@@ -42,17 +43,7 @@
                 android:textSize="25dp"
                 android:layout_gravity="bottom">
             </TextView>
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal"
-                android:text="Laptop"
-                android:paddingEnd="20dp"
-                android:paddingTop="5dp"
-                android:textSize="25dp"
-                android:layout_gravity="end">
-            </TextView>
+
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="25dp"
                 android:layout_height="25dp"

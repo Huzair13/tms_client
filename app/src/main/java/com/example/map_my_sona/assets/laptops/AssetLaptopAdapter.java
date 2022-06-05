@@ -1,21 +1,17 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets.laptops;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.complaints_history_Adapter;
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
-import com.google.firebase.database.ChildEventListener;
+import com.example.map_my_sona.R;
+import com.example.map_my_sona.assets.AssetDeatils1;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

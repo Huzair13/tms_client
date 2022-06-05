@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
+import com.example.map_my_sona.assets.laptops.asset_laptop_recycle;
+import com.example.map_my_sona.assets.asset_phone_recycle;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 
@@ -31,7 +29,7 @@ MaterialCardView ass_lap , ass_tab ,ass_phn ,ass_tv;
         ass_lap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Assets.this,asset_laptop_recycle.class));
+                startActivity(new Intent(Assets.this, asset_laptop_recycle.class));
             }
         });
 

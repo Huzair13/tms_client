@@ -1,9 +1,11 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.map_my_sona.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;

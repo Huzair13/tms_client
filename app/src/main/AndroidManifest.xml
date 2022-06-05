@@ -26,10 +26,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".Asset_Phone_detail_view"
+            android:exported="false" />
+        <activity
             android:name=".asset_tv_recycle"
             android:exported="false" />
         <activity
-            android:name=".Asset_Laptop_detail_view"
+            android:name=".assets.laptops.Asset_Laptop_detail_view"
             android:exported="false" />
         <activity
             android:name=".complaints_history_details_assets"
@@ -38,10 +41,10 @@
             android:name=".asset_tablet_recycle"
             android:exported="false" />
         <activity
-            android:name=".asset_phone_recycle"
+            android:name=".assets.asset_phone_recycle"
             android:exported="false" />
         <activity
-            android:name=".asset_laptop_recycle"
+            android:name=".assets.laptops.asset_laptop_recycle"
             android:exported="false" />
         <activity
             android:name=".Assets"
@@ -181,7 +184,7 @@
             android:name=".ScannerPage"
             android:exported="false" />
         <activity
-            android:name=".asset_layout"
+            android:name=".assets.asset_layout"
             android:exported="false" />
         <activity
             android:name=".asset_history"

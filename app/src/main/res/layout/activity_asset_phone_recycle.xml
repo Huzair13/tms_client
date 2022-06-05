@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/greenbg01"
-    tools:context=".asset_phone_recycle">
+    tools:context=".assets.asset_phone_recycle">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

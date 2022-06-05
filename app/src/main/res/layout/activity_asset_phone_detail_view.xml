@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/greenbg01"
-    tools:context=".assets.laptops.Asset_Laptop_detail_view">
+    tools:context=".Asset_Phone_detail_view">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
@@ -108,7 +108,7 @@
                 />
 
             <TextView
-                android:id="@+id/amount_asset_lap"
+                android:id="@+id/amount_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -145,7 +145,7 @@
                 />
 
             <TextView
-                android:id="@+id/bill_asset_lap"
+                android:id="@+id/bill_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -182,7 +182,7 @@
                 />
 
             <TextView
-                android:id="@+id/dop_asset_lap"
+                android:id="@+id/dop_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -219,7 +219,7 @@
                 />
 
             <TextView
-                android:id="@+id/quantity_asset_lap"
+                android:id="@+id/quantity_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -256,7 +256,7 @@
                 />
 
             <TextView
-                android:id="@+id/supp_name_asset_lap"
+                android:id="@+id/supp_name_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -293,7 +293,7 @@
                 />
 
             <TextView
-                android:id="@+id/supp_add_assets_lap"
+                android:id="@+id/supp_add_assets_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -330,7 +330,7 @@
                 />
 
             <TextView
-                android:id="@+id/model_asset_lap"
+                android:id="@+id/model_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -367,7 +367,7 @@
                 />
 
             <TextView
-                android:id="@+id/ref_asset_lap"
+                android:id="@+id/ref_asset_mob"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

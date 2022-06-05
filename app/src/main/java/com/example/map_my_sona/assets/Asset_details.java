@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets;
 
 public class Asset_details {
     private String Amount;

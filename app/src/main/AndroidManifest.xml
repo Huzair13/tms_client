@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".Asset_Phone_detail_view"
+            android:name=".assets.mobiles.Asset_Phone_detail_view"
             android:exported="false" />
         <activity
             android:name=".asset_tv_recycle"
@@ -41,13 +41,13 @@
             android:name=".asset_tablet_recycle"
             android:exported="false" />
         <activity
-            android:name=".assets.asset_phone_recycle"
+            android:name=".assets.mobiles.asset_phone_recycle"
             android:exported="false" />
         <activity
             android:name=".assets.laptops.asset_laptop_recycle"
             android:exported="false" />
         <activity
-            android:name=".Assets"
+            android:name=".assets.Assets"
             android:exported="false" />
         <activity
             android:name=".rating.rating_view.rating_plumbering"

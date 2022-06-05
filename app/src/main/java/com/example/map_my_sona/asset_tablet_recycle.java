@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.map_my_sona.assets.Assets;
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class asset_tablet_recycle extends AppCompatActivity {

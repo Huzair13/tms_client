@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.map_my_sona.R;
+import com.example.map_my_sona.asset_tablet_recycle;
+import com.example.map_my_sona.asset_tv_recycle;
 import com.example.map_my_sona.assets.laptops.asset_laptop_recycle;
-import com.example.map_my_sona.assets.asset_phone_recycle;
+import com.example.map_my_sona.assets.mobiles.asset_phone_recycle;
+import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 

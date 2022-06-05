@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets;
 
 public class asset_laptops_details {
     private String lapId;

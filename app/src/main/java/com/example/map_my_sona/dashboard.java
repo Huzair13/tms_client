@@ -7,7 +7,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,6 +20,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.map_my_sona.assets.Assets;
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.manualComplaints.manual_dept_history;

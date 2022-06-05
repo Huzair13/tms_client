@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.map_my_sona.Assets;
+import com.example.map_my_sona.assets.Assets;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.assets.AssetDeatils1;
 import com.google.android.material.appbar.MaterialToolbar;

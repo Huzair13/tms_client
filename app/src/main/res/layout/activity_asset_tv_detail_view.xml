@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/greenbg01"
-    tools:context=".Asset_Tv_detail_view">
+    tools:context=".assets.tv.Asset_Tv_detail_view">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"

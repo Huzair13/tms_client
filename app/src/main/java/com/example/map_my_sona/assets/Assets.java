@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.assets.tablets.asset_tablet_recycle;
-import com.example.map_my_sona.asset_tv_recycle;
+import com.example.map_my_sona.assets.tv.asset_tv_recycle;
 import com.example.map_my_sona.assets.laptops.asset_laptop_recycle;
 import com.example.map_my_sona.assets.mobiles.asset_phone_recycle;
 import com.example.map_my_sona.dashboard;

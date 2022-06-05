@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets.tv;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.map_my_sona.R;
 import com.example.map_my_sona.assets.AssetDeatils1;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

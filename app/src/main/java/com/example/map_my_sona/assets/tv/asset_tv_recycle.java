@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.assets.tv;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.map_my_sona.R;
 import com.example.map_my_sona.assets.AssetDeatils1;
-import com.example.map_my_sona.assets.tablets.AssetTabletAdapter;
-import com.example.map_my_sona.assets.tablets.asset_tablet_recycle;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

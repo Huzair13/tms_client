@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".Asset_Tv_detail_view"
+            android:name=".assets.tv.Asset_Tv_detail_view"
             android:exported="false" />
         <activity
             android:name=".assets.tablets.Asset_Tablet_detail_view"
@@ -35,7 +35,7 @@
             android:name=".assets.mobiles.Asset_Phone_detail_view"
             android:exported="false" />
         <activity
-            android:name=".asset_tv_recycle"
+            android:name=".assets.tv.asset_tv_recycle"
             android:exported="false" />
         <activity
             android:name=".assets.laptops.Asset_Laptop_detail_view"

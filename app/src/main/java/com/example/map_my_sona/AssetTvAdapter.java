@@ -1,4 +1,4 @@
-package com.example.map_my_sona.assets.tablets;
+package com.example.map_my_sona;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.map_my_sona.AssetTvAdapter;
-import com.example.map_my_sona.R;
 import com.example.map_my_sona.assets.AssetDeatils1;
 import com.example.map_my_sona.assets.mobiles.AssetPhoneAdapter;
+import com.example.map_my_sona.assets.tablets.AssetTabletAdapter;
+import com.example.map_my_sona.assets.tablets.Asset_Tablet_detail_view;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,32 +22,32 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AssetTabletAdapter extends RecyclerView.Adapter<AssetTabletAdapter.Viewholder_AssetTablet> {
+public class AssetTvAdapter extends RecyclerView.Adapter<AssetTvAdapter.Viewholder_Assetv> {
 
     private ArrayList<AssetDeatils1> arrayList1;
     ArrayList<String> locationNames = new ArrayList<>();
     private Context context;
-    AssetTabletAdapter.OnItemClickListerner onItemClickListerner;
+    AssetTvAdapter.OnItemClickListerner onItemClickListerner;
     DatabaseReference reference;
     boolean testclick=false;
 
-    public AssetTabletAdapter(ArrayList<AssetDeatils1> arrayList, Context context){
+    public AssetTvAdapter(ArrayList<AssetDeatils1> arrayList, Context context){
         this.arrayList1 =arrayList;
         this.context=context;
     }
 
     @NonNull
     @Override
-    public AssetTabletAdapter.Viewholder_AssetTablet onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AssetTvAdapter.Viewholder_Assetv onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.activity_asset_layout,parent,false);
-        return new AssetTabletAdapter.Viewholder_AssetTablet(view);
+        return new AssetTvAdapter.Viewholder_Assetv(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AssetTabletAdapter.Viewholder_AssetTablet holder, int position) {
+    public void onBindViewHolder(@NonNull AssetTvAdapter.Viewholder_Assetv holder, int position) {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference locationRef = rootRef.child("Assets").child("Tablets");
+        DatabaseReference locationRef = rootRef.child("Assets").child("Televisions");
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -69,11 +69,11 @@ public class AssetTabletAdapter extends RecyclerView.Adapter<AssetTabletAdapter.
         return arrayList1.size();
     }
 
-    public class Viewholder_AssetTablet extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class Viewholder_Assetv extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView lapassetID;
 
-        public Viewholder_AssetTablet(@NonNull View itemView) {
+        public Viewholder_Assetv(@NonNull View itemView) {
             super(itemView);
 
             lapassetID=itemView.findViewById(R.id.laptop_asset_id);
@@ -85,15 +85,17 @@ public class AssetTabletAdapter extends RecyclerView.Adapter<AssetTabletAdapter.
         public void onClick(View view) {
             int positon=getAdapterPosition();
             System.out.println("CLICKED........");
-            Intent intent=new Intent(context, Asset_Tablet_detail_view.class);
-            intent.putExtra("tab_ID",locationNames.get(positon));
+            Intent intent=new Intent(context, Asset_Tv_detail_view.class);
+            intent.putExtra("tv_ID",locationNames.get(positon));
             context.startActivity(intent);
         }
     }
+
     public interface OnItemClickListerner{
         void onClick(int position);
     }
-    public void setOnItemClickListerner(AssetTabletAdapter.OnItemClickListerner onItemClickListerner){
+    public void setOnItemClickListerner(AssetTvAdapter.OnItemClickListerner onItemClickListerner){
         this.onItemClickListerner=onItemClickListerner;
     }
+
 }

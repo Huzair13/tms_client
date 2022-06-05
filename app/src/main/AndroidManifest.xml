@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".Asset_Tv_detail_view"
+            android:exported="false" />
+        <activity
             android:name=".assets.tablets.Asset_Tablet_detail_view"
             android:exported="false" />
         <activity

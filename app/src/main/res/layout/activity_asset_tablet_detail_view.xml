@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/greenbg01"
+    tools:context=".assets.tablets.Asset_Tablet_detail_view">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Assets-History"
+        android:background="@color/greyblue"
+        app:navigationIcon="@drawable/back_ic"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/mtrl_list_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="5sp">
+
+    </TextView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="700dp"
+        android:layout_margin="5dp"
+        android:textColor="@color/white">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="S.No:"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="131dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Details"
+                android:background="@drawable/cellshape"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Unit"
+                android:background="@drawable/cellshape"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/amount_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bill No"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/bill_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date of purchase"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/dop_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Quantity"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/quantity_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/table"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Supplier Name"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/supp_name_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/table"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Supplier Address"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/supp_add_assets_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Model"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/model_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/black"
+                android:background="@drawable/cellshape"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Ref no"
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:id="@+id/ref_asset_tab"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:background="@drawable/table"
+                android:textSize="10dp"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

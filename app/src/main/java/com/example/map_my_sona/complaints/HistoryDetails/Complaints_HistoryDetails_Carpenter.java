@@ -50,8 +50,14 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
         reference_complaints_history_carpenter= FirebaseDatabase.getInstance().getReference("complaints").child("Carpenter");
 
         recyclerView_complaints_history_carpenter.setHasFixedSize(true);
-        recyclerView_complaints_history_carpenter.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
 
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView_complaints_history_carpenter.setLayoutManager(linearLayoutManager);
+
+        //recyclerView_complaints_history_carpenter.setLayoutManager(new LinearLayoutManager(this));
         arrayList_complaints_history_carpenter=new ArrayList<>();
         adapter_complaint_history_carpenter = new complaints_history_Adapter(arrayList_complaints_history_carpenter,this);
         recyclerView_complaints_history_carpenter.setAdapter(adapter_complaint_history_carpenter);

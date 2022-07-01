@@ -58,9 +58,10 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
         String postkey= complaint_details.getKey();
         String status_com=complaint_details.getStatus();
-
+        int size1=arrayList1.size();
         int pos_sn=position+1;
-        String pos_sn_Str=String.valueOf(pos_sn);
+        int pos_sn1=(size1-position);
+        String pos_sn_Str=String.valueOf(pos_sn1);
 
         if(status_com.equals("Pending")){
             holder.status_h.setBackgroundResource(R.color.Red);

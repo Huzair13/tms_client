@@ -47,7 +47,14 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
         reference_complaints_history_plumber= FirebaseDatabase.getInstance().getReference("complaints").child("Plumber");
 
         recyclerView_complaints_history_plumber.setHasFixedSize(true);
-        recyclerView_complaints_history_plumber.setLayoutManager(new LinearLayoutManager(this));
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView_complaints_history_plumber.setLayoutManager(linearLayoutManager);
+
+        //recyclerView_complaints_history_plumber.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList_complaints_history_plumber=new ArrayList<>();
         adapter_complaint_history_plumber = new complaints_history_Adapter(arrayList_complaints_history_plumber,this);

@@ -48,7 +48,14 @@ public class Complaints_HistoryDetails_Painting extends AppCompatActivity {
         reference_complaints_history_painter= FirebaseDatabase.getInstance().getReference("complaints").child("Painting");
 
         recyclerView_complaints_history_painter.setHasFixedSize(true);
-        recyclerView_complaints_history_painter.setLayoutManager(new LinearLayoutManager(this));
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView_complaints_history_painter.setLayoutManager(linearLayoutManager);
+
+        //recyclerView_complaints_history_painter.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList_complaints_history_painter=new ArrayList<>();
         adapter_complaint_history_painter = new complaints_history_Adapter(arrayList_complaints_history_painter,this);

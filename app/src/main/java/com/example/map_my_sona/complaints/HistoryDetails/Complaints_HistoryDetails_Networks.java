@@ -51,7 +51,13 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
         reference_complaints_history_networks= FirebaseDatabase.getInstance().getReference("complaints").child("Network");
 
         recyclerView_complaints_history_networks.setHasFixedSize(true);
-        recyclerView_complaints_history_networks.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView_complaints_history_networks.setLayoutManager(linearLayoutManager);
+
+        //recyclerView_complaints_history_networks.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList_complaints_history_networks=new ArrayList<>();
         adapter_complaint_history_networks = new complaints_history_Adapter(arrayList_complaints_history_networks,this);

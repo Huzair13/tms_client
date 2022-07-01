@@ -88,7 +88,12 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
             reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
 
             recyclerView_complaints_history.setHasFixedSize(true);
-            recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+            linearLayoutManager.setReverseLayout(true);
+            linearLayoutManager.setStackFromEnd(true);
+
+            recyclerView_complaints_history.setLayoutManager(linearLayoutManager);
+            //recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
 
             arrayList_complaints_history=new ArrayList<>();
             adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);

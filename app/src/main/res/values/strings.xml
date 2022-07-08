@@ -2,5 +2,9 @@
     <string name="app_name">Map_My_Sona</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="login_shared_preferences">com.example.map_my_sona_login_shared_preferences</string>
+    <string name="login_status_shared_preferences">com.example.map_my_sona_login_status_shared_preferences</string>
+    <string name="username">trueline</string>
+    <string name="password">solution</string>
     <string name="name">Demo</string>
 </resources>

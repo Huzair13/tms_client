@@ -36,7 +36,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class loginpage extends AppCompatActivity {
 
+    private SharedPrefManager sharedPrefManager;
     public static final String PREFS_NAME = "MyPrefsFile";
+
     private TextInputEditText LogEmail,username;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
@@ -56,6 +58,8 @@ public class loginpage extends AppCompatActivity {
         //progressDialouge
         progressDialog=new ProgressDialog(this);
 
+        sharedPrefManager=new SharedPrefManager(getApplicationContext());
+
         //LogEmail=findViewById(R.id.loginemailInput);
         username=findViewById(R.id.loginemailInput);
         us_name=username.getText().toString();
@@ -69,11 +73,11 @@ public class loginpage extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
+
             LoginUserCheck();
 
 //            SharedPreferences sharedPreferences =getSharedPreferences(loginpage.PREFS_NAME,0);
-//            SharedPreferences.Editor editor = sharedPreferences.edit();
-//
+//            SharedPreferences.Editor editor=sharedPreferences.edit();
 //            editor.putBoolean("hasLoggedIn",true);
 //            editor.commit();
 //
@@ -175,7 +179,9 @@ public class loginpage extends AppCompatActivity {
     }
 
     private void logInwithUserName(String email, String password) {
-
+//        if(email.equals(getResources().getString(R.string.username)) && password.equals(getResources().getString(R.string.password))){
+//
+//        }
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

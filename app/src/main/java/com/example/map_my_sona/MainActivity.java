@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView text1;
 //    TextView text2;
     LottieAnimationView lottieAnimationView;
+    private static int SPLASH_TIME_OUT=3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +58,9 @@ public class MainActivity extends AppCompatActivity {
 //                 Intent a=new Intent(MainActivity.this,loginpage.class);
 //                 startActivity(a);
 //             }
-
-
-
-
               finish();
               }
-             },sleeptimer
+             },SPLASH_TIME_OUT
         );
     }
     }

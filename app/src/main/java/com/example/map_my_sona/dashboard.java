@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,6 +56,8 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
     private  MaterialCardView manualentry;
     private MaterialCardView history;
 
+    SharedPreferences sharedPreferences;
+
     FirebaseAuth mAuth;
     AlertDialog.Builder builder1;
     private DatabaseReference refDash;
@@ -68,6 +71,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         drawerLayout1=findViewById(R.id.user_drawer_layout);
         builder1=new AlertDialog.Builder(this);
         navigationView1=findViewById(R.id.nav_view_admin_new);
+
+
+
         toolbar1=findViewById(R.id.topAppBar_user);
 //        logo=findViewById(R.id.logo);
 
@@ -358,7 +364,14 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                                 mAuth.signOut();
                                 Intent intent=new Intent(dashboard.this, loginpage.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+//                                SharedPreferences sharedPreferences =getSharedPreferences(loginpage.PREFS_NAME,0);
+//                                SharedPreferences.Editor editor=sharedPreferences.edit();
+//                                editor.putBoolean("hasLoggedIn",false);
+//                                editor.commit();
+
                                 startActivity(intent);
+                                finish();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -368,6 +381,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                             }
                         })
                         .show();
+
 
 //                SharedPreferences preferences = getSharedPreferences("checked",MODE_PRIVATE);
 //                SharedPreferences.Editor editor =preferences.edit();

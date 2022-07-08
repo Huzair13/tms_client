@@ -135,8 +135,8 @@ public class complaint_Page extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob_str = snapshot.child(s).child("mob").getValue(String.class);
-                sn_str = snapshot.child(s).child("sn_no").getValue(String.class);
+                mob_str = String.valueOf(snapshot.child(s).child("mob").getValue(Long.class));
+                sn_str = String.valueOf(snapshot.child(s).child("sn_no").getValue(Long.class));
                 make_str = snapshot.child(s).child("make").getValue(String.class);
                 model_str = snapshot.child(s).child("model").getValue(String.class);
                 procurement_str = snapshot.child(s).child("procurement").getValue(String.class);

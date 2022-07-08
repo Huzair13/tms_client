@@ -103,7 +103,7 @@ public class update_database extends AppCompatActivity {
                     update.setVisibility(View.VISIBLE);
 
 //                    String mob_str1 = snapshot.child("mob").getValue(String.class);
-                    String sn_str1 = snapshot.child("sn_no").getValue(String.class);
+                    String sn_str1 = String.valueOf(snapshot.child("sn_no").getValue(Integer.class));
                     String make_str1= snapshot.child("make").getValue(String.class);
                     String model_str1 = snapshot.child("model").getValue(String.class);
                     String procurement_str1 = snapshot.child("procurement").getValue(String.class);

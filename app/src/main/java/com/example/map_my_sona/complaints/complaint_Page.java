@@ -191,6 +191,9 @@ public class complaint_Page extends AppCompatActivity {
                 if(complaint_txt.equals("Others")){
                     other_com.setVisibility(View.VISIBLE);
                 }
+                else{
+                    other_com.setVisibility(View.GONE);
+                }
             }
 
             @Override

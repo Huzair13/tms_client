@@ -641,7 +641,19 @@
                 android:textSize="18dp"
                 android:spinnerMode="dropdown"
                 android:textStyle="bold"
-                android:background="@color/cardview_light_background"/>
+                android:background="@drawable/borderbox_white"/>
+            <EditText
+                android:id="@+id/other_feedback_plumber"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:hint="Please specify your feedback here"
+                android:textSize="18dp"
+                android:visibility="gone"
+                android:padding="15dp"
+                android:background="@drawable/borderbox_white"/>
 
             <TextView
                 android:layout_width="match_parent"

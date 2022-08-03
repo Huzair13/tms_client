@@ -28,6 +28,7 @@ import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
+import com.example.map_my_sona.complaints.complaint_Page;
 import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,6 +68,8 @@ public class historyviewdetails extends AppCompatActivity {
     String FeedBack_str;
     TextView feedBack_txtView_head;
 
+    private EditText other_feedback;
+
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
@@ -99,6 +102,7 @@ public class historyviewdetails extends AppCompatActivity {
         com_txt=(TextView)findViewById(R.id.com_txt_history);
         location=(TextView)findViewById(R.id.location_unit_his);
         rating_dep=(TextView)findViewById(R.id.rating_dep);
+        other_feedback=(EditText)findViewById(R.id.other_feedback);
 
 
         ratingBar=(RatingBar) findViewById(R.id.rating);
@@ -130,7 +134,7 @@ public class historyviewdetails extends AppCompatActivity {
         comp_close=(Button)findViewById(R.id.close_the_com_his);
 
         feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner);
-        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst"};
+        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst","Others"};
         feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
 
         feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView);
@@ -208,6 +212,12 @@ public class historyviewdetails extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         FeedBack_str=feedBack_box.getSelectedItem().toString();
+                        if(FeedBack_str.equals("Others")){
+                            other_feedback.setVisibility(View.VISIBLE);
+                        }
+                        else{
+                            other_feedback.setVisibility(View.GONE);
+                        }
                     }
 
                     @Override
@@ -250,7 +260,15 @@ public class historyviewdetails extends AppCompatActivity {
                 rat=rating_p.toString();
                 ratingBar.setRating(rating_p);
 
-                if (status.equals("Pending")){
+                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
+                    FeedBack_str=other_feedback.getText().toString();
+                }
+
+                if(FeedBack_str.equals("Others") && other_feedback.getText().toString().isEmpty()){
+                    Toast.makeText(historyviewdetails.this,"Please specify your feedback",Toast.LENGTH_SHORT).show();
+                    other_feedback.requestFocus();
+                }
+                else if (status.equals("Pending")){
                     HashMap hp1=new HashMap();
                     hp1.put("status","Completed");
 

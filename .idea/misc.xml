@@ -195,6 +195,8 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable-v24/login.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable-v24/logout.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable-v24/usergoogle.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/borderbox.xml" value="0.196" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/borderbox_white.xml" value="0.196" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/curve_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/person.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/font/font.xml" value="0.284375" />
@@ -215,6 +217,7 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.264" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_carpenter.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_electricity.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_electricity_manual.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_networks.xml" value="0.21920289855072464" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_painting.xml" value="0.21920289855072464" />
@@ -238,12 +241,15 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manual_entry_view.xml" value="0.264" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_manualentry.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_newqrcode.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_rating_and_feedback.xml" value="0.15670289855072464" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_rating_details.xml" value="0.23505434782608695" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_scanner_page.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_scanner_view.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_update_database.xml" value="0.16259057971014493" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/complaint_view.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/drawer_header.xml" value="0.14990942028985507" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownpriority.xml" value="0.21920289855072464" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/history_table.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/historylayout.xml" value="0.264" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/manual_details.xml" value="0.1480978260869565" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/manuallayout.xml" value="0.1480978260869565" />

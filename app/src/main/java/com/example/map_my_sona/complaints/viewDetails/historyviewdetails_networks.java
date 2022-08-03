@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -67,6 +68,8 @@ public class historyviewdetails_networks extends AppCompatActivity {
 
     private DatabaseReference refDash;
 
+    private EditText other_feedback;
+
     AlertDialog.Builder builder_networks;
 
     private TextView location,staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
@@ -97,6 +100,8 @@ public class historyviewdetails_networks extends AppCompatActivity {
         mob=(TextView)findViewById(R.id.mob_unit_his_networks);
         com_txt=(TextView)findViewById(R.id.com_txt_history_networks);
 
+        other_feedback=(EditText)findViewById(R.id.other_feedback_network);
+
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         pro_id=(TextView) findViewById(R.id.Product_ID_history_networks);
@@ -104,7 +109,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
         comp_close=(Button)findViewById(R.id.close_the_com_his_networks);
 
         feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner_net);
-        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst"};
+        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst","Others"};
         feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
 
         feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView_net);
@@ -197,6 +202,12 @@ public class historyviewdetails_networks extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         FeedBack_str=feedBack_box.getSelectedItem().toString();
+                        if(FeedBack_str.equals("Others")){
+                            other_feedback.setVisibility(View.VISIBLE);
+                        }
+                        else{
+                            other_feedback.setVisibility(View.GONE);
+                        }
                     }
 
                     @Override
@@ -228,6 +239,16 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 rating_p=Float.valueOf(ratingBar.getRating());
                 rat=rating_p.toString();
                 ratingBar.setRating(rating_p);
+
+                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
+                    FeedBack_str=other_feedback.getText().toString();
+                }
+
+                if(FeedBack_str.equals("Others") && other_feedback.getText().toString().isEmpty()){
+                    Toast.makeText(historyviewdetails_networks.this,"Please specify your feedback",Toast.LENGTH_SHORT).show();
+                    other_feedback.requestFocus();
+                }
+
                 if (status.equals("Pending")){
                     HashMap hp1=new HashMap();
                     hp1.put("status","Completed");

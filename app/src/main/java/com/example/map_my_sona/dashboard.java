@@ -327,7 +327,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
 
             case R.id.emergency_contact:
-                startActivity(new Intent(dashboard.this,emergencyContact.class));
+                startActivity(new Intent(dashboard.this,AdminDashboard.class));
                 break;
 
             case R.id.bottom_emer:

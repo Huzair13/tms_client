@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/admin_Drawer_Layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".AdminDashboard"
+
+    android:background="@drawable/greenbg03">
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view_admin_new"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu"
+        android:layout_gravity="start"
+        android:backgroundTint="@color/lightpistagreen"
+        >
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_user"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Admin Dashboard"
+                app:titleTextColor="@color/white"
+                android:background="@color/greyblue"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ssbg8"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="110dp"
+                android:layout_gravity="center"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:lottie_rawRes="@raw/homepage"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <!--       <TextView-->
+        <!--           android:id="@+id/scantext"-->
+        <!--           android:layout_width="match_parent"-->
+        <!--           android:layout_height="match_parent"-->
+        <!--           android:fontFamily="@font/roboto_regular"-->
+        <!--           android:gravity="center"-->
+        <!--           android:text="Scan Code"-->
+        <!--           android:textColor="@color/white"-->
+        <!--           android:textSize="20dp">-->
+
+        <!--       </TextView>-->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_history"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver"
+            >
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/registrationicon"
+                android:scaleType="fitCenter"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="View History"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_assign"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/registerdetail"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="34dp"
+                android:src="@drawable/pendingicon"
+                android:scaleType="fitCenter"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Assign"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+            </TextView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_update"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/pending"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="34dp"
+                android:src="@drawable/adminicon"
+                android:scaleType="fitCenter"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Update "
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

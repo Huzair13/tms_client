@@ -609,7 +609,6 @@
             android:fontFamily="@font/roboto_regular"
             android:hint="Please specify your complaints"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
             android:visibility="gone"
             android:background="@drawable/bg01"
             />

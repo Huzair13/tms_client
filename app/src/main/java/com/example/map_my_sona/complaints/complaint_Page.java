@@ -58,6 +58,7 @@ public class complaint_Page extends AppCompatActivity {
     private TextView location;
     private String location_str;
     private EditText  complainted_by_name, complainted_by_mob ;
+    private EditText other_com;
     private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
@@ -69,7 +70,7 @@ public class complaint_Page extends AppCompatActivity {
 
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
             procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
-    private String complaint_txt;
+    private String complaint_txt,others_com_str;
     String status = "Pending";
     DatabaseReference databaseReference;
     String s,manual_name,manual_mob;
@@ -108,6 +109,9 @@ public class complaint_Page extends AppCompatActivity {
         complaint_qrcode=(Spinner) findViewById(R.id.complaint_Qrcode);
         complainted_by_name = (EditText) findViewById(R.id.scan_qr_com_name);
         complainted_by_mob = (EditText) findViewById(R.id.scan_qr_com_mob);
+
+        other_com=(EditText)findViewById(R.id.others_complaint_qr);
+
         complainted_by_dep = (Spinner) findViewById(R.id.scan_qr_com_dep);
 
 //        vhigh =(CheckBox)findViewById(R.id.veryhighpriority);
@@ -184,6 +188,9 @@ public class complaint_Page extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 complaint_txt=complaint_qrcode.getSelectedItem().toString();
+                if(complaint_txt.equals("Others")){
+                    other_com.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -212,10 +219,15 @@ public class complaint_Page extends AppCompatActivity {
         complaint_subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (complaint_txt.equals("Complaint")) {
+
+                if(complaint_txt.equals("Others") && other_com.getText().toString().isEmpty()){
+                    Toast.makeText(complaint_Page.this,"Please specify your complaint",Toast.LENGTH_SHORT).show();
+                    other_com.requestFocus();
+                }
+                else if (complaint_txt.equals("Complaint")) {
                     Toast.makeText(complaint_Page.this, "Please select the Complaint", Toast.LENGTH_SHORT).show();
                     complaint_qrcode.requestFocus();
-                } else if (complainted_by_name.getText().toString().isEmpty()) {
+                }else if (complainted_by_name.getText().toString().isEmpty()) {
                     complainted_by_name.setError("Empty");
                     complainted_by_name.requestFocus();
                 } else if (complainted_by_mob.getText().toString().isEmpty()) {
@@ -297,6 +309,9 @@ public class complaint_Page extends AppCompatActivity {
 
         complainted_by_name_str = complainted_by_name.getText().toString();
         complainted_by_mob_str = complainted_by_mob.getText().toString();
+        if(complaint_txt.equals("Others")){
+            complaint_txt=other_com.getText().toString();
+        }
 
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");

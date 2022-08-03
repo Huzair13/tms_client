@@ -600,6 +600,21 @@
             android:textSize="18dp"
             android:background="@drawable/pistagreenspinner"/>
 
+        <EditText
+            android:id="@+id/others_complaint_qr"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Please specify your complaints"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:visibility="gone"
+            android:background="@drawable/bg01"
+            />
+
+
 
 <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->

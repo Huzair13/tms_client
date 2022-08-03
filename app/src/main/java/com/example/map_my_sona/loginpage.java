@@ -42,7 +42,7 @@ public class loginpage extends AppCompatActivity {
     private TextInputEditText LogEmail,username;
     private TextInputEditText LogPassword;
     private TextView ForgetPass;
-    private  TextView Changepass;
+    private  TextView Register;
     private Button btnLogin;
     private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
@@ -66,6 +66,7 @@ public class loginpage extends AppCompatActivity {
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
+        Register=findViewById(R.id.Register);
 
 //        rememberme=findViewById(R.id.rememberme);
 //        Changepass=findViewById(R.id.changepassword);
@@ -93,6 +94,13 @@ public class loginpage extends AppCompatActivity {
             }
         });
 
+
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginpage.this,RegisterPage.class));
+            }
+        });
 //        Changepass.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

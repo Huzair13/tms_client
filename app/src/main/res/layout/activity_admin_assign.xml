@@ -98,7 +98,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/admin_dash_history"
             android:layout_width="150dp"
-            android:layout_height="70dp"
+            android:layout_height="71dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="250dp"
             android:layout_marginEnd="15dp"

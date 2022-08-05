@@ -216,17 +216,39 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-       <meow.bottomnavigation.MeowBottomNavigation
-           android:id="@+id/bottomnavi"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_gravity="bottom"
-           android:background="@color/Red"
 
 
-           >
+<!--    <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
+<!--        android:id="@+id/bottomnavi"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:mbn_circleColor="@color/white"-->
+<!--        app:mbn_selectedIconColor="@color/Red"-->
+<!--        app:mbn_countBackgroundColor="#ff6f00"-->
+<!--        app:mbn_defaultIconColor="@color/white"-->
+<!--        app:mbn_backgroundBottomColor="@color/Red"-->
+<!--        app:mbn_countTextColor="@color/white"-->
+<!--        android:layout_marginTop="50dp"-->
 
-       </meow.bottomnavigation.MeowBottomNavigation>
+<!--        >-->
+
+<!--    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>-->
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_marginTop="50dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomnavi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/bottomnavi" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

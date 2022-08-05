@@ -25,7 +25,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
 
 
         <TextView
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="SIGN UP TO MMS"
             android:textSize="25dp"
-            android:layout_marginLeft="15dp">
+            android:layout_gravity="center">
 
         </TextView>
         <TextView
@@ -42,7 +43,8 @@
             android:layout_height="wrap_content"
             android:text="Already a member ? Login"
             android:textSize="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center">
 
         </TextView>
     </LinearLayout>
@@ -51,8 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="17dp">
 
 
 
@@ -103,16 +104,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="4pt"
-        android:layout_marginLeft="3pt"
-        android:text="Create an account"/>
+        android:layout_marginLeft="5pt"
+        android:text="Create an account"
+        android:textColor="@color/grey"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:backgroundTint="@color/pistagreen"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/googlesign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="4pt"
-        android:layout_marginLeft="4pt"
+        android:layout_marginLeft="5pt"
         app:icon="@drawable/google"
+        android:textColor="@color/grey"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:backgroundTint="@color/pistagreen"
         android:text="sign up with google"/>
 
     </LinearLayout>

@@ -354,6 +354,10 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(new Intent(dashboard.this, report_page.class));
                 break;
 
+            case R.id.testing_menu:
+                startActivity(new Intent(dashboard.this,AdminDashboard.class));
+                break;
+
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")
                         .setMessage("Are you sure to Log out ?")

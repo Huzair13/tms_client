@@ -144,9 +144,10 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/roboto_regular"
-            android:text=" Registeration "
+            android:text=" Sign-up "
             android:textColor="@color/black"
-            android:textSize="15dp">
+            android:backgroundTint="@color/lightpistagreen"
+            android:textSize="20dp">
 
         </TextView>
 
@@ -158,7 +159,7 @@
             android:layout_below="@+id/loginbutton"
             android:gravity="end"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="19dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Forget Password ?"

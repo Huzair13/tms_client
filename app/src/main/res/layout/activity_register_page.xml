@@ -34,6 +34,8 @@
             android:layout_height="wrap_content"
             android:text="SIGN UP TO MMS"
             android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/greyblue"
             android:layout_gravity="center">
 
         </TextView>
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content"
             android:text="Already a member ? Login"
             android:textSize="15dp"
+            android:textColor="@color/grey"
             android:layout_marginTop="15dp"
             android:layout_gravity="center">
 

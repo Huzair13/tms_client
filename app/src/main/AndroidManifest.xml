@@ -34,6 +34,8 @@
         <activity
             android:name=".AdminDashboard"
             android:exported="false" />
+        <activity android:name=".Assign_position_admin"
+            android:exported="false"/>
         <activity
             android:name=".RegisterPage"
             android:exported="false" />

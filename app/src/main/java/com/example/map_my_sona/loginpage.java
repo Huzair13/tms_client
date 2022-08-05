@@ -36,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class loginpage extends AppCompatActivity {
 
-    private SharedPrefManager sharedPrefManager;
+    //private SharedPrefManager sharedPrefManager;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     private TextInputEditText LogEmail,username;
@@ -59,7 +59,7 @@ public class loginpage extends AppCompatActivity {
         //progressDialouge
         progressDialog=new ProgressDialog(this);
 
-        sharedPrefManager=new SharedPrefManager(getApplicationContext());
+        //sharedPrefManager=new SharedPrefManager(getApplicationContext());
 
         //LogEmail=findViewById(R.id.loginemailInput);
         username=findViewById(R.id.loginemailInput);

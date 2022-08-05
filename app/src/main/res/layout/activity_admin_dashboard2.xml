@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<RelativeLayout
     android:id="@+id/admin_Drawer_Layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,17 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".AdminDashboard"
     android:background="@drawable/greenbg03">
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view_admin_new"
-        app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/drawer_menu"
-        android:layout_gravity="start"
-        android:backgroundTint="@color/lightpistagreen"
-        >
-    </com.google.android.material.navigation.NavigationView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -90,7 +79,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -218,37 +207,52 @@
 
 
 
-<!--    <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
-<!--        android:id="@+id/bottomnavi"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:mbn_circleColor="@color/white"-->
-<!--        app:mbn_selectedIconColor="@color/Red"-->
-<!--        app:mbn_countBackgroundColor="#ff6f00"-->
-<!--        app:mbn_defaultIconColor="@color/white"-->
-<!--        app:mbn_backgroundBottomColor="@color/Red"-->
-<!--        app:mbn_countTextColor="@color/white"-->
-<!--        android:layout_marginTop="50dp"-->
+        <!--    <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
+        <!--        android:id="@+id/bottomnavi"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        app:mbn_circleColor="@color/white"-->
+        <!--        app:mbn_selectedIconColor="@color/Red"-->
+        <!--        app:mbn_countBackgroundColor="#ff6f00"-->
+        <!--        app:mbn_defaultIconColor="@color/white"-->
+        <!--        app:mbn_backgroundBottomColor="@color/Red"-->
+        <!--        app:mbn_countTextColor="@color/white"-->
+        <!--        android:layout_marginTop="50dp"-->
 
-<!--        >-->
+        <!--        >-->
 
-<!--    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>-->
+        <!--    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>-->
 
-        <LinearLayout
 
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/home_xyz"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:layout_marginTop="50dp">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomnavi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:menu="@menu/bottomnavi" />
-
-        </LinearLayout>
+            android:text="home"/>
 
     </LinearLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    <FrameLayout
+        android:layout_above="@id/bottom_nav_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_container"/>
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom_nav_dashboard"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_circleColor="@color/white"
+        app:mbn_backgroundBottomColor="@color/pisaGreen"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="@color/white"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="@color/pisaGreen"
+        app:mbn_shadowColor="#1f212121"
+        />
+
+
+
+</RelativeLayout>

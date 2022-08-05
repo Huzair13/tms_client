@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/greenbg01"
+    tools:context=".BottomFragments.ReportFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/reporttopAppBar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Report"
+            android:background="@color/greyblue"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            app:navigationIcon="@drawable/back_ic"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_rawRes="@raw/report_ani"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center"/>
+
+
+            <EditText
+                android:id="@+id/report_text1"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/borderbox"
+                android:hint="Enter your Report here"
+                android:padding="15dp"
+                android:textColorHint="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/report_submit_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Report"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/greyblue"
+                app:cornerRadius="15dp"
+                android:fontFamily="@font/roboto_regular"
+                />
+        </LinearLayout>
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:gravity="bottom"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            >-->
+
+        <!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
+        <!--                android:id="@+id/bottom_navigation"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                app:menu="@menu/bottomnavi"-->
+        <!--                android:background="@drawable/bottom_navi_corner"-->
+        <!--                app:itemTextColor="@color/white"-->
+        <!--                app:itemRippleColor="@color/white"-->
+        <!--                style="@style/Widget.Design.BottomNavigationView"/>-->
+        <!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+</FrameLayout>

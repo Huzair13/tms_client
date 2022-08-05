@@ -7,4 +7,5 @@
     <string name="username">trueline</string>
     <string name="password">solution</string>
     <string name="name">Demo</string>
+    <string name="hyperlink">Link fro Database to upload given below \n<a href="https://google.com">Click Here</a></string>
 </resources>

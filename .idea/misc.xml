@@ -8,9 +8,6 @@
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/pistagreenspinner.xml" value="0.175" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/style_spinner_1.xml" value="0.175" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_add_assets.xml" value="0.23229166666666667" />
-
-
-
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_assign.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard2.xml" value="0.23229166666666667" />
@@ -124,10 +121,12 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/manualbordershapedropdown.xml" value="0.214" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/style_spinner_1.xml" value="0.2215" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard2.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_login_page.xml" value="0.16" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminpendingcomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminregistercomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_assets.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_bulk_upload.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.25" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_carpenter.xml" value="0.23229166666666667" />

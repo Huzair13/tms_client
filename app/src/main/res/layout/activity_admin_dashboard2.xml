@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".AdminDashboard"
-
     android:background="@drawable/greenbg03">
 
     <com.google.android.material.navigation.NavigationView
@@ -216,5 +215,18 @@
             </TextView>
         </com.google.android.material.card.MaterialCardView>
 
+
+       <meow.bottomnavigation.MeowBottomNavigation
+           android:id="@+id/bottomnavi"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom"
+           android:background="@color/Red"
+
+
+           >
+
+       </meow.bottomnavigation.MeowBottomNavigation>
     </LinearLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>

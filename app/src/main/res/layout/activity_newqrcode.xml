@@ -608,4 +608,16 @@
 <!--            style="@style/Widget.Design.BottomNavigationView"/>-->
 <!--</LinearLayout>-->
 
+
+
+    <TextView
+        android:id="@+id/bulkupload"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="If you need to upload bulk product or assets click here"
+        android:textSize="15sp">
+
+    </TextView>
+
 </LinearLayout>

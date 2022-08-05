@@ -73,10 +73,10 @@ public class AdminDashboard extends AppCompatActivity {
             }
         });
 
-        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.adminicon));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.google));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.addp));
-        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.notification));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.adminicon));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.google));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.addp));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.notification));
 
 
     bottomNavigation.setOnClickListener(new View.OnClickListener() {

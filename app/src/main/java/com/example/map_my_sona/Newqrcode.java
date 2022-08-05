@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
@@ -33,6 +34,7 @@ public class Newqrcode extends AppCompatActivity {
     private Button AddNew ,addasset;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
+    private TextView bulkUpload;
 //    public MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
     @Override
@@ -61,6 +63,15 @@ public class Newqrcode extends AppCompatActivity {
         AddNew=(Button) findViewById(R.id.newqrupdate_btn);
         addasset=(Button) findViewById(R.id.addasset);
 
+        //
+        bulkUpload = findViewById(R.id.bulkupload);
+
+        bulkUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Newqrcode.this,bulkUpload.class));
+            }
+        });
 
         addasset.setOnClickListener(new View.OnClickListener() {
             @Override

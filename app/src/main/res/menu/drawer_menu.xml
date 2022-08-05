@@ -10,11 +10,11 @@
             android:icon="@drawable/addp"
             android:visible="false"
             android:title="Add New Product" />
-        <item
-            android:id="@+id/nav_NewAssets"
-            android:icon="@drawable/addp"
-            android:visible="false"
-            android:title="Add New Asset" />
+<!--        <item-->
+<!--            android:id="@+id/nav_NewAssets"-->
+<!--            android:icon="@drawable/addp"-->
+<!--            android:visible="false"-->
+<!--            android:title="Add New Asset" />-->
         <item
             android:id="@+id/testing_menu"
             android:icon="@drawable/ic_baseline_star_rate_24"

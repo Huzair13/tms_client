@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bulkUpload"
+    android:background="@drawable/greenbg01">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Follow the steps in the video to upload the bulk products or assets"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="100dp"
+            >
+
+        </TextView>
+
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="75dp"
+           >
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="350dp"
+                android:layout_height="450dp"
+                />
+
+        </FrameLayout>
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_main_link"
+            android:text="@string/hyperlink"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_margin="50dp"
+            android:layout_marginTop="30dp"
+            >
+
+        </TextView>
+
+
+
+    </LinearLayout>
+</LinearLayout>

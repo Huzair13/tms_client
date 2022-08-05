@@ -26,9 +26,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".bulkUpload"
-            android:exported="false" />
-        <activity
             android:name=".Admin_Update"
             android:exported="false" />
         <activity

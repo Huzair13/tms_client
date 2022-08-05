@@ -49,6 +49,7 @@ public class loginpage extends AppCompatActivity {
     public static String us_name;
 
     private CheckBox rememberme;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,8 +197,24 @@ public class loginpage extends AppCompatActivity {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
+                    refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+                    refDash.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String pos=snapshot.child("position").getValue(String.class);
+                            if(pos.equals("admin")){
+                                startActivity(new Intent(loginpage.this,AdminDashboard.class));
+                            }
+                            else{
+                                startActivity(new Intent(loginpage.this, dashboard.class));
+                            }
+                        }
 
-                    startActivity(new Intent(loginpage.this, dashboard.class));
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }else{
                     progressDialog.dismiss();
                     Toast.makeText(loginpage.this, "Login Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -205,6 +222,5 @@ public class loginpage extends AppCompatActivity {
             }
         });
     }
-
 
 }

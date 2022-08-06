@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/greenbg03"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BottomFragments.AdminDashboardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_user1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Admin Dashboard"
+                app:titleTextColor="@color/white"
+                android:background="@color/greyblue"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ssbg8"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="110dp"
+                android:layout_gravity="center"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                app:lottie_rawRes="@raw/adminani"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <!--       <TextView-->
+        <!--           android:id="@+id/scantext"-->
+        <!--           android:layout_width="match_parent"-->
+        <!--           android:layout_height="match_parent"-->
+        <!--           android:fontFamily="@font/roboto_regular"-->
+        <!--           android:gravity="center"-->
+        <!--           android:text="Scan Code"-->
+        <!--           android:textColor="@color/white"-->
+        <!--           android:textSize="20dp">-->
+
+        <!--       </TextView>-->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout_admin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_history1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver"
+            >
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/registrationicon"
+                android:scaleType="fitCenter"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="View History"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_assign1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/registerdetail"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="34dp"
+                android:src="@drawable/pendingicon"
+                android:scaleType="fitCenter"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Assign"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+            </TextView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/admin_dash_update1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/pending"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+
+            android:background="@color/teal_700"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/sliver">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="34dp"
+                android:src="@drawable/adminicon"
+                android:scaleType="fitCenter"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Update "
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/charcoal"
+                android:fontFamily="@font/quattrocentro_sans">
+
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+        <!--    <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
+        <!--        android:id="@+id/bottomnavi"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        app:mbn_circleColor="@color/white"-->
+        <!--        app:mbn_selectedIconColor="@color/Red"-->
+        <!--        app:mbn_countBackgroundColor="#ff6f00"-->
+        <!--        app:mbn_defaultIconColor="@color/white"-->
+        <!--        app:mbn_backgroundBottomColor="@color/Red"-->
+        <!--        app:mbn_countTextColor="@color/white"-->
+        <!--        android:layout_marginTop="50dp"-->
+
+        <!--        >-->
+
+        <!--    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>-->
+
+
+        <Button
+            android:id="@+id/home_xyz1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="home"/>
+
+    </LinearLayout>
+
+</FrameLayout>

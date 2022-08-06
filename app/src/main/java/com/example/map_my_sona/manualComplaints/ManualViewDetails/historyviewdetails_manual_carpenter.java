@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-import papaya.in.sendmail.SendMail;
+//import papaya.in.sendmail.SendMail;
 
 public class historyviewdetails_manual_carpenter extends AppCompatActivity {
 
@@ -258,14 +258,14 @@ public class historyviewdetails_manual_carpenter extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Object o) {
 
-                                                SendMail mail=new SendMail("mapmysona@gmail.com",
-                                                        "mms@2022",
-                                                        "ahamedhuzair13@gmail.com",
-                                                        "Complaint Reopened",
-                                                        "Complaint which is closed by you has been reopened by the person " +
-                                                                "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
-                                                );
-                                                mail.execute();
+//                                                SendMail mail=new SendMail("mapmysona@gmail.com",
+//                                                        "mms@2022",
+//                                                        "ahamedhuzair13@gmail.com",
+//                                                        "Complaint Reopened",
+//                                                        "Complaint which is closed by you has been reopened by the person " +
+//                                                                "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
+//                                                );
+//                                                mail.execute();
 
                                                 Toast.makeText(historyviewdetails_manual_carpenter.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
                                                 Intent intent=new Intent(historyviewdetails_manual_carpenter.this, Complaints_HistoryDetails_Carpenter_manual.class);

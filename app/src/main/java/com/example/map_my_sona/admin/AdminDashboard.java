@@ -43,6 +43,8 @@ public class AdminDashboard extends AppCompatActivity {
         //bottomNavigation.add(new MeowBottomNavigation.Model(ID_LOGOUT,R.drawable.logout));
 
 
+
+
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
@@ -66,6 +68,8 @@ public class AdminDashboard extends AppCompatActivity {
                 Toast.makeText(AdminDashboard.this, "You are Already here!!", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -91,6 +95,7 @@ public class AdminDashboard extends AppCompatActivity {
             }
         });
 
+        replace(new AdminDashboardFragment());
         bottomNavigation.show(ID_HOME,true);
 
 //        admin_dash_history.setOnClickListener(new View.OnClickListener() {

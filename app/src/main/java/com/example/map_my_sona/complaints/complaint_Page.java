@@ -49,6 +49,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import papaya.in.sendmail.SendMail;
 
@@ -66,6 +77,8 @@ public class complaint_Page extends AppCompatActivity {
     String rating_str;
     CheckBox vhigh ,high ,low;
 
+    private String Senderemail, ReceiverEmail,Sendpass , StringHost;
+
     String uref;
 
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
@@ -77,6 +90,8 @@ public class complaint_Page extends AppCompatActivity {
     String FeedBack_str;
     DatabaseReference dbRef;
 
+    DatabaseReference refemail;
+
     TextInputLayout complaint_content;
     AutoCompleteTextView complaint_content_text;
 
@@ -86,6 +101,11 @@ public class complaint_Page extends AppCompatActivity {
         setContentView(R.layout.activity_complaint_page);
 
         uref= FirebaseAuth.getInstance().getUid();
+
+        Senderemail="mapmysona@gmail.com";
+        Sendpass="mms@2022";
+
+        //StringHost="smtp.outlook.com";
 
         //
 //        complaint_content=findViewById(R.id.complaint_content);
@@ -240,60 +260,15 @@ public class complaint_Page extends AppCompatActivity {
                     Toast.makeText(complaint_Page.this, "Please select the Dept", Toast.LENGTH_SHORT).show();
                     complainted_by_dep.requestFocus();
                 }
+                else{
+                    getReciverEmail();
+                    submitComplaint();
+                }
 //                else if (vhigh.getText().toString().isEmpty()) {
 //                    vhigh.setError("Empty");
 //                    vhigh.requestFocus();
 //                }
-                else if(dep_of_pro_str.equals("Electricity")){
-
-                    SendMail mail=new SendMail("mapmysona@gmail.com",
-                            "mms@2022",
-                            "ahamedhuzair13@gmail.com",//panneerselvamm@sonatech.ac.in
-                            "Complaint in "+dep_of_pro_str+" Department",
-                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
-                                    "COMPLAINT: "+ complaint_txt
-                    );
-                    mail.execute();
-                    submitComplaint();
                 }
-                else if(dep_of_pro_str.equals("Plumber")){
-
-                    SendMail mail=new SendMail("mapmysona@gmail.com",
-                            "mms@2022",
-                            "adhiyaman@sonatech.ac.in",
-                            "Complaint in "+dep_of_pro_str+" Department",
-                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
-                                    "COMPLAINT: "+ complaint_txt
-                    );
-                    mail.execute();
-                    submitComplaint();
-
-                }
-                else if(dep_of_pro_str.equals("Network")){
-
-                    SendMail mail=new SendMail("mapmysona@gmail.com",
-                            "mms@2022",
-                            "sakthivel@sonatech.ac.in",
-                            "Complaint in "+dep_of_pro_str+" Department",
-                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
-                                    "COMPLAINT: "+ complaint_txt
-                    );
-                    mail.execute();
-                    submitComplaint();
-
-                }
-                else{
-                    SendMail mail=new SendMail("mapmysona@gmail.com",
-                            "mms@2022",
-                            "adhiyaman@sonatech.ac.in",
-                            "Complaint in "+dep_of_pro_str+" Department",
-                            "Complained by "+ complainted_by_name.getText().toString() +"\n" +
-                                    "COMPLAINT: "+ complaint_txt
-                    );
-                    mail.execute();
-                    submitComplaint();
-                }
-            }
 
         });
         //scanText.setText(s);
@@ -302,6 +277,73 @@ public class complaint_Page extends AppCompatActivity {
 //        Intent serviceIntent = new Intent(this, ExampleService.class);
 //        serviceIntent.putExtra("inputExtra", input);
 //        ContextCompat.startForegroundService(this, serviceIntent);
+    }
+
+    private void sendemail() {
+        SendMail mail=new SendMail(Senderemail,
+                "ywfcjyswheezxmde",
+                ReceiverEmail,//panneerselvamm@sonatech.ac.in
+                "Complaint in "+dep_of_pro_str+" Department",
+                "Complained by "+ complainted_by_name.getText().toString() +"\n" +
+                        "COMPLAINT: "+ complaint_txt
+        );
+        mail.execute();
+    }
+
+    private void getReciverEmail() {
+        refemail=FirebaseDatabase.getInstance().getReference("Emails");
+        if(dep_of_pro_str.equals("Electricity")){
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }else if(dep_of_pro_str.equals("Plumber")) {
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail = snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }else if(dep_of_pro_str.equals("Network")){
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        else{
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail=snapshot.child("other").child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+        }
     }
 
 
@@ -334,8 +376,8 @@ public class complaint_Page extends AppCompatActivity {
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
+                sendemail();
                 Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(complaint_Page.this, dashboard.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

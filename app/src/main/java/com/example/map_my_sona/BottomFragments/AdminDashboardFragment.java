@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.map_my_sona.Admin_Update;
+import com.example.map_my_sona.DetailsAssignAdmin;
 import com.example.map_my_sona.admin.Assign_position_admin;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Dep_wise_history;
@@ -86,7 +87,7 @@ public class AdminDashboardFragment extends Fragment {
         admin_dash_assign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Assign_position_admin.class));
+                startActivity(new Intent(getActivity(), DetailsAssignAdmin.class));
                 //Toast.makeText(AdminDashboard.this, us, Toast.LENGTH_SHORT).show();
             }
         });

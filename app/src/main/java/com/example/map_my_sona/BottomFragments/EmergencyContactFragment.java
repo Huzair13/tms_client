@@ -11,10 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.map_my_sona.AdminDashboard;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
-import com.example.map_my_sona.emergencyContact;
 import com.google.android.material.appbar.MaterialToolbar;
 
 /**

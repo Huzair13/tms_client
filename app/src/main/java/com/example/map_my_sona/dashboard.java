@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.assets.Assets;
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
@@ -327,7 +328,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
                                         //need to change
             case R.id.emergency_contact:
-                startActivity(new Intent(dashboard.this,AdminDashboard.class));
+                startActivity(new Intent(dashboard.this, AdminDashboard.class));
                 break;
 
             case R.id.bottom_emer:

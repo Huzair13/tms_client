@@ -13,11 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.map_my_sona.AdminDashboard;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.Report_Details;
 import com.example.map_my_sona.dashboard;
-import com.example.map_my_sona.report_page;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;

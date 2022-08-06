@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.admin;
 
 import static android.R.layout.simple_spinner_dropdown_item;
 
@@ -19,9 +19,9 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

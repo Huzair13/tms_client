@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".AdminDashboard"
+    tools:context=".admin.AdminDashboard"
     android:background="@drawable/greenbg03">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -73,8 +73,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-
 
     </LinearLayout>
 
@@ -240,18 +238,17 @@
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottom_nav_dashboard"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:mbn_circleColor="@color/white"
+        android:layout_alignParentBottom="true"
         app:mbn_backgroundBottomColor="@color/pisaGreen"
+        app:mbn_circleColor="@color/white"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_countTextColor="#ffffff"
         app:mbn_defaultIconColor="@color/white"
         app:mbn_rippleColor="#2f424242"
         app:mbn_selectedIconColor="@color/pisaGreen"
-        app:mbn_shadowColor="#1f212121"
-        />
+        app:mbn_shadowColor="#1f212121" />
 
 
 

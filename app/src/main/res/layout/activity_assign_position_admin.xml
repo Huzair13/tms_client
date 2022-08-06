@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/greenbg04"
     android:orientation="vertical"
-    tools:context=".Assign_position_admin">
+    tools:context=".admin.Assign_position_admin">
 
     <LinearLayout
         android:layout_width="match_parent"

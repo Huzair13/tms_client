@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsAssignAdmin">
+    tools:context=".DetailsAssignAdmin"
+    android:background="@drawable/greenbg01">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +13,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView

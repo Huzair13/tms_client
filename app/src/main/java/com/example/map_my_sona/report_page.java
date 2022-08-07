@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import papaya.in.sendmail.SendMail;
+
 //import papaya.in.sendmail.SendMail;
 
 public class report_page extends AppCompatActivity {
@@ -89,38 +91,8 @@ public class report_page extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 Toast.makeText(report_page.this, "Report Submitted Successfully", Toast.LENGTH_SHORT).show();
 
-//                SendMail mail1=new SendMail("mapmysona@gmail.com",
-//                        "mms@2022",
-//                        "ahamedhuzair13@gmail.com",
-//                        "A Report has been submitted",
-//                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
-//                );
-//                mail1.execute();
-//
-//                SendMail mail2=new SendMail("mapmysona@gmail.com",
-//                        "mms@2022",
-//                        "srisanjanaarunkumar@gmail.com",
-//                        "A Report has been submitted",
-//                        "A Report has been submitted by the user "+userEmail+". Please check report : "+report_str
-//                );
-//                mail2.execute();
-//
-//                SendMail mail3=new SendMail("mapmysona@gmail.com",
-//                        "mms@2022",
-//                        "bs.vigneshwaran@gmail.com",
-//                        "A Report has been submitted",
-//                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
-//                );
-//                mail3.execute();
-//
-//                SendMail mail4=new SendMail("mapmysona@gmail.com",
-//                        "mms@2022",
-//                        "shreedev2k3@gmail.com",
-//                        "A Report has been submitted",
-//                        "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
-//                );
-//                mail4.execute();
-
+                //sending email to developers
+                sendEmail();
                 Intent intent = new Intent(report_page.this, dashboard.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -132,5 +104,41 @@ public class report_page extends AppCompatActivity {
             }
         });
     }
+
+    private void sendEmail() {
+
+        SendMail mail1=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                "ahamedhuzair13@gmail.com",
+                "A Report has been submitted",
+                "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
+        );
+        mail1.execute();
+
+        SendMail mail2=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                "srisanjanaarunkumar@gmail.com",
+                "A Report has been submitted",
+                "A Report has been submitted by the user "+userEmail+". Please check report : "+report_str
+        );
+        mail2.execute();
+
+        SendMail mail3=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                "bs.vigneshwaran@gmail.com",
+                "A Report has been submitted",
+                "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
+        );
+        mail3.execute();
+
+        SendMail mail4=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                "shreedev2k3@gmail.com",
+                "A Report has been submitted",
+                "A Report has been submitted by the user "+userEmail+" . Please check report : "+report_str
+        );
+        mail4.execute();
+    }
+
 
 }

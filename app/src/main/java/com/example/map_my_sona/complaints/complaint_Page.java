@@ -328,6 +328,30 @@ public class complaint_Page extends AppCompatActivity {
 
                 }
             });
+        }else if(dep_of_pro_str.equals("Carpenter")){
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }else if(dep_of_pro_str.equals("Painting")){
+            refemail.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
         else{
             refemail.addValueEventListener(new ValueEventListener() {

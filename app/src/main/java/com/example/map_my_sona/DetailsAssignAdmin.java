@@ -9,10 +9,11 @@ import android.widget.TextView;
 
 import com.example.map_my_sona.admin.Assign_position_admin;
 import com.example.map_my_sona.admin.Complaint_email_assign;
+import com.example.map_my_sona.admin.Incharge_mobile_change;
 
 public class DetailsAssignAdmin extends AppCompatActivity {
 
-    private TextView com_email_assign,pos_assign;
+    private TextView com_email_assign,pos_assign,mob_change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class DetailsAssignAdmin extends AppCompatActivity {
 
         com_email_assign=findViewById(R.id.Complaint_email);
         pos_assign=findViewById(R.id.pos_assign);
+        mob_change=findViewById(R.id.mob_change);
 
         com_email_assign.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +35,13 @@ public class DetailsAssignAdmin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DetailsAssignAdmin.this, Assign_position_admin.class));
+            }
+        });
+
+        mob_change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailsAssignAdmin.this, Incharge_mobile_change.class));
             }
         });
 

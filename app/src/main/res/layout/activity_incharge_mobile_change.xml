@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.Complaint_email_assign">
+    tools:context=".admin.Incharge_mobile_change">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/changeemail_txt"
+            android:id="@+id/changemob_txt"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -20,13 +20,13 @@
             android:layout_marginEnd="15dp"
             android:fontFamily="@font/worksans"
             android:gravity="center"
-            android:text="want to Change email click below?"
+            android:text="want to Change Mobile Number?"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20dp" />
 
         <Spinner
-            android:id="@+id/dep_of_email_change"
+            android:id="@+id/dep_of_mob_change"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -42,14 +42,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/email_of_email_change"
+            android:id="@+id/new_mob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:hint="New Email" />
+            android:inputType="phone"
+            android:hint="New Mobile Number" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -58,7 +59,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/clicker_email"
+                android:id="@+id/clicker_mob"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -67,29 +68,29 @@
                 android:text="update" />
 
             <Button
-                android:id="@+id/clicker_email_old"
+                android:id="@+id/clicker_mob_old"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="see old \n Email Address" />
+                android:text="see old \n Mobile number" />
 
         </LinearLayout>
         <TextView
+            android:id="@+id/txtview_old_mob"
             android:visibility="gone"
-            android:id="@+id/txtview_old_email"
             android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Old Email"
+            android:text="Old Mobile Number"
             android:textColor="@color/black"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/elmessiri"/>
 
         <TableLayout
-            android:id="@+id/table_old_email"
+            android:id="@+id/table_old_mob"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_width="match_parent"
@@ -113,7 +114,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/email_old_display"
+                    android:id="@+id/mob_old_display"
                     android:background="@color/lightpurple"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

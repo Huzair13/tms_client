@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".admin.Incharge_mobile_change"
+            android:exported="false" />
+        <activity
             android:name=".admin.Complaint_email_assign"
             android:exported="false" />
         <activity

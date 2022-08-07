@@ -21,8 +21,6 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.DetailsAssignAdmin;
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.dashboard;
-import com.example.map_my_sona.update_database;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -33,35 +31,35 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class Complaint_email_assign extends AppCompatActivity {
+public class Incharge_mobile_change extends AppCompatActivity {
 
-    private Button clicker_email,clicker_email_old;
+    private Button clicker_mob,clicker_mob_old;
     private DatabaseReference reference;
-    private EditText email_new;
+    private EditText mob_new;
     private Spinner dep_Spinner;
     AlertDialog.Builder builder;
     private TableLayout table;
-    private TextView oldemail_txt;
+    private TextView oldmob_txt;
 
-    private TextView old_email_display;
+    private TextView old_mob_display;
     String dep_str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complaint_email_assign);
+        setContentView(R.layout.activity_incharge_mobile_change);
 
-        clicker_email=findViewById(R.id.clicker_email);
-        dep_Spinner=findViewById(R.id.dep_of_email_change);
-        email_new=findViewById(R.id.email_of_email_change);
-        clicker_email_old=findViewById(R.id.clicker_email_old);
-        old_email_display=findViewById(R.id.email_old_display);
-        table=findViewById(R.id.table_old_email);
-        oldemail_txt=findViewById(R.id.txtview_old_email);
+        clicker_mob=findViewById(R.id.clicker_mob);
+        dep_Spinner=findViewById(R.id.dep_of_mob_change);
+        mob_new=findViewById(R.id.new_mob);
+        clicker_mob_old=findViewById(R.id.clicker_mob_old);
+        old_mob_display=findViewById(R.id.mob_old_display);
+        table=findViewById(R.id.table_old_mob);
+        oldmob_txt=findViewById(R.id.txtview_old_mob);
 
         reference= FirebaseDatabase.getInstance().getReference().child("Emails");
 
-        clicker_email_old.setOnClickListener(new View.OnClickListener() {
+        clicker_mob_old.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkValididtyDisplay();
@@ -85,48 +83,20 @@ public class Complaint_email_assign extends AppCompatActivity {
             }
         });
 
-        clicker_email.setOnClickListener(new View.OnClickListener() {
+        clicker_mob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 checkValididty();
             }
         });
-    }
 
-    private void checkValididtyDisplay() {
-        if(dep_str.equals("Department")){
-            Toast.makeText(this, "Please select the department", Toast.LENGTH_SHORT).show();
-        }else{
-            showoldEmail();
-        }
-    }
-
-    private void showoldEmail() {
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                String old_email_str=snapshot.child(dep_str).child("email").getValue(String.class);
-                old_email_display.setText(old_email_str);
-
-                oldemail_txt.setVisibility(View.VISIBLE);
-                table.setVisibility(View.VISIBLE);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     private void checkValididty() {
         if(dep_str.equals("Department")){
             Toast.makeText(this, "Please select the department", Toast.LENGTH_SHORT).show();
-        }else if(email_new.getText().toString().isEmpty()){
-            Toast.makeText(this, "Please Enter the new email Address", Toast.LENGTH_SHORT).show();
+        }else if(mob_new.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please Enter the new Mobile Number", Toast.LENGTH_SHORT).show();
         }
         else{
             update();
@@ -134,10 +104,10 @@ public class Complaint_email_assign extends AppCompatActivity {
     }
 
     private void update() {
-        String email_new_Str=email_new.getText().toString();
+        String mob_new_str=mob_new.getText().toString();
 
         HashMap hp=new HashMap();
-        hp.put("email",email_new_Str);
+        hp.put("mobile",mob_new_str);
 
         builder.setTitle("Alert")
                 .setMessage("Are you sure to update the data ??")
@@ -149,15 +119,15 @@ public class Complaint_email_assign extends AppCompatActivity {
                         reference.child(dep_str).updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                             @Override
                             public void onSuccess(Object o) {
-                                Toast.makeText(Complaint_email_assign.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(Complaint_email_assign.this, DetailsAssignAdmin.class);
+                                Toast.makeText(Incharge_mobile_change.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(Incharge_mobile_change.this, DetailsAssignAdmin.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Complaint_email_assign.this, "Something Went Wrong!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Incharge_mobile_change.this, "Something Went Wrong!!", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -169,5 +139,33 @@ public class Complaint_email_assign extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    private void showoldMob() {
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                String old_email_str=snapshot.child(dep_str).child("mobile").getValue(Long.class).toString();
+                old_mob_display.setText(old_email_str);
+
+                oldmob_txt.setVisibility(View.VISIBLE);
+                table.setVisibility(View.VISIBLE);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void checkValididtyDisplay() {
+        if(dep_str.equals("Department")){
+            Toast.makeText(this, "Please select the department", Toast.LENGTH_SHORT).show();
+        }else{
+            showoldMob();
+        }
     }
 }

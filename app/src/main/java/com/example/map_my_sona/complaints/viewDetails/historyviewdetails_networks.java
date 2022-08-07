@@ -42,11 +42,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import papaya.in.sendmail.SendMail;
+
 //import papaya.in.sendmail.SendMail;
 
 public class historyviewdetails_networks extends AppCompatActivity {
 
     private DatabaseReference reference_complaints_history_fullView;
+
+    private DatabaseReference refemail;
+    private String ReceiverEmail;
 
     private TextView pro_id,com_status_his;
     private String pro_id_str;
@@ -359,6 +364,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                     if(uid_str.equals(uref_h)){
                         HashMap hp=new HashMap();
                         hp.put("status","Pending");
+                        hp.put("rating","0.0");
 
                         builder_networks.setTitle("Alert")
                                 .setMessage("Are you sure to open the complaint again ??")
@@ -367,19 +373,11 @@ public class historyviewdetails_networks extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
 
+                                        getReciveremailadd();
                                         reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
-
-//                                                SendMail mail=new SendMail("mapmysona@gmail.com",
-//                                                        "mms@2022",
-//                                                        "srisanjanaarunkumar@gmail.com",
-//                                                        "Complaint Reopened",
-//                                                        "Complaint which is closed by you has been reopened by the person " +
-//                                                                "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
-//                                                );
-//                                                mail.execute();
-
+                                                sendEmail();
                                                 Toast.makeText(historyviewdetails_networks.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
                                                 Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Electricity.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -419,6 +417,32 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //            }
 //        });
 
+    }
+
+    private void sendEmail() {
+        SendMail mail=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                ReceiverEmail,
+                "Complaint Reopened",
+                "Complaint which is closed by you has been reopened by the person " +
+                        "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
+        );
+        mail.execute();
+    }
+
+    private void getReciveremailadd() {
+        refemail=FirebaseDatabase.getInstance().getReference("Emails");
+        refemail.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReceiverEmail = snapshot.child("Network").child("email").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void sendMessage() {

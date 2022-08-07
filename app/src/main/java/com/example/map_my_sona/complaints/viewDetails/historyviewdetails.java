@@ -44,10 +44,12 @@ import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
-//import papaya.in.sendmail.SendMail;
+import papaya.in.sendmail.SendMail;
+
 
 public class historyviewdetails extends AppCompatActivity {
 
+    private DatabaseReference refemail;
     private DatabaseReference reference_complaints_history_fullView;
 
     private TextView pro_id,com_status_his;
@@ -67,6 +69,8 @@ public class historyviewdetails extends AppCompatActivity {
     TextView feedBack_txtView;
     String FeedBack_str;
     TextView feedBack_txtView_head;
+
+    String ReceiverEmail;
 
     private EditText other_feedback;
 
@@ -283,7 +287,6 @@ public class historyviewdetails extends AppCompatActivity {
                             String pos=snapshot.child("position").getValue(String.class);
                             if(snapshot.exists()){
                                 if(pos.equals("admin")){
-
                                     builder.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
@@ -386,19 +389,13 @@ public class historyviewdetails extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
 
+                                            //getting technicians email id
+                                            getReciveremailadd();
                                             reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                 @Override
                                                 public void onSuccess(Object o) {
-
-//                                                    SendMail mail=new SendMail("mapmysona@gmail.com",
-//                                                            "mms@2022",
-//                                                            "ahamedhuzair13@gmail.com",
-//                                                            "Complaint Reopened",
-//                                                            "Complaint which is closed by you has been reopened by the person " +
-//                                                                    "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
-//                                                    );
-//                                                    mail.execute();
-
+                                                    //Sending email to the technicians
+                                                    SendEmail();
                                                     Toast.makeText(historyviewdetails.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
                                                     Intent intent=new Intent(historyviewdetails.this, Dep_wise_history.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -431,6 +428,33 @@ public class historyviewdetails extends AppCompatActivity {
         });
 
     }
+
+    private void SendEmail() {
+        SendMail mail=new SendMail("mapmysona@gmail.com",
+                "ywfcjyswheezxmde",
+                ReceiverEmail,
+                "Complaint Reopened",
+                "Complaint which is closed by you has been reopened by the person " +
+                        "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
+        );
+        mail.execute();
+    }
+
+    private void getReciveremailadd() {
+        refemail=FirebaseDatabase.getInstance().getReference("Emails");
+        refemail.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReceiverEmail = snapshot.child("Electricity").child("email").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void sendMessage() {
         String sphone=staff_mob.getText().toString().trim();

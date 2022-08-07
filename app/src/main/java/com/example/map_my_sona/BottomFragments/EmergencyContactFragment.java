@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +15,11 @@ import android.widget.ImageView;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,11 +28,13 @@ import com.google.android.material.appbar.MaterialToolbar;
  */
 public class EmergencyContactFragment extends Fragment {
 
-    ImageView hodcall;
-    ImageView hod1call;
-    ImageView hod2call;
-    ImageView hod3call;
-    ImageView hod4call;
+    private ImageView hodcall;
+    private ImageView hod1call;
+    private ImageView hod2call;
+    private ImageView hod3call;
+    private ImageView hod4call;
+    private String mob;
+    DatabaseReference dbref;
     MaterialToolbar toolbar;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -83,12 +91,15 @@ public class EmergencyContactFragment extends Fragment {
         hod3call=view.findViewById(R.id.hod3call1);
         hod4call=view.findViewById(R.id.hod4call1);
 
+        dbref= FirebaseDatabase.getInstance().getReference().child("Emails");
+
         hodcall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getElectricUnchargeMob();
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 //pannerselvam sir
-                intent.setData(Uri.parse("tel:7418009997"));
+                intent.setData(Uri.parse("tel:"+mob));
                 startActivity(intent);
             }
         });
@@ -96,37 +107,44 @@ public class EmergencyContactFragment extends Fragment {
         hod1call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
+                getCarMobNumber();
+                Intent intent2 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:9894341589"));
-                startActivity(intent1);
+                intent2.setData(Uri.parse("tel:"+mob));
+                startActivity(intent2);
             }
         });
         hod2call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
+
+                getNetworkMob();
+                Intent intent3 = new Intent(Intent.ACTION_DIAL);
                 //sakthivel sir
-                intent1.setData(Uri.parse("tel:9442531522"));
-                startActivity(intent1);
+                intent3.setData(Uri.parse("tel:"+mob));
+                startActivity(intent3);
             }
         });
         hod3call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
+
+                getPlumbingMob();
+                Intent intent4 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:9894341589"));
-                startActivity(intent1);
+                intent4.setData(Uri.parse("tel:"+mob));
+                startActivity(intent4);
             }
         });
         hod4call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
+
+                getPaintingMob();
+                Intent intent5 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:9894341589"));
-                startActivity(intent1);
+                intent5.setData(Uri.parse("tel:"+mob));
+                startActivity(intent5);
             }
         });
 
@@ -140,5 +158,75 @@ public class EmergencyContactFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void getPaintingMob() {
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob=snapshot.child("Painting").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getPlumbingMob() {
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob=snapshot.child("Plumber").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getNetworkMob() {
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob=snapshot.child("Network").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getCarMobNumber() {
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob=snapshot.child("Carpenter").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getElectricUnchargeMob() {
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob=snapshot.child("Electricity").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

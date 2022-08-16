@@ -110,8 +110,11 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable-v24/qrcode_white.xml" value="0.1075" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/background01.xml" value="0.2175" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/background1.xml" value="0.2484375" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/borderbox_white.xml" value="0.212" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/bottom_navi_corner.xml" value="0.212" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/curve_bg.xml" value="0.2484375" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/greenshade.xml" value="0.2385" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/incharegbg.xml" value="0.212" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/manualbordershape.xml" value="0.214" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/manualbordershapedropdown.xml" value="0.214" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/drawable/style_spinner_1.xml" value="0.2215" />
@@ -119,6 +122,7 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_dashboard2.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_login_page.xml" value="0.16" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_admin_update.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminpendingcomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_adminregistercomplaint.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_asset_history.xml" value="0.25" />
@@ -133,6 +137,7 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_asset_tv_recycle.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_assets.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_assign_position_admin.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_bulk_upload.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_email_assign.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.25" />
@@ -190,6 +195,8 @@
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownlocation.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownobject.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownpriority.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_admin_dashboard.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_emergency_contact.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/history_table.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/historylayout.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Vicky/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/manual_details.xml" value="0.23229166666666667" />

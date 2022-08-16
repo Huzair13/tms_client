@@ -7,6 +7,8 @@
     tools:context=".DetailsAssignAdmin"
     android:background="@drawable/greenbg01">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,18 +16,20 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/Complaint_email"
             android:layout_width="match_parent"
             android:layout_height="61dp"
             android:gravity="center"
-            android:text="Incharge emails"
+            android:text="Incharge Emails"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
-
+            android:textSize="22dp"
+            android:background="@drawable/bg01"
+            />
         <TextView
             android:layout_marginTop="15dp"
             android:id="@+id/mob_change"
@@ -35,7 +39,8 @@
             android:text="Incharge Mobile Numbers"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp"
+            android:background="@drawable/bg01" />
 
         <TextView
             android:layout_marginTop="15dp"
@@ -43,10 +48,11 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:gravity="center"
-            android:text="Assign position"
+            android:text="Assign Position"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp"
+            android:background="@drawable/bg01" />
 
 
     </LinearLayout>

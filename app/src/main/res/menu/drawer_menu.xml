@@ -15,10 +15,10 @@
 <!--            android:icon="@drawable/addp"-->
 <!--            android:visible="false"-->
 <!--            android:title="Add New Asset" />-->
-        <item
-            android:id="@+id/testing_menu"
-            android:icon="@drawable/ic_baseline_star_rate_24"
-            android:title="testing"/>
+<!--        <item-->
+<!--            android:id="@+id/testing_menu"-->
+<!--            android:icon="@drawable/ic_baseline_star_rate_24"-->
+<!--            android:title="testing"/>-->
         <item
             android:id="@+id/new_id"
             android:icon="@drawable/qrid"

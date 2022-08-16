@@ -76,7 +76,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -87,13 +87,12 @@
             android:layout_marginTop="250dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@color/teal_700"
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="25dp"
             app:cardCornerRadius="40dp"
-            app:cardBackgroundColor="@color/sliver"
+            app:cardBackgroundColor="@color/pisaGreen"
             >
 
             <ImageView
@@ -129,13 +128,13 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@color/teal_700"
+            android:background="@drawable/bg01"
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="25dp"
             app:cardCornerRadius="40dp"
-            app:cardBackgroundColor="@color/sliver">
+            app:cardBackgroundColor="@color/pisaGreen">
 
             <ImageView
                 android:layout_width="75dp"
@@ -169,13 +168,13 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
 
-            android:background="@color/teal_700"
+            android:background="@drawable/bg01"
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="25dp"
             app:cardCornerRadius="40dp"
-            app:cardBackgroundColor="@color/sliver">
+            app:cardBackgroundColor="@color/pisaGreen">
 
             <ImageView
                 android:layout_width="75dp"
@@ -220,11 +219,11 @@
         <!--    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>-->
 
 
-        <Button
-            android:id="@+id/home_xyz1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="home"/>
+<!--        <Button-->
+<!--            android:id="@+id/home_xyz1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="home"/>-->
 
     </LinearLayout>
 

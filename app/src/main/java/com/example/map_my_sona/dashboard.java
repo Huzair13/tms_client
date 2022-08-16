@@ -197,6 +197,16 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
 //                        nav_sol.setVisible(true);
 
+                        //
+                        MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
+                        nav_QR.setVisible(true);
+
+                        MenuItem upData=menu.findItem(R.id.update_data);
+                        upData.setVisible(true);
+
+                        MenuItem new_id=menu.findItem(R.id.new_id);
+                        new_id.setVisible(true);
+
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
 
@@ -224,9 +234,11 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         Menu menu=navigationView1.getMenu();
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
 //                        nav_pend.setVisible(true);
-//
+
 //                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
 //                        nav_sol.setVisible(true);
+
+
 
                         MenuItem nav_det=menu.findItem(R.id.nav_details);
                         nav_det.setVisible(true);
@@ -328,7 +340,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
                                         //need to change
             case R.id.emergency_contact:
-                startActivity(new Intent(dashboard.this, AdminDashboard.class));
+                startActivity(new Intent(dashboard.this, emergencyContact.class));
                 break;
 
             case R.id.bottom_emer:
@@ -355,9 +367,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(new Intent(dashboard.this, report_page.class));
                 break;
 
-            case R.id.testing_menu:
-                startActivity(new Intent(dashboard.this,AdminDashboard.class));
-                break;
+//            case R.id.testing_menu:
+//                startActivity(new Intent(dashboard.this,AdminDashboard.class));
+//                break;
 
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")

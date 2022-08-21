@@ -8,7 +8,6 @@
         <item
             android:id="@+id/nav_newQR"
             android:icon="@drawable/addp"
-            android:visible="false"
             android:title="Add New Product" />
 <!--        <item-->
 <!--            android:id="@+id/nav_NewAssets"-->
@@ -26,7 +25,6 @@
             android:title="Generate New QR Code " />
         <item
             android:id="@+id/update_data"
-            android:visible="false"
             android:icon="@drawable/ic_baseline_update_24"
             android:title="Update Data"/>
 
@@ -43,32 +41,32 @@
 
         <item
             android:id="@+id/manual_history"
-            android:visible="false"
             android:icon="@drawable/manualicon"
             android:title="Manual History" />
 
         <item
             android:id="@+id/nav_details"
-            android:visible="false"
             android:icon="@drawable/ic_baseline_collections_24"
             android:title="Scanned History" />
 
         <item
             android:id="@+id/nav_assets"
-            android:visible="false"
             android:icon="@drawable/ic_baseline_collections_24"
             android:title="Assets" />
+        <item
+            android:id="@+id/nav_assign_admin"
+            android:icon="@drawable/pendingicon"
+            android:title="Assign"/>
 
         <item
             android:id="@+id/emergency_contact"
-            android:visible="false"
             android:icon="@drawable/ephone"
             android:title="Emergency Contact" />
         <item
             android:id="@+id/nav_report"
-            android:visible="false"
             android:icon="@drawable/report"
             android:title="Report" />
+
         <item
             android:id="@+id/nav_ratings"
             android:icon="@drawable/ic_baseline_star_rate_24"
@@ -77,6 +75,7 @@
             android:id="@+id/nav_logOut"
             android:icon="@drawable/logout"
             android:title="Logout"/>
+
 
     </group>
 </menu>

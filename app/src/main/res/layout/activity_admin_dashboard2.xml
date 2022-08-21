@@ -100,12 +100,12 @@
             >
 
             <ImageView
-                android:layout_width="90dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="25dp"
+                android:layout_width="78dp"
+                android:layout_height="46dp"
                 android:layout_marginLeft="25dp"
-                android:src="@drawable/registrationicon"
-                android:scaleType="fitCenter"/>
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/scanicon" />
 
 
             <TextView
@@ -141,17 +141,17 @@
             app:cardBackgroundColor="@color/pisaGreen">
 
             <ImageView
-                android:layout_width="75dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"
+                android:layout_width="71dp"
+                android:layout_height="65dp"
                 android:layout_marginLeft="34dp"
-                android:src="@drawable/pendingicon"
-                android:scaleType="fitCenter"/>
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/registrationicon" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Assign"
+                android:text="History Details"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"
@@ -161,6 +161,8 @@
             </TextView>
 
         </com.google.android.material.card.MaterialCardView>
+
+
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/admin_dash_update"
@@ -192,7 +194,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Update "
+                android:text="Manual Entry"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"

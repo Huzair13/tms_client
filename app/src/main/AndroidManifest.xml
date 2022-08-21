@@ -32,7 +32,7 @@
             android:name=".admin.Complaint_email_assign"
             android:exported="false" />
         <activity
-            android:name=".DetailsAssignAdmin"
+            android:name=".admin.DetailsAssignAdmin"
             android:exported="false" />
         <activity
             android:name=".Admin_Update"

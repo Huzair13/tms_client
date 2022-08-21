@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_marginTop="100dp">
 
         <TextView
             android:id="@+id/changemob_txt"
@@ -59,11 +59,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/anilogin"
-            android:hint="Username "
+            android:hint="New Mobile Number"
             android:padding="15dp"
             app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
             app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
-            app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
+            app:startIconDrawable="@drawable/ephone">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/new_mob"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/lightpistagreen"
                 android:fontFamily="@font/roboto_regular"
-                android:inputType="text" />
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +131,7 @@
                     android:layout_weight="1"
                     android:background="@color/pisaGreen"
                     android:gravity="center"
-                    android:text="Department"
+                    android:text="Current Mobile Number"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />

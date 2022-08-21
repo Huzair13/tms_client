@@ -80,7 +80,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/admin_dash_history1"
+            android:id="@+id/user_scan_qr"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginStart="15dp"
@@ -96,18 +96,18 @@
             >
 
             <ImageView
-                android:layout_width="90dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="25dp"
+                android:layout_width="72dp"
+                android:layout_height="56dp"
                 android:layout_marginLeft="25dp"
-                android:src="@drawable/registrationicon"
-                android:scaleType="fitCenter"/>
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/scanicon" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="View History"
+                android:text="Scan QR"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="40dp"
@@ -119,7 +119,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/admin_dash_assign1"
+            android:id="@+id/user_history"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@+id/registerdetail"
@@ -140,26 +140,26 @@
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginLeft="34dp"
-                android:src="@drawable/pendingicon"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/historyicon"
                 android:scaleType="fitCenter"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Assign"
-                android:textStyle="bold"
-                android:textSize="20dp"
+                android:fontFamily="@font/quattrocentro_sans"
                 android:gravity="center"
+                android:text="Complaint History"
                 android:textColor="@color/charcoal"
-                android:fontFamily="@font/quattrocentro_sans">
+                android:textSize="20dp"
+                android:textStyle="bold">
 
             </TextView>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/admin_dash_update1"
+            android:id="@+id/user_manual_com"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@+id/pending"
@@ -180,7 +180,7 @@
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginLeft="34dp"
+                android:layout_marginLeft="25dp"
                 android:src="@drawable/adminicon"
                 android:scaleType="fitCenter"/>
 
@@ -188,13 +188,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Update "
+                android:text="Manual Complaints"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"
                 android:textColor="@color/charcoal"
                 android:fontFamily="@font/quattrocentro_sans">
-
 
             </TextView>
         </com.google.android.material.card.MaterialCardView>

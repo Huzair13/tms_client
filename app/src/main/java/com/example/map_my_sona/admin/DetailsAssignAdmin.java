@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.map_my_sona.admin.Assign_position_admin;
-import com.example.map_my_sona.admin.Complaint_email_assign;
-import com.example.map_my_sona.admin.Incharge_mobile_change;
+import com.example.map_my_sona.R;
 
 public class DetailsAssignAdmin extends AppCompatActivity {
 

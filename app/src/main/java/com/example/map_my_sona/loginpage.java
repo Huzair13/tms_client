@@ -194,10 +194,10 @@ public class loginpage extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String pos=snapshot.child("position").getValue(String.class);
                             if(pos.equals("admin")){
-                                startActivity(new Intent(loginpage.this, AdminDashboard.class));
+                                startActivity(new Intent(loginpage.this, dashboard.class));
                             }
                             else{
-                                startActivity(new Intent(loginpage.this, dashboard.class));
+                                startActivity(new Intent(loginpage.this, AdminDashboard.class));
                             }
                         }
 

@@ -10,10 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.map_my_sona.Admin_Update;
-import com.example.map_my_sona.DetailsAssignAdmin;
-import com.example.map_my_sona.admin.Assign_position_admin;
+import com.example.map_my_sona.ScannerPage;
+import com.example.map_my_sona.admin.DetailsAssignAdmin;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.material.card.MaterialCardView;
 
 /**
@@ -23,9 +24,9 @@ import com.google.android.material.card.MaterialCardView;
  */
 public class AdminDashboardFragment extends Fragment {
 
-    private MaterialCardView admin_dash_assign;
-    private  MaterialCardView admin_dash_update;
-    private MaterialCardView admin_dash_history;
+    private MaterialCardView user_scan_qr_dash;
+    private  MaterialCardView user_history_Dash;
+    private MaterialCardView user_manual_dash;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,29 +74,29 @@ public class AdminDashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_admin_dashboard, container, false);
 
-        admin_dash_assign=view.findViewById(R.id.admin_dash_assign1);
-        admin_dash_update = view.findViewById(R.id.admin_dash_update1);
-        admin_dash_history = view.findViewById(R.id.admin_dash_history1);
+        user_scan_qr_dash =view.findViewById(R.id.user_scan_qr);
+        user_history_Dash = view.findViewById(R.id.user_history);
+        user_manual_dash = view.findViewById(R.id.user_manual_com);
 
-        admin_dash_history.setOnClickListener(new View.OnClickListener() {
+        user_manual_dash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Dep_wise_history.class));
+                startActivity(new Intent(getActivity(), ManualComplaint_page.class));
             }
         });
 
-        admin_dash_assign.setOnClickListener(new View.OnClickListener() {
+        user_scan_qr_dash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), DetailsAssignAdmin.class));
+                startActivity(new Intent(getActivity(), ScannerPage.class));
                 //Toast.makeText(AdminDashboard.this, us, Toast.LENGTH_SHORT).show();
             }
         });
 
-        admin_dash_update.setOnClickListener(new View.OnClickListener() {
+        user_history_Dash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Admin_Update.class));
+                startActivity(new Intent(getActivity(), Dep_wise_history.class));
             }
         });
 

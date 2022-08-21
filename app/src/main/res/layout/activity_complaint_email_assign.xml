@@ -8,10 +8,10 @@
     android:background="@drawable/greenbg01">
 
     <LinearLayout
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center"
         >
 
         <TextView
@@ -55,15 +55,15 @@
 <!--            android:hint="New Email" />-->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginemail"
+            android:id="@+id/loginemail1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/anilogin"
-            android:hint="Username "
+            android:hint="New email"
             android:padding="15dp"
             app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
             app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
-            app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
+            app:startIconDrawable="@drawable/email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_of_email_change"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/lightpistagreen"
                 android:fontFamily="@font/roboto_regular"
-                android:inputType="text" />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +131,7 @@
                     android:layout_weight="1"
                     android:background="@color/pisaGreen"
                     android:gravity="center"
-                    android:text="Department"
+                    android:text="Current Email"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />

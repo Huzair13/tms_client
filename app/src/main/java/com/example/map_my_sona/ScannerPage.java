@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ScannerPage extends AppCompatActivity {
 
@@ -20,6 +23,7 @@ public class ScannerPage extends AppCompatActivity {
     Button num_enter_man;
     TextView manualltext;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
 //    private TextView manual;
 
@@ -32,6 +36,8 @@ public class ScannerPage extends AppCompatActivity {
         scanBtn=findViewById(R.id.Scanner);
 //        scantxt=(TextView) findViewById(R.id.scantxt);
         manualltext=findViewById(R.id.entermanuallytext);
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         num_enter_man=findViewById(R.id.num_enter_man);
 
@@ -63,6 +69,7 @@ public class ScannerPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+
                 startActivity(new Intent(ScannerPage.this, dashboard.class));
             }
         });

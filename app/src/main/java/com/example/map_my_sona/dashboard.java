@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.map_my_sona.admin.AdminDashboard;
+import com.example.map_my_sona.admin.DetailsAssignAdmin;
 import com.example.map_my_sona.assets.Assets;
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
@@ -337,6 +337,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //                break;
             case R.id.update_data:
                 startActivity(new Intent(dashboard.this,update_database.class));
+                break;
+            case R.id.nav_assign_admin:
+                startActivity(new Intent(dashboard.this, DetailsAssignAdmin.class));
                 break;
                                         //need to change
             case R.id.emergency_contact:

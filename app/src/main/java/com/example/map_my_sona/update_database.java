@@ -149,7 +149,7 @@ public class update_database extends AppCompatActivity {
 
     private void update_database_ad() {
 
-        String sn_str2=sn.getText().toString();
+        int sn_str2=Integer.valueOf(String.valueOf(sn.getText()));
         String make_str2=make.getText().toString();
         String model_str2=model.getText().toString();
         String procurement_str2=procurement.getText().toString();

@@ -186,7 +186,17 @@ public class loginpage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    progressDialog.dismiss();
+                    try {
+                        if ((progressDialog != null) && progressDialog.isShowing()) {
+                           progressDialog.dismiss();
+                        }
+                    } catch (final IllegalArgumentException e) {
+                        // Handle or log or ignore
+                    } catch (final Exception e) {
+                        // Handle or log or ignore
+                    } finally {
+                        progressDialog = null;
+                    }
                     Toast.makeText(loginpage.this, "User Logged in successfully", Toast.LENGTH_SHORT).show();
                     refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
                     refDash.addValueEventListener(new ValueEventListener() {

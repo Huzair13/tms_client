@@ -82,7 +82,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signupemail"
+        android:id="@+id/signupusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/anilogin"
@@ -93,7 +93,7 @@
         app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signupemaillInput"
+            android:id="@+id/signupusernamelInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
@@ -102,6 +102,28 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/anilogin"
+            android:hint="Email"
+            android:padding="15dp"
+            app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+            app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+            app:startIconDrawable="@drawable/email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupemaillInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="text"
+                android:backgroundTint="@color/lightpistagreen"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/signuppass"
         android:layout_width="match_parent"
@@ -113,7 +135,7 @@
 
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
-        app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
+        app:startIconDrawable="@drawable/password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signuppassInput"
@@ -125,8 +147,31 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signuppassConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/anilogin"
+            android:hint="Password "
+            android:padding="15dp"
+            app:passwordToggleEnabled="true"
+
+            app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
+            app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
+            app:startIconDrawable="@drawable/password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signuppassInputConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/lightpistagreen"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signUp"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="4pt"

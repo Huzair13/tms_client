@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -137,7 +138,7 @@ public class Assign_position_admin extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Object o) {
                                         Toast.makeText(Assign_position_admin.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                                        Intent intent=new Intent(Assign_position_admin.this, AdminDashboard.class);
+                                        Intent intent=new Intent(Assign_position_admin.this, dashboard.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(intent);
                                     }

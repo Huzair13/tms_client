@@ -1,5 +1,6 @@
 package com.example.map_my_sona;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,12 +10,15 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ScannerPage extends AppCompatActivity {
 
@@ -68,9 +72,23 @@ public class ScannerPage extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(ScannerPage.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(ScannerPage.this, AdminDashboard.class));
+                        }
+                    }
 
-                startActivity(new Intent(ScannerPage.this, dashboard.class));
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

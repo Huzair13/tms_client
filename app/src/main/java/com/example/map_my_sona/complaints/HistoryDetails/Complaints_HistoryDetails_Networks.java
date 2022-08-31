@@ -16,11 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +43,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
     AutoCompleteTextView hisflitertext_networks;
     Spinner spin_networks;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,8 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
         recyclerView_complaints_history_networks.setLayoutManager(linearLayoutManager);
 
         //recyclerView_complaints_history_networks.setLayoutManager(new LinearLayoutManager(this));
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         arrayList_complaints_history_networks=new ArrayList<>();
         adapter_complaint_history_networks = new complaints_history_Adapter(arrayList_complaints_history_networks,this);
@@ -84,7 +89,23 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Complaints_HistoryDetails_Networks.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Complaints_HistoryDetails_Networks.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(Complaints_HistoryDetails_Networks.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

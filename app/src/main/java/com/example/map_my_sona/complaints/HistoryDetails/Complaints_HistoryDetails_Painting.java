@@ -18,6 +18,7 @@ import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +39,7 @@ public class Complaints_HistoryDetails_Painting extends AppCompatActivity {
     AutoCompleteTextView hisflitertext_painter;
     Spinner spin;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class Complaints_HistoryDetails_Painting extends AppCompatActivity {
         recyclerView_complaints_history_painter.setLayoutManager(linearLayoutManager);
 
         //recyclerView_complaints_history_painter.setLayoutManager(new LinearLayoutManager(this));
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         arrayList_complaints_history_painter=new ArrayList<>();
         adapter_complaint_history_painter = new complaints_history_Adapter(arrayList_complaints_history_painter,this);

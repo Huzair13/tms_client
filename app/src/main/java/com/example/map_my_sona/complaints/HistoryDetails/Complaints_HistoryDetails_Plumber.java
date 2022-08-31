@@ -13,11 +13,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +39,7 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
     AutoCompleteTextView hisflitertext_plumber;
     Spinner spin_plumber;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,9 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
 
         recyclerView_complaints_history_plumber.setLayoutManager(linearLayoutManager);
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
 
         //recyclerView_complaints_history_plumber.setLayoutManager(new LinearLayoutManager(this));
 
@@ -80,7 +86,23 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Complaints_HistoryDetails_Plumber.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Complaints_HistoryDetails_Plumber.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(Complaints_HistoryDetails_Plumber.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

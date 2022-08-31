@@ -21,7 +21,6 @@
             app:title="Report"
             android:background="@color/greyblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            app:navigationIcon="@drawable/back_ic"
             />
 
 

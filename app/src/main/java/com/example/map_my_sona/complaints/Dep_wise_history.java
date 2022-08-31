@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
@@ -22,6 +23,12 @@ import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Dep_wise_history extends AppCompatActivity {
 
@@ -33,6 +40,7 @@ public class Dep_wise_history extends AppCompatActivity {
     private  MaterialCardView plumber;
     private MaterialCardView painting;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,8 @@ public class Dep_wise_history extends AppCompatActivity {
         carpenter=findViewById(R.id.button_131);
         plumber=findViewById(R.id.plumber_history);
         painting=findViewById(R.id.painting_history);
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         networks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +96,23 @@ public class Dep_wise_history extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Dep_wise_history.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Dep_wise_history.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(Dep_wise_history.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

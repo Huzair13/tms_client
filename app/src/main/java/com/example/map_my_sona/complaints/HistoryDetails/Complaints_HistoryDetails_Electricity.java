@@ -17,11 +17,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +39,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     DatabaseReference reference_complaints_history;
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
+    private DatabaseReference refDash;
 
     //fliter
     TextInputLayout hisfliter;
@@ -98,6 +101,8 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
             arrayList_complaints_history=new ArrayList<>();
             adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);
             recyclerView_complaints_history.setAdapter(adapter_complaint_history);
+            refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
 
             reference_complaints_history.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -120,7 +125,23 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
                 @Override
                 public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, dashboard.class));
+                    refDash.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String pos=snapshot.child("position").getValue(String.class);
+                            if(pos.equals("admin")){
+                                startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, dashboard.class));
+                            }
+                            else{
+                                startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, AdminDashboard.class));
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
             });
     }

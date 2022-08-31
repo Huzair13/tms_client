@@ -84,5 +84,7 @@ public class manualentry extends AppCompatActivity {
         ArrayAdapter<String> priorityAdapter=new ArrayAdapter<>(manualentry.this,R.layout.dropdownpriority,priority);
         comprioritytext.setAdapter(priorityAdapter);
 
+
+
     }
 }

@@ -13,12 +13,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.report_page;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,11 +36,13 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
     complaints_history_Adapter adapter_complaint_history_carpenter;
     ArrayList<Complaint_details> arrayList_complaints_history_carpenter;
 
+
     //fliter
     TextInputLayout hisfliter_carpenter;
     AutoCompleteTextView hisflitertext_carpenter;
     Spinner spin_carpenter;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 //    TextView  TextView;
 
     @Override
@@ -56,6 +60,8 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
 
         recyclerView_complaints_history_carpenter.setLayoutManager(linearLayoutManager);
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
 
         //recyclerView_complaints_history_carpenter.setLayoutManager(new LinearLayoutManager(this));
         arrayList_complaints_history_carpenter=new ArrayList<>();
@@ -83,7 +89,23 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

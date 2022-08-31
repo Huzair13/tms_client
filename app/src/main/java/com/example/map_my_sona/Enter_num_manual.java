@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.complaint_Page;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,7 @@ public class Enter_num_manual extends AppCompatActivity {
     Button bt;
     DatabaseReference databaseReference;
     MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class Enter_num_manual extends AppCompatActivity {
         bt=findViewById(R.id.button);
         databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
         toolbar=findViewById(R.id.topAppBar);
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +74,23 @@ public class Enter_num_manual extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Enter_num_manual.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Enter_num_manual.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(Enter_num_manual.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

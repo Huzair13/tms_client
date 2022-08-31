@@ -126,11 +126,22 @@
         app:cornerRadius="15dp"
         app:icon="@drawable/login" />
 
+    <ImageView
+        android:id="@+id/gllogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginbutton"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_gl_background"
+        app:srcCompat="@drawable/google" />
+
     <LinearLayout
         android:id="@+id/linearlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginbutton"
+        android:layout_below="@+id/gllogin"
         android:orientation="horizontal">
 
         <TextView

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.map_my_sona.Enter_num_manual;
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.complaint_Page;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_carpenter;
 import com.example.map_my_sona.dashboard;
@@ -51,6 +52,7 @@ public class ManualComplaint_page extends AppCompatActivity {
     String uref;
     public  MaterialAlertDialogBuilder materialAlertDialogBuilder;
    MaterialToolbar toolbar;
+    private DatabaseReference refDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,9 @@ public class ManualComplaint_page extends AppCompatActivity {
         manualobject = (Spinner) findViewById(R.id.manual_object);
         manualcomdetails = (Spinner) findViewById(R.id.manual_com_details);
         manualcompriority = (Spinner) findViewById(R.id.manual_com_priority);
+
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
 
         uref= FirebaseAuth.getInstance().getUid();
 
@@ -225,7 +230,23 @@ public class ManualComplaint_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ManualComplaint_page.this, dashboard.class));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(ManualComplaint_page.this, dashboard.class));
+                        }
+                        else{
+                            startActivity(new Intent(ManualComplaint_page.this, AdminDashboard.class));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

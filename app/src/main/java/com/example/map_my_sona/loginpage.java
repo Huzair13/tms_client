@@ -1,6 +1,7 @@
 package com.example.map_my_sona;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -10,15 +11,24 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.admin.AdminDashboard;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,8 +49,16 @@ public class loginpage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public static String us_name;
 
+    private ImageView googlelogin;
+
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+
     private CheckBox rememberme;
     private DatabaseReference refDash;
+
+//    GoogleSignInClient googleSignInClient;
+//    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +78,43 @@ public class loginpage extends AppCompatActivity {
         ForgetPass=findViewById(R.id.forgetpassword);
         Register=findViewById(R.id.Register);
 
-//        rememberme=findViewById(R.id.rememberme);
-//        Changepass=findViewById(R.id.changepassword);
+        googlelogin=findViewById(R.id.gllogin);
+
+
+
+//        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(
+//                GoogleSignInOptions.DEFAULT_SIGN_IN
+//        ).requestIdToken("438431947620-ecpi41uk3dhhf4mv8g8q993k3vs49ltm.apps.googleusercontent.com")
+//                .requestEmail()
+//                .build();
+//
+//        // Initialize sign in client
+//        googleSignInClient= GoogleSignIn.getClient(loginpage.this
+//                ,googleSignInOptions);
+//
+//        googlelogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Initialize sign in intent
+//                Intent intent=googleSignInClient.getSignInIntent();
+//                // Start activity for result
+//                startActivityForResult(intent,100);
+//            }
+//        });
+//
+//        // Initialize firebase auth
+//        firebaseAuth=FirebaseAuth.getInstance();
+//        // Initialize firebase user
+//        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+//        // Check condition
+//        if(firebaseUser!=null)
+//        {
+//            // When user already sign in
+//            // redirect to profile activity
+//            startActivity(new Intent(loginpage.this,AdminDashboard.class)
+//                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//        }
+
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -69,13 +122,6 @@ public class loginpage extends AppCompatActivity {
 
             LoginUserCheck();
 
-//            SharedPreferences sharedPreferences =getSharedPreferences(loginpage.PREFS_NAME,0);
-//            SharedPreferences.Editor editor=sharedPreferences.edit();
-//            editor.putBoolean("hasLoggedIn",true);
-//            editor.commit();
-//
-//            startActivity(new Intent(loginpage.this,dashboard.class));
-//            finish();
 
         });
 
@@ -93,41 +139,81 @@ public class loginpage extends AppCompatActivity {
                 startActivity(new Intent(loginpage.this,RegisterPage.class));
             }
         });
-//        Changepass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(loginpage.this,changepassword.class));
-//            }
-//        });
-//        SharedPreferences preferences = getSharedPreferences("checked", MODE_PRIVATE);
-//        String checkbox =preferences.getString("remember","");
-//        if(checkbox.equals("true")){
-//            Intent intent = new Intent(loginpage.this,dashboard.class);
-//            startActivity(intent);
-//        }else if(checkbox.equals("false")){
-//            Toast.makeText(this,"Please Sign In",Toast.LENGTH_SHORT).show();
-//        }
-
-//        rememberme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-//                if(compoundButton.isChecked()){
-//                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
-//                    SharedPreferences.Editor editor =preferences.edit();
-//                    editor.putString("remember","true");
-//                    editor.apply();
-//                    Toast.makeText(loginpage.this,"Saved",Toast.LENGTH_SHORT).show();
-//                }
-//                else if(!compoundButton.isChecked()){
-//                    SharedPreferences preferences =getSharedPreferences("checkbox",MODE_PRIVATE);
-//                    SharedPreferences.Editor editor =preferences.edit();
-//                    editor.putString("remember","false");
-//                    editor.apply();
-//                    Toast.makeText(loginpage.this,"Not Saved",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
     }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        super.onActivityResult(requestCode, resultCode, data);
+//        // Check condition
+//        if(requestCode==100)
+//        {
+//            // When request code is equal to 100
+//            // Initialize task
+//            Task<GoogleSignInAccount> signInAccountTask=GoogleSignIn
+//                    .getSignedInAccountFromIntent(data);
+//
+//            // check condition
+//            if(signInAccountTask.isSuccessful())
+//            {
+//                // When google sign in successful
+//                // Initialize string
+//                String s="Google sign in successful";
+//                // Display Toast
+//                displayToast(s);
+//                // Initialize sign in account
+//                try {
+//                    // Initialize sign in account
+//                    GoogleSignInAccount googleSignInAccount=signInAccountTask
+//                            .getResult(ApiException.class);
+//                    // Check condition
+//                    if(googleSignInAccount!=null)
+//                    {
+//                        // When sign in account is not equal to null
+//                        // Initialize auth credential
+//                        AuthCredential authCredential= GoogleAuthProvider
+//                                .getCredential(googleSignInAccount.getIdToken()
+//                                        ,null);
+//                        // Check credential
+//                        firebaseAuth.signInWithCredential(authCredential)
+//                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                                        // Check condition
+//                                        if(task.isSuccessful())
+//                                        {
+//                                            // When task is successful
+//                                            // Redirect to profile activity
+//                                            startActivity(new Intent(loginpage.this
+//                                                    ,AdminDashboard.class)
+//                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//                                            // Display Toast
+//                                            displayToast("Firebase authentication successful");
+//                                        }
+//                                        else
+//                                        {
+//                                            // When task is unsuccessful
+//                                            // Display Toast
+//                                            displayToast("Authentication Failed :"+task.getException()
+//                                                    .getMessage());
+//                                        }
+//                                    }
+//                                });
+//
+//                    }
+//                }
+//                catch (ApiException e)
+//                {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
+//
+//    private void displayToast(String s) {
+//        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+//    }
 
     private void LoginUserCheck() {
 

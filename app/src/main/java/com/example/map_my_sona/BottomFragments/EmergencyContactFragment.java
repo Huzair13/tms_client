@@ -147,16 +147,6 @@ public class EmergencyContactFragment extends Fragment {
                 startActivity(intent5);
             }
         });
-
-        toolbar= view.findViewById(R.id.topAppBar1);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(),dashboard.class));
-            }
-        });
-
         return view;
     }
 

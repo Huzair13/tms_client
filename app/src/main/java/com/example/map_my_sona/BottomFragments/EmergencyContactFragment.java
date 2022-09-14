@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.map_my_sona.R;
-import com.example.map_my_sona.dashboard;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +32,6 @@ public class EmergencyContactFragment extends Fragment {
     private ImageView hod2call;
     private ImageView hod3call;
     private ImageView hod4call;
-    private String mob;
     DatabaseReference dbref;
     MaterialToolbar toolbar;
 
@@ -96,7 +94,8 @@ public class EmergencyContactFragment extends Fragment {
         hodcall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getElectricUnchargeMob();
+                String mob;
+                mob=getElectricUnchargeMob();
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 //pannerselvam sir
                 intent.setData(Uri.parse("tel:"+mob));
@@ -107,7 +106,8 @@ public class EmergencyContactFragment extends Fragment {
         hod1call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getCarMobNumber();
+                String mob;
+                mob=getCarMobNumber();
                 Intent intent2 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
                 intent2.setData(Uri.parse("tel:"+mob));
@@ -117,8 +117,8 @@ public class EmergencyContactFragment extends Fragment {
         hod2call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getNetworkMob();
+                String mob;
+                mob=getNetworkMob();
                 Intent intent3 = new Intent(Intent.ACTION_DIAL);
                 //sakthivel sir
                 intent3.setData(Uri.parse("tel:"+mob));
@@ -128,8 +128,8 @@ public class EmergencyContactFragment extends Fragment {
         hod3call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getPlumbingMob();
+                String mob;
+                mob=getPlumbingMob();
                 Intent intent4 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
                 intent4.setData(Uri.parse("tel:"+mob));
@@ -139,8 +139,8 @@ public class EmergencyContactFragment extends Fragment {
         hod4call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getPaintingMob();
+                String mob;
+                mob=getPaintingMob();
                 Intent intent5 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
                 intent5.setData(Uri.parse("tel:"+mob));
@@ -150,11 +150,12 @@ public class EmergencyContactFragment extends Fragment {
         return view;
     }
 
-    private void getPaintingMob() {
+    private String getPaintingMob() {
+        final String[] mob1 = new String[1];
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob=snapshot.child("Painting").child("mobile").getValue(Long.class).toString();
+                mob1[0] =snapshot.child("Painting").child("mobile").getValue(Long.class).toString();
             }
 
             @Override
@@ -162,13 +163,15 @@ public class EmergencyContactFragment extends Fragment {
 
             }
         });
+        return mob1[0];
     }
 
-    private void getPlumbingMob() {
+    private String getPlumbingMob() {
+        final String[] mob1 = new String[1];
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob=snapshot.child("Plumber").child("mobile").getValue(Long.class).toString();
+                mob1[0] =snapshot.child("Plumber").child("mobile").getValue(Long.class).toString();
             }
 
             @Override
@@ -176,13 +179,15 @@ public class EmergencyContactFragment extends Fragment {
 
             }
         });
+        return mob1[0];
     }
 
-    private void getNetworkMob() {
+    private String getNetworkMob() {
+        final String[] mob1 = new String[1];
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob=snapshot.child("Network").child("mobile").getValue(Long.class).toString();
+                mob1[0] =snapshot.child("Network").child("mobile").getValue(Long.class).toString();
             }
 
             @Override
@@ -190,13 +195,15 @@ public class EmergencyContactFragment extends Fragment {
 
             }
         });
+        return mob1[0];
     }
 
-    private void getCarMobNumber() {
+    private String  getCarMobNumber() {
+        final String[] mob1 = new String[1];
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob=snapshot.child("Carpenter").child("mobile").getValue(Long.class).toString();
+                mob1[0] =snapshot.child("Carpenter").child("mobile").getValue(Long.class).toString();
             }
 
             @Override
@@ -204,13 +211,15 @@ public class EmergencyContactFragment extends Fragment {
 
             }
         });
+        return mob1[0];
     }
 
-    private void getElectricUnchargeMob() {
+    private String getElectricUnchargeMob() {
+        final String[] mob1 = new String[1];
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob=snapshot.child("Electricity").child("mobile").getValue(Long.class).toString();
+                mob1[0] =snapshot.child("Electricity").child("mobile").getValue(Long.class).toString();
             }
 
             @Override
@@ -218,5 +227,6 @@ public class EmergencyContactFragment extends Fragment {
 
             }
         });
+        return mob1[0];
     }
 }

@@ -49,13 +49,15 @@ public class loginpage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public static String us_name;
 
+    private  GoogleSignInClient client;
+
     private ImageView googlelogin;
 
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
     private CheckBox rememberme;
-    private DatabaseReference refDash;
+    private DatabaseReference refDash,refD;
 
 //    GoogleSignInClient googleSignInClient;
 //    FirebaseAuth firebaseAuth;
@@ -78,7 +80,15 @@ public class loginpage extends AppCompatActivity {
         ForgetPass=findViewById(R.id.forgetpassword);
         Register=findViewById(R.id.Register);
 
-        googlelogin=findViewById(R.id.gllogin);
+        //googlelogin=findViewById(R.id.gllogin);
+
+
+//        GoogleSignInOptions options=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.default_web_client_id))
+//                .requestEmail()
+//                .build();
+//
+//        client = GoogleSignIn.getClient(this,options);
 
 
 
@@ -114,6 +124,16 @@ public class loginpage extends AppCompatActivity {
 //            startActivity(new Intent(loginpage.this,AdminDashboard.class)
 //                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 //        }
+
+
+//        googlelogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i=client.getSignInIntent();
+//                startActivityForResult(i,1234);
+//
+//            }
+//        });
 
 
         mAuth=FirebaseAuth.getInstance();
@@ -310,4 +330,62 @@ public class loginpage extends AppCompatActivity {
         });
     }
 
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==1234){
+//            Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                GoogleSignInAccount account=task.getResult(ApiException.class);
+//
+//                AuthCredential credential=GoogleAuthProvider.getCredential(account.getIdToken(),null);
+//                FirebaseAuth.getInstance().signInWithCredential(credential)
+//                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                if(task.isSuccessful()){
+//                                    Intent intent=new Intent(getApplicationContext(),dashboard.class);
+//                                    startActivity(intent);
+//                                }else{
+//                                    Toast.makeText(loginpage.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
+//            } catch (ApiException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null){
+            ProgressDialog progress = new ProgressDialog(this);
+            progress.setTitle("Loading");
+            progress.setMessage("Wait while loading...");
+            progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
+            progress.show();
+            refD=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+            refD.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String pos=snapshot.child("position").getValue(String.class);
+                    if(pos.equals("admin")){
+                        startActivity(new Intent(loginpage.this, dashboard.class));
+                    }
+                    else{
+                        startActivity(new Intent(loginpage.this, AdminDashboard.class));
+                    }
+                    progress.dismiss();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+    }
 }

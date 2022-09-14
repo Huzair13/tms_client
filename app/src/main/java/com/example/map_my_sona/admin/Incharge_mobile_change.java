@@ -103,7 +103,7 @@ public class Incharge_mobile_change extends AppCompatActivity {
     }
 
     private void update() {
-        String mob_new_str=mob_new.getText().toString();
+        Long mob_new_str=Long.parseLong(mob_new.getText().toString());
 
         HashMap hp=new HashMap();
         hp.put("mobile",mob_new_str);
@@ -145,8 +145,8 @@ public class Incharge_mobile_change extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                String old_email_str=snapshot.child(dep_str).child("mobile").getValue(Long.class).toString();
-                old_mob_display.setText(old_email_str);
+                String old_email_str=snapshot.child(dep_str).child("mobile").getValue(Long.class).toString() ;
+                old_mob_display.setText(old_email_str.toString());
 
                 oldmob_txt.setVisibility(View.VISIBLE);
                 table.setVisibility(View.VISIBLE);

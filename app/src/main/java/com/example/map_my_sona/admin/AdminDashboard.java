@@ -1,9 +1,12 @@
 package com.example.map_my_sona.admin;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -12,6 +15,9 @@ import com.example.map_my_sona.BottomFragments.AdminDashboardFragment;
 import com.example.map_my_sona.BottomFragments.EmergencyContactFragment;
 import com.example.map_my_sona.BottomFragments.ReportFragment;
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.loginpage;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDashboard extends AppCompatActivity {
 
@@ -22,7 +28,10 @@ public class AdminDashboard extends AppCompatActivity {
     private final int ID_HOME  =1;
     private final int ID_Emergency =2;
     private final int ID_REPORT =3;
-    //private final int ID_LOGOUT =4;
+    private final int ID_LOGOUT =4;
+
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +43,17 @@ public class AdminDashboard extends AppCompatActivity {
 //        admin_dash_update = findViewById(R.id.admin_dash_update);
 //        admin_dash_history = findViewById(R.id.admin_dash_history);
 
+        builder11=new AlertDialog.Builder(this);
+
+        mAuth=FirebaseAuth.getInstance();
+
 
         MeowBottomNavigation bottomNavigation=findViewById(R.id.bottom_nav_dashboard);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME,R.drawable.ic_baseline_home_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_Emergency,R.drawable.ephone));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_REPORT,R.drawable.report));
-        //bottomNavigation.add(new MeowBottomNavigation.Model(ID_LOGOUT,R.drawable.logout));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_LOGOUT,R.drawable.logout));
 
 
 
@@ -57,6 +70,28 @@ public class AdminDashboard extends AppCompatActivity {
                         break;
                     case ID_REPORT:
                         replace(new ReportFragment());
+                        break;
+                    case ID_LOGOUT:
+                        builder11.setTitle("Alert")
+                                .setMessage("Are you sure to Log out ?")
+                                .setCancelable(true)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        mAuth.signOut();
+                                        Intent intent=new Intent(AdminDashboard.this, loginpage.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.cancel();
+                                    }
+                                })
+                                .show();
                         break;
                 }
             }
@@ -85,9 +120,9 @@ public class AdminDashboard extends AppCompatActivity {
                     case ID_REPORT:
                         name="Repor";
                         break;
-//                    case ID_LOGOUT:
-//                        name="Logout";
-//                        break;
+                    case ID_LOGOUT:
+                        name="Logout";
+                        break;
                     default:
                         name="";
                 }

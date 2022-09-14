@@ -9,7 +9,6 @@
     android:orientation="vertical"
     android:background="@drawable/greenbg04">
 
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,383 +21,434 @@
             app:title="Scanned History"
             android:background="@color/greyblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
-           app:navigationIcon="@drawable/back_ic"
+            app:navigationIcon="@drawable/back_ic"
             />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-<!--    <HorizontalScrollView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        >-->
-
-<!--    <LinearLayout-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content"-->
-<!--        android:layout_margin="15dp"-->
-<!--    >-->
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button_111"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Networks"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp"-->
-<!--        >-->
-
-<!--    </com.google.android.material.button.MaterialButton>-->
-
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button2_112"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Electricity"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp">-->
-
-<!--    </com.google.android.material.button.MaterialButton>-->
-
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/button_131"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Carpenter"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginRight="5dp">-->
-
-<!--    </com.google.android.material.button.MaterialButton>-->
-
-
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/plumber_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Plumber"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp">-->
-
-<!--        </com.google.android.material.button.MaterialButton>-->
-
-
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/painting_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Painting"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp">-->
-
-<!--        </com.google.android.material.button.MaterialButton>-->
-
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/computer_history"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Computer"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_marginRight="5dp"-->
-<!--            >-->
-
-<!--        </com.google.android.material.button.MaterialButton>-->
-
-<!--    </LinearLayout>-->
-<!--</HorizontalScrollView>-->
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button_111"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-<!--        <ImageView-->
-<!--            android:layout_width="75dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:layout_marginLeft="34dp"-->
-<!--            android:src="@drawable/qrcode_white"-->
-<!--            android:scaleType="fitCenter"/>-->
+        android:layout_height="match_parent">
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/netbg2">
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Network Complaints"
-            android:textSize="22dp"
-            android:layout_marginLeft="75dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_regular" >
+            android:orientation="vertical">
 
-        </TextView>
-        </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+            <!--    <HorizontalScrollView-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        >-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button2_112"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-        <!--        <ImageView-->
-        <!--            android:layout_width="75dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginLeft="34dp"-->
-        <!--            android:src="@drawable/qrcode_white"-->
-        <!--            android:scaleType="fitCenter"/>-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/elebg01">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Electricity Complaints"
-            android:textSize="22dp"
-            android:gravity="center"
-            android:layout_marginLeft="110dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_regular" >
+            <!--    <LinearLayout-->
+            <!--    android:layout_width="wrap_content"-->
+            <!--    android:layout_height="wrap_content"-->
+            <!--        android:layout_margin="15dp"-->
+            <!--    >-->
 
-        </TextView>
-        </LinearLayout>
+            <!--    <com.google.android.material.button.MaterialButton-->
+            <!--        android:id="@+id/button_111"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Networks"-->
+            <!--        android:textSize="14dp"-->
+            <!--        android:layout_marginRight="5dp"-->
+            <!--        >-->
 
-    </com.google.android.material.card.MaterialCardView>
+            <!--    </com.google.android.material.button.MaterialButton>-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/button_131"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-        <!--        <ImageView-->
-        <!--            android:layout_width="75dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginLeft="34dp"-->
-        <!--            android:src="@drawable/qrcode_white"-->
-        <!--            android:scaleType="fitCenter"/>-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/carbg1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Carpenter Complaints"
-            android:textSize="22dp"
-            android:gravity="center"
-            android:layout_marginLeft="60dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_regular" >
 
-        </TextView>
-        </LinearLayout>
+            <!--    <com.google.android.material.button.MaterialButton-->
+            <!--        android:id="@+id/button2_112"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Electricity"-->
+            <!--        android:textSize="14dp"-->
+            <!--        android:layout_marginRight="5dp">-->
 
-    </com.google.android.material.card.MaterialCardView>
+            <!--    </com.google.android.material.button.MaterialButton>-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/plumber_history"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-        <!--        <ImageView-->
-        <!--            android:layout_width="75dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginLeft="34dp"-->
-        <!--            android:src="@drawable/qrcode_white"-->
-        <!--            android:scaleType="fitCenter"/>-->
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/plumbg1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Plumber Complaints"
-            android:textSize="22dp"
-            android:gravity="center"
-            android:layout_marginLeft="100dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_regular" >
 
-        </TextView>
-</LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+            <!--    <com.google.android.material.button.MaterialButton-->
+            <!--        android:id="@+id/button_131"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Carpenter"-->
+            <!--        android:textSize="14dp"-->
+            <!--        android:layout_marginRight="5dp">-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/painting_history"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-        <!--        <ImageView-->
-        <!--            android:layout_width="75dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginLeft="34dp"-->
-        <!--            android:src="@drawable/qrcode_white"-->
-        <!--            android:scaleType="fitCenter"/>-->
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/painimg1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Painting Complaints"
-            android:textSize="22dp"
-            android:gravity="center"
-            android:layout_marginLeft="70dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_regular" >
+            <!--    </com.google.android.material.button.MaterialButton>-->
 
-        </TextView>
-</LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/assets_history"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
-        <!--        <ImageView-->
-        <!--            android:layout_width="75dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginLeft="34dp"-->
-        <!--            android:src="@drawable/qrcode_white"-->
-        <!--            android:scaleType="fitCenter"/>-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/carbg06">
-            <TextView
+
+
+            <!--        <com.google.android.material.button.MaterialButton-->
+            <!--            android:id="@+id/plumber_history"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="Plumber"-->
+            <!--            android:textSize="14dp"-->
+            <!--            android:layout_marginRight="5dp">-->
+
+            <!--        </com.google.android.material.button.MaterialButton>-->
+
+
+
+            <!--        <com.google.android.material.button.MaterialButton-->
+            <!--            android:id="@+id/painting_history"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="Painting"-->
+            <!--            android:textSize="14dp"-->
+            <!--            android:layout_marginRight="5dp">-->
+
+            <!--        </com.google.android.material.button.MaterialButton>-->
+
+
+            <!--        <com.google.android.material.button.MaterialButton-->
+            <!--            android:id="@+id/computer_history"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="Computer"-->
+            <!--            android:textSize="14dp"-->
+            <!--            android:layout_marginRight="5dp"-->
+            <!--            >-->
+
+            <!--        </com.google.android.material.button.MaterialButton>-->
+
+            <!--    </LinearLayout>-->
+            <!--</HorizontalScrollView>-->
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/button_111"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Assets Complaints"
-                android:textSize="22dp"
-                android:gravity="center"
-                android:layout_marginLeft="100dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/roboto_regular" >
+                android:layout_height="75dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/netbg2">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Network Complaints"
+                        android:textSize="22dp"
+                        android:layout_marginLeft="75dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
 
-            </TextView>
+                    </TextView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/button2_112"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/elebg01">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Electricity Complaints"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="110dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/button_131"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/carbg1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Carpenter Complaints"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="60dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/plumber_history"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/plumbg1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Plumber Complaints"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="100dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/painting_history"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/painimg1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Painting Complaints"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="70dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/assets_history"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/carbg06">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Assets Complaints"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="100dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/others_history"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                >
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cardbg03">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Others"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="100dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_regular" >
+
+                    </TextView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    <com.google.android.material.card.MaterialCardView-->
+            <!--        android:id="@+id/computer_history"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="75dp"-->
+            <!--        android:layout_marginTop="25dp"-->
+            <!--        android:layout_marginStart="15dp"-->
+            <!--        android:layout_marginEnd="15dp"-->
+            <!--        android:checkable="true"-->
+            <!--        android:clickable="true"-->
+            <!--        android:focusable="true"-->
+            <!--        app:cardElevation="25dp"-->
+            <!--        app:cardCornerRadius="20dp"-->
+            <!--        app:cardBackgroundColor="@color/skyblue"-->
+            <!--        >-->
+            <!--        &lt;!&ndash;        <ImageView&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:layout_width="75dp"&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:layout_height="50dp"&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:layout_marginTop="25dp"&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:layout_marginLeft="34dp"&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:src="@drawable/qrcode_white"&ndash;&gt;-->
+            <!--        &lt;!&ndash;            android:scaleType="fitCenter"/>&ndash;&gt;-->
+
+            <!--        <TextView-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:text="Computer Complaints"-->
+            <!--            android:textSize="20dp"-->
+            <!--            android:gravity="center"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:fontFamily="@font/roboto_regular" >-->
+
+            <!--        </TextView>-->
+
+            <!--    </com.google.android.material.card.MaterialCardView>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:gravity="bottom"-->
+            <!--        >-->
+
+            <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+            <!--            android:id="@+id/bottom_navigation"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            app:menu="@menu/bottomnavi"-->
+            <!--            android:background="@drawable/bottom_navi_corner"-->
+            <!--            app:itemTextColor="@color/white"-->
+            <!--            app:itemRippleColor="@color/white"-->
+            <!--            style="@style/Widget.Design.BottomNavigationView"/>-->
+            <!--    </LinearLayout>-->
+
+
+
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/computer_history"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="75dp"-->
-<!--        android:layout_marginTop="25dp"-->
-<!--        android:layout_marginStart="15dp"-->
-<!--        android:layout_marginEnd="15dp"-->
-<!--        android:checkable="true"-->
-<!--        android:clickable="true"-->
-<!--        android:focusable="true"-->
-<!--        app:cardElevation="25dp"-->
-<!--        app:cardCornerRadius="20dp"-->
-<!--        app:cardBackgroundColor="@color/skyblue"-->
-<!--        >-->
-<!--        &lt;!&ndash;        <ImageView&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_width="75dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_height="50dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_marginTop="25dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_marginLeft="34dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:src="@drawable/qrcode_white"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:scaleType="fitCenter"/>&ndash;&gt;-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text="Computer Complaints"-->
-<!--            android:textSize="20dp"-->
-<!--            android:gravity="center"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:fontFamily="@font/roboto_regular" >-->
-
-<!--        </TextView>-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="bottom"-->
-<!--        >-->
-
-<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--            android:id="@+id/bottom_navigation"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:menu="@menu/bottomnavi"-->
-<!--            android:background="@drawable/bottom_navi_corner"-->
-<!--            app:itemTextColor="@color/white"-->
-<!--            app:itemRippleColor="@color/white"-->
-<!--            style="@style/Widget.Design.BottomNavigationView"/>-->
-<!--    </LinearLayout>-->
-
-
-
+    </ScrollView>
 
 </LinearLayout>

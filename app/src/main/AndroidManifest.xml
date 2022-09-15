@@ -10,11 +10,11 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:name=".App"
@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona" >
         <activity
-            android:name=".historyviewdetails_others"
+            android:name=".complaints.viewDetails.historyviewdetails_others"
             android:exported="false" />
         <activity
             android:name=".complaints.HistoryDetails.complaint_HistoryDetails_others"

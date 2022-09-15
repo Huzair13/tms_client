@@ -456,10 +456,12 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
         String sphone=staff_mob.getText().toString().trim();
         String sMessage="The complaint filled has been solved. \n check before closing the complaint \n If not, place it as pending";
 
-        if(!sphone.equals("") && !sMessage.equals("")){
+        try{
             SmsManager smsManager=SmsManager.getDefault();
-
             smsManager.sendTextMessage(sphone,null,sMessage,null,null);
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "Failed to send message", Toast.LENGTH_SHORT).show();
         }
     }
 

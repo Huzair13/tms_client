@@ -1,4 +1,4 @@
-package com.example.map_my_sona;
+package com.example.map_my_sona.complaints.viewDetails;
 
 import static android.R.layout.simple_spinner_dropdown_item;
 
@@ -24,9 +24,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -444,9 +444,12 @@ public class historyviewdetails_others extends AppCompatActivity {
         String sphone=staff_mob.getText().toString().trim();
         String sMessage="The complaint filled has been solved. \n check before closing the complaint \n If not, place it as pending";
 
-        if(!sphone.equals("") && !sMessage.equals("")){
+        try{
             SmsManager smsManager=SmsManager.getDefault();
             smsManager.sendTextMessage(sphone,null,sMessage,null,null);
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "Failed to send message", Toast.LENGTH_SHORT).show();
         }
     }
 

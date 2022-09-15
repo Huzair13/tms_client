@@ -6,7 +6,7 @@
     android:background="@drawable/tablepagebg"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".historyviewdetails_others">
+    tools:context=".complaints.viewDetails.historyviewdetails_others">
 
     <LinearLayout
         android:layout_width="match_parent"

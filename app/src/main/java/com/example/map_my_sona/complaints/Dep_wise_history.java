@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.admin.AdminDashboard;
+import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
 import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
@@ -39,6 +40,7 @@ public class Dep_wise_history extends AppCompatActivity {
     private MaterialCardView carpenter;
     private  MaterialCardView plumber;
     private MaterialCardView painting;
+    private MaterialCardView others;
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
 
@@ -52,6 +54,7 @@ public class Dep_wise_history extends AppCompatActivity {
         carpenter=findViewById(R.id.button_131);
         plumber=findViewById(R.id.plumber_history);
         painting=findViewById(R.id.painting_history);
+        others=findViewById(R.id.others_history);
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
@@ -62,7 +65,12 @@ public class Dep_wise_history extends AppCompatActivity {
 
             }
         });
-
+        others.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dep_wise_history.this, complaint_HistoryDetails_others.class));
+            }
+        });
         electricity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.map_my_sona.R;
@@ -18,7 +17,7 @@ import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_network
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_painting;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_plumber;
-import com.google.firebase.database.ChildEventListener;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_others;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -147,6 +146,11 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
             }
             else if(pro_dep.equals("Painting")){
                 Intent intent=new Intent(context, historyviewdetails_painting.class);
+                intent.putExtra("com_ID",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
+            else if(pro_dep.equals("Others")){
+                Intent intent=new Intent(context, historyviewdetails_others.class);
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);
             }

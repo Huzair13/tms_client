@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
-                android:layout_height="130dp"
+                android:layout_height="110dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginRight="145dp"
                 app:srcCompat="@drawable/ssbg8" />
@@ -31,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="5px"
+            >
 
 
             <TextView
@@ -69,6 +70,7 @@
                     android:textStyle="italic"
                     android:layout_marginLeft="10dp"
                     android:textSize="17dp"
+
                     android:textColor="@color/black"
 
                     android:layout_gravity="center">
@@ -112,7 +114,7 @@
                 android:id="@+id/signupemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/anilogin"
+                android:layout_below="@id/signupusername"
                 android:hint="Email"
                 android:padding="15dp"
                 app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
@@ -157,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/anilogin"
-                android:hint="Password "
+                android:hint="Re-enter Password "
                 android:padding="15dp"
                 app:passwordToggleEnabled="true"
 
@@ -177,28 +179,26 @@
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/signUpBtn"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4pt"
-                android:layout_marginLeft="5pt"
                 android:text="Create an account"
-                android:textColor="@color/grey"
-                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
                 android:textStyle="italic"
-                android:backgroundTint="@color/pistagreen"/>
+                android:backgroundTint="@color/greyblue"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/googlesignbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="4pt"
-                android:layout_marginLeft="5pt"
-                app:icon="@drawable/google"
-                android:textColor="@color/grey"
-                android:textAlignment="center"
-                android:textStyle="italic"
-                android:backgroundTint="@color/pistagreen"
-                android:text="sign up with google"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/googlesignbtn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="4pt"-->
+<!--                android:layout_marginLeft="5pt"-->
+<!--                app:icon="@drawable/google"-->
+<!--                android:textColor="@color/grey"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textStyle="italic"-->
+<!--                android:backgroundTint="@color/pistagreen"-->
+<!--                android:text="sign up with google"/>-->
 
         </LinearLayout>
     </LinearLayout>

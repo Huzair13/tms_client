@@ -21,7 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="History"
-                app:menu="@menu/historyfilter"
                 android:background="@color/greyblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"

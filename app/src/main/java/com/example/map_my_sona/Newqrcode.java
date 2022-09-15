@@ -73,12 +73,12 @@ public class Newqrcode extends AppCompatActivity {
             }
         });
 
-        addasset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Newqrcode.this,add_assets.class));
-            }
-        });
+//        addasset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Newqrcode.this,add_assets.class));
+//            }
+//        });
 
         AddNew.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".complaints.viewDetails.historyviewdetails_networks"
-    android:orientation="vertical"
-    android:background="@drawable/tablepagebg">
+    android:orientation="vertical">
+<!--    android:background="@drawable/tablepagebg">-->
 
     <LinearLayout
         android:layout_width="match_parent"

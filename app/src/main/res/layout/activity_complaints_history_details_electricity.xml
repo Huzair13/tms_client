@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".complaints.HistoryDetails.Complaints_HistoryDetails_Electricity"
-    android:orientation="vertical"
-    android:background="@drawable/greenbg01">
+    android:orientation="vertical">
+<!--    android:background="@drawable/greenbg01">-->
 
    <androidx.coordinatorlayout.widget.CoordinatorLayout
        android:layout_width="match_parent"
@@ -22,7 +22,7 @@
              android:layout_width="match_parent"
              android:layout_height="?attr/actionBarSize"
              app:title="History"
-             android:background="@color/greyblue"
+             android:background="@color/gradientblue"
              style="@style/Widget.MaterialComponents.Toolbar.Primary"
              app:navigationIcon="@drawable/back_ic"
              />
@@ -86,7 +86,7 @@
       <ImageView
           android:layout_width="150dp"
           android:layout_height="100dp"
-          android:src="@drawable/ssbg8"
+          android:src="@drawable/tmslogo"
           android:layout_marginTop="15dp"
           android:layout_marginRight="110dp"
           android:layout_gravity="center"/>
@@ -100,6 +100,20 @@
           android:layout_marginTop="15dp"
           android:layout_gravity="center"/>
 
+   </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/deptani"
+          android:layout_width="200dp"
+          android:layout_height="130dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="200dp"
+          app:lottie_autoPlay="true"
+          app:lottie_loop="true"
+          app:lottie_rawRes="@raw/deptani" />
    </LinearLayout>
 
 

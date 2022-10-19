@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".complaints.Dep_wise_history"
-    android:orientation="vertical"
-    android:background="@drawable/greenbg04">
+    android:orientation="vertical">
+<!--    android:background="@drawable/greenbg04">-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Scanned History"
-            android:background="@color/greyblue"
+            android:background="@color/gradientblue"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             app:navigationIcon="@drawable/back_ic"
             />
@@ -121,8 +121,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button_111"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="76dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -131,7 +131,7 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -141,17 +141,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/netbg2">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/netimg4">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Network Complaints"
                         android:textSize="22dp"
-                        android:layout_marginLeft="75dp"
+                        android:layout_marginRight="105dp"
                         android:gravity="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>
@@ -161,8 +161,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button2_112"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -171,8 +171,10 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
-                >
+                app:cardBackgroundColor="@color/zxing_transparent">
+
+
+
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
                 <!--            android:layout_height="50dp"-->
@@ -181,18 +183,20 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/elebg01">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/eleimg4">
+
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Electricity Complaints"
-                        android:textSize="22dp"
+                        android:layout_marginRight="105dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:gravity="center"
-                        android:layout_marginLeft="110dp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:text="Electricity Complaints"
+                        android:textColor="@color/white"
+                        android:textSize="22sp">
 
                     </TextView>
                 </LinearLayout>
@@ -201,8 +205,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button_131"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -211,7 +215,7 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -221,17 +225,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/carbg1">
+                    android:layout_width="375dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/carimg5">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Carpenter Complaints"
                         android:textSize="22dp"
                         android:gravity="center"
-                        android:layout_marginLeft="60dp"
-                        android:textColor="@color/black"
+                        android:layout_marginRight="105dp"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>
@@ -241,7 +245,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/plumber_history"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginStart="15dp"
@@ -251,7 +255,7 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -261,17 +265,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/plumbg1">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/plumimg6">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Plumber Complaints"
-                        android:textSize="22dp"
+                        android:textSize="22sp"
                         android:gravity="center"
-                        android:layout_marginLeft="100dp"
-                        android:textColor="@color/black"
+                        android:layout_marginRight="105dp"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>
@@ -280,8 +284,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/painting_history"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -290,7 +294,7 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -300,17 +304,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/painimg1">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/painimg4">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Painting Complaints"
                         android:textSize="22dp"
                         android:gravity="center"
-                        android:layout_marginLeft="70dp"
-                        android:textColor="@color/black"
+                        android:layout_marginRight="105dp"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>
@@ -350,8 +354,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/others_history"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -360,7 +364,7 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -370,17 +374,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cardbg03">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/otherimg4">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Others"
                         android:textSize="22dp"
                         android:gravity="center"
-                        android:layout_marginLeft="100dp"
-                        android:textColor="@color/black"
+                        android:layout_marginRight="100dp"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>

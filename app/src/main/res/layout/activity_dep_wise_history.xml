@@ -202,7 +202,6 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button_131"
                 android:layout_width="370dp"
@@ -225,16 +224,16 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="375dp"
+                    android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/carimg5">
+                    android:background="@drawable/carimg6">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Carpenter Complaints"
+                        android:text="Carpenting Complaints"
                         android:textSize="22dp"
-                        android:gravity="center"
                         android:layout_marginRight="105dp"
+                        android:gravity="center"
                         android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
@@ -242,6 +241,8 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
+
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/plumber_history"

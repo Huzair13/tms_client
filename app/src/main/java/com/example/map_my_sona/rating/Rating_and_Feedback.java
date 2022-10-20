@@ -2,26 +2,21 @@ package com.example.map_my_sona.rating;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
-import com.example.map_my_sona.emergencyContact;
-import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.example.map_my_sona.rating.rating_view.rating_electricity;
 import com.example.map_my_sona.rating.rating_view.rating_network;
 import com.example.map_my_sona.rating.rating_view.rating_carpenter;
 import com.example.map_my_sona.rating.rating_view.rating_painting;
 import com.example.map_my_sona.rating.rating_view.rating_plumbering;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

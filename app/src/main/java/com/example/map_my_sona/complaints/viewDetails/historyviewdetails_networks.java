@@ -172,7 +172,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 //FeedBack_str=complaint_details.getFeedBack();
 
                 status=complaint_details.getStatus();
-                uid_str=complaint_details.getUID();
+                //uid_str=complaint_details.getUID();
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);

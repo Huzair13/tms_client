@@ -408,7 +408,7 @@ public class complaint_Page extends AppCompatActivity {
                 complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
-                status,dep_of_pro_str,uref,location_str,rating_str,FeedBack_str);
+                status,dep_of_pro_str,location_str,rating_str,FeedBack_str);
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 

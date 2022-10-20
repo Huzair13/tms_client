@@ -156,7 +156,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                 mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
-                uid_str=complaint_details.getUID();
+                //uid_str=complaint_details.getUID();
                 location_str=complaint_details.getLocation();
 
                 //get_rating

@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter"
-    android:background="@drawable/tablepagebg">
+    tools:context=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter">
+<!--    android:background="@drawable/tablepagebg">-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -508,7 +508,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Close the Complaint"
             android:textColor="@color/white"
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             app:cornerRadius="15dp" />
     </LinearLayout>
 

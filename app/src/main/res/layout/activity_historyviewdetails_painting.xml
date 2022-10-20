@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".complaints.viewDetails.historyviewdetails_painting"
-    android:background="@drawable/tablepagebg">
+    tools:context=".complaints.viewDetails.historyviewdetails_painting">
+<!--    android:background="@drawable/tablepagebg">-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -580,7 +580,7 @@
             android:layout_gravity="center"
             >
 
-            <TextView
+            <EditText
                 android:id="@+id/com_txt_history_painting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -593,7 +593,7 @@
                 android:padding="15dp"
                 android:background="@drawable/borderbox">
 
-            </TextView>
+            </EditText>
 
             <TextView
                 android:id="@+id/his_elec_feedBack_head_txt_pnt"
@@ -625,18 +625,18 @@
 
             </TextView>
 
-            <Spinner
-                android:id="@+id/com_his_feedBack_spinner_pnt"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:inputType="none"
-                android:textColor="@color/black"
-                android:fontFamily="@font/mulish"
-                android:textSize="18dp"
-                android:spinnerMode="dropdown"
-                android:textStyle="bold"
-                android:background="@drawable/borderbox_white"/>
+<!--            <Spinner-->
+<!--                android:id="@+id/com_his_feedBack_spinner_pnt"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:inputType="none"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/mulish"-->
+<!--                android:textSize="18dp"-->
+<!--                android:spinnerMode="dropdown"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/borderbox_white"/>-->
 
             <EditText
                 android:id="@+id/other_feedback_painting"
@@ -658,13 +658,13 @@
                 android:textColor="@color/black"
                 android:visibility="gone"/>
 
-            <RatingBar
-                android:id="@+id/rating_pnt"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:rating="0"
-                />
+<!--            <RatingBar-->
+<!--                android:id="@+id/rating_pnt"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:rating="0"-->
+<!--                />-->
 
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
@@ -702,7 +702,7 @@
             android:text="Close the Complaint"
             android:textColor="@color/white"
 
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             app:cornerRadius="25dp" />
 
 

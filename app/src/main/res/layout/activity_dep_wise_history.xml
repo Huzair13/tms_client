@@ -143,7 +143,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/netimg4">
+                    android:background="@drawable/netcard1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -185,7 +185,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/eleimg4">
+                    android:background="@drawable/elecard1">
 
 
                     <TextView
@@ -226,7 +226,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/carimg6">
+                    android:background="@drawable/carcard2">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -268,7 +268,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/plumimg6">
+                    android:background="@drawable/plumcard2">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -307,7 +307,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/painimg4">
+                    android:background="@drawable/paincard2">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -418,7 +418,7 @@
                 <LinearLayout
                     android:layout_width="370dp"
                     android:layout_height="75dp"
-                    android:background="@drawable/otherimg4">
+                    android:background="@drawable/othercard1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

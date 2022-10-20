@@ -58,14 +58,14 @@ public class historyviewdetails_others extends AppCompatActivity {
     String uref_h;
     MaterialToolbar toolbar;
 
-    Spinner feedBack_box;
-    TextView feedBack_txtView;
-    String FeedBack_str;
-    TextView feedBack_txtView_head;
+//    Spinner feedBack_box;
+//    TextView feedBack_txtView;
+//    String FeedBack_str;
+//    TextView feedBack_txtView_head;
 
     String ReceiverEmail;
 
-    private EditText other_feedback;
+    //private EditText other_feedback;
 
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
@@ -100,7 +100,7 @@ public class historyviewdetails_others extends AppCompatActivity {
         com_txt=(TextView)findViewById(R.id.com_txt_history_others);
         location=(TextView)findViewById(R.id.location_unit_his_others);
         rating_dep=(TextView)findViewById(R.id.rating_dep_others);
-        other_feedback=(EditText)findViewById(R.id.other_feedback_others);
+        //other_feedback=(EditText)findViewById(R.id.other_feedback_others);
 
 
         ratingBar=(RatingBar) findViewById(R.id.rating_others);
@@ -129,12 +129,12 @@ public class historyviewdetails_others extends AppCompatActivity {
 
         comp_close=(Button)findViewById(R.id.close_the_com_his_others);
 
-        feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner_others);
-        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst","Others"};
-        feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
-
-        feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView_others);
-        feedBack_txtView_head=(TextView)findViewById(R.id.his_elec_feedBack_head_txt_others);
+//        feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner_others);
+//        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst","Others"};
+//        feedBack_box.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,FeedBack_dropdown));
+//
+//        feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView_others);
+//        feedBack_txtView_head=(TextView)findViewById(R.id.his_elec_feedBack_head_txt_others);
 
         reference_complaints_history_fullView= FirebaseDatabase.getInstance()
                 .getReference("complaints").child("Others").child(com_id_new);
@@ -162,7 +162,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                 //get_rating
                 rating_str=complaint_details.getRating();
 
-                FeedBack_str=complaint_details.getFeedBack();
+                //FeedBack_str=complaint_details.getFeedBack();
 
                 status=complaint_details.getStatus();
 
@@ -183,38 +183,38 @@ public class historyviewdetails_others extends AppCompatActivity {
                 rating_dep.setText(rating_str);
                 ratingBar.setRating(Float.parseFloat(rating_str));
 
-                feedBack_txtView.setText(FeedBack_str);
+                //feedBack_txtView.setText(FeedBack_str);
 
                 if(status.equals("Completed")){
 //                    ratingBar.setClickable(false);
 //                    ratingBar.setFocusable(false);
                     ratingBar.setIsIndicator(true);
-                    feedBack_box.setVisibility(View.GONE);
-                    feedBack_txtView_head.setVisibility(View.VISIBLE);
-                    feedBack_txtView.setVisibility(View.VISIBLE);
+//                    feedBack_box.setVisibility(View.GONE);
+//                    feedBack_txtView_head.setVisibility(View.VISIBLE);
+//                    feedBack_txtView.setVisibility(View.VISIBLE);
 
                 }
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
 
-                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        FeedBack_str=feedBack_box.getSelectedItem().toString();
-                        if(FeedBack_str.equals("Others")){
-                            other_feedback.setVisibility(View.VISIBLE);
-                        }
-                        else{
-                            other_feedback.setVisibility(View.GONE);
-                        }
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
+//                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    @Override
+//                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                        FeedBack_str=feedBack_box.getSelectedItem().toString();
+//                        if(FeedBack_str.equals("Others")){
+//                            other_feedback.setVisibility(View.VISIBLE);
+//                        }
+//                        else{
+//                            other_feedback.setVisibility(View.GONE);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                    }
+//                });
 
                 if (status.equals("Pending")){
                     com_status_his.setBackgroundResource(R.color.Red);
@@ -249,22 +249,22 @@ public class historyviewdetails_others extends AppCompatActivity {
                 rat=rating_p.toString();
                 ratingBar.setRating(rating_p);
 
-                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
-                    FeedBack_str=other_feedback.getText().toString();
-                }
-
-                if(FeedBack_str.equals("Others") && other_feedback.getText().toString().isEmpty()){
-                    Toast.makeText(historyviewdetails_others.this,"Please specify your feedback",Toast.LENGTH_SHORT).show();
-                    other_feedback.requestFocus();
-                }
-                else if (status.equals("Pending")){
+//                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
+//                    FeedBack_str=other_feedback.getText().toString();
+//                }
+//
+//                if(FeedBack_str.equals("Others") && other_feedback.getText().toString().isEmpty()){
+//                    Toast.makeText(historyviewdetails_others.this,"Please specify your feedback",Toast.LENGTH_SHORT).show();
+//                    other_feedback.requestFocus();
+//                }
+                if (status.equals("Pending")){
                     HashMap hp1=new HashMap();
                     hp1.put("status","Completed");
 
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
                     hp.put("rating",rat);
-                    hp.put("FeedBack",FeedBack_str);
+                    //hp.put("FeedBack",FeedBack_str);
 
                     refDash.addValueEventListener(new ValueEventListener() {
                         @Override

@@ -18,7 +18,7 @@ import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_painting;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_plumber;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_others;
-import com.example.map_my_sona.historyviewdetails_assets;
+import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_assets;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

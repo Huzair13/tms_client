@@ -42,7 +42,7 @@
             android:name=".NotAssigned"
             android:exported="false" />
         <activity
-            android:name=".historyviewdetails_assets"
+            android:name=".complaints.viewDetails.historyviewdetails_assets"
             android:exported="false" />
         <activity
             android:name=".complaints.HistoryDetails.complaint_HistoryDetails_assets"

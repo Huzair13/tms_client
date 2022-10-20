@@ -124,7 +124,7 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="76dp"
-                android:layout_marginStart="15dp"
+                android:layout_gravity="center"
                 android:layout_marginEnd="15dp"
                 android:checkable="true"
                 android:clickable="true"
@@ -164,8 +164,8 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
@@ -207,8 +207,8 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
@@ -249,8 +249,8 @@
                 android:layout_width="370dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
@@ -288,8 +288,8 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
@@ -356,17 +356,17 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/assets_history"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/zxing_transparent"
                 >
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
@@ -376,17 +376,17 @@
                 <!--            android:src="@drawable/qrcode_white"-->
                 <!--            android:scaleType="fitCenter"/>-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cardbg03">
+                    android:layout_width="370dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/assetscard1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Assets"
-                        android:textSize="22dp"
+                        android:textSize="24dp"
                         android:gravity="center"
-                        android:layout_marginLeft="100dp"
-                        android:textColor="@color/black"
+                        android:layout_marginRight="105dp"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/roboto_regular" >
 
                     </TextView>
@@ -399,8 +399,8 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"

@@ -9,8 +9,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dashboard"
-    android:background="@drawable/greenbg01">
+    tools:context=".dashboard">
+<!--    android:background="@drawable/greenbg01">-->
 
 
    <com.google.android.material.navigation.NavigationView
@@ -36,7 +36,7 @@
              android:layout_height="?attr/actionBarSize"
              app:title="Dashboard"
              app:titleTextColor="@color/white"
-             android:background="@color/greyblue"
+             android:background="@color/gradientblue"
              style="@style/Widget.MaterialComponents.Toolbar.Primary"
              />
       </com.google.android.material.appbar.AppBarLayout>
@@ -51,7 +51,7 @@
            <ImageView
                android:layout_width="150dp"
                android:layout_height="100dp"
-               android:src="@drawable/ssbg8"
+               android:src="@drawable/tmslogo"
                android:layout_marginTop="15dp"
                android:layout_marginRight="110dp"
                android:layout_gravity="center"/>
@@ -118,13 +118,14 @@
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:layout_marginTop="60dp"
        android:orientation="vertical">
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/scancode"
           android:layout_width="370dp"
           android:layout_height="100dp"
-          android:layout_marginStart="15dp"
           android:layout_marginTop="200dp"
+          android:layout_gravity="center"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="30dp"
           android:checkable="true"
@@ -132,34 +133,34 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          android:backgroundTint="@color/zxing_transparent"
+          android:background="@color/zxing_transparent">
 
-          >
-         <LinearLayout
-             android:layout_width="370dp"
-             android:layout_height="105dp"
-             android:background="@drawable/scancard2">
+          <LinearLayout
+              android:layout_width="370dp"
+              android:layout_height="105dp"
+              android:background="@drawable/scancard2">
 
-<!--            <ImageView-->
-<!--                android:layout_width="70dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_marginTop="35dp"-->
-<!--                android:layout_marginLeft="34dp"-->
-<!--                android:src="@drawable/qrcode_white"-->
-<!--                android:scaleType="fitCenter"/>-->
-            <TextView
-                android:id="@+id/scanQR_dashboard"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Scan QR Code"
-                android:textSize="25dp"
-                android:gravity="center"
-                android:layout_marginRight="85dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/roboto_regular">
+              <!--            <ImageView-->
+              <!--                android:layout_width="70dp"-->
+              <!--                android:layout_height="30dp"-->
+              <!--                android:layout_marginTop="35dp"-->
+              <!--                android:layout_marginLeft="34dp"-->
+              <!--                android:src="@drawable/qrcode_white"-->
+              <!--                android:scaleType="fitCenter"/>-->
+              <TextView
+                  android:id="@+id/scanQR_dashboard"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:text="Scan QR Code"
+                  android:textSize="25dp"
+                  android:gravity="center"
+                  android:layout_marginRight="85dp"
+                  android:textColor="@color/white"
+                  android:fontFamily="@font/roboto_regular">
 
-            </TextView>
-         </LinearLayout>
+              </TextView>
+          </LinearLayout>
+
 
 
 
@@ -171,8 +172,8 @@
           android:layout_width="370dp"
           android:layout_height="100dp"
           android:layout_below="@+id/scancode"
-          android:layout_marginStart="15dp"
           android:layout_marginTop="15dp"
+          android:layout_gravity="center"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="30dp"
           android:checkable="true"
@@ -218,8 +219,8 @@
           android:layout_width="370dp"
           android:layout_height="100dp"
           android:layout_below="@+id/histotydetails"
-          android:layout_marginStart="15dp"
           android:layout_marginTop="15dp"
+          android:layout_gravity="center"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="15dp"
         android:background="@color/zxing_transparent"

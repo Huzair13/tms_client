@@ -41,7 +41,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/finalgrey"
-            app:cardCornerRadius="0dp">
+            app:cardCornerRadius="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -53,15 +53,14 @@
             <EditText
                 android:id="@+id/signupusernamelInput"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="7dp"
                 android:fontFamily="@font/raleway_regular"
                 android:hint="@string/login_username"
                 android:textColorHint="@color/grey"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
@@ -71,7 +70,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="95dp"
             android:backgroundTint="@color/finalgrey"
-            app:cardCornerRadius="0dp">
+            app:cardCornerRadius="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -83,15 +82,14 @@
             <EditText
                 android:id="@+id/signupemaillInput"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="7dp"
                 android:fontFamily="@font/raleway_regular"
                 android:hint="@string/signup_email"
                 android:textColorHint="@color/grey"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
@@ -103,7 +101,7 @@
             android:layout_marginTop="135dp"
             android:backgroundTint="@color/finalgrey"
             android:elevation="20dp"
-            app:cardCornerRadius="0dp">
+            app:cardCornerRadius="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -115,15 +113,14 @@
             <EditText
                 android:id="@+id/signuppassInput"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="7dp"
                 android:fontFamily="@font/raleway_regular"
                 android:hint="Password"
                 android:textColorHint="@color/grey"
                 android:text=""
                 android:textColor="@color/black"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
@@ -135,7 +132,7 @@
             android:layout_marginTop="180dp"
             android:backgroundTint="@color/finalgrey"
             android:elevation="20dp"
-            app:cardCornerRadius="0dp">
+            app:cardCornerRadius="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -147,16 +144,15 @@
             <EditText
                 android:id="@+id/signuppassInputConfirm"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="7dp"
                 android:hint="@string/signup_con_pass"
                 android:textColorHint="@color/grey"
                 android:text=""
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:fontFamily="@font/raleway_regular"
-                android:textSize="12dp"/>
+                android:textSize="10dp"/>
 
         </androidx.cardview.widget.CardView>
 

@@ -85,7 +85,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Complaint_details user =dataSnapshot.getValue(Complaint_details.class);
+                    Complaint_details user =(Complaint_details) dataSnapshot.getValue(Complaint_details.class);
                     arrayList_complaints_history.add(user);
                 }
                 adapter_complaint_history.notifyDataSetChanged();

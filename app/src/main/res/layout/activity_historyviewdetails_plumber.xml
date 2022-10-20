@@ -209,49 +209,11 @@
             <TableRow>
 
                 <TextView
-                    android:layout_width="76dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                    />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Department"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                    />
-
-                <TextView
-                    android:id="@+id/dep_unit_his_plumber"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                    />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="3"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -289,7 +251,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="5"
+                    android:text="4"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -327,7 +289,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="6"
+                    android:text="5"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -365,7 +327,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="7"
+                    android:text="6"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -403,7 +365,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="8"
+                    android:text="7"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -441,7 +403,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="9"
+                    android:text="8"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -478,7 +440,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="10"
+                    android:text="9"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -516,7 +478,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="11"
+                    android:text="10"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"

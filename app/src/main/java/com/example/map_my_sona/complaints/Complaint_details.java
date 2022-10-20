@@ -47,13 +47,13 @@ public class Complaint_details {
         this.date = date;
         this.time = time;
         this.key = key;
-        UniqueId = uniqueId;
+        this.UniqueId = uniqueId;
         this.status = status;
         this.dep_of_pro = dep_of_pro;
         this.UID = UID;
         this.location = location;
         this.rating = rating;
-        FeedBack = feedBack;
+        this.FeedBack = feedBack;
     }
 
     public String getCom_by_name() {

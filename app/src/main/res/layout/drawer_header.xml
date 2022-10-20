@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="130dp"
-        android:src="@drawable/new_logo2"
+        android:src="@drawable/track"
         android:layout_gravity="center"
         />
 

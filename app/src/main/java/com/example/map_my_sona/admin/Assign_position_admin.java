@@ -66,7 +66,7 @@ public class Assign_position_admin extends AppCompatActivity {
         change_pos_spinner=(Spinner)findViewById(R.id.change_position_admin_assign_spinner);
         txtview_change_pos=(TextView)findViewById(R.id.txtview_change_pos);
 
-        String[] positions={"Position","user","admin","superuser","technician"};
+        String[] positions={"Position","admin","superadmin","electrician","carpenter","network","plumber","painter","assets","others"};
         change_pos_spinner.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,positions));
 
         change_pos_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

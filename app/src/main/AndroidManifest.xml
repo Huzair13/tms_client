@@ -30,6 +30,24 @@
             android:name=".New_login"
             android:exported="false" />
         <activity
+            android:name=".BulkuploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Settime"
+            android:exported="false" />
+        <activity
+            android:name=".SubsribtionPeriodOver"
+            android:exported="false" />
+        <activity
+            android:name=".NotAssigned"
+            android:exported="false" />
+        <activity
+            android:name=".historyviewdetails_assets"
+            android:exported="false" />
+        <activity
+            android:name=".complaints.HistoryDetails.complaint_HistoryDetails_assets"
+            android:exported="false" />
+        <activity
             android:name=".complaints.viewDetails.historyviewdetails_others"
             android:exported="false" />
         <activity

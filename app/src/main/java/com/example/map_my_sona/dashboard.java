@@ -367,7 +367,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
 
             case R.id.nav_report:
-                startActivity(new Intent(dashboard.this, report_page.class));
+                startActivity(new Intent(dashboard.this, BulkuploadActivity.class));
                 break;
 
 //            case R.id.testing_menu:

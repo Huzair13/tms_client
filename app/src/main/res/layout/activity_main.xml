@@ -32,7 +32,7 @@
      android:fontFamily="@font/frederickathegreat_regular"
      android:gravity="center"
      android:padding="15dp"
-     android:text="Map My Sona"
+     android:text="Track My Sona"
      android:textColor="@color/black"
      android:textSize="30dp" />
 </LinearLayout>

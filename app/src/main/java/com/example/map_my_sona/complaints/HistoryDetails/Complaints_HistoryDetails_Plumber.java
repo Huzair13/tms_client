@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.loginpage;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +41,10 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
     TextInputLayout hisfliter_plumber;
     AutoCompleteTextView hisflitertext_plumber;
     Spinner spin_plumber;
+    String posofuser;
     MaterialToolbar toolbar;
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
     private DatabaseReference refDash;
 
     @Override
@@ -66,6 +72,9 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
         adapter_complaint_history_plumber = new complaints_history_Adapter(arrayList_complaints_history_plumber,this);
         recyclerView_complaints_history_plumber.setAdapter(adapter_complaint_history_plumber);
 
+        builder11=new AlertDialog.Builder(this);
+        mAuth=FirebaseAuth.getInstance();
+
         reference_complaints_history_plumber.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -90,12 +99,33 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String pos=snapshot.child("position").getValue(String.class);
+                        posofuser=snapshot.child("position").getValue(String.class);
                         if(pos.equals("admin")){
                             startActivity(new Intent(Complaints_HistoryDetails_Plumber.this, dashboard.class));
                         }
                         else{
-                            startActivity(new Intent(Complaints_HistoryDetails_Plumber.this, AdminDashboard.class));
+                            builder11.setTitle("Alert")
+                                    .setMessage("Are you sure to Log out ?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            mAuth.signOut();
+                                            Intent intent=new Intent(Complaints_HistoryDetails_Plumber.this, loginpage.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
                         }
+
                     }
 
                     @Override
@@ -106,6 +136,13 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
             }
         });
 
+//        if(posofuser.equals("plumber")){
+//            onBackPressed();
+//        }
     }
-
+//
+//    @Override
+//    public void onBackPressed() {
+//        Toast.makeText(this, "You are already in the home page", Toast.LENGTH_SHORT).show();
+//    }
 }

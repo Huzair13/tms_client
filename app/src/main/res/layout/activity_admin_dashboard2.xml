@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".admin.AdminDashboard"
-    android:background="@drawable/greenbg03">
+    android:background="@drawable/greenbg04">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -32,13 +32,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingTop="20dp"
             android:layout_marginTop="@android:dimen/app_icon_size"
             >
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ssbg8"
+                android:src="@drawable/track"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="110dp"
                 android:layout_gravity="center"/>

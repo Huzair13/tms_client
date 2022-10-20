@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.loginpage;
 import com.example.map_my_sona.report_page;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -43,6 +46,8 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
     Spinner spin_carpenter;
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
 //    TextView  TextView;
 
     @Override
@@ -59,6 +64,7 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
 
+
         recyclerView_complaints_history_carpenter.setLayoutManager(linearLayoutManager);
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
@@ -67,6 +73,9 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
         arrayList_complaints_history_carpenter=new ArrayList<>();
         adapter_complaint_history_carpenter = new complaints_history_Adapter(arrayList_complaints_history_carpenter,this);
         recyclerView_complaints_history_carpenter.setAdapter(adapter_complaint_history_carpenter);
+
+        builder11=new AlertDialog.Builder(this);
+        mAuth=FirebaseAuth.getInstance();
 
         reference_complaints_history_carpenter.addValueEventListener(new ValueEventListener() {
             @Override
@@ -97,7 +106,26 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
                             startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, dashboard.class));
                         }
                         else{
-                            startActivity(new Intent(Complaints_HistoryDetails_Carpenter.this, AdminDashboard.class));
+                            builder11.setTitle("Alert")
+                                    .setMessage("Are you sure to Log out ?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            mAuth.signOut();
+                                            Intent intent=new Intent(Complaints_HistoryDetails_Carpenter.this, loginpage.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
                         }
                     }
 
@@ -109,6 +137,9 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
             }
         });
     }
-
-
+//
+//    @Override
+//    public void onBackPressed() {
+//        Toast.makeText(this, "You are already in the home page", Toast.LENGTH_SHORT).show();
+//    }
 }

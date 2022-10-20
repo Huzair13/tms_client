@@ -29,6 +29,7 @@ public class ScannerPage extends AppCompatActivity {
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
 
+
 //    private TextView manual;
 
 

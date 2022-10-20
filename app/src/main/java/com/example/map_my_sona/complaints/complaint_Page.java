@@ -35,6 +35,8 @@ import androidx.core.content.ContextCompat;
 import com.airbnb.lottie.animation.content.Content;
 import com.example.map_my_sona.ExampleService;
 import com.example.map_my_sona.R;
+import com.example.map_my_sona.ScannerPage;
+import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.manualentry;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -46,6 +48,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -65,14 +69,16 @@ import papaya.in.sendmail.SendMail;
 
 public class complaint_Page extends AppCompatActivity {
 
-    private TextView sn, make, model, procurement, powerRating, wexpiry, wperiod, ins_by, ins_date, mob,dep_of_pro;
+    private TextView sn, make, model, procurement, powerRating, wexpiry, wperiod, ins_by, ins_date, mob,dep_of_pro,cost,config;
     private TextView location;
+    private TextView cost1,cost2,config1,config2;
     private String location_str;
     private EditText  complainted_by_name, complainted_by_mob ;
     private EditText other_com;
     private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
+    private DatabaseReference refDash;
     Float rating;
     String rating_str;
     CheckBox vhigh ,high ,low;
@@ -82,7 +88,8 @@ public class complaint_Page extends AppCompatActivity {
     String uref;
 
     private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
-            procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,dep_of_pro_str;
+            procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,
+            config_str,dep_of_pro_str,cost_str;
     private String complaint_txt,others_com_str;
     String status = "Pending";
     DatabaseReference databaseReference;
@@ -123,6 +130,13 @@ public class complaint_Page extends AppCompatActivity {
         mob = (TextView) findViewById(R.id.mob_unit);
         dep_of_pro=(TextView)findViewById(R.id.dep_of_pro_unit);
         location=(TextView)findViewById(R.id.scanned_location);
+        cost=(TextView)findViewById(R.id.cost);
+        config=(TextView)findViewById(R.id.Config);
+
+        cost1=(TextView)findViewById(R.id.cost1);
+        cost2=(TextView)findViewById(R.id.cost2);
+        config1=(TextView)findViewById(R.id.config1);
+        config2=(TextView)findViewById(R.id.config2);
 
         complaint_subBtn = (Button) findViewById(R.id.button_complaint_submit);
 
@@ -159,22 +173,32 @@ public class complaint_Page extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mob_str = String.valueOf(snapshot.child(s).child("mob").getValue(Long.class));
-                sn_str = String.valueOf(snapshot.child(s).child("sn_no").getValue(Long.class));
-                make_str = snapshot.child(s).child("make").getValue(String.class);
-                model_str = snapshot.child(s).child("model").getValue(String.class);
-                procurement_str = snapshot.child(s).child("procurement").getValue(String.class);
-                powerRating_str = snapshot.child(s).child("power_rating").getValue(String.class);
-                wexpiry_str = snapshot.child(s).child("wexpiry").getValue(String.class);
-                wperiod_str = snapshot.child(s).child("wperiod").getValue(String.class);
-                ins_by_str = snapshot.child(s).child("ins_by").getValue(String.class);
-                ins_date_str = snapshot.child(s).child("ins_date").getValue(String.class);
-                dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
-                location_str = snapshot.child(s).child("location").getValue(String.class);
+                mob_str = String.valueOf(snapshot.child(s).child("0").child("mob").getValue(Long.class));
+                sn_str = String.valueOf(snapshot.child(s).child("0").child("sn_no").getValue(Long.class));
+                make_str = snapshot.child(s).child("0").child("make").getValue(String.class);
+                model_str = snapshot.child(s).child("0").child("model").getValue(String.class);
+                procurement_str = snapshot.child(s).child("0").child("procurement").getValue(String.class);
+                powerRating_str = snapshot.child(s).child("0").child("power_rating").getValue(String.class);
+                wexpiry_str = snapshot.child(s).child("0").child("wexpiry").getValue(String.class);
+                wperiod_str = snapshot.child(s).child("0").child("wperiod").getValue(String.class);
+                ins_by_str = snapshot.child(s).child("0").child("ins_by").getValue(String.class);
+                ins_date_str = snapshot.child(s).child("0").child("ins_date").getValue(String.class);
+                dep_of_pro_str = snapshot.child(s).child("0").child("dep_of_pro").getValue(String.class);
+                location_str = snapshot.child(s).child("0").child("location").getValue(String.class);
+                cost_str=String.valueOf(snapshot.child(s).child("0").child("cost").getValue(Long.class));
+                config_str=String.valueOf(snapshot.child(s).child("0").child("config").getValue(Long.class));
                 rating = 0.0f;
                 rating_str = rating.toString();
                 FeedBack_str="None";
 
+                if(dep_of_pro_str.equals("Assets")){
+                    cost1.setVisibility(View.VISIBLE);
+                    cost2.setVisibility(View.VISIBLE);
+                    cost.setVisibility(View.VISIBLE);
+                    config1.setVisibility(View.VISIBLE);
+                    config2.setVisibility(View.VISIBLE);
+                    config.setVisibility(View.VISIBLE);
+                }
 
                 sn.setText(sn_str);
                 make.setText(make_str);
@@ -188,6 +212,10 @@ public class complaint_Page extends AppCompatActivity {
                 mob.setText(mob_str);
                 dep_of_pro.setText(dep_of_pro_str);
                 location.setText(location_str);
+                cost.setText(cost_str);
+                config.setText(config_str);
+
+
 
 //                if(!manual_name.equals("null")){
 //                    complainted_by_name.setText(manual_name);
@@ -397,14 +425,35 @@ public class complaint_Page extends AppCompatActivity {
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
                 status,dep_of_pro_str,uref,location_str,rating_str,FeedBack_str);
 
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
+
         dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 sendemail();
                 Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(complaint_Page.this, dashboard.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            Intent intent= new Intent(complaint_Page.this, dashboard.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                        else{
+                            Intent intent=new Intent(complaint_Page.this, AdminDashboard.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

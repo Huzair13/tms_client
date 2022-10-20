@@ -17,6 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.admin.AdminDashboard;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
+import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -36,6 +42,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class loginpage extends AppCompatActivity {
 
     //private SharedPrefManager sharedPrefManager;
@@ -49,6 +60,8 @@ public class loginpage extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
     public static String us_name;
+
+    String posofuser;
 
     private  GoogleSignInClient client;
 
@@ -158,6 +171,19 @@ public class loginpage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(loginpage.this,RegisterPage.class));
+//                DatabaseReference dbref=FirebaseDatabase.getInstance().getReference("Sample Test");
+//                Map<String, JSONObject> userMap= new HashMap<String, JSONObject>();
+//                JSONObject tempObject = new JSONObject();
+//
+//                try{
+//                    tempObject.put("location","salem");
+//                    tempObject.put("make","Emin AYAR");
+//                    tempObject.put("Mob","6552352365");
+//                }catch(Exception e){
+//                    e.printStackTrace();
+//                }
+//                userMap.put("test", tempObject);
+//                dbref.setValue(userMap);
             }
         });
     }
@@ -264,7 +290,6 @@ public class loginpage extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.hasChild(uname)){
                         String email=snapshot.child(uname).child("email").getValue(String.class);
-
                         progressDialog.setMessage("Logging in please wait.....");
                         progressDialog.setTitle("Login");
                         progressDialog.setCanceledOnTouchOutside(false);
@@ -310,11 +335,36 @@ public class loginpage extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String pos=snapshot.child("position").getValue(String.class);
+                            posofuser=snapshot.child("position").getValue(String.class);
                             if(pos.equals("admin")){
                                 startActivity(new Intent(loginpage.this, dashboard.class));
                             }
+                            else if(pos.equals("superadmin")){
+                                startActivity(new Intent(loginpage.this,dashboard.class));
+                            }
+                            else if (pos.equals("electrician")){
+                                startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Electricity.class));
+                            }
+                            else if(pos.equals("carpenter")){
+                                startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Carpenter.class));
+                            }
+                            else if(pos.equals("network")){
+                                startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Networks.class));
+                            }
+                            else if(pos.equals("plumber")){
+                                startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Plumber.class));
+                            }
+                            else if(pos.equals("painter")){
+                                startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Painting.class));
+                            }
+                            else if(pos.equals("others")){
+                                startActivity(new Intent(loginpage.this, complaint_HistoryDetails_others.class));
+                            }
+                            else if(pos.equals("assets")){
+                                startActivity(new Intent(loginpage.this,complaints_history_details_assets.class));
+                            }
                             else{
-                                startActivity(new Intent(loginpage.this, AdminDashboard.class));
+                                startActivity(new Intent(loginpage.this,NotAssigned.class));
                             }
                         }
 
@@ -373,11 +423,36 @@ public class loginpage extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     String pos=snapshot.child("position").getValue(String.class);
+                    posofuser=snapshot.child("position").getValue(String.class);
                     if(pos.equals("admin")){
                         startActivity(new Intent(loginpage.this, dashboard.class));
                     }
+                    else if(pos.equals("superadmin")){
+                        startActivity(new Intent(loginpage.this,dashboard.class));
+                    }
+                    else if (pos.equals("electrician")){
+                        startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Electricity.class));
+                    }
+                    else if(pos.equals("carpenter")){
+                        startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Carpenter.class));
+                    }
+                    else if(pos.equals("network")){
+                        startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Networks.class));
+                    }
+                    else if(pos.equals("plumber")){
+                        startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Plumber.class));
+                    }
+                    else if(pos.equals("painter")){
+                        startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Painting.class));
+                    }
+                    else if(pos.equals("others")){
+                        startActivity(new Intent(loginpage.this, complaint_HistoryDetails_others.class));
+                    }
+                    else if(pos.equals("assets")){
+                        startActivity(new Intent(loginpage.this,complaints_history_details_assets.class));
+                    }
                     else{
-                        startActivity(new Intent(loginpage.this, AdminDashboard.class));
+                        startActivity(new Intent(loginpage.this,NotAssigned.class));
                     }
                     progress.dismiss();
                 }

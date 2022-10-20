@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.loginpage;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +43,11 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
     private DatabaseReference refDash;
+
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
+
+    String posofuser;
 
     //fliter
     TextInputLayout hisfliter;
@@ -103,6 +111,10 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
             recyclerView_complaints_history.setAdapter(adapter_complaint_history);
             refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
+            builder11=new AlertDialog.Builder(this);
+
+            mAuth=FirebaseAuth.getInstance();
+
 
             reference_complaints_history.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -133,7 +145,26 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
                                 startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, dashboard.class));
                             }
                             else{
-                                startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, AdminDashboard.class));
+                                builder11.setTitle("Alert")
+                                        .setMessage("Are you sure to Log out ?")
+                                        .setCancelable(true)
+                                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                mAuth.signOut();
+                                                Intent intent=new Intent(Complaints_HistoryDetails_Electricity.this, loginpage.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        })
+                                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.cancel();
+                                            }
+                                        })
+                                        .show();
                             }
                         }
 
@@ -144,6 +175,10 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
                     });
                 }
             });
+//            if(posofuser.equals("plumber")){
+//                onBackPressed();
+//            }
+
     }
 
     @Override
@@ -160,4 +195,9 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
+//
+//    @Override
+//    public void onBackPressed() {
+//        Toast.makeText(this, "You are already in the home page", Toast.LENGTH_SHORT).show();
+//    }
 }

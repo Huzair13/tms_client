@@ -108,6 +108,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(admin_dashboard.this, Newqrcode.class));
                 break;
 
+
 //
 //            case R.id.nav_pending:
 //                startActivity(new Intent(admin_dashboard.this, adminpendingcomplaint.class));

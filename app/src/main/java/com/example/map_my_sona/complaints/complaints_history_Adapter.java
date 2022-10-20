@@ -18,6 +18,7 @@ import com.example.map_my_sona.complaints.viewDetails.historyviewdetails;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_painting;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_plumber;
 import com.example.map_my_sona.complaints.viewDetails.historyviewdetails_others;
+import com.example.map_my_sona.historyviewdetails_assets;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -151,6 +152,11 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
             }
             else if(pro_dep.equals("Others")){
                 Intent intent=new Intent(context, historyviewdetails_others.class);
+                intent.putExtra("com_ID",arrayList1.get(positon).getKey());
+                context.startActivity(intent);
+            }
+            else if(pro_dep.equals("Assets")){
+                Intent intent=new Intent(context, historyviewdetails_assets.class);
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);
             }

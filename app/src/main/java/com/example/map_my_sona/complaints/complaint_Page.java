@@ -75,7 +75,7 @@ public class complaint_Page extends AppCompatActivity {
     private String location_str;
     private EditText  complainted_by_name, complainted_by_mob ;
     private EditText other_com;
-    private Spinner complainted_by_dep;
+    //private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
     private DatabaseReference refDash;
@@ -87,7 +87,7 @@ public class complaint_Page extends AppCompatActivity {
 
     String uref;
 
-    private String complainted_by_dep_str, complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
+    private String  complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
             procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, mob_str,
             config_str,dep_of_pro_str,cost_str;
     private String complaint_txt,others_com_str;
@@ -146,7 +146,7 @@ public class complaint_Page extends AppCompatActivity {
 
         other_com=(EditText)findViewById(R.id.others_complaint_qr);
 
-        complainted_by_dep = (Spinner) findViewById(R.id.scan_qr_com_dep);
+        //complainted_by_dep = (Spinner) findViewById(R.id.scan_qr_com_dep);
 
 //        vhigh =(CheckBox)findViewById(R.id.veryhighpriority);
 //        high=(CheckBox)findViewById(R.id.highpriority);
@@ -161,8 +161,8 @@ public class complaint_Page extends AppCompatActivity {
         manual_mob=getIntent().getStringExtra("MANUAL_MOB");
 
 
-        String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
-        complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dept_com_scan));
+        //String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
+        //complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dept_com_scan));
 
         String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};
         complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan));
@@ -250,18 +250,6 @@ public class complaint_Page extends AppCompatActivity {
             }
         });
 
-        complainted_by_dep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                complainted_by_dep_str=complainted_by_dep.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
 //        String[] complaint = {"Light Not working", "Network issue", "Fan not working", "Bathroom Problem", "Furniture defects"};
 //        ArrayAdapter<String> complaintAdapter = new ArrayAdapter<>(complaint_Page.this, R.layout.dropdowncomplaintcontent, complaint);
 //        complaint_content_text.setAdapter(complaintAdapter);
@@ -284,9 +272,6 @@ public class complaint_Page extends AppCompatActivity {
                 } else if (complainted_by_mob.getText().toString().isEmpty()) {
                     complainted_by_mob.setError("Empty");
                     complainted_by_mob.requestFocus();
-                } else if (complainted_by_dep_str.equals("Dept")) {
-                    Toast.makeText(complaint_Page.this, "Please select the Dept", Toast.LENGTH_SHORT).show();
-                    complainted_by_dep.requestFocus();
                 }
                 else{
                     getReciverEmail();
@@ -420,7 +405,7 @@ public class complaint_Page extends AppCompatActivity {
 
 
         Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str,
-                complainted_by_dep_str, complaint_txt, sn_str,
+                complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, mob_str, date, time, uniqueKey, s,
                 status,dep_of_pro_str,uref,location_str,rating_str,FeedBack_str);

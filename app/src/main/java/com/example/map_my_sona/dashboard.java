@@ -104,7 +104,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         navigationView1.setCheckedItem(R.id.new_id);
         navigationView1.setCheckedItem(R.id.nav_newQR);
 //        navigationView1.setCheckedItem(R.id.nav_pending);
-        navigationView1.setCheckedItem(R.id.manual_history);
 //        navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
         navigationView1.setCheckedItem(R.id.nav_report);
@@ -157,12 +156,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
 //                        nav_sol.setVisible(true);
 
-                        MenuItem nav_det=menu.findItem(R.id.nav_details);
-                        nav_det.setVisible(true);
-
-                        MenuItem manual_det=menu.findItem(R.id.manual_history);
-                        manual_det.setVisible(true);
-
                         MenuItem nav_asset=menu.findItem(R.id.nav_assets);
                         nav_asset.setVisible(true);
 
@@ -205,8 +198,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         MenuItem new_id=menu.findItem(R.id.new_id);
                         new_id.setVisible(true);
 
-                        MenuItem nav_det=menu.findItem(R.id.nav_details);
-                        nav_det.setVisible(true);
 
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
@@ -214,8 +205,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         MenuItem navi_report=menu.findItem(R.id.nav_report);
                         navi_report.setVisible(true);
 
-                        MenuItem manual_det=menu.findItem(R.id.manual_history);
-                        manual_det.setVisible(true);
 
                     }else if(pos.equals("technician")){
 
@@ -237,12 +226,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //                        nav_sol.setVisible(true);
 
 
-
-                        MenuItem nav_det=menu.findItem(R.id.nav_details);
-                        nav_det.setVisible(true);
-
-                        MenuItem manual_history=menu.findItem(R.id.manual_history);
-                        manual_history.setVisible(true);
 
                         MenuItem navi_report=menu.findItem(R.id.nav_report);
                         navi_report.setVisible(true);
@@ -350,9 +333,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
                 break;
 
-            case R.id.nav_details:
-                startActivity(new Intent(dashboard.this, Dep_wise_history.class));
-                break;
 
             case R.id.nav_report:
                 startActivity(new Intent(dashboard.this, BulkuploadActivity.class));

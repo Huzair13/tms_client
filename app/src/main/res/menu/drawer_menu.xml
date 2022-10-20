@@ -39,15 +39,6 @@
 <!--            android:icon="@drawable/ic_baseline_complaints_nav"-->
 <!--            android:title="Solved Complaints" />-->
 
-        <item
-            android:id="@+id/manual_history"
-            android:icon="@drawable/manualicon"
-            android:title="Manual History" />
-
-        <item
-            android:id="@+id/nav_details"
-            android:icon="@drawable/ic_baseline_collections_24"
-            android:title="Scanned History" />
 
         <item
             android:id="@+id/nav_assets"

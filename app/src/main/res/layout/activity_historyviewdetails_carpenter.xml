@@ -664,13 +664,14 @@
                 android:textColor="@color/black"
                 android:visibility="gone"/>
 
-<!--            <RatingBar-->
-<!--                android:id="@+id/rating_car"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:rating="0"-->
-<!--                />-->
+            <RatingBar
+                android:layout_marginTop="5dp"
+                android:id="@+id/rating_car"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:rating="0"
+                />
 
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
@@ -685,18 +686,19 @@
 <!--                android:rating="2.6"-->
 <!--                />-->
 
-<!--            <Spinner-->
-<!--                android:id="@+id/feedback"-->
-<!--                android:layout_width="250dp"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:background="@drawable/style_spinner_1"-->
-<!--                android:fontFamily="@font/roboto_regular"-->
-<!--                android:inputType="none"-->
-<!--                android:spinnerMode="dropdown"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="18dp"-->
-<!--                />-->
+            <Spinner
+                android:id="@+id/com_his_feedBack_spinner_car"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/style_spinner_1"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="none"
+                android:layout_gravity="center"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                />
 
         </LinearLayout>
 

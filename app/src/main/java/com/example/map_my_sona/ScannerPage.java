@@ -61,13 +61,6 @@ public class ScannerPage extends AppCompatActivity {
 
             }
         });
-
-        manualltext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ScannerPage.this, ManualComplaint_page.class));
-            }
-        });
         toolbar= findViewById(R.id.topAppBar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

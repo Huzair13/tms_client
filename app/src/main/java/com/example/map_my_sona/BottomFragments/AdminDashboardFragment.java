@@ -74,13 +74,7 @@ public class AdminDashboardFragment extends Fragment {
         user_scan_qr_dash =view.findViewById(R.id.user_scan_qr);
         user_history_Dash = view.findViewById(R.id.user_history);
         user_manual_dash = view.findViewById(R.id.user_manual_com);
-
-        user_manual_dash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ManualComplaint_page.class));
-            }
-        });
+        
 
         user_scan_qr_dash.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".update_database"
-    android:background="@drawable/greenbg01">
+    tools:context=".update_database">
+<!--    android:background="@drawable/greenbg01">-->
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -32,8 +32,9 @@
                 android:id="@+id/imageView2"
                 android:layout_width="123dp"
                 android:layout_height="102dp"
+                android:layout_marginStart="1dp"
                 android:layout_marginRight="150dp"
-                app:srcCompat="@drawable/ssbg8" />
+                app:srcCompat="@drawable/tmslogo" />
         </LinearLayout>
 
 <!--        <EditText-->
@@ -58,6 +59,7 @@
             android:textColorHint="@color/black"
             android:padding="15dp"
             android:gravity="center"
+            android:layout_marginTop="30dp"
             app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
             app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
             app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
@@ -70,7 +72,7 @@
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_regular"
-                android:backgroundTint="@color/lightpistagreen"
+                android:backgroundTint="@color/white"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +87,7 @@
             android:layout_marginTop="5dp"
             android:text="Get Detail"
             android:textStyle="bold"
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             android:fontFamily="@font/roboto_regular"
             app:cornerRadius="15dp">
 
@@ -590,7 +592,7 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             android:fontFamily="@font/roboto_regular"
             app:cornerRadius="15dp">
 

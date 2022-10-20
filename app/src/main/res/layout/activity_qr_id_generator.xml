@@ -7,8 +7,8 @@
     tools:context=".Qr_id_generator"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/greenbg01">
+    android:padding="16dp">
+<!--    android:background="@drawable/greenbg01">-->
 
 
 
@@ -27,8 +27,9 @@
             android:layout_width="123dp"
             android:layout_height="102dp"
             android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
             android:layout_marginRight="150dp"
-            app:srcCompat="@drawable/ssbg8" />
+            app:srcCompat="@drawable/tmslogo" />
     </LinearLayout>
 
 
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:hint="Qr ID Number"
         android:padding="15dp"
+        android:layout_marginTop="50dp"
         app:startIconDrawable="@drawable/qrid"
         app:boxCornerRadiusTopEnd="@dimen/browser_actions_context_menu_min_padding"
         app:boxCornerRadiusTopStart="@dimen/browser_actions_context_menu_min_padding"
@@ -48,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/elmessiri"
-            android:backgroundTint="@color/lightpistagreen"
+            android:backgroundTint="@color/white"
 
              />
 
@@ -63,7 +65,7 @@
         android:layout_marginTop="16dp"
         app:icon="@drawable/qrid"
         app:cornerRadius="16dp"
-        android:backgroundTint="@color/greyblue"
+        android:backgroundTint="@color/gradientblue"
 
        >
 
@@ -90,7 +92,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         app:cornerRadius="20dp"
-        android:backgroundTint="@color/greyblue"
+        android:backgroundTint="@color/gradientblue"
         app:icon="@drawable/save"
         >
 

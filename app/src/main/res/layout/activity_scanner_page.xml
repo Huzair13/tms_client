@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScannerPage"
-    android:background="@drawable/greenbg01">
+    tools:context=".ScannerPage">
+<!--    android:background="@drawable/greenbg01">-->
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
 
@@ -22,7 +22,7 @@
           style="@style/Widget.MaterialComponents.Toolbar.Primary"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/greyblue"
+          android:background="@color/gradientblue"
           app:navigationIcon="@drawable/back_ic"
           app:title="Scanner Page" />
 
@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"
         android:hint="Complaint By Unique ID"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/greyblue"
+        android:backgroundTint="@color/gradientblue"
         android:id="@+id/num_enter_man"
         app:cornerRadius="15dp"
         android:layout_marginTop="15dp"/>

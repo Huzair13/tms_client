@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.Incharge_mobile_change"
-    android:background="@drawable/greenbg01">
+    tools:context=".admin.Incharge_mobile_change">
+<!--    android:background="@drawable/greenbg01">-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:foregroundGravity="left"
+                android:backgroundTint="@color/gradientblue"
                 android:text="update" />
 
             <Button
@@ -97,7 +98,8 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="see old \n Mobile number" />
+                android:text="see old \n Mobile number"
+                android:backgroundTint="@color/gradientblue"/>
 
         </LinearLayout>
         <TextView

@@ -23,6 +23,7 @@
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_bulk_upload.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_changepassword.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_email_assign.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_history_details_assets.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_history_details_others.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaint_page.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/activity_complaints_history_details_assets.xml" value="0.22777777777777777" />
@@ -90,6 +91,9 @@
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownobject.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/dropdownpriority.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_admin_dashboard.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_emergency_contact.xml" value="0.19067977768277042" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_login_frag.xml" value="0.19067977768277042" />
+        <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/fragment_report.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/history_table.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/historylayout.xml" value="0.13768115942028986" />
         <entry key="..\:/Users/Sanjana/AndroidStudioProjects/Map_My_Sona/app/src/main/res/layout/histroy_new_layout.xml" value="0.23229166666666667" />

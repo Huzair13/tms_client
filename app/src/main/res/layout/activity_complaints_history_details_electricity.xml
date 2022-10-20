@@ -84,9 +84,10 @@
       >
 
       <ImageView
-          android:layout_width="70dp"
-          android:layout_height="50dp"
+          android:layout_width="150dp"
+          android:layout_height="100dp"
           android:src="@drawable/tmslogo"
+          android:layout_marginStart="130dp"
           android:layout_marginTop="15dp"
           android:layout_marginRight="110dp"
           android:layout_gravity="center"/>
@@ -102,17 +103,17 @@
 
    </LinearLayout>
 
-      <com.airbnb.lottie.LottieAnimationView
-          android:id="@+id/deptani"
-          android:layout_width="250dp"
-          android:layout_height="170dp"
-          android:layout_alignParentTop="true"
-          android:layout_centerHorizontal="true"
-          android:layout_marginTop="10dp"
-          android:layout_gravity="center"
-          app:lottie_autoPlay="true"
-          app:lottie_loop="true"
-          app:lottie_rawRes="@raw/deptani" />
+<!--      <com.airbnb.lottie.LottieAnimationView-->
+<!--          android:id="@+id/deptani"-->
+<!--          android:layout_width="250dp"-->
+<!--          android:layout_height="170dp"-->
+<!--          android:layout_alignParentTop="true"-->
+<!--          android:layout_centerHorizontal="true"-->
+<!--          android:layout_marginTop="10dp"-->
+<!--          android:layout_gravity="center"-->
+<!--          app:lottie_autoPlay="true"-->
+<!--          app:lottie_loop="true"-->
+<!--          app:lottie_rawRes="@raw/deptani" />-->
 
 
 

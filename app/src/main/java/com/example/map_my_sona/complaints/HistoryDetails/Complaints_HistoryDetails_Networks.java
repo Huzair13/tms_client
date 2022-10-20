@@ -93,7 +93,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
             }
         });
 
-        toolbar= findViewById(R.id.topAppBar);
+        toolbar= findViewById(R.id.topAppBar_networks);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

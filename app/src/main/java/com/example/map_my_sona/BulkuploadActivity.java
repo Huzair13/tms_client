@@ -2,93 +2,206 @@ package com.example.map_my_sona;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
+import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.nfc.Tag;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class BulkuploadActivity extends AppCompatActivity {
-
-    public static final int cellCount=2;
+    // initialising the cell count as 2
+    public static final int cellCount = 2;
     Button excel;
-    DatabaseReference dbref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulkupload);
 
-        excel=findViewById(R.id.excel);
+        excel = findViewById(R.id.excel);
 
-//        excel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                File folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-//                readExcelFromStorage(getApplicationContext(),"Book1");
-//            }
-//        });
+        // click on excel to select a file
+        excel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(BulkuploadActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    selectfile();
+                } else {
+                    ActivityCompat.requestPermissions(BulkuploadActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 101);
+                }
+            }
+        });
+    }
 
+    // request for storage permission if not given
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 101) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                selectfile();
+            } else {
+                Toast.makeText(BulkuploadActivity.this, "Permission Not granted", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
-//        excel = findViewById(R.id.excel);
-//
-//        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-//        intent.setType("*/*");
-//        intent.addCategory(Intent.CATEGORY_OPENABLE);
-//        startActivityForResult(Intent.createChooser(intent, "Select File"), 102);
-//
-//        dbref= FirebaseDatabase.getInstance().getReference("testing");
-//        XSSFWorkbook workbook = null;
-//            XSSFSheet sheet= (XSSFSheet) workbook.getSheetAt(0);
-//            FormulaEvaluator formulaEvaluator=workbook.getCreationHelper().createFormulaEvaluator();
-//            int rowscount=sheet.getPhysicalNumberOfRows();
-//            if(rowscount > 0){
-//            // check row wise data
-//            for (int r=0;r<rowscount;r++){
-//                Row row=sheet.getRow(r);
-//                if(row.getPhysicalNumberOfCells()==cellCount) {
-//                    // get cell data
-//                    String uniqueID = getCellData(row,0,formulaEvaluator);
-//                    String model = getCellData(row,1,formulaEvaluator);
-//                    String make = getCellData(row,2,formulaEvaluator);
-//                    String warranty = getCellData(row,3,formulaEvaluator);
-//
-//                    testingBulk testing=new testingBulk(uniqueID,model,make,warranty);
-//                    dbref.child(uniqueID).setValue(testing);
-//
-//
-//                }
-//                else {
-//                    Toast.makeText(BulkuploadActivity.this,"row no. "+(r+1)+" has incorrect data",Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//            }
-//    }
-}
+    private void selectfile() {
+        // select the file from the file storage
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("*/*");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(Intent.createChooser(intent, "Select File"), 102);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 102) {
+            if (resultCode == RESULT_OK) {
+                String filepath = data.getData().getPath();
+                // If excel file then only select the file
+                if (filepath.endsWith(".xlsx") || filepath.endsWith(".xls")) {
+                    readfile(data.getData());
+                }
+                // else show the error
+                else {
+                    Toast.makeText(this, "Please Select an Excel file to upload", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+
+    ProgressDialog dialog;
+
+    private void readfile(final Uri file) {
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Uploading");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+
+                final HashMap<String, Object> parentmap = new HashMap<>();
+
+                try {
+                    XSSFWorkbook workbook;
+
+                    // check for the input from the excel file
+                    try (InputStream inputStream = getContentResolver().openInputStream(file)) {
+                        workbook = new XSSFWorkbook(inputStream);
+                    }
+                    final String timestamp = "" + System.currentTimeMillis();
+                    XSSFSheet sheet = workbook.getSheetAt(0);
+                    FormulaEvaluator formulaEvaluator = workbook.getCreationHelper().createFormulaEvaluator();
+                    int rowscount = sheet.getPhysicalNumberOfRows();
+                    if (rowscount > 1) {
+                        // check row wise data
+                        for (int r = 1; r < rowscount; r++) {
+                            Row row = sheet.getRow(r);
+                            if (row.getPhysicalNumberOfCells() == cellCount) {
+
+                                // get cell data
+                                String A = getCellData(row, 0, formulaEvaluator);
+                                String B = getCellData(row, 1, formulaEvaluator);
+
+                                // initialise the hash map and put value of a and b into it
+                                HashMap<String, Object> quetionmap = new HashMap<>();
+                                quetionmap.put("uniqueID", A);
+                                quetionmap.put("MODEL", B);
+//                                String id = UUID.randomUUID().toString();
+                                parentmap.put(A, quetionmap);
+                            }
+//                            else {
+//                                dialog.dismiss();
+//                                Toast.makeText(BulkuploadActivity.this, "row no. " + (r + 1) + " has incorrect data", Toast.LENGTH_LONG).show();
+//                                return;
+//                            }
+                        }
+                        // add the data in firebase if everything is correct
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // add the data according to timestamp
+                                FirebaseDatabase.getInstance().getReference().child("testing").updateChildren(parentmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            dialog.dismiss();
+                                            Toast.makeText(BulkuploadActivity.this, "Uploaded Successfully", Toast.LENGTH_LONG).show();
+                                        } else {
+                                            dialog.dismiss();
+                                            Toast.makeText(BulkuploadActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                    // show the error if file is empty
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dialog.dismiss();
+                                Toast.makeText(BulkuploadActivity.this, "File is empty", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        return;
+                    }
+                }
+                // show the error message if failed
+                // due to file not found
+                catch (final FileNotFoundException e) {
+                    e.printStackTrace();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(BulkuploadActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                // show the error message if there
+                // is error in input output
+                catch (final IOException e) {
+                    e.printStackTrace();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(BulkuploadActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+        });
+    }
 
     private String getCellData(Row row, int cellposition, FormulaEvaluator formulaEvaluator) {
 
@@ -106,8 +219,5 @@ public class BulkuploadActivity extends AppCompatActivity {
             default:
                 return value;
         }
-    }
-
-    public static void readExcelFromStorage(View.OnClickListener context, String fileName) {
     }
 }

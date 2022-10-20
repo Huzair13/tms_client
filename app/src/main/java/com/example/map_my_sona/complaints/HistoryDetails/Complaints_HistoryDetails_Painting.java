@@ -93,7 +93,7 @@ public class Complaints_HistoryDetails_Painting extends AppCompatActivity implem
             }
         });
 
-        toolbar = findViewById(R.id.topAppBar);
+        toolbar = findViewById(R.id.topAppBar_painting);
        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

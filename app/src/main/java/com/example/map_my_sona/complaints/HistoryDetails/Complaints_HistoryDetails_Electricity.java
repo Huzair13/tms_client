@@ -42,162 +42,114 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     DatabaseReference reference_complaints_history;
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
-    private DatabaseReference refDash;
 
-    AlertDialog.Builder builder11;
-    FirebaseAuth mAuth;
-
-    String posofuser;
 
     //fliter
     TextInputLayout hisfliter;
     AutoCompleteTextView hisflitertext;
+    Spinner spin_carpenter;
     MaterialToolbar toolbar;
-//    Spinner spin;
-//    TextView  TextView;
+    private DatabaseReference refDash;
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
 
-
-
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints_history_details_electricity);
 
-        //String message =getIntent().getStringExtra("message");
+        recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
+        reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
 
-        //filter
-//        hisfliter=findViewById(R.id.historyfliter);
-//        hisflitertext=findViewById(R.id.historyflitertext);
+        recyclerView_complaints_history.setHasFixedSize(true);
 
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
 
-//        String[] fliter={"All","Past 10 days","Last Month"};
-//        ArrayAdapter<String> fliterAdapter=new ArrayAdapter<>(Complaints_HistoryDetails_Electricity.this,R.layout.dropdownfliter,fliter);
-//        hisflitertext.setAdapter(fliterAdapter);
-
-            // Spinner element
-          //  Spinner spinner = (Spinner) findViewById(R.id.historyfliter);
-
-            // Spinner click listener
-//           spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-
-            // Spinner Drop down elements
-//            List<String> categories = new ArrayList<String>();
-//            categories.add("All");
-//            categories.add("Past 10 Days ");
-//            categories.add("Last Month");
-
-            // Creating adapter for spinner
-           // ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-            // Drop down layout style - list view with radio button
-            //dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            // attaching data adapter to spinner
-           // spinner.setAdapter(dataAdapter);
-
-            recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
-            reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
-
-            recyclerView_complaints_history.setHasFixedSize(true);
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
-            linearLayoutManager.setReverseLayout(true);
-            linearLayoutManager.setStackFromEnd(true);
-
-            recyclerView_complaints_history.setLayoutManager(linearLayoutManager);
-            //recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
-
-            arrayList_complaints_history=new ArrayList<>();
-            adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);
-            recyclerView_complaints_history.setAdapter(adapter_complaint_history);
-            refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
-
-            builder11=new AlertDialog.Builder(this);
-
-            mAuth=FirebaseAuth.getInstance();
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
 
 
-            reference_complaints_history.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        Complaint_details user =dataSnapshot.getValue(Complaint_details.class);
-                        arrayList_complaints_history.add(user);
-                    }
-                    adapter_complaint_history.notifyDataSetChanged();
+        recyclerView_complaints_history.setLayoutManager(linearLayoutManager);
+        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+
+
+        //recyclerView_complaints_history_carpenter.setLayoutManager(new LinearLayoutManager(this));
+        arrayList_complaints_history=new ArrayList<>();
+        adapter_complaint_history = new complaints_history_Adapter(arrayList_complaints_history,this);
+        recyclerView_complaints_history.setAdapter(adapter_complaint_history);
+
+        builder11=new AlertDialog.Builder(this);
+        mAuth=FirebaseAuth.getInstance();
+
+        reference_complaints_history.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Complaint_details user =dataSnapshot.getValue(Complaint_details.class);
+                    arrayList_complaints_history.add(user);
                 }
+                adapter_complaint_history.notifyDataSetChanged();
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(Complaints_HistoryDetails_Electricity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Complaints_HistoryDetails_Electricity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
-            toolbar= findViewById(R.id.topAppBar);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        toolbar= findViewById(R.id.topAppBar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
-                    refDash.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String pos=snapshot.child("position").getValue(String.class);
-                            if(pos.equals("admin")){
-                                startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, dashboard.class));
-                            }
-                            else{
-                                builder11.setTitle("Alert")
-                                        .setMessage("Are you sure to Log out ?")
-                                        .setCancelable(true)
-                                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialogInterface, int i) {
-                                                mAuth.signOut();
-                                                Intent intent=new Intent(Complaints_HistoryDetails_Electricity.this, loginpage.class);
-                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                startActivity(intent);
-                                                finish();
-                                            }
-                                        })
-                                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialogInterface, int i) {
-                                                dialogInterface.cancel();
-                                            }
-                                        })
-                                        .show();
-                            }
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String pos=snapshot.child("position").getValue(String.class);
+                        if(pos.equals("admin")){
+                            startActivity(new Intent(Complaints_HistoryDetails_Electricity.this, dashboard.class));
                         }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
+                        else{
+                            builder11.setTitle("Alert")
+                                    .setMessage("Are you sure to Log out ?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            mAuth.signOut();
+                                            Intent intent=new Intent(Complaints_HistoryDetails_Electricity.this, loginpage.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
                         }
-                    });
-                }
-            });
-//            if(posofuser.equals("plumber")){
-//                onBackPressed();
-//            }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
 
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-        // Showing selected spinner item
-//        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-        ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
-        ((TextView) parent.getChildAt(0)).setTextSize(20);
 
     }
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
-//
-//    @Override
-//    public void onBackPressed() {
-//        Toast.makeText(this, "You are already in the home page", Toast.LENGTH_SHORT).show();
-//    }
 }

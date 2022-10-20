@@ -156,7 +156,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
 
                 staff_name_str = complaint_details.getCom_by_name();
                 staff_mob_str = complaint_details.getCom_by_mob();
-                staff_dep_str = complaint_details.getCom_by_dep();
+                //staff_dep_str = complaint_details.getCom_by_dep();
                 com_id_str = complaint_details.getKey();
                 powerRating_str = complaint_details.getPower_rating();
                 wexpiry_str = complaint_details.getWexpiry();

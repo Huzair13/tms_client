@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".complaints.viewDetails.historyviewdetails_carpenter"
-    android:background="@drawable/tablepagebg">
+    tools:context=".complaints.viewDetails.historyviewdetails_carpenter">
+<!--    android:background="@drawable/tablepagebg">-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -584,7 +584,7 @@
             android:layout_gravity="center"
             >
 
-            <TextView
+            <EditText
                 android:id="@+id/com_txt_history_carpenter"
                 android:layout_width="wrap_content"
                 android:layout_height="75dp"
@@ -598,7 +598,7 @@
                 android:textSize="18dp"
                 android:background="@drawable/borderbox">
 
-            </TextView>
+            </EditText>
 
             <TextView
                 android:id="@+id/his_elec_feedBack_head_txt_car"
@@ -631,18 +631,18 @@
             </TextView>
 
 
-            <Spinner
-                android:id="@+id/com_his_feedBack_spinner_car"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:inputType="none"
-                android:textColor="@color/black"
-                android:fontFamily="@font/mulish"
-                android:textSize="18dp"
-                android:spinnerMode="dropdown"
-                android:textStyle="bold"
-                android:background="@drawable/borderbox_white"/>
+<!--            <Spinner-->
+<!--                android:id="@+id/com_his_feedBack_spinner_car"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:inputType="none"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/mulish"-->
+<!--                android:textSize="18dp"-->
+<!--                android:spinnerMode="dropdown"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/borderbox_white"/>-->
 
             <EditText
                 android:id="@+id/other_feedback_carpenter"
@@ -664,13 +664,13 @@
                 android:textColor="@color/black"
                 android:visibility="gone"/>
 
-            <RatingBar
-                android:id="@+id/rating_car"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:rating="0"
-                />
+<!--            <RatingBar-->
+<!--                android:id="@+id/rating_car"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:rating="0"-->
+<!--                />-->
 
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
@@ -709,7 +709,7 @@
             android:text="Close the Complaint"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             app:cornerRadius="15dp" />
 
 

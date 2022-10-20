@@ -58,7 +58,7 @@
 
            <com.airbnb.lottie.LottieAnimationView
                android:layout_width="120dp"
-               android:layout_height="120dp"
+               android:layout_height="130dp"
                app:lottie_rawRes="@raw/homepage"
                app:lottie_autoPlay="true"
                app:lottie_loop="true"
@@ -121,10 +121,10 @@
        android:orientation="vertical">
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/scancode"
-          android:layout_width="match_parent"
+          android:layout_width="370dp"
           android:layout_height="100dp"
           android:layout_marginStart="15dp"
-          android:layout_marginTop="250dp"
+          android:layout_marginTop="200dp"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="30dp"
           android:checkable="true"
@@ -132,13 +132,13 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          android:backgroundTint="@color/lightpistagreen"
+          android:backgroundTint="@color/zxing_transparent"
 
           >
          <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:background="@drawable/cardbg01">
+             android:layout_width="370dp"
+             android:layout_height="105dp"
+             android:background="@drawable/scancard2">
 
 <!--            <ImageView-->
 <!--                android:layout_width="70dp"-->
@@ -152,10 +152,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Scan QR Code"
-                android:textSize="21dp"
+                android:textSize="25dp"
                 android:gravity="center"
-                android:layout_marginLeft="80dp"
-                android:textColor="@color/black"
+                android:layout_marginRight="85dp"
+                android:textColor="@color/white"
                 android:fontFamily="@font/roboto_regular">
 
             </TextView>
@@ -168,7 +168,7 @@
 
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/histotydetails"
-          android:layout_width="match_parent"
+          android:layout_width="370dp"
           android:layout_height="100dp"
           android:layout_below="@+id/scancode"
           android:layout_marginStart="15dp"
@@ -180,23 +180,23 @@
           android:focusable="true"
           app:cardElevation="25dp"
           app:cardCornerRadius="20dp"
-          android:background="@color/lightpistagreen"
+          android:background="@color/zxing_transparent"
           >
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:background="@drawable/cardbg2">
+              android:layout_width="370dp"
+              android:layout_height="105dp"
+              android:background="@drawable/hiscard2">
 
          <TextView
              android:id="@+id/historydetail"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:fontFamily="@font/roboto_regular"
-             android:layout_gravity="center|end"
              android:text="History Details"
-             android:layout_marginLeft="155dp"
-             android:textColor="@color/black"
-             android:textSize="23dp">
+             android:layout_gravity="center|left"
+             android:layout_marginLeft="55dp"
+             android:textColor="@color/white"
+             android:textSize="25dp">
 
          </TextView>
 
@@ -215,14 +215,14 @@
 
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/manualentry"
-          android:layout_width="match_parent"
+          android:layout_width="370dp"
           android:layout_height="100dp"
           android:layout_below="@+id/histotydetails"
           android:layout_marginStart="15dp"
           android:layout_marginTop="15dp"
           android:layout_marginEnd="15dp"
           android:layout_marginBottom="15dp"
-        android:background="@color/lightpistagreen"
+        android:background="@color/zxing_transparent"
           android:checkable="true"
           android:clickable="true"
           android:focusable="true"
@@ -230,19 +230,19 @@
           app:cardCornerRadius="20dp"
          >
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:background="@drawable/cardbg03">>
+              android:layout_width="370dp"
+              android:layout_height="105dp"
+              android:background="@drawable/asscard2">>
               <TextView
                   android:id="@+id/manualentrys"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:fontFamily="@font/roboto_regular"
                   android:gravity="center"
-                  android:layout_marginLeft="85dp"
-                  android:text="Manual Entry"
-                  android:textColor="@color/black"
-                  android:textSize="23dp">
+                  android:layout_marginRight="85dp"
+                  android:text="Assign"
+                  android:textColor="@color/white"
+                  android:textSize="25dp">
 
               </TextView>
           </LinearLayout>

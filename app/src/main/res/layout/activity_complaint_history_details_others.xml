@@ -22,7 +22,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:title="History"
                 app:menu="@menu/historyfilter"
-                android:background="@color/gradientblue"
+                android:background="@color/white"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"
                 />

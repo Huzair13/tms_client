@@ -7,6 +7,10 @@
     <string name="username">trueline</string>
     <string name="password">solution</string>
     <string name="name">Demo</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_con_pass">Confirm Password</string>
     <string name="hyperlink">Link for Database to upload given below \n<a href="https://console.firebase.google.com/u/0/project/map-my-sona/database/map-my-sona-default-rtdb/data">Click Here</a></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,8 +41,8 @@ public class loginpage extends AppCompatActivity {
     //private SharedPrefManager sharedPrefManager;
     public static final String PREFS_NAME = "MyPrefsFile";
 
-    private TextInputEditText LogEmail,username;
-    private TextInputEditText LogPassword;
+    private EditText LogEmail,username;
+    private EditText LogPassword;
     private TextView ForgetPass;
     private  TextView Register;
     private Button btnLogin;

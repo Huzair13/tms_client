@@ -45,5 +45,8 @@
     <color name="lightpistagreen">#F7FFF2</color>
     <color name="lightgreen">#E3F7E4</color>
     <color name="orange">#FFA500</color>
-    <color name="gradientblue">#4889FF</color>
+    <color name="finalblue">#4889FF</color>
+    <color name="gradientblue">#4889F8</color>
+    <color name="finalgrey">#EDEDED</color>
+
 </resources>

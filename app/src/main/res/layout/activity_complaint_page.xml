@@ -6,8 +6,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
 
-    tools:context=".complaints.complaint_Page">
-<!--    android:background="@drawable/greenbg04">-->
+    tools:context=".complaints.complaint_Page"
+    android:background="@drawable/greenbg04">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,10 +28,10 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="-25dp"
                 android:layout_width="130dp"
-                android:layout_height="90dp"
-                app:srcCompat="@drawable/tmslogo" />
+                android:layout_height="140dp"
+                app:srcCompat="@drawable/ssbg8" />
         </LinearLayout>
 
 
@@ -554,7 +554,7 @@
             android:hint="Your Name"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:background="@drawable/nameimg"
+            android:background="@drawable/bg01"
             >
 
         </EditText>
@@ -570,7 +570,7 @@
             android:hint="Your Mobile Number"
             android:textColorHint="@color/black"
             android:inputType="number"
-            android:background="@drawable/nameimg">
+            android:background="@drawable/bg01">
 
         </EditText>
 
@@ -713,7 +713,7 @@
             android:text="SUBMIT"
             android:layout_gravity="center"
             android:onClick="startService"
-            android:backgroundTint="@color/gradientblue"
+            android:backgroundTint="@color/greyblue"
             tools:ignore="OnClick"
             app:cornerRadius="15dp"/>
 

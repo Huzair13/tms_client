@@ -34,11 +34,11 @@
                 android:id="@+id/Product_ID_history_manual_plumber"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="50dp"
                 android:textSize="25dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/black"
-                android:layout_margin="10dp"
+                android:textColor="@color/black"/>
+<!--                android:layout_margin="10dp"-->
 
                 />
 

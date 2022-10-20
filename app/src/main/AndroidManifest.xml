@@ -157,13 +157,7 @@
             android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual"
             android:exported="false" />
         <activity
-            android:name=".manualComplaints.manual_dept_history"
-            android:exported="false" />
-        <activity
             android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualComplaint_page"
             android:exported="false" />
         <activity
             android:name=".complaints.viewDetails.historyviewdetails_painting"

@@ -24,8 +24,6 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.example.map_my_sona.admin.DetailsAssignAdmin;
 import com.example.map_my_sona.assets.Assets;
 import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
-import com.example.map_my_sona.manualComplaints.manual_dept_history;
 import com.example.map_my_sona.rating.Rating_and_Feedback;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -268,12 +266,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
             }
         });
 
-        manualentry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(dashboard.this, ManualComplaint_page.class));
-            }
-        });
 
         history.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -348,10 +340,6 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
             case R.id.bottom_emer:
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
-                break;
-
-            case R.id.manual_history:
-                startActivity(new Intent(dashboard.this, manual_dept_history.class));
                 break;
 
             case R.id.nav_assets:

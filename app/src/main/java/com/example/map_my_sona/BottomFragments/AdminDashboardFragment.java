@@ -9,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.map_my_sona.Admin_Update;
 import com.example.map_my_sona.ScannerPage;
-import com.example.map_my_sona.admin.DetailsAssignAdmin;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Dep_wise_history;
-import com.example.map_my_sona.manualComplaints.ManualComplaint_page;
 import com.google.android.material.card.MaterialCardView;
 
 /**

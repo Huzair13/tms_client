@@ -47,7 +47,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="230dp"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="75dp"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="3dp"
                     android:background="@drawable/username_icon" />
 
                 <EditText
@@ -66,7 +66,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
-                    android:fontFamily="sans-serif-condensed-medium"
+                    android:fontFamily="@font/raleway_regular"
                     android:hint="@string/login_username"
                     android:text=""
                     android:textColor="@color/black"
@@ -78,7 +78,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="230dp"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="75dp"
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="3dp"
                     android:background="@drawable/email_icon" />
 
                 <EditText
@@ -97,7 +97,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/raleway_regular"
                     android:hint="@string/signup_email"
                     android:text=""
                     android:textColor="@color/black"
@@ -109,7 +109,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="230dp"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="150dp"
                 android:layout_marginRight="75dp"
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="3dp"
                     android:background="@drawable/password" />
 
                 <EditText
@@ -129,7 +129,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/raleway_regular"
                     android:hint="Password"
                     android:text=""
                     android:textColor="@color/black"
@@ -141,7 +141,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="230dp"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="200dp"
                 android:backgroundTint="@color/finalgrey"
@@ -152,7 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="3dp"
                     android:background="@drawable/password" />
 
                 <EditText
@@ -160,7 +160,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/raleway_regular"
                     android:hint="@string/signup_con_pass"
                     android:text=""
                     android:textColor="@color/black"

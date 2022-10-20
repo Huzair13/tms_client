@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/greenbg01"
     tools:context=".complaints.HistoryDetails.complaint_HistoryDetails_assets">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="History"
-                android:background="@color/greyblue"
+                android:background="@color/gradientblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"
                 />
@@ -84,7 +83,8 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:src="@drawable/ssbg8"
+            android:src="@drawable/tmslogo"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="110dp"
             android:layout_gravity="center"/>

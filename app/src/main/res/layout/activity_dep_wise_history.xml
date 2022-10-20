@@ -125,14 +125,15 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="76dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent"
-                >
+                android:background="@color/zxing_transparent">
+
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
                 <!--            android:layout_height="50dp"-->
@@ -166,12 +167,13 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="15dp"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent">
+                android:background="@color/zxing_transparent">
 
 
 
@@ -207,6 +209,7 @@
                 android:layout_width="370dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_gravity="center"
                 android:checkable="true"
@@ -214,8 +217,8 @@
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent"
-                >
+                android:background="@color/zxing_transparent">
+
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
                 <!--            android:layout_height="50dp"-->
@@ -247,27 +250,20 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/plumber_history"
                 android:layout_width="370dp"
-                android:layout_height="75dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="15dp"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent"
-                >
-                <!--        <ImageView-->
-                <!--            android:layout_width="75dp"-->
-                <!--            android:layout_height="50dp"-->
-                <!--            android:layout_marginTop="25dp"-->
-                <!--            android:layout_marginLeft="34dp"-->
-                <!--            android:src="@drawable/qrcode_white"-->
-                <!--            android:scaleType="fitCenter"/>-->
+                android:background="@color/zxing_transparent">
                 <LinearLayout
                     android:layout_width="370dp"
-                    android:layout_height="75dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/plumcard2">
                     <TextView
                         android:layout_width="match_parent"
@@ -281,6 +277,15 @@
 
                     </TextView>
                 </LinearLayout>
+
+
+                <!--        <ImageView-->
+                <!--            android:layout_width="75dp"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:layout_marginTop="25dp"-->
+                <!--            android:layout_marginLeft="34dp"-->
+                <!--            android:src="@drawable/qrcode_white"-->
+                <!--            android:scaleType="fitCenter"/>-->
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -289,14 +294,15 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent"
-                >
+                android:background="@color/zxing_transparent">
+
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
                 <!--            android:layout_height="50dp"-->
@@ -360,14 +366,15 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardElevation="25dp"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/zxing_transparent"
-                >
+                android:background="@color/zxing_transparent">
+
                 <!--        <ImageView-->
                 <!--            android:layout_width="75dp"-->
                 <!--            android:layout_height="50dp"-->
@@ -400,6 +407,7 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_gravity="center"
                 android:checkable="true"
                 android:clickable="true"

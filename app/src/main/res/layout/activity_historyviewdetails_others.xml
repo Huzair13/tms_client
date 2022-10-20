@@ -622,18 +622,18 @@
                 android:rating="0"
                 />
 
-                    <Spinner
-                        android:id="@+id/com_his_feedBack_spinner_others"
-                        android:layout_width="250dp"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/style_spinner_1"
-                        android:fontFamily="@font/roboto_regular"
-                        android:inputType="none"
-                        android:spinnerMode="dropdown"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        />
+<!--                    <Spinner-->
+<!--                        android:id="@+id/com_his_feedBack_spinner_others"-->
+<!--                        android:layout_width="250dp"-->
+<!--                        android:layout_height="60dp"-->
+<!--                        android:layout_marginTop="15dp"-->
+<!--                        android:background="@drawable/style_spinner_1"-->
+<!--                        android:fontFamily="@font/roboto_regular"-->
+<!--                        android:inputType="none"-->
+<!--                        android:spinnerMode="dropdown"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18dp"-->
+<!--                        />-->
 
         </LinearLayout>
         <com.google.android.material.button.MaterialButton

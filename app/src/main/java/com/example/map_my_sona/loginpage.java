@@ -155,8 +155,6 @@ public class loginpage extends AppCompatActivity {
         btnLogin.setOnClickListener(view -> {
 
             LoginUserCheck();
-
-
         });
 
         ForgetPass.setOnClickListener(new View.OnClickListener() {

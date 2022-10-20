@@ -90,7 +90,7 @@ public class complaint_HistoryDetails_others extends AppCompatActivity implement
             }
         });
 
-        toolbar= findViewById(R.id.topAppBar);
+        toolbar= findViewById(R.id.topAppBar_others);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

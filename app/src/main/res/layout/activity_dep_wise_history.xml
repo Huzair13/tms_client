@@ -130,7 +130,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -171,7 +171,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -215,7 +215,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -258,7 +258,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
                 <LinearLayout
@@ -299,7 +299,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -371,7 +371,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -412,7 +412,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="25dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/zxing_transparent"
                 >

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/gradientblue"
+    android:background="@color/babyblue"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_height="200dp">
 
     <ImageView
         android:layout_width="160dp"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:src="@drawable/tmslogo"
+        android:layout_marginBottom="40dp"
         android:layout_gravity="center"
         />
 
-    <TextView
-        android:id="@+id/UserEmailDash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:text="www.sonatech.ac.in"
-        android:textColor="@color/white"
-        android:textSize="18dp" />
+<!--    <TextView-->
+<!--        android:id="@+id/UserEmailDash"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="18dp" />-->
 
 </LinearLayout>

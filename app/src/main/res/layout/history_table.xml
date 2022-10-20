@@ -166,7 +166,7 @@
                 android:layout_marginStart="20dp"
                 android:textColor="@color/gradientblue"
                 android:layout_gravity="center"
-                android:textSize="50dp"
+                android:textSize="20dp"
 
                 android:gravity="center">
 
@@ -242,7 +242,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="50sp">
+                android:textSize="20sp">
 
             </TextView>
 

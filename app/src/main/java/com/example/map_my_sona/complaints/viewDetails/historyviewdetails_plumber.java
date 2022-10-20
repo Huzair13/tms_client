@@ -77,9 +77,9 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
     AlertDialog.Builder builder_plumber;
 
-    private TextView location,staff_name,staff_dep,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
+    private TextView location,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
 
-    private String location_Str,uid_str,staff_name_str,staff_dep_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_Str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
 
 
     @Override
@@ -95,7 +95,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         refDash = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         staff_name = (TextView) findViewById(R.id.staff_name_unit_his_plumber);
-        staff_dep = (TextView) findViewById(R.id.dep_unit_his_plumber);
+        //staff_dep = (TextView) findViewById(R.id.dep_unit_his_plumber);
         com_id = (TextView) findViewById(R.id.Comid_unit_his_plumber);
         staff_mob = (TextView) findViewById(R.id.staff_mob_history_com_plumber);
         powerRating = (TextView) findViewById(R.id.powerRating_unit_his_plumber);
@@ -179,7 +179,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
-                staff_dep.setText(staff_dep_str);
+                //staff_dep.setText(staff_dep_str);
                 com_id.setText(com_id_str);
                 powerRating.setText(powerRating_str);
                 wexpiry.setText(wexpiry_str);

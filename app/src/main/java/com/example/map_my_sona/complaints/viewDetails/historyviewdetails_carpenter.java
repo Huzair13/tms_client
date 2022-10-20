@@ -167,7 +167,7 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
                 pro_id_str=complaint_details.getUniqueId();
                 location_Str=complaint_details.getLocation();
 
-                uid_str=complaint_details.getUID();
+                //uid_str=complaint_details.getUID();
                 uref_h= FirebaseAuth.getInstance().getUid();
 
                 //get_rating

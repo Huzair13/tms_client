@@ -635,10 +635,9 @@
 
             <RatingBar
                 android:id="@+id/rating_pnt"
-                android:layout_width="match_parent"
+                android:layout_width="229dp"
                 android:layout_height="match_parent"
-                android:rating="0.0"
-                />
+                android:rating="0.0" />
 
 <!--            <Spinner-->
 <!--                android:id="@+id/com_his_feedBack_spinner_pnt"-->

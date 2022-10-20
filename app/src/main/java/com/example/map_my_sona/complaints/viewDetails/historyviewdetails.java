@@ -170,7 +170,7 @@ public class historyviewdetails extends AppCompatActivity {
                 mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
-                uid_str=complaint_details.getUID();
+                //uid_str=complaint_details.getUID();
                 location_str=complaint_details.getLocation();
 
                 //get_rating
@@ -294,7 +294,7 @@ public class historyviewdetails extends AppCompatActivity {
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
 
-                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
@@ -338,7 +338,7 @@ public class historyviewdetails extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();

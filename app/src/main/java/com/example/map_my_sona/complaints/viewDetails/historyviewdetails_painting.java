@@ -165,7 +165,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 ins_by_str = complaint_details.getIns_by();
                 ins_date_str = complaint_details.getIns_date();
                 mob_str = complaint_details.getMob();
-                uid_str=complaint_details.getUID();
+                //uid_str=complaint_details.getUID();
                 com_txt_str = complaint_details.getCom_txt();
                 pro_id_str = complaint_details.getUniqueId();
                 location_Str=complaint_details.getLocation();

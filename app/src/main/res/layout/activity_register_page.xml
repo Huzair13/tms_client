@@ -22,10 +22,7 @@
             android:layout_marginTop="75dp"
             android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/tmslogo" />
-        <ImageView
-            android:id="@+id/empty"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"/>
+
 
 
         <androidx.cardview.widget.CardView
@@ -181,8 +178,8 @@
                 android:id="@+id/alreadyreg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:layout_marginRight="75dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="350dp"
                 android:text="Already Have an Account? Login" />

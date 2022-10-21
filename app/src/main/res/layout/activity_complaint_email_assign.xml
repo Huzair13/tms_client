@@ -5,10 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".admin.Complaint_email_assign"
-    android:background="@drawable/greenbg01">
+
+    android:background="@drawable/bottom_bg">
+
+
 
     <LinearLayout
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="300dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -69,7 +72,7 @@
                 android:id="@+id/email_of_email_change"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightpistagreen"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/roboto_regular"
                 android:inputType="textEmailAddress" />
 
@@ -88,6 +91,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:foregroundGravity="left"
+                android:backgroundTint="@color/gradientblue"
                 android:text="update" />
 
             <Button
@@ -97,7 +101,8 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="see old \n Email Address" />
+                android:backgroundTint="@color/gradientblue"
+                android:text="registered email" />
 
         </LinearLayout>
         <TextView
@@ -152,5 +157,7 @@
         </TableLayout>
 
     </LinearLayout>
+
+
 
 </ScrollView>

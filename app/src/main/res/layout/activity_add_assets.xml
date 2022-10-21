@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_assets"
-    android:background="@drawable/greenbg01">
+    tools:context=".add_assets">
+<!--    android:background="@drawable/greenbg01">-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="413dp"
             android:layout_height="wrap_content"
-            android:background="@color/greyblue"
+            android:background="@color/gradientblue"
             app:navigationIcon="@drawable/back_ic"
             app:title="ADD ASSET" />
         <ImageView
@@ -26,7 +26,7 @@
             android:layout_marginStart="130dp"
             android:layout_width="123dp"
             android:layout_height="102dp"
-            app:srcCompat="@drawable/ssbg8" />
+            app:srcCompat="@drawable/tmslogo" />
 
     <Spinner
         android:id="@+id/asset_type"
@@ -49,7 +49,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@drawable/gradient_blue"
         android:textColor="@color/white"
         android:hint="Model"
         android:textSize="18dp"
@@ -61,7 +61,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@color/gradientblue"
         android:textColor="@color/white"
         android:hint="Quantity"
         android:textSize="18dp"
@@ -74,7 +74,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@drawable/gradient_blue"
         android:textColor="@color/white"
         android:hint="Supplier name"
         android:textSize="18dp"
@@ -87,7 +87,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@color/gradientblue"
         android:textColor="@color/white"
         android:hint="Supplier Address"
         android:textSize="18dp"
@@ -100,7 +100,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@drawable/gradient_blue"
         android:textColor="@color/white"
         android:hint="Bill no."
         android:textSize="18dp"
@@ -113,7 +113,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@color/gradientblue"
         android:textColor="@color/white"
         android:hint="Date of Purchase"
         android:textSize="18dp"
@@ -126,7 +126,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@drawable/gradient_blue"
         android:textColor="@color/white"
         android:hint="Amount"
         android:textSize="18dp"
@@ -139,7 +139,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:background="@color/pistagreen"
+        android:background="@color/gradientblue"
         android:textColor="@color/white"
         android:hint="Ref. no."
         android:textSize="18dp"
@@ -151,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             app:cornerRadius="15dp"
-            android:backgroundTint="@color/greyblue"
+            android:backgroundTint="@color/gradientblue"
             android:text="Add assets"
             android:layout_gravity="center"
             />

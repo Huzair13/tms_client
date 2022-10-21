@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/greenbg01"
     tools:context=".assets.mobiles.Asset_Phone_detail_view">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Assets-History"
-        android:background="@color/greyblue"
+        android:background="@color/gradientblue"
         app:navigationIcon="@drawable/back_ic"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         />

@@ -93,6 +93,5 @@ public class Enter_num_manual extends AppCompatActivity {
                 });
             }
         });
-
     }
 }

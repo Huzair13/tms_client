@@ -396,7 +396,7 @@ public class complaint_Page extends AppCompatActivity {
         }
 
         Calendar calForDate = Calendar.getInstance();
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
         String date = currentDate.format(calForDate.getTime());
 
         Calendar calForTime = Calendar.getInstance();

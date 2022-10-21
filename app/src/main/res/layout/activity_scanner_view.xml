@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ScannerView">
-<!--    android:background="@drawable/greenbg01">-->
+    tools:context=".ScannerView"
+    android:background="@drawable/bottom_bg">
 
     <LinearLayout
         android:layout_width="wrap_content"

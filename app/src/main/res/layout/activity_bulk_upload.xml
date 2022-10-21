@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bulkUpload"
-    android:background="@drawable/greenbg01">
+    android:background="@drawable/bottom_bg">
 
 
 
@@ -21,6 +21,8 @@
             android:text="Follow the steps in the video to upload the bulk Products"
             android:textSize="20sp"
             android:gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_gravity="center"
             android:layout_marginTop="100dp"
             >
 

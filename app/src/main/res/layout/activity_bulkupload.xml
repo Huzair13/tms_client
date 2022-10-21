@@ -10,6 +10,7 @@
         android:id="@+id/excel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Here to upload excel Sheet" />
+        android:text="Click Here to upload excel Sheet"
+        android:backgroundTint="@color/gradientblue"/>
 
 </LinearLayout>

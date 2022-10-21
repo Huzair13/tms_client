@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/greenbg04"
     android:orientation="vertical"
     tools:context=".admin.Assign_position_admin">
 
@@ -65,7 +64,7 @@
                 android:id="@+id/username_assign_admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightpistagreen"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/roboto_regular"
                 android:inputType="text" />
 
@@ -77,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="GET DETAILS"
+            android:backgroundTint="@color/gradientblue"
             />
 
 

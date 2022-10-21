@@ -21,7 +21,10 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
@@ -39,6 +42,7 @@ public class BulkuploadActivity extends AppCompatActivity {
     // initialising the cell count as 2
     public static final int cellCount = 2;
     Button excel;
+    int StickerSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,17 @@ public class BulkuploadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ActivityCompat.checkSelfPermission(BulkuploadActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            StickerSize=snapshot.child("SonaStars").child("SonaCollege").child("stickers").getValue(Integer.class);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                     selectfile();
                 } else {
                     ActivityCompat.requestPermissions(BulkuploadActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 101);
@@ -122,59 +137,69 @@ public class BulkuploadActivity extends AppCompatActivity {
                     XSSFSheet sheet = workbook.getSheetAt(0);
                     FormulaEvaluator formulaEvaluator = workbook.getCreationHelper().createFormulaEvaluator();
                     int rowscount = sheet.getPhysicalNumberOfRows();
-                    if (rowscount > 1) {
-                        // check row wise data
-                        for (int r = 1; r < rowscount; r++) {
-                            Row row = sheet.getRow(r);
-                            if (row.getPhysicalNumberOfCells() == cellCount) {
+                    if(rowscount-1<=StickerSize){
+                        if (rowscount > 1) {
+                            // check row wise data
+                            for (int r = 1; r < rowscount; r++) {
+                                Row row = sheet.getRow(r);
+                                if (row.getPhysicalNumberOfCells() == cellCount) {
 
-                                // get cell data
-                                String A = getCellData(row, 0, formulaEvaluator);
-                                String B = getCellData(row, 1, formulaEvaluator);
+                                    // get cell data
+                                    String A = getCellData(row, 0, formulaEvaluator);
+                                    String B = getCellData(row, 1, formulaEvaluator);
 
-                                // initialise the hash map and put value of a and b into it
-                                HashMap<String, Object> quetionmap = new HashMap<>();
-                                quetionmap.put("uniqueID", A);
-                                quetionmap.put("MODEL", B);
+                                    // initialise the hash map and put value of a and b into it
+                                    HashMap<String, Object> quetionmap = new HashMap<>();
+                                    quetionmap.put("uniqueID", A);
+                                    quetionmap.put("MODEL", B);
 //                                String id = UUID.randomUUID().toString();
-                                parentmap.put(A, quetionmap);
-                            }
+                                    parentmap.put(A, quetionmap);
+                                }
 //                            else {
 //                                dialog.dismiss();
 //                                Toast.makeText(BulkuploadActivity.this, "row no. " + (r + 1) + " has incorrect data", Toast.LENGTH_LONG).show();
 //                                return;
 //                            }
-                        }
-                        // add the data in firebase if everything is correct
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // add the data according to timestamp
-                                FirebaseDatabase.getInstance().getReference().child("testing").updateChildren(parentmap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            dialog.dismiss();
-                                            Toast.makeText(BulkuploadActivity.this, "Uploaded Successfully", Toast.LENGTH_LONG).show();
-                                        } else {
-                                            dialog.dismiss();
-                                            Toast.makeText(BulkuploadActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                });
                             }
-                        });
-                    }
-                    // show the error if file is empty
-                    else {
+                            // add the data in firebase if everything is correct
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // add the data according to timestamp
+                                    FirebaseDatabase.getInstance().getReference().child("testing").setValue(parentmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                dialog.dismiss();
+                                                Toast.makeText(BulkuploadActivity.this, "Uploaded Successfully", Toast.LENGTH_LONG).show();
+                                            } else {
+                                                dialog.dismiss();
+                                                Toast.makeText(BulkuploadActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        // show the error if file is empty
+                        else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialog.dismiss();
+                                    Toast.makeText(BulkuploadActivity.this, "File is empty", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            return;
+                        }
+                    }else{
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 dialog.dismiss();
-                                Toast.makeText(BulkuploadActivity.this, "File is empty", Toast.LENGTH_LONG).show();
+                                Toast.makeText(BulkuploadActivity.this, "You are Limited to upload only " + StickerSize +" Data But you are trying to upload " + (rowscount-1), Toast.LENGTH_SHORT).show();
                             }
                         });
-                        return;
                     }
                 }
                 // show the error message if failed

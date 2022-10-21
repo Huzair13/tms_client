@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -37,7 +38,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import papaya.in.sendmail.SendMail;
 
@@ -73,6 +77,7 @@ public class historyviewdetails_others extends AppCompatActivity {
     private TextView staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt,location;
 
     private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String Date_str;
 
 
     @Override
@@ -158,7 +163,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                 pro_id_str=complaint_details.getUniqueId();
                 //uid_str=complaint_details.getUID();
                 location_str=complaint_details.getLocation();
-
+                Date_str=complaint_details.getDate();
                 //get_rating
                 rating_str=complaint_details.getRating();
 
@@ -258,12 +263,43 @@ public class historyviewdetails_others extends AppCompatActivity {
 //                    other_feedback.requestFocus();
 //                }
                 if (status.equals("Pending")){
-                    HashMap hp1=new HashMap();
-                    hp1.put("status","Completed");
+                    final HashMap[] hpnew = {new HashMap()};
 
                     HashMap hp=new HashMap();
                     hp.put("status","Completed");
-                    hp.put("rating",rat);
+
+                    HashMap hp5=new HashMap();
+                    hp5.put("status","Completed");
+                    hp5.put("rating","5.0");
+
+                    HashMap hp4=new HashMap();
+                    hp4.put("status","Completed");
+                    hp4.put("rating","4.0");
+
+                    HashMap hp3=new HashMap();
+                    hp3.put("status","Completed");
+                    hp3.put("rating","3.0");
+
+                    HashMap hp2=new HashMap();
+                    hp2.put("status","Completed");
+                    hp2.put("rating","2.0");
+
+                    String pattern = "dd-MM-yyyy";
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                    String date1 = simpleDateFormat.format(new Date());
+
+                    Long dateDifference = (Long) getDateDiff(new SimpleDateFormat("dd-MM-yyyy"), Date_str, date1);
+
+                    if(dateDifference==0){
+                        hpnew[0] =hp5;
+                    }else if(dateDifference==1){
+                        hpnew[0] =hp4;
+                    }else if(dateDifference==2){
+                        hpnew[0] =hp3;
+                    }else{
+                        hpnew[0] =hp2;
+                    }
+
                     //hp.put("FeedBack",FeedBack_str);
 
                     refDash.addValueEventListener(new ValueEventListener() {
@@ -280,7 +316,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
 
-                                                    reference_complaints_history_fullView.updateChildren(hp1).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails_others.this, "Complaint closed", Toast.LENGTH_SHORT).show();
@@ -316,7 +352,7 @@ public class historyviewdetails_others extends AppCompatActivity {
 
                                 }
 
-                                else if(uid_str.equals(uref_h)){
+                                else{
                                     builder.setTitle("Alert")
                                             .setMessage("Are you sure to close the complaint ??")
                                             .setCancelable(true)
@@ -324,11 +360,11 @@ public class historyviewdetails_others extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                                    reference_complaints_history_fullView.updateChildren(hpnew[5]).addOnSuccessListener(new OnSuccessListener() {
                                                         @Override
                                                         public void onSuccess(Object o) {
                                                             Toast.makeText(historyviewdetails_others.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                            Intent intent=new Intent(historyviewdetails_others.this, Dep_wise_history.class);
+                                                            Intent intent=new Intent(historyviewdetails_others.this, complaint_HistoryDetails_others.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             startActivity(intent);
 
@@ -349,8 +385,6 @@ public class historyviewdetails_others extends AppCompatActivity {
                                                 }
                                             })
                                             .show();
-                                }else{
-                                    Toast.makeText(historyviewdetails_others.this, "You are unable to close this complaint , as it is not filled by you.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -362,51 +396,6 @@ public class historyviewdetails_others extends AppCompatActivity {
                     });
 
                 }else{
-                    if(uid_str.equals(uref_h)){
-                        HashMap hp=new HashMap();
-                        hp.put("status","Pending");
-                        hp.put("rating","0.0");
-
-                        builder.setTitle("Alert")
-                                .setMessage("Are you sure to open the complaint again ??")
-                                .setCancelable(true)
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                                        //getting technicians email id
-                                        getReciveremailadd();
-                                        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
-                                            @Override
-                                            public void onSuccess(Object o) {
-                                                //Sending email to the technicians
-                                                SendEmail();
-                                                Toast.makeText(historyviewdetails_others.this, "Complaint opened Again", Toast.LENGTH_SHORT).show();
-                                                Intent intent=new Intent(historyviewdetails_others.this, Dep_wise_history.class);
-                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                startActivity(intent);
-
-                                            }
-                                        }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(historyviewdetails_others.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.cancel();
-                                    }
-                                })
-                                .show();
-
-                    }else{
-                        Toast.makeText(historyviewdetails_others.this, "You are unable to close this complaint , as it is not filled by you.", Toast.LENGTH_SHORT).show();
-                    }
                     Toast.makeText(historyviewdetails_others.this, "It has already been solved and closed", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -450,6 +439,14 @@ public class historyviewdetails_others extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
             Toast.makeText(this, "Failed to send message", Toast.LENGTH_SHORT).show();
+        }
+    }
+    private Object getDateDiff(SimpleDateFormat simpleDateFormat, String date_str, String date1) {
+        try {
+            return TimeUnit.DAYS.convert(simpleDateFormat.parse(date1).getTime() - simpleDateFormat.parse(date1).getTime(), TimeUnit.MILLISECONDS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
         }
     }
 

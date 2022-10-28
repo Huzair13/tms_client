@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".assets.Assets"
-    android:orientation="vertical"
+    android:orientation="vertical">
 
-    android:background="@drawable/greenbg01">
+<!--    android:background="@drawable/greenbg01">-->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Assets"
-        android:background="@color/greyblue"
+        android:background="@color/gradientblue"
         app:navigationIcon="@drawable/back_ic"
 
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -36,9 +36,9 @@
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
+        app:cardCornerRadius="20dp">
+<!--        app:cardBackgroundColor="@color/zxing_transparent">-->
+
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
         <!--            android:layout_height="50dp"-->
@@ -47,15 +47,15 @@
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/netbg2">
+            android:layout_width="390dp"
+            android:layout_height="105dp"
+            android:background="@drawable/lapcard1">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Laptop"
                 android:textSize="30dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginRight="125dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_regular" >
@@ -75,9 +75,9 @@
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
+        app:cardCornerRadius="20dp">
+<!--        app:cardBackgroundColor="@color/zxing_transparent"-->
+
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
         <!--            android:layout_height="50dp"-->
@@ -86,15 +86,15 @@
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/netbg2">
+            android:layout_width="390dp"
+            android:layout_height="105dp"
+            android:background="@drawable/mobcard1">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Mobile Phones"
                 android:textSize="30dp"
-                android:layout_marginLeft="75dp"
+                android:layout_marginRight="105dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_regular" >
@@ -115,9 +115,9 @@
         android:clickable="true"
         android:focusable="true"
         app:cardElevation="25dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        >
+        app:cardCornerRadius="20dp">
+<!--        app:cardBackgroundColor="@color/white"-->
+
         <!--        <ImageView-->
         <!--            android:layout_width="75dp"-->
         <!--            android:layout_height="50dp"-->
@@ -126,15 +126,15 @@
         <!--            android:src="@drawable/qrcode_white"-->
         <!--            android:scaleType="fitCenter"/>-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/netbg2">
+            android:layout_width="390dp"
+            android:layout_height="105dp"
+            android:background="@drawable/tabcard1">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Tablets"
                 android:textSize="30dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginRight="125dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_regular" >
@@ -156,9 +156,9 @@
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="25dp"
-            app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/white"
-            >
+            app:cardCornerRadius="20dp">
+<!--            app:cardBackgroundColor="@color/white"-->
+
             <!--        <ImageView-->
             <!--            android:layout_width="75dp"-->
             <!--            android:layout_height="50dp"-->
@@ -167,15 +167,15 @@
             <!--            android:src="@drawable/qrcode_white"-->
             <!--            android:scaleType="fitCenter"/>-->
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/netbg2">
+                android:layout_width="390dp"
+                android:layout_height="105dp"
+                android:background="@drawable/tvcard1">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Television"
                     android:textSize="30dp"
-                    android:layout_marginLeft="125dp"
+                    android:layout_marginRight="125dp"
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:fontFamily="@font/roboto_regular" >

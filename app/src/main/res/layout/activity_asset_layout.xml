@@ -15,7 +15,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/lightpistagreen"
+            android:backgroundTint="@color/babyblue"
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"

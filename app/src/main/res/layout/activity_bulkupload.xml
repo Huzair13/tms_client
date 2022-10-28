@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BulkuploadActivity">
+    tools:context=".BulkuploadActivity"
+    android:background="@drawable/bottom_bg">
 
     <Button
         android:id="@+id/excel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:layout_marginStart="45dp"
         android:text="Click Here to upload excel Sheet"
         android:backgroundTint="@color/gradientblue"/>
 

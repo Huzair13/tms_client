@@ -258,6 +258,14 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         });
 
 
+        manualentry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashboard.this, DetailsAssignAdmin.class));
+            }
+        });
+
+
     };
 
 

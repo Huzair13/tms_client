@@ -39,7 +39,8 @@
             android:fontFamily="@font/mulish"
             android:inputType="none"
             android:spinnerMode="dropdown"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -69,7 +70,7 @@
                 android:id="@+id/new_mob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/lightpistagreen"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/roboto_regular"
                 android:inputType="phone" />
 

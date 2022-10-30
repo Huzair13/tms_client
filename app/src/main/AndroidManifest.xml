@@ -27,6 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
+            android:name=".importComplaints"
+            android:exported="false" />
+        <activity
             android:name=".New_login"
             android:exported="false" />
         <activity

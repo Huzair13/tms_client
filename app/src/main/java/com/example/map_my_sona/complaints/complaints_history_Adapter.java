@@ -62,6 +62,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         int pos_sn=position+1;
         int pos_sn1=(size1-position);
         String pos_sn_Str=String.valueOf(pos_sn1);
+        String uniqueId=complaint_details.getUniqueId();
 
         if(status_com.equals("Pending")){
             holder.status_h.setBackgroundResource(R.color.Red);
@@ -72,6 +73,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
         holder.dandt_h.setText(complaint_details.getDate());
         holder.comName_h.setText(complaint_details.getCom_txt());
         holder.sn_h.setText(pos_sn_Str);
+        holder.uniqueiD.setText(uniqueId);
 //start
         final ArrayList<String> locationNames = new ArrayList<>();
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
@@ -103,7 +105,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
 
     public class Viewholder_complaints_history extends RecyclerView.ViewHolder implements  View.OnClickListener {
 
-        TextView sn_h, dandt_h,comId_h,comName_h,status_h;
+        TextView sn_h, dandt_h,comId_h,comName_h,status_h,uniqueiD;
 
         public Viewholder_complaints_history(@NonNull View itemView) {
             super(itemView);
@@ -114,6 +116,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
             dandt_h=itemView.findViewById(R.id.dateandtime_history);
             comName_h=itemView.findViewById(R.id.com_name_history);
             status_h=itemView.findViewById(R.id.status_history);
+            uniqueiD=itemView.findViewById(R.id.uniqueid);
 
             itemView.setOnClickListener(this);
 

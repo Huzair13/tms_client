@@ -58,6 +58,8 @@
                     android:background="@drawable/username_icon" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:id="@+id/signupusernamelInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -88,6 +90,8 @@
                     android:background="@drawable/email_icon" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:id="@+id/signupemaillInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -119,6 +123,9 @@
                     android:background="@drawable/password" />
 
                 <EditText
+                    app:passwordToggleEnabled="true"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:id="@+id/signuppassInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -150,6 +157,8 @@
                     android:background="@drawable/password" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
                     android:id="@+id/signuppassInputConfirm"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

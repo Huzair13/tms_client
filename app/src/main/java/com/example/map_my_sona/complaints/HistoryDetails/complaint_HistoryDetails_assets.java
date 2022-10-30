@@ -74,7 +74,7 @@ public class complaint_HistoryDetails_assets extends AppCompatActivity implement
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
-        reference_complaints_history_assets.addValueEventListener(new ValueEventListener() {
+        reference_complaints_history_assets.orderByChild("date").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){

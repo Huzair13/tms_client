@@ -18,7 +18,10 @@ import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RegisterPage extends AppCompatActivity {
     TextView alreadyreg;
@@ -27,6 +30,7 @@ public class RegisterPage extends AppCompatActivity {
     private Button Signupbtn;
     FirebaseAuth mAuth ;
     ProgressDialog progressDialog;
+    Boolean bool;
 
     FirebaseDatabase database;
 
@@ -52,7 +56,8 @@ public class RegisterPage extends AppCompatActivity {
         Signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PerforAuth();
+                CheckValidity();
+//                PerforAuth();
             }
         });
 
@@ -66,7 +71,7 @@ public class RegisterPage extends AppCompatActivity {
 
     }
 
-    private void PerforAuth() {
+    private void CheckValidity() {
         uname_str=username.getText().toString();
         email_str=email.getText().toString();
         pass_str=password.getText().toString();
@@ -86,8 +91,28 @@ public class RegisterPage extends AppCompatActivity {
         }else if(!pass_confirm_str.equals(pass_str)){
             passwordConfirm.setError("Password not matching");
             passwordConfirm.requestFocus();
+        }else{
+            getBool();
         }
-        else{
+    }
+
+    private void getBool() {
+        database.getReference().child("usersLogin").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                bool=snapshot.hasChild(uname_str);
+                PerforAuth();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void PerforAuth() {
+        if(!bool){
             progressDialog.setMessage("Please wait while Registration");
             progressDialog.setTitle("Registration");
             progressDialog.setCanceledOnTouchOutside(false);
@@ -121,6 +146,9 @@ public class RegisterPage extends AppCompatActivity {
                     }
                 }
             });
+        }
+        else{
+            Toast.makeText(RegisterPage.this, "Username Already Exists Please change your username", Toast.LENGTH_SHORT).show();
         }
     }
     private void sendUserToNextActivity(){

@@ -60,8 +60,11 @@ public class ScannerView extends AppCompatActivity implements ZXingScannerView.R
     @Override
     public void handleResult(Result rawResult) {
         final String scanResult = rawResult.getText();
+        String arr[]=scanResult.split("/");
+        int size=arr.length;
+        final String scanresultnew=arr[size-1];
         Intent intent = new Intent(getBaseContext(), complaint_Page.class);
-        intent.putExtra("SCAN_RESULT", scanResult);
+        intent.putExtra("SCAN_RESULT", scanresultnew);
         startActivity(intent);
         onBackPressed();
     }

@@ -40,7 +40,7 @@ import java.util.UUID;
 
 public class BulkuploadActivity extends AppCompatActivity {
     // initialising the cell count as 2
-    public static final int cellCount = 2;
+    public static final int cellCount = 13;
     Button excel;
     int StickerSize;
 
@@ -145,15 +145,37 @@ public class BulkuploadActivity extends AppCompatActivity {
                                 if (row.getPhysicalNumberOfCells() == cellCount) {
 
                                     // get cell data
-                                    String A = getCellData(row, 0, formulaEvaluator);
-                                    String B = getCellData(row, 1, formulaEvaluator);
+                                    String UniqueID = getCellData(row, 0, formulaEvaluator);
+                                    String dep_of_pro = getCellData(row, 1, formulaEvaluator);
+                                    String ins_by=getCellData(row,2,formulaEvaluator);
+                                    String ins_date=getCellData(row,3,formulaEvaluator);
+                                    String location=getCellData(row,4,formulaEvaluator);
+                                    String make=getCellData(row,5,formulaEvaluator);
+                                    String model=getCellData(row,6,formulaEvaluator);
+                                    String power_rating=getCellData(row,7,formulaEvaluator);
+                                    String procurement=getCellData(row,8,formulaEvaluator);
+                                    String sn_no =getCellData(row,9,formulaEvaluator);
+                                    String wexpiry=getCellData(row,10,formulaEvaluator);
+                                    String wperiod=getCellData(row,11,formulaEvaluator);
+                                    String config=getCellData(row,12,formulaEvaluator);
+
 
                                     // initialise the hash map and put value of a and b into it
                                     HashMap<String, Object> quetionmap = new HashMap<>();
-                                    quetionmap.put("uniqueID", A);
-                                    quetionmap.put("MODEL", B);
-//                                String id = UUID.randomUUID().toString();
-                                    parentmap.put(A, quetionmap);
+                                    quetionmap.put("uniqueID",UniqueID);
+                                    quetionmap.put("dep_of_pro", dep_of_pro);
+                                    quetionmap.put("ins_by",ins_by);
+                                    quetionmap.put("ins_date",ins_date);
+                                    quetionmap.put("location",location);
+                                    quetionmap.put("make",make);
+                                    quetionmap.put("model",model);
+                                    quetionmap.put("power_rating",power_rating);
+                                    quetionmap.put("procurement",procurement);
+                                    quetionmap.put("sn_no",Double.parseDouble(sn_no));
+                                    quetionmap.put("wexpiry",wexpiry);
+                                    quetionmap.put("wperiod",wperiod);
+                                    quetionmap.put("config",config);
+                                    parentmap.put(UniqueID, quetionmap);
                                 }
 //                            else {
 //                                dialog.dismiss();
@@ -166,7 +188,7 @@ public class BulkuploadActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     // add the data according to timestamp
-                                    FirebaseDatabase.getInstance().getReference().child("testing").setValue(parentmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    FirebaseDatabase.getInstance().getReference().child("Datas").setValue(parentmap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {

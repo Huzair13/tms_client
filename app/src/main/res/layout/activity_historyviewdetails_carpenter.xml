@@ -128,9 +128,11 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/comID_Row">
 
                 <TextView
+                    android:id="@+id/sn_id_elech"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -166,9 +168,11 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/ComBY_nameRow">
 
                 <TextView
+                    android:id="@+id/sn_name_elech"
                     android:layout_width="71dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -184,7 +188,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Staff Name"
+                    android:text="Complainted by"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -205,9 +209,11 @@
             </TableRow>
 
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/com_byMOb_row">
 
                 <TextView
+                    android:id="@+id/sn_mob_elech"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -223,7 +229,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Staff Mobile Number"
+                    android:text="Complainted Mobile"
                     android:textColor="@color/black"
                     android:background="@drawable/table"
                     android:textSize="18dp"
@@ -243,14 +249,95 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/makeRow_elech">
 
                 <TextView
+                    android:id="@+id/sn_make_elech"
+                    android:layout_width="71dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cellshape"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Make"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    />
+
+                <TextView
+                    android:id="@+id/make_unit_elech"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/modelRow_elech">
+
+                <TextView
+                    android:id="@+id/sn_model_elech"
+                    android:layout_width="76dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cellshape"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Model"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                     />
+
+                <TextView
+                    android:id="@+id/model_unit_elech"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/powerRat_row_elech">
+
+                <TextView
+                    android:id="@+id/sn_powerRat_elech"
                     android:layout_width="77dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="6"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -281,14 +368,16 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/warrantyPeriodRow_elech">
 
                 <TextView
+                    android:id="@+id/sn_warperiod_elech"
                     android:layout_width="73dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="5"
+                    android:text="7"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -319,14 +408,17 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
 
-                <TextView
+                android:id="@+id/wexpiryRow_elech">
+
+            <TextView
+                android:id="@+id/sn_wexpiry_elech"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="6"
+                    android:text="8"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -357,14 +449,16 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/ins_dateRow_elech">
 
-                <TextView
+            <TextView
+                android:id="@+id/sn_ins_date_elech"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="7"
+                    android:text="9"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -395,14 +489,16 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/ins_by_Row_elech">
 
-                <TextView
+            <TextView
+                android:id="@+id/sn_ins_by_elech"
                     android:layout_width="79dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="8"
+                    android:text="10"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -433,54 +529,18 @@
                    />
 
             </TableRow>
-            <TableRow>
 
-                <TextView
+            <TableRow
+                android:id="@+id/LocRow_elech">
+
+
+            <TextView
+                android:id="@+id/sn_loc_elech"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="9"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"/>
-<!--                    android:textStyle="bold"-->
-
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Mobile No."
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"/>
-<!--                    android:textStyle="bold"-->
-
-
-                <TextView
-                    android:id="@+id/mob_unit_his_carpenter"
-                    android:layout_width="114dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                   />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="10"
+                    android:text="11"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:background="@drawable/cellshape"
@@ -507,6 +567,47 @@
                     android:background="@drawable/table"
                     android:textSize="20dp"
                     />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/configrow_elech">
+
+                <TextView
+                    android:id="@+id/sn_config_elech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cellshape"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                     />
+
+                <TextView
+                    android:id="@+id/config2"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text="Configuration"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    />
+
+                <TextView
+                    android:id="@+id/Config_elech"
+                    android:layout_width="113dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 

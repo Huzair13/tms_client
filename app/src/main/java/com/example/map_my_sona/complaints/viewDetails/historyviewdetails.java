@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,6 +77,12 @@ public class historyviewdetails extends AppCompatActivity {
     //String FeedBack_str;
     //TextView feedBack_txtView_head;
 
+    private String config_str;
+    private TextView sn_snNum,sn_make,sn_model,sn_proc,sn_powerRat,sn_wperiod,sn_wexpiry,sn_ins_by,sn_ins_date,sn_dep_of_pro,sn_config,sn_loc,sn_name,sn_id,sn_mob;
+    private int snNumber=4;
+    private TableRow name_row,mob_row,com_IDrow,makeRow,modelRow,procRow,powerRatRow,wperiodrow,wexpiryrow,ins_byRow,ins_dateRow,dep_of_proRow,configRow,locationRow;
+    private String make_str,model_str;
+
     String ReceiverEmail;
 
     //private EditText other_feedback;
@@ -83,9 +90,9 @@ public class historyviewdetails extends AppCompatActivity {
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
-    private TextView staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt,location;
+    private TextView make,model,config,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt,location;
 
-    private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,com_txt_str;
     private String dep_of_pro;
 
     @Override
@@ -109,11 +116,42 @@ public class historyviewdetails extends AppCompatActivity {
         wperiod=(TextView)findViewById(R.id.warranty_unit_his);
         ins_by=(TextView)findViewById(R.id.ins_by_unit_his);
         ins_date=(TextView)findViewById(R.id.ins_date_unit_his);
-        mob=(TextView)findViewById(R.id.mob_unit_his);
+        //mob=(TextView)findViewById(R.id.mob_unit_his);
         com_txt=(TextView)findViewById(R.id.com_txt_history);
         location=(TextView)findViewById(R.id.location_unit_his);
         rating_dep=(TextView)findViewById(R.id.rating_dep);
         //other_feedback=(EditText)findViewById(R.id.other_feedback);
+        make=(TextView)findViewById(R.id.make_unit_eh);
+        model=(TextView)findViewById(R.id.model_unit_eh);
+        config=(TextView)findViewById(R.id.sn_config_eh);
+
+
+        com_IDrow=(TableRow)findViewById(R.id.com_id_eh);
+        name_row=(TableRow)findViewById(R.id.com_by_name_eh);
+        mob_row=(TableRow)findViewById(R.id.com_by_mob_eh);
+        makeRow=(TableRow) findViewById(R.id.makeRow_eh);
+        modelRow=(TableRow) findViewById(R.id.modelRow_eh);
+        powerRatRow=(TableRow) findViewById(R.id.powerRat_row_eh);
+        wperiodrow=(TableRow) findViewById(R.id.warrantyPeriodRow_eh);
+        wexpiryrow=(TableRow) findViewById(R.id.wexpiryRow_eh);
+        ins_byRow=(TableRow) findViewById(R.id.ins_by_Row_eh);
+        ins_dateRow=(TableRow) findViewById(R.id.ins_dateRow_eh);
+        locationRow=(TableRow) findViewById(R.id.LocRow_eh);
+        configRow=(TableRow) findViewById(R.id.configrow_eh);
+
+
+        sn_make=(TextView)findViewById(R.id.sn_make_eh);
+        sn_model=(TextView)findViewById(R.id.sn_model_eh);
+        sn_powerRat=(TextView)findViewById(R.id.sn_powerRat_eh);
+        sn_wperiod=(TextView)findViewById(R.id.sn_warperiod_eh);
+        sn_wexpiry=(TextView)findViewById(R.id.sn_wexpiry_eh);
+        sn_ins_by=(TextView)findViewById(R.id.sn_ins_by_eh);
+        sn_ins_date=(TextView)findViewById(R.id.sn_ins_date_eh);
+        sn_loc=(TextView)findViewById(R.id.sn_loc_eh);
+        sn_config= (TextView)findViewById(R.id.sn_config_eh);
+        sn_name=(TextView)findViewById(R.id.sn_name_eh);
+        sn_mob=(TextView)findViewById(R.id.sn_mob_eh);
+        sn_id=(TextView)findViewById(R.id.sn_id_eh);
 
 
         ratingBar=(RatingBar) findViewById(R.id.rating);
@@ -174,11 +212,14 @@ public class historyviewdetails extends AppCompatActivity {
                 wperiod_str=complaint_details.getWperiod();
                 ins_by_str=complaint_details.getIns_by();
                 ins_date_str=complaint_details.getIns_date();
-                mob_str=complaint_details.getMob();
+                //mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
                 //uid_str=complaint_details.getUID();
                 location_str=complaint_details.getLocation();
+                make_str=complaint_details.getMake();
+                model_str=complaint_details.getModel();
+                config_str=complaint_details.getConfig();
 
                 dep_of_pro=complaint_details.getDep_of_pro();
 
@@ -194,14 +235,108 @@ public class historyviewdetails extends AppCompatActivity {
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
                 com_id.setText(com_id_str);
-                powerRating.setText(powerRating_str);
-                wexpiry.setText(wexpiry_str);
-                wperiod.setText(wperiod_str);
-                ins_by.setText(ins_by_str);
-                ins_date.setText(ins_date_str);
-                mob.setText(mob_str);
-                com_txt.setText(com_txt_str);
-                location.setText(location_str);
+//                powerRating.setText(powerRating_str);
+//                wexpiry.setText(wexpiry_str);
+//                wperiod.setText(wperiod_str);
+//                ins_by.setText(ins_by_str);
+//                ins_date.setText(ins_date_str);
+//                //mob.setText(mob_str);
+//                com_txt.setText(com_txt_str);
+//                location.setText(location_str);
+
+                //MAKE
+                if(!make_str.equals("NIL")){
+                    make.setText(make_str);
+                    sn_make.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    makeRow.setVisibility(View.GONE);
+                }
+
+                //MODEL
+                if(!model_str.equals("NIL")){
+                    model.setText(model_str);
+                    sn_model.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    modelRow.setVisibility(View.GONE);
+                }
+
+
+                //POWER RATING
+                if(!powerRating_str.equals("NIL")){
+                    powerRating.setText(powerRating_str);
+                    sn_powerRat.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    powerRatRow.setVisibility(View.GONE);
+                }
+
+                //WPERIOD
+                if(!wperiod_str.equals("NIL")){
+                    wperiod.setText(wperiod_str);
+                    sn_wperiod.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    wperiodrow.setVisibility(View.GONE);
+                }
+
+
+                //WEXPIRY
+                if(!wexpiry_str.equals("NIL")){
+                    wexpiry.setText(wexpiry_str);
+                    sn_wexpiry.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    wexpiryrow.setVisibility(View.GONE);
+                }
+
+                //INS_DATE
+                if(!ins_date_str.equals("NIL")){
+                    ins_date.setText(ins_date_str);
+                    sn_ins_date.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    ins_dateRow.setVisibility(View.GONE);
+                }
+
+                //INS_BY
+                if(!ins_by_str.equals("NIL")){
+                    ins_by.setText(ins_by_str);
+                    sn_ins_by.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    ins_byRow.setVisibility(View.GONE);
+                }
+
+
+
+                //LOCATION
+                if(!location_str.equals("NIL")){
+                    location.setText(location_str);
+                    sn_loc.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    locationRow.setVisibility(View.GONE);
+                }
+
+                //DEP_OF_PRO
+                if(!config_str.equals("NIL")){
+                    config.setText(config_str);
+                    sn_config.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    configRow.setVisibility(View.GONE);
+                }
 
                 //rating_set
                 rating_dep.setText(rating_str);

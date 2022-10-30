@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,11 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
     private DatabaseReference reference_complaints_history_fullView;
 
+    private TextView sn_snNum,sn_make,sn_model,sn_proc,sn_powerRat,sn_wperiod,sn_wexpiry,sn_ins_by,sn_ins_date,sn_dep_of_pro,sn_config,sn_loc,sn_name,sn_id,sn_mob;
+    private int snNumber=4;
+    private TableRow name_row,mob_row,com_IDrow,makeRow,modelRow,procRow,powerRatRow,wperiodrow,wexpiryrow,ins_byRow,ins_dateRow,dep_of_proRow,configRow,locationRow;
+    private String make_str,model_str;
+
     private String ReceiverEmail;
     private DatabaseReference refemail;
 
@@ -81,9 +87,10 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
     AlertDialog.Builder builder_plumber;
 
-    private TextView location,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt;
+    private TextView config,make,model,location,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt;
 
-    private String location_Str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_Str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,com_txt_str;
+    private String config_str;
 
 
     @Override
@@ -107,9 +114,40 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         wperiod = (TextView) findViewById(R.id.warranty_unit_his_plumber);
         ins_by = (TextView) findViewById(R.id.ins_by_unit_his_plumber);
         ins_date = (TextView) findViewById(R.id.ins_date_unit_his_plumber);
-        mob = (TextView) findViewById(R.id.mob_unit_his_plumber);
+        //mob = (TextView) findViewById(R.id.mob_unit_his_plumber);
         com_txt = (TextView) findViewById(R.id.com_txt_history_plumber);
         location=(TextView)findViewById(R.id.location_unit_his_plumber);
+        make=(TextView)findViewById(R.id.make_unit_plumh);
+        model=(TextView)findViewById(R.id.model_unit_plumh);
+        config=(TextView)findViewById(R.id.sn_config_plumh);
+
+
+        com_IDrow=(TableRow)findViewById(R.id.com_id_plumh);
+        name_row=(TableRow)findViewById(R.id.com_by_name_plumh);
+        mob_row=(TableRow)findViewById(R.id.com_by_mob_plumh);
+        makeRow=(TableRow) findViewById(R.id.makeRow_plumh);
+        modelRow=(TableRow) findViewById(R.id.modelRow_plumh);
+        powerRatRow=(TableRow) findViewById(R.id.powerRat_row_plumh);
+        wperiodrow=(TableRow) findViewById(R.id.warrantyPeriodRow_plumh);
+        wexpiryrow=(TableRow) findViewById(R.id.wexpiryRow_plumh);
+        ins_byRow=(TableRow) findViewById(R.id.ins_by_Row_plumh);
+        ins_dateRow=(TableRow) findViewById(R.id.ins_dateRow_plumh);
+        locationRow=(TableRow) findViewById(R.id.LocRow_plumh);
+        configRow=(TableRow) findViewById(R.id.configrow_plumh);
+
+
+        sn_make=(TextView)findViewById(R.id.sn_make_plumh);
+        sn_model=(TextView)findViewById(R.id.sn_model_plumh);
+        sn_powerRat=(TextView)findViewById(R.id.sn_powerRat_plumh);
+        sn_wperiod=(TextView)findViewById(R.id.sn_warperiod_plumh);
+        sn_wexpiry=(TextView)findViewById(R.id.sn_wexpiry_plumh);
+        sn_ins_by=(TextView)findViewById(R.id.sn_ins_by_plumh);
+        sn_ins_date=(TextView)findViewById(R.id.sn_ins_date_plumh);
+        sn_loc=(TextView)findViewById(R.id.sn_loc_plumh);
+        sn_config= (TextView)findViewById(R.id.sn_config_plumh);
+        sn_name=(TextView)findViewById(R.id.sn_name_plumh);
+        sn_mob=(TextView)findViewById(R.id.sn_mob_plumh);
+        sn_id=(TextView)findViewById(R.id.sn_id_plumh);
 
         //other_feedback=(EditText)findViewById(R.id.other_feedback_plumber);
 
@@ -154,7 +192,7 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 //        String[] feebac = {"Feedback ", "Excellent", "Good", "Not bad", "Bad"};
 //        feedback.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item, feebac));
 
-        reference_complaints_history_fullView = FirebaseDatabase.getInstance().getReference("complaints").child("Plumber").child(com_id_new);
+        reference_complaints_history_fullView = FirebaseDatabase.getInstance().getReference("complaints").child("Pluming").child(com_id_new);
 
         reference_complaints_history_fullView.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -170,11 +208,14 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 wperiod_str = complaint_details.getWperiod();
                 ins_by_str = complaint_details.getIns_by();
                 ins_date_str = complaint_details.getIns_date();
-                mob_str = complaint_details.getMob();
+                //mob_str = complaint_details.getMob();
                 com_txt_str = complaint_details.getCom_txt();
                 pro_id_str = complaint_details.getUniqueId();
                 location_Str=complaint_details.getLocation();
                 Date_str=complaint_details.getDate();
+                make_str=complaint_details.getMake();
+                model_str=complaint_details.getModel();
+                config_str=complaint_details.getConfig();
 
                 status = complaint_details.getStatus();
 
@@ -186,14 +227,108 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 staff_mob.setText(staff_mob_str);
                 //staff_dep.setText(staff_dep_str);
                 com_id.setText(com_id_str);
-                powerRating.setText(powerRating_str);
-                wexpiry.setText(wexpiry_str);
-                wperiod.setText(wperiod_str);
-                ins_by.setText(ins_by_str);
-                ins_date.setText(ins_date_str);
-                mob.setText(mob_str);
-                com_txt.setText(com_txt_str);
-                location.setText(location_Str);
+//                powerRating.setText(powerRating_str);
+//                wexpiry.setText(wexpiry_str);
+//                wperiod.setText(wperiod_str);
+//                ins_by.setText(ins_by_str);
+//                ins_date.setText(ins_date_str);
+//                //mob.setText(mob_str);
+//                com_txt.setText(com_txt_str);
+//                location.setText(location_Str);
+
+                //MAKE
+                if(!make_str.equals("NIL")){
+                    make.setText(make_str);
+                    sn_make.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    makeRow.setVisibility(View.GONE);
+                }
+
+                //MODEL
+                if(!model_str.equals("NIL")){
+                    model.setText(model_str);
+                    sn_model.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    modelRow.setVisibility(View.GONE);
+                }
+
+
+                //POWER RATING
+                if(!powerRating_str.equals("NIL")){
+                    powerRating.setText(powerRating_str);
+                    sn_powerRat.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    powerRatRow.setVisibility(View.GONE);
+                }
+
+                //WPERIOD
+                if(!wperiod_str.equals("NIL")){
+                    wperiod.setText(wperiod_str);
+                    sn_wperiod.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    wperiodrow.setVisibility(View.GONE);
+                }
+
+
+                //WEXPIRY
+                if(!wexpiry_str.equals("NIL")){
+                    wexpiry.setText(wexpiry_str);
+                    sn_wexpiry.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    wexpiryrow.setVisibility(View.GONE);
+                }
+
+                //INS_DATE
+                if(!ins_date_str.equals("NIL")){
+                    ins_date.setText(ins_date_str);
+                    sn_ins_date.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    ins_dateRow.setVisibility(View.GONE);
+                }
+
+                //INS_BY
+                if(!ins_by_str.equals("NIL")){
+                    ins_by.setText(ins_by_str);
+                    sn_ins_by.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    ins_byRow.setVisibility(View.GONE);
+                }
+
+
+
+                //LOCATION
+                if(!location_Str.equals("NIL")){
+                    location.setText(location_Str);
+                    sn_loc.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    locationRow.setVisibility(View.GONE);
+                }
+
+                //DEP_OF_PRO
+                if(!config_str.equals("NIL")){
+                    config.setText(config_str);
+                    sn_config.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    configRow.setVisibility(View.GONE);
+                }
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);

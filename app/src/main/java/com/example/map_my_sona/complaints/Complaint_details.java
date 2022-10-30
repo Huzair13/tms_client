@@ -13,7 +13,7 @@ public class Complaint_details {
     private String wexpiry;
     private String ins_by;
     private String ins_date;
-    private String mob;
+    //private String mob;
     private String date;
     private String time;
     private String key;
@@ -23,11 +23,12 @@ public class Complaint_details {
     private String location;
     private String rating;
     private String FeedBack;
+    private String config;
 
     public Complaint_details() {
     }
 
-    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack) {
+    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack, String config) {
         this.com_by_name = com_by_name;
         this.com_by_mob = com_by_mob;
         this.com_txt = com_txt;
@@ -40,16 +41,16 @@ public class Complaint_details {
         this.wexpiry = wexpiry;
         this.ins_by = ins_by;
         this.ins_date = ins_date;
-        this.mob = mob;
         this.date = date;
         this.time = time;
         this.key = key;
-        this.UniqueId = uniqueId;
+        UniqueId = uniqueId;
         this.status = status;
         this.dep_of_pro = dep_of_pro;
         this.location = location;
         this.rating = rating;
-        this.FeedBack = feedBack;
+        FeedBack = feedBack;
+        this.config = config;
     }
 
     public String getCom_by_name() {
@@ -148,14 +149,6 @@ public class Complaint_details {
         this.ins_date = ins_date;
     }
 
-    public String getMob() {
-        return mob;
-    }
-
-    public void setMob(String mob) {
-        this.mob = mob;
-    }
-
     public String getDate() {
         return date;
     }
@@ -226,5 +219,13 @@ public class Complaint_details {
 
     public void setFeedBack(String feedBack) {
         FeedBack = feedBack;
+    }
+
+    public String getConfig() {
+        return config;
+    }
+
+    public void setConfig(String config) {
+        this.config = config;
     }
 }

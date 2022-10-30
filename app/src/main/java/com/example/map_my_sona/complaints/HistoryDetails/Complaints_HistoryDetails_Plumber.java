@@ -53,7 +53,7 @@ public class Complaints_HistoryDetails_Plumber extends AppCompatActivity {
         setContentView(R.layout.activity_complaints_history_details_plumber);
 
         recyclerView_complaints_history_plumber=findViewById(R.id.recyclerview_complaints_history_plumber);
-        reference_complaints_history_plumber= FirebaseDatabase.getInstance().getReference("complaints").child("Plumber");
+        reference_complaints_history_plumber= FirebaseDatabase.getInstance().getReference("complaints").child("Pluming");
 
         recyclerView_complaints_history_plumber.setHasFixedSize(true);
 

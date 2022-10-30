@@ -143,7 +143,7 @@ public class complaints_history_Adapter extends RecyclerView.Adapter<complaints_
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);
             }
-            else if(pro_dep.equals("Plumber")){
+            else if(pro_dep.equals("Pluming")){
                 Intent intent=new Intent(context, historyviewdetails_plumber.class);
                 intent.putExtra("com_ID",arrayList1.get(positon).getKey());
                 context.startActivity(intent);

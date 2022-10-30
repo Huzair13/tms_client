@@ -74,9 +74,9 @@ public class historyviewdetails_others extends AppCompatActivity {
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
-    private TextView staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,com_txt,location;
+    private TextView staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt,location;
 
-    private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str,com_txt_str;
+    private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,com_txt_str;
     private String Date_str;
 
 
@@ -101,7 +101,7 @@ public class historyviewdetails_others extends AppCompatActivity {
         wperiod=(TextView)findViewById(R.id.warranty_unit_his_others);
         ins_by=(TextView)findViewById(R.id.ins_by_unit_his_others);
         ins_date=(TextView)findViewById(R.id.ins_date_unit_his_others);
-        mob=(TextView)findViewById(R.id.mob_unit_his_others);
+        //mob=(TextView)findViewById(R.id.mob_unit_his_others);
         com_txt=(TextView)findViewById(R.id.com_txt_history_others);
         location=(TextView)findViewById(R.id.location_unit_his_others);
         rating_dep=(TextView)findViewById(R.id.rating_dep_others);
@@ -158,7 +158,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                 wperiod_str=complaint_details.getWperiod();
                 ins_by_str=complaint_details.getIns_by();
                 ins_date_str=complaint_details.getIns_date();
-                mob_str=complaint_details.getMob();
+                //mob_str=complaint_details.getMob();
                 com_txt_str=complaint_details.getCom_txt();
                 pro_id_str=complaint_details.getUniqueId();
                 //uid_str=complaint_details.getUID();
@@ -180,7 +180,7 @@ public class historyviewdetails_others extends AppCompatActivity {
                 wperiod.setText(wperiod_str);
                 ins_by.setText(ins_by_str);
                 ins_date.setText(ins_date_str);
-                mob.setText(mob_str);
+                //mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
                 location.setText(location_str);
 

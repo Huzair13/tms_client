@@ -85,6 +85,7 @@ public class complaint_Page extends AppCompatActivity {
     private DatabaseReference refDash;
     Float rating;
     String rating_str;
+    String mobile,scanresult;
     CheckBox vhigh ,high ,low;
 
     private String Senderemail, ReceiverEmail,Sendpass , StringHost;
@@ -102,6 +103,7 @@ public class complaint_Page extends AppCompatActivity {
     DatabaseReference dbRef;
 
     DatabaseReference refemail;
+    DatabaseReference refDash1;
 
     TextInputLayout complaint_content;
     AutoCompleteTextView complaint_content_text;
@@ -115,6 +117,8 @@ public class complaint_Page extends AppCompatActivity {
 
         Senderemail="mapmysona@gmail.com";
         Sendpass="mms@2022";
+
+        refDash1 = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         //StringHost="smtp.outlook.com";
 
@@ -184,6 +188,27 @@ public class complaint_Page extends AppCompatActivity {
         s = getIntent().getStringExtra("SCAN_RESULT");
         manual_name=getIntent().getStringExtra("MANUAL_NAME");
         manual_mob=getIntent().getStringExtra("MANUAL_MOB");
+
+        refDash1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pos = snapshot.child("position").getValue(String.class);
+                if(snapshot.exists()){
+                    if(pos.equals("user")){
+                        complainted_by_mob_str=getIntent().getStringExtra("mobile");
+                        s=getIntent().getStringExtra("SCAN_RESULT");
+                        complainted_by_mob.setText(complainted_by_mob_str);
+                        complainted_by_mob.setEnabled(false);
+                        complainted_by_mob.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_verified_24, 0, 0, 0);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
         //String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
@@ -553,13 +578,13 @@ public class complaint_Page extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String pos=snapshot.child("position").getValue(String.class);
-                        if(pos.equals("admin")){
+                        if(pos.equals("admin") || pos.equals("superadmin")){
                             Intent intent= new Intent(complaint_Page.this, dashboard.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
                         else{
-                            Intent intent=new Intent(complaint_Page.this, AdminDashboard.class);
+                            Intent intent=new Intent(complaint_Page.this, ScannerPage.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }

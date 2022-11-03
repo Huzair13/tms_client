@@ -19,8 +19,8 @@
             android:id="@+id/applogo"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginTop="75dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
             app:srcCompat="@drawable/tmslogo" />
 
 
@@ -44,8 +44,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="50dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
                 android:backgroundTint="@color/finalgrey"
                 app:cardCornerRadius="5dp">
 
@@ -57,14 +57,14 @@
                     android:background="@drawable/username_icon" />
 
                 <EditText
-                    android:singleLine="true"
-                    android:imeOptions="actionNext"
                     android:id="@+id/signupusernamelInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="37dp"
                     android:fontFamily="sans-serif-medium"
                     android:hint="@string/login_username"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
                     android:text=""
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
@@ -76,8 +76,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="110dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="110dp"
                 android:backgroundTint="@color/finalgrey"
                 app:cardCornerRadius="5dp">
 
@@ -89,14 +89,14 @@
                     android:background="@drawable/email_icon" />
 
                 <EditText
-                    android:singleLine="true"
-                    android:imeOptions="actionNext"
                     android:id="@+id/signupemaillInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="37dp"
                     android:fontFamily="sans-serif-medium"
                     android:hint="@string/signup_email"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
                     android:text=""
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
@@ -107,9 +107,9 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="170dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="170dp"
                 android:backgroundTint="@color/finalgrey"
                 android:elevation="20dp"
                 app:cardCornerRadius="5dp">
@@ -127,20 +127,21 @@
                     app:passwordToggleEnabled="true">
 
                     <EditText
-                        app:passwordToggleEnabled="true"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"
                         android:id="@+id/signuppassInput"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="37dp"
+                        android:background="@color/finalgrey"
                         android:fontFamily="sans-serif-medium"
-                        android:hint="Password"
+                        android:hint="@string/login_password"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
                         android:text=""
                         android:textColor="@color/black"
                         android:textColorHint="@color/grey"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:passwordToggleEnabled="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -149,7 +150,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="230dp"
                 android:backgroundTint="@color/finalgrey"
@@ -164,14 +165,14 @@
                     android:background="@drawable/password" />
 
                 <EditText
-                    android:singleLine="true"
-                    android:imeOptions="actionDone"
                     android:id="@+id/signuppassInputConfirm"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
                     android:fontFamily="sans-serif-medium"
                     android:hint="@string/signup_con_pass"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
                     android:text=""
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
@@ -195,16 +196,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="350dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="350dp"
                 android:text="Already Have an Account? Login" />
 
         </androidx.cardview.widget.CardView>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <!--    <androidx.cardview.widget.CardView-->

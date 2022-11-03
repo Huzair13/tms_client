@@ -133,9 +133,9 @@ public class RegisterPage extends AppCompatActivity {
 
                         database.getReference().child("userDetails").child(uname_str).child("email").setValue(email_str);
                         database.getReference().child("userDetails").child(uname_str).child("userID").setValue(id);
-                        database.getReference().child("userDetails").child(uname_str).child("position").setValue("user");
+                        database.getReference().child("userDetails").child(uname_str).child("position").setValue("newuser");
 
-                        database.getReference().child("users").child(id).child("position").setValue("user");
+                        database.getReference().child("users").child(id).child("position").setValue("newuser");
 
                         sendUserToNextActivity();
                         Toast.makeText(RegisterPage.this, "Registration Successful Log in Now", Toast.LENGTH_SHORT).show();

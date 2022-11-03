@@ -362,6 +362,9 @@ public class loginpage extends AppCompatActivity {
                             else if(pos.equals("assets")){
                                 startActivity(new Intent(loginpage.this, complaint_HistoryDetails_assets.class));
                             }
+                            else if(pos.equals("user")){
+                                startActivity(new Intent(loginpage.this,ScannerPage.class));
+                            }
                             else{
                                 startActivity(new Intent(loginpage.this,NotAssigned.class));
                             }
@@ -449,6 +452,9 @@ public class loginpage extends AppCompatActivity {
                     }
                     else if(pos.equals("assets")){
                         startActivity(new Intent(loginpage.this,complaints_history_details_assets.class));
+                    }
+                    else if(pos.equals("user")){
+                        startActivity(new Intent(loginpage.this,ScannerPage.class));
                     }
                     else{
                         startActivity(new Intent(loginpage.this,NotAssigned.class));

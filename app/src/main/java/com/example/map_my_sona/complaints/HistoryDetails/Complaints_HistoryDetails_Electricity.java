@@ -33,7 +33,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Complaints_HistoryDetails_Electricity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -58,6 +60,10 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints_history_details_electricity);
 
+        Calendar calForDate = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
+        String dateToday = currentDate.format(calForDate.getTime());
+
         recyclerView_complaints_history=findViewById(R.id.recyclerview_complaints_history);
         reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Electricity");
 
@@ -81,7 +87,7 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
         builder11=new AlertDialog.Builder(this);
         mAuth=FirebaseAuth.getInstance();
 
-        reference_complaints_history.orderByChild("date").addValueEventListener(new ValueEventListener() {
+        reference_complaints_history.orderByChild("status").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){

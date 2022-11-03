@@ -11,6 +11,8 @@
     <color name="beige">#F5F5DC</color>
     <color name="cobaltblue">#0047AB</color>
     <color name="deminblue">#6F8FAF</color>
+    <color name="colortextfirst">#000000</color>
+    <color name="colortextsecond">#777474</color>
     <color name="grey">#808080</color>
     <color name="sliver">#C0C0C0</color>
     <color name="Red">#D22B2B</color>

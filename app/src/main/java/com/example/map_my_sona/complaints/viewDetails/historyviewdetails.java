@@ -1,7 +1,5 @@
 package com.example.map_my_sona.complaints.viewDetails;
 
-import static android.R.layout.simple_spinner_dropdown_item;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +10,11 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.telephony.SmsManager;
+import android.os.StrictMode;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TableRow;
@@ -28,10 +24,7 @@ import android.widget.Toast;
 import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
-import com.example.map_my_sona.complaints.complaint_Page;
-import com.example.map_my_sona.dashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -42,11 +35,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -63,6 +55,8 @@ import papaya.in.sendmail.SendMail;
 
 
 public class historyviewdetails extends AppCompatActivity {
+
+    private AsyncTask<String,Void,String> asyncTask;
 
     private static long difference_In_Days,difference_In_Hours,difference_In_Minutes,difference_In_Seconds,difference_In_Time;
     private static long difference_In_Years;
@@ -510,14 +504,15 @@ public class historyviewdetails extends AppCompatActivity {
                                         reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
+                                                sendMessage();
                                                 Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                if (ContextCompat.checkSelfPermission(historyviewdetails.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
-                                                    sendMessage();
-                                                } else {
-                                                    ActivityCompat.requestPermissions(historyviewdetails.this,
-                                                            new String[]{Manifest.permission.SEND_SMS},
-                                                            100);
-                                                }
+//                                                if (ContextCompat.checkSelfPermission(historyviewdetails.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+//
+//                                                } else {
+//                                                    ActivityCompat.requestPermissions(historyviewdetails.this,
+//                                                            new String[]{Manifest.permission.SEND_SMS},
+//                                                            100);
+//                                                }
                                                 Intent intent = new Intent(historyviewdetails.this, Dep_wise_history.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                 startActivity(intent);
@@ -551,7 +546,7 @@ public class historyviewdetails extends AppCompatActivity {
                                         reference_complaints_history_fullView.updateChildren(hp5).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
-
+                                                sendMessage();
                                                 Toast.makeText(historyviewdetails.this, String.valueOf(difference_In_Hours), Toast.LENGTH_SHORT).show();
                                                 Toast.makeText(historyviewdetails.this, "Complaint closed", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class);
@@ -655,35 +650,23 @@ public class historyviewdetails extends AppCompatActivity {
     }
 
 
-    private void sendMessage() {
-//        String sphone=staff_mob.getText().toString().trim();
-//        String sMessage="The complaint filled has been solved. \n check before closing the complaint \n If not, place it as pending";
-//
-////        if(!sphone.equals("") && !sMessage.equals("")){
-////
-////        }
-//        try{
-//            SmsManager smsManager=SmsManager.getDefault();
-//            smsManager.sendTextMessage(sphone,null,sMessage,null,null);
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Toast.makeText(this, "Failed to send message", Toast.LENGTH_SHORT).show();
-//        }
-
+    private void sendMessage()  {
         // Replace with your username
-        String user = "xxyy";
+        String user = "Sonatech";
 
         // Replace with your API KEY (We have sent API KEY on activation email, also available on panel)
-        String apikey = "xxyy";
+        String apikey = "Y7VVzSPtX3vfsq5AKYCG";
 
         // Replace with the destination mobile Number to which you want to send sms
-        String mobile = "9677381857";
+        String mobile = staff_mob_str;
 
         // Replace if you have your own Sender ID, else donot change
         String senderid = "SONACT";
 
+        String str="Your complaint has been closed and solved";
+
         // Replace with your Message content
-        String message = "Test sms API";
+        String message = "For request initiated through Sonasoft the one time password is :\" +closed+\". Do not share it with anyone for security reason";
 
         // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
         String type="txt";
@@ -697,19 +680,11 @@ public class historyviewdetails extends AppCompatActivity {
         String encoded_message= URLEncoder.encode(message);
 
         //Send SMS API
-        String mainUrl="http://smshorizon.co.in/api/sendsms.php?";
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONACT&type=txt&tid=1507159884977405639&message="+message;
 
-        //Prepare parameter string
-        StringBuilder sbPostData= new StringBuilder(mainUrl);
-        sbPostData.append("user="+user);
-        sbPostData.append("&apikey="+apikey);
-        sbPostData.append("&message="+encoded_message);
-        sbPostData.append("&mobile="+mobile);
-        sbPostData.append("&senderid="+senderid);
-        sbPostData.append("&type="+type);
+        StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(gfgPolicy);
 
-        //final string
-        mainUrl = sbPostData.toString();
         try
         {
             //prepare connection

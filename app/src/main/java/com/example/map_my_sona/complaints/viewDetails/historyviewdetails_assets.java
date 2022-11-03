@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -497,15 +504,16 @@ public class historyviewdetails_assets extends AppCompatActivity {
                                         reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
+                                                sendMessage();
                                                 Toast.makeText(historyviewdetails_assets.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                if(ContextCompat.checkSelfPermission(historyviewdetails_assets.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
-                                                    sendMessage();
-                                                }
-                                                else{
-                                                    ActivityCompat.requestPermissions(historyviewdetails_assets.this,
-                                                            new String[]{Manifest.permission.SEND_SMS},
-                                                            100);
-                                                }
+//                                                if(ContextCompat.checkSelfPermission(historyviewdetails_assets.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
+//
+//                                                }
+//                                                else{
+//                                                    ActivityCompat.requestPermissions(historyviewdetails_assets.this,
+//                                                            new String[]{Manifest.permission.SEND_SMS},
+//                                                            100);
+//                                                }
                                                 Intent intent=new Intent(historyviewdetails_assets.this, Dep_wise_history.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                 startActivity(intent);
@@ -541,6 +549,7 @@ public class historyviewdetails_assets extends AppCompatActivity {
                                         reference_complaints_history_fullView.updateChildren(hp5).addOnSuccessListener(new OnSuccessListener() {
                                             @Override
                                             public void onSuccess(Object o) {
+                                                sendMessage();
                                                 Toast.makeText(historyviewdetails_assets.this, "Complaint closed", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(historyviewdetails_assets.this, complaint_HistoryDetails_assets.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -697,19 +706,60 @@ public class historyviewdetails_assets extends AppCompatActivity {
         }
     }
 
-    private void sendMessage() {
-        String sphone=staff_mob.getText().toString().trim();
-        String sMessage="The complaint filled has been solved. \n check before closing the complaint \n If not, place it as pending";
+    private void sendMessage()  {
+        // Replace with your username
+        String user = "Sonatech";
 
-//        if(!sphone.equals("") && !sMessage.equals("")){
-//
-//        }
-        try{
-            SmsManager smsManager=SmsManager.getDefault();
-            smsManager.sendTextMessage(sphone,null,sMessage,null,null);
-        }catch (Exception e){
+        // Replace with your API KEY (We have sent API KEY on activation email, also available on panel)
+        String apikey = "Y7VVzSPtX3vfsq5AKYCG";
+
+        // Replace with the destination mobile Number to which you want to send sms
+        String mobile = staff_mob_str;
+
+        // Replace if you have your own Sender ID, else donot change
+        String senderid = "SONACT";
+
+        String str="Your complaint has been closed and solved";
+
+        // Replace with your Message content
+        String message = "For request initiated through Sonasoft the one time password is :\" +closed+\". Do not share it with anyone for security reason";
+
+        // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
+        String type="txt";
+
+        //Prepare Url
+        URLConnection myURLConnection=null;
+        URL myURL=null;
+        BufferedReader reader=null;
+
+        //encoding message
+        String encoded_message= URLEncoder.encode(message);
+
+        //Send SMS API
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONACT&type=txt&tid=1507159884977405639&message="+message;
+
+        StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(gfgPolicy);
+
+        try
+        {
+            //prepare connection
+            myURL = new URL(mainUrl);
+            myURLConnection = myURL.openConnection();
+            myURLConnection.connect();
+            reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
+            //reading response
+            String response;
+            while ((response = reader.readLine()) != null)
+                //print response
+                System.out.println(response);
+
+            //finally close connection
+            reader.close();
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
-            Toast.makeText(this, "Failed to send message", Toast.LENGTH_SHORT).show();
         }
     }
     @Override

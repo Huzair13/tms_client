@@ -3,6 +3,8 @@ package com.example.map_my_sona;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +30,9 @@ public class ScannerPage extends AppCompatActivity {
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
 
+    AlertDialog.Builder builder1;
+    FirebaseAuth mAuth;
+
 
 //    private TextView manual;
 
@@ -41,9 +46,12 @@ public class ScannerPage extends AppCompatActivity {
 //        scantxt=(TextView) findViewById(R.id.scantxt);
         manualltext=findViewById(R.id.entermanuallytext);
 
+        builder1=new AlertDialog.Builder(this);
+
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
         num_enter_man=findViewById(R.id.num_enter_man);
+        mAuth=FirebaseAuth.getInstance();
 
         num_enter_man.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,11 +77,36 @@ public class ScannerPage extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String pos=snapshot.child("position").getValue(String.class);
-                        if(pos.equals("admin")){
+                        if(pos.equals("admin") || pos.equals("superadmin")){
                             startActivity(new Intent(ScannerPage.this, dashboard.class));
                         }
                         else{
-                            startActivity(new Intent(ScannerPage.this, AdminDashboard.class));
+                            builder1.setTitle("Alert")
+                                    .setMessage("Are you sure to Log out ?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            mAuth.signOut();
+                                            Intent intent=new Intent(ScannerPage.this, loginpage.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+//                                SharedPreferences sharedPreferences =getSharedPreferences(loginpage.PREFS_NAME,0);
+//                                SharedPreferences.Editor editor=sharedPreferences.edit();
+//                                editor.putBoolean("hasLoggedIn",false);
+//                                editor.commit();
+
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
                         }
                     }
 

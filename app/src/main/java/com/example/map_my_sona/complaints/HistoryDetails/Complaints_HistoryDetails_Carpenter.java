@@ -77,7 +77,7 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
         builder11=new AlertDialog.Builder(this);
         mAuth=FirebaseAuth.getInstance();
 
-        reference_complaints_history_carpenter.orderByChild("date").addValueEventListener(new ValueEventListener() {
+        reference_complaints_history_carpenter.orderByChild("status").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){

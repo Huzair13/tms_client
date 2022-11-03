@@ -40,7 +40,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -50,6 +54,10 @@ import papaya.in.sendmail.SendMail;
 //import papaya.in.sendmail.SendMail;
 
 public class historyviewdetails_networks extends AppCompatActivity {
+
+    private static long difference_In_Days,difference_In_Hours,difference_In_Minutes,difference_In_Seconds,difference_In_Time;
+    private static long difference_In_Years;
+    private String time_str;
 
     private DatabaseReference reference_complaints_history_fullView;
 
@@ -176,6 +184,7 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 //FeedBack_str=complaint_details.getFeedBack();
 
                 Date_str=complaint_details.getDate();
+                time_str=complaint_details.getTime();
 
                 status=complaint_details.getStatus();
                 //uid_str=complaint_details.getUID();
@@ -261,140 +270,56 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //                }
 
                 if (status.equals("Pending")){
-                    final HashMap[] hpnew = {new HashMap()};
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+                    LocalDateTime now = LocalDateTime.now();
+                    String presntdANDt= dtf.format(now);
 
-                    HashMap hp=new HashMap();
-                    hp.put("status","Completed");
+                    //Long dateDifference = (Long) getDateDiff(new SimpleDateFormat("dd-MM-yyyy"), Date_str, date1);
 
-                    HashMap hp5=new HashMap();
-                    hp5.put("status","Completed");
-                    hp5.put("rating","5.0");
+                    Boolean bool = getBool();
 
-                    HashMap hp4=new HashMap();
-                    hp4.put("status","Completed");
-                    hp4.put("rating","4.0");
+                    findDifference(Date_str+" "+time_str,presntdANDt);
 
-                    HashMap hp3=new HashMap();
-                    hp3.put("status","Completed");
-                    hp3.put("rating","3.0");
-
-                    HashMap hp2=new HashMap();
-                    hp2.put("status","Completed");
-                    hp2.put("rating","2.0");
-
-                    String pattern = "dd-MM-yyyy";
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                    String date1 = simpleDateFormat.format(new Date());
-
-                    Long dateDifference = (Long) getDateDiff(new SimpleDateFormat("dd-MM-yyyy"), Date_str, date1);
-
-                    if(dateDifference==0){
-                        hpnew[0] =hp5;
-                    }else if(dateDifference==1){
-                        hpnew[0] =hp4;
-                    }else if(dateDifference==2){
-                        hpnew[0] =hp3;
-                    }else{
-                        hpnew[0] =hp2;
+                    if (bool) {
+                        if(difference_In_Days==0){
+                            if(difference_In_Hours<=3){
+                                hashm(5);
+                            }
+                            else if(difference_In_Hours>3 && difference_In_Hours<=6){
+                                hashm(4);
+                            }
+                            else if(difference_In_Hours>6 && difference_In_Hours<=9){
+                                hashm(3);
+                            }else{
+                                hashm(2);
+                            }
+                        }else if (difference_In_Days==1){
+                            hashm(1);
+                        }else{
+                            hashm(0);
+                        }
                     }
-
-                    //hp.put("FeedBack",FeedBack_str);
-
-                    refDash.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String pos=snapshot.child("position").getValue(String.class);
-                            if(snapshot.exists()){
-                                if(pos.equals("admin")){
-                                    builder_networks.setTitle("Alert")
-                                            .setMessage("Are you sure to close the complaint ??")
-                                            .setCancelable(true)
-                                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-
-                                                    reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
-                                                        @Override
-                                                        public void onSuccess(Object o) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-
-                                                            if(ContextCompat.checkSelfPermission(historyviewdetails_networks.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
-                                                                sendMessage();
-                                                            }
-                                                            else{
-                                                                ActivityCompat.requestPermissions(historyviewdetails_networks.this,
-                                                                        new String[]{Manifest.permission.SEND_SMS},
-                                                                        100);
-                                                            }
-
-                                                            Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
-                                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                            startActivity(intent);
-
-
-                                                        }
-                                                    }).addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                                                        }
-                                                    });
-
-                                                }
-                                            })
-                                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                    dialogInterface.cancel();
-                                                }
-                                            })
-                                            .show();
-                                }
-                                else {
-                                    builder_networks.setTitle("Alert")
-                                            .setMessage("Are you sure to close the complaint ??")
-                                            .setCancelable(true)
-                                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-
-
-                                                    reference_complaints_history_fullView.updateChildren(hpnew[0]).addOnSuccessListener(new OnSuccessListener() {
-                                                        @Override
-                                                        public void onSuccess(Object o) {
-
-                                                            Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
-                                                            Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
-                                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                            startActivity(intent);
-
-
-                                                        }
-                                                    }).addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                                                        }
-                                                    });
-
-                                                }
-                                            })
-                                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                    dialogInterface.cancel();
-                                                }
-                                            })
-                                            .show();
-                                }
+                    else{
+                        if(difference_In_Days==0){
+                            if(difference_In_Hours<=15){
+                                hashm(5);
+                            }
+                            else if(difference_In_Hours>15 && difference_In_Hours<=18){
+                                hashm(4);
+                            }
+                            else if(difference_In_Hours>18 && difference_In_Hours<=21){
+                                hashm(3);
+                            }
+                            else{
+                                hashm(2);
                             }
                         }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
+                        else if(difference_In_Days==1){
+                            hashm(1);
+                        }else{
+                            hashm(0);
                         }
-                    });
+                    }
 
                 }
                 else{
@@ -412,6 +337,211 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //        });
 
     }
+
+    private void hashm(int i) {
+        HashMap hp = new HashMap();
+        hp.put("status", "Completed");
+
+        HashMap hp5 = new HashMap();
+        hp5.put("status", "Completed");
+        hp5.put("rating", String.valueOf(i));
+
+        closeact(hp,hp5);
+    }
+
+    private void closeact(HashMap hp, HashMap hp5) {
+        refDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pos=snapshot.child("position").getValue(String.class);
+                if(snapshot.exists()){
+                    if(pos.equals("admin")){
+                        builder_networks.setTitle("Alert")
+                                .setMessage("Are you sure to close the complaint ??")
+                                .setCancelable(true)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+                                            @Override
+                                            public void onSuccess(Object o) {
+                                                Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
+
+                                                if(ContextCompat.checkSelfPermission(historyviewdetails_networks.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
+                                                    sendMessage();
+                                                }
+                                                else{
+                                                    ActivityCompat.requestPermissions(historyviewdetails_networks.this,
+                                                            new String[]{Manifest.permission.SEND_SMS},
+                                                            100);
+                                                }
+
+                                                Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                startActivity(intent);
+
+
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.cancel();
+                                    }
+                                })
+                                .show();
+                    }
+                    else {
+                        builder_networks.setTitle("Alert")
+                                .setMessage("Are you sure to close the complaint ??")
+                                .setCancelable(true)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+
+                                        reference_complaints_history_fullView.updateChildren(hp5).addOnSuccessListener(new OnSuccessListener() {
+                                            @Override
+                                            public void onSuccess(Object o) {
+
+                                                Toast.makeText(historyviewdetails_networks.this, "Complaint closed", Toast.LENGTH_SHORT).show();
+                                                Intent intent=new Intent(historyviewdetails_networks.this, Complaints_HistoryDetails_Networks.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                startActivity(intent);
+
+
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.cancel();
+                                    }
+                                })
+                                .show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private Boolean getBool() {
+        try {
+            String string1 = "08:00";
+            Date time1 = new SimpleDateFormat("HH:mm").parse(string1);
+            Calendar calendar1 = Calendar.getInstance();
+            calendar1.setTime(time1);
+            calendar1.add(Calendar.DATE, 1);
+
+            String string2 = "18:00";
+            Date time2 = new SimpleDateFormat("HH:mm").parse(string2);
+            Calendar calendar2 = Calendar.getInstance();
+            calendar2.setTime(time2);
+            calendar2.add(Calendar.DATE, 1);
+
+            String someRandomTime = time_str;
+            Date d = new SimpleDateFormat("HH:mm").parse(someRandomTime);
+            Calendar calendar3 = Calendar.getInstance();
+            calendar3.setTime(d);
+            calendar3.add(Calendar.DATE, 1);
+
+            Date x = calendar3.getTime();
+            if (x.after(calendar1.getTime()) && x.before(calendar2.getTime())) {
+                return true;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    static void findDifference(String start_date,String end_date) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+
+        try {
+
+            Date d1 = sdf.parse(start_date);
+            Date d2 = sdf.parse(end_date);
+
+            difference_In_Time
+                    = d2.getTime() - d1.getTime();
+
+            difference_In_Seconds
+                    = TimeUnit.MILLISECONDS
+                    .toSeconds(difference_In_Time)
+                    % 60;
+
+            difference_In_Minutes
+                    = TimeUnit
+                    .MILLISECONDS
+                    .toMinutes(difference_In_Time)
+                    % 60;
+
+            difference_In_Hours
+                    = TimeUnit
+                    .MILLISECONDS
+                    .toHours(difference_In_Time)
+                    % 24;
+
+            difference_In_Days
+                    = TimeUnit
+                    .MILLISECONDS
+                    .toDays(difference_In_Time)
+                    % 365;
+
+            difference_In_Years
+                    = TimeUnit
+                    .MILLISECONDS
+                    .toDays(difference_In_Time)
+                    / 365l;
+
+            System.out.print(
+                    "Difference"
+                            + " between two dates is: ");
+
+            // Print result
+            System.out.println(
+                    "                                                       "+
+                            difference_In_Years
+                            + " years, "
+                            + difference_In_Days
+                            + " days, "
+                            + difference_In_Hours
+                            + " hours, "
+                            + difference_In_Minutes
+                            + " minutes, "
+                            + difference_In_Seconds
+                            + " seconds");
+            System.out.println(difference_In_Hours+" : "+difference_In_Minutes);
+        }
+        catch ( ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void sendEmail() {
         SendMail mail=new SendMail("mapmysona@gmail.com",

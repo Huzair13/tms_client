@@ -23,12 +23,18 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/tmslogo"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".importComplaints"
+            android:name=".rating.rating_view.rating_assets"
             android:exported="false" />
+        <activity
+            android:name=".ExportComplaints"
+            android:exported="false" />
+        <activity android:name=".rating.rating_view.rating_others"
+            android:exported="false"/>
         <activity
             android:name=".New_login"
             android:exported="false" />

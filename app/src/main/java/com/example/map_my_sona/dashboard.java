@@ -101,13 +101,13 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
         navigationView1.setNavigationItemSelectedListener(dashboard.this);
 
         navigationView1.setCheckedItem(R.id.nav_home_admin);
-        navigationView1.setCheckedItem(R.id.new_id);
+        //navigationView1.setCheckedItem(R.id.new_id);
         navigationView1.setCheckedItem(R.id.nav_newQR);
 //        navigationView1.setCheckedItem(R.id.nav_pending);
 //        navigationView1.setCheckedItem(R.id.nav_solved);
         navigationView1.setCheckedItem(R.id.emergency_contact);
-        navigationView1.setCheckedItem(R.id.nav_report);
-        navigationView1.setCheckedItem(R.id.nav_assets);
+        navigationView1.setCheckedItem(R.id.upload_data);
+        //navigationView1.setCheckedItem(R.id.nav_assets);
 //        navigationView1.setCheckedItem(R.id.nav_NewAssets);
 
 
@@ -127,7 +127,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 String pos=snapshot.child("position").getValue(String.class);
 
                 if(snapshot.exists()){
-                    if(pos.equals("admin")){
+                    if(pos.equals("admin") || pos.equals("superadmin")){
 
                         loading.setVisibility(View.GONE);
 
@@ -144,11 +144,13 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
                         nav_QR.setVisible(true);
 
+                        navigationView1.getMenu().getItem(0).setChecked(true);
+
                         MenuItem upData=menu.findItem(R.id.update_data);
                         upData.setVisible(true);
 
-                        MenuItem new_id=menu.findItem(R.id.new_id);
-                        new_id.setVisible(true);
+//                        MenuItem new_id=menu.findItem(R.id.new_id);
+//                        new_id.setVisible(true);
 
 //                        MenuItem nav_pend=menu.findItem(R.id.nav_pending);
 //                        nav_pend.setVisible(true);
@@ -156,13 +158,13 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //                        MenuItem nav_sol=menu.findItem(R.id.nav_solved);
 //                        nav_sol.setVisible(true);
 
-                        MenuItem nav_asset=menu.findItem(R.id.nav_assets);
-                        nav_asset.setVisible(true);
+//                        MenuItem nav_asset=menu.findItem(R.id.nav_assets);
+//                        nav_asset.setVisible(true);
 
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
 
-                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        MenuItem navi_report=menu.findItem(R.id.upload_data);
                         navi_report.setVisible(true);
 
 //                        MenuItem nav_NewAss=menu.findItem(R.id.nav_NewAssets);
@@ -175,6 +177,8 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         scanner.setVisibility(View.VISIBLE);
                         history.setVisibility(View.VISIBLE);
                         manualentry.setVisibility(View.VISIBLE);
+
+
 
                         YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
                         YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
@@ -194,15 +198,15 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
                         MenuItem upData=menu.findItem(R.id.update_data);
                         upData.setVisible(true);
-
-                        MenuItem new_id=menu.findItem(R.id.new_id);
-                        new_id.setVisible(true);
+//
+//                        MenuItem new_id=menu.findItem(R.id.new_id);
+//                        new_id.setVisible(true);
 
 
                         MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
                         nav_emergencyContect.setVisible(true);
 
-                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        MenuItem navi_report=menu.findItem(R.id.upload_data);
                         navi_report.setVisible(true);
 
 
@@ -227,7 +231,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
 
 
-                        MenuItem navi_report=menu.findItem(R.id.nav_report);
+                        MenuItem navi_report=menu.findItem(R.id.upload_data);
                         navi_report.setVisible(true);
 
                     }
@@ -298,9 +302,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(intent);
                 break;
 
-            case R.id.new_id:
-                startActivity(new Intent(dashboard.this, Qr_id_generator.class));
-                break;
+//            case R.id.new_id:
+//                startActivity(new Intent(dashboard.this, Qr_id_generator.class));
+//                break;
 
             case R.id.nav_newQR:
                 startActivity(new Intent(dashboard.this, Newqrcode.class));
@@ -321,28 +325,29 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
             case R.id.update_data:
                 startActivity(new Intent(dashboard.this,update_database.class));
                 break;
-            case R.id.nav_assign_admin:
-                startActivity(new Intent(dashboard.this, DetailsAssignAdmin.class));
-                break;
+
+//            case R.id.nav_assign_admin:
+//                startActivity(new Intent(dashboard.this, DetailsAssignAdmin.class));
+//                break;
                                         //need to change
             case R.id.emergency_contact:
-                startActivity(new Intent(dashboard.this, importComplaints.class));
+                startActivity(new Intent(dashboard.this, emergencyContact.class));
                 break;
 
             case R.id.bottom_emer:
                 startActivity(new Intent(dashboard.this,emergencyContact.class));
                 break;
 
-            case R.id.nav_assets:
-                startActivity(new Intent(dashboard.this, Assets.class));
-                break;
+//            case R.id.nav_assets:
+//                startActivity(new Intent(dashboard.this, Assets.class));
+//                break;
 
             case R.id.nav_ratings:
                 startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
                 break;
 
 
-            case R.id.nav_report:
+            case R.id.upload_data:
                 startActivity(new Intent(dashboard.this, BulkuploadActivity.class));
                 break;
 

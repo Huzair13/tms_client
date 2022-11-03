@@ -8,8 +8,6 @@
     tools:context=".rating.Rating_and_Feedback">
 <!--    android:background="@drawable/greenbg01"-->
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -254,6 +252,91 @@
             android:background="@color/babyblue"
             android:textSize="24dp"
             android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_rating_assets"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/gradientblue"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/eleimg01"
+            android:layout_gravity="center_vertical">
+
+        </ImageView>
+
+        <TextView
+            android:text="Assets"
+            android:id="@+id/ra_others"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_gravity="center"
+            android:paddingLeft="15dp"
+            android:background="@color/gradientblue"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/rating_asset_field"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:text="NULL"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@color/babyblue"
+            android:textColor="@color/black"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_rating_others"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gradientblue"
+        android:layout_marginTop="15dp"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/eleimg01"
+            android:layout_gravity="center_vertical">
+
+        </ImageView>
+        <TextView
+            android:text="Others"
+            android:id="@+id/rating_others_linear"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_gravity="center"
+            android:paddingLeft="15dp"
+            android:background="@color/gradientblue"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/rating_others_field"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:text="NULL"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@color/babyblue"
+            android:textColor="@color/black"
+            android:textSize="24dp" />
 
     </LinearLayout>
 

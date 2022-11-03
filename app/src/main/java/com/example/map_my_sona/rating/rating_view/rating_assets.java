@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class rating_plumbering extends AppCompatActivity {
+public class rating_assets extends AppCompatActivity {
 
     RecyclerView recyclerView_complaints_history;
     DatabaseReference reference_complaints_history;
@@ -29,10 +29,10 @@ public class rating_plumbering extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_plumbering);
+        setContentView(R.layout.activity_rating_assets);
 
-        recyclerView_complaints_history=findViewById(R.id.recyclerview_rating_plumber);
-        reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Pluming");
+        recyclerView_complaints_history=findViewById(R.id.recyclerview_rating_assets);
+        reference_complaints_history= FirebaseDatabase.getInstance().getReference("complaints").child("Assets");
 
         recyclerView_complaints_history.setHasFixedSize(true);
         recyclerView_complaints_history.setLayoutManager(new LinearLayoutManager(this));
@@ -53,7 +53,7 @@ public class rating_plumbering extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(rating_plumbering.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rating_assets.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

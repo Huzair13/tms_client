@@ -162,6 +162,7 @@ public class BulkuploadActivity extends AppCompatActivity {
 
                                     // initialise the hash map and put value of a and b into it
                                     HashMap<String, Object> quetionmap = new HashMap<>();
+
                                     quetionmap.put("uniqueID",UniqueID);
                                     quetionmap.put("dep_of_pro", dep_of_pro);
                                     quetionmap.put("ins_by",ins_by);
@@ -175,6 +176,7 @@ public class BulkuploadActivity extends AppCompatActivity {
                                     quetionmap.put("wexpiry",wexpiry);
                                     quetionmap.put("wperiod",wperiod);
                                     quetionmap.put("config",config);
+
                                     parentmap.put(UniqueID, quetionmap);
                                 }
 //                            else {

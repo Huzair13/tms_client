@@ -48,8 +48,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="75dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="75dp"
                 android:backgroundTint="@color/finalgrey"
                 app:cardCornerRadius="5dp">
 
@@ -61,14 +61,14 @@
                     android:background="@drawable/username_icon" />
 
                 <EditText
-                    android:singleLine="true"
-                    android:imeOptions="actionNext"
                     android:id="@+id/loginemailInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="37dp"
                     android:fontFamily="sans-serif-medium"
                     android:hint="@string/login_username"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
                     android:text=""
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
@@ -80,8 +80,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="140dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="140dp"
                 android:backgroundTint="@color/finalgrey"
                 android:elevation="20dp"
                 app:cardCornerRadius="5dp">
@@ -93,21 +93,30 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/password" />
 
-                <EditText
-                    app:passwordToggleEnabled="true"
-                    android:singleLine="true"
-                    android:imeOptions="actionDone"
-                    android:id="@+id/loginpasswordInput"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Textinput_pass"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="37dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:hint="@string/login_password"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/loginpasswordInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="37dp"
+                        android:background="@color/finalgrey"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/login_password"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:passwordToggleEnabled="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -139,18 +148,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="270dp"
-                android:textSize="16dp"
-                android:text="Didn't have an account? Signup" />
+                android:text="Didn't have an account? Signup"
+                android:textSize="16dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="320dp"/>
+                android:layout_marginTop="320dp" />
 
         </androidx.cardview.widget.CardView>
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
     <!--    <androidx.cardview.widget.CardView-->

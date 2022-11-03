@@ -18,11 +18,10 @@
 <!--            android:id="@+id/testing_menu"-->
 <!--            android:icon="@drawable/ic_baseline_star_rate_24"-->
 <!--            android:title="testing"/>-->
-        <item
-            android:id="@+id/new_id"
-            android:icon="@drawable/qrid"
-            android:visible="false"
-            android:title="Generate New QR Code " />
+<!--        <item-->
+<!--            android:id="@+id/new_id"-->
+<!--            android:icon="@drawable/qrid"-->
+<!--            android:title="Generate New QR Code " />-->
         <item
             android:id="@+id/update_data"
             android:icon="@drawable/ic_baseline_update_24"
@@ -40,21 +39,13 @@
 <!--            android:title="Solved Complaints" />-->
 
 
-        <item
-            android:id="@+id/nav_assets"
-            android:icon="@drawable/ic_baseline_collections_24"
-            android:title="Assets" />
-        <item
-            android:id="@+id/nav_assign_admin"
-            android:icon="@drawable/pendingicon"
-            android:title="Assign"/>
+<!--        <item-->
+<!--            android:id="@+id/nav_assets"-->
+<!--            android:icon="@drawable/ic_baseline_collections_24"-->
+<!--            android:title="Assets" />-->
 
         <item
-            android:id="@+id/emergency_contact"
-            android:icon="@drawable/ephone"
-            android:title="Emergency Contact" />
-        <item
-            android:id="@+id/nav_report"
+            android:id="@+id/upload_data"
             android:icon="@drawable/report"
             android:title="Upload Data " />
 
@@ -62,6 +53,10 @@
             android:id="@+id/nav_ratings"
             android:icon="@drawable/ic_baseline_star_rate_24"
             android:title="Ratings"/>
+        <item
+            android:id="@+id/emergency_contact"
+            android:icon="@drawable/ephone"
+            android:title="Emergency Contact" />
         <item
             android:id="@+id/nav_logOut"
             android:icon="@drawable/logout"

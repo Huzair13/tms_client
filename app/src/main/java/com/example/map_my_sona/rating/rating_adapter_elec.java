@@ -61,7 +61,7 @@ public class rating_adapter_elec extends RecyclerView.Adapter<rating_adapter_ele
         holder.sno.setText(rat_pos_sn_str);
         holder.comName_h.setText(complaint_details.getCom_txt());
         holder.rating.setText(complaint_details.getRating());
-        holder.feedBack.setText(complaint_details.getFeedBack());
+        //holder.feedBack.setText(complaint_details.getFeedBack());
 
     }
 
@@ -72,14 +72,14 @@ public class rating_adapter_elec extends RecyclerView.Adapter<rating_adapter_ele
 
     public class Viewholder_rating_elec extends RecyclerView.ViewHolder{
 
-        TextView comName_h,rating,sno,feedBack;
+        TextView comName_h,rating,sno;
         public Viewholder_rating_elec(@NonNull View itemView) {
             super(itemView);
 
             sno=itemView.findViewById(R.id.sn_rating);
             comName_h=itemView.findViewById(R.id.com_name_rating);
             rating=itemView.findViewById(R.id.rating_box);
-            feedBack=itemView.findViewById(R.id.feedback_rating);
+            //feedBack=itemView.findViewById(R.id.feedback_rating);
 
         }
     }

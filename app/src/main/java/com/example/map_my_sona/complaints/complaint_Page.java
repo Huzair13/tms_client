@@ -81,7 +81,7 @@ public class complaint_Page extends AppCompatActivity {
     //private Spinner complainted_by_dep;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
-    private int snNumber=4;
+    private int snNumber=1;
     private DatabaseReference refDash;
     Float rating;
     String rating_str;
@@ -273,16 +273,6 @@ public class complaint_Page extends AppCompatActivity {
                     powerRatRow.setVisibility(View.GONE);
                 }
 
-                //WEXPIRY
-                if(!wexpiry_str.equals("NIL")){
-                    wexpiry.setText(wexpiry_str);
-                    sn_wexpiry.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    wexpiryrow.setVisibility(View.GONE);
-                }
-
                 //WPERIOD
                 if(!wperiod_str.equals("NIL")){
                     wperiod.setText(wperiod_str);
@@ -293,14 +283,14 @@ public class complaint_Page extends AppCompatActivity {
                     wperiodrow.setVisibility(View.GONE);
                 }
 
-                //INS_BY
-                if(!ins_by_str.equals("NIL")){
-                    ins_by.setText(ins_by_str);
-                    sn_ins_by.setText(String.valueOf(snNumber));
+                //WEXPIRY
+                if(!wexpiry_str.equals("NIL")){
+                    wexpiry.setText(wexpiry_str);
+                    sn_wexpiry.setText(String.valueOf(snNumber));
                     snNumber++;
                 }
                 else{
-                    ins_byRow.setVisibility(View.GONE);
+                    wexpiryrow.setVisibility(View.GONE);
                 }
 
                 //INS_DATE
@@ -311,6 +301,16 @@ public class complaint_Page extends AppCompatActivity {
                 }
                 else{
                     ins_dateRow.setVisibility(View.GONE);
+                }
+
+                //INS_BY
+                if(!ins_by_str.equals("NIL")){
+                    ins_by.setText(ins_by_str);
+                    sn_ins_by.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    ins_byRow.setVisibility(View.GONE);
                 }
 
                 //DEP_OF_PRO
@@ -531,7 +531,7 @@ public class complaint_Page extends AppCompatActivity {
         String date = currentDate.format(calForDate.getTime());
 
         Calendar calForTime = Calendar.getInstance();
-        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm");
         String time = currentTime.format(calForTime.getTime());
 
 

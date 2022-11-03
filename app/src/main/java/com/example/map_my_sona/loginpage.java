@@ -22,6 +22,7 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
+import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_assets;
 import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -359,7 +360,7 @@ public class loginpage extends AppCompatActivity {
                                 startActivity(new Intent(loginpage.this, complaint_HistoryDetails_others.class));
                             }
                             else if(pos.equals("assets")){
-                                startActivity(new Intent(loginpage.this,complaints_history_details_assets.class));
+                                startActivity(new Intent(loginpage.this, complaint_HistoryDetails_assets.class));
                             }
                             else{
                                 startActivity(new Intent(loginpage.this,NotAssigned.class));

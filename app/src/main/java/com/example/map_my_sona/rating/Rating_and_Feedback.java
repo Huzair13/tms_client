@@ -11,9 +11,11 @@ import android.widget.TextView;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.rating.rating_view.rating_assets;
 import com.example.map_my_sona.rating.rating_view.rating_electricity;
 import com.example.map_my_sona.rating.rating_view.rating_network;
 import com.example.map_my_sona.rating.rating_view.rating_carpenter;
+import com.example.map_my_sona.rating.rating_view.rating_others;
 import com.example.map_my_sona.rating.rating_view.rating_painting;
 import com.example.map_my_sona.rating.rating_view.rating_plumbering;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -28,9 +30,9 @@ import java.util.Map;
 
 public class Rating_and_Feedback extends AppCompatActivity {
 
-    private LinearLayout ll_rating_elec,ll_rating_net,ll_rating_car,ll_rating_paint,ll_rating_plumber;
+    private LinearLayout ll_rating_elec,ll_rating_net,ll_rating_car,ll_rating_paint,ll_rating_plumber,ll_rating_assets,ll_rating_others;
 
-    private TextView ra_avg_elec,ra_avg_paint,ra_avg_plumber,ra_avg_car,ra_avg_net;
+    private TextView ra_avg_elec,ra_avg_paint,ra_avg_plumber,ra_avg_car,ra_avg_net,ra_assets,ra_others;
     private DatabaseReference mDatabase;
     String status;
     MaterialToolbar toolbar;
@@ -48,6 +50,8 @@ public class Rating_and_Feedback extends AppCompatActivity {
         ll_rating_car=(LinearLayout)findViewById(R.id.LL_rating_car);
         ll_rating_paint=(LinearLayout)findViewById(R.id.LL_rating_paint);
         ll_rating_plumber=(LinearLayout)findViewById(R.id.LL_rating_plumber);
+        ll_rating_assets=(LinearLayout)findViewById(R.id.LL_rating_assets);
+        ll_rating_others=(LinearLayout)findViewById(R.id.LL_rating_others);
 
 
         ra_avg_elec=(TextView) findViewById(R.id.ra_avg_elec);
@@ -55,6 +59,8 @@ public class Rating_and_Feedback extends AppCompatActivity {
         ra_avg_net=(TextView)findViewById(R.id.ra_avg_net);
         ra_avg_plumber=(TextView)findViewById(R.id.ra_avg_plumber);
         ra_avg_paint=(TextView)findViewById(R.id.ra_avg_paint);
+        ra_assets=(TextView)findViewById(R.id.rating_asset_field);
+        ra_others=(TextView)findViewById(R.id.rating_others_field);
 
         toolbar= findViewById(R.id.topAppBar);
 
@@ -93,6 +99,102 @@ public class Rating_and_Feedback extends AppCompatActivity {
             }
         });
 
+        ll_rating_assets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_assets.class));
+            }
+        });
+
+        ll_rating_others.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Rating_and_Feedback.this, rating_others.class));
+            }
+        });
+
+        //ASSETS RATING
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+
+        mDatabase.child("Assets").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Float sum=0.0f;
+                int count=0;
+                Float average=0.0f;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    if(map.get("status").equals("Completed")){
+                        Object avg=map.get("rating");
+                        Float gvalue=Float.parseFloat(String.valueOf(avg));
+                        if(!gvalue.equals(0.0f)){
+                            sum +=gvalue;
+                            count+=1;
+                        }
+                    }
+                    average=sum/count;
+                    ra_assets.setText(String.valueOf(df.format(average)));
+                }
+                if(average>=4.0 && average<=5.0){
+                    ra_assets.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_assets.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_assets.setBackgroundResource(R.color.Red);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        //OTHERS RATING
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+        mDatabase.child("Others").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Float sum=0.0f;
+                int count=0;
+                Float average=0.0f;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    if(map.get("status").equals("Completed")){
+                        Object avg=map.get("rating");
+                        Float gvalue=Float.parseFloat(String.valueOf(avg));
+                        if(!gvalue.equals(0.0f)){
+                            sum +=gvalue;
+                            count+=1;
+                        }
+                    }
+                    average=sum/count;
+                    ra_others.setText(String.valueOf(df.format(average)));
+                }
+                if(average>=4.0 && average<=5.0){
+                    ra_others.setBackgroundResource(R.color.green);
+                }
+                else if(average>=3.0 && average<4.0){
+                    ra_others.setBackgroundResource(R.color.orange);
+                }
+                else if(average<3.0 && average>=0.0){
+                    ra_others.setBackgroundResource(R.color.Red);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        //ELECTRICITY
         mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
 
         mDatabase.child("Electricity").addValueEventListener(new ValueEventListener() {
@@ -175,7 +277,7 @@ public class Rating_and_Feedback extends AppCompatActivity {
 
         //average for plumber
 
-        mDatabase.child("Plumber").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Pluming").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -300,45 +402,10 @@ public class Rating_and_Feedback extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Rating_and_Feedback.this, dashboard.class));
             }
         });
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//
-//    }
 
-
-    //bottom navigation
-//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//        @Override
-//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//            Fragment fragment;
-//            switch (item.getItemId()) {
-//                case R.id.bottom_history:
-//                    startActivity(new Intent(Rating_and_Feedback.this, ManualComplaint_page.class));
-//                    break;
-//                case R.id.bottom_feedback:
-//
-//                    startActivity(new Intent(Rating_and_Feedback.this,Rating_and_Feedback.class));
-//                    break;
-//                case R.id.bottom_home:
-//                    startActivity(new Intent(Rating_and_Feedback.this,dashboard.class));
-//                    break;
-//                case R.id.bottom_report:
-//                    startActivity(new Intent(Rating_and_Feedback.this,Rating_and_Feedback.class));
-//                    break;
-//
-//                case R.id.bottom_emer:
-//                    startActivity(new Intent(Rating_and_Feedback.this, emergencyContact.class));
-//                    break;
-//
-//            }
-//            return false;
-//        }
     };
 
 }

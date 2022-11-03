@@ -20,6 +20,9 @@
        app:headerLayout="@layout/drawer_header"
        app:menu="@menu/drawer_menu"
        android:layout_gravity="start"
+       app:itemIconTint="@color/black"
+       app:itemTextColor="@color/black"
+       app:itemBackground="@drawable/drawer_item"
        android:backgroundTint="@color/white"
        >
    </com.google.android.material.navigation.NavigationView>

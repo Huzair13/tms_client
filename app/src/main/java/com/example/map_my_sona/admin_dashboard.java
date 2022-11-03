@@ -56,7 +56,7 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(admin_dashboard.this);
 
         navigationView.setCheckedItem(R.id.nav_home_admin);
-        navigationView.setCheckedItem(R.id.new_id);
+        //navigationView.setCheckedItem(R.id.new_id);
         navigationView.setCheckedItem(R.id.nav_newQR);
 //        navigationView.setCheckedItem(R.id.nav_pending);
 //        navigationView.setCheckedItem(R.id.nav_solved);
@@ -100,9 +100,9 @@ public class admin_dashboard extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(admin_dashboard.this, admin_dashboard.class));
                 break;
 
-            case R.id.new_id:
-                startActivity(new Intent(admin_dashboard.this, Qr_id_generator.class));
-                break;
+//            case R.id.new_id:
+//                startActivity(new Intent(admin_dashboard.this, Qr_id_generator.class));
+//                break;
 
             case R.id.nav_newQR:
                 startActivity(new Intent(admin_dashboard.this, Newqrcode.class));

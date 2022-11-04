@@ -53,11 +53,11 @@
 
            <ImageView
                android:layout_width="150dp"
-               android:layout_height="100dp"
-               android:src="@drawable/tmslogo"
+               android:layout_height="150dp"
+               android:layout_gravity="center"
                android:layout_marginTop="15dp"
                android:layout_marginRight="110dp"
-               android:layout_gravity="center"/>
+               android:src="@drawable/tmslogo" />
 
            <com.airbnb.lottie.LottieAnimationView
                android:layout_width="120dp"
@@ -121,7 +121,7 @@
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="60dp"
+       android:gravity="center"
        android:orientation="vertical">
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/scancode"
@@ -140,8 +140,9 @@
           android:background="@color/zxing_transparent">
 
           <LinearLayout
-              android:layout_width="370dp"
-              android:layout_height="105dp"
+              android:layout_width="300dp"
+              android:layout_height="85dp"
+              android:layout_gravity="center_horizontal"
               android:background="@drawable/scancard2">
 
               <!--            <ImageView-->
@@ -153,14 +154,14 @@
               <!--                android:scaleType="fitCenter"/>-->
               <TextView
                   android:id="@+id/scanQR_dashboard"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
                   android:text="Scan QR Code"
                   android:textSize="25dp"
-                  android:gravity="center"
-                  android:layout_marginRight="85dp"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginStart="25dp"
                   android:textColor="@color/white"
-                  android:fontFamily="@font/roboto_regular">
+                  android:fontFamily="@font/luxuriousromanregular">
 
               </TextView>
           </LinearLayout>
@@ -189,18 +190,19 @@
           android:background="@color/zxing_transparent"
           >
           <LinearLayout
-              android:layout_width="370dp"
-              android:layout_height="105dp"
+              android:layout_width="300dp"
+              android:layout_height="85dp"
+              android:layout_gravity="center_horizontal"
               android:background="@drawable/hiscard2">
 
          <TextView
              android:id="@+id/historydetail"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:fontFamily="@font/roboto_regular"
+             android:fontFamily="@font/luxuriousromanregular"
              android:text="History Details"
-             android:layout_gravity="center|left"
-             android:layout_marginLeft="55dp"
+             android:layout_marginTop="20dp"
+             android:layout_marginStart="25dp"
              android:textColor="@color/white"
              android:textSize="25dp">
 
@@ -237,16 +239,17 @@
           app:cardCornerRadius="20dp"
          >
           <LinearLayout
-              android:layout_width="370dp"
-              android:layout_height="105dp"
+              android:layout_width="300dp"
+              android:layout_height="85dp"
+              android:layout_gravity="center_horizontal"
               android:background="@drawable/asscard2">>
               <TextView
                   android:id="@+id/manualentrys"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:fontFamily="@font/roboto_regular"
-                  android:gravity="center"
-                  android:layout_marginRight="85dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/luxuriousromanregular"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginStart="60dp"
                   android:text="Assign"
                   android:textColor="@color/white"
                   android:textSize="25dp">

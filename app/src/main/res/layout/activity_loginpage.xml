@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginpage"
-    android:background="@drawable/bottom_bg">
+    android:background="@drawable/top_bot_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="100dp"
             app:srcCompat="@drawable/tmslogo" />
 
         <ImageView
@@ -101,20 +101,20 @@
 
                     <EditText
                         android:id="@+id/loginpasswordInput"
+                        app:passwordToggleEnabled="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="37dp"
-                        android:background="@color/finalgrey"
                         android:fontFamily="sans-serif-medium"
-                        android:hint="@string/login_password"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
+                        android:hint="Password"
                         android:text=""
                         android:textColor="@color/black"
+                        android:background="@color/finalgrey"
                         android:textColorHint="@color/grey"
                         android:textSize="16dp"
-                        android:textStyle="bold"
-                        app:passwordToggleEnabled="true" />
+                        android:textStyle="bold"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 

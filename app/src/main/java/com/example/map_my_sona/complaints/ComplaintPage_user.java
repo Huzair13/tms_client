@@ -65,6 +65,7 @@ public class ComplaintPage_user extends AppCompatActivity {
     DatabaseReference databaseReference;
     String s,manual_name,manual_mob;
     String FeedBack_str;
+    String uniqueIDgen;
     DatabaseReference dbRef;
 
     DatabaseReference refemail;
@@ -428,7 +429,7 @@ public class ComplaintPage_user extends AppCompatActivity {
         String apikey = "Y7VVzSPtX3vfsq5AKYCG";
 
         // Replace with the destination mobile Number to which you want to send sms
-        String mobile = "9677381857";
+        String mobile = complainted_by_mob_str;
 
         // Replace if you have your own Sender ID, else donot change
         String senderid = "SONACT";

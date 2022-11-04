@@ -38,7 +38,7 @@ public class verificationpage extends AppCompatActivity {
         str = getIntent().getStringExtra("otpcode");
         mob = getIntent().getStringExtra("mobileNum");
         textView.setText(String.format(
-                "+91-%s", str
+                "+91-%s", mob
         ));
 
         resend = findViewById(R.id.textresendotp);
@@ -84,6 +84,7 @@ public class verificationpage extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), complaint_Page.class);
                         verifybool = true;
                         //intent.putExtra("boolean123",verifybool);
+                        intent.putExtra("otpcodev",str);
                         intent.putExtra("mobile", mob);
                         intent.putExtra("SCAN_RESULT", s);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -113,7 +114,7 @@ public class verificationpage extends AppCompatActivity {
         String apikey = "Y7VVzSPtX3vfsq5AKYCG";
 
         // Replace with the destination mobile Number to which you want to send sms
-        String mobile = "9677381857";
+        String mobile = mob;
 
         // Replace if you have your own Sender ID, else donot change
         String senderid = "SONACT";

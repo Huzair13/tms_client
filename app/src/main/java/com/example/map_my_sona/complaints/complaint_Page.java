@@ -84,6 +84,7 @@ public class complaint_Page extends AppCompatActivity {
     private int snNumber=1;
     private DatabaseReference refDash;
     Float rating;
+    String otpcode;
     String rating_str;
     String mobile,scanresult;
     CheckBox vhigh ,high ,low;
@@ -107,6 +108,8 @@ public class complaint_Page extends AppCompatActivity {
 
     TextInputLayout complaint_content;
     AutoCompleteTextView complaint_content_text;
+
+    String uniqueIDGen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,6 +192,8 @@ public class complaint_Page extends AppCompatActivity {
         manual_name=getIntent().getStringExtra("MANUAL_NAME");
         manual_mob=getIntent().getStringExtra("MANUAL_MOB");
 
+        otpcode=getIntent().getStringExtra("otpcodev");
+
         refDash1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -199,7 +204,11 @@ public class complaint_Page extends AppCompatActivity {
                         s=getIntent().getStringExtra("SCAN_RESULT");
                         complainted_by_mob.setText(complainted_by_mob_str);
                         complainted_by_mob.setEnabled(false);
+                        uniqueIDGen=otpcode+complainted_by_mob_str+((int) (Math.random() * (99 - 01)) + 01);
                         complainted_by_mob.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_verified_24, 0, 0, 0);
+                    }
+                    else {
+                        uniqueIDGen=String.valueOf(((long) (Math.random() * (999999999 - 100000000)) + 100000000)+((int) (Math.random() * (9999999 - 1000000)) + 1000000));
                     }
                 }
             }
@@ -563,13 +572,13 @@ public class complaint_Page extends AppCompatActivity {
         Complaint_details complaint_details = new Complaint_details(complainted_by_name_str, complainted_by_mob_str,
                 complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
-                powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, date, time, uniqueKey, s,
+                powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, date, time, uniqueIDGen, s,
                 status,dep_of_pro_str,location_str,rating_str,FeedBack_str,config_str);
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
 
-        dbRef.child(uniqueKey).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
+        dbRef.child(uniqueIDGen).setValue(complaint_details).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 sendemail();

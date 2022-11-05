@@ -70,9 +70,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:fontFamily="@font/roboto_regular"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/gradientblue"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

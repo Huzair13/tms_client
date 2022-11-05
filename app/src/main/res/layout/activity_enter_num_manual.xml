@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Enter_num_manual"
-    android:background="@drawable/greenbg01"
+    android:background="@drawable/bottom_bg"
     >
     <LinearLayout
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Complaint By ID"
-        android:background="@color/greyblue"
+        android:background="@color/gradientblue"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         app:navigationIcon="@drawable/back_ic"
         />
@@ -74,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Unique ID"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/white"
         android:padding="15dp"
         android:gravity="center"
         app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
@@ -90,7 +90,7 @@
             android:inputType="text"
             android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular"
-            android:backgroundTint="@color/lightpistagreen"
+            android:backgroundTint="@color/gradientblue"
             />
 
 
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:text="Complaint "
         app:cornerRadius="16dp"
-        android:backgroundTint="@color/greyblue"
+        android:backgroundTint="@color/gradientblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -135,6 +135,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:hint="@string/login_password"
                         android:imeOptions="actionDone"
+                        android:inputType="textPassword"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="@color/black"
@@ -164,6 +165,11 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/password" />
 
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
                 <EditText
                     android:id="@+id/signuppassInputConfirm"
                     android:layout_width="match_parent"
@@ -172,12 +178,16 @@
                     android:fontFamily="sans-serif-medium"
                     android:hint="@string/signup_con_pass"
                     android:imeOptions="actionDone"
+                    android:inputType="textPassword"
                     android:singleLine="true"
                     android:text=""
+
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:textSize="16dp"
                     android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
+
 
             </androidx.cardview.widget.CardView>
 

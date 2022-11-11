@@ -2,7 +2,7 @@ package com.example.map_my_sona;
 
 public class AddNewData {
 
-    private String sn_no;
+    private int sn_no;
     private String make;
     private String model;
     private String procurement;
@@ -11,14 +11,14 @@ public class AddNewData {
     private String wexpiry;
     private String ins_by;
     private String ins_date;
-    private String mob;
+    private String config;
     private String dep_of_pro;
     private String location;
 
     public AddNewData() {
     }
 
-    public AddNewData(String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String mob, String dep_of_pro, String location) {
+    public AddNewData(int sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String config, String dep_of_pro, String location) {
         this.sn_no = sn_no;
         this.make = make;
         this.model = model;
@@ -28,16 +28,16 @@ public class AddNewData {
         this.wexpiry = wexpiry;
         this.ins_by = ins_by;
         this.ins_date = ins_date;
-        this.mob = mob;
+        this.config = config;
         this.dep_of_pro = dep_of_pro;
         this.location = location;
     }
 
-    public String getSn_no() {
+    public int getSn_no() {
         return sn_no;
     }
 
-    public void setSn_no(String sn_no) {
+    public void setSn_no(int sn_no) {
         this.sn_no = sn_no;
     }
 
@@ -105,12 +105,12 @@ public class AddNewData {
         this.ins_date = ins_date;
     }
 
-    public String getMob() {
-        return mob;
+    public String getConfig() {
+        return config;
     }
 
-    public void setMob(String mob) {
-        this.mob = mob;
+    public void setConfig(String config) {
+        this.config = config;
     }
 
     public String getDep_of_pro() {

@@ -31,8 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
+        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="If you doesn't have any data for a particular field enter that as NIL"/>
 <!--        <com.google.android.material.button.MaterialButton-->
 <!--            android:id="@+id/addasset"-->
 <!--            android:layout_width="wrap_content"-->
@@ -522,7 +532,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Mobile No."
+                android:text="Configuration"
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"

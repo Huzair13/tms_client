@@ -31,6 +31,7 @@ public class RegisterPage extends AppCompatActivity {
     FirebaseAuth mAuth ;
     ProgressDialog progressDialog;
     Boolean bool;
+    String s="yes";
 
     FirebaseDatabase database;
 
@@ -92,16 +93,71 @@ public class RegisterPage extends AppCompatActivity {
             passwordConfirm.setError("Password not matching");
             passwordConfirm.requestFocus();
         }else{
-            getBool();
+            PerforAuth();
         }
     }
 
-    private void getBool() {
-        database.getReference().child("usersLogin").addValueEventListener(new ValueEventListener() {
+//    private Boolean getBool() {
+//        Boolean b = true;
+//        database.getReference().child("usersLogin").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//               b = snapshot.hasChild(username.getText().toString());
+//                Toast.makeText(RegisterPage.this, String.valueOf(b[0]), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//    }
+
+    private void PerforAuth() {
+        database.getReference().child("usersLogin").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                bool=snapshot.hasChild(uname_str);
-                PerforAuth();
+                if(!snapshot.hasChild(username.getText().toString())){
+                    progressDialog.setMessage("Please wait while Registration");
+                    progressDialog.setTitle("Registration");
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.show();
+                    mAuth.createUserWithEmailAndPassword(email_str,pass_str).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                progressDialog.dismiss();
+
+                                String id=task.getResult().getUser().getUid();
+
+                                UserDetails userDetails=new UserDetails(id,email_str);
+
+                                database.getReference().child("usersLogin").child(uname_str).child("email").setValue(email_str);
+                                database.getReference().child("usersLogin").child(uname_str).child("userID").setValue(id);
+
+                                database.getReference().child("userDetails").child(uname_str).child("email").setValue(email_str);
+                                database.getReference().child("userDetails").child(uname_str).child("userID").setValue(id);
+                                database.getReference().child("userDetails").child(uname_str).child("position").setValue("newuser");
+
+                                database.getReference().child("users").child(id).child("position").setValue("newuser");
+
+                                //sendUserToNextActivity();
+                                Toast.makeText(RegisterPage.this, "Registration Successful Log in Now", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(RegisterPage.this, loginpage.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+
+                            }else{
+                                progressDialog.dismiss();
+                                Toast.makeText(RegisterPage.this, "ERROR !! May your email ID has been already registered.... Check your email ID please", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(RegisterPage.this, "Username Already Exists Please change your username", Toast.LENGTH_SHORT).show();
+                }
+               // Toast.makeText(RegisterPage.this, String.valueOf(username.getText().toString()), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -110,50 +166,7 @@ public class RegisterPage extends AppCompatActivity {
             }
         });
     }
-
-    private void PerforAuth() {
-        if(!bool){
-            progressDialog.setMessage("Please wait while Registration");
-            progressDialog.setTitle("Registration");
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
-
-            mAuth.createUserWithEmailAndPassword(email_str,pass_str).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        progressDialog.dismiss();
-
-                        String id=task.getResult().getUser().getUid();
-
-                        UserDetails userDetails=new UserDetails(id,email_str);
-
-                        database.getReference().child("usersLogin").child(uname_str).child("email").setValue(email_str);
-                        database.getReference().child("usersLogin").child(uname_str).child("userID").setValue(id);
-
-                        database.getReference().child("userDetails").child(uname_str).child("email").setValue(email_str);
-                        database.getReference().child("userDetails").child(uname_str).child("userID").setValue(id);
-                        database.getReference().child("userDetails").child(uname_str).child("position").setValue("newuser");
-
-                        database.getReference().child("users").child(id).child("position").setValue("newuser");
-
-                        sendUserToNextActivity();
-                        Toast.makeText(RegisterPage.this, "Registration Successful Log in Now", Toast.LENGTH_SHORT).show();
-
-                    }else{
-                        progressDialog.dismiss();
-                        Toast.makeText(RegisterPage.this, "ERROR !!", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-        else{
-            Toast.makeText(RegisterPage.this, "Username Already Exists Please change your username", Toast.LENGTH_SHORT).show();
-        }
-    }
-    private void sendUserToNextActivity(){
-        Intent intent=new Intent(RegisterPage.this, loginpage.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+//    private void sendUserToNextActivity(){
+//
+//    }
 }

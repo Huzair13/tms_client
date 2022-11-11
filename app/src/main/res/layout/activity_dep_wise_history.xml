@@ -153,7 +153,7 @@
                         android:layout_marginRight="105dp"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:fontFamily="@font/luxuriousromanregular" >
 
                     </TextView>
                 </LinearLayout>
@@ -194,7 +194,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="105dp"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/luxuriousromanregular"
                         android:gravity="center"
                         android:text="Electricity Complaints"
                         android:textColor="@color/white"
@@ -238,7 +238,7 @@
                         android:layout_marginRight="105dp"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:fontFamily="@font/luxuriousromanregular" >
 
                     </TextView>
                 </LinearLayout>
@@ -273,7 +273,7 @@
                         android:gravity="center"
                         android:layout_marginRight="105dp"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:fontFamily="@font/luxuriousromanregular" >
 
                     </TextView>
                 </LinearLayout>
@@ -322,7 +322,7 @@
                         android:gravity="center"
                         android:layout_marginRight="105dp"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:fontFamily="@font/luxuriousromanregular" >
 
                     </TextView>
                 </LinearLayout>
@@ -386,15 +386,16 @@
                     android:layout_width="370dp"
                     android:layout_height="75dp"
                     android:background="@drawable/assetscard1">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Assets"
-                        android:textSize="24dp"
-                        android:gravity="center"
                         android:layout_marginRight="105dp"
+                        android:fontFamily="@font/luxuriousromanregular"
+                        android:gravity="center"
+                        android:text="Assets"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:textSize="24dp">
 
                     </TextView>
                 </LinearLayout>
@@ -435,7 +436,7 @@
                         android:gravity="center"
                         android:layout_marginRight="100dp"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/roboto_regular" >
+                        android:fontFamily="@font/luxuriousromanregular" >
 
                     </TextView>
                 </LinearLayout>

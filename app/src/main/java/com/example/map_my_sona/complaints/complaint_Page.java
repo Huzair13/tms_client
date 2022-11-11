@@ -232,22 +232,23 @@ public class complaint_Page extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //mob_str = String.valueOf(snapshot.child(s).child("0").child("mob").getValue(Long.class));
-                sn_str = String.valueOf(snapshot.child(s).child("sn_no").getValue(Long.class));
-                make_str = snapshot.child(s).child("make").getValue(String.class);
-                model_str = snapshot.child(s).child("model").getValue(String.class);
-                procurement_str = snapshot.child(s).child("procurement").getValue(String.class);
-                powerRating_str = snapshot.child(s).child("power_rating").getValue(String.class);
-                wexpiry_str = snapshot.child(s).child("wexpiry").getValue(String.class);
-                wperiod_str = snapshot.child(s).child("wperiod").getValue(String.class);
-                ins_by_str = snapshot.child(s).child("ins_by").getValue(String.class);
-                ins_date_str = snapshot.child(s).child("ins_date").getValue(String.class);
-                dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
-                location_str = snapshot.child(s).child("location").getValue(String.class);
-                config_str=snapshot.child(s).child("config").getValue(String.class);
-                rating = 0.0f;
-                rating_str = rating.toString();
-                FeedBack_str="None";
+                if(snapshot.hasChild(s)){
+                    //mob_str = String.valueOf(snapshot.child(s).child("0").child("mob").getValue(Long.class));
+                    sn_str = String.valueOf(snapshot.child(s).child("sn_no").getValue(Long.class));
+                    make_str = snapshot.child(s).child("make").getValue(String.class);
+                    model_str = snapshot.child(s).child("model").getValue(String.class);
+                    procurement_str = snapshot.child(s).child("procurement").getValue(String.class);
+                    powerRating_str = snapshot.child(s).child("power_rating").getValue(String.class);
+                    wexpiry_str = snapshot.child(s).child("wexpiry").getValue(String.class);
+                    wperiod_str = snapshot.child(s).child("wperiod").getValue(String.class);
+                    ins_by_str = snapshot.child(s).child("ins_by").getValue(String.class);
+                    ins_date_str = snapshot.child(s).child("ins_date").getValue(String.class);
+                    dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
+                    location_str = snapshot.child(s).child("location").getValue(String.class);
+                    config_str=snapshot.child(s).child("config").getValue(String.class);
+                    rating = 0.0f;
+                    rating_str = rating.toString();
+                    FeedBack_str="None";
 
 //                if(dep_of_pro_str.equals("Assets")){
 //                    cost1.setVisibility(View.VISIBLE);
@@ -257,129 +258,129 @@ public class complaint_Page extends AppCompatActivity {
 //                    config2.setVisibility(View.VISIBLE);
 //                    config.setVisibility(View.VISIBLE);
 //                }
-                //SERIAL NUMBER
-                if(!sn_str.equals("NIL")){
-                    sn.setText(sn_str);
-                    sn_snNum.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    snRow.setVisibility(View.GONE);
-                }
+                    //SERIAL NUMBER
+                    if(!sn_str.equals("NIL")){
+                        sn.setText(sn_str);
+                        sn_snNum.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        snRow.setVisibility(View.GONE);
+                    }
 
-                //MAKE
-                if(!make_str.equals("NIL")){
-                    make.setText(make_str);
-                    sn_make.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    makeRow.setVisibility(View.GONE);
-                }
+                    //MAKE
+                    if(!make_str.equals("NIL")){
+                        make.setText(make_str);
+                        sn_make.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        makeRow.setVisibility(View.GONE);
+                    }
 
-                //MODEL
-                if(!model_str.equals("NIL")){
-                    model.setText(model_str);
-                    sn_model.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    modelRow.setVisibility(View.GONE);
-                }
+                    //MODEL
+                    if(!model_str.equals("NIL")){
+                        model.setText(model_str);
+                        sn_model.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        modelRow.setVisibility(View.GONE);
+                    }
 
-                //PROCUREMENT DATE
-                if(!procurement_str.equals("NIL")){
-                    procurement.setText(procurement_str);
-                    sn_proc.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    procRow.setVisibility(View.GONE);
-                }
+                    //PROCUREMENT DATE
+                    if(!procurement_str.equals("NIL")){
+                        procurement.setText(procurement_str);
+                        sn_proc.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        procRow.setVisibility(View.GONE);
+                    }
 
-                //POWER RATING
-                if(!powerRating_str.equals("NIL")){
-                    powerRating.setText(powerRating_str);
-                    sn_powerRat.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    powerRatRow.setVisibility(View.GONE);
-                }
+                    //POWER RATING
+                    if(!powerRating_str.equals("NIL")){
+                        powerRating.setText(powerRating_str);
+                        sn_powerRat.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        powerRatRow.setVisibility(View.GONE);
+                    }
 
-                //WPERIOD
-                if(!wperiod_str.equals("NIL")){
-                    wperiod.setText(wperiod_str);
-                    sn_wperiod.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    wperiodrow.setVisibility(View.GONE);
-                }
+                    //WPERIOD
+                    if(!wperiod_str.equals("NIL")){
+                        wperiod.setText(wperiod_str);
+                        sn_wperiod.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        wperiodrow.setVisibility(View.GONE);
+                    }
 
-                //WEXPIRY
-                if(!wexpiry_str.equals("NIL")){
-                    wexpiry.setText(wexpiry_str);
-                    sn_wexpiry.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    wexpiryrow.setVisibility(View.GONE);
-                }
+                    //WEXPIRY
+                    if(!wexpiry_str.equals("NIL")){
+                        wexpiry.setText(wexpiry_str);
+                        sn_wexpiry.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        wexpiryrow.setVisibility(View.GONE);
+                    }
 
-                //INS_DATE
-                if(!ins_date_str.equals("NIL")){
-                    ins_date.setText(ins_date_str);
-                    sn_ins_date.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    ins_dateRow.setVisibility(View.GONE);
-                }
+                    //INS_DATE
+                    if(!ins_date_str.equals("NIL")){
+                        ins_date.setText(ins_date_str);
+                        sn_ins_date.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        ins_dateRow.setVisibility(View.GONE);
+                    }
 
-                //INS_BY
-                if(!ins_by_str.equals("NIL")){
-                    ins_by.setText(ins_by_str);
-                    sn_ins_by.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    ins_byRow.setVisibility(View.GONE);
-                }
+                    //INS_BY
+                    if(!ins_by_str.equals("NIL")){
+                        ins_by.setText(ins_by_str);
+                        sn_ins_by.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        ins_byRow.setVisibility(View.GONE);
+                    }
 
-                //DEP_OF_PRO
-                if(!dep_of_pro_str.equals("NIL")){
-                    dep_of_pro.setText(dep_of_pro_str);
-                    sn_dep_of_pro.setText(String.valueOf(snNumber));
-                    snNumber++;
+                    //DEP_OF_PRO
+                    if(!dep_of_pro_str.equals("NIL")){
+                        dep_of_pro.setText(dep_of_pro_str);
+                        sn_dep_of_pro.setText(String.valueOf(snNumber));
+                        snNumber++;
 
-                }
-                else{
-                    dep_of_proRow.setVisibility(View.GONE);
-                }
+                    }
+                    else{
+                        dep_of_proRow.setVisibility(View.GONE);
+                    }
 
-                //LOCATION
-                if(!location_str.equals("NIL")){
-                    location.setText(location_str);
-                    sn_loc.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    locationRow.setVisibility(View.GONE);
-                }
+                    //LOCATION
+                    if(!location_str.equals("NIL")){
+                        location.setText(location_str);
+                        sn_loc.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        locationRow.setVisibility(View.GONE);
+                    }
 
-                //DEP_OF_PRO
-                if(!config_str.equals("NIL")){
-                    config.setText(config_str);
-                    sn_config.setText(String.valueOf(snNumber));
-                    snNumber++;
-                }
-                else{
-                    configRow.setVisibility(View.GONE);
-                }
+                    //DEP_OF_PRO
+                    if(!config_str.equals("NIL")){
+                        config.setText(config_str);
+                        sn_config.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        configRow.setVisibility(View.GONE);
+                    }
 
 
-                //mob.setText(mob_str);
+                    //mob.setText(mob_str);
 
 
 //                if(!manual_name.equals("null")){
@@ -389,7 +390,14 @@ public class complaint_Page extends AppCompatActivity {
 //                    complainted_by_mob.setText(manual_mob);
 //                }
 
-            }
+                }
+                else{
+                    Intent intent=new Intent(complaint_Page.this, ScannerPage.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    Toast.makeText(complaint_Page.this, "Invalid QR Code", Toast.LENGTH_SHORT).show();
+                }
+                }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

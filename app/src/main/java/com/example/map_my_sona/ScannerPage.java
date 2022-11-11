@@ -26,7 +26,7 @@ public class ScannerPage extends AppCompatActivity {
     LinearLayout scanBtn;
     public static TextView scantxt;
     Button num_enter_man;
-    TextView manualltext;
+    //TextView manualltext;
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
 
@@ -44,7 +44,7 @@ public class ScannerPage extends AppCompatActivity {
 
         scanBtn=findViewById(R.id.Scanner);
 //        scantxt=(TextView) findViewById(R.id.scantxt);
-        manualltext=findViewById(R.id.entermanuallytext);
+        //manualltext=findViewById(R.id.entermanuallytext);
 
         builder1=new AlertDialog.Builder(this);
 

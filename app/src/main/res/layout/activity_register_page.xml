@@ -134,7 +134,7 @@
                         android:background="@color/finalgrey"
                         android:fontFamily="sans-serif-medium"
                         android:hint="@string/login_password"
-                        android:imeOptions="actionDone"
+                        android:imeOptions="actionNext"
                         android:inputType="textPassword"
                         android:singleLine="true"
                         android:text=""

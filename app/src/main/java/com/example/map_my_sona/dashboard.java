@@ -47,7 +47,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
     DrawerLayout drawerLayout1;
     NavigationView navigationView1;
     LinearLayout Linear1;
-    MaterialToolbar toolbar1;
+    MaterialToolbar toolbar_user;
     ImageView logo;
     BottomNavigationView bottomNavigationView;
 
@@ -73,13 +73,30 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
 
 
-        toolbar1=findViewById(R.id.topAppBar_user);
+        toolbar_user=findViewById(R.id.topAppBar_user);
+
+
 //        logo=findViewById(R.id.logo);
 
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
 
         //reference for visibilty restriction
         refDash=FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+        refDash.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(((snapshot.child("position").getValue(String.class)).equals("admin")) || ((snapshot.child("position").getValue(String.class)).equals("superadmin"))){
+                    toolbar_user.setTitle("Admin-Dashboard");
+                }else{
+                    toolbar_user.setTitle("Dashboard");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //mAuth for logout activity
         mAuth=FirebaseAuth.getInstance();
@@ -95,7 +112,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
         //drawer_layout navigation
         navigationView1.bringToFront();
-        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawerLayout1,toolbar1,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawerLayout1,toolbar_user,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         toggle.syncState();
 
         navigationView1.setNavigationItemSelectedListener(dashboard.this);

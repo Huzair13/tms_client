@@ -64,7 +64,7 @@ public class Newqrcode extends AppCompatActivity {
         bulkUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Newqrcode.this,bulkUpload.class));
+                startActivity(new Intent(Newqrcode.this,BulkuploadActivity.class));
             }
         });
 
@@ -116,17 +116,17 @@ public class Newqrcode extends AppCompatActivity {
         String insBy_str_ad=insBy_ad.getText().toString();
         String insDate_str_ad=insDate_ad.getText().toString();
         String powerRating_str_ad=powerRating_ad.getText().toString();
-        String mob_str_ad=mob_ad.getText().toString();
+        String config_str_ad=mob_ad.getText().toString();
         String Dep_of_pro_str=dep_of_pro.getText().toString();
         String location_str=location.getText().toString();
 
-        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad,Dep_of_pro_str,location_str);
+        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str);
 
 
     }
 
 
-    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String mob_str_ad,String Dep_of_pro_str,String location_str) {
+    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str) {
         if(unique_id_str_ad.isEmpty()){
             unique_id_ad.setError("It can't be empty");
             unique_id_ad.requestFocus();
@@ -157,7 +157,7 @@ public class Newqrcode extends AppCompatActivity {
         }else if(insDate_str_ad.isEmpty()){
             insDate_ad.setError("It can't be empty");
             insDate_ad.requestFocus();
-        }else if(mob_str_ad.isEmpty()){
+        }else if(config_str_ad.isEmpty()){
             mob_ad.setError("It can't be empty");
             mob_ad.requestFocus();
         }else if(Dep_of_pro_str.isEmpty()) {
@@ -168,12 +168,12 @@ public class Newqrcode extends AppCompatActivity {
             location.requestFocus();
         }
         else{
-            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,mob_str_ad,Dep_of_pro_str,location_str);
+            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str);
         }
        }
 
 
-    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String mob_str_ad,String Dep_of_pro_str,String location_str) {
+    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str) {
 
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Datas").child(unique_id_str_ad);
@@ -189,7 +189,7 @@ public class Newqrcode extends AppCompatActivity {
                 } else {
 
                     dbRef = reference.child("Datas");
-                    AddNewData addNewData = new AddNewData(sn_str_ad, make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, mob_str_ad,Dep_of_pro_str,location_str);
+                    AddNewData addNewData = new AddNewData(Integer.parseInt(sn_str_ad), make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, config_str_ad,Dep_of_pro_str,location_str);
 
                     dbRef.child(unique_id_str_ad).setValue(addNewData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

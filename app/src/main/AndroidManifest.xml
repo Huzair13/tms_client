@@ -112,9 +112,6 @@
             android:name=".assets.laptops.Asset_Laptop_detail_view"
             android:exported="false" />
         <activity
-            android:name=".complaints_history_details_assets"
-            android:exported="false" />
-        <activity
             android:name=".bulkUpload"
             android:configChanges="orientation|screenSize"
             android:exported="false" />

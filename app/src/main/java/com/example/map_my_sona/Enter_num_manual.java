@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.admin.AdminDashboard;
+import com.example.map_my_sona.complaints.ComplaintPage_user;
 import com.example.map_my_sona.complaints.complaint_Page;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,7 +27,7 @@ public class Enter_num_manual extends AppCompatActivity {
     Button bt;
     DatabaseReference databaseReference;
     MaterialToolbar toolbar;
-    private DatabaseReference refDash;
+    private DatabaseReference refDash,reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +54,26 @@ public class Enter_num_manual extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.hasChild(tv_str)){
-                                Intent intent = new Intent(getBaseContext(), complaint_Page.class);
-                                intent.putExtra("SCAN_RESULT", tv_str);
-                                startActivity(intent);
+                                refDash.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if((snapshot.child("position").getValue(String.class)).equals("user")){
+                                            Intent intent = new Intent(getBaseContext(), ComplaintPage_user.class);
+                                            intent.putExtra("SCAN_RESULT", tv_str);
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(getBaseContext(), complaint_Page.class);
+                                            intent.putExtra("SCAN_RESULT", tv_str);
+                                            startActivity(intent);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
                             }
                             else{
                                 Toast.makeText(Enter_num_manual.this, "Invaild Details", Toast.LENGTH_SHORT).show();
@@ -82,7 +100,7 @@ public class Enter_num_manual extends AppCompatActivity {
                             startActivity(new Intent(Enter_num_manual.this, dashboard.class));
                         }
                         else{
-                            startActivity(new Intent(Enter_num_manual.this, AdminDashboard.class));
+                            startActivity(new Intent(Enter_num_manual.this, ScannerPage.class));
                         }
                     }
 

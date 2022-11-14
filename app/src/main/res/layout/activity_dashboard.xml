@@ -62,7 +62,7 @@
            <com.airbnb.lottie.LottieAnimationView
                android:layout_width="120dp"
                android:layout_height="130dp"
-               app:lottie_rawRes="@raw/homepage"
+               app:lottie_rawRes="@raw/home"
                app:lottie_autoPlay="true"
                app:lottie_loop="true"
                android:layout_marginTop="15dp"
@@ -125,8 +125,8 @@
        android:orientation="vertical">
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/scancode"
-          android:layout_width="370dp"
-          android:layout_height="100dp"
+          android:layout_width="300dp"
+          android:layout_height="85dp"
           android:layout_marginTop="201dp"
           android:layout_marginStart="15dp"
           android:layout_gravity="center"
@@ -174,8 +174,8 @@
 
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/histotydetails"
-          android:layout_width="370dp"
-          android:layout_height="100dp"
+          android:layout_width="300dp"
+          android:layout_height="85dp"
           android:layout_below="@+id/scancode"
           android:layout_marginTop="15dp"
           android:layout_marginStart="15dp"
@@ -223,8 +223,8 @@
 
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/manualentry"
-          android:layout_width="370dp"
-          android:layout_height="100dp"
+          android:layout_width="300dp"
+          android:layout_height="85dp"
           android:layout_below="@+id/histotydetails"
           android:layout_marginTop="15dp"
           android:layout_gravity="center"

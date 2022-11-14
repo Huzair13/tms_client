@@ -22,6 +22,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +77,7 @@ public class complaint_Page extends AppCompatActivity {
     private TextView location;
     private TextView cost1,cost2,config1,config2;
     private String location_str;
+    private TableLayout tblayout_com_page;
     private EditText  complainted_by_name, complainted_by_mob ;
     private EditText other_com;
     //private Spinner complainted_by_dep;
@@ -88,6 +90,7 @@ public class complaint_Page extends AppCompatActivity {
     String rating_str;
     String mobile,scanresult;
     CheckBox vhigh ,high ,low;
+    private TextView uid_tv;
 
     private String Senderemail, ReceiverEmail,Sendpass , StringHost;
 
@@ -141,6 +144,8 @@ public class complaint_Page extends AppCompatActivity {
         //mob = (TextView) findViewById(R.id.mob_unit);
         dep_of_pro=(TextView)findViewById(R.id.dep_of_pro_unit);
         location=(TextView)findViewById(R.id.scanned_location);
+        uid_tv=(TextView)findViewById(R.id.com_page_uniqueID);
+        tblayout_com_page=(TableLayout)findViewById(R.id.table_complaint);
 
         snRow=(TableRow) findViewById(R.id.serialNumRow);
         makeRow=(TableRow) findViewById(R.id.makeRow);
@@ -204,6 +209,7 @@ public class complaint_Page extends AppCompatActivity {
                         s=getIntent().getStringExtra("SCAN_RESULT");
                         complainted_by_mob.setText(complainted_by_mob_str);
                         complainted_by_mob.setEnabled(false);
+                        tblayout_com_page.setVisibility(View.GONE);
                         uniqueIDGen=otpcode+complainted_by_mob_str+((int) (Math.random() * (99 - 01)) + 01);
                         complainted_by_mob.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_verified_24, 0, 0, 0);
                     }
@@ -249,6 +255,8 @@ public class complaint_Page extends AppCompatActivity {
                     rating = 0.0f;
                     rating_str = rating.toString();
                     FeedBack_str="None";
+
+                    uid_tv.setText(s);
 
 //                if(dep_of_pro_str.equals("Assets")){
 //                    cost1.setVisibility(View.VISIBLE);

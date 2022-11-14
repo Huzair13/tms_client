@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,8 @@ public class ComplaintPage_user extends AppCompatActivity {
     private Button verify;
     private int snNumber=1;
     private DatabaseReference refDash;
+    private TableLayout tblayout_complaint_users;
+    private TextView uid_tv_user;
 
     private String Senderemail, ReceiverEmail,Sendpass , StringHost;
 
@@ -114,6 +117,9 @@ public class ComplaintPage_user extends AppCompatActivity {
         //mob = (TextView) findViewById(R.id.mob_unit);
         dep_of_pro=(TextView)findViewById(R.id.dep_of_pro_unit1);
         location=(TextView)findViewById(R.id.scanned_location1);
+        uid_tv_user=(TextView)findViewById(R.id.com_page_uniqueID_user);
+        tblayout_complaint_users=(TableLayout)findViewById(R.id.table_complaint_user);
+        tblayout_complaint_users.setVisibility(View.GONE);
 
         snRow=(TableRow) findViewById(R.id.serialNumRow1);
         makeRow=(TableRow) findViewById(R.id.makeRow1);
@@ -191,6 +197,8 @@ public class ComplaintPage_user extends AppCompatActivity {
                     rating = 0.0f;
                     rating_str = String.valueOf(rating);
                     FeedBack_str="None";
+
+                    uid_tv_user.setText(s);
 
 //                if(dep_of_pro_str.equals("Assets")){
 //                    cost1.setVisibility(View.VISIBLE);

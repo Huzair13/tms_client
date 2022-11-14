@@ -1,7 +1,6 @@
 package com.example.map_my_sona;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -16,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
@@ -24,29 +22,18 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
 import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_assets;
 import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class loginpage extends AppCompatActivity {
 
@@ -451,7 +438,7 @@ public class loginpage extends AppCompatActivity {
                         startActivity(new Intent(loginpage.this, complaint_HistoryDetails_others.class));
                     }
                     else if(pos.equals("assets")){
-                        startActivity(new Intent(loginpage.this,complaints_history_details_assets.class));
+                        startActivity(new Intent(loginpage.this, complaint_HistoryDetails_assets.class));
                     }
                     else if(pos.equals("user")){
                         startActivity(new Intent(loginpage.this,ScannerPage.class));

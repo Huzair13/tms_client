@@ -107,7 +107,7 @@ public class complaint_Page extends AppCompatActivity {
     DatabaseReference dbRef;
 
     DatabaseReference refemail;
-    DatabaseReference refDash1;
+    DatabaseReference refDash1,refDash2;
 
     TextInputLayout complaint_content;
     AutoCompleteTextView complaint_content_text;
@@ -125,6 +125,7 @@ public class complaint_Page extends AppCompatActivity {
         Sendpass="mms@2022";
 
         refDash1 = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
+        refDash2 =FirebaseDatabase.getInstance().getReference("Datas");
 
         //StringHost="smtp.outlook.com";
 
@@ -229,11 +230,7 @@ public class complaint_Page extends AppCompatActivity {
         //String[] dept_com_scan={"Department ","CSE","IT","ADS","ECE","EEE","MECH","MCT","CIVIL"};
         //complainted_by_dep.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dept_com_scan));
 
-        String[] com_scan={"Complaint","Not Working","Broken","Leakage","Others"};
-        complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan));
-
         databaseReference = FirebaseDatabase.getInstance().getReference("Datas");
-
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -257,6 +254,7 @@ public class complaint_Page extends AppCompatActivity {
                     FeedBack_str="None";
 
                     uid_tv.setText(s);
+                    setComDropDown();
 
 //                if(dep_of_pro_str.equals("Assets")){
 //                    cost1.setVisibility(View.VISIBLE);
@@ -471,6 +469,40 @@ public class complaint_Page extends AppCompatActivity {
 //        Intent serviceIntent = new Intent(this, ExampleService.class);
 //        serviceIntent.putExtra("inputExtra", input);
 //        ContextCompat.startForegroundService(this, serviceIntent);
+    }
+
+    private void setComDropDown() {
+        String[] com_scan_elec={"Complaint","Not Working","Broken","Low Voltage","Bursted","Others"};
+        String[] com_scan_plumber={"Complaint","Broken","Leakage","Water not coming","Others"};
+        String[] com_scan_carpenter={"Complaint","Partially Broken","Fully Broken","Others"};
+        String[] com_scan_Network={"Complaint","Not Working","Slow Network","Hanging Problem","Others"};
+        String[] com_scan_assets={"Complaint","Not Working","Broken","Others"};
+        String[] com_scan_painting={"Complaint","Bleach","Little Ugly","Very Ugly","Others"};
+        String[] com_scan_others={"Complaint","Not Working","Others"};
+
+        switch(dep_of_pro_str){
+            case "Electricity":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_elec));
+                break;
+            case "Pluming" :
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_plumber));
+                break;
+            case "Painting":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_painting));
+                break;
+            case "Carpenter":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_carpenter));
+                break;
+            case "Network":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_Network));
+                break;
+            case "Assets":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_assets));
+                break;
+            case "Others":
+                complaint_qrcode.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,com_scan_others));
+                break;
+        }
     }
 
     private void sendemail() {

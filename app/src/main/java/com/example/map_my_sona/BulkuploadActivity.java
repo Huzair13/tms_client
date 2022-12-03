@@ -1,30 +1,48 @@
 package com.example.map_my_sona;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
@@ -32,24 +50,48 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
-import java.util.UUID;
 
 public class BulkuploadActivity extends AppCompatActivity {
     // initialising the cell count as 2
     public static final int cellCount = 13;
+    FirebaseStorage firebaseStorage;
+    StorageReference storageReference;
+
+    StorageReference ref;
     Button excel;
     int StickerSize;
+    Context context;
+    private StorageReference mStorageRef;
 
+
+    ////////
+    Button download;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulkupload);
 
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+
         excel = findViewById(R.id.excel);
+        download=findViewById(R.id.excel_download);
+
+
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url="https://firebasestorage.googleapis.com/v0/b/map-my-sona.appspot.com/o/13_Clustering.pdf?alt=media&token=9ccaeab0-3610-4ddf-bae0-b9d06de71e38";
+                downloadXL(BulkuploadActivity.this,"Tms_format",".pdf",Environment.getExternalStorageState(),url);
+                //downloadfile();
+            }
+        });
 
         // click on excel to select a file
         excel.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +116,164 @@ public class BulkuploadActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+    private void downloadfile() {
+
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReferenceFromUrl("gs://map-my-sona.appspot.com/Downloads");
+//        StorageReference  islandRef = storageRef.child("Datastms.xlsx");
+//
+//        File rootPath = new File(Environment.getExternalStorageDirectory(), "Downloads");
+//        if(!rootPath.exists()) {
+//            rootPath.mkdirs();
+//        }
+//
+//        final File localFile = new File(rootPath,"Datastms.xlsx");
+//
+//        islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//            @Override
+//            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                Log.e("firebase ",";local tem file created  created " +localFile.toString());
+//                //  updateDb(timestamp,localFile.toString(),position);
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                Log.e("firebase ",";local tem file not created  created " +exception.toString());
+//            }
+//        });
+
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReferenceFromUrl("gs://map-my-sona.appspot.com").child("Datastms.xlsx");
+//
+//
+//        try {
+//            final File localFile = File.createTempFile("images", "xlsx");
+//            storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                @Override
+//                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+//                    //mImageView.setImageBitmap(bitmap);
+//
+//                }
+//            }).addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception exception) {
+//                }
+//            });
+//        } catch (IOException e ) {}
+//
+//
+//        final long ONE_MEGABYTE = 1024 * 1024;
+//        storageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+//            @Override
+//            public void onSuccess(byte[] bytes) {
+//                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//                //mImageView.setImageBitmap(bitmap);
+//            }
+//        });
+
+
+//
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReferenceFromUrl("gs://map-my-sona.appspot.com");
+//
+//        ProgressDialog  pd = new ProgressDialog(this);
+//        pd.setTitle("Nature.jpg");
+//        pd.setMessage("Downloading Please Wait!");
+//        pd.setIndeterminate(true);
+//        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//        pd.show();
+//
+//
+//        final File rootPath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Downloads");
+//
+//        if (!rootPath.exists()) {
+//            rootPath.mkdirs();
+//        }
+//
+//
+//        final File localFile = new File("gs://map-my-sona.appspot.com", "Datastms.xlsx");
+//
+//        storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener <FileDownloadTask.TaskSnapshot>() {
+//            @Override
+//            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                Log.e("firebase ", ";local tem file created  created " + localFile.toString());
+//
+//                if (!excel.isShown()){
+//                    return;
+//                }
+//
+//                if (localFile.canRead()){
+//
+//                    pd.dismiss();
+//                }
+//
+//                Toast.makeText(BulkuploadActivity.this, "Download Completed", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(BulkuploadActivity.this, "Internal storage/MADBO/Nature.jpg", Toast.LENGTH_LONG).show();
+//
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                Log.e("firebase ", ";local tem file not created  created " + exception.toString());
+//                Toast.makeText(BulkuploadActivity.this, "Download Incompleted", Toast.LENGTH_LONG).show();
+//            }
+//        });
+
+
+
+//        DownloadManager downloadmanager = (DownloadManager) context.
+//                getSystemService(Context.DOWNLOAD_SERVICE);
+//        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/map-my-sona.appspot.com/o/Datastms.xlsx?alt=media&token=8f085f8a-a6d6-47e9-9339-bf51b1fce9fa");
+//        DownloadManager.Request request = new DownloadManager.Request(uri);
+//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//        request.setDestinationInExternalFilesDir(context, "/Downloads", "TMS_format" + ".xlsx");
+//        return downloadmanager.enqueue(request);
+
+
+//
+//        Log.d(TAG, "downloadFromPath:" + downloadPath); //Download firebase path
+
+        //Initialize progress notification
+        //showProgressNotification(getString(R.string.progress_downloading), 0, 0);
+
+//        storageReference=FirebaseStorage.getInstance().getReference();
+//        ref=storageReference.child("Datastms.xlsx");
+//
+//        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                String url=uri.toString();
+//                downloadXL(BulkuploadActivity.this,"Tms_format","xlsx",DIRECTORY_DOWNLOADS,url);
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//
+//            }
+//        });
+
+    }
+
+    private void downloadXL(Context context, String fname, String fileExtension, String destinationDirectory, String url) {
+
+//        DownloadManager downloadmanager = (DownloadManager) context.
+//                getSystemService(Context.DOWNLOAD_SERVICE);
+//        Uri uri = Uri.parse(url);
+//        DownloadManager.Request request = new DownloadManager.Request(uri);
+//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//        request.setDestinationInExternalFilesDir(context, destinationDirectory, fname + fileExtension);
+//        downloadmanager.enqueue(request);
+
+        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/map-my-sona.appspot.com/o/Datastms.xlsx?alt=media&token=8f085f8a-a6d6-47e9-9339-bf51b1fce9fa");
+        Intent intent= new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(intent);
+
+    }
+
 
     // request for storage permission if not given
     @Override

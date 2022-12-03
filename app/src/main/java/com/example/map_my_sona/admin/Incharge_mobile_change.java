@@ -67,7 +67,7 @@ public class Incharge_mobile_change extends AppCompatActivity {
 
         builder=new AlertDialog.Builder(this);
 
-        String[] dep_Str={"Department","Electricity","Plumber","Network","Carpenter","Painting","other"};
+        String[] dep_Str={"Department","Admin","SuperAdmin","Electricity","Plumber","Network","Carpenter","Painting","other"};
         dep_Spinner.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,dep_Str));
 
         dep_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

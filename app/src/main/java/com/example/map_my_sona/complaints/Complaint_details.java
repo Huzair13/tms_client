@@ -24,11 +24,17 @@ public class Complaint_details {
     private String rating;
     private String FeedBack;
     private String config;
+    private String escalated1;
+    private String escalated2;
+    private String CommentAdmin;
+    private String CommentSupervisor;
 
     public Complaint_details() {
+
     }
 
-    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack, String config) {
+    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack, String config, String escalated1, String escalated2, String commentAdmin, String commentSupervisor) {
+
         this.com_by_name = com_by_name;
         this.com_by_mob = com_by_mob;
         this.com_txt = com_txt;
@@ -51,6 +57,10 @@ public class Complaint_details {
         this.rating = rating;
         FeedBack = feedBack;
         this.config = config;
+        this.escalated1 = escalated1;
+        this.escalated2 = escalated2;
+        CommentAdmin = commentAdmin;
+        CommentSupervisor = commentSupervisor;
     }
 
     public String getCom_by_name() {
@@ -227,5 +237,37 @@ public class Complaint_details {
 
     public void setConfig(String config) {
         this.config = config;
+    }
+
+    public String getEscalated1() {
+        return escalated1;
+    }
+
+    public void setEscalated1(String escalated1) {
+        this.escalated1 = escalated1;
+    }
+
+    public String getEscalated2() {
+        return escalated2;
+    }
+
+    public void setEscalated2(String escalated2) {
+        this.escalated2 = escalated2;
+    }
+
+    public String getCommentAdmin() {
+        return CommentAdmin;
+    }
+
+    public void setCommentAdmin(String commentAdmin) {
+        CommentAdmin = commentAdmin;
+    }
+
+    public String getCommentSupervisor() {
+        return CommentSupervisor;
+    }
+
+    public void setCommentSupervisor(String commentSupervisor) {
+        CommentSupervisor = commentSupervisor;
     }
 }

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
@@ -72,70 +73,12 @@ public class loginpage extends AppCompatActivity {
         //progressDialouge
         progressDialog=new ProgressDialog(this);
 
-        //sharedPrefManager=new SharedPrefManager(getApplicationContext());
-
-        //LogEmail=findViewById(R.id.loginemailInput);
         username=findViewById(R.id.loginemailInput);
         us_name=username.getText().toString();
         LogPassword=findViewById(R.id.loginpasswordInput);
         btnLogin=findViewById(R.id.loginbutton);
         ForgetPass=findViewById(R.id.forgetpassword);
         Register=findViewById(R.id.Register);
-
-        //googlelogin=findViewById(R.id.gllogin);
-
-
-//        GoogleSignInOptions options=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.default_web_client_id))
-//                .requestEmail()
-//                .build();
-//
-//        client = GoogleSignIn.getClient(this,options);
-
-
-
-//        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(
-//                GoogleSignInOptions.DEFAULT_SIGN_IN
-//        ).requestIdToken("438431947620-ecpi41uk3dhhf4mv8g8q993k3vs49ltm.apps.googleusercontent.com")
-//                .requestEmail()
-//                .build();
-//
-//        // Initialize sign in client
-//        googleSignInClient= GoogleSignIn.getClient(loginpage.this
-//                ,googleSignInOptions);
-//
-//        googlelogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Initialize sign in intent
-//                Intent intent=googleSignInClient.getSignInIntent();
-//                // Start activity for result
-//                startActivityForResult(intent,100);
-//            }
-//        });
-//
-//        // Initialize firebase auth
-//        firebaseAuth=FirebaseAuth.getInstance();
-//        // Initialize firebase user
-//        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-//        // Check condition
-//        if(firebaseUser!=null)
-//        {
-//            // When user already sign in
-//            // redirect to profile activity
-//            startActivity(new Intent(loginpage.this,AdminDashboard.class)
-//                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//        }
-
-
-//        googlelogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i=client.getSignInIntent();
-//                startActivityForResult(i,1234);
-//
-//            }
-//        });
 
 
         mAuth=FirebaseAuth.getInstance();
@@ -328,6 +271,9 @@ public class loginpage extends AppCompatActivity {
                             else if(pos.equals("superadmin")){
                                 startActivity(new Intent(loginpage.this,dashboard.class));
                             }
+                            else if(pos.equals("supervisor")){
+                                startActivity(new Intent(loginpage.this, Dep_wise_history.class));
+                            }
                             else if (pos.equals("electrician")){
                                 startActivity(new Intent(loginpage.this, Complaints_HistoryDetails_Electricity.class));
                             }
@@ -416,6 +362,9 @@ public class loginpage extends AppCompatActivity {
 
                     if(pos.equals("admin")){
                         startActivity(new Intent(loginpage.this, dashboard.class));
+                    }
+                    else if(pos.equals("supervisor")){
+                        startActivity(new Intent(loginpage.this,Dep_wise_history.class));
                     }
                     else if(pos.equals("superadmin")){
                         startActivity(new Intent(loginpage.this,dashboard.class));

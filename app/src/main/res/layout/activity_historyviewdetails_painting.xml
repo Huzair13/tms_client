@@ -8,626 +8,755 @@
 
     tools:context=".complaints.viewDetails.historyviewdetails_painting">
 <!--    android:background="@drawable/tablepagebg">-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-
-            <!--      <ImageView-->
-            <!--          android:id="@+id/imageView"-->
-            <!--          android:layout_width="140dp"-->
-            <!--          android:layout_height="70dp"-->
-            <!--          android:layout_gravity="top"-->
-            <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2_painting_view"-->
-<!--                android:layout_width="123dp"-->
-<!--                android:layout_height="102dp"-->
-<!--                app:srcCompat="@drawable/mapmysona_logo" />-->
-        </LinearLayout>
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/Product_ID_history_painting"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/elmessiri"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
-
-            <TextView
-                android:textAlignment="center"
-                android:id="@+id/complaint_status_his_painting"
-                android:layout_width="150dp"
-                android:textSize="25dp"
-                android:fontFamily="@font/elmessiri"
-                android:layout_height="50dp"
-                android:layout_marginTop="50dp"/>
-
-            <!--            <com.google.android.material.chip.ChipGroup-->
-            <!--                android:textAlignment="center"-->
-            <!--                android:id="@+id/complaint_status_his"-->
-            <!--                android:layout_width="150dp"-->
-            <!--                android:textSize="25dp"-->
-            <!--                android:fontFamily="@font/elmessiri"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:layout_marginTop="25dp">-->
-
-
-            <!--            </com.google.android.material.chip.ChipGroup>-->
-
-
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:textColor="@color/white">
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="18dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="S.No:"
-                    android:textColor="@color/black"
-                    android:background="@drawable/cellshape"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                  />
-
-                <TextView
-                    android:layout_width="131dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Details"
-                    android:background="@drawable/cellshape"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Unit"
-                    android:background="@drawable/cellshape"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:background="@drawable/cellshape"
-                    android:textSize="20dp"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Complaint Id"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/Comid_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="10dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="71dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Staff Name"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/staff_name_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="3"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="202dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Staff Mobile Number"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/staff_mob_history_com_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="77dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/cellshape"
-                    android:gravity="center"
-                    android:text="4"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Power Rating"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/powerRating_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="73dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="5"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Warranty Period"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/warranty_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="6"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Warranty Expiry Date"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/warranty_exp_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/cellshape"
-                    android:gravity="center"
-                    android:text="7"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Installed Date"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/ins_date_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="79dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="8"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Installation By"
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/ins_by_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="9"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/cellshape"
-                  />
-
-                <TextView
-                    android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Location "
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="18dp"
-                  />
-
-                <TextView
-                    android:id="@+id/location_unit_his_painting"
-                    android:layout_width="113dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/table"
-                    android:textSize="20dp"
-                  />
-
-            </TableRow>
-        </TableLayout>
-
-        <!--        <TextView-->
-        <!--            android:background="@drawable/cellshape_roundcorners"-->
-        <!--            android:layout_width="150dp"-->
-        <!--            android:textAlignment="center"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginTop="20dp"-->
-        <!--            android:fontFamily="@font/elmessiri"-->
-        <!--            android:text="Complaint is ...."-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:textSize="20dp"-->
-        <!--         />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/com_txt_history_painting"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/mulish"-->
-<!--            android:textColor="@color/black"-->
-<!--         -->
-<!--            android:hint="Registered Complaint is ....."-->
-<!--            android:textColorHint="@color/black"-->
-<!--            android:textSize="25dp">-->
-
-<!--        </TextView>-->
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center"
             >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
-            <EditText
-                android:id="@+id/com_txt_history_painting"
+                <!--      <ImageView-->
+                <!--          android:id="@+id/imageView"-->
+                <!--          android:layout_width="140dp"-->
+                <!--          android:layout_height="70dp"-->
+                <!--          android:layout_gravity="top"-->
+                <!--          app:srcCompat="@drawable/sonacollegeoftechnology" />-->
+
+                <!--            <ImageView-->
+                <!--                android:id="@+id/imageView2_painting_view"-->
+                <!--                android:layout_width="123dp"-->
+                <!--                android:layout_height="102dp"-->
+                <!--                app:srcCompat="@drawable/mapmysona_logo" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Product_ID_history_painting"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/elmessiri"
+                    android:textColor="@color/black"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/complaint_status_his_painting"
+                    android:layout_width="150dp"
+                    android:textSize="25dp"
+                    android:fontFamily="@font/elmessiri"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"/>
+
+                <!--            <com.google.android.material.chip.ChipGroup-->
+                <!--                android:textAlignment="center"-->
+                <!--                android:id="@+id/complaint_status_his"-->
+                <!--                android:layout_width="150dp"-->
+                <!--                android:textSize="25dp"-->
+                <!--                android:fontFamily="@font/elmessiri"-->
+                <!--                android:layout_height="50dp"-->
+                <!--                android:layout_marginTop="25dp">-->
+
+
+                <!--            </com.google.android.material.chip.ChipGroup>-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/black"
-                android:hint="Registered Complaint status ...."
-                android:textColorHint="@color/black"
-                android:textSize="18dp"
-                android:padding="15dp"
-                android:background="@drawable/borderbox">
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/borderbox"
+                    android:textColor="@color/black"
+                    android:text="Complaint"
+                    android:textSize="15dp"/>
 
-            </EditText>
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/com_txt_history_painting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/black"
+                    android:hint="Registered Complaint status ...."
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:padding="15dp"
+                    android:background="@drawable/borderbox"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/his_elec_feedBack_head_txt_pnt"
-                android:layout_width="match_parent"
+
+            <TableLayout
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="FEEDBACK"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:textStyle="italic"
-                android:visibility="gone"
-                >
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white">
 
-            </TextView>
+                <TableRow>
 
-            <TextView
-                android:id="@+id/com_txt_feedback_elec_txtView_pnt"
-                android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="18dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="S.No:"
+                        android:textColor="@color/black"
+                        android:background="@drawable/cellshape"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Details"
+                        android:background="@drawable/cellshape"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Unit"
+                        android:background="@drawable/cellshape"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/com_id_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_id_eh_paint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:background="@drawable/cellshape"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Complaint Id"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/Comid_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="10dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/com_by_name_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_name_eh_paint"
+                        android:layout_width="71dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Staff Name"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/staff_name_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/com_by_mob_eh_paint">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:id="@+id/sn_mob_eh_paint"
+                        android:layout_width="202dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Staff Mobile Number"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/staff_mob_history_com_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/makeRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_make_eh_paint"
+                        android:layout_width="71dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cellshape"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text="Make"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/make_unit_eh_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/modelRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_model_eh_paint"
+                        android:layout_width="76dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cellshape"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text="Model"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/model_unit_eh_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/powerRat_row_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_powerRat_eh_paint"
+                        android:layout_width="77dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Power Rating"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/powerRating_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/warrantyPeriodRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_warperiod_eh_paint"
+                        android:layout_width="73dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="7"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Warranty Period"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/warranty_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/wexpiryRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_wexpiry_eh_paint"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="8"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Warranty Expiry Date"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/warranty_exp_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/ins_dateRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_ins_date_eh_paint"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="9"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Installed Date"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/ins_date_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/ins_by_Row_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_ins_by_eh_paint"
+                        android:layout_width="79dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:background="@drawable/cellshape"
+                        />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Installation By"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/ins_by_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+
+                    android:id="@+id/LocRow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_loc_eh_paint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cellshape"
+                        android:gravity="center"
+                        android:text="11"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Location"
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/location_unit_his_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@drawable/table"
+                        android:textSize="20dp"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/configrow_eh_paint">
+
+                    <TextView
+                        android:id="@+id/sn_config_eh_paint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/cellshape"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/config2"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text="Configuration"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/Config_eh_paint"
+                        android:layout_width="113dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            <!--        <TextView-->
+            <!--            android:background="@drawable/cellshape_roundcorners"-->
+            <!--            android:layout_width="150dp"-->
+            <!--            android:textAlignment="center"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="30dp"-->
+            <!--            android:layout_marginTop="20dp"-->
+            <!--            android:fontFamily="@font/elmessiri"-->
+            <!--            android:text="Complaint is ...."-->
+            <!--            android:textColor="@color/black"-->
+            <!--            android:textSize="20dp"-->
+            <!--         />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/com_txt_history_painting"-->
+            <!--            android:layout_width="350dp"-->
+            <!--            android:layout_height="100dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginTop="20dp"-->
+            <!--            android:fontFamily="@font/mulish"-->
+            <!--            android:textColor="@color/black"-->
+            <!--         -->
+            <!--            android:hint="Registered Complaint is ....."-->
+            <!--            android:textColorHint="@color/black"-->
+            <!--            android:textSize="25dp">-->
+
+            <!--        </TextView>-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/close_the_com_his_painting"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/black"
-                android:hint="FeedBack"
-                android:textColorHint="@color/black"
-                android:textSize="18dp"
-                android:padding="15dp"
-                android:visibility="gone"
-                android:background="@drawable/borderbox">
-
-            </TextView>
-
-<!--            <Spinner-->
-<!--                android:id="@+id/com_his_feedBack_spinner_pnt"-->
-<!--                android:layout_width="350dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:inputType="none"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:fontFamily="@font/mulish"-->
-<!--                android:textSize="18dp"-->
-<!--                android:spinnerMode="dropdown"-->
-<!--                android:textStyle="bold"-->
-<!--                android:background="@drawable/borderbox_white"/>-->
-
-            <EditText
-                android:id="@+id/other_feedback_painting"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/black"
-                android:hint="Please specify your feedback here"
-                android:textSize="18dp"
-                android:visibility="gone"
-                android:padding="15dp"
-                android:background="@drawable/borderbox_white"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rating_dep_pnt"
-                android:textColor="@color/black"
-                android:visibility="gone"/>
-
-<!--            <RatingBar-->
-<!--                android:id="@+id/rating_pnt"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:rating="0"-->
-<!--                />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Rating for complaint : "-->
-<!--                android:textSize="18dp"/>-->
-
-            <RatingBar
-                android:id="@+id/rating_pnt"
-                android:layout_width="229dp"
-                android:layout_height="match_parent"
-                android:rating="0.0" />
-
-<!--            <Spinner-->
-<!--                android:id="@+id/com_his_feedBack_spinner_pnt"-->
-<!--                android:layout_width="250dp"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:background="@drawable/style_spinner_1"-->
-<!--                android:fontFamily="@font/roboto_regular"-->
-<!--                android:inputType="none"-->
-<!--                android:spinnerMode="dropdown"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="18dp"-->
-<!--                />-->
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Close the Complaint"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/gradientblue"
+                app:cornerRadius="25dp" />
 
         </LinearLayout>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/close_the_com_his_painting"
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/LL_comment_Supervisor_paint"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
+            android:layout_gravity="left"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Close the Complaint"
-            android:textColor="@color/white"
+            android:orientation="horizontal">
 
-            android:backgroundTint="@color/gradientblue"
-            app:cornerRadius="25dp" />
+            <EditText
+                android:id="@+id/ET_comment_supervisor_paint"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/right_corner"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textSize="15dp"/>
 
+            <Button
+                android:id="@+id/send_Supervisor_comment_paint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:background="@drawable/borderbox"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/LL_comment_admin_paint"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/send_Admin_comment_paint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:background="@drawable/borderbox"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"/>
+
+            <EditText
+                android:id="@+id/ET_comment_admin_paint"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:background="@drawable/leftcorners"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

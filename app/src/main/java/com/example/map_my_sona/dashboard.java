@@ -144,7 +144,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 String pos=snapshot.child("position").getValue(String.class);
 
                 if(snapshot.exists()){
-                    if(pos.equals("admin") || pos.equals("superadmin")){
+                    if(pos.equals("admin")){
 
                         loading.setVisibility(View.GONE);
 
@@ -251,6 +251,44 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                         MenuItem navi_report=menu.findItem(R.id.upload_data);
                         navi_report.setVisible(true);
 
+                    }
+                    else if(pos.equals("superadmin")){
+                        loading.setVisibility(View.GONE);
+
+                        history.setVisibility(View.VISIBLE);
+                        scanner.setVisibility(View.VISIBLE);
+                        manualentry.setVisibility(View.GONE);
+
+                        YoYo.with(Techniques.SlideInRight).duration(1000).playOn(scanner);
+                        YoYo.with(Techniques.SlideInLeft).duration(1000).playOn(history);
+
+                        Menu menu=navigationView1.getMenu();
+                        MenuItem nav_QR=menu.findItem(R.id.nav_newQR);
+                        nav_QR.setVisible(false);
+
+                        navigationView1.getMenu().getItem(0).setChecked(true);
+
+                        MenuItem upData=menu.findItem(R.id.update_data);
+                        upData.setVisible(false);
+
+                        MenuItem upload_data=menu.findItem(R.id.upload_data);
+                        upload_data.setVisible(false);
+
+                        MenuItem userlist=menu.findItem(R.id.userList);
+                        userlist.setVisible(false);
+//
+                        MenuItem rat=menu.findItem(R.id.nav_ratings);
+                        rat.setVisible(false);
+
+//                        MenuItem nav_asset=menu.findItem(R.id.nav_assets);
+//                        nav_asset.setVisible(true);
+
+                        MenuItem nav_emergencyContect=menu.findItem(R.id.emergency_contact);
+                        nav_emergencyContect.setVisible(true);
+
+
+//                        MenuItem nav_NewAss=menu.findItem(R.id.nav_NewAssets);
+//                        nav_NewAss.setVisible(true);
                     }
                 }
             }
@@ -363,6 +401,9 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 startActivity(new Intent(dashboard.this,Rating_and_Feedback.class));
                 break;
 
+            case R.id.userList:
+                startActivity(new Intent(dashboard.this,Ulist_Activity.class));
+                break;
 
             case R.id.upload_data:
                 startActivity(new Intent(dashboard.this, BulkuploadActivity.class));

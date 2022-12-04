@@ -25,7 +25,7 @@ public class emergencyContact extends AppCompatActivity {
     ImageView hod4call;
     MaterialToolbar toolbar;
     private DatabaseReference dbref;
-    private String mob;
+    private String mob_elec,mob_plum,mob_paint,mob_net,mob_carp,mob_asset,mob_other;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,23 +40,28 @@ public class emergencyContact extends AppCompatActivity {
 
         dbref= FirebaseDatabase.getInstance().getReference().child("Emails");
 
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mob_elec=snapshot.child("Electricity").child("mobile").getValue(Long.class).toString();
+                mob_carp=snapshot.child("Carpenter").child("mobile").getValue(Long.class).toString();
+                mob_net=snapshot.child("Network").child("mobile").getValue(Long.class).toString();
+                mob_plum=snapshot.child("Plumber").child("mobile").getValue(Long.class).toString();
+                mob_paint=snapshot.child("Painting").child("mobile").getValue(Long.class).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         hodcall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        mob=snapshot.child("Electricity").child("mobile").getValue(Long.class).toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 //pannerselvam sir
-                intent.setData(Uri.parse("tel:"+mob));
+                intent.setData(Uri.parse("tel:"+mob_elec));
                 startActivity(intent);
             }
         });
@@ -64,81 +69,36 @@ public class emergencyContact extends AppCompatActivity {
         hod1call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        mob=snapshot.child("Carpenter").child("mobile").getValue(Long.class).toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:"+mob));
+                intent1.setData(Uri.parse("tel:"+mob_carp));
                 startActivity(intent1);
             }
         });
         hod2call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                dbref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        mob=snapshot.child("Network").child("mobile").getValue(Long.class).toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
                 //sakthivel sir
-                intent1.setData(Uri.parse("tel:"+mob));
+                intent1.setData(Uri.parse("tel:"+mob_net));
                 startActivity(intent1);
             }
         });
         hod3call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        mob=snapshot.child("Plumber").child("mobile").getValue(Long.class).toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:"+mob));
+                intent1.setData(Uri.parse("tel:"+mob_plum));
                 startActivity(intent1);
             }
         });
         hod4call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        mob=snapshot.child("Painting").child("mobile").getValue(Long.class).toString();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
                 Intent intent1 = new Intent(Intent.ACTION_DIAL);
                 //adiyaman sir
-                intent1.setData(Uri.parse("tel:"+mob));
+                intent1.setData(Uri.parse("tel:"+mob_paint));
                 startActivity(intent1);
             }
         });

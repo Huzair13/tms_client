@@ -3,6 +3,8 @@ package com.example.map_my_sona.complaints;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetai
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
 import com.example.map_my_sona.dashboard;
+import com.example.map_my_sona.loginpage;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,6 +42,8 @@ public class Dep_wise_history extends AppCompatActivity {
     private MaterialCardView assets;
     MaterialToolbar toolbar;
     private DatabaseReference refDash;
+    AlertDialog.Builder builder11;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,9 @@ public class Dep_wise_history extends AppCompatActivity {
         painting=findViewById(R.id.painting_history);
         others=findViewById(R.id.others_history);
         assets=findViewById(R.id.assets_history);
+
+        builder11=new AlertDialog.Builder(this);
+        mAuth=FirebaseAuth.getInstance();
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
@@ -106,7 +114,6 @@ public class Dep_wise_history extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
                 refDash.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -115,7 +122,26 @@ public class Dep_wise_history extends AppCompatActivity {
                             startActivity(new Intent(Dep_wise_history.this, dashboard.class));
                         }
                         else{
-                            startActivity(new Intent(Dep_wise_history.this, AdminDashboard.class));
+                            builder11.setTitle("Alert")
+                                    .setMessage("Are you sure to Log out ?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            mAuth.signOut();
+                                            Intent intent=new Intent(Dep_wise_history.this, loginpage.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    })
+                                    .show();
                         }
                     }
 

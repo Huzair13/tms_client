@@ -20,14 +20,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
 import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -73,7 +76,6 @@ public class historyviewdetails_others extends AppCompatActivity {
     Float rating_p;
     String rat;
     TextView rating_dep;
-    RatingBar ratingBar;
     String uref_h;
     MaterialToolbar toolbar;
 
@@ -89,10 +91,23 @@ public class historyviewdetails_others extends AppCompatActivity {
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
-    private TextView staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt,location;
+    private LinearLayout ll_com_superVisor,ll_com_admin;
+    private EditText ed_com_supervisor,ed_com_admin;
+    private Button bt_send_supervisor,bt_send_admin;
+    private String comment_supervisor,comment_admin;
 
-    private String location_str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,com_txt_str;
-    private String Date_str,time_str;
+    private String config_str;
+    private TextView sn_snNum, sn_make, sn_model, sn_proc, sn_powerRat, sn_wperiod, sn_wexpiry, sn_ins_by, sn_ins_date, sn_dep_of_pro, sn_config, sn_loc, sn_name, sn_id, sn_mob;
+    private int snNumber = 4;
+    private TableRow name_row, mob_row, com_IDrow, makeRow, modelRow, procRow, powerRatRow, wperiodrow, wexpiryrow, ins_byRow, ins_dateRow, dep_of_proRow, configRow, locationRow;
+    private String make_str, model_str;
+
+    private TextView make, model, config, staff_name, com_id, staff_mob, powerRating, wexpiry, wperiod, ins_by, ins_date, com_txt, location;
+
+    private String location_str, uid_str, staff_name_str, com_id_str, staff_mob_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, com_txt_str;
+    private String dep_of_pro;
+    private String time_str;
+    private String Date_str;
 
 
     @Override
@@ -107,40 +122,51 @@ public class historyviewdetails_others extends AppCompatActivity {
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 
-        staff_name=(TextView)findViewById(R.id.staff_name_unit_his_others);
-        //staff_dep=(TextView)findViewById(R.id.dep_unit_his_others);
-        com_id=(TextView)findViewById(R.id.Comid_unit_his_others);
-        staff_mob=(TextView)findViewById(R.id.staff_mob_history_com_others);
-        powerRating=(TextView)findViewById(R.id.powerRating_unit_his_others);
-        wexpiry=(TextView)findViewById(R.id.warranty_exp_unit_his_others);
-        wperiod=(TextView)findViewById(R.id.warranty_unit_his_others);
-        ins_by=(TextView)findViewById(R.id.ins_by_unit_his_others);
-        ins_date=(TextView)findViewById(R.id.ins_date_unit_his_others);
-        //mob=(TextView)findViewById(R.id.mob_unit_his_others);
-        com_txt=(TextView)findViewById(R.id.com_txt_history_others);
-        location=(TextView)findViewById(R.id.location_unit_his_others);
-        rating_dep=(TextView)findViewById(R.id.rating_dep_others);
-        //other_feedback=(EditText)findViewById(R.id.other_feedback_others);
+        staff_name = (TextView) findViewById(R.id.staff_name_unit_his_others);
+        //staff_dep=(TextView)findViewById(R.id.dep_unit_his);
+        com_id = (TextView) findViewById(R.id.Comid_unit_his_others);
+        staff_mob = (TextView) findViewById(R.id.staff_mob_history_com_others);
+        powerRating = (TextView) findViewById(R.id.powerRating_unit_his_others);
+        wexpiry = (TextView) findViewById(R.id.warranty_exp_unit_his_others);
+        wperiod = (TextView) findViewById(R.id.warranty_unit_his_others);
+        ins_by = (TextView) findViewById(R.id.ins_by_unit_his_others);
+        ins_date = (TextView) findViewById(R.id.ins_date_unit_his_others);
+        //mob=(TextView)findViewById(R.id.mob_unit_his);
+        com_txt = (TextView) findViewById(R.id.com_txt_history_others);
+        location = (TextView) findViewById(R.id.location_unit_his_others);
+        //other_feedback=(EditText)findViewById(R.id.other_feedback);
+        make = (TextView) findViewById(R.id.make_unit_eh_others);
+        model = (TextView) findViewById(R.id.model_unit_eh_others);
+        config = (TextView) findViewById(R.id.sn_config_eh_others);
 
 
-        ratingBar=(RatingBar) findViewById(R.id.rating_others);
+        com_IDrow = (TableRow) findViewById(R.id.com_id_eh_others);
+        name_row = (TableRow) findViewById(R.id.com_by_name_eh_others);
+        mob_row = (TableRow) findViewById(R.id.com_by_mob_eh_others);
+        makeRow = (TableRow) findViewById(R.id.makeRow_eh_others);
+        modelRow = (TableRow) findViewById(R.id.modelRow_eh_others);
+        powerRatRow = (TableRow) findViewById(R.id.powerRat_row_eh_others);
+        wperiodrow = (TableRow) findViewById(R.id.warrantyPeriodRow_eh_others);
+        wexpiryrow = (TableRow) findViewById(R.id.wexpiryRow_eh_others);
+        ins_byRow = (TableRow) findViewById(R.id.ins_by_Row_eh_others);
+        ins_dateRow = (TableRow) findViewById(R.id.ins_dateRow_eh_others);
+        locationRow = (TableRow) findViewById(R.id.LocRow_eh_others);
+        configRow = (TableRow) findViewById(R.id.configrow_eh_others);
 
-        refDash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String posm=snapshot.child("position").getValue(String.class);
-                if(snapshot.exists()){
-                    if(posm.equals("admin")) {
-                        rating_dep.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+        sn_make = (TextView) findViewById(R.id.sn_make_eh_others);
+        sn_model = (TextView) findViewById(R.id.sn_model_eh_others);
+        sn_powerRat = (TextView) findViewById(R.id.sn_powerRat_eh_others);
+        sn_wperiod = (TextView) findViewById(R.id.sn_warperiod_eh_others);
+        sn_wexpiry = (TextView) findViewById(R.id.sn_wexpiry_eh_others);
+        sn_ins_by = (TextView) findViewById(R.id.sn_ins_by_eh_others);
+        sn_ins_date = (TextView) findViewById(R.id.sn_ins_date_eh_others);
+        sn_loc = (TextView) findViewById(R.id.sn_loc_eh_others);
+        sn_config = (TextView) findViewById(R.id.sn_config_eh_others);
+        sn_name = (TextView) findViewById(R.id.sn_name_eh_others);
+        sn_mob = (TextView) findViewById(R.id.sn_mob_eh_others);
+        sn_id = (TextView) findViewById(R.id.sn_id_eh_others);
 
-            }
-        });
 
         uref_h= FirebaseAuth.getInstance().getUid();
 
@@ -148,6 +174,13 @@ public class historyviewdetails_others extends AppCompatActivity {
         com_status_his=(TextView)findViewById(R.id.complaint_status_his_others);
 
         comp_close=(Button)findViewById(R.id.close_the_com_his_others);
+
+        bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_others);
+        bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_others);
+        ll_com_admin=(LinearLayout)findViewById(R.id.LL_comment_admin_others);
+        ll_com_superVisor=(LinearLayout)findViewById(R.id.LL_comment_Supervisor_others);
+        ed_com_admin=(EditText)findViewById(R.id.ET_comment_admin_others);
+        ed_com_supervisor=(EditText)findViewById(R.id.ET_comment_supervisor_others);
 
 //        feedBack_box=(Spinner)findViewById(R.id.com_his_feedBack_spinner_others);
 //        String[] FeedBack_dropdown={"FeedBack","Excellent","Very Good","Good","Bad","Worst","Others"};
@@ -164,60 +197,188 @@ public class historyviewdetails_others extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Complaint_details complaint_details=snapshot.getValue(Complaint_details.class);
 
-                staff_name_str=complaint_details.getCom_by_name();
-                staff_mob_str=complaint_details.getCom_by_mob();
+                staff_name_str = complaint_details.getCom_by_name();
+                staff_mob_str = complaint_details.getCom_by_mob();
                 //staff_dep_str=complaint_details.getCom_by_dep();
-                com_id_str=complaint_details.getKey();
-                powerRating_str=complaint_details.getPower_rating();
-                wexpiry_str=complaint_details.getWexpiry();
-                wperiod_str=complaint_details.getWperiod();
-                ins_by_str=complaint_details.getIns_by();
-                ins_date_str=complaint_details.getIns_date();
+                com_id_str = complaint_details.getKey();
+                powerRating_str = complaint_details.getPower_rating();
+                wexpiry_str = complaint_details.getWexpiry();
+                wperiod_str = complaint_details.getWperiod();
+                ins_by_str = complaint_details.getIns_by();
+                ins_date_str = complaint_details.getIns_date();
                 //mob_str=complaint_details.getMob();
-                com_txt_str=complaint_details.getCom_txt();
-                pro_id_str=complaint_details.getUniqueId();
+                com_txt_str = complaint_details.getCom_txt();
+                pro_id_str = complaint_details.getUniqueId();
                 //uid_str=complaint_details.getUID();
-                location_str=complaint_details.getLocation();
-                Date_str=complaint_details.getDate();
+                location_str = complaint_details.getLocation();
+                make_str = complaint_details.getMake();
+                model_str = complaint_details.getModel();
+                config_str = complaint_details.getConfig();
+
+                comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
+                comment_admin=snapshot.child("commentAdmin").getValue(String.class);
+
+                dep_of_pro = complaint_details.getDep_of_pro();
+
+                Date_str = complaint_details.getDate();
+                time_str = complaint_details.getTime();
+
                 //get_rating
-                rating_str=complaint_details.getRating();
-                time_str=complaint_details.getTime();
+                rating_str = complaint_details.getRating();
 
                 //FeedBack_str=complaint_details.getFeedBack();
 
-                status=complaint_details.getStatus();
+                status = complaint_details.getStatus();
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
-                //staff_dep.setText(staff_dep_str);
                 com_id.setText(com_id_str);
-                powerRating.setText(powerRating_str);
-                wexpiry.setText(wexpiry_str);
-                wperiod.setText(wperiod_str);
-                ins_by.setText(ins_by_str);
-                ins_date.setText(ins_date_str);
-                //mob.setText(mob_str);
+//                powerRating.setText(powerRating_str);
+//                wexpiry.setText(wexpiry_str);
+//                wperiod.setText(wperiod_str);
+//                ins_by.setText(ins_by_str);
+//                ins_date.setText(ins_date_str);
+//                //mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
-                location.setText(location_str);
 
-                //rating_set
-                rating_dep.setText(rating_str);
-                ratingBar.setRating(Float.parseFloat(rating_str));
+                if(!comment_admin.equals("NIL")){
+                    ed_com_admin.setText(comment_admin);
+                }
+                else{
+                    ed_com_admin.setHint(comment_admin);
+                }
+
+                if(!comment_supervisor.equals("NIL")){
+                    ed_com_supervisor.setText(comment_supervisor);
+                }
+                else{
+                    ed_com_supervisor.setHint(comment_supervisor);
+                }
+//                location.setText(location_str);
+
+                //MAKE
+                if (!make_str.equals("NIL")) {
+                    make.setText(make_str);
+                    sn_make.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    makeRow.setVisibility(View.GONE);
+                }
+
+                //MODEL
+                if (!model_str.equals("NIL")) {
+                    model.setText(model_str);
+                    sn_model.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    modelRow.setVisibility(View.GONE);
+                }
+
+
+                //POWER RATING
+                if (!powerRating_str.equals("NIL")) {
+                    powerRating.setText(powerRating_str);
+                    sn_powerRat.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    powerRatRow.setVisibility(View.GONE);
+                }
+
+                //WPERIOD
+                if (!wperiod_str.equals("NIL")) {
+                    wperiod.setText(wperiod_str);
+                    sn_wperiod.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    wperiodrow.setVisibility(View.GONE);
+                }
+
+
+                //WEXPIRY
+                if (!wexpiry_str.equals("NIL")) {
+                    wexpiry.setText(wexpiry_str);
+                    sn_wexpiry.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    wexpiryrow.setVisibility(View.GONE);
+                }
+
+                //INS_DATE
+                if (!ins_date_str.equals("NIL")) {
+                    ins_date.setText(ins_date_str);
+                    sn_ins_date.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    ins_dateRow.setVisibility(View.GONE);
+                }
+
+                //INS_BY
+                if (!ins_by_str.equals("NIL")) {
+                    ins_by.setText(ins_by_str);
+                    sn_ins_by.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    ins_byRow.setVisibility(View.GONE);
+                }
+
+
+                //LOCATION
+                if (!location_str.equals("NIL")) {
+                    location.setText(location_str);
+                    sn_loc.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    locationRow.setVisibility(View.GONE);
+                }
+
+                //DEP_OF_PRO
+                if (!config_str.equals("NIL")) {
+                    config.setText(config_str);
+                    sn_config.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    configRow.setVisibility(View.GONE);
+                }
 
                 //feedBack_txtView.setText(FeedBack_str);
 
-                if(status.equals("Completed")){
-//                    ratingBar.setClickable(false);
-//                    ratingBar.setFocusable(false);
-                    ratingBar.setIsIndicator(true);
-//                    feedBack_box.setVisibility(View.GONE);
-//                    feedBack_txtView_head.setVisibility(View.VISIBLE);
-//                    feedBack_txtView.setVisibility(View.VISIBLE);
-
-                }
-
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
+
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String posm = snapshot.child("position").getValue(String.class);
+                        if (snapshot.exists()) {
+                            if (posm.equals("admin")) {
+                                if (!comment_supervisor.equals("NIL")) {
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    ll_com_superVisor.setVisibility(View.VISIBLE);
+                                    bt_send_supervisor.setVisibility(View.INVISIBLE);
+                                    ed_com_supervisor.setFocusable(false);
+                                    ed_com_supervisor.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_supervisor.setClickable(false);
+                                }
+                            }
+                            if(posm.equals("supervisor")){
+                                ll_com_superVisor.setVisibility(View.VISIBLE);
+                                if(!comment_admin.equals("NIL")){
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    bt_send_admin.setVisibility(View.INVISIBLE);
+                                    ed_com_admin.setFocusable(false);
+                                    ed_com_admin.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_admin.setClickable(false);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
 
 //                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //                    @Override
@@ -263,13 +424,24 @@ public class historyviewdetails_others extends AppCompatActivity {
             }
         });
 
+        //SEND COMMENT
+        bt_send_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentAdmin(ed_com_admin.getText().toString());
+            }
+        });
+
+        bt_send_supervisor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentSupervisor(ed_com_supervisor.getText().toString());
+            }
+        });
+
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rating_p=Float.valueOf(ratingBar.getRating());
-                rat=rating_p.toString();
-                ratingBar.setRating(rating_p);
-
 //                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
 //                    FeedBack_str=other_feedback.getText().toString();
 //                }
@@ -333,6 +505,46 @@ public class historyviewdetails_others extends AppCompatActivity {
                 }else{
                     Toast.makeText(historyviewdetails_others.this, "It has already been solved and closed", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void updateCommentSupervisor(String toString) {
+        HashMap hp=new HashMap();
+        hp.put("commentSupervisor",toString);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_others.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_others.this,complaint_HistoryDetails_others.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_others.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateCommentAdmin(String comment_admin) {
+        HashMap hp=new HashMap();
+        hp.put("commentAdmin",comment_admin);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_others.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_others.this, complaint_HistoryDetails_others.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_others.this, "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }

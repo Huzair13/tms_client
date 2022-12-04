@@ -13,8 +13,11 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TableRow;
@@ -66,10 +69,16 @@ public class historyviewdetails extends AppCompatActivity {
     private TextView pro_id, com_status_his;
     private String pro_id_str;
     private Button comp_close;
+
     private String status;
     private Spinner feedback;
     private String rating_str;
     private String auto_rating;
+
+    private LinearLayout ll_com_superVisor,ll_com_admin;
+    private EditText ed_com_supervisor,ed_com_admin;
+    private Button bt_send_supervisor,bt_send_admin;
+    private String comment_supervisor,comment_admin;
 
     Float rating_p;
     String rat;
@@ -128,7 +137,6 @@ public class historyviewdetails extends AppCompatActivity {
         //mob=(TextView)findViewById(R.id.mob_unit_his);
         com_txt = (TextView) findViewById(R.id.com_txt_history);
         location = (TextView) findViewById(R.id.location_unit_his);
-        rating_dep = (TextView) findViewById(R.id.rating_dep);
         //other_feedback=(EditText)findViewById(R.id.other_feedback);
         make = (TextView) findViewById(R.id.make_unit_eh);
         model = (TextView) findViewById(R.id.model_unit_eh);
@@ -162,26 +170,16 @@ public class historyviewdetails extends AppCompatActivity {
         sn_mob = (TextView) findViewById(R.id.sn_mob_eh);
         sn_id = (TextView) findViewById(R.id.sn_id_eh);
 
+        bt_send_admin=(Button)findViewById(R.id.send_Admin_comment);
+        bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment);
+        ll_com_admin=(LinearLayout)findViewById(R.id.LL_comment_admin);
+        ll_com_superVisor=(LinearLayout)findViewById(R.id.LL_comment_Supervisor);
+        ed_com_admin=(EditText)findViewById(R.id.ET_comment_admin);
+        ed_com_supervisor=(EditText)findViewById(R.id.ET_comment_supervisor);
 
         ratingBar = (RatingBar) findViewById(R.id.rating);
 
-        refDash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String posm = snapshot.child("position").getValue(String.class);
-                if (snapshot.exists()) {
-                    if (posm.equals("admin")) {
-                        rating_dep.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
+        //getPos();
         //rating
 
         uref_h = FirebaseAuth.getInstance().getUid();
@@ -230,6 +228,9 @@ public class historyviewdetails extends AppCompatActivity {
                 model_str = complaint_details.getModel();
                 config_str = complaint_details.getConfig();
 
+                comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
+                comment_admin=snapshot.child("commentAdmin").getValue(String.class);
+
                 dep_of_pro = complaint_details.getDep_of_pro();
 
                 Date_str = complaint_details.getDate();
@@ -251,7 +252,21 @@ public class historyviewdetails extends AppCompatActivity {
 //                ins_by.setText(ins_by_str);
 //                ins_date.setText(ins_date_str);
 //                //mob.setText(mob_str);
-//                com_txt.setText(com_txt_str);
+                com_txt.setText(com_txt_str);
+
+                if(!comment_admin.equals("NIL")){
+                    ed_com_admin.setText(comment_admin);
+                }
+                else{
+                    ed_com_admin.setHint(comment_admin);
+                }
+
+                if(!comment_supervisor.equals("NIL")){
+                    ed_com_supervisor.setText(comment_supervisor);
+                }
+                else{
+                    ed_com_supervisor.setHint(comment_supervisor);
+                }
 //                location.setText(location_str);
 
                 //MAKE
@@ -338,21 +353,54 @@ public class historyviewdetails extends AppCompatActivity {
                     configRow.setVisibility(View.GONE);
                 }
 
-                //rating_set
-                rating_dep.setText(rating_str);
-                ratingBar.setRating(Float.parseFloat(rating_str));
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String posm = snapshot.child("position").getValue(String.class);
+                        if (snapshot.exists()) {
+                            if (posm.equals("admin")) {
+                                if (!comment_supervisor.equals("NIL")) {
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    ll_com_superVisor.setVisibility(View.VISIBLE);
+                                    bt_send_supervisor.setVisibility(View.INVISIBLE);
+                                    ed_com_supervisor.setFocusable(false);
+                                    ed_com_supervisor.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_supervisor.setClickable(false);
+                                }
+                            }
+                            if(posm.equals("supervisor")){
+                                ll_com_superVisor.setVisibility(View.VISIBLE);
+                                if(!comment_admin.equals("NIL")){
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    bt_send_admin.setVisibility(View.INVISIBLE);
+                                    ed_com_admin.setFocusable(false);
+                                    ed_com_admin.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_admin.setClickable(false);
+                                }
+                            }
+                        }
+                    }
 
-                //feedBack_txtView.setText(FeedBack_str);
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                if (status.equals("Completed")) {
-//                    ratingBar.setClickable(false);
-//                    ratingBar.setFocusable(false);
-                    ratingBar.setIsIndicator(true);
-                    //feedBack_box.setVisibility(View.GONE);
-                    //feedBack_txtView_head.setVisibility(View.VISIBLE);
-                    //feedBack_txtView.setVisibility(View.VISIBLE);
+                    }
+                });
 
-                }
+                //SEND COMMENT
+                bt_send_admin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        updateCommentAdmin(ed_com_admin.getText().toString());
+                    }
+                });
+
+                bt_send_supervisor.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        updateCommentSupervisor(ed_com_supervisor.getText().toString());
+                    }
+                });
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
@@ -475,6 +523,46 @@ public class historyviewdetails extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void updateCommentSupervisor(String toString) {
+        HashMap hp=new HashMap();
+        hp.put("commentSupervisor",toString);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails.this,Complaints_HistoryDetails_Electricity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateCommentAdmin(String comment_admin) {
+        HashMap hp=new HashMap();
+        hp.put("commentAdmin",comment_admin);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails.this,Complaints_HistoryDetails_Electricity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void hashm(int i) {

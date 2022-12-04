@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TableRow;
@@ -109,6 +110,11 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
     private String Date_str;
     private String time_str;
 
+    private LinearLayout ll_com_superVisor,ll_com_admin;
+    private EditText ed_com_supervisor,ed_com_admin;
+    private Button bt_send_supervisor,bt_send_admin;
+    private String comment_supervisor,comment_admin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,29 +171,19 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
         sn_mob=(TextView)findViewById(R.id.sn_mob_elech);
         sn_id=(TextView)findViewById(R.id.sn_id_elech);
 
+
+        bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_carp);
+        bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_carp);
+        ll_com_admin=(LinearLayout)findViewById(R.id.LL_comment_admin_carp);
+        ll_com_superVisor=(LinearLayout)findViewById(R.id.LL_comment_Supervisor_carp);
+        ed_com_admin=(EditText)findViewById(R.id.ET_comment_admin_carp);
+        ed_com_supervisor=(EditText)findViewById(R.id.ET_comment_supervisor_carp);
+
         //other_feedback=(EditText)findViewById(R.id.other_feedback_carpenter );
 
         rating_dep=(TextView)findViewById(R.id.rating_dep_car);
 
         ratingBar=(RatingBar) findViewById(R.id.rating_car);
-
-        refDash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String posm=snapshot.child("position").getValue(String.class);
-                if(snapshot.exists()){
-                    if(posm.equals("admin")) {
-                        rating_dep.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
 
         pro_id=(TextView) findViewById(R.id.Product_ID_history_carpenter);
         com_status_his=(TextView)findViewById(R.id.complaint_status_his_carpenter);
@@ -242,6 +238,9 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
 
                 status=complaint_details.getStatus();
 
+                comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
+                comment_admin=snapshot.child("commentAdmin").getValue(String.class);
+
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
@@ -255,6 +254,20 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
 //                //mob.setText(mob_str);
 //                com_txt.setText(com_txt_str);
 //                location.setText(location_Str);
+
+                if(!comment_admin.equals("NIL")){
+                    ed_com_admin.setText(comment_admin);
+                }
+                else{
+                    ed_com_admin.setHint(comment_admin);
+                }
+
+                if(!comment_supervisor.equals("NIL")){
+                    ed_com_supervisor.setText(comment_supervisor);
+                }
+                else{
+                    ed_com_supervisor.setHint(comment_supervisor);
+                }
 
                 //MAKE
                 if(!make_str.equals("NIL")){
@@ -368,6 +381,41 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
 
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String posm = snapshot.child("position").getValue(String.class);
+                        if (snapshot.exists()) {
+                            if (posm.equals("admin")) {
+                                if (!comment_supervisor.equals("NIL")) {
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    ll_com_superVisor.setVisibility(View.VISIBLE);
+                                    bt_send_supervisor.setVisibility(View.INVISIBLE);
+                                    ed_com_supervisor.setFocusable(false);
+                                    ed_com_supervisor.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_supervisor.setClickable(false);
+                                }
+                            }
+                            if(posm.equals("supervisor")){
+                                ll_com_superVisor.setVisibility(View.VISIBLE);
+                                if(!comment_admin.equals("NIL")){
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    bt_send_admin.setVisibility(View.INVISIBLE);
+                                    ed_com_admin.setFocusable(false);
+                                    ed_com_admin.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_admin.setClickable(false);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
 //                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //                    @Override
 //                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -401,6 +449,21 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(historyviewdetails_carpenter.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        //SEND COMMENT
+        bt_send_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentAdmin(ed_com_admin.getText().toString());
+            }
+        });
+
+        bt_send_supervisor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentSupervisor(ed_com_supervisor.getText().toString());
             }
         });
 
@@ -497,6 +560,46 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
                         "who has filed the complaint\n"+"Please Recheck the complaint and give a solution as soon as possible"
         );
         mail.execute();
+    }
+
+    private void updateCommentSupervisor(String toString) {
+        HashMap hp=new HashMap();
+        hp.put("commentSupervisor",toString);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_carpenter.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_carpenter.this,Complaints_HistoryDetails_Carpenter.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_carpenter.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateCommentAdmin(String comment_admin) {
+        HashMap hp=new HashMap();
+        hp.put("commentAdmin",comment_admin);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_carpenter.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_carpenter.this,Complaints_HistoryDetails_Carpenter.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_carpenter.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void hashm(int i) {

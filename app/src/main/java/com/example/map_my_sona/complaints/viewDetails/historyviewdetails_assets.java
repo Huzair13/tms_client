@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TableRow;
@@ -29,6 +30,7 @@ import android.widget.Toast;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.complaints.Complaint_details;
 import com.example.map_my_sona.complaints.Dep_wise_history;
+import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
 import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_assets;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -103,6 +105,12 @@ public class historyviewdetails_assets extends AppCompatActivity {
     private String Date_str;
 
 
+    private LinearLayout ll_com_superVisor,ll_com_admin;
+    private EditText ed_com_supervisor,ed_com_admin;
+    private Button bt_send_supervisor,bt_send_admin;
+    private String comment_supervisor,comment_admin;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,7 +135,6 @@ public class historyviewdetails_assets extends AppCompatActivity {
         //mob=(TextView)findViewById(R.id.mob_unit_his_assets);
         com_txt=(TextView)findViewById(R.id.com_txt_history_assets);
         location=(TextView)findViewById(R.id.location_unit_his_assets);
-        rating_dep=(TextView)findViewById(R.id.rating_dep_assets);
         make=(TextView)findViewById(R.id.make_unit_assets);
         model=(TextView)findViewById(R.id.model_unit_assetsh);
         config=(TextView)findViewById(R.id.sn_config_assetsh);
@@ -161,24 +168,14 @@ public class historyviewdetails_assets extends AppCompatActivity {
         sn_mob=(TextView)findViewById(R.id.sn_mob_assetsh);
         sn_id=(TextView)findViewById(R.id.sn_id_assetsh);
 
-        ratingBar=(RatingBar) findViewById(R.id.rating_assets);
+        bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_assets);
+        bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_assets);
+        ll_com_admin=(LinearLayout)findViewById(R.id.LL_comment_admin_assets);
+        ll_com_superVisor=(LinearLayout)findViewById(R.id.LL_comment_Supervisor_assets);
+        ed_com_admin=(EditText)findViewById(R.id.ET_comment_admin_assets);
+        ed_com_supervisor=(EditText)findViewById(R.id.ET_comment_supervisor_assets);
 
-        refDash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String posm=snapshot.child("position").getValue(String.class);
-                if(snapshot.exists()){
-                    if(posm.equals("admin")) {
-                        rating_dep.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         uref_h= FirebaseAuth.getInstance().getUid();
 
@@ -222,6 +219,10 @@ public class historyviewdetails_assets extends AppCompatActivity {
                 config_str=complaint_details.getConfig();
                 time_str=complaint_details.getTime();
 
+
+                comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
+                comment_admin=snapshot.child("commentAdmin").getValue(String.class);
+
                 //get_rating
                 rating_str=complaint_details.getRating();
 
@@ -241,6 +242,20 @@ public class historyviewdetails_assets extends AppCompatActivity {
 //                //mob.setText(mob_str);
 //                com_txt.setText(com_txt_str);
 //                location.setText(location_str);
+
+                if(!comment_admin.equals("NIL")){
+                    ed_com_admin.setText(comment_admin);
+                }
+                else{
+                    ed_com_admin.setHint(comment_admin);
+                }
+
+                if(!comment_supervisor.equals("NIL")){
+                    ed_com_supervisor.setText(comment_supervisor);
+                }
+                else{
+                    ed_com_supervisor.setHint(comment_supervisor);
+                }
 
                 //MAKE
                 if(!make_str.equals("NIL")){
@@ -336,9 +351,40 @@ public class historyviewdetails_assets extends AppCompatActivity {
                     configRow.setVisibility(View.GONE);
                 }
 
-                //rating_set
-                rating_dep.setText(rating_str);
-                ratingBar.setRating(Float.parseFloat(rating_str));
+
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String posm = snapshot.child("position").getValue(String.class);
+                        if (snapshot.exists()) {
+                            if (posm.equals("admin")) {
+                                if (!comment_supervisor.equals("NIL")) {
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    ll_com_superVisor.setVisibility(View.VISIBLE);
+                                    bt_send_supervisor.setVisibility(View.INVISIBLE);
+                                    ed_com_supervisor.setFocusable(false);
+                                    ed_com_supervisor.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_supervisor.setClickable(false);
+                                }
+                            }
+                            if(posm.equals("supervisor")){
+                                ll_com_superVisor.setVisibility(View.VISIBLE);
+                                if(!comment_admin.equals("NIL")){
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    bt_send_admin.setVisibility(View.INVISIBLE);
+                                    ed_com_admin.setFocusable(false);
+                                    ed_com_admin.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_admin.setClickable(false);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
                 //feedBack_txtView.setText(FeedBack_str);
 
@@ -396,6 +442,21 @@ public class historyviewdetails_assets extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(historyviewdetails_assets.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        //SEND COMMENT
+        bt_send_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentAdmin(ed_com_admin.getText().toString());
+            }
+        });
+
+        bt_send_supervisor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentSupervisor(ed_com_supervisor.getText().toString());
             }
         });
 
@@ -474,6 +535,46 @@ public class historyviewdetails_assets extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void updateCommentSupervisor(String toString) {
+        HashMap hp=new HashMap();
+        hp.put("commentSupervisor",toString);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_assets.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_assets.this, complaint_HistoryDetails_assets.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_assets.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateCommentAdmin(String comment_admin) {
+        HashMap hp=new HashMap();
+        hp.put("commentAdmin",comment_admin);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_assets.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_assets.this,complaint_HistoryDetails_assets.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_assets.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void hashm(int i) {

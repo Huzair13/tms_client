@@ -53,7 +53,7 @@
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="50dp"
-                android:textSize="25dp"
+                android:textSize="22dp"
                 android:fontFamily="@font/elmessiri"
                 android:textColor="@color/black"/>
 <!--                android:layout_margin="10dp"-->
@@ -83,11 +83,45 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginStart="5dp"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/borderbox"
+                android:textColor="@color/black"
+                android:text="Complaint"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:id="@+id/com_txt_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:hint="Registered Complaint status ...."
+                android:textColorHint="@color/black"
+                android:textSize="18dp"
+                android:padding="15dp"
+                android:background="@drawable/borderbox"/>
+        </LinearLayout>
+
         <TableLayout
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/white">
 
             <TableRow>
@@ -285,8 +319,7 @@
                     android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textSize="20dp" />
 
             </TableRow>
 
@@ -324,8 +357,7 @@
                     android:gravity="center"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textSize="20dp" />
 
             </TableRow>
 
@@ -633,24 +665,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center"
+            android:layout_gravity="center">
 
-            >
-
-
-
-        <EditText
-            android:id="@+id/com_txt_history"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/black"
-            android:hint="Registered Complaint status ...."
-            android:textColorHint="@color/black"
-            android:textSize="18dp"
-            android:padding="15dp"
-            android:background="@drawable/borderbox"/>
 
             <TextView
                 android:id="@+id/his_elec_feedBack_head_txt"
@@ -756,7 +772,72 @@
             android:backgroundTint="@color/gradientblue"
             app:cornerRadius="25dp" />
 
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/LL_comment_Supervisor"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            </LinearLayout>
+            <EditText
+                android:id="@+id/ET_comment_supervisor"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/right_corner"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textSize="15dp"/>
+
+            <Button
+                android:id="@+id/send_Supervisor_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:background="@drawable/borderbox"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/LL_comment_admin"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/send_Admin_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:background="@drawable/borderbox"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"/>
+
+            <EditText
+                android:id="@+id/ET_comment_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:background="@drawable/leftcorners"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
         </ScrollView>

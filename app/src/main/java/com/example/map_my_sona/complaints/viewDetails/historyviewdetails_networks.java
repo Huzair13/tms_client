@@ -20,8 +20,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -95,10 +97,23 @@ public class historyviewdetails_networks extends AppCompatActivity {
 
     AlertDialog.Builder builder_networks;
 
-    private TextView location,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt;
+    private TextView location,staff_name,com_id,staff_mob,powerRating,wexpiry,wperiod,ins_by,ins_date,com_txt,make,model,config;
 
     private String location_Str,uid_str,staff_name_str,com_id_str,staff_mob_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,com_txt_str;
     private String Date_str;
+
+    private LinearLayout ll_com_superVisor,ll_com_admin;
+    private EditText ed_com_supervisor,ed_com_admin;
+    private Button bt_send_supervisor,bt_send_admin;
+    private String comment_supervisor,comment_admin;
+
+    private String config_str;
+    private TextView sn_snNum, sn_make, sn_model, sn_proc, sn_powerRat, sn_wperiod, sn_wexpiry, sn_ins_by, sn_ins_date, sn_dep_of_pro, sn_config, sn_loc, sn_name, sn_id, sn_mob;
+    private int snNumber = 4;
+    private TableRow name_row, mob_row, com_IDrow, makeRow, modelRow, procRow, powerRatRow, wperiodrow, wexpiryrow, ins_byRow, ins_dateRow, dep_of_proRow, configRow, locationRow;
+    private String make_str, model_str;
+    private String location_str;
+    private String dep_of_pro;
 
 
     @Override
@@ -112,17 +127,50 @@ public class historyviewdetails_networks extends AppCompatActivity {
         String com_id_new=intent.getStringExtra("com_ID");
 
 
-        staff_name=(TextView)findViewById(R.id.staff_name_unit_his_networks);
-        //staff_dep=(TextView)findViewById(R.id.dep_unit_his_networks);
-        com_id=(TextView)findViewById(R.id.Comid_unit_his_networks);
-        staff_mob=(TextView)findViewById(R.id.staff_mob_history_com_networks);
-        powerRating=(TextView)findViewById(R.id.powerRating_unit_his_networks);
-        wexpiry=(TextView)findViewById(R.id.warranty_exp_unit_his_networks);
-        wperiod=(TextView)findViewById(R.id.warranty_unit_his_networks);
-        ins_by=(TextView)findViewById(R.id.ins_by_unit_his_networks);
-        ins_date=(TextView)findViewById(R.id.ins_date_unit_his_networks);
-        //mob=(TextView)findViewById(R.id.mob_unit_his_networks);
-        com_txt=(TextView)findViewById(R.id.com_txt_history_networks);
+        staff_name = (TextView) findViewById(R.id.staff_name_unit_his_net);
+        //staff_dep=(TextView)findViewById(R.id.dep_unit_his);
+        com_id = (TextView) findViewById(R.id.Comid_unit_his_net);
+        staff_mob = (TextView) findViewById(R.id.staff_mob_history_com_net);
+        powerRating = (TextView) findViewById(R.id.powerRating_unit_his_net);
+        wexpiry = (TextView) findViewById(R.id.warranty_exp_unit_his_net);
+        wperiod = (TextView) findViewById(R.id.warranty_unit_his_net);
+        ins_by = (TextView) findViewById(R.id.ins_by_unit_his_net);
+        ins_date = (TextView) findViewById(R.id.ins_date_unit_his_net);
+        //mob=(TextView)findViewById(R.id.mob_unit_his);
+        com_txt = (TextView) findViewById(R.id.com_txt_history_networks);
+        location = (TextView) findViewById(R.id.location_unit_his_net);
+        //other_feedback=(EditText)findViewById(R.id.other_feedback);
+        make = (TextView) findViewById(R.id.make_unit_eh_net);
+        model = (TextView) findViewById(R.id.model_unit_eh_net);
+        config = (TextView) findViewById(R.id.sn_config_eh_net);
+
+
+        com_IDrow = (TableRow) findViewById(R.id.com_id_eh_net);
+        name_row = (TableRow) findViewById(R.id.com_by_name_eh_net);
+        mob_row = (TableRow) findViewById(R.id.com_by_mob_eh_net);
+        makeRow = (TableRow) findViewById(R.id.makeRow_eh_net);
+        modelRow = (TableRow) findViewById(R.id.modelRow_eh_net);
+        powerRatRow = (TableRow) findViewById(R.id.powerRat_row_eh_net);
+        wperiodrow = (TableRow) findViewById(R.id.warrantyPeriodRow_eh_net);
+        wexpiryrow = (TableRow) findViewById(R.id.wexpiryRow_eh_net);
+        ins_byRow = (TableRow) findViewById(R.id.ins_by_Row_eh_net);
+        ins_dateRow = (TableRow) findViewById(R.id.ins_dateRow_eh_net);
+        locationRow = (TableRow) findViewById(R.id.LocRow_eh_net);
+        configRow = (TableRow) findViewById(R.id.configrow_eh_net);
+
+        sn_make = (TextView) findViewById(R.id.sn_make_eh_net);
+        sn_model = (TextView) findViewById(R.id.sn_model_eh_net);
+        sn_powerRat = (TextView) findViewById(R.id.sn_powerRat_eh_net);
+        sn_wperiod = (TextView) findViewById(R.id.sn_warperiod_eh_net);
+        sn_wexpiry = (TextView) findViewById(R.id.sn_wexpiry_eh_net);
+        sn_ins_by = (TextView) findViewById(R.id.sn_ins_by_eh_net);
+        sn_ins_date = (TextView) findViewById(R.id.sn_ins_date_eh_net);
+        sn_loc = (TextView) findViewById(R.id.sn_loc_eh_net);
+        sn_config = (TextView) findViewById(R.id.sn_config_eh_net);
+        sn_name = (TextView) findViewById(R.id.sn_name_eh_net);
+        sn_mob = (TextView) findViewById(R.id.sn_mob_eh_net);
+        sn_id = (TextView) findViewById(R.id.sn_id_eh_net);
+
 
         //other_feedback=(EditText)findViewById(R.id.other_feedback_network);
 
@@ -139,26 +187,13 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //        feedBack_txtView=(TextView)findViewById(R.id.com_txt_feedback_elec_txtView_net);
 //        feedBack_txtView_head=(TextView)findViewById(R.id.his_elec_feedBack_head_txt_net);
 
-        rating_dep=(TextView)findViewById(R.id.rating_dep_net);
+        bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_net);
+        bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_net);
+        ll_com_admin=(LinearLayout)findViewById(R.id.LL_comment_admin_net);
+        ll_com_superVisor=(LinearLayout)findViewById(R.id.LL_comment_Supervisor_net);
+        ed_com_admin=(EditText)findViewById(R.id.ET_comment_admin_net);
+        ed_com_supervisor=(EditText)findViewById(R.id.ET_comment_supervisor_net);
 
-        ratingBar=(RatingBar) findViewById(R.id.rating_net);
-
-        refDash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String posm=snapshot.child("position").getValue(String.class);
-                if(snapshot.exists()){
-                    if(posm.equals("admin")) {
-                        rating_dep.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 //        feedback=(Spinner) findViewById(R.id.feedback);
 
         uref_h= FirebaseAuth.getInstance().getUid();
@@ -174,56 +209,149 @@ public class historyviewdetails_networks extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Complaint_details complaint_details=snapshot.getValue(Complaint_details.class);
 
-                staff_name_str=complaint_details.getCom_by_name();
-                staff_mob_str=complaint_details.getCom_by_mob();
-               // staff_dep_str=complaint_details.getCom_by_dep();
-                com_id_str=complaint_details.getKey();
-                powerRating_str=complaint_details.getPower_rating();
-                wexpiry_str=complaint_details.getWexpiry();
-                wperiod_str=complaint_details.getWperiod();
-                ins_by_str=complaint_details.getIns_by();
-                ins_date_str=complaint_details.getIns_date();
+                staff_name_str = complaint_details.getCom_by_name();
+                staff_mob_str = complaint_details.getCom_by_mob();
+                //staff_dep_str=complaint_details.getCom_by_dep();
+                com_id_str = complaint_details.getKey();
+                powerRating_str = complaint_details.getPower_rating();
+                wexpiry_str = complaint_details.getWexpiry();
+                wperiod_str = complaint_details.getWperiod();
+                ins_by_str = complaint_details.getIns_by();
+                ins_date_str = complaint_details.getIns_date();
                 //mob_str=complaint_details.getMob();
-                com_txt_str=complaint_details.getCom_txt();
-                pro_id_str=complaint_details.getUniqueId();
-                //get_rating
-                rating_str=complaint_details.getRating();
-                //FeedBack_str=complaint_details.getFeedBack();
-
-                Date_str=complaint_details.getDate();
-                time_str=complaint_details.getTime();
-
-                status=complaint_details.getStatus();
+                com_txt_str = complaint_details.getCom_txt();
+                pro_id_str = complaint_details.getUniqueId();
                 //uid_str=complaint_details.getUID();
+                location_str = complaint_details.getLocation();
+                make_str = complaint_details.getMake();
+                model_str = complaint_details.getModel();
+                config_str = complaint_details.getConfig();
+
+                comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
+                comment_admin=snapshot.child("commentAdmin").getValue(String.class);
+
+                dep_of_pro = complaint_details.getDep_of_pro();
+
+                Date_str = complaint_details.getDate();
+                time_str = complaint_details.getTime();
+
+                //get_rating
+                rating_str = complaint_details.getRating();
+
+                status = complaint_details.getStatus();
 
                 staff_name.setText(staff_name_str);
                 staff_mob.setText(staff_mob_str);
-               // staff_dep.setText(staff_dep_str);
                 com_id.setText(com_id_str);
-                powerRating.setText(powerRating_str);
-                wexpiry.setText(wexpiry_str);
-                wperiod.setText(wperiod_str);
-                ins_by.setText(ins_by_str);
-                ins_date.setText(ins_date_str);
-                //mob.setText(mob_str);
+//                powerRating.setText(powerRating_str);
+//                wexpiry.setText(wexpiry_str);
+//                wperiod.setText(wperiod_str);
+//                ins_by.setText(ins_by_str);
+//                ins_date.setText(ins_date_str);
+//                //mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
+
+                if(!comment_admin.equals("NIL")){
+                    ed_com_admin.setText(comment_admin);
+                }
+                else{
+                    ed_com_admin.setHint(comment_admin);
+                }
+
+                if(!comment_supervisor.equals("NIL")){
+                    ed_com_supervisor.setText(comment_supervisor);
+                }
+                else{
+                    ed_com_supervisor.setHint(comment_supervisor);
+                }
+//                location.setText(location_str);
+
+                //MAKE
+                if (!make_str.equals("NIL")) {
+                    make.setText(make_str);
+                    sn_make.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    makeRow.setVisibility(View.GONE);
+                }
+
+                //MODEL
+                if (!model_str.equals("NIL")) {
+                    model.setText(model_str);
+                    sn_model.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    modelRow.setVisibility(View.GONE);
+                }
+
+
+                //POWER RATING
+                if (!powerRating_str.equals("NIL")) {
+                    powerRating.setText(powerRating_str);
+                    sn_powerRat.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    powerRatRow.setVisibility(View.GONE);
+                }
+
+                //WPERIOD
+                if (!wperiod_str.equals("NIL")) {
+                    wperiod.setText(wperiod_str);
+                    sn_wperiod.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    wperiodrow.setVisibility(View.GONE);
+                }
+
+
+                //WEXPIRY
+                if (!wexpiry_str.equals("NIL")) {
+                    wexpiry.setText(wexpiry_str);
+                    sn_wexpiry.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    wexpiryrow.setVisibility(View.GONE);
+                }
+
+                //INS_DATE
+                if (!ins_date_str.equals("NIL")) {
+                    ins_date.setText(ins_date_str);
+                    sn_ins_date.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    ins_dateRow.setVisibility(View.GONE);
+                }
+
+                //INS_BY
+                if (!ins_by_str.equals("NIL")) {
+                    ins_by.setText(ins_by_str);
+                    sn_ins_by.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    ins_byRow.setVisibility(View.GONE);
+                }
+
+
+                //LOCATION
+                if (!location_str.equals("NIL")) {
+                    location.setText(location_str);
+                    sn_loc.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    locationRow.setVisibility(View.GONE);
+                }
+
+                //DEP_OF_PRO
+                if (!config_str.equals("NIL")) {
+                    config.setText(config_str);
+                    sn_config.setText(String.valueOf(snNumber));
+                    snNumber++;
+                } else {
+                    configRow.setVisibility(View.GONE);
+                }
 
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
-
-                //rating_set
-                rating_dep.setText(rating_str);
-                ratingBar.setRating(Float.parseFloat(rating_str));
-                //feedBack_txtView.setText(FeedBack_str);
-
-                if(status.equals("Completed")){
-//                    ratingBar.setClickable(false);
-//                    ratingBar.setFocusable(false);
-                    ratingBar.setIsIndicator(true);
-//                    feedBack_box.setVisibility(View.GONE);
-//                    feedBack_txtView_head.setVisibility(View.VISIBLE);
-//                    feedBack_txtView.setVisibility(View.VISIBLE);
-                }
 
 //                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //                    @Override
@@ -251,12 +379,62 @@ public class historyviewdetails_networks extends AppCompatActivity {
                 }
                 com_status_his.setTextColor(getResources().getColor(R.color.white));
 
+                refDash.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String posm = snapshot.child("position").getValue(String.class);
+                        if (snapshot.exists()) {
+                            if (posm.equals("admin")) {
+                                if (!comment_supervisor.equals("NIL")) {
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    ll_com_superVisor.setVisibility(View.VISIBLE);
+                                    bt_send_supervisor.setVisibility(View.INVISIBLE);
+                                    ed_com_supervisor.setFocusable(false);
+                                    ed_com_supervisor.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_supervisor.setClickable(false);
+                                }
+                            }
+                            if(posm.equals("supervisor")){
+                                ll_com_superVisor.setVisibility(View.VISIBLE);
+                                if(!comment_admin.equals("NIL")){
+                                    ll_com_admin.setVisibility(View.VISIBLE);
+                                    bt_send_admin.setVisibility(View.INVISIBLE);
+                                    ed_com_admin.setFocusable(false);
+                                    ed_com_admin.setFocusableInTouchMode(false); // user touches widget on phone with touch screen
+                                    ed_com_admin.setClickable(false);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
 
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(historyviewdetails_networks.this, "Something Went Wrong !!! ", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        //SEND COMMENT
+        bt_send_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentAdmin(ed_com_admin.getText().toString());
+            }
+        });
+
+        bt_send_supervisor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCommentSupervisor(ed_com_supervisor.getText().toString());
             }
         });
 
@@ -343,6 +521,46 @@ public class historyviewdetails_networks extends AppCompatActivity {
 //            }
 //        });
 
+    }
+
+    private void updateCommentSupervisor(String toString) {
+        HashMap hp=new HashMap();
+        hp.put("commentSupervisor",toString);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_networks.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_networks.this,Complaints_HistoryDetails_Networks.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateCommentAdmin(String comment_admin) {
+        HashMap hp=new HashMap();
+        hp.put("commentAdmin",comment_admin);
+
+        reference_complaints_history_fullView.updateChildren(hp).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Toast.makeText(historyviewdetails_networks.this, "Sent !!!", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(historyviewdetails_networks.this,Complaints_HistoryDetails_Networks.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(historyviewdetails_networks.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void hashm(int i) {

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.map_my_sona.R;
 import com.example.map_my_sona.admin.AdminDashboard;
 import com.example.map_my_sona.complaints.Complaint_details;
+import com.example.map_my_sona.complaints.Dep_wise_history;
 import com.example.map_my_sona.complaints.complaints_history_Adapter;
 import com.example.map_my_sona.dashboard;
 import com.example.map_my_sona.loginpage;
@@ -99,8 +100,8 @@ public class complaint_HistoryDetails_others extends AppCompatActivity implement
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String pos=snapshot.child("position").getValue(String.class);
-                        if(pos.equals("admin")){
-                            startActivity(new Intent(complaint_HistoryDetails_others.this, dashboard.class));
+                        if(pos.equals("admin")||pos.equals("supervisor")){
+                            startActivity(new Intent(complaint_HistoryDetails_others.this, Dep_wise_history.class));
                         }
                         else{
                             builder11.setTitle("Alert")

@@ -50,6 +50,11 @@
             android:title="Upload Data " />
 
         <item
+            android:id="@+id/userList"
+            android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+            android:title="User List"/>
+
+        <item
             android:id="@+id/nav_ratings"
             android:icon="@drawable/ic_baseline_star_rate_24"
             android:title="Ratings"/>

@@ -234,6 +234,7 @@ public class historyviewdetails_assets extends AppCompatActivity {
                 staff_mob.setText(staff_mob_str);
                 //staff_dep.setText(staff_dep_str);
                 com_id.setText(com_id_str);
+                com_txt.setText(com_txt_str);
 //                powerRating.setText(powerRating_str);
 //                wexpiry.setText(wexpiry_str);
 //                wperiod.setText(wperiod_str);

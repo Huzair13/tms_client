@@ -240,6 +240,7 @@ public class historyviewdetails_others extends AppCompatActivity {
 //                ins_date.setText(ins_date_str);
 //                //mob.setText(mob_str);
                 com_txt.setText(com_txt_str);
+                com_txt.setText(com_txt_str);
 
                 if(!comment_admin.equals("NIL")){
                     ed_com_admin.setText(comment_admin);

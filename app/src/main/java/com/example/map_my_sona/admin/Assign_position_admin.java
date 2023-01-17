@@ -29,29 +29,32 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Assign_position_admin extends AppCompatActivity {
 
-    private EditText username;
+    private Spinner username;
     private TextView uname, email, pos;
     private String uname_str, email_str, pos_str, userID;
     private Button get_details;
     private TableLayout table_layout;
     private String pos_str1;
 
+    private DatabaseReference reference;
     AlertDialog.Builder builder;
     private Button yes,update_pos;
     private Spinner change_pos_spinner;
     private TextView txtview_change_pos;
     private String new_pos;
+    ArrayList<String> ar=new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assign_position_admin);
 
-        username = (EditText) findViewById(R.id.username_assign_admin);
+        username = (Spinner) findViewById(R.id.username_assign_admin);
 
         builder=new AlertDialog.Builder(this);
 
@@ -61,13 +64,19 @@ public class Assign_position_admin extends AppCompatActivity {
         table_layout = (TableLayout) findViewById(R.id.table_layout_admin_assign);
         get_details = (Button) findViewById(R.id.get_details_admin_assign);
 
+        reference= FirebaseDatabase.getInstance().getReference().child("userDetails");
+
         yes=(Button)findViewById(R.id.yes_change_the_position);
         update_pos=(Button)findViewById(R.id.update_position_admin_assign);
         change_pos_spinner=(Spinner)findViewById(R.id.change_position_admin_assign_spinner);
         txtview_change_pos=(TextView)findViewById(R.id.txtview_change_pos);
 
+        SetUnameSpinner();
+
         String[] positions={"Position","admin","superadmin","supervisor","electrician","carpenter","network","plumber","painter","assets","others","user"};
         change_pos_spinner.setAdapter(new ArrayAdapter<String>(this, simple_spinner_dropdown_item,positions));
+
+        username.setAdapter(new ArrayAdapter<String>(getApplicationContext(), simple_spinner_dropdown_item,ar));
 
         change_pos_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -77,6 +86,18 @@ public class Assign_position_admin extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        username.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                uname_str=username.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
@@ -103,6 +124,24 @@ public class Assign_position_admin extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void SetUnameSpinner() {
+        ar.add("Username");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot child : snapshot.getChildren()) {
+                    String uname1=child.getKey();
+                    ar.add(uname1);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void checKVal() {
@@ -169,12 +208,34 @@ public class Assign_position_admin extends AppCompatActivity {
     }
 
     private void checkIsempty() {
-        uname_str = username.getText().toString();
-        if (uname_str.isEmpty()) {
-            Toast.makeText(Assign_position_admin.this, "Please enter username to get the user details", Toast.LENGTH_SHORT).show();
-        } else {
-            showdetails(uname_str);
-        }
+//        uname_str = username.getText().toString();
+//        if (uname_str.isEmpty()) {
+//            Toast.makeText(Assign_position_admin.this, "Please enter username to get the user details", Toast.LENGTH_SHORT).show();
+//        } else {
+//            showdetails(uname_str);
+//        }
+       //uname_str=getUname();
+       if(uname_str.equals("Username")){
+           Toast.makeText(Assign_position_admin.this, "Please enter username to get the user details", Toast.LENGTH_SHORT).show();
+       }else{
+           showdetails(uname_str);
+       }
+    }
+
+    private String getUname() {
+        final String[] uname_str1 = new String[1];
+        username.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                uname_str1[0] =username.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        return uname_str1[0];
     }
 
     private void showdetails(String uname_str) {

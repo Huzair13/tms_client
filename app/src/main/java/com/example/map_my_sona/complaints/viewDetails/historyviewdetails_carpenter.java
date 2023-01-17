@@ -370,15 +370,6 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
                 ratingBar.setRating(Float.parseFloat(rating_str));
                 //feedBack_txtView.setText(FeedBack_str);
 
-                if(status.equals("Completed")){
-//                    ratingBar.setClickable(false);
-//                    ratingBar.setFocusable(false);
-                    ratingBar.setIsIndicator(true);
-//                    feedBack_box.setVisibility(View.GONE);
-//                    feedBack_txtView_head.setVisibility(View.VISIBLE);
-//                    feedBack_txtView.setVisibility(View.VISIBLE);
-                }
-
                 pro_id.setText(pro_id_str);
                 com_status_his.setText(status);
 
@@ -471,9 +462,6 @@ public class historyviewdetails_carpenter extends AppCompatActivity {
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rating_p=Float.valueOf(ratingBar.getRating());
-                rat=rating_p.toString();
-                ratingBar.setRating(rating_p);
 
 //                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
 //                    FeedBack_str=other_feedback.getText().toString();

@@ -78,7 +78,7 @@ public class Complaints_HistoryDetails_Networks extends AppCompatActivity implem
         adapter_complaint_history_networks = new complaints_history_Adapter(arrayList_complaints_history_networks,this);
         recyclerView_complaints_history_networks.setAdapter(adapter_complaint_history_networks);
 
-        reference_complaints_history_networks.orderByChild("status").addValueEventListener(new ValueEventListener() {
+        reference_complaints_history_networks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){

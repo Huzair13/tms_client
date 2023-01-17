@@ -400,14 +400,6 @@ public class historyviewdetails_plumber extends AppCompatActivity {
 
                 //feedBack_txtView.setText(FeedBack_str);
 
-                if(status.equals("Completed")){
-//                    ratingBar.setClickable(false);
-//                    ratingBar.setFocusable(false);
-                    ratingBar.setIsIndicator(true);
-//                    feedBack_box.setVisibility(View.GONE);
-//                    feedBack_txtView_head.setVisibility(View.VISIBLE);
-//                    feedBack_txtView.setVisibility(View.VISIBLE);
-                }
 
 //                feedBack_box.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //                    @Override
@@ -463,10 +455,6 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         comp_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rating_p=Float.valueOf(ratingBar.getRating());
-                rat=rating_p.toString();
-                ratingBar.setRating(rating_p);
-
 //                if(FeedBack_str.equals("Others") && !other_feedback.getText().toString().isEmpty()){
 //                    FeedBack_str=other_feedback.getText().toString();
 //                }

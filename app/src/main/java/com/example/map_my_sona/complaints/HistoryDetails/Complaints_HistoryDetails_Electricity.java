@@ -88,7 +88,8 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
         builder11=new AlertDialog.Builder(this);
         mAuth=FirebaseAuth.getInstance();
 
-        reference_complaints_history.orderByChild("status").addValueEventListener(new ValueEventListener() {
+        //ORDER BY
+        reference_complaints_history.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){

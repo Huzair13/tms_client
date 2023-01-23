@@ -45,10 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:text="Incharge Email"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="22dp"
+            android:textSize="23sp"
             android:background="@drawable/mailcard2"
             />
         <TextView
@@ -57,10 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:text="Mobile Numbers"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="22dp"
+            android:textSize="23sp"
             android:background="@drawable/phonecard2" />
 
         <TextView
@@ -69,10 +71,11 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center|end"
+            android:layout_marginLeft="10dp"
             android:textAlignment="center"
             android:text="Assign Position"
             android:textColor="@color/white"
-            android:textSize="22dp"
+            android:textSize="23sp"
             android:background="@drawable/assigncard2" />
 
 

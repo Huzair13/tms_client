@@ -120,8 +120,8 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
+                android:layout_width="380dp"
+                android:layout_height="270dp"
                 android:layout_marginStart="20dp">
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/button_111"
@@ -134,7 +134,7 @@
                     android:checkable="true"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="0dp"
+                    app:cardElevation="30dp"
                     app:cardCornerRadius="20dp"
                     android:background="@color/zxing_transparent">
 
@@ -148,7 +148,7 @@
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/network">
+                        android:background="@drawable/net">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -175,7 +175,7 @@
                     android:checkable="true"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="0dp"
+                    app:cardElevation="30dp"
                     app:cardCornerRadius="20dp"
                     android:background="@color/zxing_transparent">
 
@@ -191,7 +191,7 @@
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/electricity">
+                        android:background="@drawable/ele">
 
 
                         <TextView
@@ -211,8 +211,8 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
+                android:layout_width="380dp"
+                android:layout_height="230dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp">
                 <com.google.android.material.card.MaterialCardView
@@ -225,7 +225,7 @@
                     android:checkable="true"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="0dp"
+                    app:cardElevation="30dp"
                     app:cardCornerRadius="20dp"
                     android:background="@color/zxing_transparent">
 
@@ -239,7 +239,7 @@
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/carpenting">
+                        android:background="@drawable/plum3">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -265,7 +265,7 @@
                     android:checkable="true"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="0dp"
+                    app:cardElevation="30dp"
                     app:cardCornerRadius="20dp"
                     android:background="@color/zxing_transparent">
 
@@ -281,7 +281,7 @@
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/plumbing">
+                        android:background="@drawable/plum">
 
 
                         <TextView
@@ -300,8 +300,9 @@
 
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout><LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="380dp"
             android:layout_height="200dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp">
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/painting_history"
@@ -313,7 +314,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="0dp"
+                app:cardElevation="30dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -327,7 +328,7 @@
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/painting">
+                    android:background="@drawable/pain">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -353,7 +354,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="0dp"
+                app:cardElevation="30dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -369,7 +370,7 @@
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/assets">
+                    android:background="@drawable/asset">
 
 
                     <TextView
@@ -399,7 +400,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="0dp"
+                app:cardElevation="30dp"
                 app:cardCornerRadius="20dp"
                 android:background="@color/zxing_transparent">
 
@@ -413,7 +414,8 @@
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/others">
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/other">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

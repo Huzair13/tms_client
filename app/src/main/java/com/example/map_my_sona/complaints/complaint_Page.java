@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.INotificationSideChannel;
 import android.util.Config;
 import android.view.View;
@@ -53,6 +54,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Properties;
@@ -631,6 +638,7 @@ public class complaint_Page extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 sendemail();
                 Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
+                sendMessage();
                 refDash.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -659,6 +667,69 @@ public class complaint_Page extends AppCompatActivity {
                 Toast.makeText(complaint_Page.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void sendMessage()  {
+        // Replace with your username
+        String user = "Sonatech";
+
+        // Replace with your API KEY (We have sent API KEY on activation email, also available on panel)
+        String apikey = "Y7VVzSPtX3vfsq5AKYCG";
+
+        // Replace with the destination mobile Number to which you want to send sms
+        String mobile = complainted_by_mob_str;
+
+        // Replace if you have your own Sender ID, else donot change
+        String senderid = "SONASR";
+
+        String str="Your complaint has been closed and solved";
+
+        String feed="https://trackmysonafeebackweb";
+        String feed1=".web.app/network";
+
+        String var="https://www.sonatech";
+        String var1=".ac.in/";
+
+        // Replace with your Message content
+        String message = "Thank you. Your complaint has been registered successfully. For more details click here" +var+var1+ "- SONA STAR.";
+
+                // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
+        String type="txt";
+
+        //Prepare Url
+        URLConnection myURLConnection=null;
+        URL myURL=null;
+        BufferedReader reader=null;
+
+        //encoding message
+        String encoded_message= URLEncoder.encode(message);
+
+        //Send SMS API
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONASR&type=txt&tid=1507167447559320708&message="+message;
+
+        StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(gfgPolicy);
+
+        try
+        {
+            //prepare connection
+            myURL = new URL(mainUrl);
+            myURLConnection = myURL.openConnection();
+            myURLConnection.connect();
+            reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
+            //reading response
+            String response;
+            while ((response = reader.readLine()) != null)
+                //print response
+                System.out.println(response);
+
+            //finally close connection
+            reader.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 //
 //    public void startService(View v) {

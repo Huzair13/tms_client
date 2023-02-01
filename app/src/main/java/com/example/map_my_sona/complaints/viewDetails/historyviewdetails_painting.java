@@ -811,12 +811,15 @@ public class historyviewdetails_painting extends AppCompatActivity {
         String mobile = staff_mob_str;
 
         // Replace if you have your own Sender ID, else donot change
-        String senderid = "SONACT";
+        String senderid = "SONASR";
 
         String str="Your complaint has been closed and solved";
 
+        String feed="https://trackmysonafeebackweb";
+        String feed1=".web.app/painting";
+
         // Replace with your Message content
-        String message = "For request initiated through Sonasoft the one time password is :\" +closed+\". Do not share it with anyone for security reason";
+        String message = "The complaint filed by you is closed. Please click the link to "+feed+feed1+" share your feedback - SONA STAR.";
 
         // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
         String type="txt";
@@ -830,7 +833,7 @@ public class historyviewdetails_painting extends AppCompatActivity {
         String encoded_message= URLEncoder.encode(message);
 
         //Send SMS API
-        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONACT&type=txt&tid=1507159884977405639&message="+message;
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONASR&type=txt&tid=1507167447536663837&message="+message;
 
         StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(gfgPolicy);

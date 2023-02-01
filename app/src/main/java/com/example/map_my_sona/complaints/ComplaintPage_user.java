@@ -450,12 +450,12 @@ public class ComplaintPage_user extends AppCompatActivity {
         String mobile = complainted_by_mob_str;
 
         // Replace if you have your own Sender ID, else donot change
-        String senderid = "SONACT";
+        String senderid = "SONASR";
 
         String str="Your complaint has been closed and solved";
 
         // Replace with your Message content
-        String message = "For request initiated through Sonasoft the one time password is :" +r+". Do not share it with anyone for security reason";
+        String message = "One time password (OTP) for your complaint registration is "+r+" Do not share it with anyone for security reasons - SONA STAR.";
 
         // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
         String type="txt";
@@ -469,7 +469,7 @@ public class ComplaintPage_user extends AppCompatActivity {
         String encoded_message= URLEncoder.encode(message);
 
         //Send SMS API
-        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONACT&type=txt&tid=1507159884977405639&message="+message;
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONASR&type=txt&tid=1507167447525335119&message="+message;
 
         StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(gfgPolicy);

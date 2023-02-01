@@ -130,11 +130,11 @@ public class EsclationService_new extends Service {
                         //ESCALATION CONDITION
                         if(hour_diff>24 && escalate1.equals("NO") && escalate2.equals("NO")){
                             dbref.child(ds.getKey()).child(ds1.getKey()).child("escalated1").setValue("YES");
-                            sendMessage(mobile_admin);
+                            sendMessage(mobile_admin,date_old);
                         }
                         else if(hour_diff>48 && escalate2.equals("NO") && escalate1.equals("YES")){
                             dbref.child(ds.getKey()).child(ds1.getKey()).child("escalated2").setValue("YES");
-                            sendMessage(mobile_superAdmin);
+                            sendMessage(mobile_superAdmin,date_old);
                         }
 
                     }
@@ -148,8 +148,7 @@ public class EsclationService_new extends Service {
         });
     }
 
-    private void sendMessage(String mobile_admin) {
-
+    private void sendMessage(String mobile_admin,String date_old) {
         int upper=100000;
         int lower=900000;
         int r = (int) (Math.random() * (upper - lower)) + lower;
@@ -168,8 +167,9 @@ public class EsclationService_new extends Service {
 
         String str="Your complaint has been closed and solved";
 
+        String h=date_old;
         // Replace with your Message content
-        String message = "For request initiated through Sonasoft the one time password is :" +r+". Do not share it with anyone for security reason";
+        String message = "Complaint Registered in "+h+" was not rectified within 24 hours. Enquire Particular incharge heads - SONA STAR.";
 
         // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
         String type="txt";
@@ -183,7 +183,7 @@ public class EsclationService_new extends Service {
         String encoded_message= URLEncoder.encode(message);
 
         //Send SMS API
-        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONACT&type=txt&tid=1507159884977405639&message="+message;
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +mobile+ "&senderid=SONASR&type=txt&tid=1507167447707869495&message="+message;
 
         StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(gfgPolicy);

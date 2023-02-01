@@ -18,33 +18,33 @@
             android:text="INSTRUCTIONS : \n"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="80dp"
             android:textColor="@color/black"
             android:fontFamily="@font/elmessiri"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/grey"
             android:layout_height="wrap_content"
             android:text="1) The Excel sheet should be in the format of the given template \n"
-            android:textSize="25dp"
-            android:fontFamily="@font/luxuriousromanregular"/>
+            android:textSize="23sp"
+            android:fontFamily="@font/roboto_regular"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2) You can't upload data that is more than what you have been subscribed\n"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/luxuriousromanregular"/>
+            android:textSize="23sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/roboto_regular"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3) If a product doesn't have any data in the given template enter that as NIL"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/luxuriousromanregular"/>
+            android:textSize="23sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/roboto_regular"/>
 
         <Button
             android:id="@+id/excel"

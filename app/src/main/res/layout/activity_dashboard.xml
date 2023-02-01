@@ -99,176 +99,176 @@
 
    </LinearLayout>
 
-   <LinearLayout
-       android:id="@+id/lin_load_ani"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
+<!--   <LinearLayout-->
+<!--       android:id="@+id/lin_load_ani"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"-->
+<!--       android:orientation="vertical">-->
 
-       <com.airbnb.lottie.LottieAnimationView
-          android:id="@+id/lottie_ani_load"
-          android:layout_width="279dp"
-          android:layout_height="267dp"
-          android:layout_gravity="center"
-          android:layout_marginTop="300dp"
-          app:lottie_autoPlay="true"
-          app:lottie_loop="true"
-          app:lottie_rawRes="@raw/loading"/>
+<!--       <com.airbnb.lottie.LottieAnimationView-->
+<!--          android:id="@+id/lottie_ani_load"-->
+<!--          android:layout_width="279dp"-->
+<!--          android:layout_height="267dp"-->
+<!--          android:layout_gravity="center"-->
+<!--          android:layout_marginTop="300dp"-->
+<!--          app:lottie_autoPlay="true"-->
+<!--          app:lottie_loop="true"-->
+<!--          app:lottie_rawRes="@raw/loading"/>-->
 
-   </LinearLayout>
-
-
-   <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:gravity="center"
-       android:orientation="vertical">
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/scancode"
-          android:layout_width="300dp"
-          android:layout_height="85dp"
-          android:layout_marginTop="201dp"
-          android:layout_marginStart="15dp"
-          android:layout_gravity="center"
-          android:layout_marginEnd="15dp"
-          android:layout_marginBottom="30dp"
-          android:checkable="true"
-          android:clickable="true"
-          android:focusable="true"
-          app:cardElevation="0dp"
-          app:cardCornerRadius="20dp"
-          android:background="@color/zxing_transparent">
-
-          <LinearLayout
-              android:layout_width="300dp"
-              android:layout_height="85dp"
-              android:layout_gravity="center_horizontal"
-              android:background="@drawable/scancard2">
-
-              <!--            <ImageView-->
-              <!--                android:layout_width="70dp"-->
-              <!--                android:layout_height="30dp"-->
-              <!--                android:layout_marginTop="35dp"-->
-              <!--                android:layout_marginLeft="34dp"-->
-              <!--                android:src="@drawable/qrcode_white"-->
-              <!--                android:scaleType="fitCenter"/>-->
-              <TextView
-                  android:id="@+id/scanQR_dashboard"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Scan QR Code"
-                  android:textSize="24sp"
-                  android:layout_marginTop="20dp"
-                  android:layout_marginStart="25dp"
-                  android:textColor="@color/white"
-                  android:fontFamily="@font/luxuriousromanregular">
-
-              </TextView>
-          </LinearLayout>
+<!--   </LinearLayout>-->
 
 
+<!--   <LinearLayout-->
+<!--       android:layout_width="wrap_content"-->
+<!--       android:layout_height="wrap_content"-->
+<!--       android:gravity="center"-->
+<!--       android:orientation="vertical">-->
+<!--      <com.google.android.material.card.MaterialCardView-->
+<!--          android:id="@+id/scancode"-->
+<!--          android:layout_width="300dp"-->
+<!--          android:layout_height="85dp"-->
+<!--          android:layout_marginTop="201dp"-->
+<!--          android:layout_marginStart="15dp"-->
+<!--          android:layout_gravity="center"-->
+<!--          android:layout_marginEnd="15dp"-->
+<!--          android:layout_marginBottom="30dp"-->
+<!--          android:checkable="true"-->
+<!--          android:clickable="true"-->
+<!--          android:focusable="true"-->
+<!--          app:cardElevation="0dp"-->
+<!--          app:cardCornerRadius="20dp"-->
+<!--          android:background="@color/zxing_transparent">-->
+
+<!--          <LinearLayout-->
+<!--              android:layout_width="300dp"-->
+<!--              android:layout_height="85dp"-->
+<!--              android:layout_gravity="center_horizontal"-->
+<!--              android:background="@drawable/scancard2">-->
+
+<!--              &lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:layout_width="70dp"&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:layout_height="30dp"&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:layout_marginTop="35dp"&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:layout_marginLeft="34dp"&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:src="@drawable/qrcode_white"&ndash;&gt;-->
+<!--              &lt;!&ndash;                android:scaleType="fitCenter"/>&ndash;&gt;-->
+<!--              <TextView-->
+<!--                  android:id="@+id/scanQR_dashboard"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:text="Scan QR Code"-->
+<!--                  android:textSize="24sp"-->
+<!--                  android:layout_marginTop="20dp"-->
+<!--                  android:layout_marginStart="25dp"-->
+<!--                  android:textColor="@color/white"-->
+<!--                  android:fontFamily="@font/luxuriousromanregular">-->
+
+<!--              </TextView>-->
+<!--          </LinearLayout>-->
 
 
-      </com.google.android.material.card.MaterialCardView>
 
 
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/histotydetails"
-          android:layout_width="300dp"
-          android:layout_height="85dp"
-          android:layout_below="@+id/scancode"
-          android:layout_marginTop="15dp"
-          android:layout_marginStart="15dp"
-          android:layout_gravity="center"
-          android:layout_marginEnd="15dp"
-          android:layout_marginBottom="30dp"
-          android:checkable="true"
-          android:clickable="true"
-          android:focusable="true"
-          app:cardElevation="0dp"
-          app:cardCornerRadius="20dp"
-          android:background="@color/zxing_transparent"
-          >
-          <LinearLayout
-              android:layout_width="300dp"
-              android:layout_height="85dp"
-              android:layout_gravity="center_horizontal"
-              android:background="@drawable/hiscard2">
-
-         <TextView
-             android:id="@+id/historydetail"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:fontFamily="@font/luxuriousromanregular"
-             android:text="History Details"
-             android:layout_marginTop="20dp"
-             android:layout_marginStart="25dp"
-             android:textColor="@color/white"
-             android:textSize="24sp">
-
-         </TextView>
-
-<!--              <ImageView-->
-<!--                  android:layout_width="70dp"-->
-<!--                  android:layout_height="40dp"-->
-<!--                  android:layout_gravity="center"-->
-<!--                  android:layout_marginRight="45dp"-->
-<!--                  android:src="@drawable/history_white" />-->
+<!--      </com.google.android.material.card.MaterialCardView>-->
 
 
-          </LinearLayout>
+<!--      <com.google.android.material.card.MaterialCardView-->
+<!--          android:id="@+id/histotydetails"-->
+<!--          android:layout_width="300dp"-->
+<!--          android:layout_height="85dp"-->
+<!--          android:layout_below="@+id/scancode"-->
+<!--          android:layout_marginTop="15dp"-->
+<!--          android:layout_marginStart="15dp"-->
+<!--          android:layout_gravity="center"-->
+<!--          android:layout_marginEnd="15dp"-->
+<!--          android:layout_marginBottom="30dp"-->
+<!--          android:checkable="true"-->
+<!--          android:clickable="true"-->
+<!--          android:focusable="true"-->
+<!--          app:cardElevation="0dp"-->
+<!--          app:cardCornerRadius="20dp"-->
+<!--          android:background="@color/zxing_transparent"-->
+<!--          >-->
+<!--          <LinearLayout-->
+<!--              android:layout_width="300dp"-->
+<!--              android:layout_height="85dp"-->
+<!--              android:layout_gravity="center_horizontal"-->
+<!--              android:background="@drawable/hiscard2">-->
+
+<!--         <TextView-->
+<!--             android:id="@+id/historydetail"-->
+<!--             android:layout_width="wrap_content"-->
+<!--             android:layout_height="wrap_content"-->
+<!--             android:fontFamily="@font/luxuriousromanregular"-->
+<!--             android:text="History Details"-->
+<!--             android:layout_marginTop="20dp"-->
+<!--             android:layout_marginStart="25dp"-->
+<!--             android:textColor="@color/white"-->
+<!--             android:textSize="24sp">-->
+
+<!--         </TextView>-->
+
+<!--&lt;!&ndash;              <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                  android:layout_width="70dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                  android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                  android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                  android:layout_marginRight="45dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                  android:src="@drawable/history_white" />&ndash;&gt;-->
 
 
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/manualentry"
-          android:layout_width="300dp"
-          android:layout_height="85dp"
-          android:layout_below="@+id/histotydetails"
-          android:layout_marginTop="15dp"
-          android:layout_gravity="center"
-          android:layout_marginEnd="15dp"
-          android:layout_marginStart="15dp"
-          android:layout_marginBottom="15dp"
-        android:background="@color/zxing_transparent"
-          android:checkable="true"
-          android:clickable="true"
-          android:focusable="true"
-          app:cardElevation="0dp"
-          app:cardCornerRadius="20dp"
-         >
-          <LinearLayout
-              android:layout_width="300dp"
-              android:layout_height="85dp"
-              android:layout_gravity="center_horizontal"
-              android:background="@drawable/asscard2">>
-              <TextView
-                  android:id="@+id/manualentrys"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:fontFamily="@font/luxuriousromanregular"
-                  android:layout_marginTop="20dp"
-                  android:layout_marginStart="60dp"
-                  android:text="Assign"
-                  android:textColor="@color/white"
-                  android:textSize="24sp">
-
-              </TextView>
-          </LinearLayout>
-<!--         <ImageView-->
-<!--             android:layout_width="75dp"-->
-<!--             android:layout_height="40dp"-->
-<!--             android:layout_marginTop="25dp"-->
-<!--             android:layout_marginLeft="34dp"-->
-<!--             android:src="@drawable/manualicon"-->
-<!--             android:scaleType="fitCenter"/>-->
+<!--          </LinearLayout>-->
 
 
-      </com.google.android.material.card.MaterialCardView>
+<!--      </com.google.android.material.card.MaterialCardView>-->
+
+<!--      <com.google.android.material.card.MaterialCardView-->
+<!--          android:id="@+id/manualentry"-->
+<!--          android:layout_width="300dp"-->
+<!--          android:layout_height="85dp"-->
+<!--          android:layout_below="@+id/histotydetails"-->
+<!--          android:layout_marginTop="15dp"-->
+<!--          android:layout_gravity="center"-->
+<!--          android:layout_marginEnd="15dp"-->
+<!--          android:layout_marginStart="15dp"-->
+<!--          android:layout_marginBottom="15dp"-->
+<!--        android:background="@color/zxing_transparent"-->
+<!--          android:checkable="true"-->
+<!--          android:clickable="true"-->
+<!--          android:focusable="true"-->
+<!--          app:cardElevation="0dp"-->
+<!--          app:cardCornerRadius="20dp"-->
+<!--         >-->
+<!--          <LinearLayout-->
+<!--              android:layout_width="300dp"-->
+<!--              android:layout_height="85dp"-->
+<!--              android:layout_gravity="center_horizontal"-->
+<!--              android:background="@drawable/asscard2">>-->
+<!--              <TextView-->
+<!--                  android:id="@+id/manualentrys"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:fontFamily="@font/luxuriousromanregular"-->
+<!--                  android:layout_marginTop="20dp"-->
+<!--                  android:layout_marginStart="60dp"-->
+<!--                  android:text="Assign"-->
+<!--                  android:textColor="@color/white"-->
+<!--                  android:textSize="24sp">-->
+
+<!--              </TextView>-->
+<!--          </LinearLayout>-->
+<!--&lt;!&ndash;         <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;             android:layout_width="75dp"&ndash;&gt;-->
+<!--&lt;!&ndash;             android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;             android:layout_marginTop="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;             android:layout_marginLeft="34dp"&ndash;&gt;-->
+<!--&lt;!&ndash;             android:src="@drawable/manualicon"&ndash;&gt;-->
+<!--&lt;!&ndash;             android:scaleType="fitCenter"/>&ndash;&gt;-->
 
 
-   </LinearLayout>
+<!--      </com.google.android.material.card.MaterialCardView>-->
+
+
+<!--   </LinearLayout>-->
 
 
 <!--    <LinearLayout-->

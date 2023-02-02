@@ -88,6 +88,7 @@ public class complaint_Page extends AppCompatActivity {
     private EditText  complainted_by_name, complainted_by_mob ;
     private EditText other_com;
     //private Spinner complainted_by_dep;
+    private String techMob;
     private Spinner complaint_qrcode;
     private Button complaint_subBtn;
     private int snNumber=1;
@@ -120,6 +121,7 @@ public class complaint_Page extends AppCompatActivity {
     AutoCompleteTextView complaint_content_text;
 
     String uniqueIDGen;
+    private DatabaseReference refDash3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -530,6 +532,7 @@ public class complaint_Page extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child(dep_of_pro_str).child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -537,11 +540,12 @@ public class complaint_Page extends AppCompatActivity {
 
                 }
             });
-        }else if(dep_of_pro_str.equals("Plumber")) {
+        }else if(dep_of_pro_str.equals("Pluming")) {
             refemail.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    ReceiverEmail = snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                    ReceiverEmail = snapshot.child("Plumber").child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child("Plumber").child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -554,6 +558,7 @@ public class complaint_Page extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child(dep_of_pro_str).child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -566,6 +571,7 @@ public class complaint_Page extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child(dep_of_pro_str).child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -578,6 +584,7 @@ public class complaint_Page extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReceiverEmail=snapshot.child(dep_of_pro_str).child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child(dep_of_pro_str).child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -591,6 +598,7 @@ public class complaint_Page extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReceiverEmail=snapshot.child("other").child("email").getValue(String.class);
+                    techMob=String.valueOf(snapshot.child(dep_of_pro_str).child("mobile").getValue(Long.class));
                 }
 
                 @Override
@@ -637,6 +645,7 @@ public class complaint_Page extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 sendemail();
+                sendMessage1(dep_of_pro_str);
                 Toast.makeText(complaint_Page.this, "Complaint Registered Successfully", Toast.LENGTH_SHORT).show();
                 sendMessage();
                 refDash.addValueEventListener(new ValueEventListener() {
@@ -726,11 +735,97 @@ public class complaint_Page extends AppCompatActivity {
             //finally close connection
             reader.close();
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendMessage1(String dep_of_pro_str_1)  {
+        // Replace with your username
+        String user = "Sonatech";
+
+
+
+        // Replace with your API KEY (We have sent API KEY on activation email, also available on panel)
+        String apikey = "Y7VVzSPtX3vfsq5AKYCG";
+
+        // Replace with the destination mobile Number to which you want to send sms
+        String mobile = complainted_by_mob_str;
+
+        //getMoob();
+        //System.out.println(techMob+"\n\n\n\n\n\n\n");
+
+        // Replace if you have your own Sender ID, else donot change
+        String senderid = "SONASR";
+
+        String str="Your complaint has been closed and solved";
+
+        String feed="https://trackmysonafeebackweb";
+        String feed1=".web.app/network";
+
+        String var="https://www.sonatech";
+        String var1=".ac.in/";
+
+        // Replace with your Message content
+        String message = "A complaint has been registered in "+dep_of_pro_str_1+". Please resolve it within 24 hours from now - SONA STAR.";
+
+        // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
+        String type="txt";
+
+        //Prepare Url
+        URLConnection myURLConnection=null;
+        URL myURL=null;
+        BufferedReader reader=null;
+
+        //encoding message
+        String encoded_message= URLEncoder.encode(message);
+
+        //Send SMS API
+        String mainUrl="https://smshorizon.co.in/api/sendsms.php?user=Sonatech&apikey=Y7VVzSPtX3vfsq5AKYCG&mobile=" +techMob+ "&senderid=SONASR&type=txt&tid=1507167447698606397&message="+message;
+
+        StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(gfgPolicy);
+
+        try
+        {
+            //prepare connection
+            myURL = new URL(mainUrl);
+            myURLConnection = myURL.openConnection();
+            myURLConnection.connect();
+            reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
+            //reading response
+            String response;
+            while ((response = reader.readLine()) != null)
+                //print response
+                System.out.println(response);
+
+            //finally close connection
+            reader.close();
+        }
         catch (IOException e)
         {
             e.printStackTrace();
         }
     }
+
+//    private void getMoob() {
+//        if(dep_of_pro_str=="Electricity")
+//        refDash3 =FirebaseDatabase.getInstance().getReference("Emails").child(dep_of_pro_str);
+//        refDash3.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                techMob=String.valueOf(snapshot.child("mobile").getValue(Long.class));
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//        //return techMob;
+//    }
+
+
 //
 //    public void startService(View v) {
 //        String input = complaint_qrcode.getText().toString();

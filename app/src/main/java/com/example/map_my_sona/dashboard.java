@@ -75,9 +75,8 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 
         toolbar_user=findViewById(R.id.topAppBar_user);
 
-
+//
 //        logo=findViewById(R.id.logo);
-
         loading=(LinearLayout)findViewById(R.id.lin_load_ani);
 
         //reference for visibilty restriction
@@ -402,7 +401,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
 
             case R.id.userList:
-                startActivity(new Intent(dashboard.this,Ulist_Activity.class));
+                startActivity(new Intent(dashboard.this,Rating_and_Feedback_user.class));
                 break;
 
             case R.id.upload_data:

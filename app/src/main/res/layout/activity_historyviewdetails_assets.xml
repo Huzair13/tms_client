@@ -711,7 +711,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:visibility="visible"
+            android:visibility="gone"
             android:id="@+id/LL_comment_admin_assets"
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"

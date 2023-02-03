@@ -1,6 +1,9 @@
 package com.example.map_my_sona;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -37,7 +45,15 @@ public class Ulist_Adapter extends RecyclerView.Adapter<Ulist_Adapter.Viewholder
         holder.name.setText(item.getUname());
         holder.pos.setText(item.getPos());
 
+//        holder.trash.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DeleteUser(item.getUserID());
+//            }
+//        });
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -48,12 +64,14 @@ public class Ulist_Adapter extends RecyclerView.Adapter<Ulist_Adapter.Viewholder
 
         private TextView name;
         private TextView pos;
+        //private ImageView trash;
 
         public Viewholder_Ulist(@NonNull View itemView) {
             super(itemView);
 
             name=itemView.findViewById(R.id.Uname_list);
             pos=itemView.findViewById(R.id.Upos_list);
+            //trash=itemView.findViewById(R.id.user_delete);
 
         }
     }

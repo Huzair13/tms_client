@@ -68,13 +68,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_assets.setText(String.valueOf(df.format(average)));
@@ -108,13 +106,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_others.setText(String.valueOf(df.format(average)));
@@ -149,13 +145,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_avg_elec.setText(String.valueOf(df.format(average)));
@@ -189,13 +183,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_avg_net.setText(String.valueOf(df.format(average)));
@@ -229,13 +221,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_avg_plumber.setText(String.valueOf(df.format(average)));
@@ -270,13 +260,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_avg_paint.setText(String.valueOf(df.format(average)));
@@ -312,13 +300,11 @@ public class Rating_and_Feedback_user extends AppCompatActivity {
                 Float average=0.0f;
                 for(DataSnapshot ds: snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    if(map.get("status").equals("Completed")){
-                        Object avg=map.get("rating");
-                        Float gvalue=Float.parseFloat(String.valueOf(avg));
-                        if(!gvalue.equals(0.0f)){
-                            sum +=gvalue;
-                            count+=1;
-                        }
+                    Object avg=map.get("rate_value");
+                    Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(!gvalue.equals(0.0f)){
+                        sum +=gvalue;
+                        count+=1;
                     }
                     average=sum/count;
                     ra_avg_car.setText(String.valueOf(df.format(average)));

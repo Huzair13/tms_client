@@ -59,7 +59,8 @@ public class Ulist_Activity extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     String uname=dataSnapshot.getKey();
                     String pos=dataSnapshot.child("position").getValue(String.class);
-                    UDetails_class uDetails_class=new UDetails_class(uname,pos);
+                    String uID=dataSnapshot.child("userID").getValue(String.class);
+                    UDetails_class uDetails_class=new UDetails_class(uname,pos,uID);
 
                     UDetails_class data = uDetails_class;
                     list1.add(data);

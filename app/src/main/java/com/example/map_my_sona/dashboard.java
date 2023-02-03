@@ -401,7 +401,7 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
                 break;
 
             case R.id.userList:
-                startActivity(new Intent(dashboard.this,Rating_and_Feedback_user.class));
+                startActivity(new Intent(dashboard.this,Ulist_Activity.class));
                 break;
 
             case R.id.upload_data:
@@ -411,6 +411,10 @@ public class dashboard<FirstFragment, SecondFragment, ThirdFragment> extends App
 //            case R.id.testing_menu:
 //                startActivity(new Intent(dashboard.this,AdminDashboard.class));
 //                break;
+
+            case R.id.nav_ratings_user:
+                startActivity(new Intent(dashboard.this,Rating_and_Feedback_user.class));
+                break;
 
             case R.id.nav_logOut:
                 builder1.setTitle("Alert")

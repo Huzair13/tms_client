@@ -3,14 +3,15 @@ package com.example.map_my_sona;
 public class UDetails_class {
     String uname;
     String pos;
+    String userID;
 
     public UDetails_class() {
-
     }
 
-    public UDetails_class(String uname, String pos) {
+    public UDetails_class(String uname, String pos, String userID) {
         this.uname = uname;
         this.pos = pos;
+        this.userID = userID;
     }
 
     public String getUname() {
@@ -27,5 +28,13 @@ public class UDetails_class {
 
     public void setPos(String pos) {
         this.pos = pos;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

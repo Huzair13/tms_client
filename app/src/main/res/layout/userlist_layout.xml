@@ -19,8 +19,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/teacherImage_display"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
                 android:src="@drawable/user"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.5"/>
@@ -53,6 +53,17 @@
                     android:textColor="@color/black"/>
 
             </LinearLayout>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/user_delete"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:foregroundGravity="center"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:src="@drawable/ic_baseline_restore_from_trash_24" />-->
+
 
         </LinearLayout>
 

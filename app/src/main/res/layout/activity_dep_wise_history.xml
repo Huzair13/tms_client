@@ -118,319 +118,332 @@
             <!--    </LinearLayout>-->
             <!--</HorizontalScrollView>-->
 
-
             <LinearLayout
-                android:layout_width="380dp"
-                android:layout_height="270dp"
-                android:layout_marginStart="20dp">
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/button_111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="25dp"
-                    android:checkable="true"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="30dp"
-                    app:cardCornerRadius="20dp"
-                    android:background="@color/zxing_transparent">
+                    android:layout_height="200dp"
+                    android:layout_marginTop="30dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
 
-                    <!--        <ImageView-->
-                    <!--            android:layout_width="75dp"-->
-                    <!--            android:layout_height="50dp"-->
-                    <!--            android:layout_marginTop="25dp"-->
-                    <!--            android:layout_marginLeft="34dp"-->
-                    <!--            android:src="@drawable/qrcode_white"-->
-                    <!--            android:scaleType="fitCenter"/>-->
-                    <LinearLayout
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/net">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Network"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button2_112"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/net">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Network"
-                            android:textSize="22dp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="100dp"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/luxuriousromanregular" >
-
-                        </TextView>
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/button2_112"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:checkable="true"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="30dp"
-                    app:cardCornerRadius="20dp"
-                    android:background="@color/zxing_transparent">
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
 
 
 
-                    <!--        <ImageView-->
-                    <!--            android:layout_width="75dp"-->
-                    <!--            android:layout_height="50dp"-->
-                    <!--            android:layout_marginTop="25dp"-->
-                    <!--            android:layout_marginLeft="34dp"-->
-                    <!--            android:src="@drawable/qrcode_white"-->
-                    <!--            android:scaleType="fitCenter"/>-->
-                    <LinearLayout
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/ele">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Electricity"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_131"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
+
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/plum3">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Carpenting"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/plumber_history"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:background="@drawable/ele">
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
 
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Electricity"
-                            android:textSize="22dp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="100dp"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/luxuriousromanregular" >
 
-                        </TextView>
-                    </LinearLayout>
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/plum">
 
-                </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Plumbing"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/painting_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
+
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/pain">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Painting"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/assets_history"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
+
+
+
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/asset">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Assets"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/others_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="25dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardElevation="30dp"
+                        app:cardCornerRadius="20dp"
+                        android:background="@color/zxing_transparent">
+
+                        <!--        <ImageView-->
+                        <!--            android:layout_width="75dp"-->
+                        <!--            android:layout_height="50dp"-->
+                        <!--            android:layout_marginTop="25dp"-->
+                        <!--            android:layout_marginLeft="34dp"-->
+                        <!--            android:src="@drawable/qrcode_white"-->
+                        <!--            android:scaleType="fitCenter"/>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/other">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Others"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="100dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/luxuriousromanregular" >
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="380dp"
-                android:layout_height="230dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp">
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/button_131"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="25dp"
-                    android:checkable="true"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="30dp"
-                    app:cardCornerRadius="20dp"
-                    android:background="@color/zxing_transparent">
 
-                    <!--        <ImageView-->
-                    <!--            android:layout_width="75dp"-->
-                    <!--            android:layout_height="50dp"-->
-                    <!--            android:layout_marginTop="25dp"-->
-                    <!--            android:layout_marginLeft="34dp"-->
-                    <!--            android:src="@drawable/qrcode_white"-->
-                    <!--            android:scaleType="fitCenter"/>-->
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/plum3">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Carpenting"
-                            android:textSize="22dp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="100dp"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/luxuriousromanregular" >
-
-                        </TextView>
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/plumber_history"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:checkable="true"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="30dp"
-                    app:cardCornerRadius="20dp"
-                    android:background="@color/zxing_transparent">
-
-
-
-                    <!--        <ImageView-->
-                    <!--            android:layout_width="75dp"-->
-                    <!--            android:layout_height="50dp"-->
-                    <!--            android:layout_marginTop="25dp"-->
-                    <!--            android:layout_marginLeft="34dp"-->
-                    <!--            android:src="@drawable/qrcode_white"-->
-                    <!--            android:scaleType="fitCenter"/>-->
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/plum">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Plumbing"
-                            android:textSize="22dp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="100dp"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/luxuriousromanregular" >
-
-                        </TextView>
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout><LinearLayout
-            android:layout_width="380dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp">
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/painting_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="25dp"
-                android:checkable="true"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardElevation="30dp"
-                app:cardCornerRadius="20dp"
-                android:background="@color/zxing_transparent">
-
-                <!--        <ImageView-->
-                <!--            android:layout_width="75dp"-->
-                <!--            android:layout_height="50dp"-->
-                <!--            android:layout_marginTop="25dp"-->
-                <!--            android:layout_marginLeft="34dp"-->
-                <!--            android:src="@drawable/qrcode_white"-->
-                <!--            android:scaleType="fitCenter"/>-->
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/pain">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Painting"
-                        android:textSize="22dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="100dp"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/luxuriousromanregular" >
-
-                    </TextView>
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/assets_history"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="15dp"
-                android:checkable="true"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardElevation="30dp"
-                app:cardCornerRadius="20dp"
-                android:background="@color/zxing_transparent">
-
-
-
-                <!--        <ImageView-->
-                <!--            android:layout_width="75dp"-->
-                <!--            android:layout_height="50dp"-->
-                <!--            android:layout_marginTop="25dp"-->
-                <!--            android:layout_marginLeft="34dp"-->
-                <!--            android:src="@drawable/qrcode_white"-->
-                <!--            android:scaleType="fitCenter"/>-->
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/asset">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Assets"
-                        android:textSize="22dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="100dp"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/luxuriousromanregular" >
-
-                    </TextView>
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/others_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="25dp"
-                android:checkable="true"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardElevation="30dp"
-                app:cardCornerRadius="20dp"
-                android:background="@color/zxing_transparent">
-
-                <!--        <ImageView-->
-                <!--            android:layout_width="75dp"-->
-                <!--            android:layout_height="50dp"-->
-                <!--            android:layout_marginTop="25dp"-->
-                <!--            android:layout_marginLeft="34dp"-->
-                <!--            android:src="@drawable/qrcode_white"-->
-                <!--            android:scaleType="fitCenter"/>-->
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/other">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Others"
-                        android:textSize="22dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="100dp"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/luxuriousromanregular" >
-
-                    </TextView>
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
 
 
 

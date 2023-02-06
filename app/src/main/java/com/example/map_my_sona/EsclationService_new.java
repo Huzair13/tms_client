@@ -99,6 +99,7 @@ public class EsclationService_new extends Service {
                         //DATABASE COMPLAINT TIME
                         String date_old=ds1.child("date").getValue(String.class);
                         String time_old=ds1.child("time").getValue(String.class);
+                        String dep=ds1.child("dep_of_pro").getValue(String.class);
 
                         //CURRENT DATE
                         String pattern = "dd-MM-yyyy";
@@ -130,11 +131,11 @@ public class EsclationService_new extends Service {
                         //ESCALATION CONDITION
                         if(hour_diff>24 && escalate1.equals("NO") && escalate2.equals("NO")){
                             dbref.child(ds.getKey()).child(ds1.getKey()).child("escalated1").setValue("YES");
-                            sendMessage(mobile_admin,date_old);
+                            sendMessage(mobile_admin,date_old,dep);
                         }
                         else if(hour_diff>48 && escalate2.equals("NO") && escalate1.equals("YES")){
                             dbref.child(ds.getKey()).child(ds1.getKey()).child("escalated2").setValue("YES");
-                            sendMessage(mobile_superAdmin,date_old);
+                            sendMessage(mobile_superAdmin,date_old,dep);
                         }
 
                     }
@@ -148,7 +149,7 @@ public class EsclationService_new extends Service {
         });
     }
 
-    private void sendMessage(String mobile_admin,String date_old) {
+    private void sendMessage(String mobile_admin,String date_old,String dep) {
         int upper=100000;
         int lower=900000;
         int r = (int) (Math.random() * (upper - lower)) + lower;
@@ -169,7 +170,7 @@ public class EsclationService_new extends Service {
 
         String h=date_old;
         // Replace with your Message content
-        String message = "Complaint Registered in "+h+" was not rectified within 24 hours. Enquire Particular incharge heads - SONA STAR.";
+        String message = "Complaint Registered in "+dep+" on "+h+" was not rectified within 24 hours. Enquire Particular incharge heads - SONA STAR.";
 
         // For Plain Text, use "txt" ; for Unicode symbols or regional Languages like hindi/tamil/kannada use "uni"
         String type="txt";

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.map_my_sona.R;
@@ -32,6 +33,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
 
@@ -39,6 +41,9 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
     DatabaseReference reference_complaints_history_carpenter;
     complaints_history_Adapter adapter_complaint_history_carpenter;
     ArrayList<Complaint_details> arrayList_complaints_history_carpenter;
+
+    private TextView Solved,Pending;
+    private DatabaseReference mDatabase;
 
 
     //fliter
@@ -55,6 +60,37 @@ public class Complaints_HistoryDetails_Carpenter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints_history_details_carpenter);
+
+        Solved = findViewById(R.id.solved_car);
+        Pending=findViewById(R.id.pending_car);
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+
+        mDatabase.child("Carpenter").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int countc=0;
+                int countp=0;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    Object avg=map.get("status");
+                    String str=String.valueOf(avg);
+                    //Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(str.equals("Completed")){
+                        countc+=1;
+                    }
+                    else {
+                        countp += 1;
+                    }
+                }
+                Solved.setText(String.valueOf(countc));
+                Pending.setText(String.valueOf(countp));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         recyclerView_complaints_history_carpenter=findViewById(R.id.recyclerview_complaints_history_carpenter);
         reference_complaints_history_carpenter= FirebaseDatabase.getInstance().getReference("complaints").child("Carpenter");

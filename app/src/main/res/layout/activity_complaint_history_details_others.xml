@@ -133,6 +133,90 @@
 
     <!--  </Spinner>-->
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dp">
+        <LinearLayout
+            android:background="#0000FF"
+            android:layout_height="18dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:background="@drawable/white_login_bg">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Solved"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_login_bg">
+                <TextView
+                    android:id="@+id/solved_others"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="Hello"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="#00FF00"
+            android:layout_height="18dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:background="@drawable/white_login_bg">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Pending"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_login_bg">
+
+                <TextView
+                    android:id="@+id/pending_others"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_complaints_history_others"
         android:layout_width="match_parent"

@@ -38,6 +38,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 public class Complaints_HistoryDetails_Electricity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -45,6 +46,9 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     DatabaseReference reference_complaints_history;
     complaints_history_Adapter adapter_complaint_history;
     ArrayList<Complaint_details> arrayList_complaints_history;
+
+    private TextView Solved,Pending;
+    private DatabaseReference mDatabase;
 
 
     //fliter
@@ -60,6 +64,37 @@ public class Complaints_HistoryDetails_Electricity extends AppCompatActivity imp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints_history_details_electricity);
+
+        Solved = findViewById(R.id.solved_elec);
+        Pending=findViewById(R.id.pending_elec);
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+
+        mDatabase.child("Electricity").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int countc=0;
+                int countp=0;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    Object avg=map.get("status");
+                    String str=String.valueOf(avg);
+                    //Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(str.equals("Completed")){
+                        countc+=1;
+                    }
+                    else {
+                        countp += 1;
+                    }
+                }
+                Solved.setText(String.valueOf(countc));
+                Pending.setText(String.valueOf(countp));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");

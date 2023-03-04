@@ -33,6 +33,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class complaint_HistoryDetails_others extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     RecyclerView recyclerView_complaints_history_others;
@@ -40,6 +41,9 @@ public class complaint_HistoryDetails_others extends AppCompatActivity implement
     complaints_history_Adapter adapter_complaint_history_others;
     ArrayList<Complaint_details> arrayList_complaints_history_others;
     private DatabaseReference refDash;
+
+    private TextView Solved,Pending;
+    private DatabaseReference mDatabase;
 
     TextInputLayout hisfliter;
     AutoCompleteTextView hisflitertext;
@@ -55,6 +59,38 @@ public class complaint_HistoryDetails_others extends AppCompatActivity implement
 
         recyclerView_complaints_history_others=findViewById(R.id.recyclerview_complaints_history_others);
         reference_complaints_history_others= FirebaseDatabase.getInstance().getReference("complaints").child("Others");
+
+
+        Solved = findViewById(R.id.solved_others);
+        Pending=findViewById(R.id.pending_others);
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+
+        mDatabase.child("Others").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int countc=0;
+                int countp=0;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    Object avg=map.get("status");
+                    String str=String.valueOf(avg);
+                    //Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(str.equals("Completed")){
+                        countc+=1;
+                    }
+                    else {
+                        countp += 1;
+                    }
+                }
+                Solved.setText(String.valueOf(countc));
+                Pending.setText(String.valueOf(countp));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         recyclerView_complaints_history_others.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());

@@ -33,12 +33,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class complaint_HistoryDetails_assets extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     RecyclerView recyclerView_complaints_history_assets;
     DatabaseReference reference_complaints_history_assets;
     complaints_history_Adapter adapter_complaint_history_assets;
     ArrayList<Complaint_details> arrayList_complaints_history_assets;
+
+    private TextView Solved,Pending;
+    private DatabaseReference mDatabase;
 
     private DatabaseReference refDash;
 
@@ -54,6 +58,37 @@ public class complaint_HistoryDetails_assets extends AppCompatActivity implement
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_history_details_assets);
+
+        Solved = findViewById(R.id.solved_ass);
+        Pending=findViewById(R.id.pending_ass);
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
+
+        mDatabase.child("Assets").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int countc=0;
+                int countp=0;
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                    Object avg=map.get("status");
+                    String str=String.valueOf(avg);
+                    //Float gvalue=Float.parseFloat(String.valueOf(avg));
+                    if(str.equals("Completed")){
+                        countc+=1;
+                    }
+                    else {
+                        countp += 1;
+                    }
+                }
+                Solved.setText(String.valueOf(countc));
+                Pending.setText(String.valueOf(countp));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         recyclerView_complaints_history_assets=findViewById(R.id.recyclerview_complaints_history_assets);
         reference_complaints_history_assets= FirebaseDatabase.getInstance().getReference("complaints").child("Assets");

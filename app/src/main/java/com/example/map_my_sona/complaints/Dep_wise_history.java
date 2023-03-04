@@ -85,7 +85,7 @@ public class Dep_wise_history extends AppCompatActivity {
         others=findViewById(R.id.others_history);
         assets=findViewById(R.id.assets_history);
 
-        export=findViewById(R.id.export_history);
+//        export=findViewById(R.id.export_history);
 
         export.setOnClickListener(new View.OnClickListener() {
             @Override

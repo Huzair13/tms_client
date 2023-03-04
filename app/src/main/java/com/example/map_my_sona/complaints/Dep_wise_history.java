@@ -213,7 +213,7 @@ public class Dep_wise_history extends AppCompatActivity {
 
                 java.io.File file1 = new java.io.File(Environment
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                        + "/Complaints.xls");
+                        + "/Complaints1.xls");
 
                 HSSFWorkbook hwb = new HSSFWorkbook();
                 HSSFSheet sheet = hwb.createSheet("Electricity");

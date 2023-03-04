@@ -85,7 +85,7 @@ public class ExcelExport extends AppCompatActivity {
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
                 askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE, 101);
-                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 101);
+                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 105);
                 try {
                     export(progressDialog);
 
@@ -105,9 +105,9 @@ public class ExcelExport extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                java.io.File file1 = new java.io.File(Environment
+                File file1 = new File(Environment
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                        + "/Complaints.xls");
+                        + "/Complaints1.xls");
 
                 HSSFWorkbook hwb = new HSSFWorkbook();
                 HSSFSheet sheet = hwb.createSheet("Electricity");

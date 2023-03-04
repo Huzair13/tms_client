@@ -165,24 +165,6 @@
             android:name=".Enter_num_manual"
             android:exported="false" />
         <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_carpenter"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Carpenter_manual"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual_networks"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Networks_manual"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualHistoryDetails.Complaints_HistoryDetails_Electricity_manual"
-            android:exported="false" />
-        <activity
-            android:name=".manualComplaints.ManualViewDetails.historyviewdetails_manual"
-            android:exported="false" />
-        <activity
             android:name=".complaints.viewDetails.historyviewdetails_painting"
             android:exported="false" />
         <activity
@@ -215,9 +197,6 @@
         <activity
             android:name=".update_database"
             android:exported="false" />
-        <activity
-            android:name=".Update_data_admin"
-            android:exported="true" />
         <activity
             android:name=".Qr_id_generator"
             android:exported="false" />

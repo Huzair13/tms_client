@@ -43,16 +43,34 @@
             android:gravity="center"
             >
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/emergencyanimation"
-                android:layout_width="200dp"
-                android:layout_height="130dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/phncl2" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="200px">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/emergencyanimation"
+                    android:layout_width="200dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/phncl2" />
+
+                <ImageView
+                    android:layout_width="300px"
+                    android:layout_height="400px"
+                    android:layout_marginLeft="160px"
+                    android:background="@drawable/tmslogo"/>
+
+
+
+            </LinearLayout>
+
+
 
 <!--            <ImageView-->
 <!--                android:id="@+id/imageView4"-->
@@ -66,10 +84,9 @@
             android:orientation="horizontal"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="30dp"
-                android:layout_gravity="left"
-            >
-            <TextView
+                android:layout_gravity="left">
 
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Electrical Incharge"
@@ -78,17 +95,7 @@
                 android:layout_margin="15dp"
                 android:gravity="center">
             </TextView>
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/hodcall"-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="45dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:src="@drawable/emericon_removebg"-->
-<!--                android:layout_gravity="center">-->
-
-<!--            </ImageButton>-->
-             <ImageView
+                <ImageView
                  android:id="@+id/hodcall"
                  android:layout_width="45dp"
                  android:layout_height="45dp"
@@ -113,7 +120,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Carpenter Incharge"
-                                android:textSize="24dp"
+                                android:textSize="25dp"
                                 android:textColor="@color/black"
                                 android:layout_margin="15dp"
                                 android:gravity="center">
@@ -133,7 +140,7 @@
                                 android:id="@+id/hod1call"
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginLeft="17dp"
                                 android:src="@drawable/emericon_removebg"
                                 android:layout_gravity="center">
 
@@ -154,7 +161,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Network Incharge"
-                                android:textSize="24dp"
+                                android:textSize="25dp"
                                 android:textColor="@color/black"
                                 android:layout_margin="15dp"
                                 android:gravity="center"
@@ -174,7 +181,7 @@
                                 android:id="@+id/hod2call"
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginLeft="27dp"
                                 android:src="@drawable/emericon_removebg"
                                 android:layout_gravity="center">
 
@@ -206,7 +213,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Plumbing Incharge"
-                android:textSize="24dp"
+                android:textSize="25dp"
                 android:textColor="@color/black"
                 android:layout_margin="15dp"
                 android:gravity="center"
@@ -226,7 +233,7 @@
                 android:id="@+id/hod3call"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="18dp"
                 android:src="@drawable/emericon_removebg"
                 android:layout_gravity="center">
 
@@ -256,7 +263,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Painting Incharge"
-                android:textSize="24dp"
+                android:textSize="25dp"
                 android:textColor="@color/black"
                 android:layout_margin="15dp"
                 android:gravity="center"
@@ -277,7 +284,7 @@
                 android:id="@+id/hod4call"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:src="@drawable/emericon_removebg"
                 android:layout_gravity="center">
 

@@ -138,7 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:padding="5dp">
+        android:layout_marginTop="20dp">
         <LinearLayout
             android:background="#0000FF"
             android:layout_height="18dp"

@@ -30,55 +30,82 @@
 
 <!--</LinearLayout>-->
 
-
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        >
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/Complaint_email"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="Incharge Email"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:background="@drawable/mailcard2"
-            />
-        <TextView
-            android:layout_marginTop="15dp"
-            android:id="@+id/mob_change"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_user"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Assign"
+                app:titleTextColor="@color/white"
+                android:background="@color/gradientblue"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <ImageView
+            android:layout_width="300px"
+            android:layout_height="450px"
+            android:layout_marginLeft="650px"
+            android:layout_marginTop="280px"
+            android:background="@drawable/tmslogo"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="Mobile Numbers"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:background="@drawable/phonecard2" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="900px"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_marginTop="15dp"
-            android:id="@+id/pos_assign"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center|end"
-            android:layout_marginLeft="10dp"
-            android:textAlignment="center"
-            android:text="Assign Position"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:background="@drawable/assigncard2" />
+            <TextView
+                android:id="@+id/Complaint_email"
+                android:layout_width="800px"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:layout_marginLeft="35dp"
+                android:textAlignment="inherit"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:background="@drawable/email_bg"
+                />
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/mob_change"
+                android:layout_width="800px"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:layout_marginLeft="35dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:background="@drawable/number_bg" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/pos_assign"
+                android:layout_width="800px"
+                android:layout_height="70dp"
+                android:gravity="center|end"
+                android:layout_marginLeft="35dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:background="@drawable/position_bg" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 </ScrollView>

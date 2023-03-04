@@ -587,7 +587,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingLeft="15dp"
                 android:fontFamily="@font/roboto_regular"
-                android:hint=" Your Name"
+                android:hint=" Your Nam"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:background="@drawable/gradient_blue"

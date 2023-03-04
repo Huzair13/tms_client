@@ -50,5 +50,6 @@
     <color name="finalblue">#4889FF</color>
     <color name="gradientblue">#4889F8</color>
     <color name="finalgrey">#EDEDED</color>
+    <color name="textgrey">#505050</color>
 
 </resources>

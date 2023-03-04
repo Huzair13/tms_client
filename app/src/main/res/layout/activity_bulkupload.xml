@@ -7,64 +7,99 @@
     tools:context=".BulkuploadActivity"
     android:background="@drawable/bottom_bg">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="INSTRUCTIONS : \n"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginTop="80dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/elmessiri"/>
+            android:layout_height="wrap_content">
 
-        <TextView
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_Ulist"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Bulk Upload"
+                android:background="@color/gradientblue"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                app:navigationIcon="@drawable/back_ic"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:textColor="@color/grey"
-            android:layout_height="wrap_content"
-            android:text="1) The Excel sheet should be in the format of the given template \n"
-            android:textSize="23sp"
-            android:fontFamily="@font/roboto_regular"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="75dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2) You can't upload data that is more than what you have been subscribed\n"
-            android:textSize="23sp"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/roboto_regular"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="INSTRUCTIONS : \n"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3) If a product doesn't have any data in the given template enter that as NIL"
-            android:textSize="23sp"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/roboto_regular"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/textgrey"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="1) The Excel sheet should be in the format of the given template \n"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/roboto_regular"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2) You can't upload data that is more than what you have been subscribed\n"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textgrey"
+                    android:fontFamily="@font/roboto_regular"/>
 
-        <Button
-            android:id="@+id/excel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_vertical"
-            android:layout_marginTop="50dp"
-            android:text="Click Here to upload excel Sheet"
-            android:backgroundTint="@color/gradientblue"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3) If a product doesn't have any data in the given template enter that as NIL"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/textgrey"
+                    android:fontFamily="@font/roboto_regular"/>
 
-        <Button
-            android:id="@+id/excel_download"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_vertical"
-            android:layout_marginTop="50dp"
-            android:text="Download Excel Format"
-            android:backgroundTint="@color/gradientblue"/>
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/excel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginTop="50dp"
+                android:text="Click Here to upload excel Sheet"
+                android:backgroundTint="@color/gradientblue"/>
+
+            <Button
+                android:id="@+id/excel_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginTop="30dp"
+                android:text="Download Excel Format"
+                android:backgroundTint="@color/gradientblue"/>
+
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 </ScrollView>

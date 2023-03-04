@@ -45,6 +45,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_marginTop="15dp"
+    android:layout_margin="10dp"
     >
 
 
@@ -53,7 +54,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         >
 <ImageView
     android:layout_width="50dp"
@@ -71,8 +72,7 @@
             android:textSize="24dp"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
-            android:background="@color/gradientblue"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/ra_avg_elec"
@@ -84,7 +84,7 @@
             android:textAlignment="center"
             android:gravity="center"
             android:background="@color/babyblue"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24dp" />
 
     </LinearLayout>
@@ -94,7 +94,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         android:layout_marginTop="15dp"
         >
         <ImageView
@@ -111,11 +111,10 @@
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:background="@color/gradientblue"
             android:textSize="24dp"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/ra_avg_net"
@@ -129,7 +128,7 @@
             android:gravity="center"
             android:background="@color/babyblue"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -138,7 +137,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         android:layout_marginTop="15dp"
         >
         <ImageView
@@ -157,7 +156,7 @@
             android:layout_height="wrap_content"
             android:textSize="24dp"
             android:layout_gravity="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/ra_avg_car"
@@ -170,7 +169,7 @@
             android:gravity="center"
             android:background="@color/babyblue"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -179,7 +178,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         android:layout_marginTop="15dp"
         >
         <ImageView
@@ -197,7 +196,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/ra_avg_paint"
@@ -210,7 +209,7 @@
             android:gravity="center"
             android:background="@color/babyblue"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -219,7 +218,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         android:layout_marginTop="15dp"
         >
         <ImageView
@@ -238,7 +237,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/ra_avg_plumber"
@@ -251,7 +250,7 @@
             android:gravity="center"
             android:background="@color/babyblue"
             android:textSize="24dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -261,7 +260,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         >
         <ImageView
             android:layout_width="50dp"
@@ -280,8 +279,8 @@
             android:textSize="24dp"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
-            android:background="@color/gradientblue"
-            android:textColor="@color/black" />
+            android:background="@color/brightblue"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/rating_asset_field"
@@ -293,7 +292,7 @@
             android:textAlignment="center"
             android:gravity="center"
             android:background="@color/babyblue"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24dp" />
 
     </LinearLayout>
@@ -303,7 +302,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gradientblue"
+        android:background="@color/brightblue"
         android:layout_marginTop="15dp"
         >
         <ImageView
@@ -322,8 +321,8 @@
             android:textSize="24dp"
             android:layout_gravity="center"
             android:paddingLeft="15dp"
-            android:background="@color/gradientblue"
-            android:textColor="@color/black" />
+            android:background="@color/brightblue"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/rating_others_field"
@@ -335,7 +334,7 @@
             android:textAlignment="center"
             android:gravity="center"
             android:background="@color/babyblue"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24dp" />
 
     </LinearLayout>

@@ -19,11 +19,11 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/teacherImage_display"
-                android:layout_width="60dp"
-                android:layout_height="80dp"
-                android:src="@drawable/user"
+                android:layout_width="16dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5"
+                android:src="@drawable/user" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -31,22 +31,21 @@
                 android:layout_weight="1.5"
                 android:layout_marginStart="15dp"
                 android:paddingLeft="12dp"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:gravity="center_vertical">
 
                 <TextView
                     android:textStyle="bold"
-                    android:layout_width="match_parent"
+                    android:layout_width="300px"
                     android:layout_height="wrap_content"
                     android:id="@+id/Uname_list"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:text="User"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:textSize="20dp"
+                    android:layout_width="300px"
+                    android:textSize="18dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/Upos_list"
                     android:text="Position"

@@ -140,22 +140,22 @@
 <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 
 <!--    </Spinner>-->
-
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:padding="5dp">
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp">
         <LinearLayout
             android:background="#0000FF"
-            android:layout_height="18dp"
-            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
             android:layout_weight="1" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/white_login_bg">
                 <TextView
@@ -168,8 +168,8 @@
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/blue_login_bg">
                 <TextView
@@ -186,13 +186,15 @@
         </LinearLayout>
         <LinearLayout
             android:background="#00FF00"
-            android:layout_height="18dp"
-            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_weight="1" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/white_login_bg">
                 <TextView
@@ -206,8 +208,8 @@
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/blue_login_bg">
 

@@ -73,7 +73,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="131dp"
@@ -84,7 +84,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:layout_width="113dp"
@@ -95,7 +95,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                 />
 
         </TableRow>
 
@@ -110,7 +110,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:layout_width="140dp"
@@ -121,7 +121,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/uniqueid_update_admin"
@@ -133,7 +133,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
         <TableRow>
@@ -147,7 +147,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -158,7 +158,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/sn_update_admin"
@@ -170,7 +170,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
 
@@ -185,7 +185,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -196,7 +196,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/make_update_admin"
@@ -208,7 +208,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
 
@@ -223,7 +223,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -234,7 +234,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/model_update_admin"
@@ -246,7 +246,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
 
@@ -261,7 +261,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
 
             <TextView
@@ -273,7 +273,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/procurement_update_admin"
@@ -285,7 +285,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
 
@@ -300,7 +300,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -311,7 +311,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/powerRating_update_admin"
@@ -323,7 +323,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 />
 
         </TableRow>
@@ -339,7 +339,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -350,7 +350,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/warranty_update_admin"
@@ -361,7 +361,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
 
@@ -376,7 +376,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -387,7 +387,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/warranty_exp_update_admin"
@@ -398,7 +398,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 />
 
         </TableRow>
@@ -414,7 +414,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -425,7 +425,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/ins_date_update_admin"
@@ -437,7 +437,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 />
 
         </TableRow>
@@ -453,7 +453,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -464,7 +464,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/ins_by_update_admin"
@@ -475,7 +475,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
         </TableRow>
         <TableRow>
@@ -489,7 +489,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -500,7 +500,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/depOfProduct_newQR_admin"
@@ -511,7 +511,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 android:inputType="text"/>
 
         </TableRow>
@@ -527,7 +527,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -538,7 +538,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/mob_update_admin"
@@ -549,7 +549,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 android:inputType="number"/>
 
         </TableRow>
@@ -565,7 +565,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/cellshape"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:layout_width="140dp"
@@ -576,7 +576,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                />
 
             <EditText
                 android:id="@+id/loc_add_admin"
@@ -587,7 +587,7 @@
                 android:background="@drawable/table"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
+
                 android:inputType="text"/>
 
         </TableRow>
@@ -623,17 +623,17 @@
 <!--</LinearLayout>-->
 
 
-    <TextView
-        android:id="@+id/bulkupload"
-        android:layout_width="261dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="To  upload bulk product--
-  click here"
-        android:textColor="@color/black"
-        android:textSize="15dp">
+<!--    <TextView-->
+<!--        android:id="@+id/bulkupload"-->
+<!--        android:layout_width="261dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:text="Upload bulk product&ndash;&gt;-->
+<!--  click here"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15dp">-->
 
-    </TextView>
+<!--    </TextView>-->
 
 </LinearLayout>

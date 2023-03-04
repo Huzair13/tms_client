@@ -59,21 +59,21 @@ public class Newqrcode extends AppCompatActivity {
         addasset=(Button) findViewById(R.id.addasset);
 
         //
-        bulkUpload = findViewById(R.id.bulkupload);
+//        bulkUpload = findViewById(R.id.bulkupload);
 
-        bulkUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Newqrcode.this,BulkuploadActivity.class));
-            }
-        });
-
-//        addasset.setOnClickListener(new View.OnClickListener() {
+//        bulkUpload.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                startActivity(new Intent(Newqrcode.this,add_assets.class));
+//                startActivity(new Intent(Newqrcode.this,BulkuploadActivity.class));
 //            }
 //        });
+//
+////        addasset.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                startActivity(new Intent(Newqrcode.this,add_assets.class));
+////            }
+////        });
 
         AddNew.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -52,20 +52,27 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/username_icon" />
 
-            <EditText
-                android:id="@+id/loginemailInput"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="37dp"
-                android:fontFamily="@font/ralewaymedium"
-                android:hint="@string/login_username"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
-                android:text=""
-                android:textColor="@color/black"
-                android:textColorHint="@color/grey"
-                android:textSize="16dp"
-                android:textStyle="bold" />
+                >
+
+                <EditText
+                    android:id="@+id/loginemailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="37dp"
+                    android:background="@color/finalgrey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="@string/login_username"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -96,7 +103,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="37dp"
                     android:background="@color/finalgrey"
-                    android:fontFamily="@font/ralewaymedium"
+                    android:fontFamily="@font/roboto_regular"
                     android:hint="@string/login_password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
@@ -122,7 +129,7 @@
             android:fontFamily="@font/ralewaymedium"
             android:text="Forgot Password?"
             android:textColor="@color/black"
-            android:textSize="9dp"
+            android:textSize="12dp"
             android:textStyle="bold" />
 
         <Button
@@ -130,7 +137,7 @@
             android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="190dp"
             android:backgroundTint="@color/finalblue"
             android:fontFamily="@font/ralewaymedium"
             android:text="Login" />

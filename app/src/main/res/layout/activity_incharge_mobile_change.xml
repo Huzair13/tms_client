@@ -65,9 +65,9 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:fontFamily="@font/worksans"
+                android:fontFamily="@font/roboto_regular"
                 android:gravity="center"
-                android:text="Want to Change Mobile Number?"
+                android:text="Update Mobile Number "
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -78,7 +78,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/pistagreenspinner"
                 android:fontFamily="@font/mulish"
@@ -144,7 +144,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="see old \n Mobile number"
+                    android:text="see old  Mobile number"
                     android:backgroundTint="@color/gradientblue"/>
 
             </LinearLayout>

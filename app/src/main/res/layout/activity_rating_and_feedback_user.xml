@@ -66,11 +66,10 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:paddingLeft="15dp"
                         android:background="@color/gradientblue"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/ra_avg_elec_user"
@@ -82,8 +81,8 @@
                         android:textAlignment="center"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textColor="@color/black"
-                        android:textSize="24dp" />
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
 
                 </LinearLayout>
 
@@ -110,10 +109,9 @@
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
                         android:background="@color/gradientblue"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/ra_avg_net_user"
@@ -126,8 +124,8 @@
                         android:textAlignment="center"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -153,9 +151,9 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/ra_avg_car_user"
@@ -167,8 +165,8 @@
                         android:text="NULL"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -194,8 +192,8 @@
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/ra_avg_paint_user"
@@ -207,8 +205,8 @@
                         android:textAlignment="center"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -235,8 +233,8 @@
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/ra_avg_plumber_user"
@@ -248,8 +246,8 @@
                         android:text="NULL"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textSize="24dp"
-                        android:textColor="@color/black" />
+                        android:textSize="20dp"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -275,11 +273,10 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:paddingLeft="15dp"
                         android:background="@color/gradientblue"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/rating_asset_field_user"
@@ -291,8 +288,8 @@
                         android:textAlignment="center"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textColor="@color/black"
-                        android:textSize="24dp" />
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
 
                 </LinearLayout>
 
@@ -317,11 +314,10 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.5"
                         android:layout_height="wrap_content"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:paddingLeft="15dp"
                         android:background="@color/gradientblue"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/rating_others_field_user"
@@ -333,8 +329,8 @@
                         android:textAlignment="center"
                         android:gravity="center"
                         android:background="@color/babyblue"
-                        android:textColor="@color/black"
-                        android:textSize="24dp" />
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
 
                 </LinearLayout>
 

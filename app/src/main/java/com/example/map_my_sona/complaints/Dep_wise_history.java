@@ -87,24 +87,24 @@ public class Dep_wise_history extends AppCompatActivity {
 
 //        export=findViewById(R.id.export_history);
 
-        export.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog.setMessage("Exporting please wait ......");
-                progressDialog.setTitle("Exporting");
-                progressDialog.setCanceledOnTouchOutside(false);
-                progressDialog.show();
-                askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE, 101);
-                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 101);
-                try {
-                    export1(progressDialog);
-
-                    Toast.makeText(Dep_wise_history.this, "Exported Successfully", Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//       export.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                progressDialog.setMessage("Exporting please wait ......");
+//                progressDialog.setTitle("Exporting");
+//                progressDialog.setCanceledOnTouchOutside(false);
+//                progressDialog.show();
+//                askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE, 101);
+//                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 101);
+//                try {
+//                    export1(progressDialog);
+//
+//                    Toast.makeText(Dep_wise_history.this, "Exported Successfully", Toast.LENGTH_SHORT).show();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
         builder11=new AlertDialog.Builder(this);
         mAuth=FirebaseAuth.getInstance();

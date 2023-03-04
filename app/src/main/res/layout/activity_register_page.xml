@@ -55,22 +55,32 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/username_icon" />
-
-                <EditText
-                    android:id="@+id/signupusernamelInput"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="37dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:hint="@string/login_username"
-                    android:imeOptions="actionNext"
-                    android:singleLine="true"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    >
+                    <EditText
+                        android:id="@+id/signupusernamelInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="37dp"
+                        android:background="@color/finalgrey"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="Username"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16dp"
 
+                        app:passwordToggleEnabled="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+<!--
+signupusernamelInput
+-->
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -84,26 +94,36 @@
                 <ImageView
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/email_icon" />
 
-                <EditText
-                    android:id="@+id/signupemaillInput"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="37dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:hint="@string/signup_email"
-                    android:imeOptions="actionNext"
-                    android:singleLine="true"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    >
+                    <EditText
+                        android:id="@+id/signupemaillInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="37dp"
+                        android:background="@color/finalgrey"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="Email ID"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
+                        android:textSize="16dp"
+ />
+            </com.google.android.material.textfield.TextInputLayout>
+<!--
+signupemaillInput
+-->
 
-            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
@@ -115,8 +135,8 @@
                 app:cardCornerRadius="5dp">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/password" />
@@ -132,7 +152,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="37dp"
                         android:background="@color/finalgrey"
-                        android:fontFamily="sans-serif-medium"
+                        android:fontFamily="@font/roboto_regular"
                         android:hint="@string/login_password"
                         android:imeOptions="actionNext"
                         android:inputType="textPassword"
@@ -141,7 +161,7 @@
                         android:textColor="@color/black"
                         android:textColorHint="@color/grey"
                         android:textSize="16dp"
-                        android:textStyle="bold"
+
                         app:passwordToggleEnabled="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -175,17 +195,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="35dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:background="@color/finalgrey"
+                    android:fontFamily="@font/roboto_regular"
                     android:hint="@string/signup_con_pass"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:singleLine="true"
                     android:text=""
-
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey"
                     android:textSize="16dp"
-                    android:textStyle="bold" />
+                     />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -198,7 +218,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="300dp"
                 android:backgroundTint="@color/finalblue"
-                android:fontFamily="@font/raleway_regular"
+                android:fontFamily="@font/roboto_regular"
                 android:text="Signup" />
 
             <TextView

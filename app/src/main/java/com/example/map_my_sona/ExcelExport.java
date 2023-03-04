@@ -1,4 +1,4 @@
-package com.example.map_my_sona.complaints;
+package com.example.map_my_sona;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,10 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -17,21 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.map_my_sona.ExcelExport;
-import com.example.map_my_sona.R;
-import com.example.map_my_sona.admin.AdminDashboard;
-import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_assets;
-import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetails_others;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Networks;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Painting;
-import com.example.map_my_sona.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber;
-import com.example.map_my_sona.dashboard;
-import com.example.map_my_sona.loginpage;
-import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.card.MaterialCardView;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.material.badge.BadgeUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,55 +22,62 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.SpreadsheetVersion;
+import org.apache.poi.ss.formula.udf.UDFFinder;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.DataFormat;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.Name;
+import org.apache.poi.ss.usermodel.PictureData;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.SheetVisibility;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-public class Dep_wise_history extends AppCompatActivity {
+import jxl.Workbook;
+import jxl.WorkbookSettings;
+import jxl.format.BoldStyle;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
 
-//    private Button networks,electricity,carpenter,plumber,painting;
-
-    private MaterialCardView networks;
-    private  MaterialCardView electricity;
-    private MaterialCardView carpenter;
-    private  MaterialCardView plumber;
-    private MaterialCardView painting;
-    private MaterialCardView others;
-    private MaterialCardView assets;
-    MaterialToolbar toolbar;
+public class ExcelExport extends AppCompatActivity {
 
     private static DatabaseReference mDatabase;
     private ProgressDialog progressDialog;
 
-    private Button export;
-    private DatabaseReference refDash;
-    AlertDialog.Builder builder11;
-    FirebaseAuth mAuth;
-
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dep_wise_history);
+        setContentView(R.layout.activity_excel_export);
 
         //progressDialouge
         progressDialog=new ProgressDialog(this);
 
-        networks= findViewById(R.id.button_111);
-        electricity= findViewById(R.id.button2_112);
-        carpenter=findViewById(R.id.button_131);
-        plumber=findViewById(R.id.plumber_history);
-        painting=findViewById(R.id.painting_history);
-        others=findViewById(R.id.others_history);
-        assets=findViewById(R.id.assets_history);
 
-        export=findViewById(R.id.export_history);
-
-        export.setOnClickListener(new View.OnClickListener() {
+        btn=findViewById(R.id.button5);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressDialog.setMessage("Exporting please wait ......");
@@ -95,115 +85,19 @@ public class Dep_wise_history extends AppCompatActivity {
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
                 askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE, 101);
-                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 101);
+                askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, 105);
                 try {
-                    export1(progressDialog);
+                    export(progressDialog);
 
-                    Toast.makeText(Dep_wise_history.this, "Exported Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExcelExport.this, "Exported Successfully", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        builder11=new AlertDialog.Builder(this);
-        mAuth=FirebaseAuth.getInstance();
-
-        refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
-
-        networks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Networks.class));
-
-            }
-        });
-        assets.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Dep_wise_history.this, complaint_HistoryDetails_assets.class));
-            }
-        });
-        others.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Dep_wise_history.this, complaint_HistoryDetails_others.class));
-            }
-        });
-        electricity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Electricity.class));
-
-            }
-        });
-
-        carpenter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Carpenter.class));
-            }
-        });
-
-        plumber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Plumber.class));
-            }
-        });
-
-        painting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dep_wise_history.this, Complaints_HistoryDetails_Painting.class));
-            }
-        });
-        toolbar= findViewById(R.id.topAppBar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                refDash.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String pos=snapshot.child("position").getValue(String.class);
-                        if(pos.equals("admin")){
-                            startActivity(new Intent(Dep_wise_history.this, dashboard.class));
-                        }
-                        else{
-                            builder11.setTitle("Alert")
-                                    .setMessage("Are you sure to Log out ?")
-                                    .setCancelable(true)
-                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            mAuth.signOut();
-                                            Intent intent=new Intent(Dep_wise_history.this, loginpage.class);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                            startActivity(intent);
-                                            finish();
-                                        }
-                                    })
-                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            dialogInterface.cancel();
-                                        }
-                                    })
-                                    .show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-            }
-        });
-
-
     }
-    public static void export1(ProgressDialog progressDialog) throws IOException {
+    public static void export(ProgressDialog progressDialog) throws IOException {
 
 
         mDatabase= FirebaseDatabase.getInstance().getReference().child("complaints");
@@ -211,7 +105,7 @@ public class Dep_wise_history extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                java.io.File file1 = new java.io.File(Environment
+                File file1 = new File(Environment
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                         + "/Complaints1.xls");
 
@@ -580,20 +474,20 @@ public class Dep_wise_history extends AppCompatActivity {
         });
     }
 
+
     private void askForPermission(String permission, Integer requestCode) {
-        if (ContextCompat.checkSelfPermission(Dep_wise_history.this, permission)
+        if (ContextCompat.checkSelfPermission(ExcelExport.this, permission)
                 != PackageManager.PERMISSION_GRANTED) {
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    Dep_wise_history.this, permission)) {
-                ActivityCompat.requestPermissions(Dep_wise_history.this,
+                    ExcelExport.this, permission)) {
+                ActivityCompat.requestPermissions(ExcelExport.this,
                         new String[]{permission}, requestCode);
 
             } else {
-                ActivityCompat.requestPermissions(Dep_wise_history.this,
+                ActivityCompat.requestPermissions(ExcelExport.this,
                         new String[]{permission}, requestCode);
             }
         }
     }
-
 }

@@ -21,7 +21,7 @@
                 android:id="@+id/topAppBar_carpenter"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="History"
+                app:title="Carpentar Complaints"
                 android:background="@color/gradientblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"
@@ -113,7 +113,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="20dp">
         <LinearLayout
             android:background="#0000FF"
@@ -145,7 +145,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="15dp"
-                    android:text="Hello"
+                    android:text=""
                     android:gravity="center"
                     android:textAlignment="center"
                     android:textColor="@color/white"/>

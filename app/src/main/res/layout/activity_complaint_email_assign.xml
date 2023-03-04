@@ -20,7 +20,7 @@
                 android:id="@+id/topAppBar_Ulist"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="Assign Position"
+                app:title="Assign Email"
                 android:background="@color/gradientblue"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 app:navigationIcon="@drawable/back_ic"
@@ -180,11 +180,12 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/pisaGreen"
-                        android:gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="7dp"
                         android:text="Current Email"
                         android:textColor="@color/black"
                         android:textSize="18dp"
-                        android:textStyle="bold" />
+                        />
 
                     <TextView
                         android:id="@+id/email_old_display"
@@ -192,10 +193,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/black"
                         android:textSize="18dp"
-                        android:textStyle="bold" />
+                        />
 
                 </TableRow>
 

@@ -43,7 +43,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="45dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
                 android:backgroundTint="@color/finalgrey"
@@ -68,7 +68,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:hint="Username"
                         android:imeOptions="actionNext"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="@color/black"
@@ -85,7 +85,7 @@ signupusernamelInput
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="45dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="110dp"
                 android:backgroundTint="@color/finalgrey"
@@ -111,7 +111,7 @@ signupusernamelInput
                         android:fontFamily="@font/roboto_regular"
                         android:hint="Email ID"
                         android:imeOptions="actionNext"
-                        android:inputType="textPassword"
+                        android:inputType="textEmailAddress"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="@color/black"
@@ -127,7 +127,7 @@ signupemaillInput
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="170dp"
                 android:backgroundTint="@color/finalgrey"
@@ -171,7 +171,7 @@ signupemaillInput
 
             <androidx.cardview.widget.CardView
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="230dp"
                 android:backgroundTint="@color/finalgrey"

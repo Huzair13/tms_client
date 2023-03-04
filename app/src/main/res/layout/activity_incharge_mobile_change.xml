@@ -144,7 +144,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="see old  Mobile number"
+                    android:text="see old Mobile number"
                     android:backgroundTint="@color/gradientblue"/>
 
             </LinearLayout>
@@ -178,11 +178,12 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/pisaGreen"
-                        android:gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="7dp"
                         android:text="Current Mobile Number"
                         android:textColor="@color/black"
                         android:textSize="18dp"
-                        android:textStyle="bold" />
+                         />
 
                     <TextView
                         android:id="@+id/mob_old_display"
@@ -190,10 +191,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="7dp"
                         android:textColor="@color/black"
                         android:textSize="18dp"
-                        android:textStyle="bold" />
+                       />
 
                 </TableRow>
 

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".complaints.Dep_wise_history"
     android:orientation="vertical">
     <!--    android:background="@drawable/greenbg04">-->
@@ -27,12 +27,21 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <Button
+                android:id="@+id/export_history"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:text="Export Hsitory"
+                />
 
 
             <!--    <HorizontalScrollView-->
@@ -121,13 +130,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="15dp">
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/button_111"
                         android:layout_width="wrap_content"
@@ -157,11 +165,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Network"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -201,11 +210,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Electricity"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -215,7 +225,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginTop="0dp">
+                    android:layout_marginTop="20dp">
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/button_131"
                         android:layout_width="wrap_content"
@@ -245,11 +255,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Carpenting"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -289,11 +300,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Plumbing"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -303,7 +315,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginTop="0dp">
+                    android:layout_marginTop="20dp">
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/painting_history"
                         android:layout_width="wrap_content"
@@ -333,11 +345,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Painting"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -377,11 +390,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Assets"
-                                android:textSize="20dp"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
                                 android:layout_marginTop="100dp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:fontFamily="@font/luxuriousromanregular" >
 
                             </TextView>
                         </LinearLayout>
@@ -392,7 +406,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="15dp"
                     android:gravity="center">
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/others_history"
@@ -400,6 +413,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginEnd="25dp"
                         android:checkable="true"
                         android:clickable="true"
@@ -418,21 +432,25 @@
                         <LinearLayout
                             android:layout_width="150dp"
                             android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
                             android:background="@drawable/other">
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Others"
-                                android:textSize="20dp"
                                 android:layout_marginTop="100dp"
+                                android:fontFamily="@font/luxuriousromanregular"
                                 android:gravity="center"
+                                android:text="Others"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/roboto_regular" >
+                                android:textSize="22dp"
+                                android:textStyle="bold">
 
                             </TextView>
                         </LinearLayout>
 
                     </com.google.android.material.card.MaterialCardView>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -467,7 +485,7 @@
             <!--                        android:layout_width="match_parent"-->
             <!--                        android:layout_height="match_parent"-->
             <!--                        android:text="Assets Complaints"-->
-            <!--                        android:textSize="20dp"-->
+            <!--                        android:textSize="22dp"-->
             <!--                        android:gravity="center"-->
             <!--                        android:layout_marginLeft="100dp"-->
             <!--                        android:textColor="@color/black"-->

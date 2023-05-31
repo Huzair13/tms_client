@@ -37,6 +37,10 @@
         <activity
             android:name=".Ulist_Activity"
             android:exported="false" />
+        <activity android:name=".Admin_Assign"
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".complaints.ComplaintPage_user"
             android:exported="false" />
@@ -93,9 +97,6 @@
             android:exported="false" />
         <activity
             android:name=".Admin_Update"
-            android:exported="false" />
-        <activity
-            android:name=".Admin_Assign"
             android:exported="false" />
         <activity
             android:name=".admin.AdminDashboard"

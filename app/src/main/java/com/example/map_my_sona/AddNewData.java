@@ -14,11 +14,29 @@ public class AddNewData {
     private String config;
     private String dep_of_pro;
     private String location;
+    private String floor;
+    private String bname;
 
     public AddNewData() {
     }
 
-    public AddNewData(int sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String config, String dep_of_pro, String location) {
+    public String getFloor() {
+        return floor;
+    }
+
+    public void setFloor(String floor) {
+        this.floor = floor;
+    }
+
+    public String getBname() {
+        return bname;
+    }
+
+    public void setBname(String bname) {
+        this.bname = bname;
+    }
+
+    public AddNewData(int sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String config, String dep_of_pro, String location, String floor, String bname) {
         this.sn_no = sn_no;
         this.make = make;
         this.model = model;
@@ -31,6 +49,8 @@ public class AddNewData {
         this.config = config;
         this.dep_of_pro = dep_of_pro;
         this.location = location;
+        this.floor=floor;
+        this.bname=bname;
     }
 
     public int getSn_no() {

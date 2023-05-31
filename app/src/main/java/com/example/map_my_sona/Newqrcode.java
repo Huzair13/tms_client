@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,11 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 public class Newqrcode extends AppCompatActivity {
 
     private EditText unique_id_ad,sn_ad,make_ad,model_ad,procurement_ad,powerRating_ad,wperiod_ad,wexpiryDate_ad,insDate_ad,
-            insBy_ad,mob_ad,dep_of_pro,location;
+            insBy_ad,mob_ad,dep_of_pro,location,floor,building;
     private Button AddNew ,addasset;
     AlertDialog.Builder builder;
     private DatabaseReference reference,dbRef;
     private TextView bulkUpload;
+    MaterialToolbar toolbar;
+
 //    public MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
     @Override
@@ -38,6 +41,16 @@ public class Newqrcode extends AppCompatActivity {
         setContentView(R.layout.activity_newqrcode);
 
         reference= FirebaseDatabase.getInstance().getReference();
+
+        toolbar= findViewById(R.id.topAppBar_newPro);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Newqrcode.this, dashboard.class));
+            }
+        });
 
 //        materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this);
 
@@ -54,6 +67,8 @@ public class Newqrcode extends AppCompatActivity {
         mob_ad=(EditText) findViewById(R.id.mob_update_admin);
         dep_of_pro=(EditText)findViewById(R.id.depOfProduct_newQR_admin);
         location=(EditText)findViewById(R.id.loc_add_admin);
+        building= (EditText) findViewById(R.id.building_name_com_tv);
+        floor=(EditText)findViewById(R.id.floor_com_tv);
 
         AddNew=(Button) findViewById(R.id.newqrupdate_btn);
         addasset=(Button) findViewById(R.id.addasset);
@@ -119,14 +134,16 @@ public class Newqrcode extends AppCompatActivity {
         String config_str_ad=mob_ad.getText().toString();
         String Dep_of_pro_str=dep_of_pro.getText().toString();
         String location_str=location.getText().toString();
+        String floor_str=floor.getText().toString();
+        String building_name_str=building.getText().toString();
 
-        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str);
+        checkValidity(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str,floor_str,building_name_str);
 
 
     }
 
 
-    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str) {
+    private void checkValidity(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insDate_str_ad,String insBy_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str,String floor_str,String buildingName_Str) {
         if(unique_id_str_ad.isEmpty()){
             unique_id_ad.setError("It can't be empty");
             unique_id_ad.requestFocus();
@@ -166,14 +183,20 @@ public class Newqrcode extends AppCompatActivity {
         }else if(location_str.isEmpty()){
             location.setError("It can't be empty");
             location.requestFocus();
+        }else if(floor_str.isEmpty()){
+            location.setError("It can't be empty");
+            location.requestFocus();
+        }else if(buildingName_Str.isEmpty()){
+            location.setError("It can't be empty");
+            location.requestFocus();
         }
         else{
-            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str);
+            AddData(unique_id_str_ad,sn_str_ad,make_str_ad,model_str_ad,procurement_str_ad,powerRating_str_ad,wperiod_str_ad,wexpiryDate_str_ad,insDate_str_ad,insBy_str_ad,config_str_ad,Dep_of_pro_str,location_str,floor_str,buildingName_Str);
         }
        }
 
 
-    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str) {
+    private void AddData(String unique_id_str_ad,String sn_str_ad,String make_str_ad,String model_str_ad,String procurement_str_ad,String powerRating_str_ad,String wperiod_str_ad,String wexpiryDate_str_ad,String insBy_str_ad,String insDate_str_ad,String config_str_ad,String Dep_of_pro_str,String location_str,String floor_str,String bname_str) {
 
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Datas").child(unique_id_str_ad);
@@ -189,7 +212,7 @@ public class Newqrcode extends AppCompatActivity {
                 } else {
 
                     dbRef = reference.child("Datas");
-                    AddNewData addNewData = new AddNewData(Integer.parseInt(sn_str_ad), make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, config_str_ad,Dep_of_pro_str,location_str);
+                    AddNewData addNewData = new AddNewData(Integer.parseInt(sn_str_ad), make_str_ad, model_str_ad, procurement_str_ad, powerRating_str_ad, wperiod_str_ad, wexpiryDate_str_ad, insDate_str_ad, insBy_str_ad, config_str_ad,Dep_of_pro_str,location_str,floor_str,bname_str);
 
                     dbRef.child(unique_id_str_ad).setValue(addNewData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

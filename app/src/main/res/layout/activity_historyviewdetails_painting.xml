@@ -18,7 +18,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar_Ulist"
+                android:id="@+id/topAppBar_paintView"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="Complaint Details"
@@ -690,6 +690,91 @@ Product_ID_history_painting
 
                     </TableRow>
 
+                    <TableRow
+                        android:id="@+id/building_name_eh_painting">
+
+                        <TextView
+                            android:id="@+id/sn_bname_eh_painting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/cellshape"
+                            android:gravity="center"
+                            android:text="13"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/bname_eh_text_painting"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/table"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text="Building Name"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/building_name_eh_a_painting"
+                            android:layout_width="113dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/table"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/floor_eh_painting">
+
+                        <TextView
+                            android:id="@+id/sn_floor_eh_painting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/cellshape"
+                            android:gravity="center"
+                            android:text="14"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/floor_eh_text_painting"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/table"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text="Floor"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/floor_eh_a_painting"
+                            android:layout_width="113dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/table"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
 
                 </TableLayout>
 

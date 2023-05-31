@@ -112,6 +112,13 @@ public class historyviewdetails_plumber extends AppCompatActivity {
     private Button bt_send_supervisor,bt_send_admin;
     private String comment_supervisor,comment_admin;
 
+    private TextView sn_floor,sn_building;
+    private String floor_str,building_str;
+    private TableRow floorRow,BuildingRow;
+    private TextView floor,building;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +126,16 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         setContentView(R.layout.activity_historyviewdetails_plumber);
 
         builder_plumber = new AlertDialog.Builder(this);
+
+        toolbar= findViewById(R.id.topAppBar_plumView);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails_plumber.this, Complaints_HistoryDetails_Plumber.class));
+            }
+        });
 
         Intent intent = getIntent();
         String com_id_new = intent.getStringExtra("com_ID");
@@ -140,6 +157,8 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         make=(TextView)findViewById(R.id.make_unit_plumh);
         model=(TextView)findViewById(R.id.model_unit_plumh);
         config=(TextView)findViewById(R.id.sn_config_plumh);
+        floor=(TextView)findViewById(R.id.floor_eh_a_plumber);
+        building=(TextView)findViewById(R.id.building_name_eh_a_plumber);
 
 
         com_IDrow=(TableRow)findViewById(R.id.com_id_plumh);
@@ -154,6 +173,9 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         ins_dateRow=(TableRow) findViewById(R.id.ins_dateRow_plumh);
         locationRow=(TableRow) findViewById(R.id.LocRow_plumh);
         configRow=(TableRow) findViewById(R.id.configrow_plumh);
+        floorRow=(TableRow)findViewById(R.id.floor_eh_plumber);
+        BuildingRow=(TableRow)findViewById(R.id.building_name_eh_plumber);
+
 
 
         sn_make=(TextView)findViewById(R.id.sn_make_plumh);
@@ -168,6 +190,9 @@ public class historyviewdetails_plumber extends AppCompatActivity {
         sn_name=(TextView)findViewById(R.id.sn_name_plumh);
         sn_mob=(TextView)findViewById(R.id.sn_mob_plumh);
         sn_id=(TextView)findViewById(R.id.sn_id_plumh);
+        sn_building=(TextView)findViewById(R.id.sn_bname_eh_plumber);
+        sn_floor=(TextView)findViewById(R.id.sn_floor_eh_plumber);
+
 
         bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_plum);
         bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_plum);
@@ -224,6 +249,8 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 model_str=complaint_details.getModel();
                 config_str=complaint_details.getConfig();
                 time_str=complaint_details.getTime();
+                floor_str=complaint_details.getFloor();
+                building_str=complaint_details.getBname();
 
                 status = complaint_details.getStatus();
 
@@ -356,6 +383,27 @@ public class historyviewdetails_plumber extends AppCompatActivity {
                 }
                 else{
                     configRow.setVisibility(View.GONE);
+                }
+
+                //floor
+                if(!floor_str.equals("NIL")){
+                    floor.setText(floor_str);
+                    sn_floor.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    floorRow.setVisibility(View.GONE);
+                }
+
+                //building
+
+                if(!building_str.equals("NIL")){
+                    building.setText(building_str);
+                    sn_building.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    BuildingRow.setVisibility(View.GONE);
                 }
 
 

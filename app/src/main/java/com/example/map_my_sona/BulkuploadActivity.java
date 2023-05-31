@@ -35,6 +35,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,6 +70,7 @@ public class BulkuploadActivity extends AppCompatActivity {
     int StickerSize;
     Context context;
     private StorageReference mStorageRef;
+    MaterialToolbar toolbar;
 
 
     ////////
@@ -80,6 +82,16 @@ public class BulkuploadActivity extends AppCompatActivity {
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
+
+        toolbar= findViewById(R.id.topAppBar_BulkUpload);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(BulkuploadActivity.this, dashboard.class));
+            }
+        });
         excel = findViewById(R.id.excel);
         download=findViewById(R.id.excel_download);
 
@@ -358,6 +370,8 @@ public class BulkuploadActivity extends AppCompatActivity {
                                     String wexpiry=getCellData(row,10,formulaEvaluator);
                                     String wperiod=getCellData(row,11,formulaEvaluator);
                                     String config=getCellData(row,12,formulaEvaluator);
+                                    String bname=getCellData(row,13,formulaEvaluator);
+                                    String floor=getCellData(row,14,formulaEvaluator);
 
 
                                     // initialise the hash map and put value of a and b into it
@@ -376,7 +390,8 @@ public class BulkuploadActivity extends AppCompatActivity {
                                     quetionmap.put("wexpiry",wexpiry);
                                     quetionmap.put("wperiod",wperiod);
                                     quetionmap.put("config",config);
-
+                                    quetionmap.put("bname",bname);
+                                    quetionmap.put("floor",floor);
                                     parentmap.put(UniqueID, quetionmap);
                                 }
 //                            else {

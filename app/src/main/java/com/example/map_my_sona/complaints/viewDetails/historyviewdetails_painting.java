@@ -113,6 +113,13 @@ public class historyviewdetails_painting extends AppCompatActivity {
     private String time_str;
     private String Date_str;
 
+    private TextView sn_floor,sn_building;
+    private String floor_str,building_str;
+    private TableRow floorRow,BuildingRow;
+    private TextView floor,building;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +127,16 @@ public class historyviewdetails_painting extends AppCompatActivity {
         setContentView(R.layout.activity_historyviewdetails_painting);
 
         builder_painter = new AlertDialog.Builder(this);
+
+        toolbar= findViewById(R.id.topAppBar_paintView);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails_painting.this, Complaints_HistoryDetails_Painting.class));
+            }
+        });
 
         Intent intent = getIntent();
         String com_id_new = intent.getStringExtra("com_ID");
@@ -142,6 +159,8 @@ public class historyviewdetails_painting extends AppCompatActivity {
         make = (TextView) findViewById(R.id.make_unit_eh_paint);
         model = (TextView) findViewById(R.id.model_unit_eh_paint);
         config = (TextView) findViewById(R.id.sn_config_eh_paint);
+        floor=(TextView)findViewById(R.id.floor_eh_a_painting);
+        building=(TextView)findViewById(R.id.building_name_eh_a_painting);
 
 
         com_IDrow = (TableRow) findViewById(R.id.com_id_eh_paint);
@@ -156,6 +175,9 @@ public class historyviewdetails_painting extends AppCompatActivity {
         ins_dateRow = (TableRow) findViewById(R.id.ins_dateRow_eh_paint);
         locationRow = (TableRow) findViewById(R.id.LocRow_eh_paint);
         configRow = (TableRow) findViewById(R.id.configrow_eh_paint);
+        floorRow=(TableRow)findViewById(R.id.floor_eh_painting);
+        BuildingRow=(TableRow)findViewById(R.id.building_name_eh_painting);
+
 
 
         sn_make = (TextView) findViewById(R.id.sn_make_eh_paint);
@@ -170,6 +192,9 @@ public class historyviewdetails_painting extends AppCompatActivity {
         sn_name = (TextView) findViewById(R.id.sn_name_eh_paint);
         sn_mob = (TextView) findViewById(R.id.sn_mob_eh_paint);
         sn_id = (TextView) findViewById(R.id.sn_id_eh_paint);
+        sn_building=(TextView)findViewById(R.id.sn_bname_eh_painting);
+        sn_floor=(TextView)findViewById(R.id.sn_floor_eh_painting);
+
 
         bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_paint);
         bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_paint);
@@ -224,6 +249,8 @@ public class historyviewdetails_painting extends AppCompatActivity {
                 make_str = complaint_details.getMake();
                 model_str = complaint_details.getModel();
                 config_str = complaint_details.getConfig();
+                floor_str=complaint_details.getFloor();
+                building_str=complaint_details.getBname();
 
                 comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
                 comment_admin=snapshot.child("commentAdmin").getValue(String.class);
@@ -349,6 +376,27 @@ public class historyviewdetails_painting extends AppCompatActivity {
                     snNumber++;
                 } else {
                     configRow.setVisibility(View.GONE);
+                }
+
+                //floor
+                if(!floor_str.equals("NIL")){
+                    floor.setText(floor_str);
+                    sn_floor.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    floorRow.setVisibility(View.GONE);
+                }
+
+                //building
+
+                if(!building_str.equals("NIL")){
+                    building.setText(building_str);
+                    sn_building.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    BuildingRow.setVisibility(View.GONE);
                 }
 
                 pro_id.setText(pro_id_str);

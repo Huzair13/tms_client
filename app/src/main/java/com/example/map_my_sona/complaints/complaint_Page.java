@@ -53,6 +53,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -106,7 +107,7 @@ public class complaint_Page extends AppCompatActivity {
 
     private String  complainted_by_name_str, complainted_by_mob_str, sn_str, make_str, model_str,
             procurement_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str,
-            config_str,dep_of_pro_str;
+            config_str,dep_of_pro_str,floor_str,building_str;
     private String complaint_txt,others_com_str;
     String status = "Pending";
     DatabaseReference databaseReference;
@@ -122,6 +123,9 @@ public class complaint_Page extends AppCompatActivity {
 
     String uniqueIDGen;
     private DatabaseReference refDash3;
+    private TextView building,floor;
+    private TableRow buildingRow,floorRow;
+    private TextView sn_building,sn_floor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +161,10 @@ public class complaint_Page extends AppCompatActivity {
         uid_tv=(TextView)findViewById(R.id.com_page_uniqueID);
         tblayout_com_page=(TableLayout)findViewById(R.id.table_complaint);
 
+        building=(TextView)findViewById(R.id.building_name_com_tv);
+        floor=(TextView)findViewById(R.id.floor_com_tv);
+
+
         snRow=(TableRow) findViewById(R.id.serialNumRow);
         makeRow=(TableRow) findViewById(R.id.makeRow);
         modelRow=(TableRow) findViewById(R.id.modelRow);
@@ -169,6 +177,8 @@ public class complaint_Page extends AppCompatActivity {
         dep_of_proRow=(TableRow) findViewById(R.id.dep_of_pro_row);
         locationRow=(TableRow) findViewById(R.id.LocRow);
         configRow=(TableRow) findViewById(R.id.configrow);
+        buildingRow =(TableRow)findViewById(R.id.building_name_com);
+        floorRow =(TableRow)findViewById(R.id.floor_com);
 
         sn_snNum=(TextView)findViewById(R.id.sn_snNum);
         sn_make=(TextView)findViewById(R.id.sn_make);
@@ -182,6 +192,8 @@ public class complaint_Page extends AppCompatActivity {
         sn_dep_of_pro=(TextView)findViewById(R.id.sn_dep_of_pro);
         sn_loc=(TextView)findViewById(R.id.sn_loc);
         sn_config= (TextView)findViewById(R.id.sn_config);
+        sn_building=(TextView)findViewById(R.id.sn_bname_com);
+        sn_floor=(TextView)findViewById(R.id.sn_floor_com);
 
         config=(TextView)findViewById(R.id.Config);
 
@@ -258,6 +270,8 @@ public class complaint_Page extends AppCompatActivity {
                     dep_of_pro_str = snapshot.child(s).child("dep_of_pro").getValue(String.class);
                     location_str = snapshot.child(s).child("location").getValue(String.class);
                     config_str=snapshot.child(s).child("config").getValue(String.class);
+                    floor_str=snapshot.child(s).child("floor").getValue(String.class);
+                    building_str=snapshot.child(s).child("bname").getValue(String.class);
                     rating = 0.0f;
                     rating_str = rating.toString();
                     FeedBack_str="None";
@@ -393,6 +407,27 @@ public class complaint_Page extends AppCompatActivity {
                     else{
                         configRow.setVisibility(View.GONE);
                     }
+
+                    //Floor NUMBER
+                    if(!floor_str.equals("NIL")){
+                        floor.setText(floor_str);
+                        sn_floor.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        floorRow.setVisibility(View.GONE);
+                    }
+
+                    //Floor NUMBER
+                    if(!building_str.equals("NIL")){
+                        building.setText(building_str);
+                        sn_building.setText(String.valueOf(snNumber));
+                        snNumber++;
+                    }
+                    else{
+                        buildingRow.setVisibility(View.GONE);
+                    }
+
 
 
                     //mob.setText(mob_str);
@@ -636,7 +671,7 @@ public class complaint_Page extends AppCompatActivity {
                 complaint_txt, sn_str,
                 make_str, model_str, procurement_str,
                 powerRating_str, wperiod_str, wexpiry_str, ins_by_str, ins_date_str, date, time, uniqueIDGen, s,
-                status,dep_of_pro_str,location_str,rating_str,FeedBack_str,config_str,"NO","NO","NIL","NIL");
+                status,dep_of_pro_str,location_str,rating_str,FeedBack_str,config_str,"NO","NO","NIL","NIL",building_str,floor_str);
 
         refDash= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getUid());
 

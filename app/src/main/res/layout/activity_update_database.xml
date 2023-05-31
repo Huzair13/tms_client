@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar_Ulist"
+                android:id="@+id/topAppBar_updateData"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="Update Data"
@@ -540,6 +540,78 @@
 
                         <EditText
                             android:id="@+id/location_unit_update_ad"
+                            android:layout_width="113dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/table"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="12"
+                            android:background="@drawable/cellshape"
+                            android:textColor="@color/black"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text="Floor"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:background="@drawable/table" />
+
+                        <EditText
+                            android:id="@+id/floor_unit_update_ad"
+                            android:layout_width="113dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/table"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="13"
+                            android:background="@drawable/cellshape"
+                            android:textColor="@color/black"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:paddingLeft="7dp"
+                            android:text="Building Name"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:background="@drawable/table" />
+
+                        <EditText
+                            android:id="@+id/bname_unit_update_ad"
                             android:layout_width="113dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"

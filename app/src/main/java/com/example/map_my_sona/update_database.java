@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +26,13 @@ import java.util.HashMap;
 
 public class update_database extends AppCompatActivity {
 
-    private EditText sn,make,model,procurement,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,uniqueID,dep_of_pro,location;
+    private EditText sn,make,model,procurement,powerRating,wexpiry,wperiod,ins_by,ins_date,mob,uniqueID,dep_of_pro,location,floor,bname;
     private Button update,get_details;
     AlertDialog.Builder builder;
     //private String sn_str,make_str,model_str,procurement_str,powerRating_str,wexpiry_str,wperiod_str,ins_by_str,ins_date_str,mob_str;
     private DatabaseReference reference;
     private TableLayout updateDatabase;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,16 @@ public class update_database extends AppCompatActivity {
         builder=new AlertDialog.Builder(this);
 
         uniqueID=(EditText) findViewById(R.id.uniqueid_update_ad);
+
+        toolbar= findViewById(R.id.topAppBar_updateData);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(update_database.this, dashboard.class));
+            }
+        });
 
         sn=(EditText) findViewById(R.id.sn_unit_update_ad);
         make=(EditText) findViewById(R.id.make_unit_update_ad);
@@ -53,6 +65,9 @@ public class update_database extends AppCompatActivity {
 //        mob=(EditText) findViewById(R.id.mob_unit_update_ad);
         dep_of_pro=(EditText)findViewById(R.id.dep_of_pro_unit_update_ad);
         location=(EditText)findViewById(R.id.location_unit_update_ad);
+        floor=(EditText)findViewById(R.id.floor_unit_update_ad);
+        bname=(EditText)findViewById(R.id.bname_unit_update_ad);
+
 
         get_details=(Button)findViewById(R.id.get_details_up_ad);
 
@@ -109,6 +124,8 @@ public class update_database extends AppCompatActivity {
                     String ins_date_str1 = snapshot.child("ins_date").getValue(String.class);
                     String dep_of_pro_str1 =snapshot.child("dep_of_pro").getValue(String.class);
                     String location1=snapshot.child("location").getValue(String.class);
+                    String floor_str=snapshot.child("floor").getValue(String.class);
+                    String bname_str=snapshot.child("bname").getValue(String.class);
 
                     sn.setText(sn_str1);
                     make.setText(make_str1);
@@ -122,6 +139,8 @@ public class update_database extends AppCompatActivity {
 //                    mob.setText(mob_str1);
                     dep_of_pro.setText(dep_of_pro_str1);
                     location.setText(location1);
+                    bname.setText(bname_str);
+                    floor.setText(floor_str);
 
                     update.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -157,6 +176,9 @@ public class update_database extends AppCompatActivity {
         String dep_of_pro_str2=dep_of_pro.getText().toString();
         String location2=location.getText().toString();
 
+        String floor_str2=floor.getText().toString();
+        String bname_str2=bname.getText().toString();
+
         HashMap hp=new HashMap();
         hp.put("sn_no",sn_str2);
         hp.put("make",make_str2);
@@ -170,6 +192,8 @@ public class update_database extends AppCompatActivity {
 //        hp.put("mob",mob_str2);
         hp.put("dep_of_pro",dep_of_pro_str2);
         hp.put("location",location2);
+        hp.put("bname",bname_str2);
+        hp.put("floor",floor_str2);
 
         builder.setTitle("Alert")
                 .setMessage("Are you sure to update the data ??")
@@ -203,4 +227,5 @@ public class update_database extends AppCompatActivity {
                 .show();
 
     }
+
 }

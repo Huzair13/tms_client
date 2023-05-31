@@ -28,13 +28,14 @@ public class Complaint_details {
     private String escalated2;
     private String CommentAdmin;
     private String CommentSupervisor;
+    private String bname;
+    private String floor;
+
 
     public Complaint_details() {
-
     }
 
-    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack, String config, String escalated1, String escalated2, String commentAdmin, String commentSupervisor) {
-
+    public Complaint_details(String com_by_name, String com_by_mob, String com_txt, String sn_no, String make, String model, String procurement, String power_rating, String wperiod, String wexpiry, String ins_by, String ins_date, String date, String time, String key, String uniqueId, String status, String dep_of_pro, String location, String rating, String feedBack, String config, String escalated1, String escalated2, String commentAdmin, String commentSupervisor, String bname, String floor) {
         this.com_by_name = com_by_name;
         this.com_by_mob = com_by_mob;
         this.com_txt = com_txt;
@@ -61,6 +62,8 @@ public class Complaint_details {
         this.escalated2 = escalated2;
         CommentAdmin = commentAdmin;
         CommentSupervisor = commentSupervisor;
+        this.bname = bname;
+        this.floor = floor;
     }
 
     public String getCom_by_name() {
@@ -269,5 +272,21 @@ public class Complaint_details {
 
     public void setCommentSupervisor(String commentSupervisor) {
         CommentSupervisor = commentSupervisor;
+    }
+
+    public String getBname() {
+        return bname;
+    }
+
+    public void setBname(String bname) {
+        this.bname = bname;
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public void setFloor(String floor) {
+        this.floor = floor;
     }
 }

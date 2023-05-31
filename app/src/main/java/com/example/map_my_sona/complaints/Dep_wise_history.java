@@ -43,6 +43,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class Dep_wise_history extends AppCompatActivity {
     private static DatabaseReference mDatabase;
     private ProgressDialog progressDialog;
 
-    private Button export;
+    private MaterialCardView export;
     private DatabaseReference refDash;
     AlertDialog.Builder builder11;
     FirebaseAuth mAuth;
@@ -210,10 +211,17 @@ public class Dep_wise_history extends AppCompatActivity {
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 java.io.File file1 = new java.io.File(Environment
                         .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                        + "/Complaints1.xls");
+                        + "ComplaintsExport.xls");
+//                File file1 = new File(Environment.getExternalStorageDirectory(), "Complaints" + ".xml");
+                int kk=2;
+                while(file1.exists()){
+                    file1=new java.io.File(Environment
+                            .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                            + "ComplaintsExport"+kk+".xls");
+                    kk++;
+                }
 
                 HSSFWorkbook hwb = new HSSFWorkbook();
                 HSSFSheet sheet = hwb.createSheet("Electricity");

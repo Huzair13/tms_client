@@ -35,12 +35,16 @@ import com.example.map_my_sona.complaints.HistoryDetails.complaint_HistoryDetail
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.apache.poi.ss.usermodel.Table;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -110,6 +114,11 @@ public class historyviewdetails_assets extends AppCompatActivity {
     private Button bt_send_supervisor,bt_send_admin;
     private String comment_supervisor,comment_admin;
 
+    private TextView sn_floor,sn_building;
+    private String floor_str,building_str;
+    private TableRow floorRow,BuildingRow;
+    private TextView floor,building;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +126,16 @@ public class historyviewdetails_assets extends AppCompatActivity {
         setContentView(R.layout.activity_historyviewdetails_assets);
 
         builder=new AlertDialog.Builder(this);
+
+        toolbar= findViewById(R.id.topAppBar_assetView);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails_assets.this, complaint_HistoryDetails_assets.class));
+            }
+        });
 
         Intent intent=getIntent();
         String com_id_new=intent.getStringExtra("com_ID");
@@ -139,6 +158,8 @@ public class historyviewdetails_assets extends AppCompatActivity {
         model=(TextView)findViewById(R.id.model_unit_assetsh);
         config=(TextView)findViewById(R.id.sn_config_assetsh);
         //other_feedback=(EditText)findViewById(R.id.other_feedback_assets);
+        floor=(TextView)findViewById(R.id.floor_eh_a_assets);
+        building=(TextView)findViewById(R.id.building_name_eh_assets);
 
 
         com_IDrow=(TableRow)findViewById(R.id.com_id_assetsh);
@@ -153,6 +174,8 @@ public class historyviewdetails_assets extends AppCompatActivity {
         ins_dateRow=(TableRow) findViewById(R.id.ins_dateRow_assetsh);
         locationRow=(TableRow) findViewById(R.id.LocRow_assetsh);
         configRow=(TableRow) findViewById(R.id.configrow_assetsh);
+        floorRow=(TableRow)findViewById(R.id.floor_eh_assets);
+        BuildingRow=(TableRow)findViewById(R.id.building_name_assets);
 
 
         sn_make=(TextView)findViewById(R.id.sn_make_assetsh);
@@ -167,6 +190,8 @@ public class historyviewdetails_assets extends AppCompatActivity {
         sn_name=(TextView)findViewById(R.id.sn_name_assetsh);
         sn_mob=(TextView)findViewById(R.id.sn_mob_assetsh);
         sn_id=(TextView)findViewById(R.id.sn_id_assetsh);
+        sn_building=(TextView)findViewById(R.id.sn_bname_assets);
+        sn_floor=(TextView)findViewById(R.id.sn_floor_eh_assets);
 
         bt_send_admin=(Button)findViewById(R.id.send_Admin_comment_assets);
         bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment_assets);
@@ -218,6 +243,8 @@ public class historyviewdetails_assets extends AppCompatActivity {
                 model_str=complaint_details.getModel();
                 config_str=complaint_details.getConfig();
                 time_str=complaint_details.getTime();
+                floor_str=complaint_details.getFloor();
+                building_str=complaint_details.getBname();
 
 
                 comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
@@ -350,6 +377,28 @@ public class historyviewdetails_assets extends AppCompatActivity {
                 }
                 else{
                     configRow.setVisibility(View.GONE);
+                }
+
+
+                //floor
+                if(!floor_str.equals("NIL")){
+                    floor.setText(floor_str);
+                    sn_floor.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    floorRow.setVisibility(View.GONE);
+                }
+
+                //building
+
+                if(!building_str.equals("NIL")){
+                    building.setText(building_str);
+                    sn_building.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    BuildingRow.setVisibility(View.GONE);
                 }
 
 

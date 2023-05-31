@@ -95,9 +95,11 @@ public class historyviewdetails extends AppCompatActivity {
     //TextView feedBack_txtView_head;
 
     private String config_str;
-    private TextView sn_snNum, sn_make, sn_model, sn_proc, sn_powerRat, sn_wperiod, sn_wexpiry, sn_ins_by, sn_ins_date, sn_dep_of_pro, sn_config, sn_loc, sn_name, sn_id, sn_mob;
+    private TextView sn_snNum, sn_make, sn_model, sn_proc, sn_powerRat, sn_wperiod, sn_wexpiry, sn_ins_by,
+            sn_ins_date, sn_dep_of_pro, sn_config, sn_loc, sn_name, sn_id, sn_mob;
     private int snNumber = 4;
-    private TableRow name_row, mob_row, com_IDrow, makeRow, modelRow, procRow, powerRatRow, wperiodrow, wexpiryrow, ins_byRow, ins_dateRow, dep_of_proRow, configRow, locationRow;
+    private TableRow name_row, mob_row, com_IDrow, makeRow, modelRow, procRow, powerRatRow, wperiodrow,
+            wexpiryrow, ins_byRow, ins_dateRow, dep_of_proRow, configRow, locationRow;
     private String make_str, model_str;
 
     String ReceiverEmail;
@@ -107,11 +109,16 @@ public class historyviewdetails extends AppCompatActivity {
     AlertDialog.Builder builder;
     private DatabaseReference refDash;
 
-    private TextView make, model, config, staff_name, com_id, staff_mob, powerRating, wexpiry, wperiod, ins_by, ins_date, com_txt, location;
+    private TextView make, model, config, staff_name, com_id, staff_mob, powerRating, wexpiry, wperiod,
+            ins_by, ins_date, com_txt, location;
 
     private String location_str, uid_str, staff_name_str, com_id_str, staff_mob_str, powerRating_str, wexpiry_str, wperiod_str, ins_by_str, ins_date_str, com_txt_str;
     private String dep_of_pro;
     private String time_str;
+    private TextView sn_floor,sn_building;
+    private String floor_str,building_str;
+    private TableRow floorRow,BuildingRow;
+    private TextView floor,building;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +126,16 @@ public class historyviewdetails extends AppCompatActivity {
         setContentView(R.layout.activity_historyviewdetails);
 
         builder = new AlertDialog.Builder(this);
+
+        toolbar= findViewById(R.id.topAppBar_elecView);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"your icon was clicked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(historyviewdetails.this, Complaints_HistoryDetails_Electricity.class));
+            }
+        });
 
         Intent intent = getIntent();
         String com_id_new = intent.getStringExtra("com_ID");
@@ -141,7 +158,8 @@ public class historyviewdetails extends AppCompatActivity {
         make = (TextView) findViewById(R.id.make_unit_eh);
         model = (TextView) findViewById(R.id.model_unit_eh);
         config = (TextView) findViewById(R.id.sn_config_eh);
-
+        floor=(TextView)findViewById(R.id.floor_eh_a);
+        building=(TextView)findViewById(R.id.building_name_eh_a);
 
         com_IDrow = (TableRow) findViewById(R.id.com_id_eh);
         name_row = (TableRow) findViewById(R.id.com_by_name_eh);
@@ -155,6 +173,8 @@ public class historyviewdetails extends AppCompatActivity {
         ins_dateRow = (TableRow) findViewById(R.id.ins_dateRow_eh);
         locationRow = (TableRow) findViewById(R.id.LocRow_eh);
         configRow = (TableRow) findViewById(R.id.configrow_eh);
+        floorRow=(TableRow)findViewById(R.id.floor_eh);
+        BuildingRow=(TableRow)findViewById(R.id.building_name_eh);
 
 
         sn_make = (TextView) findViewById(R.id.sn_make_eh);
@@ -169,6 +189,8 @@ public class historyviewdetails extends AppCompatActivity {
         sn_name = (TextView) findViewById(R.id.sn_name_eh);
         sn_mob = (TextView) findViewById(R.id.sn_mob_eh);
         sn_id = (TextView) findViewById(R.id.sn_id_eh);
+        sn_floor=(TextView)findViewById(R.id.sn_floor_eh);
+        sn_building=(TextView)findViewById(R.id.sn_bname_eh);
 
         bt_send_admin=(Button)findViewById(R.id.send_Admin_comment);
         bt_send_supervisor=(Button)findViewById(R.id.send_Supervisor_comment);
@@ -227,6 +249,8 @@ public class historyviewdetails extends AppCompatActivity {
                 make_str = complaint_details.getMake();
                 model_str = complaint_details.getModel();
                 config_str = complaint_details.getConfig();
+                floor_str=complaint_details.getFloor();
+                building_str=complaint_details.getBname();
 
                 comment_supervisor=snapshot.child("commentSupervisor").getValue(String.class);
                 comment_admin=snapshot.child("commentAdmin").getValue(String.class);
@@ -261,6 +285,9 @@ public class historyviewdetails extends AppCompatActivity {
                     ed_com_admin.setHint(comment_admin);
                 }
 
+
+
+                //COMMENT SUPERVISOR
                 if(!comment_supervisor.equals("NIL")){
                     ed_com_supervisor.setText(comment_supervisor);
                 }
@@ -353,12 +380,33 @@ public class historyviewdetails extends AppCompatActivity {
                     configRow.setVisibility(View.GONE);
                 }
 
+                //floor
+                if(!floor_str.equals("NIL")){
+                    floor.setText(floor_str);
+                    sn_floor.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    floorRow.setVisibility(View.GONE);
+                }
+
+                //building
+
+                if(!building_str.equals("NIL")){
+                    building.setText(building_str);
+                    sn_building.setText(String.valueOf(snNumber));
+                    snNumber++;
+                }
+                else{
+                    BuildingRow.setVisibility(View.GONE);
+                }
+
                 refDash.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String posm = snapshot.child("position").getValue(String.class);
                         if (snapshot.exists()) {
-                            if (posm.equals("admin")) {
+                            if (posm.equals("admin") || posm.equals("superadmin")) {
                                 if (!comment_supervisor.equals("NIL")) {
                                     ll_com_admin.setVisibility(View.VISIBLE);
                                     ll_com_superVisor.setVisibility(View.VISIBLE);
@@ -368,7 +416,7 @@ public class historyviewdetails extends AppCompatActivity {
                                     ed_com_supervisor.setClickable(false);
                                 }
                             }
-                            if(posm.equals("supervisor")){
+                            if(posm.equals("supervisor") ||posm.equals("electrician")){
                                 ll_com_superVisor.setVisibility(View.VISIBLE);
                                 if(!comment_admin.equals("NIL")){
                                     ll_com_admin.setVisibility(View.VISIBLE);

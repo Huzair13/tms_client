@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "624446296336",
+    "firebase_url": "https://track-my-sona-c0a9c-default-rtdb.firebaseio.com",
+    "project_id": "track-my-sona-c0a9c",
+    "storage_bucket": "track-my-sona-c0a9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624446296336:android:4a5f495815582f200f5595",
+        "android_client_info": {
+          "package_name": "com.example.map_my_sona"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0AovWo1baAkMAKmRpAIvLqvQoUakrog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624446296336:android:0b4f3fc30661e12d0f5595",
+        "android_client_info": {
+          "package_name": "com.example.tms_sona2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0AovWo1baAkMAKmRpAIvLqvQoUakrog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

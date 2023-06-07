@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.map_my_sona">
+    package="com.example.tms_sona2">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
     <application
-        android:name=".App"
+        android:name="com.example.tms_sona2.App"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/tmslogo"
@@ -29,242 +29,242 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Map_My_Sona">
         <activity
-            android:name=".ExcelExport"
+            android:name="com.example.tms_sona2.ExcelExport"
             android:exported="false" />
         <activity
-            android:name=".Rating_and_Feedback_user"
+            android:name="com.example.tms_sona2.Rating_and_Feedback_user"
             android:exported="false" />
         <activity
-            android:name=".Ulist_Activity"
+            android:name="com.example.tms_sona2.Ulist_Activity"
             android:exported="false" />
-        <activity android:name=".Admin_Assign"
+        <activity android:name="com.example.tms_sona2.Admin_Assign"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".complaints.ComplaintPage_user"
+            android:name="com.example.tms_sona2.complaints.ComplaintPage_user"
             android:exported="false" />
         <activity
-            android:name=".complaints.verificationpage"
+            android:name="com.example.tms_sona2.complaints.verificationpage"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_assets"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_assets"
             android:exported="false" />
         <activity
-            android:name=".ExportComplaints"
+            android:name="com.example.tms_sona2.ExportComplaints"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_others"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_others"
             android:exported="false" />
         <activity
-            android:name=".New_login"
+            android:name="com.example.tms_sona2.New_login"
             android:exported="false" />
         <activity
-            android:name=".BulkuploadActivity"
+            android:name="com.example.tms_sona2.BulkuploadActivity"
             android:exported="false" />
         <activity
-            android:name=".Settime"
+            android:name="com.example.tms_sona2.Settime"
             android:exported="false" />
         <activity
-            android:name=".SubsribtionPeriodOver"
+            android:name="com.example.tms_sona2.SubsribtionPeriodOver"
             android:exported="false" />
         <activity
-            android:name=".NotAssigned"
+            android:name="com.example.tms_sona2.NotAssigned"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_assets"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_assets"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.complaint_HistoryDetails_assets"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.complaint_HistoryDetails_assets"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_others"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_others"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.complaint_HistoryDetails_others"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.complaint_HistoryDetails_others"
             android:exported="false" />
         <activity
-            android:name=".GoogleSignIn"
+            android:name="com.example.tms_sona2.GoogleSignIn"
             android:exported="false" />
         <activity
-            android:name=".admin.Incharge_mobile_change"
+            android:name="com.example.tms_sona2.admin.Incharge_mobile_change"
             android:exported="false" />
         <activity
-            android:name=".admin.Complaint_email_assign"
+            android:name="com.example.tms_sona2.admin.Complaint_email_assign"
             android:exported="false" />
         <activity
-            android:name=".admin.DetailsAssignAdmin"
+            android:name="com.example.tms_sona2.admin.DetailsAssignAdmin"
             android:exported="false" />
         <activity
-            android:name=".Admin_Update"
+            android:name="com.example.tms_sona2.Admin_Update"
             android:exported="false" />
         <activity
-            android:name=".admin.AdminDashboard"
+            android:name="com.example.tms_sona2.admin.AdminDashboard"
             android:exported="false" />
         <activity
-            android:name=".admin.Assign_position_admin"
+            android:name="com.example.tms_sona2.admin.Assign_position_admin"
             android:exported="false" />
         <activity
-            android:name=".RegisterPage"
+            android:name="com.example.tms_sona2.RegisterPage"
             android:exported="false" />
         <activity
-            android:name=".assets.tv.Asset_Tv_detail_view"
+            android:name="com.example.tms_sona2.assets.tv.Asset_Tv_detail_view"
             android:exported="false" />
         <activity
-            android:name=".assets.tablets.Asset_Tablet_detail_view"
+            android:name="com.example.tms_sona2.assets.tablets.Asset_Tablet_detail_view"
             android:exported="false" />
         <activity
-            android:name=".assets.mobiles.Asset_Phone_detail_view"
+            android:name="com.example.tms_sona2.assets.mobiles.Asset_Phone_detail_view"
             android:exported="false" />
         <activity
-            android:name=".assets.tv.asset_tv_recycle"
+            android:name="com.example.tms_sona2.assets.tv.asset_tv_recycle"
             android:exported="false" />
         <activity
-            android:name=".assets.laptops.Asset_Laptop_detail_view"
+            android:name="com.example.tms_sona2.assets.laptops.Asset_Laptop_detail_view"
             android:exported="false" />
         <activity
-            android:name=".bulkUpload"
+            android:name="com.example.tms_sona2.bulkUpload"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name=".assets.tablets.asset_tablet_recycle"
+            android:name="com.example.tms_sona2.assets.tablets.asset_tablet_recycle"
             android:exported="false" />
         <activity
-            android:name=".assets.mobiles.asset_phone_recycle"
+            android:name="com.example.tms_sona2.assets.mobiles.asset_phone_recycle"
             android:exported="false" />
         <activity
-            android:name=".assets.laptops.asset_laptop_recycle"
+            android:name="com.example.tms_sona2.assets.laptops.asset_laptop_recycle"
             android:exported="false" />
         <activity
-            android:name=".assets.Assets"
+            android:name="com.example.tms_sona2.assets.Assets"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_plumbering"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_plumbering"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_painting"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_painting"
             android:exported="false" />
         <activity
-            android:name=".add_assets"
+            android:name="com.example.tms_sona2.add_assets"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_carpenter"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_carpenter"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_network"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_network"
             android:exported="false" />
         <activity
-            android:name=".rating.rating_view.rating_electricity"
+            android:name="com.example.tms_sona2.rating.rating_view.rating_electricity"
             android:exported="false" />
         <activity
-            android:name=".rating_details"
+            android:name="com.example.tms_sona2.rating_details"
             android:exported="false" />
         <activity
-            android:name=".rating.Rating_and_Feedback"
+            android:name="com.example.tms_sona2.rating.Rating_and_Feedback"
             android:exported="false" />
         <activity
-            android:name=".Enter_num_manual"
+            android:name="com.example.tms_sona2.Enter_num_manual"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_painting"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_painting"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Painting"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.Complaints_HistoryDetails_Painting"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_plumber"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_plumber"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Plumber"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.Complaints_HistoryDetails_Plumber"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_carpenter"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_carpenter"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.Complaints_HistoryDetails_Carpenter"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails_networks"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails_networks"
             android:exported="false" />
         <activity
-            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Networks"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.Complaints_HistoryDetails_Networks"
             android:exported="false" />
         <activity
-            android:name=".complaints.Dep_wise_history"
+            android:name="com.example.tms_sona2.complaints.Dep_wise_history"
             android:exported="false" />
         <activity
-            android:name=".emergencyContact"
+            android:name="com.example.tms_sona2.emergencyContact"
             android:exported="false" />
         <activity
-            android:name=".update_database"
+            android:name="com.example.tms_sona2.update_database"
             android:exported="false" />
         <activity
-            android:name=".Qr_id_generator"
+            android:name="com.example.tms_sona2.Qr_id_generator"
             android:exported="false" />
         <activity
-            android:name=".Newqrcode"
+            android:name="com.example.tms_sona2.Newqrcode"
             android:exported="false" />
         <activity
-            android:name=".complaints.viewDetails.historyviewdetails"
+            android:name="com.example.tms_sona2.complaints.viewDetails.historyviewdetails"
             android:exported="false" />
         <activity
-            android:name=".adminregistercomplaint"
+            android:name="com.example.tms_sona2.adminregistercomplaint"
             android:exported="false" />
         <activity
-            android:name=".adminpendingcomplaint"
+            android:name="com.example.tms_sona2.adminpendingcomplaint"
             android:exported="false" />
         <activity
-            android:name=".admin_dashboard"
+            android:name="com.example.tms_sona2.admin_dashboard"
             android:exported="false" />
         <activity
-            android:name=".manualentry"
+            android:name="com.example.tms_sona2.manualentry"
             android:exported="false" />
         <activity
-            android:name=".ScannerView"
+            android:name="com.example.tms_sona2.ScannerView"
             android:exported="true" />
         <activity
-            android:name=".AdminLoginPage"
+            android:name="com.example.tms_sona2.AdminLoginPage"
             android:exported="true" />
         <activity
-            android:name=".changepassword"
+            android:name="com.example.tms_sona2.changepassword"
             android:exported="false" />
         <activity
-            android:name=".forgetpassword"
+            android:name="com.example.tms_sona2.forgetpassword"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name="com.example.tms_sona2.Home"
             android:exported="false" />
         <activity
-            android:name=".complaints.complaint_Page"
+            android:name="com.example.tms_sona2.complaints.complaint_Page"
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity
-            android:name=".complaints.HistoryDetails.Complaints_HistoryDetails_Electricity"
+            android:name="com.example.tms_sona2.complaints.HistoryDetails.Complaints_HistoryDetails_Electricity"
             android:exported="false"
             android:hardwareAccelerated="true" />
         <activity
-            android:name=".ScannerPage"
+            android:name="com.example.tms_sona2.ScannerPage"
             android:exported="false" />
         <activity
-            android:name=".assets.asset_layout"
+            android:name="com.example.tms_sona2.assets.asset_layout"
             android:exported="false" />
         <activity
-            android:name=".asset_history"
+            android:name="com.example.tms_sona2.asset_history"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name="com.example.tms_sona2.dashboard"
             android:exported="false" />
         <activity
-            android:name=".report_page"
+            android:name="com.example.tms_sona2.report_page"
             android:exported="false" />
         <activity
-            android:name=".loginpage"
+            android:name="com.example.tms_sona2.loginpage"
             android:exported="false" />
         <activity
-            android:name=".add_assets"
+            android:name="com.example.tms_sona2.add_assets"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.tms_sona2.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -274,13 +274,13 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".EsclationService_new" />
+        <service android:name="com.example.tms_sona2.EsclationService_new" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <service android:name=".ExampleService" />
+        <service android:name="com.example.tms_sona2.ExampleService" />
     </application>
 
 </manifest>

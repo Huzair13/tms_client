@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.map_my_sona"
+        applicationId "com.example.tms_sona2"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -63,7 +63,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.webjars.bower:readmore:2.0.5'
     implementation 'com.google.firebase:firebase-firestore:23.0.4'
-    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+//    implementation platform('com.google.firebase:firebase-bom:28.1.0')
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
     implementation 'com.github.qapqap:TimelineView:v1.6'
@@ -80,7 +80,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0-beta01'
 
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
-    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+//    implementation platform('com.google.firebase:firebase-bom:30.3.1')
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
 
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
@@ -99,6 +99,10 @@ dependencies {
     implementation 'joda-time:joda-time:2.12.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation  'net.sourceforge.jexcelapi:jxl:2.6'
+
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
 
 
 }

@@ -8,5 +8,5 @@ dependencyResolutionManagement {
         // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "Map_My_Sona"
+rootProject.name = "Tms"
 include ':app'

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Track_My_Sona</string>
+    <string name="app_name">TMS_Client</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="login_shared_preferences">com.example.map_my_sona_login_shared_preferences</string>

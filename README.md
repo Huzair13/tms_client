@@ -1,4 +1,4 @@
-# Map My Sona
+# Map My Sona Client customized
 
 Map My Sona is an android application for orgnization purpose for maintain and complaining the product based on their usage and damages.
 
@@ -29,10 +29,9 @@ Make sure to on the developer mode on your phone🤳.
 * We have use Firabase as Back-End programming, 
 
 ## Authors
-
+* **Huzair Ahmed** - [Huzair](https://github.com/Huzair13)
 * **Vigneshwaran BS** - [VigneshwaranBS.com](https://github.com/vigneshwaran-tech)
 * **Srisanjana A** - [SrisanjanaA.com](https://github.com/sriee19)
-* **Huzair Ahmed** - [Huzair](https://github.com/Huzair13)
 * **Shree Saren** - [ShreeSaren](https://github.com/Shreesaraan)
 * **Pavithra** - [Pavithra](https://github.com/PAVITHRA472)
 
